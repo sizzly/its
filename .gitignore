@@ -19,3 +19,6 @@ sites/*/files/4406
 sites/*/files/92
 sites/*/private
 sites/*/tmp
+
+#Ignore Utility Modules
+sites/all/modules/security_review
