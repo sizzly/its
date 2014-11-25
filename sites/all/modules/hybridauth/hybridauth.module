@@ -95,7 +95,7 @@ function hybridauth_menu() {
   );
 
   $items['user/%user/hybridauth'] = array(
-    'title' => 'HybridAuth',
+    'title' => 'Social Login',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('hybridauth_user_identity', 1),
     'access callback' => 'user_edit_access',
