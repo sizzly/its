@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Narrative Campaign feature.
+ */
+
+include_once 'narrative_campaign.features.inc';
