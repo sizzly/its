@@ -26,3 +26,4 @@ tmp
 sites/all/modules/security_review
 sites/all/modules/memory_profiler
 sites/all/modules/devel
+php_errors.log
