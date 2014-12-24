@@ -322,6 +322,14 @@ function narrative_campaign_views_default_views() {
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uid']['separator'] = '';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   /* Field: Entityform Submission: Delete Link */
   $handler->display->display_options['fields']['delete_entityform']['id'] = 'delete_entityform';
   $handler->display->display_options['fields']['delete_entityform']['table'] = 'entityform';
@@ -377,7 +385,7 @@ function narrative_campaign_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul class="nav nav-pills">
-  <li role="presentation"><a href="#" data-toggle="modal" data-target="#faction-[uid]">Details</a></li>
+  <li role="presentation"><a href="#" data-toggle="modal" data-target="#faction-[entityform_id]">Details</a></li>
   <li role="presentation">[edit_entityform]</li>
   <li role="presentation">[delete_entityform]</li>
 </ul>';
@@ -387,7 +395,7 @@ function narrative_campaign_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="modal fade" id="faction-[uid]" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="modal fade" id="faction-[entityform_id]" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -438,6 +446,14 @@ function narrative_campaign_views_default_views() {
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uid']['separator'] = '';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = '';
+  $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entityform_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
   /* Field: Entityform Submission: Delete Link */
   $handler->display->display_options['fields']['delete_entityform']['id'] = 'delete_entityform';
   $handler->display->display_options['fields']['delete_entityform']['table'] = 'entityform';
@@ -462,11 +478,10 @@ function narrative_campaign_views_default_views() {
   $handler->display->display_options['fields']['field_mechanics_text']['label'] = '';
   $handler->display->display_options['fields']['field_mechanics_text']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_mechanics_text']['element_label_colon'] = FALSE;
-  /* Field: Field: Round */
+  /* Field: Field: Weight */
   $handler->display->display_options['fields']['field_warzone_round']['id'] = 'field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['table'] = 'field_data_field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['field'] = 'field_warzone_round';
-  $handler->display->display_options['fields']['field_warzone_round']['label'] = 'Weight';
   $handler->display->display_options['fields']['field_warzone_round']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_warzone_round']['settings'] = array(
     'thousand_separator' => '',
@@ -518,7 +533,7 @@ function narrative_campaign_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul class="nav nav-pills">
-  <li role="presentation"><a href="#" data-toggle="modal" data-target="#faction-[uid]">Details</a></li>
+  <li role="presentation"><a href="#" data-toggle="modal" data-target="#faction-[entityform_id]">Details</a></li>
   <li role="presentation">[edit_entityform]</li>
   <li role="presentation">[delete_entityform]</li>
 </ul>';
@@ -528,7 +543,7 @@ function narrative_campaign_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="modal fade" id="faction-[uid]" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="modal fade" id="faction-[entityform_id]" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
