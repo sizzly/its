@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Release 1.1.3 feature.
+ */
+
+include_once 'release_1_1_3.features.inc';
