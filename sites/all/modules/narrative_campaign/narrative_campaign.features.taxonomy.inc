@@ -17,6 +17,14 @@ function narrative_campaign_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'event_type' => array(
+      'name' => 'Event type',
+      'machine_name' => 'event_type',
+      'description' => 'For use in classifying events.',
+      'hierarchy' => 1,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'games' => array(
       'name' => 'Games',
       'machine_name' => 'games',
