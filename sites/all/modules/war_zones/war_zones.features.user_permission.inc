@@ -44,71 +44,6 @@ function war_zones_user_default_permissions() {
     'module' => 'node_registration',
   );
 
-  // Exported permission: 'add narrative_campaign_instance node registration'.
-  $permissions['add narrative_campaign_instance node registration'] = array(
-    'name' => 'add narrative_campaign_instance node registration',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'add special_event node registration'.
-  $permissions['add special_event node registration'] = array(
-    'name' => 'add special_event node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'add war_zone_tournament node registration'.
-  $permissions['add war_zone_tournament node registration'] = array(
-    'name' => 'add war_zone_tournament node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'cancel own league node registration'.
-  $permissions['cancel own league node registration'] = array(
-    'name' => 'cancel own league node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'cancel own narrative_campaign_instance node registration'.
-  $permissions['cancel own narrative_campaign_instance node registration'] = array(
-    'name' => 'cancel own narrative_campaign_instance node registration',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'cancel own special_event node registration'.
-  $permissions['cancel own special_event node registration'] = array(
-    'name' => 'cancel own special_event node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'cancel own war_zone_tournament node registration'.
-  $permissions['cancel own war_zone_tournament node registration'] = array(
-    'name' => 'cancel own war_zone_tournament node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
   // Exported permission: 'create league content'.
   $permissions['create league content'] = array(
     'name' => 'create league content',
@@ -194,13 +129,6 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own league node registration'.
-  $permissions['delete own league node registration'] = array(
-    'name' => 'delete own league node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
-  );
-
   // Exported permission: 'delete own narrative_campaign content'.
   $permissions['delete own narrative_campaign content'] = array(
     'name' => 'delete own narrative_campaign content',
@@ -215,25 +143,11 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own narrative_campaign_instance node registration'.
-  $permissions['delete own narrative_campaign_instance node registration'] = array(
-    'name' => 'delete own narrative_campaign_instance node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
-  );
-
   // Exported permission: 'delete own special_event content'.
   $permissions['delete own special_event content'] = array(
     'name' => 'delete own special_event content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'delete own special_event node registration'.
-  $permissions['delete own special_event node registration'] = array(
-    'name' => 'delete own special_event node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
   );
 
   // Exported permission: 'delete own war_zone_tournament content'.
@@ -243,13 +157,6 @@ function war_zones_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'delete own war_zone_tournament node registration'.
-  $permissions['delete own war_zone_tournament node registration'] = array(
-    'name' => 'delete own war_zone_tournament node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
   );
 
   // Exported permission: 'edit any league content'.
@@ -296,13 +203,6 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own league node registration'.
-  $permissions['edit own league node registration'] = array(
-    'name' => 'edit own league node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
-  );
-
   // Exported permission: 'edit own narrative_campaign content'.
   $permissions['edit own narrative_campaign content'] = array(
     'name' => 'edit own narrative_campaign content',
@@ -321,30 +221,11 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own narrative_campaign_instance node registration'.
-  $permissions['edit own narrative_campaign_instance node registration'] = array(
-    'name' => 'edit own narrative_campaign_instance node registration',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
   // Exported permission: 'edit own special_event content'.
   $permissions['edit own special_event content'] = array(
     'name' => 'edit own special_event content',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own special_event node registration'.
-  $permissions['edit own special_event node registration'] = array(
-    'name' => 'edit own special_event node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
   );
 
   // Exported permission: 'edit own war_zone_tournament content'.
@@ -354,87 +235,6 @@ function war_zones_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own war_zone_tournament node registration'.
-  $permissions['edit own war_zone_tournament node registration'] = array(
-    'name' => 'edit own war_zone_tournament node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view league node registration'.
-  $permissions['view league node registration'] = array(
-    'name' => 'view league node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view narrative_campaign_instance node registration'.
-  $permissions['view narrative_campaign_instance node registration'] = array(
-    'name' => 'view narrative_campaign_instance node registration',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view own league node registration'.
-  $permissions['view own league node registration'] = array(
-    'name' => 'view own league node registration',
-    'roles' => array(),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view own narrative_campaign_instance node registration'.
-  $permissions['view own narrative_campaign_instance node registration'] = array(
-    'name' => 'view own narrative_campaign_instance node registration',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view own special_event node registration'.
-  $permissions['view own special_event node registration'] = array(
-    'name' => 'view own special_event node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view own war_zone_tournament node registration'.
-  $permissions['view own war_zone_tournament node registration'] = array(
-    'name' => 'view own war_zone_tournament node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view special_event node registration'.
-  $permissions['view special_event node registration'] = array(
-    'name' => 'view special_event node registration',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'view war_zone_tournament node registration'.
-  $permissions['view war_zone_tournament node registration'] = array(
-    'name' => 'view war_zone_tournament node registration',
-    'roles' => array(
-      'Ironmonger' => 'Ironmonger',
-    ),
-    'module' => 'node_registration',
   );
 
   return $permissions;
