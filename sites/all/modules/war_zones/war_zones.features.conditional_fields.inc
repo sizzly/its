@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * release_1_1_3.features.conditional_fields.inc
+ * war_zones.features.conditional_fields.inc
  */
 
 /**
  * Implements hook_conditional_fields_default_fields().
  */
-function release_1_1_3_conditional_fields_default_fields() {
+function war_zones_conditional_fields_default_fields() {
   $items = array();
 
   $items[] = array(

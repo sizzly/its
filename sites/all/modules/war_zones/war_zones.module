@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the War Zones feature.
+ */
+
+include_once 'war_zones.features.inc';
