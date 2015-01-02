@@ -472,7 +472,7 @@ function war_zones_default_rules_configuration() {
         },
         { "data_set" : {
             "data" : [ "new-achievement:field-achievement-category" ],
-            "value" : "1099"
+            "value" : "1146"
           }
         },
         { "data_set" : { "data" : [ "new-achievement:field-achievement-unique" ], "value" : 1 } },

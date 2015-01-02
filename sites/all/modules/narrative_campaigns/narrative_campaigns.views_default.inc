@@ -337,11 +337,10 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_mechanics_text']['label'] = '';
   $handler->display->display_options['fields']['field_mechanics_text']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_mechanics_text']['element_label_colon'] = FALSE;
-  /* Field: Field: Round */
+  /* Field: Field: Weight */
   $handler->display->display_options['fields']['field_warzone_round']['id'] = 'field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['table'] = 'field_data_field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['field'] = 'field_warzone_round';
-  $handler->display->display_options['fields']['field_warzone_round']['label'] = 'Weight';
   $handler->display->display_options['fields']['field_warzone_round']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_warzone_round']['settings'] = array(
     'thousand_separator' => '',
@@ -1531,7 +1530,7 @@ print $link;
   $handler->display->display_options['fields']['field_prerequisite_narrative']['alter']['text'] = '([field_prerequisite_narrative-value])';
   $handler->display->display_options['fields']['field_prerequisite_narrative']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Round (field_warzone_round) */
+  /* Sort criterion: Field: Weight (field_warzone_round) */
   $handler->display->display_options['sorts']['field_warzone_round_value']['id'] = 'field_warzone_round_value';
   $handler->display->display_options['sorts']['field_warzone_round_value']['table'] = 'field_data_field_warzone_round';
   $handler->display->display_options['sorts']['field_warzone_round_value']['field'] = 'field_warzone_round_value';
@@ -1666,12 +1665,11 @@ print $link;
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '-1';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Round */
+  /* Field: Field: Weight */
   $handler->display->display_options['fields']['field_warzone_round']['id'] = 'field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['table'] = 'field_data_field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['field'] = 'field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
-  $handler->display->display_options['fields']['field_warzone_round']['label'] = 'Weight';
   $handler->display->display_options['fields']['field_warzone_round']['settings'] = array(
     'thousand_separator' => ' ',
     'prefix_suffix' => 0,

@@ -957,16 +957,6 @@ function war_zones_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Register link */
-  $handler->display->display_options['fields']['register_link']['id'] = 'register_link';
-  $handler->display->display_options['fields']['register_link']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['register_link']['field'] = 'register_link';
-  $handler->display->display_options['fields']['register_link']['label'] = '';
-  $handler->display->display_options['fields']['register_link']['element_type'] = 'div';
-  $handler->display->display_options['fields']['register_link']['element_class'] = 'lead';
-  $handler->display->display_options['fields']['register_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['register_link']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['register_link']['text'] = 'Register';
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
