@@ -28,6 +28,37 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_aggregate_score_sc'
+  $field_bases['field_aggregate_score_sc'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_aggregate_score_sc',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'computed_field',
+    'settings' => array(
+      'code' => '$entity_field[0][\'value\'] = array_pop(array_pop(field_get_items($entity_type, $entity, \'field_battle_points_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_sportsmanship_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_painting_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_comp_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_additional_points_sc\')));',
+      'database' => array(
+        'data_default' => '',
+        'data_index' => 0,
+        'data_length' => 32,
+        'data_not_NULL' => 0,
+        'data_precision' => 10,
+        'data_scale' => 2,
+        'data_size' => 'normal',
+        'data_type' => 'int',
+      ),
+      'display_format' => '$display_output = $entity_field_item[\'value\'];',
+      'profile2_private' => FALSE,
+      'store' => 1,
+    ),
+    'translatable' => 0,
+    'type' => 'computed',
+  );
+
   // Exported field_base: 'field_allow_sign_up_narrative'
   $field_bases['field_allow_sign_up_narrative'] = array(
     'active' => 1,
@@ -140,6 +171,44 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_defeat'
+  $field_bases['field_defeat'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_defeat',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'computed_field',
+    'settings' => array(
+      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "1")
+{
+$entity_field[0][\'value\'] = "1";
+}
+else
+{
+$entity_field[0][\'value\'] = "0";
+}',
+      'database' => array(
+        'data_default' => '',
+        'data_index' => 0,
+        'data_length' => 5,
+        'data_not_NULL' => 0,
+        'data_precision' => 10,
+        'data_scale' => 2,
+        'data_size' => 'normal',
+        'data_type' => 'varchar',
+      ),
+      'display_format' => '$display_output = $entity_field_item[\'value\'];',
+      'profile2_private' => FALSE,
+      'store' => 1,
+    ),
+    'translatable' => 0,
+    'type' => 'computed',
+  );
+
   // Exported field_base: 'field_designers_notes_narrative'
   $field_bases['field_designers_notes_narrative'] = array(
     'active' => 1,
@@ -167,6 +236,44 @@ function war_zones_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_draw'
+  $field_bases['field_draw'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_draw',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'computed_field',
+    'settings' => array(
+      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "3")
+{
+$entity_field[0][\'value\'] = "1";
+}
+else
+{
+$entity_field[0][\'value\'] = "0";
+}',
+      'database' => array(
+        'data_default' => '',
+        'data_index' => 0,
+        'data_length' => 5,
+        'data_not_NULL' => 0,
+        'data_precision' => 10,
+        'data_scale' => 2,
+        'data_size' => 'normal',
+        'data_type' => 'varchar',
+      ),
+      'display_format' => '$display_output = $entity_field_item[\'value\'];',
+      'profile2_private' => FALSE,
+      'store' => 1,
+    ),
+    'translatable' => 0,
+    'type' => 'computed',
   );
 
   // Exported field_base: 'field_eligible_battles_narrative'
@@ -213,6 +320,43 @@ function war_zones_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'number_float',
+  );
+
+  // Exported field_base: 'field_event_type'
+  $field_bases['field_event_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_type',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'event_type',
+          'parent' => 0,
+          'depth' => '',
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_explanation_sc'
@@ -734,12 +878,43 @@ function war_zones_field_default_field_bases() {
         25 => 'Cancelled',
         30 => 'Forfeit',
         35 => 'Opponent Forfeit',
+        40 => 'Admin added',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_integer',
+  );
+
+  // Exported field_base: 'field_status'
+  $field_bases['field_status'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_status',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Setup',
+        3 => 'Sign Up',
+        5 => 'In Progress',
+        10 => 'Complete',
+        15 => 'Archived',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_strength_of_schedule_sc'
@@ -810,6 +985,44 @@ function war_zones_field_default_field_bases() {
     'type' => 'field_hidden_text',
   );
 
+  // Exported field_base: 'field_victory'
+  $field_bases['field_victory'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_victory',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'computed_field',
+    'settings' => array(
+      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "5")
+{
+$entity_field[0][\'value\'] = "1";
+}
+else
+{
+$entity_field[0][\'value\'] = "0";
+}',
+      'database' => array(
+        'data_default' => '',
+        'data_index' => FALSE,
+        'data_length' => 32,
+        'data_not_NULL' => FALSE,
+        'data_precision' => 10,
+        'data_scale' => 2,
+        'data_size' => 'normal',
+        'data_type' => 'varchar',
+      ),
+      'display_format' => '$display_output = $entity_field_item[\'value\'];',
+      'profile2_private' => FALSE,
+      'store' => 1,
+    ),
+    'translatable' => 0,
+    'type' => 'computed',
+  );
+
   // Exported field_base: 'field_victory_points_sc'
   $field_bases['field_victory_points_sc'] = array(
     'active' => 1,
@@ -863,6 +1076,34 @@ function war_zones_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_your_results'
+  $field_bases['field_your_results'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_your_results',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        5 => 'Victory',
+        3 => 'Draw',
+        1 => 'Defeat',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
   );
 
   return $field_bases;

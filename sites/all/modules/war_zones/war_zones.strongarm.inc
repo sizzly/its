@@ -388,7 +388,29 @@ function war_zones_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__narrative_campaign_instance';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
@@ -410,7 +432,78 @@ function war_zones_strongarm() {
           'weight' => '4',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'registration_link' => array(
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_form' => array(
+          'teaser' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_slots_left' => array(
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_unregistrable_reason' => array(
+          'teaser' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_war_zone_all_open_registration' => array(
+          'teaser' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_wz_complete' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_wz_start' => array(
+          'teaser' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '14',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__narrative_campaign_instance'] = $strongarm;
@@ -724,18 +817,12 @@ Event start: [node:event-start].',
   $strongarm->api_version = 1;
   $strongarm->name = 'node_registration_type_settings_narrative_campaign_instance';
   $strongarm->value = array(
-    'date_field' => 'field_event_date',
-    'max_registration_date_field' => 'field_registration_deadline',
-    'min_registration_date_field' => '0',
-    'capacity_field' => 'field_slots_warzone',
-    'status' => 1,
     'toggle_enabled_in_node_form' => 0,
-    'no_register_page' => 1,
+    'no_register_page' => 0,
     'extra_nr_owners_no_settings_tab' => 1,
     'allow_registration_until' => '',
     'registration_success_message' => 'Your forces have been committed to the campaign.',
     'allow_cancellation_until' => '',
-    'capacity' => 0,
     'allow_exceeding_capacity' => 1,
     'max_slots_per_registration_authenticated' => 1,
     'max_slots_per_registration_anonymous' => 1,
@@ -801,6 +888,12 @@ Event start: [node:event-start].',
     'show_message_date' => 1,
     'show_message_capacity' => 1,
     'show_message_registered' => 1,
+    'date_field' => 'field_event_date',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
+    'capacity' => 0,
   );
   $export['node_registration_type_settings_narrative_campaign_instance'] = $strongarm;
 
