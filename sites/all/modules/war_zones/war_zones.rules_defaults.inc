@@ -272,7 +272,8 @@ function war_zones_default_rules_configuration() {
                   "identifier" : "[node:nid] - Start",
                   "param_node" : [ "node" ]
                 }
-              }
+              },
+              { "data_set" : { "data" : [ "node:status" ], "value" : "1" } }
             ],
             "LABEL" : "WZ: Open League for Registration"
           }

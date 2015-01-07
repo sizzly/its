@@ -113,8 +113,7 @@ function narrative_campaigns_default_rules_configuration() {
               { "VIEW LOOP" : {
                   "VIEW" : "war_zone_campaign_phase_scoring",
                   "DISPLAY" : "views_rules_1",
-                  "USING" : { "field_phase_sc_target_id" : [ "relation:rid" ] },
-                  "ROW VARIABLES" : { "entityform_id" : { "entityform_id" : "(Entityform Submission entity referenced from field_register_faction) Entityform submission ID" } },
+                  "ROW VARIABLES" : [],
                   "DO" : [
                     { "entity_fetch" : {
                         "USING" : { "type" : "entityform", "id" : [ "entityform-id" ] },

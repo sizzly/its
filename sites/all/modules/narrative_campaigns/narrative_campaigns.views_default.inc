@@ -225,7 +225,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_title_chronicle']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title_chronicle']['element_default_classes'] = FALSE;
-  /* Field: Field: Narrative text */
+  /* Field: Entityform Submission: Narrative text */
   $handler->display->display_options['fields']['field_narrative_text']['id'] = 'field_narrative_text';
   $handler->display->display_options['fields']['field_narrative_text']['table'] = 'field_data_field_narrative_text';
   $handler->display->display_options['fields']['field_narrative_text']['field'] = 'field_narrative_text';
@@ -337,7 +337,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_mechanics_text']['label'] = '';
   $handler->display->display_options['fields']['field_mechanics_text']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_mechanics_text']['element_label_colon'] = FALSE;
-  /* Field: Field: Weight */
+  /* Field: Field: Round */
   $handler->display->display_options['fields']['field_warzone_round']['id'] = 'field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['table'] = 'field_data_field_warzone_round';
   $handler->display->display_options['fields']['field_warzone_round']['field'] = 'field_warzone_round';
@@ -380,7 +380,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_title_chronicle']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title_chronicle']['element_default_classes'] = FALSE;
-  /* Field: Field: Narrative text */
+  /* Field: Entityform Submission: Narrative text */
   $handler->display->display_options['fields']['field_narrative_text']['id'] = 'field_narrative_text';
   $handler->display->display_options['fields']['field_narrative_text']['table'] = 'field_data_field_narrative_text';
   $handler->display->display_options['fields']['field_narrative_text']['field'] = 'field_narrative_text';
@@ -513,7 +513,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['registration_used_slots']['id'] = 'registration_used_slots';
   $handler->display->display_options['fields']['registration_used_slots']['table'] = 'node';
   $handler->display->display_options['fields']['registration_used_slots']['field'] = 'registration_used_slots';
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -590,7 +590,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_special_event_type']['label'] = '';
   $handler->display->display_options['fields']['field_special_event_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_special_event_type']['element_label_colon'] = FALSE;
-  /* Field: Content: Game */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
@@ -668,7 +668,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Battlefield (field_location) */
+  /* Relationship: Field: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
@@ -687,7 +687,7 @@ function narrative_campaigns_views_default_views() {
     'map_preset' => 'geofield_formatter_map',
     'data' => 'full',
   );
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -976,7 +976,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_event_type']['element_label_class'] = 'text-muted';
   $handler->display->display_options['fields']['field_event_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_type']['element_default_classes'] = FALSE;
-  /* Field: Content: Game */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
@@ -1006,7 +1006,7 @@ function narrative_campaigns_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -1419,11 +1419,10 @@ print $link;
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'relation';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
-  /* Field: Relation: Phase State */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_phase_state_narrative']['id'] = 'field_phase_state_narrative';
   $handler->display->display_options['fields']['field_phase_state_narrative']['table'] = 'field_data_field_phase_state_narrative';
   $handler->display->display_options['fields']['field_phase_state_narrative']['field'] = 'field_phase_state_narrative';
-  $handler->display->display_options['fields']['field_phase_state_narrative']['type'] = 'list_key';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -1521,7 +1520,7 @@ print $link;
   $handler->display->display_options['fields']['field_title_chronicle']['element_type'] = 'strong';
   $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Weight (field_warzone_round) */
+  /* Sort criterion: Field: Round (field_warzone_round) */
   $handler->display->display_options['sorts']['field_warzone_round_value']['id'] = 'field_warzone_round_value';
   $handler->display->display_options['sorts']['field_warzone_round_value']['table'] = 'field_data_field_warzone_round';
   $handler->display->display_options['sorts']['field_warzone_round_value']['field'] = 'field_warzone_round_value';
@@ -1552,7 +1551,7 @@ print $link;
   $handler->display->display_options['filters']['relation_type']['value'] = array(
     'campaign_phase_instance' => 'campaign_phase_instance',
   );
-  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
   $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
   $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
@@ -1661,7 +1660,7 @@ print $link;
   $handler->display->display_options['fields']['rid']['table'] = 'relation';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
   $handler->display->display_options['fields']['rid']['exclude'] = TRUE;
-  /* Field: Relation: Victorious Faction */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_victorious_faction']['id'] = 'field_victorious_faction';
   $handler->display->display_options['fields']['field_victorious_faction']['table'] = 'field_data_field_victorious_faction';
   $handler->display->display_options['fields']['field_victorious_faction']['field'] = 'field_victorious_faction';
@@ -1669,9 +1668,6 @@ print $link;
   $handler->display->display_options['fields']['field_victorious_faction']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_victorious_faction']['element_type'] = 'strong';
   $handler->display->display_options['fields']['field_victorious_faction']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_victorious_faction']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Field: Title */
   $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
   $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
@@ -1683,7 +1679,7 @@ print $link;
   $handler->display->display_options['fields']['field_prerequisite_narrative']['field'] = 'field_prerequisite_narrative';
   $handler->display->display_options['fields']['field_prerequisite_narrative']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['fields']['field_prerequisite_narrative']['empty'] = 'Victor: [field_victorious_faction] ';
-  /* Field: Relation: Phase State */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_phase_state_narrative']['id'] = 'field_phase_state_narrative';
   $handler->display->display_options['fields']['field_phase_state_narrative']['table'] = 'field_data_field_phase_state_narrative';
   $handler->display->display_options['fields']['field_phase_state_narrative']['field'] = 'field_phase_state_narrative';
@@ -1769,7 +1765,7 @@ print $link;
   $handler->display->display_options['fields']['rid']['table'] = 'relation';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
   $handler->display->display_options['fields']['rid']['exclude'] = TRUE;
-  /* Field: Relation: Victorious Faction */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_victorious_faction']['id'] = 'field_victorious_faction';
   $handler->display->display_options['fields']['field_victorious_faction']['table'] = 'field_data_field_victorious_faction';
   $handler->display->display_options['fields']['field_victorious_faction']['field'] = 'field_victorious_faction';
@@ -1777,9 +1773,6 @@ print $link;
   $handler->display->display_options['fields']['field_victorious_faction']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_victorious_faction']['element_type'] = 'strong';
   $handler->display->display_options['fields']['field_victorious_faction']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_victorious_faction']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -1802,7 +1795,7 @@ print $link;
   $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
   $handler->display->display_options['fields']['field_title_chronicle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
-  /* Field: Field: Narrative text */
+  /* Field: Entityform Submission: Narrative text */
   $handler->display->display_options['fields']['field_narrative_text']['id'] = 'field_narrative_text';
   $handler->display->display_options['fields']['field_narrative_text']['table'] = 'field_data_field_narrative_text';
   $handler->display->display_options['fields']['field_narrative_text']['field'] = 'field_narrative_text';
@@ -1854,7 +1847,7 @@ print $link;
   $handler->display->display_options['filters']['relation_type']['value'] = array(
     'campaign_phase_instance' => 'campaign_phase_instance',
   );
-  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
   $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
   $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
@@ -2269,7 +2262,7 @@ print $link;
     'image_style' => '',
     'image_link' => '',
   );
-  /* Field: Content: Game */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
