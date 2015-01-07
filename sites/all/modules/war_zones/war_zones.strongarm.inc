@@ -1,0 +1,1103 @@
+<?php
+/**
+ * @file
+ * war_zones.strongarm.inc
+ */
+
+/**
+ * Implements hook_strongarm().
+ */
+function war_zones_strongarm() {
+  $export = array();
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_league';
+  $strongarm->value = 0;
+  $export['comment_anonymous_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_narrative_campaign';
+  $strongarm->value = 0;
+  $export['comment_anonymous_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_narrative_campaign_instance';
+  $strongarm->value = 0;
+  $export['comment_anonymous_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_special_event';
+  $strongarm->value = 0;
+  $export['comment_anonymous_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_war_zone_tournament';
+  $strongarm->value = 0;
+  $export['comment_anonymous_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_league';
+  $strongarm->value = 1;
+  $export['comment_default_mode_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_narrative_campaign';
+  $strongarm->value = 1;
+  $export['comment_default_mode_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_narrative_campaign_instance';
+  $strongarm->value = 1;
+  $export['comment_default_mode_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_special_event';
+  $strongarm->value = 1;
+  $export['comment_default_mode_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_war_zone_tournament';
+  $strongarm->value = 1;
+  $export['comment_default_mode_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_league';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_narrative_campaign';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_narrative_campaign_instance';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_special_event';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_war_zone_tournament';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_league';
+  $strongarm->value = 0;
+  $export['comment_form_location_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_narrative_campaign';
+  $strongarm->value = 0;
+  $export['comment_form_location_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_narrative_campaign_instance';
+  $strongarm->value = 0;
+  $export['comment_form_location_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_special_event';
+  $strongarm->value = 0;
+  $export['comment_form_location_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_war_zone_tournament';
+  $strongarm->value = 1;
+  $export['comment_form_location_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_league';
+  $strongarm->value = '2';
+  $export['comment_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_narrative_campaign';
+  $strongarm->value = '2';
+  $export['comment_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_narrative_campaign_instance';
+  $strongarm->value = '2';
+  $export['comment_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_league';
+  $strongarm->value = '1';
+  $export['comment_preview_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_narrative_campaign';
+  $strongarm->value = '1';
+  $export['comment_preview_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_narrative_campaign_instance';
+  $strongarm->value = '1';
+  $export['comment_preview_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_special_event';
+  $strongarm->value = '1';
+  $export['comment_preview_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_war_zone_tournament';
+  $strongarm->value = '1';
+  $export['comment_preview_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_special_event';
+  $strongarm->value = '2';
+  $export['comment_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_league';
+  $strongarm->value = 0;
+  $export['comment_subject_field_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_narrative_campaign';
+  $strongarm->value = 0;
+  $export['comment_subject_field_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_narrative_campaign_instance';
+  $strongarm->value = 0;
+  $export['comment_subject_field_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_special_event';
+  $strongarm->value = 0;
+  $export['comment_subject_field_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_war_zone_tournament';
+  $strongarm->value = 1;
+  $export['comment_subject_field_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_war_zone_tournament';
+  $strongarm->value = '1';
+  $export['comment_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_entityform__score_card';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_entityform__score_card'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_entityform__war_zone_grant_achievement';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_entityform__war_zone_grant_achievement'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_message__stream_new_war_zone';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_message__stream_new_war_zone'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__league';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'locations' => array(
+          'weight' => '30',
+        ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
+        'badges' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__narrative_campaign';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '12',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '10',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '11',
+        ),
+        'badges' => array(
+          'weight' => '9',
+        ),
+        'locations' => array(
+          'weight' => '13',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__narrative_campaign_instance';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'locations' => array(
+          'weight' => '3',
+        ),
+        'metatags' => array(
+          'weight' => '5',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '2',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '5',
+        ),
+        'badges' => array(
+          'weight' => '4',
+        ),
+      ),
+      'display' => array(
+        'registration_link' => array(
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_form' => array(
+          'teaser' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_slots_left' => array(
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_unregistrable_reason' => array(
+          'teaser' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_war_zone_all_open_registration' => array(
+          'teaser' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_wz_complete' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_wz_start' => array(
+          'teaser' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '14',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_node__narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__special_event';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '12',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '11',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '9',
+        ),
+        'badges' => array(
+          'weight' => '10',
+        ),
+        'locations' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__war_zone_tournament';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '11',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '9',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '8',
+        ),
+        'badges' => array(
+          'weight' => '10',
+        ),
+        'locations' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_league';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_narrative_campaign';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_narrative_campaign_instance';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_special_event';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_war_zone_tournament';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_league';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_narrative_campaign';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_narrative_campaign_instance';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_special_event';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_war_zone_tournament';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_league';
+  $strongarm->value = array();
+  $export['node_options_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_narrative_campaign';
+  $strongarm->value = array(
+    0 => 'status',
+    1 => 'promote',
+  );
+  $export['node_options_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_narrative_campaign_instance';
+  $strongarm->value = array();
+  $export['node_options_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_special_event';
+  $strongarm->value = array(
+    0 => 'status',
+    1 => 'promote',
+  );
+  $export['node_options_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_war_zone_tournament';
+  $strongarm->value = array();
+  $export['node_options_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_league';
+  $strongarm->value = '1';
+  $export['node_preview_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_narrative_campaign';
+  $strongarm->value = '1';
+  $export['node_preview_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_narrative_campaign_instance';
+  $strongarm->value = '1';
+  $export['node_preview_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_special_event';
+  $strongarm->value = '1';
+  $export['node_preview_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_war_zone_tournament';
+  $strongarm->value = '1';
+  $export['node_preview_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_registration_type_settings_league';
+  $strongarm->value = array(
+    'toggle_enabled_in_node_form' => 1,
+    'no_register_page' => 0,
+    'allow_registration_until' => '1 day',
+    'registration_success_message' => 'Thank you, your registration has been received!',
+    'allow_cancellation_until' => '1 day',
+    'allow_exceeding_capacity' => 1,
+    'max_slots_per_registration_authenticated' => 1,
+    'max_slots_per_registration_anonymous' => 1,
+    'allow_email_change' => 0,
+    'require_email_verification' => FALSE,
+    'sender_name' => '',
+    'sender_mail' => '',
+    'mail_system' => '0',
+    'send_mail_to_registree' => 1,
+    'mail_to_registree_bcc' => '',
+    'mail_to_registree_subject' => 'You\'ve registered for: [node:title]',
+    'mail_to_registree_body' => '<p>This is what you\'ve registered with:</p>
+
+<p>E-mail address: [node-registration:email]</p>
+
+<p>To edit, go to [node-registration:edit-url]. To cancel, go to [node-registration:cancel-url].</p>',
+    'change_mail_for_waiting_list_registree' => 0,
+    'mail_for_waiting_list_registree_subject' => 'You\'ve registered for: [node:title] (BUT YOU\'RE ON THE WAITING LIST)',
+    'mail_for_waiting_list_registree_body' => 'This is what you\'ve registered with:
+
+E-mail address: [node-registration:email]
+
+BUT YOU\'RE ON THE WAITING LIST.
+
+To edit, go to [node-registration:edit-url].',
+    'send_mail_to_admin' => 0,
+    'mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'mail_to_admin_subject' => 'Somebody\'s registered for: [node:title]',
+    'mail_to_admin_body' => 'This is what they entered:
+
+E-mail address: [node-registration:email]
+
+To view the registration, go to [node-registration:url].',
+    'send_reminder_mail_to_registrees' => 0,
+    'send_reminders_before' => '1 day',
+    'reminder_mail_to_registrees_subject' => '[node:title] begins in [node:time-left]',
+    'reminder_mail_to_registrees_body' => 'Hey [node-registration:email],
+
+this [node:content-type:name] starts in [node:time-left].
+
+Don\'t forget to go! It begins at [node:event-start].',
+    'send_cancel_mail_to_registree' => 0,
+    'cancel_mail_to_registree_bcc' => '',
+    'cancel_mail_to_registree_subject' => 'You\'ve cancelled for: [node:title]',
+    'cancel_mail_to_registree_body' => 'This is what you were registered with:
+
+E-mail address: [node-registration:email]
+
+But now it\'s gone...',
+    'send_cancel_mail_to_admin' => 0,
+    'cancel_mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'cancel_mail_to_admin_subject' => 'Somebody\'s cancelled for: [node:title]',
+    'cancel_mail_to_admin_body' => 'They had ID [node-registration:registration-id] but it\'s now gone...',
+    'send_unwaitinglist_mail_to_registree' => 0,
+    'unwaitinglist_mail_to_registree_subject' => 'You\'ve been moved from the waiting list to the regular list',
+    'unwaitinglist_mail_to_registree_body' => 'Hi [node-registration:email],
+
+due to a cancellation you\'ve been moved from the waiting list to the regular list.
+
+Event name: [node:title].
+Event start: [node:event-start].',
+    'show_message_access' => 1,
+    'show_message_date' => 1,
+    'show_message_capacity' => 1,
+    'show_message_registered' => 1,
+    'extra_nr_owners_no_settings_tab' => 0,
+    'date_field' => 'field_event_date',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
+  );
+  $export['node_registration_type_settings_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_registration_type_settings_narrative_campaign_instance';
+  $strongarm->value = array(
+    'toggle_enabled_in_node_form' => 0,
+    'no_register_page' => 0,
+    'extra_nr_owners_no_settings_tab' => 1,
+    'allow_registration_until' => '',
+    'registration_success_message' => 'Your forces have been committed to the campaign.',
+    'allow_cancellation_until' => '',
+    'allow_exceeding_capacity' => 1,
+    'max_slots_per_registration_authenticated' => 1,
+    'max_slots_per_registration_anonymous' => 1,
+    'allow_email_change' => 0,
+    'require_email_verification' => FALSE,
+    'sender_name' => '',
+    'sender_mail' => '',
+    'mail_system' => '0',
+    'send_mail_to_registree' => 1,
+    'mail_to_registree_bcc' => '',
+    'mail_to_registree_subject' => 'You\'ve registered for: [node:title]',
+    'mail_to_registree_body' => '<p>This is what you\'ve registered with:</p>
+
+<p>E-mail address: [node-registration:email]</p>
+
+<p>To edit, go to [node-registration:edit-url]. To cancel, go to [node-registration:cancel-url].</p>',
+    'change_mail_for_waiting_list_registree' => 0,
+    'mail_for_waiting_list_registree_subject' => 'You\'ve registered for: [node:title] (BUT YOU\'RE ON THE WAITING LIST)',
+    'mail_for_waiting_list_registree_body' => 'This is what you\'ve registered with:
+
+E-mail address: [node-registration:email]
+
+BUT YOU\'RE ON THE WAITING LIST.
+
+To edit, go to [node-registration:edit-url].',
+    'send_mail_to_admin' => 0,
+    'mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'mail_to_admin_subject' => 'Somebody\'s registered for: [node:title]',
+    'mail_to_admin_body' => 'This is what they entered:
+
+E-mail address: [node-registration:email]
+
+To view the registration, go to [node-registration:url].',
+    'send_reminder_mail_to_registrees' => 0,
+    'send_reminders_before' => '1 day',
+    'reminder_mail_to_registrees_subject' => '[node:title] begins in [node:time-left]',
+    'reminder_mail_to_registrees_body' => 'Hey [node-registration:email],
+
+this [node:content-type:name] starts in [node:time-left].
+
+Don\'t forget to go! It begins at [node:event-start].',
+    'send_cancel_mail_to_registree' => 0,
+    'cancel_mail_to_registree_bcc' => '',
+    'cancel_mail_to_registree_subject' => 'You\'ve cancelled for: [node:title]',
+    'cancel_mail_to_registree_body' => 'This is what you were registered with:
+
+E-mail address: [node-registration:email]
+
+But now it\'s gone...',
+    'send_cancel_mail_to_admin' => 0,
+    'cancel_mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'cancel_mail_to_admin_subject' => 'Somebody\'s cancelled for: [node:title]',
+    'cancel_mail_to_admin_body' => 'They had ID [node-registration:registration-id] but it\'s now gone...',
+    'send_unwaitinglist_mail_to_registree' => 0,
+    'unwaitinglist_mail_to_registree_subject' => 'You\'ve been moved from the waiting list to the regular list',
+    'unwaitinglist_mail_to_registree_body' => 'Hi [node-registration:email],
+
+due to a cancellation you\'ve been moved from the waiting list to the regular list.
+
+Event name: [node:title].
+Event start: [node:event-start].',
+    'show_message_access' => 1,
+    'show_message_date' => 1,
+    'show_message_capacity' => 1,
+    'show_message_registered' => 1,
+    'date_field' => 'field_event_date',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
+    'capacity' => 0,
+  );
+  $export['node_registration_type_settings_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_registration_type_settings_special_event';
+  $strongarm->value = array(
+    'toggle_enabled_in_node_form' => 0,
+    'no_register_page' => 0,
+    'extra_nr_owners_no_settings_tab' => 0,
+    'allow_registration_until' => '1 minute',
+    'registration_success_message' => 'Thank you, your registration has been received!',
+    'allow_cancellation_until' => '1 minute',
+    'allow_exceeding_capacity' => 1,
+    'max_slots_per_registration_authenticated' => 1,
+    'max_slots_per_registration_anonymous' => 1,
+    'allow_email_change' => 1,
+    'require_email_verification' => FALSE,
+    'sender_name' => '',
+    'sender_mail' => '',
+    'mail_system' => '0',
+    'send_mail_to_registree' => 1,
+    'mail_to_registree_bcc' => '',
+    'mail_to_registree_subject' => 'You\'ve registered for: [node:title]',
+    'mail_to_registree_body' => 'This is what you\'ve registered with:
+
+E-mail address: [node-registration:email]
+
+To edit, go to [node-registration:edit-url]. To cancel, go to [node-registration:cancel-url].',
+    'change_mail_for_waiting_list_registree' => 0,
+    'mail_for_waiting_list_registree_subject' => 'You\'ve registered for: [node:title] (BUT YOU\'RE ON THE WAITING LIST)',
+    'mail_for_waiting_list_registree_body' => 'This is what you\'ve registered with:
+
+E-mail address: [node-registration:email]
+
+BUT YOU\'RE ON THE WAITING LIST.
+
+To edit, go to [node-registration:edit-url].',
+    'send_mail_to_admin' => 0,
+    'mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'mail_to_admin_subject' => 'Somebody\'s registered for: [node:title]',
+    'mail_to_admin_body' => 'This is what they entered:
+
+E-mail address: [node-registration:email]
+
+To view the registration, go to [node-registration:url].',
+    'send_reminder_mail_to_registrees' => 0,
+    'send_reminders_before' => '1 day',
+    'reminder_mail_to_registrees_subject' => '[node:title] begins in [node:time-left]',
+    'reminder_mail_to_registrees_body' => 'Hey [node-registration:email],
+
+this [node:content-type:name] starts in [node:time-left].
+
+Don\'t forget to go! It begins at [node:event-start].',
+    'send_cancel_mail_to_registree' => 0,
+    'cancel_mail_to_registree_bcc' => '',
+    'cancel_mail_to_registree_subject' => 'You\'ve cancelled for: [node:title]',
+    'cancel_mail_to_registree_body' => 'This is what you were registered with:
+
+E-mail address: [node-registration:email]
+
+But now it\'s gone...',
+    'send_cancel_mail_to_admin' => 0,
+    'cancel_mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'cancel_mail_to_admin_subject' => 'Somebody\'s cancelled for: [node:title]',
+    'cancel_mail_to_admin_body' => 'They had ID [node-registration:registration-id] but it\'s now gone...',
+    'send_unwaitinglist_mail_to_registree' => 0,
+    'unwaitinglist_mail_to_registree_subject' => 'You\'ve been moved from the waiting list to the regular list',
+    'unwaitinglist_mail_to_registree_body' => 'Hi [node-registration:email],
+
+due to a cancellation you\'ve been moved from the waiting list to the regular list.
+
+Event name: [node:title].
+Event start: [node:event-start].',
+    'show_message_access' => 1,
+    'show_message_date' => 1,
+    'show_message_capacity' => 1,
+    'show_message_registered' => 1,
+    'date_field' => 'field_event_date',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
+  );
+  $export['node_registration_type_settings_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_registration_type_settings_war_zone_tournament';
+  $strongarm->value = array(
+    'date_field' => 'field_event_date_warzone',
+    'max_registration_date_field' => '0',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
+    'toggle_enabled_in_node_form' => 1,
+    'no_register_page' => 1,
+    'extra_nr_owners_no_settings_tab' => 0,
+    'allow_registration_until' => '1 day',
+    'registration_success_message' => 'Thank you, your registration has been received!',
+    'allow_cancellation_until' => '5 minutes',
+    'allow_exceeding_capacity' => 1,
+    'max_slots_per_registration_authenticated' => 1,
+    'max_slots_per_registration_anonymous' => 1,
+    'allow_email_change' => 0,
+    'require_email_verification' => FALSE,
+    'sender_name' => '',
+    'sender_mail' => '',
+    'send_mail_to_registree' => 1,
+    'mail_to_registree_bcc' => '',
+    'mail_to_registree_subject' => 'You\'ve registered for: [node:title]',
+    'mail_to_registree_body' => 'This is what you\'ve registered with:
+
+E-mail address: [node-registration:email]
+
+To edit, go to [node-registration:edit-url]. To cancel, go to [node-registration:cancel-url].',
+    'change_mail_for_waiting_list_registree' => 0,
+    'mail_for_waiting_list_registree_subject' => 'You\'ve registered for: [node:title] (BUT YOU\'RE ON THE WAITING LIST)',
+    'mail_for_waiting_list_registree_body' => 'This is what you\'ve registered with:
+
+E-mail address: [node-registration:email]
+
+BUT YOU\'RE ON THE WAITING LIST.
+
+To edit, go to [node-registration:edit-url].',
+    'send_mail_to_admin' => 0,
+    'mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'mail_to_admin_subject' => 'Somebody\'s registered for: [node:title]',
+    'mail_to_admin_body' => 'This is what they entered:
+
+E-mail address: [node-registration:email]
+
+To view the registration, go to [node-registration:url].',
+    'send_reminder_mail_to_registrees' => 0,
+    'send_reminders_before' => '1 day',
+    'reminder_mail_to_registrees_subject' => '[node:title] begins in [node:time-left]',
+    'reminder_mail_to_registrees_body' => 'Hey [node-registration:email],
+
+this [node:content-type:name] starts in [node:time-left].
+
+Don\'t forget to go! It begins at [node:event-start].',
+    'send_cancel_mail_to_registree' => 0,
+    'cancel_mail_to_registree_bcc' => '',
+    'cancel_mail_to_registree_subject' => 'You\'ve cancelled for: [node:title]',
+    'cancel_mail_to_registree_body' => 'This is what you were registered with:
+
+E-mail address: [node-registration:email]
+
+But now it\'s gone...',
+    'send_cancel_mail_to_admin' => 0,
+    'cancel_mail_to_admin_recipients' => 'admin@itoysoldiers.com',
+    'cancel_mail_to_admin_subject' => 'Somebody\'s cancelled for: [node:title]',
+    'cancel_mail_to_admin_body' => 'They had ID [node-registration:registration-id] but it\'s now gone...',
+    'send_unwaitinglist_mail_to_registree' => 0,
+    'unwaitinglist_mail_to_registree_subject' => 'You\'ve been moved from the waiting list to the regular list',
+    'unwaitinglist_mail_to_registree_body' => 'Hi [node-registration:email],
+
+due to a cancellation you\'ve been moved from the waiting list to the regular list.
+
+Event name: [node:title].
+Event start: [node:event-start].',
+    'show_message_access' => 1,
+    'show_message_date' => 1,
+    'show_message_capacity' => 1,
+    'show_message_registered' => 1,
+  );
+  $export['node_registration_type_settings_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_league';
+  $strongarm->value = 0;
+  $export['node_submitted_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_narrative_campaign';
+  $strongarm->value = 0;
+  $export['node_submitted_narrative_campaign'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_narrative_campaign_instance';
+  $strongarm->value = 0;
+  $export['node_submitted_narrative_campaign_instance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_special_event';
+  $strongarm->value = 0;
+  $export['node_submitted_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_war_zone_tournament';
+  $strongarm->value = 0;
+  $export['node_submitted_war_zone_tournament'] = $strongarm;
+
+  return $export;
+}
