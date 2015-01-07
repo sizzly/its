@@ -9,6 +9,14 @@
  */
 function narrative_campaigns_default_rules_configuration() {
   $items = array();
+  $items['rules_link_condition_campaign_launch_instance'] = entity_import('rules_config', '{ "rules_link_condition_campaign_launch_instance" : {
+      "LABEL" : "Rules link: Warzone: Campaign: Launch Instance condition",
+      "PLUGIN" : "and",
+      "OWNER" : "rules",
+      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "AND" : []
+    }
+  }');
   $items['rules_link_condition_warzone_campaign_close_and_score'] = entity_import('rules_config', '{ "rules_link_condition_warzone_campaign_close_and_score" : {
       "LABEL" : "Rules link: Warzone: Campaign: Close and Score Phase condition",
       "PLUGIN" : "and",
@@ -21,7 +29,8 @@ function narrative_campaigns_default_rules_configuration() {
             "type" : "relation",
             "bundle" : { "value" : { "campaign_phase_instance" : "campaign_phase_instance" } }
           }
-        }
+        },
+        { "data_is" : { "data" : [ "relation:field-phase-state-narrative" ], "value" : "5" } }
       ]
     }
   }');
@@ -75,11 +84,19 @@ function narrative_campaigns_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_link_set_campaign_launch_instance'] = entity_import('rules_config', '{ "rules_link_set_campaign_launch_instance" : {
+      "LABEL" : "Rules link: Warzone: Campaign: Launch Instance rules set",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "RULES" : []
+    }
+  }');
   $items['rules_link_set_warzone_campaign_close_and_score'] = entity_import('rules_config', '{ "rules_link_set_warzone_campaign_close_and_score" : {
       "LABEL" : "Rules link: Warzone: Campaign: Close and Score Phase rules set",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "rules", "views_rules" ],
       "USES VARIABLES" : { "relation" : { "type" : "relation", "label" : "relation" } },
       "RULES" : [
         { "RULE" : {
@@ -91,7 +108,28 @@ function narrative_campaigns_default_rules_configuration() {
                 }
               }
             ],
-            "DO" : [],
+            "DO" : [
+              { "data_set" : { "data" : [ "relation:field-phase-state-narrative" ], "value" : "10" } },
+              { "VIEW LOOP" : {
+                  "VIEW" : "war_zone_campaign_phase_scoring",
+                  "DISPLAY" : "views_rules_1",
+                  "USING" : { "field_phase_sc_target_id" : [ "relation:rid" ] },
+                  "ROW VARIABLES" : { "entityform_id" : { "entityform_id" : "(Entityform Submission entity referenced from field_register_faction) Entityform submission ID" } },
+                  "DO" : [
+                    { "entity_fetch" : {
+                        "USING" : { "type" : "entityform", "id" : [ "entityform-id" ] },
+                        "PROVIDE" : { "entity_fetched" : { "victorious_faction" : "Victorious Faction" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "relation:field-victorious-faction" ],
+                        "value" : [ "victorious-faction" ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
             "LABEL" : "Warzone: Campaign: Close and Score"
           }
         }
@@ -265,6 +303,179 @@ function narrative_campaigns_default_rules_configuration() {
           }
         }
       ]
+    }
+  }');
+  $items['rules_master_on_save_existing_entityform'] = entity_import('rules_config', '{ "rules_master_on_save_existing_entityform" : {
+      "LABEL" : "Master: on save existing entityform",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Entityform", "Master" ],
+      "REQUIRES" : [ "rules_conditional", "rules", "entityform" ],
+      "ON" : { "entityform_update" : [] },
+      "DO" : [
+        { "SWITCH" : {
+            "USING" : { "data" : [ "entityform:type" ] },
+            "DO" : [
+              { "CASE" : {
+                  "USING" : { "value" : "warzone_campaign_phase" },
+                  "DO" : [ { "redirect" : { "url" : [ "entityform:field-event-link:url" ] } } ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "warzone_campaign_factions" },
+                  "DO" : [ { "redirect" : { "url" : [ "entityform:field-event-link:url" ] } } ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_war_zone_campaign_add_points'] = entity_import('rules_config', '{ "rules_war_zone_campaign_add_points" : {
+      "LABEL" : "War Zone: Campaign: Add Points",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "USES VARIABLES" : { "points" : { "label" : "Points", "type" : "entityform" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "points" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "war_zone_campaign_add_points" : "war_zone_campaign_add_points" } }
+          }
+        },
+        { "entity_is_of_bundle" : {
+            "entity" : [ "points:field-event-link" ],
+            "type" : "node",
+            "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "entityform",
+              "param_type" : "score_card",
+              "param_created" : "now",
+              "param_user" : [ "points:field-event-link:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "scorecard" : "scorecard" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard:field-event-link" ],
+            "value" : [ "points:field-event-link" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard:field-registration-sc" ],
+            "value" : [ "points:field-registration-sc" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard:field-explanation-sc" ],
+            "value" : [ "points:field-explanation-sc" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard:field-additional-points-sc" ],
+            "value" : [ "points:field-points-to-award" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard:field-phase-sc" ],
+            "value" : [ "points:field-phase-sc" ]
+          }
+        },
+        { "data_set" : { "data" : [ "scorecard:field-state-sc" ], "value" : "40" } },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is_empty" : { "data" : [ "points:field-narrative-text" ] } },
+              "DO" : [
+                { "entity_create" : {
+                    "USING" : {
+                      "type" : "message",
+                      "param_type" : "campaign_reported_battle",
+                      "param_user" : [ "points:field-event-link:author" ]
+                    },
+                    "PROVIDE" : { "entity_created" : { "message" : "Message" } }
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "message:field-stream-node-ref" ],
+                    "value" : [ "points:field-event-link" ]
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "message:arguments:messtext" ],
+                    "value" : "\\u003Cp\\u003E[points:field-narrative-text:value]\\u003C\\/p\\u003E\\r\\n\\u003Csmall class=\\u0022text-muted\\u0022\\u003E[scorecard:field-registration-sc:user] has been awarded additional points\\u003C\\/small\\u003E"
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "message:field-image" ],
+                    "value" : [ "points:field-event-link:field-campaign-badge" ]
+                  }
+                },
+                { "data_set" : { "data" : [ "message:field-chronicle-icon" ], "value" : "flag" } },
+                { "data_set" : {
+                    "data" : [ "message:field-title-chronicle" ],
+                    "value" : { "value" : {
+                        "value" : "\\u003Cp\\u003EObjective Secured\\u003C\\/p\\u003E\\r\\n",
+                        "format" : "filtered_html"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
+  $items['rules_wz_all_create_battle_report_from_form'] = entity_import('rules_config', '{ "rules_wz_all_create_battle_report_from_form" : {
+      "LABEL" : "WZ: All: Create Battle Report from Form",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "p1" : { "label" : "P1", "type" : "user" },
+        "p1_result" : { "label" : "P1 Result", "type" : "integer" },
+        "p1_army" : { "label" : "P1 Army", "type" : "taxonomy_term" },
+        "p2_army" : { "label" : "P2 Army", "type" : "taxonomy_term" },
+        "wzid" : { "label" : "War Zone", "type" : "node" },
+        "title" : { "label" : "Title", "type" : "text" },
+        "brid" : { "label" : "Battle Report", "type" : "node", "parameter" : false }
+      },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "node",
+              "param_type" : "game_results",
+              "param_title" : [ "title" ],
+              "param_author" : [ "p1" ]
+            },
+            "PROVIDE" : { "entity_created" : { "battle_report" : "Battle Report" } }
+          }
+        },
+        { "data_set" : { "data" : [ "battle-report:field-game-date" ], "value" : "now" } },
+        { "data_set" : { "data" : [ "battle-report:field-your-army" ], "value" : [ "p1-army" ] } },
+        { "data_set" : {
+            "data" : [ "battle-report:field-opponent-s-army" ],
+            "value" : [ "p2-army" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "battle-report:field-your-results" ],
+            "value" : [ "p1-result" ]
+          }
+        },
+        { "data_set" : { "data" : [ "battle-report:field-event-link" ], "value" : [ "wzid" ] } },
+        { "entity_save" : { "data" : [ "battle-report" ], "immediate" : 1 } },
+        { "data_set" : { "data" : [ "brid" ], "value" : [ "battle-report" ] } }
+      ],
+      "PROVIDES VARIABLES" : [ "brid" ]
     }
   }');
   return $items;

@@ -8,7 +8,13 @@
  * Implements hook_ctools_plugin_api().
  */
 function narrative_campaigns_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
   if ($module == "relation" && $api == "relation_type_default") {
+    return array("version" => "1");
+  }
+  if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
 }
@@ -25,6 +31,35 @@ function narrative_campaigns_views_api($module = NULL, $api = NULL) {
  */
 function narrative_campaigns_default_entityform_type() {
   $items = array();
+  $items['war_zone_campaign_add_points'] = entity_import('entityform_type', '{
+    "type" : "war_zone_campaign_add_points",
+    "label" : "War Zone: Campaign: Add Points",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "filtered_html" },
+      "submit_button_text" : "",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "filtered_html" },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
+      "resubmit_action" : "new",
+      "redirect_path" : "[current-page:url:relative]",
+      "instruction_pre" : { "value" : "", "format" : "filtered_html" }
+    },
+    "weight" : "0",
+    "paths" : []
+  }');
   $items['warzone_campaign_factions'] = entity_import('entityform_type', '{
     "type" : "warzone_campaign_factions",
     "label" : "Warzone: Campaign: Factions",
@@ -151,14 +186,36 @@ function narrative_campaigns_flag_default_flags() {
     'show_on_teaser' => 1,
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'narrative_campaigns',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 
+}
+
+/**
+ * Implements hook_default_message_type().
+ */
+function narrative_campaigns_default_message_type() {
+  $items = array();
+  $items['campaign_reported_battle'] = entity_import('message_type', '{
+    "name" : "campaign_reported_battle",
+    "description" : "Campaign: Reported Battle",
+    "argument_keys" : [ "!messtext" ],
+    "argument" : [],
+    "category" : "message_type",
+    "data" : {
+      "token options" : { "clear" : 0 },
+      "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }
+    },
+    "language" : "",
+    "arguments" : null,
+    "message_text" : { "und" : [ { "value" : "!messtext\\r\\n", "format" : "php_code" } ] }
+  }');
+  return $items;
 }
 
 /**

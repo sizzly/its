@@ -201,61 +201,153 @@ function war_zones_views_default_views() {
   $export['war_zone_all_battles'] = $view;
 
   $view = new view();
-  $view->name = 'war_zone_all_lists';
+  $view->name = 'war_zone_all_in_progress_score';
   $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'War Zone: All: Lists';
+  $view->base_table = 'entityform';
+  $view->human_name = 'War Zone: All: In Progress Score';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'War Zones';
+  $handler->display->display_options['title'] = 'Current Rankings';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_event_date) */
-  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
-  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
-  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'entityform_id' => 'entityform_id',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['id'] = 'field_registration_sc_target_id';
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['table'] = 'field_data_field_registration_sc';
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['field'] = 'field_registration_sc_target_id';
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['label'] = 'Player Registration';
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['required'] = TRUE;
+  /* Relationship: Node registration: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['relationship'] = 'field_registration_sc_target_id';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Player';
+  /* Field: SUM(Field: Victory) */
+  $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
+  $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
+  $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
+  $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_victory']['label'] = 'W';
+  $handler->display->display_options['fields']['field_victory']['empty'] = '0';
+  /* Field: SUM(Field: Defeat) */
+  $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
+  $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
+  $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
+  $handler->display->display_options['fields']['field_defeat']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_defeat']['label'] = 'L';
+  $handler->display->display_options['fields']['field_defeat']['empty'] = '0';
+  /* Field: SUM(Field: Draw) */
+  $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
+  $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
+  $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
+  $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_draw']['label'] = 'D';
+  /* Field: SUM(Entityform Submission: Additional Points) */
+  $handler->display->display_options['fields']['field_additional_points_sc']['id'] = 'field_additional_points_sc';
+  $handler->display->display_options['fields']['field_additional_points_sc']['table'] = 'field_data_field_additional_points_sc';
+  $handler->display->display_options['fields']['field_additional_points_sc']['field'] = 'field_additional_points_sc';
+  $handler->display->display_options['fields']['field_additional_points_sc']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_additional_points_sc']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_additional_points_sc']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: SUM(Entityform Submission: Battle Points) */
+  $handler->display->display_options['fields']['field_battle_points_sc']['id'] = 'field_battle_points_sc';
+  $handler->display->display_options['fields']['field_battle_points_sc']['table'] = 'field_data_field_battle_points_sc';
+  $handler->display->display_options['fields']['field_battle_points_sc']['field'] = 'field_battle_points_sc';
+  $handler->display->display_options['fields']['field_battle_points_sc']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_battle_points_sc']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_battle_points_sc']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: SUM(Entityform Submission: Comp) */
+  $handler->display->display_options['fields']['field_comp_sc']['id'] = 'field_comp_sc';
+  $handler->display->display_options['fields']['field_comp_sc']['table'] = 'field_data_field_comp_sc';
+  $handler->display->display_options['fields']['field_comp_sc']['field'] = 'field_comp_sc';
+  $handler->display->display_options['fields']['field_comp_sc']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_comp_sc']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_comp_sc']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: SUM(Entityform Submission: Painting) */
+  $handler->display->display_options['fields']['field_painting_sc']['id'] = 'field_painting_sc';
+  $handler->display->display_options['fields']['field_painting_sc']['table'] = 'field_data_field_painting_sc';
+  $handler->display->display_options['fields']['field_painting_sc']['field'] = 'field_painting_sc';
+  $handler->display->display_options['fields']['field_painting_sc']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_painting_sc']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_painting_sc']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: SUM(Entityform Submission: Sportsmanship) */
+  $handler->display->display_options['fields']['field_sportsmanship_sc']['id'] = 'field_sportsmanship_sc';
+  $handler->display->display_options['fields']['field_sportsmanship_sc']['table'] = 'field_data_field_sportsmanship_sc';
+  $handler->display->display_options['fields']['field_sportsmanship_sc']['field'] = 'field_sportsmanship_sc';
+  $handler->display->display_options['fields']['field_sportsmanship_sc']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_sportsmanship_sc']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sportsmanship_sc']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: SUM(Entityform Submission: Aggregate Score) */
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['id'] = 'field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['table'] = 'field_data_field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['field'] = 'field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['label'] = 'Total Score';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['empty'] = '0';
+  /* Sort criterion: SUM(Entityform Submission: Aggregate Score (field_aggregate_score_sc)) */
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['id'] = 'field_aggregate_score_sc_value';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['table'] = 'field_data_field_aggregate_score_sc';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['field'] = 'field_aggregate_score_sc_value';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['order'] = 'DESC';
+  /* Filter criterion: Entityform Submission: Entityform Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'war_zone_league' => 'war_zone_league',
-    'narrative_campaign_instance' => 'narrative_campaign_instance',
-    'special_event' => 'special_event',
-    'war_zone_tournament' => 'war_zone_tournament',
+    'score_card' => 'score_card',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'war-zone/list';
-  $export['war_zone_all_lists'] = $view;
+  /* Display: Simple Ranks */
+  $handler = $view->new_display('panel_pane', 'Simple Ranks', 'panel_pane_1');
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['war_zone_all_in_progress_score'] = $view;
 
   $view = new view();
   $view->name = 'war_zone_all_messages';
@@ -957,16 +1049,6 @@ function war_zones_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Register link */
-  $handler->display->display_options['fields']['register_link']['id'] = 'register_link';
-  $handler->display->display_options['fields']['register_link']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['register_link']['field'] = 'register_link';
-  $handler->display->display_options['fields']['register_link']['label'] = '';
-  $handler->display->display_options['fields']['register_link']['element_type'] = 'div';
-  $handler->display->display_options['fields']['register_link']['element_class'] = 'lead';
-  $handler->display->display_options['fields']['register_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['register_link']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['register_link']['text'] = 'Register';
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -1175,6 +1257,846 @@ print $value;
   $export['war_zone_all_platers'] = $view;
 
   $view = new view();
+  $view->name = 'war_zone_all_registration';
+  $view->description = '';
+  $view->tag = 'node_registration';
+  $view->base_table = 'node_registration';
+  $view->human_name = 'War Zone: All: Registration';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Registrations';
+  $handler->display->display_options['css_class'] = 'node-registration';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<h3>No Registered Players</h3>
+<p>No player registrations match the criteria you have provided.</p>';
+  /* Relationship: Node registration: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Node registration: Event node */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  /* Field: Node registration: Attended */
+  $handler->display->display_options['fields']['attended_1']['id'] = 'attended_1';
+  $handler->display->display_options['fields']['attended_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['attended_1']['field'] = 'attended';
+  $handler->display->display_options['fields']['attended_1']['label'] = '';
+  $handler->display->display_options['fields']['attended_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['attended_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['attended_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['attended_1']['not'] = 0;
+  /* Field: Node registration: Cancelled */
+  $handler->display->display_options['fields']['cancelled_1']['id'] = 'cancelled_1';
+  $handler->display->display_options['fields']['cancelled_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['cancelled_1']['field'] = 'cancelled';
+  $handler->display->display_options['fields']['cancelled_1']['label'] = '';
+  $handler->display->display_options['fields']['cancelled_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['cancelled_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['cancelled_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['cancelled_1']['not'] = 0;
+  /* Field: Node registration: Verified */
+  $handler->display->display_options['fields']['verified_1']['id'] = 'verified_1';
+  $handler->display->display_options['fields']['verified_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['verified_1']['field'] = 'verified';
+  $handler->display->display_options['fields']['verified_1']['label'] = '';
+  $handler->display->display_options['fields']['verified_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['verified_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['verified_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['verified_1']['not'] = 0;
+  /* Field: Node registration: Waitinglist */
+  $handler->display->display_options['fields']['waitinglist_1']['id'] = 'waitinglist_1';
+  $handler->display->display_options['fields']['waitinglist_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['waitinglist_1']['field'] = 'waitinglist';
+  $handler->display->display_options['fields']['waitinglist_1']['label'] = '';
+  $handler->display->display_options['fields']['waitinglist_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['waitinglist_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['waitinglist_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['waitinglist_1']['not'] = 0;
+  /* Field: Bulk operations: Node registration */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '20';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::node_registration_attend_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_registration_cancel_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::system_message_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+        ),
+      ),
+      'postpone_processing' => 0,
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::system_goto_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_registration_send_mail_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_registration_unattend_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_registration_unverify_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::node_registration_verify_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+  );
+  /* Field: Node registration: Registration ID */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['label'] = 'ID';
+  $handler->display->display_options['fields']['registration_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration'] = 1;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration_edit'] = 0;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration_email'] = 0;
+  /* Field: Node registration: E-mail */
+  $handler->display->display_options['fields']['email']['id'] = 'email';
+  $handler->display->display_options['fields']['email']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['email']['field'] = 'email';
+  $handler->display->display_options['fields']['email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['email']['link_to_node_registration'] = 0;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_edit'] = 1;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_email'] = 0;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'User';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['title']['label'] = 'Event';
+  /* Field: Node registration: Slots */
+  $handler->display->display_options['fields']['slots']['id'] = 'slots';
+  $handler->display->display_options['fields']['slots']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['slots']['field'] = 'slots';
+  $handler->display->display_options['fields']['slots']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['slots']['separator'] = '';
+  /* Field: Node registration: Created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  /* Field: Node registration: Cancelled */
+  $handler->display->display_options['fields']['cancelled']['id'] = 'cancelled';
+  $handler->display->display_options['fields']['cancelled']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['cancelled']['field'] = 'cancelled';
+  $handler->display->display_options['fields']['cancelled']['element_class'] = 'cancelled [cancelled_1]';
+  $handler->display->display_options['fields']['cancelled']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['cancelled']['not'] = 0;
+  /* Field: Node registration: Waitinglist */
+  $handler->display->display_options['fields']['waitinglist']['id'] = 'waitinglist';
+  $handler->display->display_options['fields']['waitinglist']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['waitinglist']['field'] = 'waitinglist';
+  $handler->display->display_options['fields']['waitinglist']['element_class'] = 'waitinglist [waitinglist_1]';
+  $handler->display->display_options['fields']['waitinglist']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['waitinglist']['not'] = 0;
+  /* Field: Node registration: Verified */
+  $handler->display->display_options['fields']['verified']['id'] = 'verified';
+  $handler->display->display_options['fields']['verified']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['verified']['field'] = 'verified';
+  $handler->display->display_options['fields']['verified']['element_class'] = 'verified [verified_1]';
+  $handler->display->display_options['fields']['verified']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['verified']['not'] = 0;
+  /* Field: Node registration: Attended */
+  $handler->display->display_options['fields']['attended']['id'] = 'attended';
+  $handler->display->display_options['fields']['attended']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['attended']['field'] = 'attended';
+  $handler->display->display_options['fields']['attended']['element_class'] = 'attended [attended_1]';
+  $handler->display->display_options['fields']['attended']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['attended']['not'] = 0;
+  /* Field: Node registration: Edit link */
+  $handler->display->display_options['fields']['edit_node_registration']['id'] = 'edit_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['field'] = 'edit_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Node registration: View link */
+  $handler->display->display_options['fields']['view_node_registration']['id'] = 'view_node_registration';
+  $handler->display->display_options['fields']['view_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['view_node_registration']['field'] = 'view_node_registration';
+  $handler->display->display_options['fields']['view_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['view_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Node registration: Cancel link */
+  $handler->display->display_options['fields']['cancel_node_registration']['id'] = 'cancel_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['field'] = 'cancel_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['cancel_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['cancel_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['cancel_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Node registration: Delete link */
+  $handler->display->display_options['fields']['delete_node_registration']['id'] = 'delete_node_registration';
+  $handler->display->display_options['fields']['delete_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['delete_node_registration']['field'] = 'delete_node_registration';
+  $handler->display->display_options['fields']['delete_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['delete_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['delete_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['delete_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[view_node_registration] [edit_node_registration] [cancel_node_registration] [delete_node_registration]';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
+  /* Sort criterion: Node registration: Created */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node_registration';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Node registration: Node nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node_registration';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Node registration: Attended */
+  $handler->display->display_options['filters']['attended']['id'] = 'attended';
+  $handler->display->display_options['filters']['attended']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['attended']['field'] = 'attended';
+  $handler->display->display_options['filters']['attended']['value'] = 'All';
+  $handler->display->display_options['filters']['attended']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['attended']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['attended']['expose']['label'] = 'Attended';
+  $handler->display->display_options['filters']['attended']['expose']['operator'] = 'attended_op';
+  $handler->display->display_options['filters']['attended']['expose']['identifier'] = 'attended';
+  /* Filter criterion: Node registration: Cancelled */
+  $handler->display->display_options['filters']['cancelled']['id'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['cancelled']['field'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['value'] = 'All';
+  $handler->display->display_options['filters']['cancelled']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['cancelled']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['cancelled']['expose']['label'] = 'Cancelled';
+  $handler->display->display_options['filters']['cancelled']['expose']['operator'] = 'cancelled_op';
+  $handler->display->display_options['filters']['cancelled']['expose']['identifier'] = 'cancelled';
+
+  /* Display: Manage Registrations */
+  $handler = $view->new_display('panel_pane', 'Manage Registrations', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'attended_1' => 'attended_1',
+    'cancelled_1' => 'cancelled_1',
+    'verified_1' => 'verified_1',
+    'waitinglist_1' => 'waitinglist_1',
+    'views_bulk_operations' => 'views_bulk_operations',
+    'registration_id' => 'registration_id',
+    'email' => 'email',
+    'field_register_real_name' => 'field_register_real_name',
+    'name' => 'field_register_real_name',
+    'title' => 'title',
+    'slots' => 'slots',
+    'created' => 'created',
+    'cancelled' => 'cancelled',
+    'waitinglist' => 'waitinglist',
+    'verified' => 'verified',
+    'attended' => 'attended',
+    'edit_node_registration' => 'edit_node_registration',
+    'view_node_registration' => 'view_node_registration',
+    'cancel_node_registration' => 'cancel_node_registration',
+    'delete_node_registration' => 'delete_node_registration',
+    'ops' => 'ops',
+    'nothing' => 'nothing',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'attended_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'cancelled_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'verified_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'waitinglist_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'registration_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'email' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_register_real_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '<br>',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'slots' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'cancelled' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'waitinglist' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'verified' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'attended' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node_registration' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'view_node_registration' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'cancel_node_registration' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'delete_node_registration' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'ops' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<a name="registrations"></a>';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Node registration: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Node registration: Event node */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  /* Relationship: Flags: paid */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'paid';
+  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Node registration: Attended */
+  $handler->display->display_options['fields']['attended_1']['id'] = 'attended_1';
+  $handler->display->display_options['fields']['attended_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['attended_1']['field'] = 'attended';
+  $handler->display->display_options['fields']['attended_1']['label'] = '';
+  $handler->display->display_options['fields']['attended_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['attended_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['attended_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['attended_1']['not'] = 0;
+  /* Field: Node registration: Cancelled */
+  $handler->display->display_options['fields']['cancelled_1']['id'] = 'cancelled_1';
+  $handler->display->display_options['fields']['cancelled_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['cancelled_1']['field'] = 'cancelled';
+  $handler->display->display_options['fields']['cancelled_1']['label'] = '';
+  $handler->display->display_options['fields']['cancelled_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['cancelled_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['cancelled_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['cancelled_1']['not'] = 0;
+  /* Field: Node registration: Verified */
+  $handler->display->display_options['fields']['verified_1']['id'] = 'verified_1';
+  $handler->display->display_options['fields']['verified_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['verified_1']['field'] = 'verified';
+  $handler->display->display_options['fields']['verified_1']['label'] = '';
+  $handler->display->display_options['fields']['verified_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['verified_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['verified_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['verified_1']['not'] = 0;
+  /* Field: Node registration: Waitinglist */
+  $handler->display->display_options['fields']['waitinglist_1']['id'] = 'waitinglist_1';
+  $handler->display->display_options['fields']['waitinglist_1']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['waitinglist_1']['field'] = 'waitinglist';
+  $handler->display->display_options['fields']['waitinglist_1']['label'] = '';
+  $handler->display->display_options['fields']['waitinglist_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['waitinglist_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['waitinglist_1']['type'] = 'y-n';
+  $handler->display->display_options['fields']['waitinglist_1']['not'] = 0;
+  /* Field: Bulk operations: Node registration */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '20';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::node_registration_attend_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Mark Attendance',
+    ),
+    'action::node_registration_cancel_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Mark Cancelled',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_revision' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_registration_send_mail_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_registration_unattend_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Mark Absent',
+    ),
+    'action::node_registration_uncancel_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Reverse Cancellation',
+    ),
+    'action::node_registration_unverify_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_registration_unwait_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Move out of waiting list',
+    ),
+    'rules_component::rules_update_game_result' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_registration_verify_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_registration_wait_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Move to waiting list',
+    ),
+  );
+  /* Field: Node registration: Registration ID */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['label'] = 'ID';
+  $handler->display->display_options['fields']['registration_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration'] = 1;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration_edit'] = 0;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration_email'] = 0;
+  /* Field: Node registration: E-mail */
+  $handler->display->display_options['fields']['email']['id'] = 'email';
+  $handler->display->display_options['fields']['email']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['email']['field'] = 'email';
+  $handler->display->display_options['fields']['email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['email']['link_to_node_registration'] = 0;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_edit'] = 1;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_email'] = 0;
+  /* Field: Node registration: Real Name */
+  $handler->display->display_options['fields']['field_register_real_name']['id'] = 'field_register_real_name';
+  $handler->display->display_options['fields']['field_register_real_name']['table'] = 'field_data_field_register_real_name';
+  $handler->display->display_options['fields']['field_register_real_name']['field'] = 'field_register_real_name';
+  $handler->display->display_options['fields']['field_register_real_name']['label'] = 'Name';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Account';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['title']['label'] = 'Event';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  /* Field: Node registration: Slots */
+  $handler->display->display_options['fields']['slots']['id'] = 'slots';
+  $handler->display->display_options['fields']['slots']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['slots']['field'] = 'slots';
+  $handler->display->display_options['fields']['slots']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['slots']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['slots']['separator'] = '';
+  /* Field: Node registration: Created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  /* Field: Node registration: Cancelled */
+  $handler->display->display_options['fields']['cancelled']['id'] = 'cancelled';
+  $handler->display->display_options['fields']['cancelled']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['cancelled']['field'] = 'cancelled';
+  $handler->display->display_options['fields']['cancelled']['element_class'] = 'cancelled [cancelled_1]';
+  $handler->display->display_options['fields']['cancelled']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['cancelled']['not'] = 0;
+  /* Field: Node registration: Waitinglist */
+  $handler->display->display_options['fields']['waitinglist']['id'] = 'waitinglist';
+  $handler->display->display_options['fields']['waitinglist']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['waitinglist']['field'] = 'waitinglist';
+  $handler->display->display_options['fields']['waitinglist']['element_class'] = 'waitinglist [waitinglist_1]';
+  $handler->display->display_options['fields']['waitinglist']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['waitinglist']['not'] = 0;
+  /* Field: Node registration: Verified */
+  $handler->display->display_options['fields']['verified']['id'] = 'verified';
+  $handler->display->display_options['fields']['verified']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['verified']['field'] = 'verified';
+  $handler->display->display_options['fields']['verified']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['verified']['element_class'] = 'verified [verified_1]';
+  $handler->display->display_options['fields']['verified']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['verified']['not'] = 0;
+  /* Field: Node registration: Attended */
+  $handler->display->display_options['fields']['attended']['id'] = 'attended';
+  $handler->display->display_options['fields']['attended']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['attended']['field'] = 'attended';
+  $handler->display->display_options['fields']['attended']['element_class'] = 'attended [attended_1]';
+  $handler->display->display_options['fields']['attended']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['attended']['not'] = 0;
+  /* Field: Node registration: Edit link */
+  $handler->display->display_options['fields']['edit_node_registration']['id'] = 'edit_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['field'] = 'edit_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Node registration: View link */
+  $handler->display->display_options['fields']['view_node_registration']['id'] = 'view_node_registration';
+  $handler->display->display_options['fields']['view_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['view_node_registration']['field'] = 'view_node_registration';
+  $handler->display->display_options['fields']['view_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['view_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Node registration: Cancel link */
+  $handler->display->display_options['fields']['cancel_node_registration']['id'] = 'cancel_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['field'] = 'cancel_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['cancel_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['cancel_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['cancel_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Node registration: Delete link */
+  $handler->display->display_options['fields']['delete_node_registration']['id'] = 'delete_node_registration';
+  $handler->display->display_options['fields']['delete_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['delete_node_registration']['field'] = 'delete_node_registration';
+  $handler->display->display_options['fields']['delete_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['delete_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['delete_node_registration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['delete_node_registration']['element_default_classes'] = FALSE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = 'Paid Fee';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[view_node_registration] [edit_node_registration] [cancel_node_registration] [delete_node_registration]';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Node registration: Node nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node_registration';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
+  $export['war_zone_all_registration'] = $view;
+
+  $view = new view();
   $view->name = 'war_zone_all_registrations';
   $view->description = '';
   $view->tag = 'default';
@@ -1337,7 +2259,7 @@ print $value;
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node_registration';
-  $view->human_name = 'War Zone: Email Player Rules';
+  $view->human_name = 'War Zone: All: Registration Rules';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1376,8 +2298,8 @@ print $value;
   $handler->display->display_options['filters']['cancelled']['field'] = 'cancelled';
   $handler->display->display_options['filters']['cancelled']['value'] = '0';
 
-  /* Display: Rules */
-  $handler = $view->new_display('views_rules', 'Rules', 'views_rules_1');
+  /* Display: Email on Article */
+  $handler = $view->new_display('views_rules', 'Email on Article', 'views_rules_1');
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['rules_parameter'] = array(
@@ -1402,6 +2324,95 @@ print $value;
       'type' => 'text',
       'label' => 'Real Name',
       'name' => 'field_register_real_name',
+    ),
+  );
+
+  /* Display: Find Registration */
+  $handler = $view->new_display('views_rules', 'Find Registration', 'views_rules_2');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Node registration: E-mail */
+  $handler->display->display_options['fields']['email']['id'] = 'email';
+  $handler->display->display_options['fields']['email']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['email']['field'] = 'email';
+  /* Field: Node registration: Real Name */
+  $handler->display->display_options['fields']['field_register_real_name']['id'] = 'field_register_real_name';
+  $handler->display->display_options['fields']['field_register_real_name']['table'] = 'field_data_field_register_real_name';
+  $handler->display->display_options['fields']['field_register_real_name']['field'] = 'field_register_real_name';
+  /* Field: Node registration: Registration ID */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration'] = 0;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration_edit'] = 0;
+  $handler->display->display_options['fields']['registration_id']['link_to_node_registration_email'] = 0;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Node registration: Node nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node_registration';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Node registration: User uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node_registration';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Node registration: Cancelled */
+  $handler->display->display_options['filters']['cancelled']['id'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['cancelled']['field'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['value'] = '0';
+  /* Filter criterion: Node registration: Waitinglist */
+  $handler->display->display_options['filters']['waitinglist']['id'] = 'waitinglist';
+  $handler->display->display_options['filters']['waitinglist']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['waitinglist']['field'] = 'waitinglist';
+  $handler->display->display_options['filters']['waitinglist']['value'] = '0';
+  $handler->display->display_options['rules_parameter'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => 'Node registration: Node nid',
+      'name' => 'nid',
+    ),
+    'uid' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => 'Node registration: User uid',
+      'name' => 'uid',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'email' => array(
+      'enabled' => 0,
+      'rendered' => 1,
+      'type' => 'text',
+      'label' => 'E-mail',
+      'name' => 'email',
+    ),
+    'field_register_real_name' => array(
+      'enabled' => 0,
+      'rendered' => 1,
+      'type' => 'text',
+      'label' => 'Real Name',
+      'name' => 'field_register_real_name',
+    ),
+    'registration_id' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'integer',
+      'label' => 'Registration ID',
+      'name' => 'registration_id',
     ),
   );
   $export['war_zone_email_player_rules'] = $view;
@@ -1434,6 +2445,13 @@ print $value;
   $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<h3>No Results</h3>
+<p>There are no War Zones that meet your criteria</p>';
   /* Relationship: Content: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
@@ -1553,13 +2571,11 @@ print $value;
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'ladder_tournament' => 'ladder_tournament',
-    'passive_ladder' => 'passive_ladder',
-    'pyramid_league' => 'pyramid_league',
-    'round_robin_league' => 'round_robin_league',
-    'warmachine_tournament' => 'warmachine_tournament',
-    'war_zone' => 'war_zone',
     'war_zone_league' => 'war_zone_league',
+    'league' => 'league',
+    'narrative_campaign_instance' => 'narrative_campaign_instance',
+    'special_event' => 'special_event',
+    'war_zone_tournament' => 'war_zone_tournament',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Address - Locality (i.e. City) */
@@ -1592,36 +2608,6 @@ print $value;
 
   /* Display: League Page */
   $handler = $view->new_display('page', 'League Page', 'page_1');
-  $handler->display->display_options['path'] = 'warzone/leagues';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Leagues';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['type'] = 'tab';
-  $handler->display->display_options['tab_options']['title'] = 'Warzones';
-  $handler->display->display_options['tab_options']['weight'] = '0';
-
-  /* Display: Battlefield */
-  $handler = $view->new_display('panel_pane', 'Battlefield', 'panel_pane_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Competitive Play';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_location_nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1637,11 +2623,46 @@ print $value;
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'war_zone_league' => 'war_zone_league',
-    'war_zone_tournament' => 'war_zone_tournament',
+    'league' => 'league',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  $handler->display->display_options['pane_category']['name'] = 'Battlefield';
-  $handler->display->display_options['pane_category']['weight'] = '0';
+  /* Filter criterion: Content: Address - Locality (i.e. City) */
+  $handler->display->display_options['filters']['field_address_locality']['id'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['table'] = 'field_data_field_address';
+  $handler->display->display_options['filters']['field_address_locality']['field'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['relationship'] = 'field_location_nid';
+  $handler->display->display_options['filters']['field_address_locality']['group'] = 1;
+  $handler->display->display_options['filters']['field_address_locality']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_address_locality']['expose']['operator_id'] = 'field_address_locality_op';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['label'] = 'City';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['operator'] = 'field_address_locality_op';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['identifier'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    7 => 0,
+    9 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['label'] = 'Address (field_address:locality)';
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['identifier'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['path'] = 'warzone/leagues';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Leagues';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'Warzones';
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Tournament Page */
   $handler = $view->new_display('page', 'Tournament Page', 'page_2');
@@ -1703,246 +2724,16 @@ print $value;
   $handler->display->display_options['tab_options']['title'] = 'Warzones';
   $handler->display->display_options['tab_options']['weight'] = '0';
 
-  /* Display: War Zone Page Slider */
-  $handler = $view->new_display('panel_pane', 'War Zone Page Slider', 'panel_pane_2');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
-  $handler->display->display_options['style_options']['interval'] = '10000';
-  $handler->display->display_options['style_options']['navigation'] = 0;
-  $handler->display->display_options['style_options']['indicators'] = 0;
-  $handler->display->display_options['style_options']['pause'] = 0;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Unfiltered text */
-  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div align="center">
-<a href="/warzone/leagues" class="btn btn-default">More Leagues</a>
-</div>';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Campaign Badge */
-  $handler->display->display_options['fields']['field_campaign_badge']['id'] = 'field_campaign_badge';
-  $handler->display->display_options['fields']['field_campaign_badge']['table'] = 'field_data_field_campaign_badge';
-  $handler->display->display_options['fields']['field_campaign_badge']['field'] = 'field_campaign_badge';
-  $handler->display->display_options['fields']['field_campaign_badge']['label'] = '';
-  $handler->display->display_options['fields']['field_campaign_badge']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_campaign_badge']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_campaign_badge']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_campaign_badge']['settings'] = array(
-    'image_style' => '',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Status */
-  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
-  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['label'] = '';
-  $handler->display->display_options['fields']['field_status']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_status']['element_class'] = 'label label-default';
-  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
-  /* Field: Content: League Type */
-  $handler->display->display_options['fields']['field_league_type']['id'] = 'field_league_type';
-  $handler->display->display_options['fields']['field_league_type']['table'] = 'field_data_field_league_type';
-  $handler->display->display_options['fields']['field_league_type']['field'] = 'field_league_type';
-  $handler->display->display_options['fields']['field_league_type']['label'] = '';
-  $handler->display->display_options['fields']['field_league_type']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_league_type']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['label'] = 'Battle Begins';
-  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'hide',
-  );
-  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Address */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['relationship'] = 'field_location_nid';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['text'] = '([field_address-locality], [field_address-administrative_area], [field_address-country])';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
-    ),
-  );
-  /* Field: Content: Battlefield */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['label'] = '';
-  $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['text'] = '[field_location] [field_address]';
-  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['empty'] = '[Classified]';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'ladder_tournament' => 'ladder_tournament',
-    'passive_ladder' => 'passive_ladder',
-    'pyramid_league' => 'pyramid_league',
-    'round_robin_league' => 'round_robin_league',
-    'warmachine_tournament' => 'warmachine_tournament',
-    'war_zone' => 'war_zone',
-    'war_zone_league' => 'war_zone_league',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Status (field_status) */
-  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
-  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
-  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
-  $handler->display->display_options['filters']['field_status_value']['value'] = array(
-    3 => '3',
-    5 => '5',
-  );
+  /* Display: All Warzones */
+  $handler = $view->new_display('page', 'All Warzones', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'War Zones';
+  $handler->display->display_options['path'] = 'warzone/all';
 
-  /* Display: War Zone Page Slider */
-  $handler = $view->new_display('panel_pane', 'War Zone Page Slider', 'panel_pane_3');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
-  $handler->display->display_options['style_options']['interval'] = '10000';
-  $handler->display->display_options['style_options']['navigation'] = 0;
-  $handler->display->display_options['style_options']['indicators'] = 0;
-  $handler->display->display_options['style_options']['pause'] = 0;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Unfiltered text */
-  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div align="center">
-<a href="/warzone/tournaments" class="btn btn-default">More Tournaments</a>
-</div>';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Campaign Badge */
-  $handler->display->display_options['fields']['field_campaign_badge']['id'] = 'field_campaign_badge';
-  $handler->display->display_options['fields']['field_campaign_badge']['table'] = 'field_data_field_campaign_badge';
-  $handler->display->display_options['fields']['field_campaign_badge']['field'] = 'field_campaign_badge';
-  $handler->display->display_options['fields']['field_campaign_badge']['label'] = '';
-  $handler->display->display_options['fields']['field_campaign_badge']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_campaign_badge']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_campaign_badge']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_campaign_badge']['settings'] = array(
-    'image_style' => '',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Status */
-  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
-  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['label'] = '';
-  $handler->display->display_options['fields']['field_status']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_status']['element_class'] = 'label label-default';
-  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_tournament_type']['id'] = 'field_tournament_type';
-  $handler->display->display_options['fields']['field_tournament_type']['table'] = 'field_data_field_tournament_type';
-  $handler->display->display_options['fields']['field_tournament_type']['field'] = 'field_tournament_type';
-  $handler->display->display_options['fields']['field_tournament_type']['label'] = '';
-  $handler->display->display_options['fields']['field_tournament_type']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_tournament_type']['element_label_colon'] = FALSE;
-  /* Field: Content: League Type */
-  $handler->display->display_options['fields']['field_league_type']['id'] = 'field_league_type';
-  $handler->display->display_options['fields']['field_league_type']['table'] = 'field_data_field_league_type';
-  $handler->display->display_options['fields']['field_league_type']['field'] = 'field_league_type';
-  $handler->display->display_options['fields']['field_league_type']['label'] = '';
-  $handler->display->display_options['fields']['field_league_type']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_league_type']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['field_league_type']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_event_date_warzone']['id'] = 'field_event_date_warzone';
-  $handler->display->display_options['fields']['field_event_date_warzone']['table'] = 'field_data_field_event_date_warzone';
-  $handler->display->display_options['fields']['field_event_date_warzone']['field'] = 'field_event_date_warzone';
-  $handler->display->display_options['fields']['field_event_date_warzone']['label'] = 'Battle Begins';
-  /* Field: Content: Address */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['relationship'] = 'field_location_nid';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['text'] = '([field_address-locality], [field_address-administrative_area], [field_address-country])';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
-    ),
-  );
-  /* Field: Content: Battlefield */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['label'] = '';
-  $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['text'] = '[field_location] [field_address]';
-  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
+  /* Display: Narrative Campaign Instances */
+  $handler = $view->new_display('page', 'Narrative Campaign Instances', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Operational Campaigns';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1957,17 +2748,145 @@ print $value;
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'war_zone_tournament' => 'war_zone_tournament',
+    'narrative_campaign_instance' => 'narrative_campaign_instance',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Status (field_status) */
-  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
-  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
-  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
-  $handler->display->display_options['filters']['field_status_value']['value'] = array(
-    3 => '3',
-    5 => '5',
+  /* Filter criterion: Content: Address - Locality (i.e. City) */
+  $handler->display->display_options['filters']['field_address_locality']['id'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['table'] = 'field_data_field_address';
+  $handler->display->display_options['filters']['field_address_locality']['field'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['relationship'] = 'field_location_nid';
+  $handler->display->display_options['filters']['field_address_locality']['group'] = 1;
+  $handler->display->display_options['filters']['field_address_locality']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_address_locality']['expose']['operator_id'] = 'field_address_locality_op';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['label'] = 'City';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['operator'] = 'field_address_locality_op';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['identifier'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    7 => 0,
+    9 => 0,
+    8 => 0,
   );
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['label'] = 'Address (field_address:locality)';
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['identifier'] = 'field_address_locality';
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_address_locality']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['path'] = 'warzone/narrative-campaigns/operational';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Operational';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Campaigns */
+  $handler = $view->new_display('page', 'Campaigns', 'page_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Campaigns';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'warzone/narrative-campaigns/campaigns';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Campaigns';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Operational Pane */
+  $handler = $view->new_display('panel_pane', 'Operational Pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Operational Campaigns';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_4';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'narrative_campaign_instance' => 'narrative_campaign_instance',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Available Campaign Pane */
+  $handler = $view->new_display('panel_pane', 'Available Campaign Pane', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Available Campaigns';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_5';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['war_zone_list2'] = $view;
 
   return $export;

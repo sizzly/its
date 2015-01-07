@@ -29,16 +29,16 @@
         <div class="col-xs-12">
           <?php print $content['contentmaintop']; ?>
         </div>
-        <div class="col-md-6">
-          <?php print $content['contentmainleft']; ?>
-        </div>
-        <div class="col-md-6">
-          <?php print $content['contentmainright']; ?>
-        </div>
         <div class="clearfix">
-          <div class="col-xs-12">
-            <?php print $content['contentmainbottom']; ?>
+          <div class="col-md-6">
+            <?php print $content['contentmainleft']; ?>
           </div>
+          <div class="col-md-6">
+            <?php print $content['contentmainright']; ?>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <?php print $content['contentmainbottom']; ?>
         </div>
       </div>
     </div>

@@ -10,6 +10,257 @@
 function narrative_campaigns_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_event_link'
+  $field_instances['entityform-war_zone_campaign_add_points-field_event_link'] = array(
+    'bundle' => 'war_zone_campaign_add_points',
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_event_link',
+    'label' => 'Event',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'action' => 'hide',
+          'action_on_edit' => 1,
+          'fallback' => 'form_error',
+          'providers' => array(
+            'og_context' => 0,
+            'token_patterns' => 1,
+            'url' => 0,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+          'token_patterns' => '%node:nid',
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_explanation_sc'
+  $field_instances['entityform-war_zone_campaign_add_points-field_explanation_sc'] = array(
+    'bundle' => 'war_zone_campaign_add_points',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Explain why you\'re awarding the additional points.  This is a useful reminder and helps if someone questions the points.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_explanation_sc',
+    'label' => 'Explanation',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_narrative_text'
+  $field_instances['entityform-war_zone_campaign_add_points-field_narrative_text'] = array(
+    'bundle' => 'war_zone_campaign_add_points',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This text will be used to generate a chronicle entry for the campaign.  Helpful if you want to add some flavor to the additional points.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_narrative_text',
+    'label' => 'Narrative text',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_phase_sc'
+  $field_instances['entityform-war_zone_campaign_add_points-field_phase_sc'] = array(
+    'bundle' => 'war_zone_campaign_add_points',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_phase_sc',
+    'label' => 'Phase',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_points_to_award'
+  $field_instances['entityform-war_zone_campaign_add_points-field_points_to_award'] = array(
+    'bundle' => 'war_zone_campaign_add_points',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_points_to_award',
+    'label' => 'Points to Award',
+    'required' => 1,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_registration_sc'
+  $field_instances['entityform-war_zone_campaign_add_points-field_registration_sc'] = array(
+    'bundle' => 'war_zone_campaign_add_points',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_registration_sc',
+    'label' => 'Receipient',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'entityform-warzone_campaign_factions-field_event_link'
   $field_instances['entityform-warzone_campaign_factions-field_event_link'] = array(
     'bundle' => 'warzone_campaign_factions',
@@ -659,10 +910,45 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_mission'
+  $field_instances['entityform-warzone_campaign_report_battle_p-field_mission'] = array(
+    'bundle' => 'warzone_campaign_report_battle_p',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_mission',
+    'label' => 'Mission',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'
   $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -691,8 +977,9 @@ function narrative_campaigns_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'references_dialog_add' => 0,
@@ -701,8 +988,84 @@ function narrative_campaigns_field_default_field_instances() {
         'references_dialog_search_view' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_p1_army_wz'
+  $field_instances['entityform-warzone_campaign_report_battle_p-field_p1_army_wz'] = array(
+    'bundle' => 'warzone_campaign_report_battle_p',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Leave this field blank if you used the army you registered with',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_p1_army_wz',
+    'label' => 'Your Army',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_p2_army_wz'
+  $field_instances['entityform-warzone_campaign_report_battle_p-field_p2_army_wz'] = array(
+    'bundle' => 'warzone_campaign_report_battle_p',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_p2_army_wz',
+    'label' => 'Opponents Army',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 6,
     ),
   );
 
@@ -773,8 +1136,8 @@ function narrative_campaigns_field_default_field_instances() {
       'behaviors' => array(
         'prepopulate' => array(
           'action' => 'hide',
-          'action_on_edit' => 0,
-          'fallback' => 'none',
+          'action_on_edit' => 1,
+          'fallback' => 'form_error',
           'providers' => array(
             'og_context' => 0,
             'token_patterns' => 1,
@@ -782,7 +1145,7 @@ function narrative_campaigns_field_default_field_instances() {
           ),
           'skip_perm' => 0,
           'status' => 1,
-          'token_patterns' => '%user:uid',
+          'token_patterns' => '[site:current-user:uid]',
         ),
       ),
       'user_register_form' => FALSE,
@@ -801,6 +1164,46 @@ function narrative_campaigns_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_points_per_army'
+  $field_instances['entityform-warzone_campaign_report_battle_p-field_points_per_army'] = array(
+    'bundle' => 'warzone_campaign_report_battle_p',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_points_per_army',
+    'label' => 'Points per army',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 8,
     ),
   );
 
@@ -833,27 +1236,287 @@ function narrative_campaigns_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'message-campaign_reported_battle-field_chronicle_icon'
+  $field_instances['message-campaign_reported_battle-field_chronicle_icon'] = array(
+    'bundle' => 'campaign_reported_battle',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fire',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_chronicle_icon',
+    'label' => 'Chronicle Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'message-campaign_reported_battle-field_image'
+  $field_instances['message-campaign_reported_battle-field_image'] = array(
+    'bundle' => 'campaign_reported_battle',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'user/u[current-user:uid]',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'message-campaign_reported_battle-field_stream_node_ref'
+  $field_instances['message-campaign_reported_battle-field_stream_node_ref'] = array(
+    'bundle' => 'campaign_reported_battle',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_stream_node_ref',
+    'label' => 'Stream Node',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'message-campaign_reported_battle-field_title_chronicle'
+  $field_instances['message-campaign_reported_battle-field_title_chronicle'] = array(
+    'bundle' => 'campaign_reported_battle',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_title_chronicle',
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-missions-field_image'
+  $field_instances['taxonomy_term-missions-field_image'] = array(
+    'bundle' => 'missions',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 20757,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'dragdropfile_enabled' => 1,
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Campaign Points');
+  t('Chronicle Icon');
   t('Event');
+  t('Explain why you\'re awarding the additional points.  This is a useful reminder and helps if someone questions the points.');
+  t('Explanation');
   t('Iconography');
   t('Image');
+  t('Leave this field blank if you used the army you registered with');
   t('Mechanics text');
+  t('Mission');
   t('Name');
   t('Narrative text');
   t('Opponent');
+  t('Opponents Army');
   t('Phase');
   t('Player');
+  t('Points per army');
+  t('Points to Award');
   t('Prerequisite');
+  t('Receipient');
+  t('Stream Node');
   t('This field determines the order a phase shows up in lists of phases.  Lower weights are at the top.');
   t('This is the conditions that apply to a phase in order to start.  Most often this is simply "Previous Phase Complete" but it could also be that a certain faction won the previous round.');
+  t('This text will be used to generate a chronicle entry for the campaign.  Helpful if you want to add some flavor to the additional points.');
   t('Title');
   t('Weight');
+  t('Your Army');
   t('Your Results');
 
   return $field_instances;
