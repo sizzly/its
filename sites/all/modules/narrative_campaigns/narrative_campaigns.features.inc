@@ -209,7 +209,7 @@ function narrative_campaigns_default_message_type() {
     "category" : "message_type",
     "data" : {
       "token options" : { "clear" : 0 },
-      "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }
+      "purge" : { "override" : 1, "enabled" : 0, "quota" : "", "days" : "" }
     },
     "language" : "",
     "arguments" : null,

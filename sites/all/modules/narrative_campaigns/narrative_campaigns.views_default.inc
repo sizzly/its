@@ -439,6 +439,243 @@ function narrative_campaigns_views_default_views() {
   $export['war_zone_campaign_components'] = $view;
 
   $view = new view();
+  $view->name = 'war_zone_campaign_instance_active_phases';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'relation';
+  $view->human_name = 'War Zone: Campaign Instance: Phase Displays';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 1;
+  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 1;
+  /* Field: Relation: Rid */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'relation';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['exclude'] = TRUE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => '',
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
+  $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
+  /* Field: Field: Narrative text */
+  $handler->display->display_options['fields']['field_narrative_text']['id'] = 'field_narrative_text';
+  $handler->display->display_options['fields']['field_narrative_text']['table'] = 'field_data_field_narrative_text';
+  $handler->display->display_options['fields']['field_narrative_text']['field'] = 'field_narrative_text';
+  $handler->display->display_options['fields']['field_narrative_text']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_narrative_text']['label'] = '';
+  $handler->display->display_options['fields']['field_narrative_text']['element_label_colon'] = FALSE;
+  /* Sort criterion: Entityform Type: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'entityform_type';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['value'] = array(
+    5 => '5',
+  );
+
+  /* Display: Completed Phases */
+  $handler = $view->new_display('panel_pane', 'Completed Phases', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Completed';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 1;
+  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 1;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_victorious_faction_target_id']['id'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['relationships']['field_victorious_faction_target_id']['table'] = 'field_data_field_victorious_faction';
+  $handler->display->display_options['relationships']['field_victorious_faction_target_id']['field'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Relation: Rid */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'relation';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['exclude'] = TRUE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
+  $handler->display->display_options['fields']['field_title_chronicle']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_chronicle']['element_default_classes'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_image']['element_class'] = 'col-xs-2';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'user_avatar',
+    'image_link' => '',
+  );
+  /* Field: Field: Narrative text */
+  $handler->display->display_options['fields']['field_narrative_text']['id'] = 'field_narrative_text';
+  $handler->display->display_options['fields']['field_narrative_text']['table'] = 'field_data_field_narrative_text';
+  $handler->display->display_options['fields']['field_narrative_text']['field'] = 'field_narrative_text';
+  $handler->display->display_options['fields']['field_narrative_text']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_narrative_text']['label'] = '';
+  $handler->display->display_options['fields']['field_narrative_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_narrative_text']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_narrative_text']['element_wrapper_class'] = 'col-xs-8';
+  $handler->display->display_options['fields']['field_narrative_text']['element_default_classes'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
+  $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image_1']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['field_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_image_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_1']['settings'] = array(
+    'image_style' => 'user_avatar',
+    'image_link' => '',
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['label'] = '';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_chronicle_1']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_image_1]
+<h4>[field_title_chronicle_1]</h4>
+<span class="text-muted">Victor</span>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'col-xs-2';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['value'] = array(
+    10 => '10',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: In progress phases */
+  $handler = $view->new_display('panel_pane', 'In progress phases', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'In Progress';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['value'] = array(
+    5 => '5',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['war_zone_campaign_instance_active_phases'] = $view;
+
+  $view = new view();
   $view->name = 'war_zone_campaign_instance_page_layout';
   $view->description = '';
   $view->tag = 'default';
@@ -1211,6 +1448,23 @@ print $link;
   $handler->display->display_options['relationships']['field_event_link_target_id']['table'] = 'field_data_field_event_link';
   $handler->display->display_options['relationships']['field_event_link_target_id']['field'] = 'field_event_link_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_event_link_target_id';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_image']['element_class'] = 'thumbnail iconbuffer';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_image']['element_wrapper_class'] = 'pull-left';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'user_avatar',
+    'image_link' => 'content',
+  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -1294,7 +1548,578 @@ print $link;
   );
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Victor */
+  $handler = $view->new_display('panel_pane', 'Victor', 'panel_pane_12');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Battlefield (field_location) */
+  $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
+  $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
+  $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
+  $handler->display->display_options['relationships']['field_location_nid']['delta'] = '-1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Victor */
+  $handler->display->display_options['fields']['field_victor_narrative']['id'] = 'field_victor_narrative';
+  $handler->display->display_options['fields']['field_victor_narrative']['table'] = 'field_data_field_victor_narrative';
+  $handler->display->display_options['fields']['field_victor_narrative']['field'] = 'field_victor_narrative';
+  $handler->display->display_options['fields']['field_victor_narrative']['label'] = '';
+  $handler->display->display_options['fields']['field_victor_narrative']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_victor_narrative']['alter']['text'] = '        <div class="panel panel-overview">
+            <div class="overview-icon bg-success">
+                <i class="glyphicon glyphicon-flag" aria-hidden="true"></i>
+            </div>
+            <div class="overview-value">
+                <h2>[field_victor_narrative]</h2>
+                <div class="text-muted">Victor</div>
+            </div>
+        </div>';
+  $handler->display->display_options['fields']['field_victor_narrative']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_victor_narrative']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_victor_narrative']['type'] = 'field_hidden_text_plain';
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['war_zone_campaign_instance_page_layout'] = $view;
+
+  $view = new view();
+  $view->name = 'war_zone_campaign_instance_phase_scoring';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'relation';
+  $view->human_name = 'War Zone: Campaign Instance: Phase Stats';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'rid' => 'rid',
+    'field_title_chronicle' => 'field_title_chronicle',
+    'field_campaign_points_narrative' => 'field_campaign_points_narrative',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'rid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_chronicle' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_campaign_points_narrative' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 1;
+  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
+  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 1;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_victorious_faction_target_id']['id'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['relationships']['field_victorious_faction_target_id']['table'] = 'field_data_field_victorious_faction';
+  $handler->display->display_options['relationships']['field_victorious_faction_target_id']['field'] = 'field_victorious_faction_target_id';
+  /* Field: Relation: Rid */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'relation';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
+  $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
+  /* Field: Entityform Submission: Campaign Points */
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['id'] = 'field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['table'] = 'field_data_field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['field'] = 'field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['label'] = 'Victorious Faction';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = 'Faction ID';
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'relation_base_campaign_phase_instance_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+
+  /* Display: Dominate Factions */
+  $handler = $view->new_display('panel_pane', 'Dominate Factions', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Campaign Progress';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'chart';
+  $handler->display->display_options['style_options']['library'] = '';
+  $handler->display->display_options['style_options']['label_field'] = 'field_title_chronicle';
+  $handler->display->display_options['style_options']['data_fields'] = array(
+    'field_campaign_points_narrative' => 'field_campaign_points_narrative',
+    'field_title_chronicle' => 0,
+  );
+  $handler->display->display_options['style_options']['field_colors'] = array(
+    'field_title_chronicle' => '#2f7ed8',
+    'field_campaign_points_narrative' => '#0d233a',
+  );
+  $handler->display->display_options['style_options']['title_position'] = '';
+  $handler->display->display_options['style_options']['legend_position'] = 'bottom';
+  $handler->display->display_options['style_options']['width'] = '';
+  $handler->display->display_options['style_options']['height'] = '';
+  $handler->display->display_options['style_options']['xaxis_labels_rotation'] = '0';
+  $handler->display->display_options['style_options']['yaxis_labels_rotation'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = 'Victorious Faction';
+  $handler->display->display_options['fields']['field_title_chronicle']['empty'] = 'Contested';
+  /* Field: SUM(Entityform Submission: Campaign Points) */
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['id'] = 'field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['table'] = 'field_data_field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['field'] = 'field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['empty'] = '0';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['value'] = array(
+    11 => '11',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Final Scoring */
+  $handler = $view->new_display('views_rules', 'Final Scoring', 'views_rules_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: SUM(Entityform Submission: Campaign Points) */
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['id'] = 'field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['table'] = 'field_data_field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['field'] = 'field_campaign_points_narrative';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_campaign_points_narrative']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['label'] = 'Victorious Faction';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['entityform_id']['label'] = 'Faction ID';
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: SUM(Entityform Submission: Campaign Points (field_campaign_points_narrative)) */
+  $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['id'] = 'field_campaign_points_narrative_value';
+  $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['table'] = 'field_data_field_campaign_points_narrative';
+  $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['field'] = 'field_campaign_points_narrative_value';
+  $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['value'] = array(
+    10 => '10',
+  );
+  $handler->display->display_options['rules_parameter'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => '(campaign_phase_target) Content: Nid',
+      'name' => 'nid',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'field_campaign_points_narrative' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => '(Campaign Phase Instance) Campaign Points',
+      'name' => 'field_campaign_points_narrative',
+    ),
+    'field_title_chronicle_1' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'text',
+      'label' => '(Entityform Submission entity referenced from field_victorious_faction) Victorious Faction',
+      'name' => 'field_title_chronicle_1',
+    ),
+    'entityform_id' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'integer',
+      'label' => '(Entityform Submission entity referenced from field_victorious_faction) Faction ID',
+      'name' => 'entityform_id',
+    ),
+  );
+
+  /* Display: Open Phases Rules */
+  $handler = $view->new_display('views_rules', 'Open Phases Rules', 'views_rules_3');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Relation: Rid */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'relation';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['separator'] = '';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
+  $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['label'] = 'Victorious Faction';
+  /* Field: Relation: Phase State */
+  $handler->display->display_options['fields']['field_phase_state_narrative']['id'] = 'field_phase_state_narrative';
+  $handler->display->display_options['fields']['field_phase_state_narrative']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['fields']['field_phase_state_narrative']['field'] = 'field_phase_state_narrative';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['rules_parameter'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => '(campaign_phase_target) Content: Nid',
+      'name' => 'nid',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'rid' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'integer',
+      'label' => 'Rid',
+      'name' => 'rid',
+    ),
+    'field_title_chronicle' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => '(Campaign Phase Instance) Field: Title',
+      'name' => 'field_title_chronicle',
+    ),
+    'field_title_chronicle_1' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => '(Entityform Submission entity referenced from field_victorious_faction) Victorious Faction',
+      'name' => 'field_title_chronicle_1',
+    ),
+    'field_phase_state_narrative' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => 'Phase State',
+      'name' => 'field_phase_state_narrative',
+    ),
+  );
+
+  /* Display: Score In Progress Phases */
+  $handler = $view->new_display('views_rules', 'Score In Progress Phases', 'views_rules_2');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Relation: Rid */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'relation';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['separator'] = '';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
+  $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['relationship'] = 'field_victorious_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle_1']['label'] = 'Victorious Faction';
+  /* Field: Relation: Phase State */
+  $handler->display->display_options['fields']['field_phase_state_narrative']['id'] = 'field_phase_state_narrative';
+  $handler->display->display_options['fields']['field_phase_state_narrative']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['fields']['field_phase_state_narrative']['field'] = 'field_phase_state_narrative';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Relation: Relation type */
+  $handler->display->display_options['filters']['relation_type']['id'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['table'] = 'relation';
+  $handler->display->display_options['filters']['relation_type']['field'] = 'relation_type';
+  $handler->display->display_options['filters']['relation_type']['value'] = array(
+    'campaign_phase_instance' => 'campaign_phase_instance',
+  );
+  /* Filter criterion: Relation: Phase State (field_phase_state_narrative) */
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['id'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['table'] = 'field_data_field_phase_state_narrative';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['field'] = 'field_phase_state_narrative_value';
+  $handler->display->display_options['filters']['field_phase_state_narrative_value']['value'] = array(
+    5 => '5',
+  );
+  $handler->display->display_options['rules_parameter'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => '(campaign_phase_target) Content: Nid',
+      'name' => 'nid',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'rid' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'integer',
+      'label' => 'Rid',
+      'name' => 'rid',
+    ),
+    'field_title_chronicle' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => '(Campaign Phase Instance) Field: Title',
+      'name' => 'field_title_chronicle',
+    ),
+    'field_title_chronicle_1' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => '(Entityform Submission entity referenced from field_victorious_faction) Victorious Faction',
+      'name' => 'field_title_chronicle_1',
+    ),
+    'field_phase_state_narrative' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => 'Phase State',
+      'name' => 'field_phase_state_narrative',
+    ),
+  );
+  $export['war_zone_campaign_instance_phase_scoring'] = $view;
+
+  $view = new view();
+  $view->name = 'war_zone_campaign_instance_report_battle';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node_registration';
+  $view->human_name = 'War Zone: Campaign Instance: Report Battle';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Node registration: E-mail */
+  $handler->display->display_options['fields']['email']['id'] = 'email';
+  $handler->display->display_options['fields']['email']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['email']['field'] = 'email';
+  $handler->display->display_options['fields']['email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['email']['link_to_node_registration'] = 0;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_edit'] = 0;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_email'] = 0;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<p class="text-center"><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#battle">
+  Report Battle
+</button>
+</p>
+
+<div id="battle" class="collapse">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="pull-right">
+          <span class="glyphicon glyphicon-question-sign" data-toggle="popover" title="Chronicle" data-content="Chronicle your army\'s deeds. This will also generate an item on your feed."></span>
+          </span>
+        <h3 class="panel-title">Report Battle</h3>
+      </div>
+      <div class="panel-body">
+<?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'warzone_campaign_report_battle_p\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>
+      </div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Contextual filter: Node registration: Node nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node_registration';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Node registration: User uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node_registration';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Node registration: Cancelled */
+  $handler->display->display_options['filters']['cancelled']['id'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['cancelled']['field'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['value'] = '0';
+  /* Filter criterion: Node registration: Waitinglist */
+  $handler->display->display_options['filters']['waitinglist']['id'] = 'waitinglist';
+  $handler->display->display_options['filters']['waitinglist']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['waitinglist']['field'] = 'waitinglist';
+  $handler->display->display_options['filters']['waitinglist']['value'] = '0';
+
+  /* Display: Registration Required Form */
+  $handler = $view->new_display('panel_pane', 'Registration Required Form', 'panel_pane_1');
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['war_zone_campaign_instance_report_battle'] = $view;
 
   $view = new view();
   $view->name = 'war_zone_campaign_lists';
@@ -1866,6 +2691,166 @@ print $link;
   $export['war_zone_campaign_phase_rules'] = $view;
 
   $view = new view();
+  $view->name = 'war_zone_campaign_phase_scoring';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'entityform';
+  $view->human_name = 'War Zone: Campaign: Phase Scoring';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'entityform_id' => 'entityform_id',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'entityform_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['id'] = 'field_registration_sc_target_id';
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['table'] = 'field_data_field_registration_sc';
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['field'] = 'field_registration_sc_target_id';
+  $handler->display->display_options['relationships']['field_registration_sc_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['id'] = 'field_register_faction_target_id';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['table'] = 'field_data_field_register_faction';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['field'] = 'field_register_faction_target_id';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['relationship'] = 'field_registration_sc_target_id';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'field_register_faction_target_id';
+  /* Field: SUM(Entityform Submission: Aggregate Score) */
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['id'] = 'field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['table'] = 'field_data_field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['field'] = 'field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['group_type'] = 'sum';
+  /* Field: Entityform Submission: Entityform submission ID */
+  $handler->display->display_options['fields']['entityform_id']['id'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
+  $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
+  $handler->display->display_options['fields']['entityform_id']['relationship'] = 'field_register_faction_target_id';
+  $handler->display->display_options['fields']['entityform_id']['separator'] = '';
+  /* Sort criterion: SUM(Entityform Submission: Aggregate Score (field_aggregate_score_sc)) */
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['id'] = 'field_aggregate_score_sc_value';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['table'] = 'field_data_field_aggregate_score_sc';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['field'] = 'field_aggregate_score_sc_value';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['order'] = 'DESC';
+  /* Contextual filter: Entityform Submission: Phase (field_phase_sc) */
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['id'] = 'field_phase_sc_target_id';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['table'] = 'field_data_field_phase_sc';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['field'] = 'field_phase_sc_target_id';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_phase_sc_target_id']['specify_validation'] = TRUE;
+  /* Filter criterion: Entityform Submission: Entityform Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'entityform';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'score_card' => 'score_card',
+  );
+
+  /* Display: Score Phase */
+  $handler = $view->new_display('views_rules', 'Score Phase', 'views_rules_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['rules_parameter'] = array(
+    'field_phase_sc_target_id' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => 'Entityform Submission: Phase (field_phase_sc)',
+      'name' => 'field_phase_sc_target_id',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'field_title_chronicle' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => '(Entityform Submission entity referenced from field_register_faction) Title',
+      'name' => 'field_title_chronicle',
+    ),
+    'field_aggregate_score_sc' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => 'Aggregate Score',
+      'name' => 'field_aggregate_score_sc',
+    ),
+    'entityform_id' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'integer',
+      'label' => '(Entityform Submission entity referenced from field_register_faction) Entityform submission ID',
+      'name' => 'entityform_id',
+    ),
+  );
+
+  /* Display: Phase Victory */
+  $handler = $view->new_display('panel_pane', 'Phase Victory', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'chart';
+  $handler->display->display_options['style_options']['library'] = '';
+  $handler->display->display_options['style_options']['label_field'] = 'field_title_chronicle';
+  $handler->display->display_options['style_options']['data_fields'] = array(
+    'field_aggregate_score_sc' => 'field_aggregate_score_sc',
+    'field_title_chronicle' => 0,
+  );
+  $handler->display->display_options['style_options']['field_colors'] = array(
+    'field_title_chronicle' => '#2f7ed8',
+    'field_aggregate_score_sc' => '#0d233a',
+  );
+  $handler->display->display_options['style_options']['title_position'] = '';
+  $handler->display->display_options['style_options']['legend_position'] = 'bottom';
+  $handler->display->display_options['style_options']['width'] = '';
+  $handler->display->display_options['style_options']['height'] = '';
+  $handler->display->display_options['style_options']['xaxis_labels_rotation'] = '0';
+  $handler->display->display_options['style_options']['yaxis_labels_rotation'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'field_register_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = 'Faction';
+  /* Field: SUM(Entityform Submission: Aggregate Score) */
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['id'] = 'field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['table'] = 'field_data_field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['field'] = 'field_aggregate_score_sc';
+  $handler->display->display_options['fields']['field_aggregate_score_sc']['group_type'] = 'sum';
+  $handler->display->display_options['pane_category']['name'] = 'View Panes';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['war_zone_campaign_phase_scoring'] = $view;
+
+  $view = new view();
   $view->name = 'war_zone_campaign_summary';
   $view->description = '';
   $view->tag = 'default';
@@ -1877,6 +2862,7 @@ print $link;
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['hide_admin_links'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -1972,6 +2958,12 @@ print $link;
   $handler->display->display_options['relationships']['node_registration_rel']['field'] = 'node_registration_rel';
   $handler->display->display_options['relationships']['node_registration_rel']['relationship'] = 'reverse_field_event_link_node';
   $handler->display->display_options['relationships']['node_registration_rel']['required'] = TRUE;
+  /* Relationship: Node registration: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['relationship'] = 'node_registration_rel';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: COUNT(Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1989,7 +2981,8 @@ print $link;
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -2032,7 +3025,7 @@ print $link;
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_event_link_node_1';
   $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
@@ -2095,6 +3088,31 @@ print $link;
   $handler->display->display_options['sorts']['nid']['relationship'] = 'reverse_field_event_link_node';
   $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['filters']['field_status_value']['value'] = array(
+    10 => '10',
+    15 => '15',
+  );
 
   /* Display: Instance Battle Count */
   $handler = $view->new_display('panel_pane', 'Instance Battle Count', 'panel_pane_5');
@@ -2161,6 +3179,300 @@ print $link;
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'game_results' => 'game_results',
   );
+
+  /* Display: Instances Page */
+  $handler = $view->new_display('page', 'Instances Page', 'page_1');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['title'] = '%1 Instances';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  $handler->display->display_options['path'] = 'node/%/instances';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Instances';
+  $handler->display->display_options['menu']['weight'] = '10';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Battles Page */
+  $handler = $view->new_display('page', 'Battles Page', 'page_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['id'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['field'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_event_link_node_1']['id'] = 'reverse_field_event_link_node_1';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node_1']['field'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node_1']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node_1']['label'] = 'Battles';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node_1']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'reverse_field_event_link_node_1';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['relationship'] = 'reverse_field_event_link_node_1';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['title'] = '%1 Battles';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_event_link_node_1';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'game_results' => 'game_results',
+  );
+  $handler->display->display_options['path'] = 'node/%/campaign-battles';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Battles';
+  $handler->display->display_options['menu']['weight'] = '11';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Player Page */
+  $handler = $view->new_display('page', 'Player Page', 'page_3');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'title',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['id'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['field'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['required'] = TRUE;
+  /* Relationship: Node registration: Registrations */
+  $handler->display->display_options['relationships']['node_registration_rel']['id'] = 'node_registration_rel';
+  $handler->display->display_options['relationships']['node_registration_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['node_registration_rel']['field'] = 'node_registration_rel';
+  $handler->display->display_options['relationships']['node_registration_rel']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['node_registration_rel']['required'] = TRUE;
+  /* Relationship: Node registration: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node_registration';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['relationship'] = 'node_registration_rel';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['id'] = 'field_register_faction_target_id';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['table'] = 'field_data_field_register_faction';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['field'] = 'field_register_faction_target_id';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['relationship'] = 'node_registration_rel';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['label'] = 'Faction';
+  $handler->display->display_options['relationships']['field_register_faction_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Node registration: Army */
+  $handler->display->display_options['fields']['field_register_army']['id'] = 'field_register_army';
+  $handler->display->display_options['fields']['field_register_army']['table'] = 'field_data_field_register_army';
+  $handler->display->display_options['fields']['field_register_army']['field'] = 'field_register_army';
+  $handler->display->display_options['fields']['field_register_army']['relationship'] = 'node_registration_rel';
+  $handler->display->display_options['fields']['field_register_army']['label'] = '';
+  $handler->display->display_options['fields']['field_register_army']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_register_army']['element_label_colon'] = FALSE;
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
+  $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'field_register_faction_target_id';
+  $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
+  $handler->display->display_options['fields']['field_title_chronicle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel panel-default">
+<div class="panel-body">
+<div class="pull-left iconbuffer">
+[picture]
+</div>
+<strong>[name]</strong><br>
+<small class="text-muted">[field_title_chronicle]</small><br>
+<small class="text-muted">[field_register_army]</small>
+</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['title'] = '%1 Players';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'narrative_campaign' => 'narrative_campaign',
+  );
+  /* Filter criterion: Node registration: Cancelled */
+  $handler->display->display_options['filters']['cancelled']['id'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['cancelled']['field'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['relationship'] = 'node_registration_rel';
+  $handler->display->display_options['filters']['cancelled']['value'] = '0';
+  $handler->display->display_options['path'] = 'node/%/campaign-players';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Players';
+  $handler->display->display_options['menu']['weight'] = '12';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['war_zone_campaign_summary'] = $view;
 
   $view = new view();

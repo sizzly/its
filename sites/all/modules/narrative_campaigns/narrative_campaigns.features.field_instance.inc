@@ -286,7 +286,7 @@ function narrative_campaigns_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(
@@ -1406,7 +1406,7 @@ function narrative_campaigns_field_default_field_instances() {
     'label' => 'Title',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1419,6 +1419,299 @@ function narrative_campaigns_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node_registration-narrative_campaign_instance-field_register_army'
+  $field_instances['node_registration-narrative_campaign_instance-field_register_army'] = array(
+    'bundle' => 'narrative_campaign_instance',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node_registration',
+    'field_name' => 'field_register_army',
+    'label' => 'Army',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node_registration-narrative_campaign_instance-field_register_faction'
+  $field_instances['node_registration-narrative_campaign_instance-field_register_faction'] = array(
+    'bundle' => 'narrative_campaign_instance',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node_registration',
+    'field_name' => 'field_register_faction',
+    'label' => 'Faction',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node_registration-narrative_campaign_instance-field_register_real_name'
+  $field_instances['node_registration-narrative_campaign_instance-field_register_real_name'] = array(
+    'bundle' => 'narrative_campaign_instance',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node_registration',
+    'field_name' => 'field_register_real_name',
+    'label' => 'Real Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'relation-campaign_phase_instance-endpoints'
+  $field_instances['relation-campaign_phase_instance-endpoints'] = array(
+    'bundle' => 'campaign_phase_instance',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'relation_endpoint',
+        'settings' => array(
+          'view_modes' => array(
+            'comment' => 'default',
+            'entityform' => 'default',
+            'entityform_type' => 'default',
+            'field_collection_item' => 'default',
+            'file' => 'default',
+            'menu_link' => 'default',
+            'message' => 'default',
+            'message_type' => 'default',
+            'message_type_category' => 'default',
+            'node' => 'default',
+            'node_registration' => 'default',
+            'og_membership' => 'default',
+            'og_membership_type' => 'default',
+            'privatemsg_message' => 'default',
+            'profile2' => 'default',
+            'profile2_type' => 'default',
+            'relation' => 'default',
+            'rules_config' => 'default',
+            'rules_link' => 'default',
+            'taxonomy_term' => 'default',
+            'taxonomy_vocabulary' => 'default',
+            'uc_cart_item' => 'default',
+            'uc_order' => 'default',
+            'uc_order_product' => 'default',
+            'user' => 'default',
+          ),
+        ),
+        'type' => 'relation_endpoint',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'relation',
+    'field_name' => 'endpoints',
+    'label' => 'endpoints',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'relation_endpoint',
+      'settings' => array(),
+      'type' => 'relation_endpoint',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'relation-campaign_phase_instance-field_narrative_text'
+  $field_instances['relation-campaign_phase_instance-field_narrative_text'] = array(
+    'bundle' => 'campaign_phase_instance',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'relation',
+    'field_name' => 'field_narrative_text',
+    'label' => 'Narrative text',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'relation-campaign_phase_instance-field_phase_state_narrative'
+  $field_instances['relation-campaign_phase_instance-field_phase_state_narrative'] = array(
+    'bundle' => 'campaign_phase_instance',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'relation',
+    'field_name' => 'field_phase_state_narrative',
+    'label' => 'Phase State',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'relation-campaign_phase_instance-field_victorious_faction'
+  $field_instances['relation-campaign_phase_instance-field_victorious_faction'] = array(
+    'bundle' => 'campaign_phase_instance',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'relation',
+    'field_name' => 'field_victorious_faction',
+    'label' => 'Victorious Faction',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
     ),
   );
 
@@ -1490,11 +1783,13 @@ function narrative_campaigns_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Army');
   t('Campaign Points');
   t('Chronicle Icon');
   t('Event');
   t('Explain why you\'re awarding the additional points.  This is a useful reminder and helps if someone questions the points.');
   t('Explanation');
+  t('Faction');
   t('Iconography');
   t('Image');
   t('Leave this field blank if you used the army you registered with');
@@ -1505,19 +1800,23 @@ function narrative_campaigns_field_default_field_instances() {
   t('Opponent');
   t('Opponents Army');
   t('Phase');
+  t('Phase State');
   t('Player');
   t('Points per army');
   t('Points to Award');
   t('Prerequisite');
+  t('Real Name');
   t('Receipient');
   t('Stream Node');
   t('This field determines the order a phase shows up in lists of phases.  Lower weights are at the top.');
   t('This is the conditions that apply to a phase in order to start.  Most often this is simply "Previous Phase Complete" but it could also be that a certain faction won the previous round.');
   t('This text will be used to generate a chronicle entry for the campaign.  Helpful if you want to add some flavor to the additional points.');
   t('Title');
+  t('Victorious Faction');
   t('Weight');
   t('Your Army');
   t('Your Results');
+  t('endpoints');
 
   return $field_instances;
 }
