@@ -2,11 +2,7 @@ name = Narrative Campaigns
 description = Adds Narrative Campaigns to iToysoldiers
 core = 7.x
 package = _iTS
-<<<<<<< HEAD
-version = 7.x-1.2-rc1
-=======
 version = 7.x-1.2-rc2
->>>>>>> release-war_zones-7.x-2.9-rc2
 project = narrative_campaigns
 dependencies[] = shs
 dependencies[] = views_infinite_scroll
@@ -142,9 +138,5 @@ features_exclude[field_base][field_event_link] = field_event_link
 features_exclude[field_base][field_image] = field_image
 features_exclude[field_base][field_your_results] = field_your_results
 features_exclude[field_base][field_stream_node_ref] = field_stream_node_ref
-<<<<<<< HEAD
-mtime = 1420651742
-=======
 features_exclude[field_base][endpoints] = endpoints
 mtime = 1420739700
->>>>>>> release-war_zones-7.x-2.9-rc2
