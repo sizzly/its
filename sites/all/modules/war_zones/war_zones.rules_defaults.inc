@@ -273,7 +273,60 @@ function war_zones_default_rules_configuration() {
                   "param_node" : [ "node" ]
                 }
               },
+<<<<<<< HEAD
               { "data_set" : { "data" : [ "node:status" ], "value" : "1" } }
+=======
+              { "SWITCH" : {
+                  "USING" : { "data" : [ "node:type" ] },
+                  "DO" : [
+                    { "CASE" : {
+                        "USING" : { "value" : "narrative_campaign_instance" },
+                        "DO" : [
+                          { "entity_create" : {
+                              "USING" : {
+                                "type" : "message",
+                                "param_type" : "campaign_reported_battle",
+                                "param_user" : [ "node:author" ]
+                              },
+                              "PROVIDE" : { "entity_created" : { "wz_chronicle" : "wz chronicle" } }
+                            }
+                          },
+                          { "data_set" : {
+                              "data" : [ "wz-chronicle:field-stream-node-ref" ],
+                              "value" : [ "node" ]
+                            }
+                          },
+                          { "data_set" : { "data" : [ "wz-chronicle:field-chronicle-icon" ], "value" : "road" } },
+                          { "data_set" : {
+                              "data" : [ "wz-chronicle:field-title-chronicle" ],
+                              "value" : "The Road to War Has Begun"
+                            }
+                          },
+                          { "data_set" : {
+                              "data" : [ "wz-chronicle:arguments:messtext" ],
+                              "value" : "\\u003Cp\\u003EHostilities are inevitable and forces are arranging to claim domination of \\u003Cstrong\\u003E[node:field-event-link:title]\\u003C\\/strong\\u003E!\\u003Cp\\u003E"
+                            }
+                          },
+                          { "CONDITIONAL" : [
+                              {
+                                "IF" : { "data_is_empty" : { "data" : [ "node:field-registration-deadline" ] } },
+                                "DO" : [
+                                  { "data_set" : {
+                                      "data" : [ "node:field-registration-deadline" ],
+                                      "value" : [ "node:field-event-date:0:value2" ]
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+>>>>>>> release-war_zones-7.x-2.9-rc2
             ],
             "LABEL" : "WZ: Open League for Registration"
           }
@@ -320,7 +373,13 @@ function war_zones_default_rules_configuration() {
               { "SWITCH" : {
                   "USING" : { "data" : [ "node:type" ] },
                   "DO" : [
-                    { "CASE" : { "USING" : { "value" : "narrative_campaign_instance" }, "DO" : [] } },
+                    { "CASE" : {
+                        "USING" : { "value" : "narrative_campaign_instance" },
+                        "DO" : [
+                          { "component_rules_war_zone_campaign_final_scoring" : { "wzid" : [ "node" ] } }
+                        ]
+                      }
+                    },
                     { "CASE" : { "USING" : { "value" : "league" }, "DO" : [] } }
                   ]
                 }
@@ -378,7 +437,26 @@ function war_zones_default_rules_configuration() {
                     { "CASE" : {
                         "USING" : { "value" : "narrative_campaign_instance" },
                         "DO" : [
-                          { "component_rules_war_zone_campaign_create_phase_relationships" : { "wzid" : [ "node" ], "cid" : [ "node:field-event-link" ] } }
+                          { "component_rules_war_zone_campaign_create_phase_relationships" : { "wzid" : [ "node" ], "cid" : [ "node:field-event-link" ] } },
+                          { "entity_create" : {
+                              "USING" : {
+                                "type" : "message",
+                                "param_type" : "campaign_reported_battle",
+                                "param_user" : [ "node:author" ]
+                              },
+                              "PROVIDE" : { "entity_created" : { "wz_chronicle" : "warzone chronicle" } }
+                            }
+                          },
+                          { "data_set" : {
+                              "data" : [ "wz-chronicle:field-stream-node-ref" ],
+                              "value" : [ "node" ]
+                            }
+                          },
+                          { "data_set" : {
+                              "data" : [ "wz-chronicle:field-chronicle-icon" ],
+                              "value" : "screenshot"
+                            }
+                          }
                         ]
                       }
                     }
@@ -578,6 +656,50 @@ function war_zones_default_rules_configuration() {
               ]
             }
           ]
+        }
+      ]
+    }
+  }');
+  $items['rules_war_zone_all_on_save_new_content'] = entity_import('rules_config', '{ "rules_war_zone_all_on_save_new_content" : {
+      "LABEL" : "War Zone: All: On Save New Content",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "ON" : { "node_insert" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "league" : "league",
+                "narrative_campaign" : "narrative_campaign",
+                "narrative_campaign_instance" : "narrative_campaign_instance",
+                "special_event" : "special_event",
+                "war_zone_tournament" : "war_zone_tournament"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "SWITCH" : {
+            "USING" : { "data" : [ "node:type" ] },
+            "DO" : [
+              { "CASE" : {
+                  "USING" : { "value" : "narrative_campaign_instance" },
+                  "DO" : [
+                    { "mail" : {
+                        "to" : [ "node:author:mail" ],
+                        "subject" : "[iToysoldiers] You\\u0027re Ready To Go To War",
+                        "message" : "\\u003Ch3\\u003EGreetings, [node:author:name]!\\u003C\\/h3\\u003E\\r\\n\\u003Cp\\u003EYour Campaign is ready and can be viewed at [node:url] .\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EYour Campaign Management page is available at http:\\/\\/itoysoldiers.com\\/node\\/[node:nid]\\/management .\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ETo help you have a successful campaign, please take a moment to review these tips before promoting your campaign to players:\\r\\n\\u003Cp\\u003EFirst, your campaign starts in \\u003Cstrong\\u003ESetup\\u003C\\/strong\\u003E mode.  In this mode, other players cannot see or register for your campaign.  This gives you an opportunity to ensure that you are happy with all of the settings before making it live.  Once you\\u2019re happy with it, you can visit your Campaign Management page and click \\u201cOpen War Zone\\u201d.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ESecond, your campaign will automatically start on the date that you indicate on the Date field.  However, before players can report battles you will need to open at least one phase\\/operation.  You can do that from the Management Page as well.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELastly, if you have any questions, comments, requests or anything do not hesitate to reach out.  The super friendly iToysoldiers team (that\\u2019d be me) is always ready to help you out.  The best way to reach us is here:  http:\\/\\/itoysoldiers.uservoice.com\\/.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003E\\r\\nRob\\u003Cbr\\u003E\\r\\niToysoldiers.com\\u003C\\/p\\u003E\\r\\n",
+                        "language" : [ "" ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       ]
     }
@@ -964,9 +1086,11 @@ function war_zones_default_rules_configuration() {
         },
         { "data_set" : {
             "data" : [ "message:arguments:messtext" ],
-            "value" : "\\u003Cstrong\\u003EBattle has been joined\\u003C\\/strong\\u003E\\u003Cbr\\u003E\\r\\n[battle-title:value]"
+            "value" : "[battle-title:value]"
           }
-        }
+        },
+        { "data_set" : { "data" : [ "message:field-title-chronicle" ], "value" : "Battle!" } },
+        { "data_set" : { "data" : [ "message:field-chronicle-icon" ], "value" : "fire" } }
       ]
     }
   }');

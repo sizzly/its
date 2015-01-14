@@ -226,6 +226,35 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_phase_state_narrative'
+  $field_bases['field_phase_state_narrative'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_phase_state_narrative',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Imminent',
+        5 => 'In Progress',
+        10 => 'Complete',
+        11 => 'Skipped',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_player_sc'
   $field_bases['field_player_sc'] = array(
     'active' => 1,
@@ -334,6 +363,49 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_register_faction'
+  $field_bases['field_register_faction'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_register_faction',
+    'foreign keys' => array(
+      'entityform' => array(
+        'columns' => array(
+          'target_id' => 'entityform_id',
+        ),
+        'table' => 'entityform',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'views',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 1,
+          ),
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'war_zone_campaign_component_filters',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'entityform',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_title_chronicle'
   $field_bases['field_title_chronicle'] = array(
     'active' => 1,
@@ -362,6 +434,50 @@ function narrative_campaigns_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_victorious_faction'
+  $field_bases['field_victorious_faction'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_victorious_faction',
+    'foreign keys' => array(
+      'entityform' => array(
+        'columns' => array(
+          'target_id' => 'entityform_id',
+        ),
+        'table' => 'entityform',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'warzone_campaign_factions' => 'warzone_campaign_factions',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'entityform',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_warzone_round'
