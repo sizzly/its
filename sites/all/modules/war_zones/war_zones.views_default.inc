@@ -683,7 +683,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['registration_used_slots']['id'] = 'registration_used_slots';
   $handler->display->display_options['fields']['registration_used_slots']['table'] = 'node';
   $handler->display->display_options['fields']['registration_used_slots']['field'] = 'registration_used_slots';
-  /* Field: Field: Battlefield */
+  /* Field: Content: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -763,7 +763,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['field_event_type']['label'] = '';
   $handler->display->display_options['fields']['field_event_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_event_type']['element_label_colon'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Content: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
@@ -842,7 +842,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Battlefield (field_location) */
+  /* Relationship: Content: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
@@ -863,7 +863,7 @@ function war_zones_views_default_views() {
     'map_preset' => 'geofield_formatter_map',
     'data' => 'full',
   );
-  /* Field: Field: Battlefield */
+  /* Field: Content: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -1037,7 +1037,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['field_event_type']['element_label_class'] = 'text-muted';
   $handler->display->display_options['fields']['field_event_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_type']['element_default_classes'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Content: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
@@ -1067,7 +1067,7 @@ function war_zones_views_default_views() {
     'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Field: Battlefield */
+  /* Field: Content: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -2830,7 +2830,7 @@ print $value;
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = '<h3>No Results</h3>
 <p>There are no War Zones that meet your criteria</p>';
-  /* Relationship: Field: Battlefield (field_location) */
+  /* Relationship: Content: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
@@ -2906,7 +2906,7 @@ print $value;
       'address' => 'address',
     ),
   );
-  /* Field: Field: Battlefield */
+  /* Field: Content: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
