@@ -273,9 +273,6 @@ function war_zones_default_rules_configuration() {
                   "param_node" : [ "node" ]
                 }
               },
-<<<<<<< HEAD
-              { "data_set" : { "data" : [ "node:status" ], "value" : "1" } }
-=======
               { "SWITCH" : {
                   "USING" : { "data" : [ "node:type" ] },
                   "DO" : [
@@ -326,7 +323,6 @@ function war_zones_default_rules_configuration() {
                   ]
                 }
               }
->>>>>>> release-war_zones-7.x-2.9-rc2
             ],
             "LABEL" : "WZ: Open League for Registration"
           }

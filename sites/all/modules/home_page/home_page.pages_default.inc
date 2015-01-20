@@ -127,7 +127,7 @@ function home_page_default_page_manager_pages() {
     $pane->panel = 'contentmain';
     $pane->type = 'views';
     $pane->subtype = 'maps_battle_map';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -381,7 +381,7 @@ function home_page_default_page_manager_pages() {
 <div class="col-xs-12 col-sm-4">
 <a href="/tabletop-war-gaming" class="btn btn-default" style="white-space: normal;">
 <span class="pull-right col-xs-5">
-<img src="/sites/default/files/default_images/battle.png" class="thumbnail">
+<img src="/sites/default/files/styles/medium/public/default_images/Battle.png" class="thumbnail">
 </span>
 <p class="text-left"><strong>Gaming</strong></p>
 <p class="text-left">Record the results of your battles.  Earn achievements and renown for your battle field prowess.</p>
@@ -391,7 +391,7 @@ function home_page_default_page_manager_pages() {
 <div class="col-xs-12 col-sm-4">
 <a href="#" class="btn btn-default" style="white-space: normal;">
 <span class="pull-right col-xs-5">
-<img src="/sites/default/files/default_images/gallery.png" class="thumbnail">
+<img src="/sites/default/files/styles/medium/public/default_images/gallery.png" class="thumbnail">
 </span>
 <p class="text-left"><strong>Modelling</strong></p>
 <p class="text-left">Show off your armies.  Unlimited photo uploads and prebuilt links let you share your army with the world.</p>
@@ -401,7 +401,7 @@ function home_page_default_page_manager_pages() {
 <div class="col-xs-12 col-sm-4">
 <a href="#" class="btn btn-default" style="white-space: normal;">
 <span class="pull-right col-xs-5">
-<img src="/sites/default/files/default_images/blog.png" class="thumbnail">
+<img src="/sites/default/files/styles/medium/public/default_images/blog.png" class="thumbnail">
 </span>
 <p class="text-left"><strong>Narrative</strong>
 <p class="text-left">Tell the story of your army or just discuss your thoughts on the hobby in general with a blog system tailor made for war gamers.</p>
