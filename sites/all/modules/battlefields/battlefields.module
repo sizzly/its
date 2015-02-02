@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Battlefields feature.
+ */
+
+include_once 'battlefields.features.inc';
