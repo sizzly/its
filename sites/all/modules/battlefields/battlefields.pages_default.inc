@@ -98,10 +98,10 @@ warzone/battlefield',
     $display->content['new-7f90e354-50c9-40ce-b611-abd3b604045f'] = $pane;
     $display->panels['contentmainbottom'][0] = 'new-7f90e354-50c9-40ce-b611-abd3b604045f';
     $pane = new stdClass();
-    $pane->pid = 'new-1d2be59c-fa47-42ac-b741-bfb15d23051a';
+    $pane->pid = 'new-f31df05d-52a3-4f5a-9f62-bad1a420f3f5';
     $pane->panel = 'contentmainbottom';
     $pane->type = 'views_panes';
-    $pane->subtype = 'event_calendar-panel_pane_2';
+    $pane->subtype = 'battlefield_all_calendar-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -113,9 +113,9 @@ warzone/battlefield',
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '1d2be59c-fa47-42ac-b741-bfb15d23051a';
-    $display->content['new-1d2be59c-fa47-42ac-b741-bfb15d23051a'] = $pane;
-    $display->panels['contentmainbottom'][1] = 'new-1d2be59c-fa47-42ac-b741-bfb15d23051a';
+    $pane->uuid = 'f31df05d-52a3-4f5a-9f62-bad1a420f3f5';
+    $display->content['new-f31df05d-52a3-4f5a-9f62-bad1a420f3f5'] = $pane;
+    $display->panels['contentmainbottom'][1] = 'new-f31df05d-52a3-4f5a-9f62-bad1a420f3f5';
     $pane = new stdClass();
     $pane->pid = 'new-e14232de-fc67-493d-a4fd-0c4522fd5eaf';
     $pane->panel = 'contentmainleft';
@@ -169,10 +169,10 @@ warzone/battlefield',
     $display->content['new-4274f85c-836b-4cbe-a14f-b91146000cbc'] = $pane;
     $display->panels['contentmainleft'][1] = 'new-4274f85c-836b-4cbe-a14f-b91146000cbc';
     $pane = new stdClass();
-    $pane->pid = 'new-be319c19-766e-4180-b573-9e4aee75e5c2';
+    $pane->pid = 'new-8a60e623-897d-4d91-b837-9f9c655ee780';
     $pane->panel = 'contentmainleft';
     $pane->type = 'views_panes';
-    $pane->subtype = 'messages_lists_for_nodes-panel_pane_3';
+    $pane->subtype = 'battlefield_all_messages-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -191,9 +191,9 @@ warzone/battlefield',
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = 'be319c19-766e-4180-b573-9e4aee75e5c2';
-    $display->content['new-be319c19-766e-4180-b573-9e4aee75e5c2'] = $pane;
-    $display->panels['contentmainleft'][2] = 'new-be319c19-766e-4180-b573-9e4aee75e5c2';
+    $pane->uuid = '8a60e623-897d-4d91-b837-9f9c655ee780';
+    $display->content['new-8a60e623-897d-4d91-b837-9f9c655ee780'] = $pane;
+    $display->panels['contentmainleft'][2] = 'new-8a60e623-897d-4d91-b837-9f9c655ee780';
     $pane = new stdClass();
     $pane->pid = 'new-ecc92142-c97b-40f7-bdd1-3af723a997bf';
     $pane->panel = 'contentmainright';
@@ -889,10 +889,10 @@ function battlefields_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-15428fa7-29fd-4d52-9d34-5f113bb5d0f9';
+    $pane->pid = 'new-50b0e272-a160-48a1-9cac-8cb1f4dfab10';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'event_calendar-panel_pane_3';
+    $pane->subtype = 'battlefield_all_calendar-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -904,11 +904,11 @@ function battlefields_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '15428fa7-29fd-4d52-9d34-5f113bb5d0f9';
-    $display->content['new-15428fa7-29fd-4d52-9d34-5f113bb5d0f9'] = $pane;
-    $display->panels['contentmain'][0] = 'new-15428fa7-29fd-4d52-9d34-5f113bb5d0f9';
+    $pane->uuid = '50b0e272-a160-48a1-9cac-8cb1f4dfab10';
+    $display->content['new-50b0e272-a160-48a1-9cac-8cb1f4dfab10'] = $pane;
+    $display->panels['contentmain'][0] = 'new-50b0e272-a160-48a1-9cac-8cb1f4dfab10';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-15428fa7-29fd-4d52-9d34-5f113bb5d0f9';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['battlefield_camera'] = $page;
@@ -1374,252 +1374,6 @@ function battlefields_default_page_manager_pages() {
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['battlefield_local_meta'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'ironmonger_landing_page';
-  $page->task = 'page';
-  $page->admin_title = 'Ironmonger landing page';
-  $page->admin_description = '';
-  $page->path = 'local-game-store-tools';
-  $page->access = array();
-  $page->menu = array();
-  $page->arguments = array();
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_ironmonger_landing_page_panel_context';
-  $handler->task = 'page';
-  $handler->subtask = 'ironmonger_landing_page';
-  $handler->handler = 'panel_context';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Node',
-        'keyword' => 'node',
-        'name' => 'entity:node',
-        'entity_id' => '5059',
-        'id' => 1,
-      ),
-    ),
-    'relationships' => array(),
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
-    'metatag_panels' => array(
-      'enabled' => 1,
-      'metatags' => array(
-        'title' => array(
-          'value' => 'Ironmongers: Tools for the Local Game Store',
-        ),
-        'description' => array(
-          'value' => 'iToysoldiers is looking for a handful of local game store owners to partner with us to create the best online tools for miniature war gaming stores. Learn more about what we have to offer you to make your war gaming even better.',
-        ),
-        'abstract' => array(
-          'value' => 'An invitation for local game store owners to join the iToysoldiers Ironmonger program.',
-        ),
-        'keywords' => array(
-          'value' => 'miniature war gaming, stores, tools for local game store, table top war gaming',
-        ),
-        'robots' => array(
-          'value' => array(
-            'index' => 0,
-            'follow' => 0,
-            'noindex' => 0,
-            'nofollow' => 0,
-            'noarchive' => 0,
-            'nosnippet' => 0,
-            'noodp' => 0,
-            'noydir' => 0,
-            'noimageindex' => 0,
-            'notranslate' => 0,
-          ),
-        ),
-        'og:type' => array(
-          'value' => 'website',
-        ),
-      ),
-    ),
-  );
-  $display = new panels_display();
-  $display->layout = 'bootopoly_moscone_flipped';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'contentmain' => NULL,
-      'header' => NULL,
-      'sidebar' => NULL,
-      'footer' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = '';
-  $display->uuid = '1a5861fc-0473-4263-9e2e-7f9974d6e645';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-faf92acf-cc32-464d-baac-bafef45daa8b';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Invitation',
-      'title' => '',
-      'body' => '<h3>Greetings, Honoured Game Store Owner.</h3>
-
-<p><strong>I’d like to invite you to become a life-long “premium” member of iToysoldiers as part of our Ironmonger program. &nbsp;I’m looking for a handful of game store owners to help me develop tools and features that’ll help you in the tabletop war gaming portion of your business. You can help me prioritize what I’m working on, suggest new features, and get access to these features before anyone else.&nbsp; It’s your input that’ll help shape how iToysoldiers supports the local game store.</strong></p>
-
-<p>Intrigued? You should be. &nbsp;Here are a few of the benefits you\'ll receive for joining the Ironmonger program.</p>
-
-<h3>Free For Life</h3>
-
-<p>If you’re selected as one of the first Ironmongers your Ironmonger status lasts forever.&nbsp; You’ll always have premium access to exclusive tools.&nbsp; It’s my way of saying thank you for your help.&nbsp; Ultimately, I intend to charge a subscription for the Ironmonger features so jumping on board now is a great way to lock yourself in as part of the iToysoldiers community.</p>
-
-<h3>What’s the Ironmonger Program?</h3>
-
-<p>The idea is pretty simple: The Ironmonger program provides a suite of tools to help local game stores support a wide variety of table top gaming activities.&nbsp; iToysoldiers wants to make your leagues, tournaments, and special events bigger and better. &nbsp;Better support of miniature war gaming means more players which leads to bigger and better events.&nbsp; And that leads to happier players who’ll spend more on miniature games.</p>
-
-<h3>How do I become an Ironmonger?</h3>
-
-<ul>
-	<li>Do you run&nbsp;a game store that carries miniature war gaming products?</li>
-	<li>Are you&nbsp;willing to chat with me about the challenges you have in supporting miniature war gaming?</li>
-	<li>Are you&nbsp;excited about an online tool that’ll automate leagues, reward your players, and generally make your life easier?</li>
-	<li>Are you&nbsp;willing to let me know what’s working for you on iToysoldiers and, more importantly, what isn’t? &nbsp;I need your candid feedback.</li>
-</ul>
-
-<p>If you fulfill these requirements then fill out the form and we’ll start chatting about how iToysoldiers can help your store.&nbsp;</p>
-
-<p>Still on the fence?&nbsp; Read on:</p>
-
-<h3>What you get right now</h3>
-
-<ul>
-	<li>As a partner with iToysoldiers you’ll get all of these features right out of the gate and you’ll never lose this premium access.</li>
-	<li>A really slick <a href="http://itoysoldiers.com/battlefield/brimstone-games">profile page</a> for your store that includes game stats, upcoming events, local meta for each game you support and more.&nbsp;</li>
-	<li>Influence in what tools and features iToysoldiers builds to support the unsung heroes of the table top war gaming hobby.&nbsp; That’d be you!</li>
-	<li>Priority iToysoldiers support&nbsp;&nbsp;– which is really handy if you or your players are having issues.</li>
-	<li>The ability to earn prestige points for your store.&nbsp; What’s prestige?&nbsp; It measures how active (and thus cool) a gaming store is.</li>
-	<li>Access to the League Manager.</li>
-	<li>Co-branding on a number of pages on iToysoldiers.</li>
-</ul>
-
-<h3>What’s on the Horizon?</h3>
-
-<p>Right now I’ve got some additional features in the pipeline.&nbsp; As these get released you’ll also get them as part of this partnership.&nbsp; Cool, eh?</p>
-
-<ul>
-	<li>More League types including the Privateer Press Journeyman league format.</li>
-	<li>A tournament manager with support for a whole bunch of popular tournament formats.</li>
-	<li>The ability to award your players with custom achievements on iToysoldiers.</li>
-	<li>Store rankings</li>
-	<li>A personal profile on iToysoldiers that better represents your role as a store owner.</li>
-	<li>And more, more, more…</li>
-</ul>
-
-<p>So there’s my pitch.&nbsp; I’m looking forward to working with you to support table top war gaming at your store.&nbsp; I aim to please and I live for feedback.&nbsp; If you have any questions or comments at all feel free to drop me a line at <a href="mailto:support@itoysoldiers.uservoice.com">support@itoysoldiers.uservoice.com</a> (I use this email address to organize all the incoming feedback – I know it looks impersonal.&nbsp; I promise I watch it like a hawk).</p>
-
-<p>Carpe Acies,<br />
-Rob<br />
-<a href="http://itoysoldiers.com/">itoysoldiers.com</a></p>
-',
-      'format' => 'filtered_html',
-      'substitute' => 0,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'faf92acf-cc32-464d-baac-bafef45daa8b';
-    $display->content['new-faf92acf-cc32-464d-baac-bafef45daa8b'] = $pane;
-    $display->panels['contentmain'][0] = 'new-faf92acf-cc32-464d-baac-bafef45daa8b';
-    $pane = new stdClass();
-    $pane->pid = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
-    $pane->panel = 'header';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h1>Become an iToysoldiers Ironmonger</h1>
-
-<h2>An Invitation for Game Store Owners</h2>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'jumbotron',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '8882395a-3623-4ed0-ab2a-989cceeaa090';
-    $display->content['new-8882395a-3623-4ed0-ab2a-989cceeaa090'] = $pane;
-    $display->panels['header'][0] = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
-    $pane = new stdClass();
-    $pane->pid = 'new-1bb24b85-1d05-47bf-b3dd-9db9df295082';
-    $pane->panel = 'sidebar';
-    $pane->type = 'entity_field_extra';
-    $pane->subtype = 'node:webform';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'view_mode' => 'full',
-      'context' => 'context_entity:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Let\'s Talk',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-primary',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '1bb24b85-1d05-47bf-b3dd-9db9df295082';
-    $display->content['new-1bb24b85-1d05-47bf-b3dd-9db9df295082'] = $pane;
-    $display->panels['sidebar'][0] = 'new-1bb24b85-1d05-47bf-b3dd-9db9df295082';
-  $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['ironmonger_landing_page'] = $page;
 
   return $pages;
 
