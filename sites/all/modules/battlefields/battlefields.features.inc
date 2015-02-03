@@ -69,11 +69,11 @@ function battlefields_flag_default_flags() {
     'show_on_teaser' => 1,
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'battlefields',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   // Exported flag: "Claim Battlefield".
   $flags['claim_battlefield'] = array(
@@ -109,11 +109,11 @@ function battlefields_flag_default_flags() {
     'i18n' => 0,
     'flag_confirmation' => 'Are you sure?',
     'unflag_confirmation' => 'This will assign the ownership of this battlefield to you and open up additional options. ',
-    'api_version' => 2,
     'module' => 'battlefields',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 
