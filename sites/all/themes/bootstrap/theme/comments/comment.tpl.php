@@ -59,39 +59,22 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-<div class="panel panel-default">
-  <div class="panel-heading">
-      <div class="submittedcomment">
-        <?php print $permalink; ?>
-        <?php print $submitted; ?>
-        <?php if ($new): ?>
-        <span class="label label-info"><?php print $new ?></span>
-        <?php endif; ?>
-      </div>
-  </div>
-  <div class="panel-body">
-      <div class="clearfix">
-          <span class="col-xs-3 col-sm-2 pull-left">
-              <span class="thumbnail">
-                  <?php print $picture ?>
-              </span>    
-          </span>
-
-    <div class="content"<?php print $content_attributes; ?>>
-      <?php
-      // We hide the comments and links now so that we can render them later.
-        hide($content['links']);
-        print render($content);
-      ?>
-    </div>
-    </div>
-      <?php if ($signature): ?>
-      <div class="well well-sm user-signature clearfix">
-        <?php print $signature ?>
-      </div>
-    <?php endif; ?>
-    <?php print render($content['links']) ?>
-  </div>
-</div>
-</div>
+    <li class="media">
+        <div class="pull-left">
+            <?php print $picture ?>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">
+                <strong><?php print $submitted; ?></strong>
+                <span class="pull-right">
+                    <small class="text-muted"><?php print render($content['links']) ?></small>
+                </span>
+            </div>
+            <p>
+                <?php
+                    hide($content['links']);
+                    print render($content);
+                ?>
+            </p>
+        </div>
+    </li>
