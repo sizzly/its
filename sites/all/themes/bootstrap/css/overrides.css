@@ -545,3 +545,43 @@ background:rgba(33, 33, 33, 0.75);
   height: 60px;
   float: left;
 }
+
+.comment-list li {
+  margin-bottom: 30px;
+}
+.comment-list li .media-heading {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+.comment-list li .media-heading a {
+  color: #777;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+@media (max-width: 480px) {
+  .comment-list li .media-heading a {
+    display: block;
+  }
+}
+.comment-list li .media-heading a:hover,
+.comment-list li .media-heading a:focus {
+  text-decoration: none;
+  color: #3c8dbc;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+.comment-list li .media-heading small {
+  float: right;
+}
+@media (max-width: 480px) {
+  .comment-list li .media-heading small {
+    float: none;
+  }
+}
