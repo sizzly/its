@@ -43,8 +43,9 @@
     <a name="comments"></a>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
-
+    <ul class="media-list">
   <?php print render($content['comments']); ?>
+    </ul>
 
   <?php if ($content['comment_form']): ?>
     <h2 class="title comment-form"><?php print t('Add new comment'); ?></h2>
