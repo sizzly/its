@@ -65,11 +65,11 @@ function battle_reports_flag_default_flags() {
     'i18n' => 0,
     'flag_confirmation' => 'Are you sure?',
     'unflag_confirmation' => 'Are you sure?',
-    'api_version' => 2,
     'module' => 'battle_reports',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   // Exported flag: "Meta Complete".
   $flags['meta_complete'] = array(
@@ -103,11 +103,11 @@ function battle_reports_flag_default_flags() {
     'show_on_teaser' => 0,
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'battle_reports',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 

@@ -45,7 +45,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['relationships']['reverse_field_game_reference_node']['id'] = 'reverse_field_game_reference_node';
   $handler->display->display_options['relationships']['reverse_field_game_reference_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_game_reference_node']['field'] = 'reverse_field_game_reference_node';
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -126,7 +126,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_game_system_armies']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -161,7 +161,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['count']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['count']['alter']['text'] = '<span data-toggle="tooltip" data-placement="bottom" title="Salutes"><i class="icon glyphicon glyphicon-thumbs-up" aria-hidden="true" aria-hidden="true" ></i> <span class="badge iconbuffer">[count]</span></span>';
   $handler->display->display_options['fields']['count']['element_label_colon'] = FALSE;
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -699,12 +699,12 @@ Displaying @start - @end of @total
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'row';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -958,7 +958,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -1313,7 +1313,7 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -2054,7 +2054,7 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -2123,7 +2123,7 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['sorts']['field_your_results_value']['group_type'] = 'avg';
   $handler->display->display_options['sorts']['field_your_results_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Your Army (field_your_army) */
+  /* Contextual filter: Field: Your Army (field_your_army) */
   $handler->display->display_options['arguments']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['arguments']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['arguments']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -2255,7 +2255,7 @@ VICTORY CONDITIONS MET<br>
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -2698,7 +2698,7 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -2718,7 +2718,7 @@ VICTORY CONDITIONS MET<br>
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
