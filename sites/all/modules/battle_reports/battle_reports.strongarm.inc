@@ -111,6 +111,69 @@ function battle_reports_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'content_complete_fields_game_results';
+  $strongarm->value = array(
+    0 => 'body',
+    1 => 'field_images',
+    2 => 'field_mission',
+    3 => 'field_game_date',
+    4 => 'field_your_army',
+    5 => 'field_opponent_s_army',
+    6 => 'field_your_results',
+    7 => 'field_location',
+    8 => 'field_points_per_army',
+    9 => 'field_batteresult_commander',
+    10 => 'field_battle_most_valuable_unit',
+    11 => 'field_battle_deployment',
+    12 => 'field_battle_mission_rules',
+    13 => 'field_battle_my_vc',
+    14 => 'field_your_commander_survival',
+    15 => 'field_enemy_commander_survival',
+    16 => 'field_battleresult_enemy_command',
+  );
+  $export['content_complete_fields_game_results'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_complete_fields_game_result_system_';
+  $strongarm->value = array(
+    0 => 'body',
+    1 => 'field_game_date',
+    2 => 'field_images',
+    3 => 'field_your_results',
+    4 => 'field_mission',
+    5 => 'field_opponent_s_army',
+    6 => 'field_your_army',
+    7 => 'field_location',
+    8 => 'field_points_per_army',
+    9 => 'field_batteresult_commander',
+    10 => 'field_battle_most_valuable_unit',
+    11 => 'field_battle_deployment',
+    12 => 'field_battle_mission_rules',
+    13 => 'field_your_commander_survival',
+    14 => 'field_enemy_commander_survival',
+    15 => 'field_battleresult_enemy_command',
+  );
+  $export['content_complete_fields_game_result_system_'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_complete_game_results';
+  $strongarm->value = '1';
+  $export['content_complete_game_results'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_complete_game_result_system_';
+  $strongarm->value = '1';
+  $export['content_complete_game_result_system_'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__game_results';
   $strongarm->value = array(
     'view_modes' => array(
