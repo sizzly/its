@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Battle Reports feature.
+ */
+
+include_once 'battle_reports.features.inc';
