@@ -448,14 +448,12 @@ function achievements_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 21475,
       'file_directory' => 'achievements',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'random_default' => 0,
-      'random_default_path' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -463,7 +461,6 @@ function achievements_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'dragdropfile_enabled' => 0,
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 'attach',
@@ -633,6 +630,71 @@ function achievements_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 48,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-achievement_category-field_image'
+  $field_instances['taxonomy_term-achievement_category-field_image'] = array(
+    'bundle' => 'achievement_category',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 21476,
+      'file_directory' => 'default',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '1024x1024',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 'imce',
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 1,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 42,
     ),
   );
 
