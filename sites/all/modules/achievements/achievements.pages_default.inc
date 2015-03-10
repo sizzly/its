@@ -43,6 +43,14 @@ function achievements_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Community
+Achievements
+%node:field_achievement_category',
+    'panels_breadcrumbs_paths' => 'community
+community/achievements
+%node:field-achievement-category:url',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_its2';
@@ -84,36 +92,6 @@ function achievements_default_page_manager_handlers() {
     $pane->uuid = 'a31810dc-863f-4274-b5a3-9d51b94854d9';
     $display->content['new-a31810dc-863f-4274-b5a3-9d51b94854d9'] = $pane;
     $display->panels['contentmainleft'][0] = 'new-a31810dc-863f-4274-b5a3-9d51b94854d9';
-    $pane = new stdClass();
-    $pane->pid = 'new-88917c43-7eed-4a92-a699-6b8812dcd9fc';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'achievements_all_page_layout-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '%node:nid',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '88917c43-7eed-4a92-a699-6b8812dcd9fc';
-    $display->content['new-88917c43-7eed-4a92-a699-6b8812dcd9fc'] = $pane;
-    $display->panels['contentmainleft'][1] = 'new-88917c43-7eed-4a92-a699-6b8812dcd9fc';
     $pane = new stdClass();
     $pane->pid = 'new-886b61ca-1f30-440c-b111-b57a78ad7b2b';
     $pane->panel = 'contentmainright';
@@ -222,6 +200,36 @@ function achievements_default_page_manager_handlers() {
     $display->content['new-9aa6b120-ba05-476c-a0cc-e4d7418807cc'] = $pane;
     $display->panels['contentmainright'][2] = 'new-9aa6b120-ba05-476c-a0cc-e4d7418807cc';
     $pane = new stdClass();
+    $pane->pid = 'new-88917c43-7eed-4a92-a699-6b8812dcd9fc';
+    $pane->panel = 'footer';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'achievements_all_page_layout-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '%node:nid',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '88917c43-7eed-4a92-a699-6b8812dcd9fc';
+    $display->content['new-88917c43-7eed-4a92-a699-6b8812dcd9fc'] = $pane;
+    $display->panels['footer'][0] = 'new-88917c43-7eed-4a92-a699-6b8812dcd9fc';
+    $pane = new stdClass();
     $pane->pid = 'new-3ac11666-8777-4fbe-b204-15e9ceba4840';
     $pane->panel = 'footer';
     $pane->type = 'views_panes';
@@ -253,11 +261,11 @@ function achievements_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '3ac11666-8777-4fbe-b204-15e9ceba4840';
     $display->content['new-3ac11666-8777-4fbe-b204-15e9ceba4840'] = $pane;
-    $display->panels['footer'][0] = 'new-3ac11666-8777-4fbe-b204-15e9ceba4840';
+    $display->panels['footer'][1] = 'new-3ac11666-8777-4fbe-b204-15e9ceba4840';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
