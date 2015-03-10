@@ -105,7 +105,7 @@ background:rgba(33, 33, 33, 0.75);
    margin-left:3px;
 }
 .iconbuffer {
-   margin-right:5px;
+   margin-right:10px;
 }
 .ranking00 {
   width: 0%;
@@ -874,12 +874,24 @@ img.badge {
   -o-transition: all 0.2s ease;
 }
 .photo-stream-lg li a img {
-  width: 120px;
-  height: 120px;
+  width: 118px;
+  height: 118px;
   float: left;
 }
 .photo-stream-lg li div span img {
-  width: 120px;
-  height: 120px;
+  width: 118px;
+  height: 118px;
   float: left;
+}
+.btn.quick-btn {
+  padding: 5px 20px;
+  font-size: 40px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.btn.quick-btn span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
 }
