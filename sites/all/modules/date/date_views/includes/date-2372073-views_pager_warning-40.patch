@@ -1,0 +1,88 @@
+diff --git a/date_views/includes/date_views_plugin_pager.inc b/date_views/includes/date_views_plugin_pager.inc
+index ab62335..5caca4e 100644
+--- a/date_views/includes/date_views_plugin_pager.inc
++++ b/date_views/includes/date_views_plugin_pager.inc
+@@ -280,9 +280,9 @@ class date_views_plugin_pager extends views_plugin_pager {
+         }
+         else {
+           $this->view->date_info->prev_date = clone($argument->min_date);
+-          date_modify($this->view->date_info->prev_date, '-1 ' . $granularity);
++          date_modify($this->view->date_info->prev_date, '-1 ' . $argument->date_handler->granularity);
+           $this->view->date_info->next_date = clone($argument->max_date);
+-          date_modify($this->view->date_info->next_date, '+1 ' . $granularity);
++          date_modify($this->view->date_info->next_date, '+1 ' . $argument->date_handler->granularity);
+         }
+         // Write the date_info properties that depend on the current value.
+         $this->view->date_info->year = date_format($argument->min_date, 'Y');
+diff --git a/date_views/theme/theme.inc b/date_views/theme/theme.inc
+index 76d928b..9e7debc 100644
+--- a/date_views/theme/theme.inc
++++ b/date_views/theme/theme.inc
+@@ -175,6 +175,7 @@ function template_preprocess_date_views_pager(&$vars) {
+  * Theme the calendar title.
+  */
+ function theme_date_nav_title($params) {
++  $title  = '';
+   $granularity = $params['granularity'];
+   $view = $params['view'];
+   $date_info = $view->date_info;
+diff --git a/tests/date_views_pager.test b/tests/date_views_pager.test
+index 4fbbed2..4f5dd97 100644
+--- a/tests/date_views_pager.test
++++ b/tests/date_views_pager.test
+@@ -2,10 +2,10 @@
+ 
+ /**
+  * @file
+- * Views date pager skipping test.
++ * Views date pager test.
+  */
+ 
+-class ViewsPagerSkippingTestCase extends DrupalWebTestCase {
++class ViewsPagerTestCase extends DrupalWebTestCase {
+   /**
+    * Test info.
+    */
+@@ -70,6 +70,7 @@ class ViewsPagerSkippingTestCase extends DrupalWebTestCase {
+     $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+     $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+     $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
++    $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+     $handler->display->display_options['arguments']['date_argument']['granularity'] = 'hour';
+     $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+       'node.created' => 'node.created',
+@@ -82,6 +83,10 @@ class ViewsPagerSkippingTestCase extends DrupalWebTestCase {
+     $handler->display->display_options['filters']['status']['group'] = 1;
+     $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+ 
++    /* Display: Page */
++    $handler = $view->new_display('page', 'Page', 'page_1');
++    $handler->display->display_options['path'] = 'test_date_pager';
++
+     $view->save();
+   }
+ 
+@@ -103,4 +108,22 @@ class ViewsPagerSkippingTestCase extends DrupalWebTestCase {
+     $this->assertNoText('« Prev', 'Previous pager does not exist');
+     $this->assertNoText('Next »', 'Next pager does not exist');
+   }
++
++  /**
++   * Test the view page has no PHP warnings.
++   */
++  public function testPagerWarning() {
++    $this->drupalCreateNode(array('type' => 'blog'));
++    // Set pager to skip empty pages.
++    $edit = array(
++      'pager_options[skip_empty_pages]' => FALSE,
++    );
++    $this->drupalPost('admin/structure/views/nojs/display/test_date_pager/default/pager_options', $edit, t('Apply'));
++    // Save the view.
++    $this->drupalPost('admin/structure/views/view/test_date_pager/edit', array(), t('Save'));
++
++    // Visit view page. This will throw error, if any PHP warnings or errors.
++    $this->drupalGet('test_date_pager');
++  }
++
+ }
+
