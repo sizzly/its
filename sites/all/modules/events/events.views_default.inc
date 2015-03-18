@@ -336,7 +336,7 @@ function events_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -372,7 +372,10 @@ function events_views_default_views() {
     'achievement' => 'achievement',
     'event' => 'event',
     'war_zone_league' => 'war_zone_league',
+    'league' => 'league',
+    'narrative_campaign_instance' => 'narrative_campaign_instance',
     'special_event' => 'special_event',
+    'war_zone_tournament' => 'war_zone_tournament',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Supported Games (field_supported_games) (selective) */
@@ -2587,7 +2590,7 @@ function events_views_default_views() {
   $handler->display->display_options['fields']['field_games_played']['label'] = '';
   $handler->display->display_options['fields']['field_games_played']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_games_played']['element_label_colon'] = FALSE;
-  /* Field: Content: Game */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
@@ -2635,7 +2638,7 @@ function events_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Battlefield (field_location) */
+  /* Contextual filter: Field: Battlefield (field_location) */
   $handler->display->display_options['arguments']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['arguments']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['arguments']['field_location_nid']['field'] = 'field_location_nid';
@@ -2689,7 +2692,7 @@ function events_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Battlefield Calendar', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Battlefield (field_location) */
+  /* Contextual filter: Field: Battlefield (field_location) */
   $handler->display->display_options['arguments']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['arguments']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['arguments']['field_location_nid']['field'] = 'field_location_nid';
@@ -2704,6 +2707,7 @@ function events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
@@ -2847,7 +2851,7 @@ function events_views_default_views() {
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'glory';
-  /* Relationship: Content: Battlefield (field_location) */
+  /* Relationship: Field: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
@@ -2982,7 +2986,7 @@ function events_views_default_views() {
   $handler->display->display_options['fields']['field_website']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['field_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -3263,7 +3267,7 @@ function events_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Battlefield (field_location) */
+  /* Relationship: Field: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
@@ -3327,7 +3331,7 @@ function events_views_default_views() {
   $handler->display->display_options['fields']['field_event_type']['alter']['path'] = 'taxonomy/term/[field_event_type-tid]';
   $handler->display->display_options['fields']['field_event_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Battlefield */
+  /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
@@ -3604,7 +3608,7 @@ function events_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Battlefield (field_location) */
+  /* Relationship: Field: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
