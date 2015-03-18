@@ -11,7 +11,7 @@ html.overlay-open .navbar-fixed-top{z-index:400}html.js fieldset.collapsed{heigh
 
 .dfp-tag-wrapper {
     margin-bottom: 20px;
-    margin-top: 10px
+    margin-top: 20px
 }
 @media (max-width: 767) {
     #dfp-ad-sidebar1 {
@@ -894,4 +894,145 @@ img.badge {
   display: block;
   font-size: 13px;
   font-weight: 600;
+}
+/**
+ * Restyle Calendar Header
+ */
+.view .date-nav-wrapper .clear-block {
+  margin-bottom: 10px;
+}
+
+.view .date-nav-wrapper  {
+  position: relative;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.view .date-nav-wrapper .date-nav {
+  background-color: transparent;
+  border: 0px;
+  height: 30px;
+  height: auto;
+  min-height: 30px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.view .date-nav-wrapper .pager {
+  background: none repeat scroll 0 0 #dfdfdf;
+  margin-bottom: 10px;
+}
+.view .date-nav-wrapper .date-prev a,
+.view .date-nav-wrapper .date-next a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+}
+
+.view .date-nav-wrapper.date-nav a:hover {
+  text-decoration: underline;
+}
+
+.view .date-nav-wrapper .date-prev {
+  -moz-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
+  background: none repeat scroll 0 0 #dfdfdf;
+  float: left;
+  padding: 5px 0;
+  position: relative;
+  right: auto;
+  left: 0px;
+  text-align: right;
+  top: 0px;
+  width: auto;
+  z-index: 1;
+  font-size: 12px;
+}
+
+.block-views .view .date-nav-wrapper .date-prev {
+  left: auto;
+  right: auto;
+}
+
+.view .date-nav-wrapper .date-prev a {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.view .date-nav-wrapper .date-heading {
+  position: relative;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+  z-index: 0;
+}
+
+.view .date-nav-wrapper .date-heading h3 {
+  line-height: 30px;
+  font-size: 1.7em;
+}
+
+.view .date-nav-wrapper .date-next {
+  -moz-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+  background: none repeat scroll 0 0 #dfdfdf;
+  float: right;
+  padding: 5px 0;
+  position: relative;
+  right: 0px;
+  text-align: right;
+  top: 0px;
+  width: auto;
+  z-index: 1;
+  font-size: 12px;
+}
+
+.view .date-nav-wrapper .date-next a {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.attachment .calendar-calendar {
+  margin-top: 20px;
+  clear: both;
+}
+
+.calendar-calendar th a,
+.attachment .calendar-calendar th {
+  background-color: transparent;
+  border: 0px;
+}
+
+.attachment .calendar-calendar th.calendar-agenda-hour {
+  color: #777777;
+  font-weight: bold;
+  text-align: right;
+}
+
+.view-calendar .feed-icon {
+  margin-top: 5px;
+}
+
+.view table.mini .date-prev,
+.view table.mini .date-next {
+  background: none;
+}
+
+.date-nav div.date-prev,
+.date-nav div.date-next,
+.date-nav {
+  width:auto;
+}
+
+ul.calendar-links,
+.region-content ul.calendar-links {
+  margin:0;
+  padding:0;
+}
+
+.year-view div.month-view div.date-nav {
+  background-color: #DFDFDF;
+  min-height: 20px;
+}
+td.multi-day .calendar .contents a {
+  color: #fff;
 }
