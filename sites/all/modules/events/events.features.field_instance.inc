@@ -494,7 +494,7 @@ function events_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 21027,
+      'default_image' => 21478,
       'file_directory' => 'default',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
