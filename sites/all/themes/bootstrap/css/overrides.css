@@ -588,6 +588,13 @@ background:rgba(33, 33, 33, 0.75);
   padding: 0;
   margin-bottom: 20px;
 }
+.photo-stream ul {
+    padding: 0;
+    margin: 0;
+}
+.photo-stream-teaser {
+    margin-bottom: 5px;
+}
 .photo-stream li {
   display: inline-block;
 }
@@ -1035,4 +1042,7 @@ ul.calendar-links,
 }
 td.multi-day .calendar .contents a {
   color: #fff;
+}
+.views-exposed-form .views-exposed-widget .form-submit {
+    margin-top: 0px;
 }
