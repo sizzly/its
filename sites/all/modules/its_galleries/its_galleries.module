@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iTS Galleries feature.
+ */
+
+include_once 'its_galleries.features.inc';
