@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ListCrit feature.
+ */
+
+include_once 'listcrit.features.inc';
