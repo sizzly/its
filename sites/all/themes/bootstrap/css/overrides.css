@@ -1046,3 +1046,10 @@ td.multi-day .calendar .contents a {
 .views-exposed-form .views-exposed-widget .form-submit {
     margin-top: 0px;
 }
+.label a {
+  color: #fff;
+}
+.label a:hover,
+.label a:focus {
+  color: #BECFDF;
+}
