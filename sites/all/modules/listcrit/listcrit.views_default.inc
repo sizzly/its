@@ -211,7 +211,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -324,7 +324,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_game_system_armies']['label'] = 'Game System / Army';
   $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -553,7 +553,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -585,7 +585,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'lead';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -746,7 +746,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_batteresult_commander']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_batteresult_commander']['alter']['path'] = 'taxonomy/term/[field_batteresult_commander-tid]';
   $handler->display->display_options['fields']['field_batteresult_commander']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Doctrine */
+  /* Field: Field: Doctrine */
   $handler->display->display_options['fields']['field_doctrine']['id'] = 'field_doctrine';
   $handler->display->display_options['fields']['field_doctrine']['table'] = 'field_data_field_doctrine';
   $handler->display->display_options['fields']['field_doctrine']['field'] = 'field_doctrine';
@@ -760,7 +760,7 @@ function listcrit_views_default_views() {
   </div>
 </div>';
   $handler->display->display_options['fields']['field_doctrine']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Tactical Focus */
+  /* Field: Field: Tactical Focus */
   $handler->display->display_options['fields']['field_tactical_focus']['id'] = 'field_tactical_focus';
   $handler->display->display_options['fields']['field_tactical_focus']['table'] = 'field_data_field_tactical_focus';
   $handler->display->display_options['fields']['field_tactical_focus']['field'] = 'field_tactical_focus';
@@ -776,7 +776,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_tactical_focus']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_tactical_focus']['alter']['path'] = 'taxonomy/term/[field_tactical_focus-tid] ';
   $handler->display->display_options['fields']['field_tactical_focus']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -1012,7 +1012,7 @@ function listcrit_views_default_views() {
 </div>
 </div>';
   $handler->display->display_options['fields']['field_camp']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Doctrine */
+  /* Field: Field: Doctrine */
   $handler->display->display_options['fields']['field_doctrine']['id'] = 'field_doctrine';
   $handler->display->display_options['fields']['field_doctrine']['table'] = 'field_data_field_doctrine';
   $handler->display->display_options['fields']['field_doctrine']['field'] = 'field_doctrine';
@@ -1039,7 +1039,7 @@ function listcrit_views_default_views() {
 </div>
 </div>';
   $handler->display->display_options['fields']['field_doctrine']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Primary Role */
+  /* Field: Field: Primary Role */
   $handler->display->display_options['fields']['field_primary_role']['id'] = 'field_primary_role';
   $handler->display->display_options['fields']['field_primary_role']['table'] = 'field_data_field_primary_role';
   $handler->display->display_options['fields']['field_primary_role']['field'] = 'field_primary_role';

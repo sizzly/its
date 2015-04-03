@@ -209,6 +209,119 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listcrit-field_image'
+  $field_instances['node-listcrit-field_image'] = array(
+    'bundle' => 'listcrit',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 20780,
+      'file_directory' => 'user/u[current-user:uid]',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '1024x1024',
+      'min_resolution' => '200x200',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'dragdropfile_enabled' => 0,
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 'imce',
+            'reference' => 0,
+            'remote' => 'remote',
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 1,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-listcrit-field_listcrit_component_units'
+  $field_instances['node-listcrit-field_listcrit_component_units'] = array(
+    'bundle' => 'listcrit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listcrit_component_units',
+    'label' => 'Component Units',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-listcrit-field_opponent_s_army'
   $field_instances['node-listcrit-field_opponent_s_army'] = array(
     'bundle' => 'listcrit',
@@ -379,6 +492,46 @@ function listcrit_field_default_field_instances() {
       'settings' => array(),
       'type' => 'vud_field_default_widget',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-listcrit-field_short_description'
+  $field_instances['node-listcrit-field_short_description'] = array(
+    'bundle' => 'listcrit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'A brief description of this army list.  255 character limit.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_short_description',
+    'label' => 'Short Description',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -567,11 +720,13 @@ function listcrit_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A brief description of this army list.  255 character limit.');
   t('Army');
   t('Auxillary');
   t('Camp');
   t('Chronicle Icon');
   t('Commander');
+  t('Component Units');
   t('Designed to defeat');
   t('Doctrine');
   t('Image');
@@ -580,6 +735,7 @@ function listcrit_field_default_field_instances() {
   t('Points');
   t('Primary Role');
   t('Rate List');
+  t('Short Description');
   t('Tactical Focus');
   t('The primary faction for this list.');
 
