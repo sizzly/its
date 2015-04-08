@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iTS Articles and Feed feature.
+ */
+
+include_once 'its_articles_and_feed.features.inc';
