@@ -14,6 +14,7 @@ function war_zones_user_default_permissions() {
   $permissions['access rules link war_zone_all_open_registration'] = array(
     'name' => 'access rules link war_zone_all_open_registration',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'rules_link',
@@ -23,6 +24,7 @@ function war_zones_user_default_permissions() {
   $permissions['access rules link wz_complete'] = array(
     'name' => 'access rules link wz_complete',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'rules_link',
@@ -32,6 +34,7 @@ function war_zones_user_default_permissions() {
   $permissions['access rules link wz_start'] = array(
     'name' => 'access rules link wz_start',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'rules_link',
@@ -63,9 +66,7 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'create narrative_campaign_instance content'.
   $permissions['create narrative_campaign_instance content'] = array(
     'name' => 'create narrative_campaign_instance content',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
