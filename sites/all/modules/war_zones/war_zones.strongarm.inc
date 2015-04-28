@@ -535,7 +535,50 @@ function war_zones_strongarm() {
           'weight' => '30',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'registration_link' => array(
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+        ),
+        'registration_form' => array(
+          'teaser' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_slots_left' => array(
+          'teaser' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+        ),
+        'registration_unregistrable_reason' => array(
+          'teaser' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_war_zone_all_open_registration' => array(
+          'teaser' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_wz_complete' => array(
+          'teaser' => array(
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_wz_start' => array(
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__special_event'] = $strongarm;

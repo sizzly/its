@@ -1547,6 +1547,33 @@ $entity_field[0][\'value\'] = "0";
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_warzone_scheduling'
+  $field_bases['field_warzone_scheduling'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_warzone_scheduling',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Automatic - Recommended',
+        1 => 'Manual',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_your_results'
   $field_bases['field_your_results'] = array(
     'active' => 1,

@@ -73,7 +73,9 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'create special_event content'.
   $permissions['create special_event content'] = array(
     'name' => 'create special_event content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
@@ -225,7 +227,9 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'edit own special_event content'.
   $permissions['edit own special_event content'] = array(
     'name' => 'edit own special_event content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 

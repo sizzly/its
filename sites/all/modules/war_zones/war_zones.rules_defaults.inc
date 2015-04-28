@@ -319,6 +319,39 @@ function war_zones_default_rules_configuration() {
                           }
                         ]
                       }
+                    },
+                    { "CASE" : {
+                        "USING" : { "value" : "special_event" },
+                        "DO" : [
+                          { "data_set" : {
+                              "data" : [ "node:field-event-type" ],
+                              "value" : [ "node:field-special-event-type" ]
+                            }
+                          },
+                          { "CONDITIONAL" : [
+                              {
+                                "IF" : { "data_is" : { "data" : [ "node:field-warzone-scheduling" ], "value" : "0" } },
+                                "DO" : [
+                                  { "schedule" : {
+                                      "component" : "rules_link_set_wz_start",
+                                      "date" : [ "node:field-event-date:0:value" ],
+                                      "identifier" : "[node:nid] - Start",
+                                      "param_node" : [ "node" ]
+                                    }
+                                  },
+                                  { "schedule" : {
+                                      "component" : "rules_link_set_wz_complete",
+                                      "date" : [ "node:field-event-date:0:value2" ],
+                                      "identifier" : "[node:nid] - Complete",
+                                      "param_node" : [ "node" ]
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
                     }
                   ]
                 }
@@ -667,6 +700,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
+                "gallery" : "gallery",
                 "league" : "league",
                 "narrative_campaign" : "narrative_campaign",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
@@ -693,6 +727,34 @@ function war_zones_default_rules_configuration() {
                     }
                   ]
                 }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "gallery" },
+                  "DO" : [
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "node:field-event-link" ] } },
+                          "DO" : [
+                            { "component_rules_warzone_message_on_new_article" : { "nid" : [ "node" ] } }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "special_event" },
+                  "DO" : [
+                    { "mail" : {
+                        "to" : [ "node:author:mail" ],
+                        "subject" : "[iToysoldiers] You\\u0027re Ready To Go To War",
+                        "message" : "\\u003Ch3\\u003EGreetings, [node:author:name]!\\u003C\\/h3\\u003E\\r\\n\\u003Cp\\u003EYour \\u003Cstrong\\u003ESpecial Event\\u003C\\/strong\\u003E is ready and can be viewed at [node:url] .\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EYour War Zone Management page is available at http:\\/\\/itoysoldiers.com\\/node\\/[node:nid]\\/management .\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EThis War Zone, as well as any others, can also be accessed from your Dashboard at http:\\/\\/itoysoldiers.com\\/dashboard.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ETo help you have a successful war zone, please take a moment to review these tips before promoting your campaign to players:\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EFirst, your war zone starts in \\u003Cstrong\\u003ESetup\\u003C\\/strong\\u003E mode.  In this mode, other players cannot see or register for your event.  This gives you an opportunity to ensure that you are happy with all of the settings before making it live.  Once you\\u2019re happy with it, you can visit your Campaign Management page and click \\u201cOpen War Zone\\u201d.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ESecond, if you select \\u0022Automatic\\u0022 for scheduling, your war zone will automatically start on the date that you indicate on the Date field. There is no action required on your part. If you have selected \\u0022Manual\\u0022 then you will need to start and complete the war zone from the management page.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELastly, if you have any questions, comments, requests or anything do not hesitate to reach out.  The super friendly iToysoldiers team (that\\u2019d be me) is always ready to help you out.  The best way to reach us is here:  http:\\/\\/itoysoldiers.uservoice.com\\/.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003E\\r\\nRob\\u003Cbr\\u003E\\r\\niToysoldiers.com\\u003C\\/p\\u003E",
+                        "language" : [ "" ]
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
@@ -700,17 +762,30 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_war_zone_all_on_submit_entity_form'] = entity_import('rules_config', '{ "rules_war_zone_all_on_submit_entity_form" : {
-      "LABEL" : "War Zone: All: On submit entity form",
+  $items['rules_war_zone_all_submit_form_master'] = entity_import('rules_config', '{ "rules_war_zone_all_submit_form_master" : {
+      "LABEL" : "War Zone: All: Submit Form Master",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "War Zone" ],
       "REQUIRES" : [ "rules_conditional", "rules", "entityform" ],
       "ON" : { "entityform_insert" : [] },
       "DO" : [
         { "SWITCH" : {
-            "USING" : { "data" : [ "entityform:type" ] },
+            "USING" : { "data" : [ "entityform:type:type" ] },
             "DO" : [
+              { "CASE" : {
+                  "USING" : { "value" : "war_zone_all_generate_article" },
+                  "DO" : [
+                    { "component_rules_warzone_all_generate_article" : { "submission" : [ "entityform" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "war_zone_campaign_add_points" },
+                  "DO" : [
+                    { "component_rules_war_zone_campaign_add_points" : { "points" : [ "entityform" ] } }
+                  ]
+                }
+              },
               { "CASE" : {
                   "USING" : { "value" : "war_zone_grant_achievement" },
                   "DO" : [
@@ -722,14 +797,6 @@ function war_zones_default_rules_configuration() {
                   "USING" : { "value" : "warzone_campaign_report_battle_p" },
                   "DO" : [
                     { "component_rules_war_zone_campaign_record_battle" : { "bid" : [ "entityform" ] } }
-                  ]
-                }
-              },
-              { "CASE" : { "USING" : { "value" : "war_zone_league_add_journeyman_s" }, "DO" : [] } },
-              { "CASE" : {
-                  "USING" : { "value" : "war_zone_campaign_add_points" },
-                  "DO" : [
-                    { "component_rules_war_zone_campaign_add_points" : { "points" : [ "entityform" ] } }
                   ]
                 }
               }
@@ -809,6 +876,153 @@ function war_zones_default_rules_configuration() {
                 ]
               }
             ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_war_zone_campaign_final_scoring'] = entity_import('rules_config', '{ "rules_war_zone_campaign_final_scoring" : {
+      "LABEL" : "War Zone: Campaign: Final Scoring",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "views_rules", "rules_conditional" ],
+      "USES VARIABLES" : { "wzid" : { "label" : "War Zone ID", "type" : "node" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "wzid" ],
+            "type" : "node",
+            "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_campaign_instance_phase_scoring",
+            "DISPLAY" : "views_rules_3",
+            "USING" : { "nid" : [ "wzid:nid" ] },
+            "ROW VARIABLES" : { "rid" : { "rid" : "Rid" } },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "relation", "id" : [ "rid" ] },
+                  "PROVIDE" : { "entity_fetched" : { "relation_to_skip" : "relation to skip" } }
+                }
+              },
+              { "component_rules_link_set_warzone_campaign_skip_phase" : { "relation" : [ "relation-to-skip" ] } }
+            ]
+          }
+        },
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_campaign_instance_phase_scoring",
+            "DISPLAY" : "views_rules_2",
+            "USING" : { "nid" : [ "wzid:nid" ] },
+            "ROW VARIABLES" : { "rid" : { "rid" : "Rid" } },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "relation", "id" : [ "rid" ] },
+                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                }
+              },
+              { "component_rules_link_set_warzone_campaign_close_and_score" : { "relation" : [ "entity-fetched" ] } }
+            ]
+          }
+        },
+        { "variable_add" : {
+            "USING" : { "type" : "entityform", "value" : [ "" ] },
+            "PROVIDE" : { "variable_added" : { "vfid" : "Victorious Faction ID" } }
+          }
+        },
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_campaign_instance_phase_scoring",
+            "DISPLAY" : "views_rules_1",
+            "USING" : { "nid" : [ "wzid:nid" ] },
+            "ROW VARIABLES" : {
+              "field_title_chronicle_1" : { "field_title_chronicle_1" : "Name" },
+              "entityform_id" : { "entityform_id" : "Faction ID" }
+            },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "entityform", "id" : [ "entityform-id" ] },
+                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                }
+              },
+              { "data_set" : { "data" : [ "vfid" ], "value" : [ "entity-fetched" ] } }
+            ]
+          }
+        },
+        { "entity_create" : {
+            "USING" : {
+              "type" : "node",
+              "param_type" : "achievement",
+              "param_title" : "[wzid:title]: Victory!",
+              "param_author" : "1"
+            },
+            "PROVIDE" : { "entity_created" : { "achievement" : "achievement" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "achievement:field-image" ],
+            "value" : [ "wzid:field-campaign-badge" ]
+          }
+        },
+        { "data_set" : { "data" : [ "achievement:field-event-link" ], "value" : [ "wzid" ] } },
+        { "data_set" : {
+            "data" : [ "achievement:field-achievement-category" ],
+            "value" : "1146"
+          }
+        },
+        { "data_set" : { "data" : [ "achievement:field-achievement-points" ], "value" : "3" } },
+        { "entity_save" : { "data" : [ "achievement" ], "immediate" : 1 } },
+        { "data_set" : {
+            "data" : [ "wzid:field-victor-narrative" ],
+            "value" : "[vfid:field-title-chronicle]"
+          }
+        },
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_email_player_rules",
+            "DISPLAY" : "views_rules_3",
+            "USING" : { "nid" : [ "wzid:nid" ] },
+            "ROW VARIABLES" : {
+              "email" : { "email" : "E-mail" },
+              "uid" : { "uid" : "User uid" },
+              "entityform_id" : { "player_faction_id" : "Faction ID" }
+            },
+            "DO" : [
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "data_is" : { "data" : [ "player-faction-id" ], "value" : [ "vfid:entityform-id" ] } },
+                    "DO" : [
+                      { "entity_fetch" : {
+                          "USING" : { "type" : "user", "id" : [ "uid" ] },
+                          "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                        }
+                      },
+                      { "component_rules_award_achievement" : { "aid" : [ "achievement" ], "uid" : [ "entity-fetched" ] } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        { "entity_create" : {
+            "USING" : {
+              "type" : "message",
+              "param_type" : "campaign_reported_battle",
+              "param_user" : [ "wzid:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "message" : "Message" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "message:field-title-chronicle" ],
+            "value" : "[vfid:field-title-chronicle] Victory!"
+          }
+        },
+        { "data_set" : { "data" : [ "message:field-stream-node-ref" ], "value" : [ "wzid" ] } },
+        { "data_set" : { "data" : [ "message:field-chronicle-icon" ], "value" : "star" } },
+        { "data_set" : {
+            "data" : [ "message:arguments:messtext" ],
+            "value" : "\\u003Cp\\u003E\\u003Cstrong\\u003E[vfid:field-title-chronicle]\\u003C\\/strong\\u003E have proven victorious and have won the campaign.\\u003C\\/p\\u003E"
           }
         }
       ]
@@ -1090,6 +1304,44 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_warzone_all_generate_article'] = entity_import('rules_config', '{ "rules_warzone_all_generate_article" : {
+      "LABEL" : "Warzone: All: Generate Article",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "submission" : { "label" : "Submission", "type" : "entityform" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "submission" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "war_zone_all_generate_article" : "war_zone_all_generate_article" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "node",
+              "param_type" : "article",
+              "param_title" : [ "submission:field-title-chronicle" ],
+              "param_author" : [ "submission:user" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:body" ],
+            "value" : [ "submission:field-article-body" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-event-link" ],
+            "value" : [ "submission:field-event-link" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_warzone_email_players'] = entity_import('rules_config', '{ "rules_warzone_email_players" : {
       "LABEL" : "Warzone: Email Players",
       "PLUGIN" : "rule",
@@ -1134,14 +1386,17 @@ function war_zones_default_rules_configuration() {
         { "entity_is_of_bundle" : {
             "entity" : [ "nid" ],
             "type" : "node",
-            "bundle" : { "value" : { "article" : "article" } }
+            "bundle" : { "value" : { "article" : "article", "gallery" : "gallery" } }
           }
         },
         { "entity_is_of_bundle" : {
-            "entity" : [ "nid:field-attach-to" ],
+            "entity" : [ "nid:field-event-link" ],
             "type" : "node",
             "bundle" : { "value" : {
                 "war_zone_league" : "war_zone_league",
+                "league" : "league",
+                "narrative_campaign" : "narrative_campaign",
+                "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"
               }
@@ -1151,8 +1406,8 @@ function war_zones_default_rules_configuration() {
       ],
       "DO" : [
         { "entity_fetch" : {
-            "USING" : { "type" : "node", "id" : [ "nid:field-attach-to:nid" ] },
-            "PROVIDE" : { "entity_fetched" : { "warzone" : "Warzone" } }
+            "USING" : { "type" : "node", "id" : [ "nid:field-event-link:nid" ] },
+            "PROVIDE" : { "entity_fetched" : { "warzone_link" : "Warzone Link" } }
           }
         },
         { "variable_add" : {
@@ -1163,13 +1418,13 @@ function war_zones_default_rules_configuration() {
         { "variable_add" : {
             "USING" : {
               "type" : "text",
-              "value" : "\\u003Cp class=\\u0022lead\\u0022 style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 21px; font-size: 18px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003E\\r\\n[nid:author] has added an update for the War Zone, \\u003Ca href=\\u0022[warzone:url]\\u0022\\u003E[warzone:title]\\u003C\\/a\\u003E.\\r\\n\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003E\\r\\nView the update at \\u003Ca href=\\u0022[nid:url]\\u0022\\u003E[nid:title]\\u003C\\/a\\u003E.\\r\\n\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003E\\r\\nCarpe Acies,\\u003Cbr\\u003E\\r\\nThe iToysoldiers Equerry\\r\\n\\u003C\\/p\\u003E"
+              "value" : "\\u003Cp class=\\u0022lead\\u0022 style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 21px; font-size: 18px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003E\\r\\n[nid:author] has added an update for the War Zone, \\u003Ca href=\\u0022[warzone-link:url]\\u0022\\u003E[warzone-link:title]\\u003C\\/a\\u003E.\\r\\n\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003E\\r\\nView the update at \\u003Ca href=\\u0022[nid:url]\\u0022\\u003E[nid:title]\\u003C\\/a\\u003E.\\r\\n\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003E\\r\\nCarpe Acies,\\u003Cbr\\u003E\\r\\nThe iToysoldiers Equerry\\r\\n\\u003C\\/p\\u003E"
             },
             "PROVIDE" : { "variable_added" : { "message_body" : "Message Body" } }
           }
         },
         { "component_rules_warzone_email_players" : {
-            "wzid" : [ "nid:field-attach-to" ],
+            "wzid" : [ "nid:field-event-link" ],
             "message_title" : [ "message_title" ],
             "message_body" : [ "message_body" ]
           }
