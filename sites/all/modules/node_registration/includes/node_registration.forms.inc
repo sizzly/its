@@ -6,6 +6,25 @@
  */
 
 /**
+ * Page callback for registration/%node_registration/toggle/ajax/%/%.
+ */
+function node_registration_toggle_flag($registration, $ajax, $field, $new_value) {
+  $ajax = $ajax == 'ajax';
+
+  $registration->$field = (int) (bool) $new_value;
+  $registration->save();
+
+  if ($ajax) {
+    // What a mess, just to reload the page. CTools doesn't help here either.
+    $commands = array(ajax_command_prepend('head', '<script>location.reload()</script>'));
+    print drupal_json_encode($commands);
+    exit;
+  }
+
+  drupal_goto();
+}
+
+/**
  * Admin: registration types form.
  *
  * This is a form, because a form can be altered by other modules
@@ -615,7 +634,7 @@ function node_registration_type_settings_submit($form, &$form_state) {
 function _node_registration_assoc_users_from_view() {
   $view = views_get_view('node_registration_users');
   if ($view && empty($view->disabled)) {
-    $view->render('master');
+    $view->execute_display('master');
 
     if ($view->executed && $view->result) {
       $values = $view->result;

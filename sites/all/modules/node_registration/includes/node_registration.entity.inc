@@ -118,6 +118,13 @@ class NodeRegistrationController extends EntityAPIController {
    * Override create() to add registration properties.
    */
   public function create(array $values = array()) {
+    if (!isset($values['created'])) {
+      $values['created'] = REQUEST_TIME;
+    }
+    if (!isset($values['updated'])) {
+      $values['updated'] = $values['created'];
+    }
+
     if (isset($values['node'])) {
       $node = $values['node'];
     }
@@ -131,7 +138,79 @@ class NodeRegistrationController extends EntityAPIController {
     // The node type.
     $values['node_type'] = $node->type;
 
-    return parent::create($values);
+    $entity = parent::create($values);
+    return $entity;
+  }
+
+  /**
+   * Override save() to add automatic base column values from other base column values.
+   */
+  public function save($registration) {
+    // Add `type` and `node_type` from `node` or `nid`.
+    if (empty($registration->type) || empty($registration->node_type)) {
+      $node = NULL;
+      if (!empty($registration->node)) {
+        $node = $registration->node;
+        $registration->nid = $node->nid;
+      }
+      elseif (!empty($registration->nid)) {
+        $node = node_load($registration->nid);
+        $registration->node = $node;
+      }
+
+      if ($node) {
+        if (empty($registration->type)) {
+          $registration->type = !empty($node->registration->private_fields) ? 'node_' . $node->nid : $node->type;
+        }
+        if (empty($registration->node_type)) {
+          $registration->node_type = $node->type;
+        }
+      }
+    }
+
+    // Add `weight`.
+    if ((!isset($registration->weight) || $registration->weight === '') && !empty($registration->nid)) {
+      $weight = db_query('SELECT MAX(weight) FROM {node_registration} WHERE nid = ?', array($registration->nid))->fetchField();
+      $registration->weight = $weight === NULL ? 0 : $weight + 1;
+    }
+
+    // Add `author_uid` from session user.
+    if (!isset($registration->author_uid)) {
+      global $user;
+      $registration->author_uid = $user->uid;
+    }
+
+    // Add `uid` from `user_name`.
+    if (!isset($registration->uid) && !empty($registration->user_name)) {
+      static $user_name_uid_map = array();
+      $name = trim(drupal_strtolower($registration->user_name));
+      if (!isset($user_name_uid_map[$name])) {
+        $user_name_uid_map[$name] = db_query('SELECT uid FROM {users} WHERE name = ?', array($name))->fetchField() ?: 0;
+      }
+      $registration->uid = $user_name_uid_map[$name];
+    }
+
+    // Add `uid` from `user_mail`.
+    if (!isset($registration->uid) && !empty($registration->user_mail)) {
+      static $user_mail_uid_map = array();
+      $mail = trim(drupal_strtolower($registration->user_mail));
+      if (!isset($user_mail_uid_map[$mail])) {
+        $user_mail_uid_map[$mail] = db_query('SELECT uid FROM {users} WHERE mail = ?', array($mail))->fetchField() ?: 0;
+      }
+      $registration->uid = $user_mail_uid_map[$mail];
+    }
+
+    // Add `email` from `uid`.
+    if (empty($registration->email) && !empty($registration->uid)) {
+      static $uid_email_map = array();
+      $uid = (int) trim($registration->uid);
+      if (!isset($uid_email_map[$uid])) {
+        $uid_email_map[$uid] = db_query('SELECT mail FROM {users} WHERE uid = ?', array($uid))->fetchField() ?: 0;
+      }
+      $registration->email = $uid_email_map[$uid];
+    }
+
+    return parent::save($registration);
   }
 
 }
@@ -232,14 +311,20 @@ function _node_registration_fake_field(&$renderable, $machine_name, $title, $con
   $items = array_fill(0, count($content), $machine_name);
 
   $renderable[$machine_name] = array(
+    // These are necessary for correct display.
     '#theme' => 'field',
     '#field_name' => $machine_name,
-    '#field_type' => $machine_name,
     '#title' => $title,
     '#label_display' => $show_title ? 'above' : 'hidden',
     '#bundle' => $machine_name,
     '#items' => $items,
-  ) + $content;
+  ) + $content + array(
+    // These are necessary for other modules' preprocessors.
+    '#field_type' => 'custom',
+    '#entity_type' => 'custom',
+    '#bundle' => 'custom',
+    '#object' => new stdClass,
+  );
 }
 
 /**
@@ -301,6 +386,15 @@ function node_registration_entity_property_info_alter(&$info) {
     'description' => t("The registree's e-mail address."),
     'type' => 'text',
     'schema field' => 'email',
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+
+  // Type / bundle.
+  $properties['type'] = array(
+    'label' => t("Type"),
+    'description' => t("The registration's entity bundle."),
+    'type' => 'text',
+    'schema field' => 'type',
   );
 
   // Node type.
@@ -317,6 +411,7 @@ function node_registration_entity_property_info_alter(&$info) {
     'description' => t("The number of slots consumed by this user."),
     'type' => 'integer',
     'schema field' => 'slots',
+    'setter callback' => 'entity_property_verbatim_set',
   );
 
   // Created.
@@ -325,6 +420,7 @@ function node_registration_entity_property_info_alter(&$info) {
     'description' => t("The date the registration was created."),
     'type' => 'date',
     'schema field' => 'created',
+    'setter callback' => 'entity_property_verbatim_set',
   );
 
   // Updated.
@@ -333,6 +429,16 @@ function node_registration_entity_property_info_alter(&$info) {
     'description' => t("The date the registration was updated."),
     'type' => 'date',
     'schema field' => 'updated',
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+
+  // Weight.
+  $properties['weight'] = array(
+    'label' => t("Weight"),
+    'description' => t("The weight of this registration in this event. Used for waitinglist execution order and display."),
+    'type' => 'integer',
+    'schema field' => 'weight',
+    'setter callback' => 'entity_property_verbatim_set',
   );
 
   // Node entity.
@@ -359,6 +465,22 @@ function node_registration_entity_property_info_alter(&$info) {
     'label' => t("User"),
     'description' => t("The user that's registered."),
     'type' => 'user',
+    'schema field' => 'uid',
+  );
+
+  // Registree user name. Can be used to set `uid` indirectly (magic in ctrlr->save()).
+  $properties['user_name'] = array(
+    'label' => t("User name"),
+    'description' => t("The user's username."),
+    'type' => 'text',
+    'schema field' => 'uid',
+  );
+
+  // Registree user mail. Can be used to set `uid` indirectly (magic in ctrlr->save()).
+  $properties['user_mail'] = array(
+    'label' => t("User mail"),
+    'description' => t("The user's e-mail address."),
+    'type' => 'text',
     'schema field' => 'uid',
   );
 
@@ -431,6 +553,16 @@ function node_registration_metadata_entity_get_properties($entity, array $option
     // REGISTRATION properties.
     case 'node_registration':
       switch ($name) {
+        // User name.
+        case 'user_name':
+          $account = $entity->uid ? user_load($entity->uid) : NULL;
+          return $account && $account->uid ? $account->name : '';
+
+        // User mail.
+        case 'user_mail':
+          $account = $entity->uid ? user_load($entity->uid) : NULL;
+          return $account && $account->uid ? $account->mail : '';
+
         // View URL.
         case 'url':
           $return = entity_uri($entity_type, $entity);
