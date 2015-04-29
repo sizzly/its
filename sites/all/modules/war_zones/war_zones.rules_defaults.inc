@@ -159,6 +159,35 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_link_condition_warzone_award_achievement'] = entity_import('rules_config', '{ "rules_link_condition_warzone_award_achievement" : {
+      "LABEL" : "Rules link: Warzone: Award Achievement condition",
+      "PLUGIN" : "and",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "node_registration" : { "label" : "node_registration", "type" : "node_registration" },
+        "aid" : { "label" : "Indicated Award", "type" : "field_collection_item" }
+      },
+      "AND" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "aid" ],
+            "type" : "field_collection_item",
+            "bundle" : { "value" : { "field_available_awards_comp" : "field_available_awards_comp" } }
+          }
+        },
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node-registration" ],
+            "type" : "node_registration",
+            "bundle" : { "value" : {
+                "war_zone_league" : "war_zone_league",
+                "war_zone_tournament" : "war_zone_tournament"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_link_condition_wz_complete'] = entity_import('rules_config', '{ "rules_link_condition_wz_complete" : {
       "LABEL" : "Rules link: War Zone: All: Complete condition",
       "PLUGIN" : "and",
@@ -878,282 +907,6 @@ function war_zones_default_rules_configuration() {
             ]
           }
         }
-      ]
-    }
-  }');
-  $items['rules_war_zone_campaign_record_battle'] = entity_import('rules_config', '{ "rules_war_zone_campaign_record_battle" : {
-      "LABEL" : "War Zone: Campaign Record Battle",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "views_rules", "rules_conditional", "flag" ],
-      "USES VARIABLES" : { "bid" : { "label" : "Battle Report", "type" : "entityform" } },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "bid" ],
-            "type" : "entityform",
-            "bundle" : { "value" : { "warzone_campaign_report_battle_p" : "warzone_campaign_report_battle_p" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "bid:field-phase-sc" ],
-            "type" : "relation",
-            "bundle" : { "value" : { "campaign_phase_instance" : "campaign_phase_instance" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "bid:field-opponent-reg-sc" ],
-            "type" : "node_registration",
-            "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
-          }
-        }
-      ],
-      "DO" : [
-        { "variable_add" : {
-            "USING" : { "type" : "node_registration", "value" : [ "" ] },
-            "PROVIDE" : { "variable_added" : { "p1_reg" : "p1 registration" } }
-          }
-        },
-        { "entity_create" : {
-            "USING" : {
-              "type" : "entityform",
-              "param_type" : "score_card",
-              "param_created" : "now",
-              "param_user" : [ "bid:field-event-link:author" ]
-            },
-            "PROVIDE" : { "entity_created" : { "p1_sc" : "Player 1 SC" } }
-          }
-        },
-        { "VIEW LOOP" : {
-            "VIEW" : "war_zone_email_player_rules",
-            "DISPLAY" : "views_rules_2",
-            "USING" : {
-              "nid" : [ "bid:field-event-link:nid" ],
-              "uid" : [ "bid:field-player-sc:uid" ]
-            },
-            "ROW VARIABLES" : { "registration_id" : { "registration_id" : "Registration ID" } },
-            "DO" : [
-              { "entity_query" : {
-                  "USING" : {
-                    "type" : "node_registration",
-                    "property" : "registration_id",
-                    "value" : [ "registration-id" ],
-                    "limit" : "1"
-                  },
-                  "PROVIDE" : { "entity_fetched" : { "fetched_registration" : "Fetched Registration" } }
-                }
-              },
-              { "data_set" : { "data" : [ "p1-reg" ], "value" : [ "fetched-registration:0" ] } }
-            ]
-          }
-        },
-        { "data_set" : { "data" : [ "p1-sc:field-registration-sc" ], "value" : [ "p1-reg" ] } },
-        { "data_set" : { "data" : [ "p1-sc:field-state-sc" ], "value" : "20" } },
-        { "data_set" : {
-            "data" : [ "p1-sc:field-phase-sc" ],
-            "value" : [ "bid:field-phase-sc" ]
-          }
-        },
-        { "data_set" : { "data" : [ "p1-sc:field-explanation-sc" ], "value" : "Reported Battle" } },
-        { "data_set" : {
-            "data" : [ "p1-sc:field-event-link" ],
-            "value" : [ "bid:field-event-link" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "p1-sc:field-opponent-reg-sc" ],
-            "value" : [ "bid:field-opponent-reg-sc" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "p1-sc:field-your-results" ],
-            "value" : [ "bid:field-your-results" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "p1-sc:field-battle-points-sc" ],
-            "value" : [ "bid:field-your-results" ]
-          }
-        },
-        { "entity_create" : {
-            "USING" : {
-              "type" : "entityform",
-              "param_type" : "score_card",
-              "param_created" : "now",
-              "param_user" : [ "bid:field-event-link:author" ]
-            },
-            "PROVIDE" : { "entity_created" : { "p2_sc" : "P2 Score Card" } }
-          }
-        },
-        { "data_set" : {
-            "data" : [ "p2-sc:field-registration-sc" ],
-            "value" : [ "bid:field-opponent-reg-sc" ]
-          }
-        },
-        { "data_set" : { "data" : [ "p2-sc:field-state-sc" ], "value" : "20" } },
-        { "data_set" : {
-            "data" : [ "p2-sc:field-phase-sc" ],
-            "value" : [ "bid:field-phase-sc" ]
-          }
-        },
-        { "data_set" : { "data" : [ "p2-sc:field-explanation-sc" ], "value" : "Battle Reported" } },
-        { "data_set" : {
-            "data" : [ "p2-sc:field-event-link" ],
-            "value" : [ "bid:field-event-link" ]
-          }
-        },
-        { "data_set" : { "data" : [ "p2-sc:field-opponent-reg-sc" ], "value" : [ "p1-reg" ] } },
-        { "variable_add" : {
-            "USING" : { "type" : "integer", "value" : "6" },
-            "PROVIDE" : { "variable_added" : { "p2_bs" : "P2 Battle Score" } }
-          }
-        },
-        { "data_calc" : {
-            "USING" : {
-              "input_1" : [ "p2-bs" ],
-              "op" : "-",
-              "input_2" : [ "bid:field-your-results" ]
-            },
-            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
-          }
-        },
-        { "data_set" : { "data" : [ "p2-sc:field-your-results" ], "value" : [ "result" ] } },
-        { "data_set" : { "data" : [ "p2-sc:field-battle-points-sc" ], "value" : [ "result" ] } },
-        { "variable_add" : {
-            "USING" : { "type" : "text" },
-            "PROVIDE" : { "variable_added" : { "phase_title" : "Phase Title" } }
-          }
-        },
-        { "entity_fetch" : {
-            "USING" : { "type" : "relation", "id" : [ "bid:field-phase-sc:rid" ] },
-            "PROVIDE" : { "entity_fetched" : { "fetched_phase" : "Fetched phase" } }
-          }
-        },
-        { "LOOP" : {
-            "USING" : { "list" : [ "fetched-phase:endpoints" ] },
-            "ITEM" : { "list_item" : "Current list item" },
-            "DO" : [
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "entity_is_of_bundle" : {
-                        "entity" : [ "list-item" ],
-                        "type" : "entityform",
-                        "bundle" : { "value" : { "warzone_campaign_phase" : "warzone_campaign_phase" } }
-                      }
-                    },
-                    "DO" : [
-                      { "data_set" : {
-                          "data" : [ "phase-title" ],
-                          "value" : [ "list-item:field-title-chronicle" ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        { "variable_add" : {
-            "USING" : { "type" : "taxonomy_term", "value" : [ "" ] },
-            "PROVIDE" : { "variable_added" : { "set_p1_army" : "Set P1 Army" } }
-          }
-        },
-        { "variable_add" : {
-            "USING" : { "type" : "taxonomy_term", "value" : [ "" ] },
-            "PROVIDE" : { "variable_added" : { "set_p2_army" : "Set P2 Army" } }
-          }
-        },
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "data_is_empty" : { "data" : [ "bid:field-p1-army-wz" ] } },
-              "DO" : [
-                { "CONDITIONAL" : [
-                    {
-                      "IF" : { "entity_is_of_bundle" : {
-                          "entity" : [ "p1-reg" ],
-                          "type" : "node_registration",
-                          "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
-                        }
-                      },
-                      "DO" : [
-                        { "data_set" : { "data" : [ "set-p1-army" ], "value" : [ "p1-reg:field-register-army" ] } }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            { "ELSE" : [
-                { "data_set" : { "data" : [ "set-p1-army" ], "value" : [ "bid:field-p1-army-wz" ] } }
-              ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "data_is_empty" : { "data" : [ "bid:field-p2-army-wz" ] } },
-              "DO" : [
-                { "data_set" : {
-                    "data" : [ "set-p2-army" ],
-                    "value" : [ "bid:field-opponent-reg-sc:field-register-army" ]
-                  }
-                }
-              ]
-            },
-            { "ELSE" : [
-                { "data_set" : { "data" : [ "set-p2-army" ], "value" : [ "bid:field-p2-army-wz" ] } }
-              ]
-            }
-          ]
-        },
-        { "variable_add" : {
-            "USING" : {
-              "type" : "text",
-              "value" : "[phase-title:value]: [bid:field-your-results] for [set-p1-army:name]"
-            },
-            "PROVIDE" : { "variable_added" : { "battle_title" : "Battle Title" } }
-          }
-        },
-        { "component_rules_wz_all_create_battle_report_from_form" : {
-            "USING" : {
-              "p1" : [ "p1-reg:user" ],
-              "p1_result" : [ "bid:field-your-results" ],
-              "p1_army" : [ "set-p1-army" ],
-              "p2_army" : [ "set-p2-army" ],
-              "wzid" : [ "bid:field-event-link" ],
-              "title" : [ "battle-title" ]
-            },
-            "PROVIDE" : { "brid" : { "brid" : "Battle Report" } }
-          }
-        },
-        { "flag_flagnode" : {
-            "flag" : "acknowledge_battle",
-            "node" : [ "brid" ],
-            "flagging_user" : [ "p2-sc:field-registration-sc:user" ],
-            "permission_check" : 0
-          }
-        },
-        { "entity_create" : {
-            "USING" : {
-              "type" : "message",
-              "param_type" : "campaign_reported_battle",
-              "param_user" : [ "bid:field-player-sc" ]
-            },
-            "PROVIDE" : { "entity_created" : { "message" : "Message" } }
-          }
-        },
-        { "data_set" : {
-            "data" : [ "message:field-stream-node-ref" ],
-            "value" : [ "bid:field-event-link" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "message:arguments:messtext" ],
-            "value" : "[battle-title:value]"
-          }
-        },
-        { "data_set" : { "data" : [ "message:field-title-chronicle" ], "value" : "Battle!" } },
-        { "data_set" : { "data" : [ "message:field-chronicle-icon" ], "value" : "fire" } }
       ]
     }
   }');

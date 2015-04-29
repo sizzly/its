@@ -73,12 +73,16 @@ function _node_registration_request_is_ajax() {
  */
 function _node_registration_reset_waitinglist($node) {
   $capacity = (int) $node->registration->capacity();
-  if (!$capacity) {
-    return FALSE;
-  }
 
-  $registrations = node_registration_load_multiple(FALSE, array('nid' => $node->nid, 'cancelled' => 0));
-  ksort($registrations, SORT_NUMERIC);
+  $registration_ids = db_select('node_registration', 'nr')
+    ->fields('nr', array('registration_id'))
+    ->condition('nid', $node->nid)
+    ->condition('cancelled', 0)
+    ->orderBy('weight', 'ASC')
+    ->addTag('nr_waitinglist')
+    ->execute()
+    ->fetchCol();
+  $registrations = node_registration_load_multiple($registration_ids);
 
   $change = FALSE;
 
@@ -87,7 +91,7 @@ function _node_registration_reset_waitinglist($node) {
     $slots += $registration->slots;
 
     $old_waitinglist = (bool) $registration->waitinglist;
-    $new_waitinglist = $slots > $capacity;
+    $new_waitinglist = $capacity && $slots > $capacity;
 
     // Waitinglist status changed.
     if ($old_waitinglist != $new_waitinglist) {

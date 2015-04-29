@@ -229,6 +229,27 @@ function war_zones_default_message_type() {
       ]
     }
   }');
+  $items['war_zone_all_anonymous_actions'] = entity_import('message_type', '{
+    "name" : "war_zone_all_anonymous_actions",
+    "description" : "War Zone: All: Anonymous Actions",
+    "argument_keys" : [ "!messtxt" ],
+    "argument" : [],
+    "category" : "message_type",
+    "data" : {
+      "token options" : { "clear" : 0 },
+      "purge" : { "override" : 1, "enabled" : 0, "quota" : "", "days" : "" }
+    },
+    "language" : "",
+    "arguments" : null,
+    "message_text" : { "und" : [
+        {
+          "value" : "!messtxt",
+          "format" : "pure_html",
+          "safe_value" : "!messtxt"
+        }
+      ]
+    }
+  }');
   return $items;
 }
 
