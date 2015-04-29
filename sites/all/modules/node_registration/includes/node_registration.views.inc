@@ -5,7 +5,14 @@
  * Views hooks, handlers, defaults etc.
  */
 
-module_load_include('inc', 'node_registration', 'includes/node_registration.views_default');
+/**
+ * Implements hook_views_pre_view().
+ */
+function node_registration_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'node_registrations' && $display_id == 'event' && @$args[0]) {
+    $view->set_item($display_id, 'field', 'title', NULL);
+  }
+}
 
 /**
  * Implements hook_views_plugins().
@@ -129,6 +136,22 @@ function node_registration_views_data() {
     ),
   );
 
+  // Field: weight.
+  $data['node_registration']['weight'] = array(
+    'title' => t('Weight'),
+    'help' => t('The weight of this registration in this event. Used for waitinglist execution order and display.'),
+    'field' => array(
+      'handler' => 'views_handler_field_numeric',
+      'click sortable' => TRUE,
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_numeric',
+    ),
+  );
+
   // Virtual field: view.
   $data['node_registration']['view_node_registration']['moved to'] = array('views_entity_node_registration', 'view_node_registration');
   $data['views_entity_node_registration']['view_node_registration'] = array(
@@ -249,7 +272,7 @@ function node_registration_views_data() {
     'title' => t('Cancelled'),
     'help' => t('Whether this registration was cancelled.'),
     'field' => array(
-      'handler' => 'views_handler_field_boolean',
+      'handler' => 'nr_views_handler_field_boolean_togglable',
       'click sortable' => TRUE,
       'output formats' => array(
         'y-n' => array('y', 'n'),
@@ -271,7 +294,7 @@ function node_registration_views_data() {
     'title' => t('Attended'),
     'help' => t('Whether the person has attended the event.'),
     'field' => array(
-      'handler' => 'views_handler_field_boolean',
+      'handler' => 'nr_views_handler_field_boolean_togglable',
       'click sortable' => TRUE,
       'output formats' => array(
         'y-n' => array('y', 'n'),
@@ -293,7 +316,7 @@ function node_registration_views_data() {
     'title' => t('Verified'),
     'help' => t('Whether the person has verified the event.'),
     'field' => array(
-      'handler' => 'views_handler_field_boolean',
+      'handler' => 'nr_views_handler_field_boolean_togglable',
       'click sortable' => TRUE,
       'output formats' => array(
         'y-n' => array('y', 'n'),
@@ -408,6 +431,23 @@ function node_registration_views_data() {
     'real field' => 'nid',
     'field' => array(
       'handler' => 'views_handler_field_node_registration_available_slots',
+    ),
+  );
+
+  // Field: cancelled date
+  $data['node_registration']['cancelled_date'] = array(
+    'title' => t('Cancelled date'),
+    'help' => t('The date the registration was cancelled.'),
+    'real field' => 'cancelled',
+    'field' => array(
+      'handler' => 'views_handler_field_date',
+      'click sortable' => TRUE,
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort_date',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_date',
     ),
   );
 

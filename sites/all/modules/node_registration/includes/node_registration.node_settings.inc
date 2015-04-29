@@ -296,7 +296,18 @@ class NodeRegistrationNodeSettings {
   /**
    * Updates this node's registration settings.
    */
-  public function update($settings) {
+  public function update($settings = NULL) {
+    // If no argument was passed, persist the current settings.
+    if ($settings === NULL) {
+      // Only save if this node already had custom settings. Don't ALWAYS copy node type
+      // settings into it.
+      if (!$this->more_settings) {
+        return;
+      }
+
+      $settings = get_object_vars($this);
+    }
+
     $allowed_native = array('nid' => 0, 'capacity' => 1, 'status' => 1, 'private_fields' => 1);
     $allowed_extra = _node_registration_defaults();
 

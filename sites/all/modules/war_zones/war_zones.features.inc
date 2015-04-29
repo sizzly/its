@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function war_zones_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
@@ -55,6 +58,35 @@ function war_zones_default_entityform_type() {
       "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
       "resubmit_action" : "new",
       "redirect_path" : "",
+      "instruction_pre" : { "value" : "", "format" : "filtered_html" }
+    },
+    "weight" : "0",
+    "paths" : []
+  }');
+  $items['war_zone_all_generate_article'] = entity_import('entityform_type', '{
+    "type" : "war_zone_all_generate_article",
+    "label" : "War Zone: All: Generate Article",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "filtered_html" },
+      "submit_button_text" : "",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "filtered_html" },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
+      "resubmit_action" : "new",
+      "redirect_path" : "[current-page:url:relative]",
       "instruction_pre" : { "value" : "", "format" : "filtered_html" }
     },
     "weight" : "0",
@@ -193,6 +225,27 @@ function war_zones_default_message_type() {
         {
           "value" : "\\u003Ca href=\\u0022[message:user:url:relative]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E has committed forces to \\u003Ca href=\\u0022[message:field-stream-node-ref:url:relative]\\u0022\\u003E[message:field-stream-node-ref:title]\\u003C\\/a\\u003E.\\r\\n",
           "format" : "php_code"
+        }
+      ]
+    }
+  }');
+  $items['war_zone_all_anonymous_actions'] = entity_import('message_type', '{
+    "name" : "war_zone_all_anonymous_actions",
+    "description" : "War Zone: All: Anonymous Actions",
+    "argument_keys" : [ "!messtxt" ],
+    "argument" : [],
+    "category" : "message_type",
+    "data" : {
+      "token options" : { "clear" : 0 },
+      "purge" : { "override" : 1, "enabled" : 0, "quota" : "", "days" : "" }
+    },
+    "language" : "",
+    "arguments" : null,
+    "message_text" : { "und" : [
+        {
+          "value" : "!messtxt",
+          "format" : "pure_html",
+          "safe_value" : "!messtxt"
         }
       ]
     }

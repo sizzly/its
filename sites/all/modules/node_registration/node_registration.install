@@ -129,6 +129,12 @@ function node_registration_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'weight' => array(
+        'description' => 'Used for waitinglist execution order and display.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
     ),
     'indexes' => array(
       'registration_updated' => array('updated'),
@@ -322,6 +328,34 @@ function node_registration_update_11() {
 function node_registration_update_12() {
   $count = db_query('SELECT COUNT(1) FROM {node_registration_node} WHERE private_fields <> 0');
   if ($count) {
-  module_enable(array('nr_fields'));
+    module_enable(array('nr_fields'));
+  }
+}
+
+/**
+ * Create `weight` column and fill it.
+ */
+function node_registration_update_13() {
+  db_add_field('node_registration', 'weight', array(
+    'description' => 'Used for waitinglist execution order and display.',
+    'type' => 'int',
+    'not null' => TRUE,
+    'default' => 0,
+  ));
+
+  $registrations = db_query('SELECT registration_id, nid FROM {node_registration} ORDER BY nid ASC, registration_id ASC')->fetchAllKeyed();
+  $weight = $last_nid = 0;
+  foreach ($registrations as $rid => $nid) {
+    if ($nid != $last_nid) {
+      $weight = 0;
+    }
+    $last_nid = $nid;
+
+    db_update('node_registration')
+      ->fields(array('weight' => $weight))
+      ->condition('registration_id', $rid)
+      ->execute();
+
+    $weight++;
   }
 }
