@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Games and Armies feature.
+ */
+
+include_once 'games_and_armies.features.inc';
