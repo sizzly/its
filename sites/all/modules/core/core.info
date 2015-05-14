@@ -1,8 +1,9 @@
 name = Core
 core = 7.x
 package = _iTS
-version = 7.x-2.1-dev1
+version = 7.x-2.1
 project = core
+dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = htmlmail
 dependencies[] = message
@@ -27,5 +28,4 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = messages_list_for_terms
 features[views_view][] = term_content_pages
-features_exclude[dependencies][ctools] = ctools
-mtime = 1429711648
+mtime = 1431462500
