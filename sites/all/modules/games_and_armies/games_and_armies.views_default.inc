@@ -593,7 +593,7 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Contextual filter: Content: Your Army (field_your_army) */
+  /* Contextual filter: Field: Your Army (field_your_army) */
   $handler->display->display_options['arguments']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['arguments']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['arguments']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -709,7 +709,7 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -1229,7 +1229,7 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -1258,7 +1258,7 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['fields']['field_your_results']['label'] = '';
   $handler->display->display_options['fields']['field_your_results']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_your_results']['element_label_colon'] = FALSE;
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -1292,7 +1292,7 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -1321,7 +1321,7 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Your Army */
+  /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
@@ -1367,9 +1367,11 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['relationship'] = 'field_opponent_s_army_tid';
   $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_image']['element_class'] = 'pull-left media-object iconbuffer';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_image']['element_wrapper_class'] = 'pull-left media-object iconbuffer';
+  $handler->display->display_options['fields']['field_image']['element_wrapper_class'] = 'media-left';
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
@@ -1468,9 +1470,11 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
   $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
   $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_type'] = 'span';
+  $handler->display->display_options['fields']['picture']['element_class'] = 'pull-left media-object iconbuffer';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'media-object pull-left iconbuffer';
+  $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'media-left';
   $handler->display->display_options['fields']['picture']['image_style'] = 'button';
   /* Field: AVG(Field: Your Results) */
   $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
