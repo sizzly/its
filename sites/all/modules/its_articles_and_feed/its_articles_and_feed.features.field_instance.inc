@@ -115,7 +115,7 @@ function its_articles_and_feed_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -143,7 +143,7 @@ function its_articles_and_feed_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => '70x70-square',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 2,
@@ -302,7 +302,7 @@ function its_articles_and_feed_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -310,6 +310,7 @@ function its_articles_and_feed_field_default_field_instances() {
   $field_instances['node-article-og_group_ref'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -318,7 +319,7 @@ function its_articles_and_feed_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'ical' => array(
         'label' => 'above',
@@ -336,10 +337,11 @@ function its_articles_and_feed_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Groups audience',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
+          'access_override' => 1,
           'admin' => array(
             'widget_type' => 'entityreference_autocomplete',
           ),
@@ -347,6 +349,19 @@ function its_articles_and_feed_field_default_field_instances() {
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 1,
+            'token_patterns' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+          'token_patterns' => '',
         ),
       ),
       'user_register_form' => FALSE,
@@ -364,6 +379,7 @@ function its_articles_and_feed_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',

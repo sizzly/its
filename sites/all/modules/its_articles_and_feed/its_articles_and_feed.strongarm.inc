@@ -163,7 +163,7 @@ function its_articles_and_feed_strongarm() {
           'weight' => '9',
         ),
         'xmlsitemap' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'locations' => array(
           'weight' => '12',
