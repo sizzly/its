@@ -43,7 +43,6 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['arguments']['entity_id']['table'] = 'userpoints_txn';
   $handler->display->display_options['arguments']['entity_id']['field'] = 'entity_id';
   $handler->display->display_options['arguments']['entity_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['entity_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['entity_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['entity_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['entity_id']['summary_options']['items_per_page'] = '25';
@@ -349,7 +348,6 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'taxonomy_forums_tid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
@@ -379,7 +377,6 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'taxonomy_forums_tid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
@@ -1050,6 +1047,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['fields']['field_website_1']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website_1']['field'] = 'field_website';
   $handler->display->display_options['fields']['field_website_1']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_website_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_website_1']['click_sort_column'] = 'url';
   $handler->display->display_options['pane_category']['name'] = 'Organic Groups';
   $handler->display->display_options['pane_category']['weight'] = '0';
