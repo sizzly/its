@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iTS Dashboard feature.
+ */
+
+include_once 'its_dashboard.features.inc';
