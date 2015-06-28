@@ -50,7 +50,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 33,
+      'weight' => 13,
     ),
   );
 
@@ -80,7 +80,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 41,
+      'weight' => 19,
     ),
   );
 
@@ -93,7 +93,7 @@ function war_zones_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => '<strong>Army Points</strong> represent how many points of an opponents army were destroyed or removed from play. This scoring mechanism isn\'t in use for all games.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -124,51 +124,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 29,
-    ),
-  );
-
-  // Exported field_instance: 'entityform-score_card-field_battle_points_sc'
-  $field_instances['entityform-score_card-field_battle_points_sc'] = array(
-    'bundle' => 'score_card',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 20,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_battle_points_sc',
-    'label' => 'Battle Points',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 27,
+      'weight' => 9,
     ),
   );
 
@@ -212,7 +168,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 32,
+      'weight' => 12,
     ),
   );
 
@@ -242,7 +198,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 36,
+      'weight' => 16,
     ),
   );
 
@@ -275,7 +231,7 @@ function war_zones_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 4,
     ),
   );
 
@@ -305,7 +261,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 38,
+      'weight' => 17,
     ),
   );
 
@@ -362,7 +318,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 23,
+      'weight' => 2,
     ),
   );
 
@@ -398,7 +354,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 14,
     ),
   );
 
@@ -422,7 +378,7 @@ function war_zones_field_default_field_instances() {
     ),
     'entity_type' => 'entityform',
     'field_name' => 'field_opponent_reg_sc',
-    'label' => 'Opponent',
+    'label' => 'Opponent Registration',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -445,55 +401,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 24,
-    ),
-  );
-
-  // Exported field_instance: 'entityform-score_card-field_opponent_sc'
-  $field_instances['entityform-score_card-field_opponent_sc'] = array(
-    'bundle' => 'score_card',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 7,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_opponent_sc',
-    'label' => 'Opponent',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 1,
     ),
   );
 
@@ -537,7 +445,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 31,
+      'weight' => 11,
     ),
   );
 
@@ -545,6 +453,7 @@ function war_zones_field_default_field_instances() {
   $field_instances['entityform-score_card-field_phase_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -561,52 +470,21 @@ function war_zones_field_default_field_instances() {
     'entity_type' => 'entityform',
     'field_name' => 'field_phase_sc',
     'label' => 'Phase',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 18,
-    ),
-  );
-
-  // Exported field_instance: 'entityform-score_card-field_player_sc'
-  $field_instances['entityform-score_card-field_player_sc'] = array(
-    'bundle' => 'score_card',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_player_sc',
-    'label' => 'Player',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'hide',
+          'action_on_edit' => 1,
+          'fallback' => 'hide',
+          'providers' => array(
+            'og_context' => 0,
+            'token_patterns' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+          'token_patterns' => '',
         ),
       ),
       'user_register_form' => FALSE,
@@ -616,7 +494,6 @@ function war_zones_field_default_field_instances() {
       'module' => 'entityreference',
       'settings' => array(
         'match_operator' => 'CONTAINS',
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'path' => '',
         'references_dialog_add' => 0,
         'references_dialog_edit' => 0,
@@ -625,7 +502,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 1,
+      'weight' => 6,
     ),
   );
 
@@ -672,7 +549,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -718,6 +595,41 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-score_card-field_score_card_type'
+  $field_instances['entityform-score_card-field_score_card_type'] = array(
+    'bundle' => 'score_card',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 28,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_score_card_type',
+    'label' => 'Score Card Type',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 20,
+    ),
+  );
+
   // Exported field_instance: 'entityform-score_card-field_sportsmanship_sc'
   $field_instances['entityform-score_card-field_sportsmanship_sc'] = array(
     'bundle' => 'score_card',
@@ -758,7 +670,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 30,
+      'weight' => 10,
     ),
   );
 
@@ -791,7 +703,7 @@ function war_zones_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 5,
     ),
   );
 
@@ -835,7 +747,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 34,
+      'weight' => 15,
     ),
   );
 
@@ -865,7 +777,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 40,
+      'weight' => 18,
     ),
   );
 
@@ -878,7 +790,7 @@ function war_zones_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => '<strong>Victory Points</strong> represent points earned through a battle\'s objectives.  Use this field to capture things like <em>Control Points</em>, <em>Objective Points</em>, or any scoring mechanism tied to the mission or scenario.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -909,7 +821,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 28,
+      'weight' => 8,
     ),
   );
 
@@ -942,7 +854,7 @@ function war_zones_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 26,
+      'weight' => 7,
     ),
   );
 
@@ -1324,230 +1236,6 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_available_awards_comp-field_image_custom_achievement'
-  $field_instances['field_collection_item-field_available_awards_comp-field_image_custom_achievement'] = array(
-    'bundle' => 'field_available_awards_comp',
-    'default_value' => array(
-      0 => array(
-        'value' => 4,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_image_custom_achievement',
-    'label' => 'Image',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_available_awards_comp-field_points_custom_achievement'
-  $field_instances['field_collection_item-field_available_awards_comp-field_points_custom_achievement'] = array(
-    'bundle' => 'field_available_awards_comp',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_points_custom_achievement',
-    'label' => 'Points',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_select',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_available_awards_comp-field_short_desc_custom_achieve'
-  $field_instances['field_collection_item-field_available_awards_comp-field_short_desc_custom_achieve'] = array(
-    'bundle' => 'field_available_awards_comp',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_short_desc_custom_achieve',
-    'label' => 'Short Description',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_available_awards_comp-field_title_custom_achievement'
-  $field_instances['field_collection_item-field_available_awards_comp-field_title_custom_achievement'] = array(
-    'bundle' => 'field_available_awards_comp',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_title_custom_achievement',
-    'label' => 'Title',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_awards_competitive-field_award_achievement'
-  $field_instances['field_collection_item-field_awards_competitive-field_award_achievement'] = array(
-    'bundle' => 'field_awards_competitive',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_award_achievement',
-    'label' => 'Award Achievement',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_awards_competitive-field_award_registration'
-  $field_instances['field_collection_item-field_awards_competitive-field_award_registration'] = array(
-    'bundle' => 'field_awards_competitive',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_award_registration',
-    'label' => 'Award Registration',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'field_collection_item-field_tournament_missions-field_mission_name_tourney'
   $field_instances['field_collection_item-field_tournament_missions-field_mission_name_tourney'] = array(
     'bundle' => 'field_tournament_missions',
@@ -1556,10 +1244,10 @@ function war_zones_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 1,
       ),
     ),
@@ -1591,11 +1279,11 @@ function war_zones_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -1627,7 +1315,7 @@ function war_zones_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
@@ -1636,7 +1324,7 @@ function war_zones_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -1892,6 +1580,47 @@ function war_zones_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'message-war_zone_all_new_round_message-field_stream_node_ref'
+  $field_instances['message-war_zone_all_new_round_message-field_stream_node_ref'] = array(
+    'bundle' => 'war_zone_all_new_round_message',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_stream_node_ref',
+    'label' => 'Stream Node',
+    'required' => 0,
+    'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4078,47 +3807,6 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_warzone_scheduling'
-  $field_instances['node-special_event-field_warzone_scheduling'] = array(
-    'bundle' => 'special_event',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Toggle whether you\'d like iToysoldiers to automatically process the beginning and end of your War Zone using the start and end dates provided.  If you choose manual then you will need to start and end the war zone manually.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_warzone_scheduling',
-    'label' => 'Scheduling',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 22,
-    ),
-  );
-
   // Exported field_instance: 'node-special_event-field_website'
   $field_instances['node-special_event-field_website'] = array(
     'bundle' => 'special_event',
@@ -4193,10 +3881,10 @@ function war_zones_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 400,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -4215,93 +3903,7 @@ function war_zones_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-war_zone_tournament-field_available_awards_comp'
-  $field_instances['node-war_zone_tournament-field_available_awards_comp'] = array(
-    'bundle' => 'war_zone_tournament',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_available_awards_comp',
-    'label' => 'Available Awards',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 16,
-    ),
-  );
-
-  // Exported field_instance: 'node-war_zone_tournament-field_awards_competitive'
-  $field_instances['node-war_zone_tournament-field_awards_competitive'] = array(
-    'bundle' => 'war_zone_tournament',
-    'default_value' => array(),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_awards_competitive',
-    'label' => 'Awards',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 15,
+      'weight' => 5,
     ),
   );
 
@@ -4322,10 +3924,14 @@ function war_zones_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -4372,7 +3978,53 @@ function war_zones_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 32,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-war_zone_tournament-field_entry_fee'
+  $field_instances['node-war_zone_tournament-field_entry_fee'] = array(
+    'bundle' => 'war_zone_tournament',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_entry_fee',
+    'label' => 'Entry Fee',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '0.00',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 16,
     ),
   );
 
@@ -4401,7 +4053,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -4429,7 +4081,7 @@ function war_zones_field_default_field_instances() {
         'year_range' => '-0:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 36,
+      'weight' => 14,
     ),
   );
 
@@ -4458,7 +4110,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -4493,7 +4145,11 @@ function war_zones_field_default_field_instances() {
   // Exported field_instance: 'node-war_zone_tournament-field_event_type'
   $field_instances['node-war_zone_tournament-field_event_type'] = array(
     'bundle' => 'war_zone_tournament',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 152,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -4508,7 +4164,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -4523,10 +4179,9 @@ function war_zones_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 12,
     ),
   );
 
@@ -4545,10 +4200,11 @@ function war_zones_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -4565,7 +4221,7 @@ function war_zones_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -4587,7 +4243,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -4610,63 +4266,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-war_zone_tournament-field_more_info_link'
-  $field_instances['node-war_zone_tournament-field_more_info_link'] = array(
-    'bundle' => 'war_zone_tournament',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_more_info_link',
-    'label' => 'More info',
-    'required' => 0,
-    'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_label_use_field_label' => FALSE,
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -4693,7 +4293,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -4712,56 +4312,64 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_round_counter_tourney'
-  $field_instances['node-war_zone_tournament-field_round_counter_tourney'] = array(
+  // Exported field_instance: 'node-war_zone_tournament-field_registration_deadline'
+  $field_instances['node-war_zone_tournament-field_registration_deadline'] = array(
     'bundle' => 'war_zone_tournament',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
+        'module' => 'date',
         'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+          'show_repeat_rule' => 'show',
         ),
-        'type' => 'number_integer',
-        'weight' => 10,
+        'type' => 'date_default',
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_round_counter_tourney',
-    'label' => 'Master Round Counter',
+    'field_name' => 'field_registration_deadline',
+    'label' => 'Registration Deadline',
     'required' => 0,
     'settings' => array(
-      'max' => '',
-      'min' => 1,
-      'prefix' => '',
-      'suffix' => '',
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'repeat_collapsed' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
       'weight' => 12,
     ),
   );
@@ -4789,7 +4397,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -4808,7 +4416,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -4834,7 +4442,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -4851,7 +4459,7 @@ function war_zones_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 34,
+      'weight' => 13,
     ),
   );
 
@@ -4879,7 +4487,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -4894,7 +4502,7 @@ function war_zones_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 14,
+      'weight' => 8,
     ),
   );
 
@@ -4920,7 +4528,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -4941,8 +4549,58 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_tournament_type_term'
-  $field_instances['node-war_zone_tournament-field_tournament_type_term'] = array(
+  // Exported field_instance: 'node-war_zone_tournament-field_warzone_round'
+  $field_instances['node-war_zone_tournament-field_warzone_round'] = array(
+    'bundle' => 'war_zone_tournament',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_warzone_round',
+    'label' => 'Round',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-war_zone_tournament-field_website'
+  $field_instances['node-war_zone_tournament-field_website'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
     'deleted' => 0,
@@ -4950,34 +4608,51 @@ function war_zones_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'link_default',
         'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_tournament_type_term',
-    'label' => 'Tournament Type',
-    'required' => 1,
+    'field_name' => 'field_website',
+    'label' => 'More Info',
+    'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
       'user_register_form' => FALSE,
+      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_select',
-      'weight' => 2,
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 15,
     ),
   );
 
@@ -5259,17 +4934,14 @@ function war_zones_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<strong>Army Points</strong> represent how many points of an opponents army were destroyed or removed from play. This scoring mechanism isn\'t in use for all games.');
+  t('<strong>Victory Points</strong> represent points earned through a battle\'s objectives.  Use this field to capture things like <em>Control Points</em>, <em>Objective Points</em>, or any scoring mechanism tied to the mission or scenario.');
   t('Additional Points');
   t('Aggregate Score');
   t('Allow sign up after campaign starts?');
   t('Army Points');
   t('Article Body');
-  t('Available Awards');
-  t('Award Achievement');
-  t('Award Registration');
-  t('Awards');
   t('Badge');
-  t('Battle Points');
   t('Battle icon');
   t('Battlefield');
   t('Body');
@@ -5296,17 +4968,14 @@ function war_zones_field_default_field_instances() {
   t('If you have another site with more information you can enter it here.');
   t('Image');
   t('Logistics');
-  t('Master Round Counter');
   t('Mission Name');
   t('Mission Text');
   t('More Info');
-  t('More info');
   t('Most likely you\'ll want to keep the value derived from the campaign itself.  However, you can modify it if you\'re adapting a campaign for a different game system.  Very common with historical games.');
   t('Narrative Text');
-  t('Opponent');
+  t('Opponent Registration');
   t('Painting');
   t('Phase');
-  t('Player');
   t('Player Results');
   t('Points');
   t('Points per army');
@@ -5316,7 +4985,7 @@ function war_zones_field_default_field_instances() {
   t('Registration');
   t('Registration Deadline');
   t('Round');
-  t('Scheduling');
+  t('Score Card Type');
   t('Short Description');
   t('Slots');
   t('Sportsmanship');
@@ -5327,7 +4996,6 @@ function war_zones_field_default_field_instances() {
   t('This determines whether or not both players must be signed up for the campaign.');
   t('This is the number of available slots in the War Zone.  Leave it at 0 for unlimited.');
   t('Title');
-  t('Toggle whether you\'d like iToysoldiers to automatically process the beginning and end of your War Zone using the start and end dates provided.  If you choose manual then you will need to start and end the war zone manually.');
   t('Tournament Missions');
   t('Tournament Type');
   t('Use this field to present any specific logistical elements associated with this Narrative Campaign.  The Fluff elements are handled by the Narrative Campaign itself.');
