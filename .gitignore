@@ -5,20 +5,7 @@ sites/*/default.settings.php
 phpmyadmin
 
 # Ignore paths that contain user-generated content.
-sites/*/files/css
-sites/*/narrative
-sites/*/files/ctools
-sites/*/files/pictures
-sites/*/files/user
-sites/*/files/xmlsitemap
-sites/*/files/tmp
-sites/*/files/styles
-sites/*/files/js
-sites/*/files/ironmonger
-sites/*/files/club_images
-sites/*/files/16
-sites/*/files/4406
-sites/*/files/92
+sites/*/files/*
 sites/*/private
 sites/*/tmp
 tmp
