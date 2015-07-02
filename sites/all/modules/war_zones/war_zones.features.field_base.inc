@@ -40,7 +40,7 @@ function war_zones_field_default_field_bases() {
     'locked' => 0,
     'module' => 'computed_field',
     'settings' => array(
-      'code' => '$entity_field[0][\'value\'] = array_pop(array_pop(field_get_items($entity_type, $entity, \'field_battle_points_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_sportsmanship_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_painting_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_comp_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_additional_points_sc\')));',
+      'code' => '$entity_field[0][\'value\'] = array_pop(array_pop(field_get_items($entity_type, $entity, \'field_sportsmanship_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_painting_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_comp_sc\'))) + array_pop(array_pop(field_get_items($entity_type, $entity, \'field_additional_points_sc\')));',
       'database' => array(
         'data_default' => '',
         'data_index' => 0,
@@ -133,143 +133,6 @@ function war_zones_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_available_awards_comp'
-  $field_bases['field_available_awards_comp'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_available_awards_comp',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'field_collection',
-    'settings' => array(
-      'hide_blank_items' => 1,
-      'path' => '',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'field_collection',
-  );
-
-  // Exported field_base: 'field_award_achievement'
-  $field_bases['field_award_achievement'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_award_achievement',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'achievement' => 'achievement',
-        ),
-      ),
-      'profile2_private' => FALSE,
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_award_registration'
-  $field_bases['field_award_registration'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_award_registration',
-    'foreign keys' => array(
-      'node_registration' => array(
-        'columns' => array(
-          'target_id' => 'registration_id',
-        ),
-        'table' => 'node_registration',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'war_zone_league' => 'war_zone_league',
-          'war_zone_tournament' => 'war_zone_tournament',
-        ),
-      ),
-      'profile2_private' => FALSE,
-      'target_type' => 'node_registration',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_awards_competitive'
-  $field_bases['field_awards_competitive'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_awards_competitive',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'revision_id' => array(
-        0 => 'revision_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'field_collection',
-    'settings' => array(
-      'hide_blank_items' => 1,
-      'path' => '',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'field_collection',
-  );
-
   // Exported field_base: 'field_battle_points_sc'
   $field_bases['field_battle_points_sc'] = array(
     'active' => 1,
@@ -337,44 +200,6 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_defeat'
-  $field_bases['field_defeat'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_defeat',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "1")
-{
-$entity_field[0][\'value\'] = "1";
-}
-else
-{
-$entity_field[0][\'value\'] = "0";
-}',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => 0,
-        'data_length' => 5,
-        'data_not_NULL' => 0,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'varchar',
-      ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'profile2_private' => FALSE,
-      'store' => 1,
-    ),
-    'translatable' => 0,
-    'type' => 'computed',
-  );
-
   // Exported field_base: 'field_designers_notes_narrative'
   $field_bases['field_designers_notes_narrative'] = array(
     'active' => 1,
@@ -429,44 +254,6 @@ $entity_field[0][\'value\'] = "0";
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
-  );
-
-  // Exported field_base: 'field_draw'
-  $field_bases['field_draw'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_draw',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "3")
-{
-$entity_field[0][\'value\'] = "1";
-}
-else
-{
-$entity_field[0][\'value\'] = "0";
-}',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => 0,
-        'data_length' => 5,
-        'data_not_NULL' => 0,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'varchar',
-      ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'profile2_private' => FALSE,
-      'store' => 1,
-    ),
-    'translatable' => 0,
-    'type' => 'computed',
   );
 
   // Exported field_base: 'field_eligible_battles_narrative'
@@ -778,37 +565,6 @@ $entity_field[0][\'value\'] = "0";
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_more_info_link'
-  $field_bases['field_more_info_link'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_more_info_link',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'profile2_private' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'link_field',
-  );
-
   // Exported field_base: 'field_opponent_reg_sc'
   $field_bases['field_opponent_reg_sc'] = array(
     'active' => 1,
@@ -832,18 +588,17 @@ $entity_field[0][\'value\'] = "0";
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
-            'status' => 1,
+            'status' => 0,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'war_zone_all_registrations',
+        'sort' => array(
+          'type' => 'none',
         ),
+        'target_bundles' => array(),
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
@@ -1105,18 +860,17 @@ $entity_field[0][\'value\'] = "0";
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 1,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'war_zone_all_registrations',
+        'sort' => array(
+          'type' => 'none',
         ),
+        'target_bundles' => array(),
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
@@ -1161,34 +915,35 @@ $entity_field[0][\'value\'] = "0";
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_short_desc_custom_achieve'
-  $field_bases['field_short_desc_custom_achieve'] = array(
+  // Exported field_base: 'field_score_card_type'
+  $field_bases['field_score_card_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_short_desc_custom_achieve',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
+    'field_name' => 'field_score_card_type',
+    'foreign keys' => array(),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'value' => array(
+        0 => 'value',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'list',
     'settings' => array(
-      'max_length' => 255,
+      'allowed_values' => array(
+        0 => 'Battle',
+        5 => 'Painting',
+        10 => 'Composition',
+        15 => 'Fluff',
+        20 => 'Additional Points',
+        25 => 'Strength of Schedule',
+      ),
+      'allowed_values_function' => '',
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_slots_warzone'
@@ -1418,50 +1173,13 @@ $entity_field[0][\'value\'] = "0";
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Privateer Press Streamroller',
+        0 => 'Swiss Tournament',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_integer',
-  );
-
-  // Exported field_base: 'field_tournament_type_term'
-  $field_bases['field_tournament_type_term'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tournament_type_term',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'event_type',
-          'parent' => 152,
-          'depth' => '',
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_victor_narrative'
@@ -1481,44 +1199,6 @@ $entity_field[0][\'value\'] = "0";
     ),
     'translatable' => 0,
     'type' => 'field_hidden_text',
-  );
-
-  // Exported field_base: 'field_victory'
-  $field_bases['field_victory'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_victory',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "5")
-{
-$entity_field[0][\'value\'] = "1";
-}
-else
-{
-$entity_field[0][\'value\'] = "0";
-}',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => FALSE,
-        'data_length' => 32,
-        'data_not_NULL' => FALSE,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'varchar',
-      ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'profile2_private' => FALSE,
-      'store' => 1,
-    ),
-    'translatable' => 0,
-    'type' => 'computed',
   );
 
   // Exported field_base: 'field_victory_points_sc'

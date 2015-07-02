@@ -147,7 +147,7 @@ function war_zones_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_war_zone_tournament';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_form_location_war_zone_tournament'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -245,14 +245,14 @@ function war_zones_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_war_zone_tournament';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_war_zone_tournament'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_war_zone_tournament';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['comment_war_zone_tournament'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -605,25 +605,50 @@ function war_zones_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '13',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '11',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
-        ),
-        'badges' => array(
           'weight' => '10',
         ),
+        'badges' => array(
+          'weight' => '12',
+        ),
         'locations' => array(
-          'weight' => '30',
+          'weight' => '14',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'registration_link' => array(
+          'teaser' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+        ),
+        'registration_form' => array(
+          'teaser' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_slots_left' => array(
+          'teaser' => array(
+            'weight' => '23',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_unregistrable_reason' => array(
+          'teaser' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__war_zone_tournament'] = $strongarm;
@@ -1042,13 +1067,8 @@ Event start: [node:event-start].',
   $strongarm->api_version = 1;
   $strongarm->name = 'node_registration_type_settings_war_zone_tournament';
   $strongarm->value = array(
-    'date_field' => 'field_event_date_warzone',
-    'max_registration_date_field' => '0',
-    'min_registration_date_field' => '0',
-    'capacity_field' => 'field_slots_warzone',
-    'status' => 1,
-    'toggle_enabled_in_node_form' => 1,
-    'no_register_page' => 1,
+    'toggle_enabled_in_node_form' => 0,
+    'no_register_page' => 0,
     'extra_nr_owners_no_settings_tab' => 0,
     'allow_registration_until' => '1 day',
     'registration_success_message' => 'Thank you, your registration has been received!',
@@ -1063,11 +1083,22 @@ Event start: [node:event-start].',
     'send_mail_to_registree' => 1,
     'mail_to_registree_bcc' => '',
     'mail_to_registree_subject' => 'You\'ve registered for: [node:title]',
-    'mail_to_registree_body' => 'This is what you\'ve registered with:
+    'mail_to_registree_body' => '<h1 style="color: #222222; font-family: \'Helvetica\', \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 40px; margin: 0; padding: 0;" align="left">
+Greetings, [node-registration:field-register-real-name]</h1>
 
-E-mail address: [node-registration:email]
+<p class="lead" style="color: #222222; font-family: \'Helvetica\', \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 21px; font-size: 18px; margin: 0 0 10px; padding: 0;" align="left">
+You have successfully registered for <strong><a href="[node:url]">[node:title]</a></strong>!</p>
 
-To edit, go to [node-registration:edit-url]. To cancel, go to [node-registration:cancel-url].',
+<p style="color: #222222; font-family: \'Helvetica\', \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">This is what you\'ve registered with:</p>
+
+<p style="color: #222222; font-family: \'Helvetica\', \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Army: [node-registration:field-register-army:name]</p>
+<p style="color: #222222; font-family: \'Helvetica\', \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">E-mail address: [node-registration:email]</p>
+
+<p style="color: #222222; font-family: \'Helvetica\', \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">To edit, go to [node-registration:edit-url]. To cancel, go to [node-registration:cancel-url].</p>
+
+<p style="color: #222222; font-family: \'Helvetica\', \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">
+Good hunting!
+</p>',
     'change_mail_for_waiting_list_registree' => 0,
     'mail_for_waiting_list_registree_subject' => 'You\'ve registered for: [node:title] (BUT YOU\'RE ON THE WAITING LIST)',
     'mail_for_waiting_list_registree_body' => 'This is what you\'ve registered with:
@@ -1117,6 +1148,11 @@ Event start: [node:event-start].',
     'show_message_date' => 1,
     'show_message_capacity' => 1,
     'show_message_registered' => 1,
+    'date_field' => 'field_event_date_warzone',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
   );
   $export['node_registration_type_settings_war_zone_tournament'] = $strongarm;
 

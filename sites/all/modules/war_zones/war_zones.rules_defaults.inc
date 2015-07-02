@@ -136,12 +136,28 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_link_condition_war_zone_all_generate_comp'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_all_generate_comp" : {
+      "LABEL" : "Rules link: War Zone: All: Generate Comp Scorecards (cloned) condition",
+      "PLUGIN" : "and",
+      "OWNER" : "rules",
+      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "AND" : []
+    }
+  }');
+  $items['rules_link_condition_war_zone_all_generate_painting_s'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_all_generate_painting_s" : {
+      "LABEL" : "Rules link: War Zone: All: Generate Painting Scorecards condition",
+      "PLUGIN" : "and",
+      "OWNER" : "rules",
+      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "AND" : []
+    }
+  }');
   $items['rules_link_condition_war_zone_all_open_registration'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_all_open_registration" : {
       "LABEL" : "Rules link: War Zone: All: Open Registration condition",
       "PLUGIN" : "and",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
-      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
       "AND" : [
         { "entity_is_of_bundle" : {
             "entity" : [ "node" ],
@@ -157,6 +173,14 @@ function war_zones_default_rules_configuration() {
         },
         { "data_is" : { "data" : [ "node:field-status" ], "value" : "0" } }
       ]
+    }
+  }');
+  $items['rules_link_condition_war_zone_tournament_next_round'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_tournament_next_round" : {
+      "LABEL" : "Rules link: War Zone: Tournament: Next Round condition",
+      "PLUGIN" : "and",
+      "OWNER" : "rules",
+      "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
+      "AND" : []
     }
   }');
   $items['rules_link_condition_warzone_award_achievement'] = entity_import('rules_config', '{ "rules_link_condition_warzone_award_achievement" : {
@@ -239,12 +263,109 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_link_set_war_zone_all_generate_comp'] = entity_import('rules_config', '{ "rules_link_set_war_zone_all_generate_comp" : {
+      "LABEL" : "Rules link: War Zone: All: Generate Comp Scorecards (cloned) rules set",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "views_rules", "rules" ],
+      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "RULES" : [
+        { "RULE" : {
+            "DO" : [
+              { "VIEW LOOP" : {
+                  "VIEW" : "war_zone_email_player_rules",
+                  "DISPLAY" : "views_rules_4",
+                  "USING" : { "nid" : [ "node:nid" ] },
+                  "ROW VARIABLES" : { "registration_id" : { "registration_id" : "Registration ID" } },
+                  "DO" : [
+                    { "entity_fetch" : {
+                        "USING" : { "type" : "node_registration", "id" : [ "registration-id" ] },
+                        "PROVIDE" : { "entity_fetched" : { "registration_fetched" : "Fetched Registration" } }
+                      }
+                    },
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "entityform",
+                          "param_type" : "score_card",
+                          "param_created" : [ "site:current-date" ],
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : { "data" : [ "entity-created:field-event-link" ], "value" : [ "node" ] } },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-registration-sc" ],
+                        "value" : [ "registration-fetched" ]
+                      }
+                    },
+                    { "data_set" : { "data" : [ "entity-created:field-score-card-type" ], "value" : "10" } },
+                    { "entity_save" : { "data" : [ "entity-created" ], "immediate" : "1" } }
+                  ]
+                }
+              }
+            ],
+            "LABEL" : "War Zone: All: Generate Comp Scorecards"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_link_set_war_zone_all_generate_painting_s'] = entity_import('rules_config', '{ "rules_link_set_war_zone_all_generate_painting_s" : {
+      "LABEL" : "Rules link: War Zone: All: Generate Painting Scorecards rules set",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "views_rules", "rules" ],
+      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "RULES" : [
+        { "RULE" : {
+            "DO" : [
+              { "VIEW LOOP" : {
+                  "VIEW" : "war_zone_email_player_rules",
+                  "DISPLAY" : "views_rules_4",
+                  "USING" : { "nid" : [ "node:nid" ] },
+                  "ROW VARIABLES" : { "registration_id" : { "registration_id" : "Registration ID" } },
+                  "DO" : [
+                    { "entity_fetch" : {
+                        "USING" : { "type" : "node_registration", "id" : [ "registration-id" ] },
+                        "PROVIDE" : { "entity_fetched" : { "fetched_registration" : "Fetched Registration" } }
+                      }
+                    },
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "entityform",
+                          "param_type" : "score_card",
+                          "param_created" : [ "site:current-date" ],
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : { "data" : [ "entity-created:field-event-link" ], "value" : [ "node" ] } },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-registration-sc" ],
+                        "value" : [ "fetched-registration" ]
+                      }
+                    },
+                    { "data_set" : { "data" : [ "entity-created:field-score-card-type" ], "value" : "5" } },
+                    { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
+                  ]
+                }
+              }
+            ],
+            "LABEL" : "War Zone: All: Generate Painting Scorecards"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_link_set_war_zone_all_open_registration'] = entity_import('rules_config', '{ "rules_link_set_war_zone_all_open_registration" : {
       "LABEL" : "Rules link: War Zone: All: Open Registration rules set",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "rules_conditional", "userpoints_rules", "rules_scheduler" ],
-      "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
       "RULES" : [
         { "RULE" : {
             "PROVIDE" : { "entity_created" : { "message" : "Message" } },
@@ -265,6 +386,7 @@ function war_zones_default_rules_configuration() {
             ],
             "DO" : [
               { "data_set" : { "data" : [ "node:field-status" ], "value" : "3" } },
+              { "data_set" : { "data" : [ "node:status" ], "value" : "1" } },
               { "entity_create" : {
                   "USING" : {
                     "type" : "message",
@@ -381,12 +503,60 @@ function war_zones_default_rules_configuration() {
                           }
                         ]
                       }
+                    },
+                    { "CASE" : {
+                        "USING" : { "value" : "war_zone_tournament" },
+                        "DO" : [
+                          { "data_set" : {
+                              "data" : [ "node:field-event-date:0:value" ],
+                              "value" : [ "node:field-event-date-warzone:value" ]
+                            }
+                          },
+                          { "data_set" : {
+                              "data" : [ "node:field-event-date:0:value2" ],
+                              "value" : [ "node:field-event-date-warzone:value2" ]
+                            }
+                          }
+                        ]
+                      }
                     }
                   ]
                 }
               }
             ],
-            "LABEL" : "WZ: Open League for Registration"
+            "LABEL" : "War Zone: All: Open War Zone"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_link_set_war_zone_tournament_next_round'] = entity_import('rules_config', '{ "rules_link_set_war_zone_tournament_next_round" : {
+      "LABEL" : "Rules link: War Zone: Tournament: Next Round rules set",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
+      "RULES" : [
+        { "RULE" : {
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } },
+            "DO" : [
+              { "component_rules_war_zone_tournament_increment_round" : { "wzid" : [ "node" ] } },
+              { "entity_create" : {
+                  "USING" : {
+                    "type" : "message",
+                    "param_type" : "war_zone_all_new_round_message",
+                    "param_user" : [ "node:author" ]
+                  },
+                  "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "entity-created:field-stream-node-ref" ],
+                  "value" : [ "node" ]
+                }
+              }
+            ],
+            "LABEL" : "War Zone: Tournament: Next Round Wrapper"
           }
         }
       ]
@@ -437,8 +607,7 @@ function war_zones_default_rules_configuration() {
                           { "component_rules_war_zone_campaign_final_scoring" : { "wzid" : [ "node" ] } }
                         ]
                       }
-                    },
-                    { "CASE" : { "USING" : { "value" : "league" }, "DO" : [] } }
+                    }
                   ]
                 }
               }
@@ -517,6 +686,14 @@ function war_zones_default_rules_configuration() {
                           }
                         ]
                       }
+                    },
+                    { "CASE" : {
+                        "USING" : { "value" : "war_zone_tournament" },
+                        "DO" : [
+                          { "data_set" : { "data" : [ "node:field-registration-deadline" ], "value" : "now" } },
+                          { "component_rules_war_zone_tournament_increment_round" : { "wzid" : [ "node" ] } }
+                        ]
+                      }
                     }
                   ]
                 }
@@ -552,6 +729,25 @@ function war_zones_default_rules_configuration() {
         }
       ],
       "PROVIDES VARIABLES" : [ "brid" ]
+    }
+  }');
+  $items['rules_war_zone_all_edit_entityform'] = entity_import('rules_config', '{ "rules_war_zone_all_edit_entityform" : {
+      "LABEL" : "War Zone: All: Edit Entityform",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "entityform" ],
+      "ON" : { "entityform_update" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "entityform" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "score_card" : "score_card" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "redirect" : { "url" : "\\/node\\/[entityform:field-event-link:nid]\\/management" } }
+      ]
     }
   }');
   $items['rules_war_zone_all_grant_achievement'] = entity_import('rules_config', '{ "rules_war_zone_all_grant_achievement" : {
@@ -784,6 +980,19 @@ function war_zones_default_rules_configuration() {
                     }
                   ]
                 }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "war_zone_tournament" },
+                  "DO" : [
+                    { "mail" : {
+                        "to" : "[node:author:mail]",
+                        "subject" : "[iToysoldiers] Your Tournament is Ready!",
+                        "message" : "\\u003Ch3 style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 1.3; word-break: normal; font-size: 40px; margin: 0; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003EGreetings, [node:author:name]!\\u003C\\/h3\\u003E\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003EYour \\u003Cstrong\\u003ETournament\\u003C\\/strong\\u003E is ready and can be viewed at [node:url] .\\u003C\\/p\\u003E\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003EYour War Zone Management page is available at http:\\/\\/itoysoldiers.com\\/node\\/[node:nid]\\/management .\\u003C\\/p\\u003E\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003EThis War Zone, as well as any others, can also be accessed from your Dashboard at http:\\/\\/itoysoldiers.com\\/dashboard.\\u003C\\/p\\u003E\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003ETo help you have a successful war zone, please take a moment to review these tips before promoting your tournament to players:\\u003C\\/p\\u003E\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003EYour war zone starts in \\u003Cstrong\\u003ESetup\\u003C\\/strong\\u003E mode.  In this mode, other players cannot see or register for your event.  This gives you an opportunity to ensure that you are happy with all of the settings before making it live.  Once you\\u2019re happy with it, you can visit your Management page and click \\u201cOpen War Zone\\u201d.\\u003C\\/p\\u003E\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003EIf you have any questions, comments, requests or anything do not hesitate to reach out.  The super friendly iToysoldiers team (that\\u2019d be me) is always ready to help you out.  The best way to reach us is here:  http:\\/\\/itoysoldiers.uservoice.com\\/.\\u003C\\/p\\u003E\\r\\n\\u003Cp style=\\u0022color: #222222; font-family: \\u0027Helvetica\\u0027, \\u0027Arial\\u0027, sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; margin: 0 0 10px; padding: 0;\\u0022 align=\\u0022left\\u0022\\u003ECarpe Acies!\\u003Cbr\\u003E\\r\\nRob\\u003Cbr\\u003E\\r\\niToysoldiers.com\\u003C\\/p\\u003E",
+                        "language" : [ "" ]
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
@@ -822,17 +1031,19 @@ function war_zones_default_rules_configuration() {
                   ]
                 }
               },
-              { "CASE" : {
-                  "USING" : { "value" : "warzone_campaign_report_battle_p" },
-                  "DO" : [
-                    { "component_rules_war_zone_campaign_record_battle" : { "bid" : [ "entityform" ] } }
-                  ]
-                }
-              }
+              { "CASE" : { "USING" : { "value" : "warzone_campaign_report_battle_p" }, "DO" : [] } }
             ]
           }
         }
       ]
+    }
+  }');
+  $items['rules_war_zone_all_submit_news'] = entity_import('rules_config', '{ "rules_war_zone_all_submit_news" : {
+      "LABEL" : "War Zone: All: Submit News",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "USES VARIABLES" : { "fid" : { "label" : "Form", "type" : "entityform" } },
+      "DO" : []
     }
   }');
   $items['rules_war_zone_campaign_create_phase_relationships'] = entity_import('rules_config', '{ "rules_war_zone_campaign_create_phase_relationships" : {
@@ -900,6 +1111,260 @@ function war_zones_default_rules_configuration() {
                         }
                       },
                       { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_war_zone_tournament_generate_bye_scorecard'] = entity_import('rules_config', '{ "rules_war_zone_tournament_generate_bye_scorecard" : {
+      "LABEL" : "War Zone: Tournament: Generate Bye Scorecard",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "wzid" : { "label" : "War Zone", "type" : "node" },
+        "pid" : { "label" : "Player", "type" : "node_registration" },
+        "round" : { "label" : "Round", "type" : "integer" }
+      },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "entityform",
+              "param_type" : "score_card",
+              "param_created" : [ "site:current-date" ],
+              "param_user" : [ "wzid:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "data_set" : { "data" : [ "entity-created:field-your-results" ], "value" : "5" } },
+        { "data_set" : { "data" : [ "entity-created:field-event-link" ], "value" : [ "wzid" ] } },
+        { "data_set" : { "data" : [ "entity-created:field-round-sc" ], "value" : [ "round" ] } },
+        { "data_set" : { "data" : [ "entity-created:field-display-sc" ], "value" : 1 } },
+        { "data_set" : {
+            "data" : [ "entity-created:field-registration-sc" ],
+            "value" : [ "pid" ]
+          }
+        },
+        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
+      ]
+    }
+  }');
+  $items['rules_war_zone_tournament_generate_turn_scorecard'] = entity_import('rules_config', '{ "rules_war_zone_tournament_generate_turn_scorecard" : {
+      "LABEL" : "War Zone: Tournament: Generate Turn Scorecard",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "wzid" : { "label" : "War Zone", "type" : "node" },
+        "pid" : { "label" : "Player", "type" : "node_registration" },
+        "master_view" : { "label" : "Master View", "type" : "boolean" },
+        "oid" : { "label" : "Opponent", "type" : "node_registration" },
+        "round" : { "label" : "Round", "type" : "integer" }
+      },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "entityform",
+              "param_type" : "score_card",
+              "param_created" : [ "site:current-date" ],
+              "param_user" : [ "wzid:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "scorecard_created" : "Score Card" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard-created:field-event-link" ],
+            "value" : [ "wzid" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard-created:field-registration-sc" ],
+            "value" : [ "pid" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard-created:field-opponent-reg-sc" ],
+            "value" : [ "oid" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "scorecard-created:field-display-sc" ],
+            "value" : [ "master-view" ]
+          }
+        },
+        { "data_set" : { "data" : [ "scorecard-created:field-round-sc" ], "value" : [ "round" ] } },
+        { "data_set" : { "data" : [ "scorecard-created:field-score-card-type" ], "value" : "0" } },
+        { "entity_save" : { "data" : [ "scorecard-created" ], "immediate" : 1 } }
+      ]
+    }
+  }');
+  $items['rules_war_zone_tournament_increment_round'] = entity_import('rules_config', '{ "rules_war_zone_tournament_increment_round" : {
+      "LABEL" : "War Zone: Tournament: Increment Round",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional", "views_rules" ],
+      "USES VARIABLES" : { "wzid" : { "label" : "War Zone", "type" : "node" } },
+      "IF" : [
+        { "data_is" : { "data" : [ "wzid:type" ], "value" : "war_zone_tournament" } },
+        { "data_is" : { "data" : [ "wzid:field-status" ], "value" : "5" } }
+      ],
+      "DO" : [
+        { "data_calc" : {
+            "USING" : {
+              "input_1" : [ "wzid:field-warzone-round" ],
+              "op" : "+",
+              "input_2" : "1"
+            },
+            "PROVIDE" : { "result" : { "new_round" : "New Round" } }
+          }
+        },
+        { "data_set" : { "data" : [ "wzid:field-warzone-round" ], "value" : [ "new-round" ] } },
+        { "variable_add" : {
+            "USING" : { "type" : "list\\u003Cnode_registration\\u003E" },
+            "PROVIDE" : { "variable_added" : { "p1_list" : "Player 1 List" } }
+          }
+        },
+        { "SWITCH" : {
+            "USING" : { "data" : [ "wzid:field-tournament-type" ] },
+            "DO" : [
+              { "CASE" : {
+                  "USING" : { "value" : "0" },
+                  "DO" : [
+                    { "VIEW LOOP" : {
+                        "VIEW" : "war_zone_tourney_registrations",
+                        "DISPLAY" : "views_rules_1",
+                        "USING" : { "nid" : [ "wzid:nid" ] },
+                        "ROW VARIABLES" : { "registration_id" : { "registration_id" : "Registration ID" } },
+                        "DO" : [
+                          { "entity_fetch" : {
+                              "USING" : { "type" : "node_registration", "id" : [ "registration-id" ] },
+                              "PROVIDE" : { "entity_fetched" : { "registration_fetched" : "Fetched Registration" } }
+                            }
+                          },
+                          { "list_add" : {
+                              "list" : [ "p1-list" ],
+                              "item" : [ "registration-fetched" ],
+                              "unique" : 1
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        { "variable_add" : {
+            "USING" : { "type" : "list\\u003Cnode_registration\\u003E", "value" : [ "" ] },
+            "PROVIDE" : { "variable_added" : { "p2_list" : "Player 2 List" } }
+          }
+        },
+        { "data_set" : { "data" : [ "p2-list" ], "value" : [ "p1-list" ] } },
+        { "LOOP" : {
+            "USING" : { "list" : [ "p1-list" ] },
+            "ITEM" : { "p1_reg" : "Player 1 Reg" },
+            "DO" : [
+              { "variable_add" : {
+                  "USING" : { "type" : "list\\u003Cnode_registration\\u003E" },
+                  "PROVIDE" : { "variable_added" : { "potential_opponents" : "Potential Opponents" } }
+                }
+              },
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "list_contains" : { "list" : [ "p2-list" ], "item" : [ "p1-reg" ] } },
+                    "DO" : [
+                      { "list_remove" : { "list" : [ "p2-list" ], "item" : [ "p1-reg" ] } },
+                      { "variable_add" : {
+                          "USING" : { "type" : "list\\u003Cnode_registration\\u003E", "value" : [ "" ] },
+                          "PROVIDE" : { "variable_added" : { "chk_previous_opponents" : "Check Previous Opponents" } }
+                        }
+                      },
+                      { "LOOP" : {
+                          "USING" : { "list" : [ "p2-list" ] },
+                          "ITEM" : { "list_item" : "Current list item" },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "chk-previous-opponents" ],
+                                "item" : [ "list-item" ],
+                                "unique" : 1
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "VIEW LOOP" : {
+                          "VIEW" : "war_zone_tourney_registrations",
+                          "DISPLAY" : "views_rules_2",
+                          "USING" : { "registration_id" : [ "p1-reg:registration-id" ] },
+                          "ROW VARIABLES" : { "field_opponent_reg_sc" : { "field_opponent_reg_sc" : "Previous Opponent" } },
+                          "DO" : [
+                            { "entity_fetch" : {
+                                "USING" : { "type" : "node_registration", "id" : [ "field-opponent-reg-sc" ] },
+                                "PROVIDE" : { "entity_fetched" : { "opponent_reg" : "Opponent Reg" } }
+                              }
+                            },
+                            { "CONDITIONAL" : [
+                                {
+                                  "IF" : { "list_contains" : { "list" : [ "chk-previous-opponents" ], "item" : [ "opponent-reg" ] } },
+                                  "DO" : [
+                                    { "list_remove" : { "list" : [ "chk-previous-opponents" ], "item" : [ "opponent-reg" ] } }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      { "LOOP" : {
+                          "USING" : { "list" : [ "chk-previous-opponents" ] },
+                          "ITEM" : { "list_item" : "Current list item" },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "potential-opponents" ],
+                                "item" : [ "list-item" ],
+                                "unique" : 1
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "CONDITIONAL" : [
+                          {
+                            "IF" : { "NOT data_is_empty" : { "data" : [ "potential-opponents" ] } },
+                            "DO" : [
+                              { "component_rules_war_zone_tournament_generate_turn_scorecard" : {
+                                  "wzid" : [ "wzid" ],
+                                  "pid" : [ "p1-reg" ],
+                                  "master_view" : 1,
+                                  "oid" : [ "potential-opponents:0" ],
+                                  "round" : [ "new-round" ]
+                                }
+                              },
+                              { "component_rules_war_zone_tournament_generate_turn_scorecard" : {
+                                  "wzid" : [ "wzid" ],
+                                  "pid" : [ "potential-opponents:0" ],
+                                  "master_view" : 0,
+                                  "oid" : [ "p1-reg" ],
+                                  "round" : [ "new-round" ]
+                                }
+                              },
+                              { "list_remove" : { "list" : [ "p2-list" ], "item" : [ "potential-opponents:0" ] } }
+                            ]
+                          },
+                          { "ELSE" : [
+                              { "component_rules_war_zone_tournament_generate_bye_scorecard" : { "wzid" : [ "wzid" ], "pid" : [ "p1-reg" ], "round" : [ "new-round" ] } }
+                            ]
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]

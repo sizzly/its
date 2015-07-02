@@ -43,7 +43,9 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'add league node registration'.
   $permissions['add league node registration'] = array(
     'name' => 'add league node registration',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node_registration',
   );
 
@@ -238,6 +240,7 @@ function war_zones_user_default_permissions() {
     'name' => 'edit own war_zone_tournament content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );

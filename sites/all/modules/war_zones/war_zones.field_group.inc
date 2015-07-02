@@ -58,8 +58,10 @@ function war_zones_field_group_info() {
     'children' => array(
       0 => 'field_event_date_warzone',
       1 => 'field_location',
-      2 => 'field_more_info_link',
-      3 => 'field_slots_warzone',
+      2 => 'field_slots_warzone',
+      3 => 'field_website',
+      4 => 'field_registration_deadline',
+      5 => 'field_entry_fee',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -108,6 +110,37 @@ function war_zones_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_media_body|node|war_zone_tournament|teaser';
+  $field_group->group_name = 'group_media_body';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_tournament';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_media_wrapper';
+  $field_group->data = array(
+    'label' => 'Media Body',
+    'weight' => '6',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_game_warzone',
+      2 => 'registration_link',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Media Body',
+      'instance_settings' => array(
+        'classes' => 'media-body',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_media_body|node|war_zone_tournament|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media_left|node|special_event|teaser';
   $field_group->group_name = 'group_media_left';
   $field_group->entity_type = 'node';
@@ -133,6 +166,35 @@ function war_zones_field_group_info() {
     ),
   );
   $export['group_media_left|node|special_event|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_media_left|node|war_zone_tournament|teaser';
+  $field_group->group_name = 'group_media_left';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_tournament';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_media_wrapper';
+  $field_group->data = array(
+    'label' => 'Media Left',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_campaign_badge',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Media Left',
+      'instance_settings' => array(
+        'classes' => 'media-left pull-left hidden-xs',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_media_left|node|war_zone_tournament|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -167,6 +229,36 @@ function war_zones_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_media_wrapper|node|war_zone_tournament|teaser';
+  $field_group->group_name = 'group_media_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_tournament';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Media Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_media_left',
+      1 => 'group_media_body',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Media Wrapper',
+      'instance_settings' => array(
+        'classes' => 'media',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_media_wrapper|node|war_zone_tournament|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_meta|node|special_event|form';
   $field_group->group_name = 'group_meta';
   $field_group->entity_type = 'node';
@@ -192,6 +284,65 @@ function war_zones_field_group_info() {
     ),
   );
   $export['group_meta|node|special_event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_meta|node|war_zone_tournament|form';
+  $field_group->group_name = 'group_meta';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_tournament';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Meta',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_status',
+      1 => 'field_event_type',
+      2 => 'field_event_date',
+      3 => 'field_warzone_round',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-meta field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_meta|node|war_zone_tournament|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_mission_label_wrapper|field_collection_item|field_tournament_missions|default';
+  $field_group->group_name = 'group_mission_label_wrapper';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_tournament_missions';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Mission Label Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_mission_name_tourney',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Mission Label Wrapper',
+      'instance_settings' => array(
+        'classes' => 'h2',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_mission_label_wrapper|field_collection_item|field_tournament_missions|default'] = $field_group;
 
   return $export;
 }

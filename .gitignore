@@ -6,7 +6,10 @@ phpmyadmin
 
 # Ignore paths that contain user-generated content.
 sites/*/files/*
+<<<<<<< HEAD
 sites/*/private
+=======
+>>>>>>> release-war_zones-4.0
 sites/*/tmp
 tmp
 

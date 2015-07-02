@@ -250,6 +250,26 @@ function war_zones_default_message_type() {
       ]
     }
   }');
+  $items['war_zone_all_new_round_message'] = entity_import('message_type', '{
+    "name" : "war_zone_all_new_round_message",
+    "description" : "War Zone: All: New Round Message",
+    "argument_keys" : [],
+    "argument" : [],
+    "category" : "message_type",
+    "data" : {
+      "token options" : { "clear" : 0 },
+      "purge" : { "override" : 1, "enabled" : 0, "quota" : "", "days" : "" }
+    },
+    "language" : "",
+    "arguments" : null,
+    "message_text" : { "und" : [
+        {
+          "value" : "A new round has begun for \\u003Ca href=\\u0022[message:field-stream-node-ref:url:relative]\\u0022\\u003E[message:field-stream-node-ref:title]\\u003C\\/a\\u003E.\\r\\n",
+          "format" : "php_code"
+        }
+      ]
+    }
+  }');
   return $items;
 }
 
@@ -308,6 +328,40 @@ function war_zones_node_info() {
  */
 function war_zones_default_rules_link() {
   $items = array();
+  $items['war_zone_all_generate_comp'] = entity_import('rules_link', '{
+    "settings" : {
+      "text" : "Create Comp Scorecards",
+      "link_type" : "confirm",
+      "bundles" : {
+        "war_zone_league" : "war_zone_league",
+        "league" : "league",
+        "narrative_campaign_instance" : "narrative_campaign_instance",
+        "special_event" : "special_event",
+        "war_zone_tournament" : "war_zone_tournament"
+      },
+      "entity_link" : 0,
+      "confirm_question" : "Are you sure?",
+      "confirm_description" : "This will generate the composition scorecards for this war zone."
+    },
+    "name" : "war_zone_all_generate_comp",
+    "label" : "War Zone: All: Generate Comp Scorecards",
+    "path" : "war_zone_all_generate_comp",
+    "entity_type" : "node"
+  }');
+  $items['war_zone_all_generate_painting_s'] = entity_import('rules_link', '{
+    "settings" : {
+      "text" : "Create Painting Scorecards",
+      "link_type" : "confirm",
+      "bundles" : [],
+      "entity_link" : 0,
+      "confirm_question" : "Are you sure?",
+      "confirm_description" : "This will generate the painting scorecards for this war zone."
+    },
+    "name" : "war_zone_all_generate_painting_s",
+    "label" : "War Zone: All: Generate Painting Scorecards",
+    "path" : "war_zone_all_generate_painting_s",
+    "entity_type" : "node"
+  }');
   $items['war_zone_all_open_registration'] = entity_import('rules_link', '{
     "settings" : {
       "text" : "Open War Zone",
@@ -318,13 +372,27 @@ function war_zones_default_rules_link() {
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
       },
-      "entity_link" : 1,
+      "entity_link" : 0,
       "confirm_question" : "Are you sure?",
       "confirm_description" : "This starts the war zone and opens up registration. It cannot be undone. "
     },
     "name" : "war_zone_all_open_registration",
     "label" : "War Zone: All: Open Registration",
     "path" : "wz-open",
+    "entity_type" : "node"
+  }');
+  $items['war_zone_tournament_next_round'] = entity_import('rules_link', '{
+    "settings" : {
+      "text" : "Start Next Round",
+      "link_type" : "confirm",
+      "bundles" : { "war_zone_tournament" : "war_zone_tournament" },
+      "entity_link" : 0,
+      "confirm_question" : "Are you sure?",
+      "confirm_description" : "You will start a new round and generate matches. This cannot be undone."
+    },
+    "name" : "war_zone_tournament_next_round",
+    "label" : "War Zone: Tournament: Next Round",
+    "path" : "war_zone_tournament_next_round",
     "entity_type" : "node"
   }');
   $items['wz_complete'] = entity_import('rules_link', '{
@@ -337,7 +405,7 @@ function war_zones_default_rules_link() {
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
       },
-      "entity_link" : 1,
+      "entity_link" : 0,
       "confirm_question" : "Are you sure?",
       "confirm_description" : "This will finish the war zone and finalize scores. It cannot be undone. "
     },
@@ -356,7 +424,7 @@ function war_zones_default_rules_link() {
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
       },
-      "entity_link" : 1,
+      "entity_link" : 0,
       "confirm_question" : "Are you sure?",
       "confirm_description" : "This cannot be undone"
     },
