@@ -133,6 +133,24 @@ function war_zones_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field_battle_points_sc'
+  $field_bases['field_battle_points_sc'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_battle_points_sc',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_campaign_badge'
   $field_bases['field_campaign_badge'] = array(
     'active' => 1,
@@ -180,44 +198,6 @@ function war_zones_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_defeat'
-  $field_bases['field_defeat'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_defeat',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "1")
-{
-$entity_field[0][\'value\'] = "1";
-}
-else
-{
-$entity_field[0][\'value\'] = "0";
-}',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => 0,
-        'data_length' => 5,
-        'data_not_NULL' => 0,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'varchar',
-      ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'profile2_private' => FALSE,
-      'store' => 1,
-    ),
-    'translatable' => 0,
-    'type' => 'computed',
   );
 
   // Exported field_base: 'field_designers_notes_narrative'
@@ -274,44 +254,6 @@ $entity_field[0][\'value\'] = "0";
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
-  );
-
-  // Exported field_base: 'field_draw'
-  $field_bases['field_draw'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_draw',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "3")
-{
-$entity_field[0][\'value\'] = "1";
-}
-else
-{
-$entity_field[0][\'value\'] = "0";
-}',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => 0,
-        'data_length' => 5,
-        'data_not_NULL' => 0,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'varchar',
-      ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'profile2_private' => FALSE,
-      'store' => 1,
-    ),
-    'translatable' => 0,
-    'type' => 'computed',
   );
 
   // Exported field_base: 'field_eligible_battles_narrative'
@@ -623,37 +565,6 @@ $entity_field[0][\'value\'] = "0";
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_more_info_link'
-  $field_bases['field_more_info_link'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_more_info_link',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'profile2_private' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'link_field',
-  );
-
   // Exported field_base: 'field_opponent_reg_sc'
   $field_bases['field_opponent_reg_sc'] = array(
     'active' => 1,
@@ -691,6 +602,48 @@ $entity_field[0][\'value\'] = "0";
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_opponent_sc'
+  $field_bases['field_opponent_sc'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_opponent_sc',
+    'foreign keys' => array(
+      'users' => array(
+        'columns' => array(
+          'target_id' => 'uid',
+        ),
+        'table' => 'users',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'user',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
@@ -1248,44 +1201,6 @@ $entity_field[0][\'value\'] = "0";
     'type' => 'field_hidden_text',
   );
 
-  // Exported field_base: 'field_victory'
-  $field_bases['field_victory'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_victory',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'computed_field',
-    'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "5")
-{
-$entity_field[0][\'value\'] = "1";
-}
-else
-{
-$entity_field[0][\'value\'] = "0";
-}',
-      'database' => array(
-        'data_default' => '',
-        'data_index' => FALSE,
-        'data_length' => 32,
-        'data_not_NULL' => FALSE,
-        'data_precision' => 10,
-        'data_scale' => 2,
-        'data_size' => 'normal',
-        'data_type' => 'varchar',
-      ),
-      'display_format' => '$display_output = $entity_field_item[\'value\'];',
-      'profile2_private' => FALSE,
-      'store' => 1,
-    ),
-    'translatable' => 0,
-    'type' => 'computed',
-  );
-
   // Exported field_base: 'field_victory_points_sc'
   $field_bases['field_victory_points_sc'] = array(
     'active' => 1,
@@ -1339,6 +1254,33 @@ $entity_field[0][\'value\'] = "0";
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_warzone_scheduling'
+  $field_bases['field_warzone_scheduling'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_warzone_scheduling',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Automatic - Recommended',
+        1 => 'Manual',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_your_results'

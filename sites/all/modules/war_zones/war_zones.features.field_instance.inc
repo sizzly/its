@@ -128,6 +128,50 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-score_card-field_battle_points_sc'
+  $field_instances['entityform-score_card-field_battle_points_sc'] = array(
+    'bundle' => 'score_card',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 20,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_battle_points_sc',
+    'label' => 'Battle Points',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 27,
+    ),
+  );
+
   // Exported field_instance: 'entityform-score_card-field_comp_sc'
   $field_instances['entityform-score_card-field_comp_sc'] = array(
     'bundle' => 'score_card',
@@ -405,6 +449,54 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-score_card-field_opponent_sc'
+  $field_instances['entityform-score_card-field_opponent_sc'] = array(
+    'bundle' => 'score_card',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_opponent_sc',
+    'label' => 'Opponent',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'entityform-score_card-field_painting_sc'
   $field_instances['entityform-score_card-field_painting_sc'] = array(
     'bundle' => 'score_card',
@@ -503,6 +595,54 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-score_card-field_player_sc'
+  $field_instances['entityform-score_card-field_player_sc'] = array(
+    'bundle' => 'score_card',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_player_sc',
+    'label' => 'Player',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 1,
     ),
   );
 
@@ -3807,6 +3947,47 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-special_event-field_warzone_scheduling'
+  $field_instances['node-special_event-field_warzone_scheduling'] = array(
+    'bundle' => 'special_event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Toggle whether you\'d like iToysoldiers to automatically process the beginning and end of your War Zone using the start and end dates provided.  If you choose manual then you will need to start and end the war zone manually.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_warzone_scheduling',
+    'label' => 'Scheduling',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 22,
+    ),
+  );
+
   // Exported field_instance: 'node-special_event-field_website'
   $field_instances['node-special_event-field_website'] = array(
     'bundle' => 'special_event',
@@ -4942,6 +5123,7 @@ function war_zones_field_default_field_instances() {
   t('Army Points');
   t('Article Body');
   t('Badge');
+  t('Battle Points');
   t('Battle icon');
   t('Battlefield');
   t('Body');
@@ -4973,9 +5155,11 @@ function war_zones_field_default_field_instances() {
   t('More Info');
   t('Most likely you\'ll want to keep the value derived from the campaign itself.  However, you can modify it if you\'re adapting a campaign for a different game system.  Very common with historical games.');
   t('Narrative Text');
+  t('Opponent');
   t('Opponent Registration');
   t('Painting');
   t('Phase');
+  t('Player');
   t('Player Results');
   t('Points');
   t('Points per army');
@@ -4985,6 +5169,7 @@ function war_zones_field_default_field_instances() {
   t('Registration');
   t('Registration Deadline');
   t('Round');
+  t('Scheduling');
   t('Score Card Type');
   t('Short Description');
   t('Slots');
@@ -4996,6 +5181,7 @@ function war_zones_field_default_field_instances() {
   t('This determines whether or not both players must be signed up for the campaign.');
   t('This is the number of available slots in the War Zone.  Leave it at 0 for unlimited.');
   t('Title');
+  t('Toggle whether you\'d like iToysoldiers to automatically process the beginning and end of your War Zone using the start and end dates provided.  If you choose manual then you will need to start and end the war zone manually.');
   t('Tournament Missions');
   t('Tournament Type');
   t('Use this field to present any specific logistical elements associated with this Narrative Campaign.  The Fluff elements are handled by the Narrative Campaign itself.');
