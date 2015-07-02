@@ -522,7 +522,7 @@ function war_zones_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Broken/missing handler */
+  /* Field: SUM(Entityform Submission: Battle Points) */
   $handler->display->display_options['fields']['field_battle_points_sc']['id'] = 'field_battle_points_sc';
   $handler->display->display_options['fields']['field_battle_points_sc']['table'] = 'field_data_field_battle_points_sc';
   $handler->display->display_options['fields']['field_battle_points_sc']['field'] = 'field_battle_points_sc';
