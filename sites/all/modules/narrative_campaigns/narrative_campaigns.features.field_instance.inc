@@ -286,7 +286,7 @@ function narrative_campaigns_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'none',
+          'action' => 'hide',
           'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(
@@ -941,14 +941,14 @@ function narrative_campaigns_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'
-  $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'] = array(
+  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'
+  $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
-    'default_value' => array(),
+    'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -960,11 +960,11 @@ function narrative_campaigns_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 8,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'entityform',
-    'field_name' => 'field_opponent_reg_sc',
+    'field_name' => 'field_opponent_report_battle',
     'label' => 'Opponent',
     'required' => 1,
     'settings' => array(
@@ -980,16 +980,9 @@ function narrative_campaigns_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => FALSE,
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1065,7 +1058,7 @@ function narrative_campaigns_field_default_field_instances() {
         ),
       ),
       'type' => 'taxonomy_shs',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1203,7 +1196,7 @@ function narrative_campaigns_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1715,6 +1708,77 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-armies-field_army_elo_v2'
+  $field_instances['taxonomy_term-armies-field_army_elo_v2'] = array(
+    'bundle' => 'armies',
+    'default_value' => array(
+      0 => array(
+        'value' => 1400,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_army_elo_v2',
+    'label' => 'Army Ranking',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_hidden',
+      'settings' => array(),
+      'type' => 'field_hidden',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-armies-field_game_system_armies'
+  $field_instances['taxonomy_term-armies-field_game_system_armies'] = array(
+    'bundle' => 'armies',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_game_system_armies',
+    'label' => 'Game System',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-missions-field_image'
   $field_instances['taxonomy_term-missions-field_image'] = array(
     'bundle' => 'missions',
@@ -1784,12 +1848,14 @@ function narrative_campaigns_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Army');
+  t('Army Ranking');
   t('Campaign Points');
   t('Chronicle Icon');
   t('Event');
   t('Explain why you\'re awarding the additional points.  This is a useful reminder and helps if someone questions the points.');
   t('Explanation');
   t('Faction');
+  t('Game System');
   t('Iconography');
   t('Image');
   t('Leave this field blank if you used the army you registered with');

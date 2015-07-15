@@ -754,7 +754,9 @@ function war_zones_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_narrative_campaign_instance';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'status',
+  );
   $export['node_options_narrative_campaign_instance'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -763,7 +765,6 @@ function war_zones_strongarm() {
   $strongarm->name = 'node_options_special_event';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_special_event'] = $strongarm;
 
@@ -771,7 +772,9 @@ function war_zones_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_war_zone_tournament';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'status',
+  );
   $export['node_options_war_zone_tournament'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -898,6 +901,11 @@ Event start: [node:event-start].',
   $strongarm->api_version = 1;
   $strongarm->name = 'node_registration_type_settings_narrative_campaign_instance';
   $strongarm->value = array(
+    'date_field' => 'field_event_date',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
     'toggle_enabled_in_node_form' => 0,
     'no_register_page' => 0,
     'extra_nr_owners_no_settings_tab' => 1,
@@ -969,11 +977,6 @@ Event start: [node:event-start].',
     'show_message_date' => 1,
     'show_message_capacity' => 1,
     'show_message_registered' => 1,
-    'date_field' => 'field_event_date',
-    'max_registration_date_field' => 'field_registration_deadline',
-    'min_registration_date_field' => '0',
-    'capacity_field' => 'field_slots_warzone',
-    'status' => 1,
     'capacity' => 0,
   );
   $export['node_registration_type_settings_narrative_campaign_instance'] = $strongarm;
@@ -983,6 +986,11 @@ Event start: [node:event-start].',
   $strongarm->api_version = 1;
   $strongarm->name = 'node_registration_type_settings_special_event';
   $strongarm->value = array(
+    'date_field' => 'field_event_date',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
     'toggle_enabled_in_node_form' => 0,
     'no_register_page' => 0,
     'extra_nr_owners_no_settings_tab' => 0,
@@ -1054,11 +1062,6 @@ Event start: [node:event-start].',
     'show_message_date' => 1,
     'show_message_capacity' => 1,
     'show_message_registered' => 1,
-    'date_field' => 'field_event_date',
-    'max_registration_date_field' => 'field_registration_deadline',
-    'min_registration_date_field' => '0',
-    'capacity_field' => 'field_slots_warzone',
-    'status' => 1,
   );
   $export['node_registration_type_settings_special_event'] = $strongarm;
 
@@ -1067,9 +1070,14 @@ Event start: [node:event-start].',
   $strongarm->api_version = 1;
   $strongarm->name = 'node_registration_type_settings_war_zone_tournament';
   $strongarm->value = array(
+    'date_field' => 'field_event_date_warzone',
+    'max_registration_date_field' => 'field_registration_deadline',
+    'min_registration_date_field' => '0',
+    'capacity_field' => 'field_slots_warzone',
+    'status' => 1,
     'toggle_enabled_in_node_form' => 0,
     'no_register_page' => 0,
-    'extra_nr_owners_no_settings_tab' => 0,
+    'extra_nr_owners_no_settings_tab' => 1,
     'allow_registration_until' => '1 day',
     'registration_success_message' => 'Thank you, your registration has been received!',
     'allow_cancellation_until' => '5 minutes',
@@ -1148,11 +1156,6 @@ Event start: [node:event-start].',
     'show_message_date' => 1,
     'show_message_capacity' => 1,
     'show_message_registered' => 1,
-    'date_field' => 'field_event_date_warzone',
-    'max_registration_date_field' => 'field_registration_deadline',
-    'min_registration_date_field' => '0',
-    'capacity_field' => 'field_slots_warzone',
-    'status' => 1,
   );
   $export['node_registration_type_settings_war_zone_tournament'] = $strongarm;
 

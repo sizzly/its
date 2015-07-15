@@ -1,0 +1,25 @@
+From 0c69eda3d7c31f5e0cbd66f1935f423171fc7b89 Mon Sep 17 00:00:00 2001
+From: Rudie Dirkx
+Date: Mon, 06 Jul 2015 18:15:19 +0000
+Subject: Issue #2089743: nr owners access bug
+
+---
+diff --git a/submodules/nr_owners/nr_owners.module b/submodules/nr_owners/nr_owners.module
+index 320b2b2..cc5cedc 100644
+--- a/submodules/nr_owners/nr_owners.module
++++ b/submodules/nr_owners/nr_owners.module
+@@ -48,3 +48,12 @@ function nr_owners_node_registration_node_access($node, $op, $account, $reason)
+     }
+   }
+ }
++
++/**
++ * Implements hook_node_registration_access().
++ */
++function nr_owners_node_registration_access($registration, $op, $account, $reason) {
++  if (in_array($op, array('edit', 'update')) && $registration->node->uid == $account->uid) {
++    return TRUE;
++  }
++}
+--
+
