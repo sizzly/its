@@ -128,50 +128,6 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_battle_points_sc'
-  $field_instances['entityform-score_card-field_battle_points_sc'] = array(
-    'bundle' => 'score_card',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 20,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_battle_points_sc',
-    'label' => 'Battle Points',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 27,
-    ),
-  );
-
   // Exported field_instance: 'entityform-score_card-field_comp_sc'
   $field_instances['entityform-score_card-field_comp_sc'] = array(
     'bundle' => 'score_card',
@@ -1133,6 +1089,163 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_event_link'
+  $field_instances['entityform-war_zone_all_register_anonymous_-field_event_link'] = array(
+    'bundle' => 'war_zone_all_register_anonymous_',
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_event_link',
+    'label' => 'Event',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 1,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_player_email_registration'
+  $field_instances['entityform-war_zone_all_register_anonymous_-field_player_email_registration'] = array(
+    'bundle' => 'war_zone_all_register_anonymous_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_player_email_registration',
+    'label' => 'Player Email',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_register_army'
+  $field_instances['entityform-war_zone_all_register_anonymous_-field_register_army'] = array(
+    'bundle' => 'war_zone_all_register_anonymous_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_register_army',
+    'label' => 'Army',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_register_real_name'
+  $field_instances['entityform-war_zone_all_register_anonymous_-field_register_real_name'] = array(
+    'bundle' => 'war_zone_all_register_anonymous_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_register_real_name',
+    'label' => 'Player Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'entityform-war_zone_grant_achievement-field_event_link'
   $field_instances['entityform-war_zone_grant_achievement-field_event_link'] = array(
     'bundle' => 'war_zone_grant_achievement',
@@ -1186,7 +1299,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1223,6 +1336,47 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_player_achivement_reg'
+  $field_instances['entityform-war_zone_grant_achievement-field_player_achivement_reg'] = array(
+    'bundle' => 'war_zone_grant_achievement',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_player_achivement_reg',
+    'label' => 'Player',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'entityform-war_zone_grant_achievement-field_points_custom_achievement'
   $field_instances['entityform-war_zone_grant_achievement-field_points_custom_achievement'] = array(
     'bundle' => 'war_zone_grant_achievement',
@@ -1253,54 +1407,6 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_registration_sc'
-  $field_instances['entityform-war_zone_grant_achievement-field_registration_sc'] = array(
-    'bundle' => 'war_zone_grant_achievement',
-    'default_value' => array(),
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_registration_sc',
-    'label' => 'Receipient',
-    'required' => 1,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'options_select',
-      'weight' => 4,
     ),
   );
 
@@ -5120,10 +5226,10 @@ function war_zones_field_default_field_instances() {
   t('Additional Points');
   t('Aggregate Score');
   t('Allow sign up after campaign starts?');
+  t('Army');
   t('Army Points');
   t('Article Body');
   t('Badge');
-  t('Battle Points');
   t('Battle icon');
   t('Battlefield');
   t('Body');
@@ -5160,12 +5266,13 @@ function war_zones_field_default_field_instances() {
   t('Painting');
   t('Phase');
   t('Player');
+  t('Player Email');
+  t('Player Name');
   t('Player Results');
   t('Points');
   t('Points per army');
   t('Provide potential organizers with some of your thoughts on this campaign.  Number of players, ideal armies, source material, and the like are all excellent things to put here.');
   t('Put the introduction to your campaign here.  This is used to not only introduce your campaign but as the campaign brief for players on any campaign instance.');
-  t('Receipient');
   t('Registration');
   t('Registration Deadline');
   t('Round');

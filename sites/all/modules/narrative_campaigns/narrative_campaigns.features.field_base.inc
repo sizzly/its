@@ -10,6 +10,24 @@
 function narrative_campaigns_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_army_elo_v2'
+  $field_bases['field_army_elo_v2'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_army_elo_v2',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_hidden',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'field_hidden_integer',
+  );
+
   // Exported field_base: 'field_campaign_points_narrative'
   $field_bases['field_campaign_points_narrative'] = array(
     'active' => 1,
@@ -56,6 +74,43 @@ function narrative_campaigns_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_game_system_armies'
+  $field_bases['field_game_system_armies'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_game_system_armies',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'armies',
+          'parent' => 0,
+          'depth' => 1,
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_mechanics_text'
@@ -150,6 +205,49 @@ function narrative_campaigns_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_opponent_report_battle'
+  $field_bases['field_opponent_report_battle'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_opponent_report_battle',
+    'foreign keys' => array(
+      'node_registration' => array(
+        'columns' => array(
+          'target_id' => 'registration_id',
+        ),
+        'table' => 'node_registration',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'views',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 1,
+          ),
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'war_zone_all_registrations',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'node_registration',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_p1_army_wz'

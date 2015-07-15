@@ -201,14 +201,10 @@ function narrative_campaigns_default_rules_configuration() {
       "LABEL" : "Rules link: Warzone: Campaign: Open Phase rules set",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "relation", "rules_conditional" ],
+      "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "relation" : { "type" : "relation", "label" : "relation" } },
       "RULES" : [
         { "RULE" : {
-            "PROVIDE" : {
-              "endpoints" : { "endpoints" : "List of related entities", "operation" : "Operation" },
-              "entity_created" : { "entity_created" : "Created entity" }
-            },
             "IF" : [
               { "entity_is_of_bundle" : {
                   "entity" : [ "relation" ],
@@ -224,90 +220,7 @@ function narrative_campaigns_default_rules_configuration() {
               }
             ],
             "DO" : [
-              { "data_set" : { "data" : [ "relation:field-phase-state-narrative" ], "value" : "5" } },
-              { "relation_rules_load_related" : {
-                  "USING" : {
-                    "left" : [ "relation:endpoints:0" ],
-                    "relation_type" : "campaign_phase_instance",
-                    "entity_type_op" : "node"
-                  },
-                  "PROVIDE" : { "endpoints" : { "endpoints" : "List of related entities" } }
-                }
-              },
-              { "entity_create" : {
-                  "USING" : {
-                    "type" : "message",
-                    "param_type" : "campaign_reported_battle",
-                    "param_user" : [ "endpoints:0:author" ]
-                  },
-                  "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
-                }
-              },
-              { "data_set" : {
-                  "data" : [ "entity-created:field-title-chronicle" ],
-                  "value" : "Battle Has Been Joined"
-                }
-              },
-              { "data_set" : { "data" : [ "entity-created:field-chronicle-icon" ], "value" : "flash" } },
-              { "LOOP" : {
-                  "USING" : { "list" : [ "endpoints" ] },
-                  "ITEM" : { "list_item" : "Current list item" },
-                  "DO" : [
-                    { "CONDITIONAL" : [
-                        {
-                          "IF" : { "entity_is_of_bundle" : {
-                              "entity" : [ "list-item" ],
-                              "type" : "node",
-                              "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
-                            }
-                          },
-                          "DO" : [
-                            { "data_set" : {
-                                "data" : [ "entity-created:field-stream-node-ref" ],
-                                "value" : [ "list-item" ]
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              },
-              { "relation_rules_load_related" : {
-                  "USING" : {
-                    "left" : [ "relation" ],
-                    "relation_type" : "campaign_phase_instance",
-                    "entity_type_op" : "entityform"
-                  },
-                  "PROVIDE" : { "endpoints" : { "operation" : "Operation" } }
-                }
-              },
-              { "LOOP" : {
-                  "USING" : { "list" : [ "operation" ] },
-                  "ITEM" : { "list_item" : "Current list item" },
-                  "DO" : [
-                    { "CONDITIONAL" : [
-                        {
-                          "IF" : { "entity_is_of_bundle" : {
-                              "entity" : [ "list-item" ],
-                              "type" : "entityform",
-                              "bundle" : { "value" : { "warzone_campaign_phase" : "warzone_campaign_phase" } }
-                            }
-                          },
-                          "DO" : [
-                            { "data_set" : {
-                                "data" : [ "entity-created:arguments:messtext" ],
-                                "value" : "\\u003Cstrong\\u003EOperation [list-item:field-title-chronicle]\\u003C\\/strong\\u003E has begun."
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
+              { "data_set" : { "data" : [ "relation:field-phase-state-narrative" ], "value" : "5" } }
             ],
             "LABEL" : "Warzone: Campaign: Open Phase"
           }
@@ -371,7 +284,7 @@ function narrative_campaigns_default_rules_configuration() {
       "LABEL" : "War Zone: Campaign: Add Points",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "php" ],
       "USES VARIABLES" : { "points" : { "label" : "Points", "type" : "entityform" } },
       "IF" : [
         { "entity_is_of_bundle" : {

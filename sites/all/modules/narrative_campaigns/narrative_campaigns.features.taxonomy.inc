@@ -13,7 +13,7 @@ function narrative_campaigns_taxonomy_default_vocabularies() {
       'name' => 'Armies',
       'machine_name' => 'armies',
       'description' => 'A list of armies supported by iToysoldiers',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

@@ -140,16 +140,46 @@ function war_zones_default_rules_configuration() {
       "LABEL" : "Rules link: War Zone: All: Generate Comp Scorecards (cloned) condition",
       "PLUGIN" : "and",
       "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
-      "AND" : []
+      "AND" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "war_zone_league" : "war_zone_league",
+                "narrative_campaign_instance" : "narrative_campaign_instance",
+                "special_event" : "special_event",
+                "war_zone_tournament" : "war_zone_tournament"
+              }
+            }
+          }
+        },
+        { "data_is" : { "data" : [ "node:field-status" ], "value" : "5" } }
+      ]
     }
   }');
   $items['rules_link_condition_war_zone_all_generate_painting_s'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_all_generate_painting_s" : {
       "LABEL" : "Rules link: War Zone: All: Generate Painting Scorecards condition",
       "PLUGIN" : "and",
       "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
-      "AND" : []
+      "AND" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "war_zone_league" : "war_zone_league",
+                "narrative_campaign_instance" : "narrative_campaign_instance",
+                "special_event" : "special_event",
+                "war_zone_tournament" : "war_zone_tournament"
+              }
+            }
+          }
+        },
+        { "data_is" : { "data" : [ "node:field-status" ], "value" : "5" } }
+      ]
     }
   }');
   $items['rules_link_condition_war_zone_all_open_registration'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_all_open_registration" : {
@@ -179,8 +209,17 @@ function war_zones_default_rules_configuration() {
       "LABEL" : "Rules link: War Zone: Tournament: Next Round condition",
       "PLUGIN" : "and",
       "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
-      "AND" : []
+      "AND" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : { "war_zone_tournament" : "war_zone_tournament" } }
+          }
+        },
+        { "data_is" : { "data" : [ "node:field-status" ], "value" : "5" } }
+      ]
     }
   }');
   $items['rules_link_condition_warzone_award_achievement'] = entity_import('rules_config', '{ "rules_link_condition_warzone_award_achievement" : {
@@ -374,7 +413,6 @@ function war_zones_default_rules_configuration() {
                   "entity" : [ "node" ],
                   "type" : "node",
                   "bundle" : { "value" : {
-                      "league" : "league",
                       "narrative_campaign_instance" : "narrative_campaign_instance",
                       "special_event" : "special_event",
                       "war_zone_tournament" : "war_zone_tournament"
@@ -386,7 +424,6 @@ function war_zones_default_rules_configuration() {
             ],
             "DO" : [
               { "data_set" : { "data" : [ "node:field-status" ], "value" : "3" } },
-              { "data_set" : { "data" : [ "node:status" ], "value" : "1" } },
               { "entity_create" : {
                   "USING" : {
                     "type" : "message",
@@ -540,6 +577,7 @@ function war_zones_default_rules_configuration() {
         { "RULE" : {
             "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } },
             "DO" : [
+              { "component_rules_war_zone_tournament_generate_battle_reports" : { "wzid" : [ "node" ] } },
               { "component_rules_war_zone_tournament_increment_round" : { "wzid" : [ "node" ] } },
               { "entity_create" : {
                   "USING" : {
@@ -605,6 +643,14 @@ function war_zones_default_rules_configuration() {
                         "USING" : { "value" : "narrative_campaign_instance" },
                         "DO" : [
                           { "component_rules_war_zone_campaign_final_scoring" : { "wzid" : [ "node" ] } }
+                        ]
+                      }
+                    },
+                    { "CASE" : {
+                        "USING" : { "value" : "war_zone_tournament" },
+                        "DO" : [
+                          { "component_rules_war_zone_tournament_generate_battle_reports" : { "wzid" : [ "node" ] } },
+                          { "component_rules_war_zone_all_generate_strength_of_schedule" : { "wzid" : [ "node" ] } }
                         ]
                       }
                     }
@@ -750,6 +796,176 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_war_zone_all_generate_battle_report'] = entity_import('rules_config', '{ "rules_war_zone_all_generate_battle_report" : {
+      "LABEL" : "War Zone: All: Generate Battle Report",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "War Zone 4.1" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "wzid" : { "label" : "War Zone", "type" : "node" },
+        "p1id" : { "label" : "Player 1", "type" : "user" },
+        "p1tid" : { "label" : "Player 1 Army", "type" : "taxonomy_term" },
+        "p2tid" : { "label" : "Player 2 Army", "type" : "taxonomy_term" },
+        "p1results" : { "label" : "P1 Results", "type" : "integer" },
+        "brid" : { "label" : "Battle Report", "type" : "node", "parameter" : false },
+        "title" : { "label" : "Battle Title", "type" : "text" }
+      },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "wzid" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "war_zone_league" : "war_zone_league",
+                "league" : "league",
+                "narrative_campaign_instance" : "narrative_campaign_instance",
+                "special_event" : "special_event",
+                "war_zone_tournament" : "war_zone_tournament"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "node",
+              "param_type" : "game_results",
+              "param_title" : [ "title" ],
+              "param_author" : [ "p1id" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "data_set" : { "data" : [ "entity-created:field-game-date" ], "value" : "now" } },
+        { "data_set" : { "data" : [ "entity-created:field-your-army" ], "value" : [ "p1tid" ] } },
+        { "data_set" : {
+            "data" : [ "entity-created:field-opponent-s-army" ],
+            "value" : [ "p2tid" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-your-results" ],
+            "value" : [ "p1results" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-location" ],
+            "value" : [ "wzid:field-location" ]
+          }
+        },
+        { "data_set" : { "data" : [ "entity-created:field-event-link" ], "value" : [ "wzid" ] } },
+        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : "1" } },
+        { "data_set" : { "data" : [ "brid" ], "value" : [ "entity-created" ] } }
+      ],
+      "PROVIDES VARIABLES" : [ "brid" ]
+    }
+  }');
+  $items['rules_war_zone_all_generate_strength_of_schedule'] = entity_import('rules_config', '{ "rules_war_zone_all_generate_strength_of_schedule" : {
+      "LABEL" : "War Zone: All: Generate Strength of Schedule",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "War Zone 4.1" ],
+      "REQUIRES" : [ "views_rules", "rules" ],
+      "USES VARIABLES" : { "wzid" : { "label" : "War Zone", "type" : "node" } },
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_email_player_rules",
+            "DISPLAY" : "views_rules_5",
+            "USING" : { "nid" : [ "wzid:nid" ] },
+            "ROW VARIABLES" : { "registration_id" : { "registration_id" : "Registration ID" } },
+            "DO" : [
+              { "variable_add" : {
+                  "USING" : { "type" : "integer", "value" : "0" },
+                  "PROVIDE" : { "variable_added" : { "or" : "Opponent Record" } }
+                }
+              },
+              { "variable_add" : {
+                  "USING" : { "type" : "integer", "value" : "0" },
+                  "PROVIDE" : { "variable_added" : { "oor" : "Opponent Opponent Record" } }
+                }
+              },
+              { "VIEW LOOP" : {
+                  "VIEW" : "war_zone_tournament_score_cards",
+                  "DISPLAY" : "views_rules_2",
+                  "USING" : { "opponent_id" : [ "registration-id" ] },
+                  "ROW VARIABLES" : { "field_victory" : { "field_victory" : "Victory" } },
+                  "DO" : [ { "data_set" : { "data" : [ "or" ], "value" : [ "field-victory" ] } } ]
+                }
+              },
+              { "VIEW LOOP" : {
+                  "VIEW" : "war_zone_tournament_score_cards",
+                  "DISPLAY" : "views_rules_3",
+                  "USING" : { "player_id" : [ "registration-id" ] },
+                  "ROW VARIABLES" : { "registration_id" : { "opponent_id" : "Opponent" } },
+                  "DO" : [
+                    { "VIEW LOOP" : {
+                        "VIEW" : "war_zone_tournament_score_cards",
+                        "DISPLAY" : "views_rules_2",
+                        "USING" : { "opponent_id" : [ "opponent_id" ] },
+                        "ROW VARIABLES" : { "field_victory" : { "oor_increment" : "OOR Increment" } },
+                        "DO" : [
+                          { "data_calc" : {
+                              "USING" : { "input_1" : [ "oor" ], "op" : "+", "input_2" : [ "oor-increment" ] },
+                              "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+                            }
+                          },
+                          { "data_set" : { "data" : [ "oor" ], "value" : [ "result" ] } }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "data_calc" : {
+                  "USING" : { "input_1" : [ "or" ], "op" : "*", "input_2" : "2" },
+                  "PROVIDE" : { "result" : { "or_final" : "OR Final" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : { "input_1" : [ "or-final" ], "op" : "+", "input_2" : [ "oor" ] },
+                  "PROVIDE" : { "result" : { "sos_raw" : "SOS Raw" } }
+                }
+              },
+              { "data_calc" : {
+                  "USING" : { "input_1" : [ "sos-raw" ], "op" : "\\/", "input_2" : "3" },
+                  "PROVIDE" : { "result" : { "sos_final" : "SOS Final" } }
+                }
+              },
+              { "entity_fetch" : {
+                  "USING" : { "type" : "node_registration", "id" : [ "registration-id" ] },
+                  "PROVIDE" : { "entity_fetched" : { "registration_fetched" : "Registration" } }
+                }
+              },
+              { "entity_create" : {
+                  "USING" : {
+                    "type" : "entityform",
+                    "param_type" : "score_card",
+                    "param_created" : "now",
+                    "param_user" : [ "wzid:author" ]
+                  },
+                  "PROVIDE" : { "entity_created" : { "sos_scorecard" : "SOS Scorecard" } }
+                }
+              },
+              { "data_set" : { "data" : [ "sos-scorecard:field-event-link" ], "value" : [ "wzid" ] } },
+              { "data_set" : {
+                  "data" : [ "sos-scorecard:field-strength-of-schedule-sc" ],
+                  "value" : [ "sos-final" ]
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "sos-scorecard:field-registration-sc" ],
+                  "value" : [ "registration-fetched" ]
+                }
+              },
+              { "data_set" : { "data" : [ "sos-scorecard:field-score-card-type" ], "value" : "25" } },
+              { "entity_save" : { "data" : [ "sos-scorecard" ], "immediate" : "1" } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_war_zone_all_grant_achievement'] = entity_import('rules_config', '{ "rules_war_zone_all_grant_achievement" : {
       "LABEL" : "War Zone: All: Grant Achievement",
       "PLUGIN" : "rule",
@@ -768,7 +984,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "efid:field-event-link" ],
             "type" : "node",
             "bundle" : { "value" : {
-                "league" : "league",
+                "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"
@@ -778,6 +994,11 @@ function war_zones_default_rules_configuration() {
         }
       ],
       "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "integer", "value" : "0" },
+            "PROVIDE" : { "variable_added" : { "count_of_players" : "Count of Players" } }
+          }
+        },
         { "variable_add" : {
             "USING" : { "type" : "text" },
             "PROVIDE" : { "variable_added" : { "achievement_title" : "Achievement Title" } }
@@ -808,7 +1029,28 @@ function war_zones_default_rules_configuration() {
             "value" : "1146"
           }
         },
-        { "data_set" : { "data" : [ "new-achievement:field-achievement-unique" ], "value" : 1 } },
+        { "LOOP" : {
+            "USING" : { "list" : [ "efid:field-player-achivement-reg" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "data_calc" : {
+                  "USING" : { "input_1" : [ "count-of-players" ], "op" : "+", "input_2" : "1" },
+                  "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+                }
+              },
+              { "data_set" : { "data" : [ "count-of-players" ], "value" : [ "result" ] } }
+            ]
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "count-of-players" ], "value" : "1" } },
+              "DO" : [
+                { "data_set" : { "data" : [ "new-achievement:field-achievement-unique" ], "value" : 1 } }
+              ]
+            }
+          ]
+        },
         { "data_set" : {
             "data" : [ "new-achievement:field-achievement-points" ],
             "value" : [ "efid:field-points-custom-achievement" ]
@@ -867,28 +1109,31 @@ function war_zones_default_rules_configuration() {
           }
         },
         { "entity_save" : { "data" : [ "new-achievement" ], "immediate" : 1 } },
-        { "component_rules_award_achievement" : {
-            "aid" : [ "new-achievement" ],
-            "uid" : [ "efid:field-registration-sc:user" ]
-          }
-        },
-        { "entity_create" : {
-            "USING" : {
-              "type" : "message",
-              "param_type" : "campaign_reported_battle",
-              "param_user" : [ "efid:user" ]
-            },
-            "PROVIDE" : { "entity_created" : { "message" : "message" } }
-          }
-        },
-        { "data_set" : {
-            "data" : [ "message:field-stream-node-ref" ],
-            "value" : [ "efid:field-event-link" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "message:arguments:messtext" ],
-            "value" : "\\u003Ca href=\\u0022[efid:field-registration-sc:user:url]\\u0022\\u003E[efid:field-registration-sc:user:name]\\u003C\\/a\\u003E has been awarded the \\u0022[new-achievement:title]\\u0022 Achievement."
+        { "LOOP" : {
+            "USING" : { "list" : [ "efid:field-player-achivement-reg" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "component_rules_award_achievement" : { "aid" : [ "new-achievement" ], "uid" : [ "list-item:user" ] } },
+              { "entity_create" : {
+                  "USING" : {
+                    "type" : "message",
+                    "param_type" : "campaign_reported_battle",
+                    "param_user" : [ "efid:user" ]
+                  },
+                  "PROVIDE" : { "entity_created" : { "message" : "message" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "message:field-stream-node-ref" ],
+                  "value" : [ "efid:field-event-link" ]
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "message:arguments:messtext" ],
+                  "value" : "\\u003Ca href=\\u0022[efid:field-registration-sc:user:url]\\u0022\\u003E[efid:field-registration-sc:user:name]\\u003C\\/a\\u003E has been awarded the \\u0022[new-achievement:title]\\u0022 Achievement."
+                }
+              }
+            ]
           }
         },
         { "CONDITIONAL" : [
@@ -925,6 +1170,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
+                "article" : "article",
                 "gallery" : "gallery",
                 "league" : "league",
                 "narrative_campaign" : "narrative_campaign",
@@ -993,8 +1239,52 @@ function war_zones_default_rules_configuration() {
                     }
                   ]
                 }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "article" },
+                  "DO" : [
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "node:field-event-link" ] } },
+                          "DO" : [
+                            { "component_rules_warzone_message_on_new_article" : { "nid" : [ "node" ] } }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
               }
             ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_war_zone_all_register_anonymous_player'] = entity_import('rules_config', '{ "rules_war_zone_all_register_anonymous_player" : {
+      "LABEL" : "War Zone: All: Register Anonymous Player",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "War Zone 4.1" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "form_id" : { "label" : "Form", "type" : "entityform" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "form-id" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "war_zone_all_register_anonymous_" : "war_zone_all_register_anonymous_" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "entity_create" : {
+            "USING" : { "type" : "node_registration" },
+            "PROVIDE" : { "entity_created" : { "registration_created" : "Created Registration" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "registration-created:email" ],
+            "value" : [ "form-id:field-player-email-registration" ]
           }
         }
       ]
@@ -1031,7 +1321,14 @@ function war_zones_default_rules_configuration() {
                   ]
                 }
               },
-              { "CASE" : { "USING" : { "value" : "warzone_campaign_report_battle_p" }, "DO" : [] } }
+              { "CASE" : {
+                  "USING" : { "value" : "warzone_campaign_report_battle_p" },
+                  "DO" : [
+                    { "component_rules_war_zone_campaign_report_battle" : { "efid" : [ "entityform" ] } }
+                  ]
+                }
+              },
+              { "CASE" : { "USING" : { "value" : "war_zone_all_register_anonymous_" }, "DO" : [] } }
             ]
           }
         }
@@ -1111,6 +1408,372 @@ function war_zones_default_rules_configuration() {
                         }
                       },
                       { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_war_zone_campaign_generate_scorecards_on_battle'] = entity_import('rules_config', '{ "rules_war_zone_campaign_generate_scorecards_on_battle" : {
+      "LABEL" : "War Zone: Campaign: Generate Scorecards on Battle",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "War Zone 4.1" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "p1id" : { "label" : "Player 1", "type" : "node_registration" },
+        "p2id" : { "label" : "Player 2", "type" : "node_registration" },
+        "p1results" : { "label" : "Results", "type" : "integer" },
+        "phase" : { "label" : "Phase", "type" : "relation" }
+      },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "entityform",
+              "param_type" : "score_card",
+              "param_created" : "now",
+              "param_user" : [ "p1id:node:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "scorecard" : "Score Card" } }
+          }
+        },
+        { "data_set" : { "data" : [ "scorecard:field-score-card-type" ], "value" : "0" } },
+        { "data_set" : { "data" : [ "scorecard:field-your-results" ], "value" : [ "p1results" ] } },
+        { "data_set" : { "data" : [ "scorecard:field-event-link" ], "value" : [ "p1id:node" ] } },
+        { "data_set" : { "data" : [ "scorecard:field-registration-sc" ], "value" : [ "p1id" ] } },
+        { "data_set" : { "data" : [ "scorecard:field-phase-sc" ], "value" : [ "phase" ] } },
+        { "data_set" : { "data" : [ "scorecard:field-opponent-reg-sc" ], "value" : [ "p2id" ] } }
+      ]
+    }
+  }');
+  $items['rules_war_zone_campaign_report_battle'] = entity_import('rules_config', '{ "rules_war_zone_campaign_report_battle" : {
+      "LABEL" : "War Zone: Campaign: Report Battle",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "War Zone 4.1" ],
+      "REQUIRES" : [ "rules", "views_rules", "rules_conditional", "flag" ],
+      "USES VARIABLES" : { "efid" : { "label" : "EntityForm", "type" : "entityform" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "efid" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "warzone_campaign_report_battle_p" : "warzone_campaign_report_battle_p" } }
+          }
+        },
+        { "entity_is_of_bundle" : {
+            "entity" : [ "efid:field-event-link" ],
+            "type" : "node",
+            "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
+          }
+        },
+        { "entity_is_of_bundle" : {
+            "entity" : [ "efid:field-opponent-report-battle" ],
+            "type" : "node_registration",
+            "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "node_registration", "value" : [ "" ] },
+            "PROVIDE" : { "variable_added" : { "p1_registration" : "Player 1 Registration" } }
+          }
+        },
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_email_player_rules",
+            "DISPLAY" : "views_rules_2",
+            "USING" : {
+              "nid" : [ "efid:field-event-link:nid" ],
+              "uid" : [ "efid:field-player-sc:uid" ]
+            },
+            "ROW VARIABLES" : { "registration_id" : { "registration_id" : "Registration ID" } },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "node_registration", "id" : [ "registration-id" ] },
+                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                }
+              },
+              { "data_set" : { "data" : [ "p1-registration" ], "value" : [ "entity-fetched" ] } }
+            ]
+          }
+        },
+        { "component_rules_war_zone_campaign_generate_scorecards_on_battle" : {
+            "p1id" : [ "p1-registration" ],
+            "p2id" : [ "efid:field-opponent-report-battle" ],
+            "p1results" : [ "efid:field-your-results" ],
+            "phase" : [ "efid:field-phase-sc" ]
+          }
+        },
+        { "variable_add" : {
+            "USING" : { "type" : "integer", "value" : "6" },
+            "PROVIDE" : { "variable_added" : { "opponent_score" : "Opponent Score" } }
+          }
+        },
+        { "data_calc" : {
+            "USING" : {
+              "input_1" : [ "opponent-score" ],
+              "op" : "-",
+              "input_2" : [ "efid:field-your-results" ]
+            },
+            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+          }
+        },
+        { "component_rules_war_zone_campaign_generate_scorecards_on_battle" : {
+            "p1id" : [ "efid:field-opponent-report-battle" ],
+            "p2id" : [ "p1-registration" ],
+            "p1results" : [ "result" ],
+            "phase" : [ "efid:field-phase-sc" ]
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_is_of_bundle" : {
+                  "entity" : [ "p1-registration" ],
+                  "type" : "node_registration",
+                  "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
+                }
+              },
+              "DO" : [
+                { "variable_add" : {
+                    "USING" : {
+                      "type" : "taxonomy_term",
+                      "value" : [ "p1-registration:field-register-army" ]
+                    },
+                    "PROVIDE" : { "variable_added" : { "p1_submitted_army" : "Player 1 Army" } }
+                  }
+                },
+                { "variable_add" : {
+                    "USING" : {
+                      "type" : "taxonomy_term",
+                      "value" : [ "efid:field-opponent-report-battle:field-register-army" ]
+                    },
+                    "PROVIDE" : { "variable_added" : { "p2_submitted_army" : "Player 2 Army" } }
+                  }
+                },
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT data_is_empty" : { "data" : [ "efid:field-p1-army-wz" ] } },
+                      "DO" : [
+                        { "data_set" : {
+                            "data" : [ "p1-submitted-army" ],
+                            "value" : [ "efid:field-p1-army-wz" ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT data_is_empty" : { "data" : [ "efid:field-p2-army-wz" ] } },
+                      "DO" : [
+                        { "data_set" : {
+                            "data" : [ "p2-submitted-army" ],
+                            "value" : [ "efid:field-p2-army-wz" ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                { "component_rules_war_zone_all_generate_battle_report" : {
+                    "USING" : {
+                      "wzid" : [ "efid:field-event-link" ],
+                      "p1id" : [ "efid:field-player-sc" ],
+                      "p1tid" : [ "p1-submitted-army" ],
+                      "p2tid" : [ "p2-submitted-army" ],
+                      "p1results" : [ "efid:field-your-results" ],
+                      "title" : "[p1-registration:node:title]: [p1-submitted-army:name] vs [p2-submitted-army:name]"
+                    },
+                    "PROVIDE" : { "brid" : { "brid" : "Battle Report" } }
+                  }
+                },
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "entity_is_of_bundle" : {
+                          "entity" : [ "brid" ],
+                          "type" : "node",
+                          "bundle" : { "value" : { "game_results" : "game_results" } }
+                        }
+                      },
+                      "DO" : [
+                        { "data_set" : {
+                            "data" : [ "brid:field-image" ],
+                            "value" : [ "efid:field-event-link:field-campaign-badge" ]
+                          }
+                        },
+                        { "data_set" : { "data" : [ "brid:field-mission" ], "value" : [ "efid:field-mission" ] } },
+                        { "data_set" : {
+                            "data" : [ "brid:field-points-per-army" ],
+                            "value" : [ "efid:field-points-per-army" ]
+                          }
+                        },
+                        { "entity_save" : { "data" : [ "brid" ], "immediate" : "1" } },
+                        { "flag_flagnode" : {
+                            "flag" : "acknowledge_battle",
+                            "node" : [ "brid" ],
+                            "flagging_user" : [ "efid:field-opponent-report-battle:user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
+  $items['rules_war_zone_tournament_generate_battle_reports'] = entity_import('rules_config', '{ "rules_war_zone_tournament_generate_battle_reports" : {
+      "LABEL" : "War Zone: Tournament: Generate Battle Reports",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "views_rules", "rules_conditional", "flag" ],
+      "USES VARIABLES" : { "wzid" : { "label" : "War Zone", "type" : "node" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "wzid" ],
+            "type" : "node",
+            "bundle" : { "value" : { "war_zone_tournament" : "war_zone_tournament" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_tournament_score_cards",
+            "DISPLAY" : "views_rules_1",
+            "USING" : {
+              "field_event_link_target_id" : [ "wzid:nid" ],
+              "field_round_sc_value" : [ "wzid:field-warzone-round" ]
+            },
+            "ROW VARIABLES" : {
+              "puid1" : { "puid1" : "(Node registration entity referenced from field_opponent_reg_sc) Player 1" },
+              "tid_1" : { "tid_1" : "(P1 Army) P1 Army" },
+              "puid2" : { "puid2" : "(Node registration entity referenced from field_opponent_reg_sc) Player 2" },
+              "tid" : { "tid" : "(P2 Army) P2 Army" },
+              "field_your_results" : { "field_your_results" : "P1 Results" },
+              "p1_real_name" : { "p1_real_name" : "P1 Name" },
+              "p2_real_name" : { "p2_real_name" : "P2 Name" }
+            },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "user", "id" : [ "puid1" ] },
+                  "PROVIDE" : { "entity_fetched" : { "p1_uid" : "Player 1" } }
+                }
+              },
+              { "entity_fetch" : {
+                  "USING" : { "type" : "taxonomy_term", "id" : [ "tid-1" ] },
+                  "PROVIDE" : { "entity_fetched" : { "p1_tid" : "P1 Army" } }
+                }
+              },
+              { "entity_fetch" : {
+                  "USING" : { "type" : "user", "id" : [ "puid2" ] },
+                  "PROVIDE" : { "entity_fetched" : { "p2_uid" : "Player 2 UID" } }
+                }
+              },
+              { "entity_fetch" : {
+                  "USING" : { "type" : "taxonomy_term", "id" : [ "tid" ] },
+                  "PROVIDE" : { "entity_fetched" : { "p2_tid" : "P2 Army" } }
+                }
+              },
+              { "variable_add" : {
+                  "USING" : {
+                    "type" : "text",
+                    "value" : "[wzid:title]: [p1-real-name:value] vs [p2-real-name:value]"
+                  },
+                  "PROVIDE" : { "variable_added" : { "br_title" : "BR Title" } }
+                }
+              },
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "data_is" : { "data" : [ "puid1" ], "value" : "0" } },
+                    "DO" : [
+                      { "variable_add" : {
+                          "USING" : { "type" : "integer", "value" : "6" },
+                          "PROVIDE" : { "variable_added" : { "p2_determine" : "Determine P2" } }
+                        }
+                      },
+                      { "data_calc" : {
+                          "USING" : {
+                            "input_1" : [ "p2-determine" ],
+                            "op" : "-",
+                            "input_2" : [ "field-your-results" ]
+                          },
+                          "PROVIDE" : { "result" : { "p2_results" : "P2 Results" } }
+                        }
+                      },
+                      { "CONDITIONAL" : [
+                          {
+                            "IF" : { "data_is" : { "data" : [ "puid2" ], "value" : "0" } },
+                            "DO" : [
+                              { "component_rules_war_zone_all_generate_battle_report" : {
+                                  "USING" : {
+                                    "wzid" : [ "wzid" ],
+                                    "p1id" : "20792",
+                                    "p1tid" : [ "p1-tid" ],
+                                    "p2tid" : [ "p2-tid" ],
+                                    "p1results" : [ "field-your-results" ],
+                                    "title" : [ "br-title" ]
+                                  },
+                                  "PROVIDE" : { "brid" : { "brid" : "Battle Report" } }
+                                }
+                              }
+                            ]
+                          },
+                          { "ELSE" : [
+                              { "component_rules_war_zone_all_generate_battle_report" : {
+                                  "USING" : {
+                                    "wzid" : [ "wzid" ],
+                                    "p1id" : [ "p2-uid" ],
+                                    "p1tid" : [ "p2-tid" ],
+                                    "p2tid" : [ "p1-tid" ],
+                                    "p1results" : [ "p2-results" ],
+                                    "title" : [ "br-title" ]
+                                  },
+                                  "PROVIDE" : { "brid" : { "brid" : "Battle Report" } }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  { "ELSE" : [
+                      { "component_rules_war_zone_all_generate_battle_report" : {
+                          "USING" : {
+                            "wzid" : [ "wzid" ],
+                            "p1id" : [ "p1-uid" ],
+                            "p1tid" : [ "p1-tid" ],
+                            "p2tid" : [ "p2-tid" ],
+                            "p1results" : [ "field-your-results" ],
+                            "title" : [ "br-title" ]
+                          },
+                          "PROVIDE" : { "brid" : { "brid" : "Battle Report" } }
+                        }
+                      },
+                      { "CONDITIONAL" : [
+                          {
+                            "IF" : { "NOT data_is" : { "data" : [ "puid2" ], "value" : "0" } },
+                            "DO" : [
+                              { "flag_flagnode" : {
+                                  "flag" : "acknowledge_battle",
+                                  "node" : [ "brid" ],
+                                  "flagging_user" : [ "p2-uid" ],
+                                  "permission_check" : "1"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -1465,8 +2128,6 @@ function war_zones_default_rules_configuration() {
             "type" : "node",
             "bundle" : { "value" : {
                 "war_zone_league" : "war_zone_league",
-                "league" : "league",
-                "narrative_campaign" : "narrative_campaign",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"
