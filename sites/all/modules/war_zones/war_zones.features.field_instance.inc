@@ -128,6 +128,50 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-score_card-field_battle_points_sc'
+  $field_instances['entityform-score_card-field_battle_points_sc'] = array(
+    'bundle' => 'score_card',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 20,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_battle_points_sc',
+    'label' => 'Battle Points',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 27,
+    ),
+  );
+
   // Exported field_instance: 'entityform-score_card-field_comp_sc'
   $field_instances['entityform-score_card-field_comp_sc'] = array(
     'bundle' => 'score_card',
@@ -1407,6 +1451,54 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_registration_sc'
+  $field_instances['entityform-war_zone_grant_achievement-field_registration_sc'] = array(
+    'bundle' => 'war_zone_grant_achievement',
+    'default_value' => array(),
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_registration_sc',
+    'label' => 'Receipient',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -5230,6 +5322,7 @@ function war_zones_field_default_field_instances() {
   t('Army Points');
   t('Article Body');
   t('Badge');
+  t('Battle Points');
   t('Battle icon');
   t('Battlefield');
   t('Body');
@@ -5273,6 +5366,7 @@ function war_zones_field_default_field_instances() {
   t('Points per army');
   t('Provide potential organizers with some of your thoughts on this campaign.  Number of players, ideal armies, source material, and the like are all excellent things to put here.');
   t('Put the introduction to your campaign here.  This is used to not only introduce your campaign but as the campaign brief for players on any campaign instance.');
+  t('Receipient');
   t('Registration');
   t('Registration Deadline');
   t('Round');
