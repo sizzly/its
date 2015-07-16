@@ -945,6 +945,54 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'
+  $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'] = array(
+    'bundle' => 'warzone_campaign_report_battle_p',
+    'default_value' => array(),
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_opponent_reg_sc',
+    'label' => 'Opponent',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'
   $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
