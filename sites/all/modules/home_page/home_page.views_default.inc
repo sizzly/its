@@ -441,7 +441,7 @@ function home_page_views_default_views() {
     'tag' => '',
   );
   $handler->display->display_options['relationships']['votingapi_vote']['current_user'] = 0;
-  /* Relationship: Content: Your Army (field_your_army) */
+  /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
@@ -457,7 +457,7 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => '70x70-square',
+    'image_style' => 'button',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
@@ -771,7 +771,7 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['name']['element_type'] = 'h4';
   $handler->display->display_options['fields']['name']['element_class'] = 'topboxhead';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Userpoints total: Current total stats */
+  /* Field: Userpoints total: Current total renown */
   $handler->display->display_options['fields']['points']['id'] = 'points';
   $handler->display->display_options['fields']['points']['table'] = 'userpoints_total';
   $handler->display->display_options['fields']['points']['field'] = 'points';
@@ -939,7 +939,7 @@ function home_page_views_default_views() {
   $handler->display->display_options['relationships']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['relationships']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['relationships']['field_game_tid']['field'] = 'field_game_tid';
-  /* Relationship: Content: Battlefield (field_location) */
+  /* Relationship: Field: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
