@@ -39,50 +39,6 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-4c50f392-04ad-4381-8729-2312919d46a1';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Advert',
-      'title' => '',
-      'body' => '<div align="center">
-<!--/* OpenX Javascript Tag v2.8.11 */-->
-
-<script type=\'text/javascript\'><!--//<![CDATA[
-   var m3_u = (location.protocol==\'https:\'?\'https://ads.robtacey.com/www/delivery/ajs.php\':\'http://ads.robtacey.com/www/delivery/ajs.php\');
-   var m3_r = Math.floor(Math.random()*99999999999);
-   if (!document.MAX_used) document.MAX_used = \',\';
-   document.write ("<scr"+"ipt type=\'text/javascript\' src=\'"+m3_u);
-   document.write ("?zoneid=19&amp;target=_top");
-   document.write (\'&amp;cb=\' + m3_r);
-   if (document.MAX_used != \',\') document.write ("&amp;exclude=" + document.MAX_used);
-   document.write (document.charset ? \'&amp;charset=\'+document.charset : (document.characterSet ? \'&amp;charset=\'+document.characterSet : \'\'));
-   document.write ("&amp;loc=" + escape(window.location));
-   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-   if (document.context) document.write ("&context=" + escape(document.context));
-   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-   document.write ("\'><\\/scr"+"ipt>");
-//]]>--></script><noscript><a href=\'http://ads.robtacey.com/www/delivery/ck.php?n=a5d96648&amp;cb=INSERT_RANDOM_NUMBER_HERE\' target=\'_top\'><img src=\'http://ads.robtacey.com/www/delivery/avw.php?zoneid=19&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5d96648\' border=\'0\' alt=\'\' /></a></noscript>
-</div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'style' => 'default',
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '4c50f392-04ad-4381-8729-2312919d46a1';
-    $display->content['new-4c50f392-04ad-4381-8729-2312919d46a1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-4c50f392-04ad-4381-8729-2312919d46a1';
-    $pane = new stdClass();
     $pane->pid = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
@@ -103,7 +59,7 @@ function home_page_default_panels_mini() {
     <div class="panel-body">
         <ul class="menu nav">
             <li class="leaf">
-                <a href="/aboutus">About</a>
+                <a href="/about">About</a>
             </li>
             <li class="leaf">
                 <a href="/site-news">News</a>
@@ -182,13 +138,13 @@ function home_page_default_panels_mini() {
       'css_class' => 'row',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '61d9b7cf-3eae-4411-ba39-efeb091663e2';
     $display->content['new-61d9b7cf-3eae-4411-ba39-efeb091663e2'] = $pane;
-    $display->panels['contentmain'][1] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
+    $display->panels['contentmain'][0] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-4c50f392-04ad-4381-8729-2312919d46a1';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['footer'] = $mini;
 
