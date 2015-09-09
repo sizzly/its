@@ -20,7 +20,7 @@ function home_page_default_page_manager_pages() {
   $page->menu = array(
     'type' => 'normal',
     'title' => 'About',
-    'name' => 'menu-site',
+    'name' => 'menu-about-itoysoldiers',
     'weight' => '0',
     'parent' => array(
       'type' => 'none',
@@ -92,7 +92,7 @@ function home_page_default_page_manager_pages() {
         ),
       ),
     ),
-    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => '',
     'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_home' => 0,
@@ -128,8 +128,8 @@ function home_page_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'About',
-      'title' => 'About',
-      'body' => '<p>iToysoldiers is <em>the</em> place to chronicle the glory of your miniature war gaming armies.&nbsp;&nbsp;</p>
+      'title' => '',
+      'body' => '<h3>iToysoldiers is <em>the</em> place to chronicle the glory of your miniature war gaming armies.&nbsp;&nbsp;</h3>
 
 <h3>Product</h3>
 
@@ -329,7 +329,7 @@ function home_page_default_page_manager_pages() {
     $pane->uuid = '836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
     $display->content['new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a'] = $pane;
     $display->panels['sidebar'][2] = 'new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
@@ -950,7 +950,7 @@ print_r($user->name);
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Copyright',
-    'name' => 'menu-site',
+    'name' => 'menu-legal',
     'weight' => '5',
     'parent' => array(
       'type' => 'none',
@@ -1038,8 +1038,8 @@ print_r($user->name);
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Copyright',
+      'admin_title' => 'Copyright Statement',
+      'title' => '',
       'body' => '<p><strong>Last Revised: 2015-07-20</strong></p>
 
 <p>An awful lot of the content of the iToysoldiers website is derived from the intellectual property of the various game companies that produce the games we love and play. Miniature war gaming is, by its nature, an extremely social activity and folks love to share photos of their models, fiction that they’ve written around their armies, and discuss rule sets.&nbsp; As a result models, factions, armies, locations, iconography, and terms owned as Intellectual Property of various game companies are all present on the iToysoldiers site. We strive to use player created content whenever possible but sometimes we rely upon the images and/or text provided by the game manufacturers to supply context or frameworks for players to structure their content on the site. Allow me to assure you that iToysoldiers does not attempt to claim these trademarks or copyrights as our own. No infringement is intended. This website is unofficial and not endorsed by any of the game manufacturers that produce the fabulous games included on iToysoldiers. We wish they\'d endorse us. We\'d happily accept an endorsement or at least some kudos for creating a nifty resource for players but there it is. In any case, thanks to all the great game makers who cater to us basement generals.</p>
@@ -1146,7 +1146,7 @@ print_r($user->name);
     $pane->uuid = '05d00efc-4ff5-437c-9520-d2bfdd2305ca';
     $display->content['new-05d00efc-4ff5-437c-9520-d2bfdd2305ca'] = $pane;
     $display->panels['sidebar'][2] = 'new-05d00efc-4ff5-437c-9520-d2bfdd2305ca';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
@@ -2567,7 +2567,7 @@ Rob<br />
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Privacy',
-    'name' => 'menu-site',
+    'name' => 'menu-legal',
     'weight' => '0',
     'parent' => array(
       'type' => 'none',
@@ -2599,6 +2599,35 @@ Rob<br />
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => 'Privacy Policy | [site:name]',
+        ),
+        'description' => array(
+          'value' => 'The iToysoldiers privacy policy',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+      ),
+    ),
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'Privacy',
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_burr_flipped';
@@ -2631,7 +2660,7 @@ Rob<br />
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'Privacy Policy',
-      'title' => 'Privacy Policy',
+      'title' => '',
       'body' => '<p><strong>Last Updated: 2015-07-20 10:02 EST</strong></p>
 
 <p><strong>Preface</strong>: I cribbed this privacy policy from a number of sites and it covers just about all eventualities. Let me be clear. I use Google Analytics, Google Adsense (for advertisement), Double Click for Publishers, and drupal. All of these things generate cookies and capture data. Most of it isn’t able to be tracked directly to an individual except the activity you perform on the site, like comments, battle results, participation in leagues and the like. The data I capture, as described below in further detail, is used to a) provide the functionality of the site, and b) to fulfill my addiction to statistics. Stats are cool. iToysoldiers is an act of love by a guy who loves miniature war gaming as much as you. I’m not doing this to make money by stealing your personal data. Good gaming!</p>
@@ -2779,7 +2808,7 @@ Rob<br />
     $pane->uuid = '20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
     $display->content['new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9'] = $pane;
     $display->panels['sidebar'][2] = 'new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
@@ -2797,7 +2826,7 @@ Rob<br />
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Terms',
-    'name' => 'menu-site',
+    'name' => 'menu-legal',
     'weight' => '0',
     'parent' => array(
       'type' => 'none',
@@ -2837,7 +2866,7 @@ Rob<br />
       'enabled' => 1,
       'metatags' => array(
         'title' => array(
-          'value' => 'Terms of service | [site:name]',
+          'value' => 'Terms of Service | [site:name]',
         ),
         'description' => array(
           'value' => 'The iToysoldiers Terms of Service',
@@ -2892,8 +2921,8 @@ Rob<br />
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Terms of Service',
+      'admin_title' => 'Terms of Service',
+      'title' => '',
       'body' => '<p>Last Updated: 2015-07-20</p>
 
 <p>Welcome to the iToysoldiers, Inc. ("<strong>iToysoldiers</strong>") website —&nbsp;<a href="http://8tracks.com/" target="_blank">http://iToysoldiers.com</a>&nbsp;— and any and all products, services, applications, platforms, websites, or other affiliated ventures offered, controlled, owned or operated by iToysoldiers (the "<strong>iToysoldiers Platform</strong>"). The following Terms of Use for the iToysoldiers Platform creates a legal contract between you, either an individual customer, member or user, or a single entity, and iToysoldiers regarding your use of the iToysoldiers Platform. Throughout these Terms of Use, "<strong>iToysoldiers</strong>" and "<strong>We</strong>" refers to iToysoldiers, Inc. and its affiliates. "<strong>You</strong>" or "<strong>Users</strong>" refers to you, our users — everyone who uses, subscribes to, publishes through, joins, or visits iToysoldiers.</p>
@@ -3245,7 +3274,7 @@ Rob<br />
     $pane->uuid = '870c6138-de40-44f6-8234-743d9776a608';
     $display->content['new-870c6138-de40-44f6-8234-743d9776a608'] = $pane;
     $display->panels['sidebar'][2] = 'new-870c6138-de40-44f6-8234-743d9776a608';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
