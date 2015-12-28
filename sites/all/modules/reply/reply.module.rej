@@ -1,0 +1,17 @@
+--- reply.module
++++ reply.module
+@@ -1065,6 +1065,14 @@
+     '#type' => 'value',
+     '#value' => isset($entity->language) ? $entity->language : LANGUAGE_NONE,
+   );
++  $form['hostname'] = array(
++    '#type' => 'value',
++    '#value' => isset($reply->hostname) ? $reply->hostname : ip_address(),
++  );
++  $form['uid'] = array(
++    '#type' => 'value',
++    '#value' => isset($reply->uid) ? $reply->uid : $GLOBALS['user']->uid,
++  );
+ 
+   field_attach_form('reply', $reply, $form, $form_state);
+ 

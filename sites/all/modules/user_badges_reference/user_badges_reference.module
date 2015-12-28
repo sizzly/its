@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * implements hook_field_info()
+ */
+function user_badges_reference_field_info() {
+  return array(
+    'user_badges_reference' => array(
+      'label' => t('User Badges Reference'),
+      'description' => t('A reference to a User Badge'),
+      'default_widget' => 'options_select',
+      'default_formatter' => 'user_badges_reference_plaintext',
+      'property_type' => 'integer',
+    ),
+  );
+}
+
+/**
+ * implements hook_field_validate()
+ */
+function user_badges_reference_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
+  $badge_options = user_badges_reference_options_list($field, $instance, $entity_type, $entity);
+  foreach ($items as $delta => $item) {
+    if (!empty($item['bid']) && !in_array($item['bid'], array_keys($badge_options))) {
+      $errors[$field['field_name']][$langcode][$delta][] = array(
+        'error' => 'user_badges_reference_illegal_value',
+        'message' => t('%name: illegal value.', array('%name' => $instance['label'])),
+      );
+    }
+  }
+}
+
+/**
+ * implements hook_field_is_empty()
+ */
+function user_badges_reference_field_is_empty($item, $field) {
+  return empty($item['bid']) || $item['bid'] == '_none';
+}
+
+/**
+ * implements hook_field_widget_info_alter()
+ */
+function user_badges_reference_field_widget_info_alter(&$info) {
+  $info['options_select']['field types'][] = 'user_badges_reference';
+  $info['options_buttons']['field types'][] = 'user_badges_reference';
+}
+
+/**
+ * implements hook_options_list()
+ */
+function user_badges_reference_options_list($field, $instance, $entity_type, $entity) {
+  $result = user_badges_load_badges();
+  $options = array();
+
+  if ($result->rowCount()) {
+    foreach ($result as $badge) {
+      $options[$badge->bid] =  $badge->name;
+    }
+  }
+
+  return $options;
+}

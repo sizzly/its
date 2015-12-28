@@ -10,7 +10,8 @@
 function war_zones_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-score_card-field_additional_points_sc'
+  // Exported field_instance:
+  // 'entityform-score_card-field_additional_points_sc'.
   $field_instances['entityform-score_card-field_additional_points_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -54,7 +55,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_aggregate_score_sc'
+  // Exported field_instance: 'entityform-score_card-field_aggregate_score_sc'.
   $field_instances['entityform-score_card-field_aggregate_score_sc'] = array(
     'bundle' => 'score_card',
     'deleted' => 0,
@@ -84,7 +85,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_army_points_sc'
+  // Exported field_instance: 'entityform-score_card-field_army_points_sc'.
   $field_instances['entityform-score_card-field_army_points_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -128,7 +129,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_battle_points_sc'
+  // Exported field_instance: 'entityform-score_card-field_battle_points_sc'.
   $field_instances['entityform-score_card-field_battle_points_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -172,7 +173,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_comp_sc'
+  // Exported field_instance: 'entityform-score_card-field_comp_sc'.
   $field_instances['entityform-score_card-field_comp_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -216,7 +217,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_defeat'
+  // Exported field_instance: 'entityform-score_card-field_defeat'.
   $field_instances['entityform-score_card-field_defeat'] = array(
     'bundle' => 'score_card',
     'deleted' => 0,
@@ -246,7 +247,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_display_sc'
+  // Exported field_instance: 'entityform-score_card-field_display_sc'.
   $field_instances['entityform-score_card-field_display_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -279,7 +280,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_draw'
+  // Exported field_instance: 'entityform-score_card-field_draw'.
   $field_instances['entityform-score_card-field_draw'] = array(
     'bundle' => 'score_card',
     'deleted' => 0,
@@ -309,7 +310,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_event_link'
+  // Exported field_instance: 'entityform-score_card-field_event_link'.
   $field_instances['entityform-score_card-field_event_link'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -366,7 +367,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_explanation_sc'
+  // Exported field_instance: 'entityform-score_card-field_explanation_sc'.
   $field_instances['entityform-score_card-field_explanation_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -402,7 +403,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_opponent_reg_sc'
+  // Exported field_instance: 'entityform-score_card-field_opponent_reg_sc'.
   $field_instances['entityform-score_card-field_opponent_reg_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -449,7 +450,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_opponent_sc'
+  // Exported field_instance: 'entityform-score_card-field_opponent_sc'.
   $field_instances['entityform-score_card-field_opponent_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -497,7 +498,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_painting_sc'
+  // Exported field_instance: 'entityform-score_card-field_painting_sc'.
   $field_instances['entityform-score_card-field_painting_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -541,7 +542,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_phase_sc'
+  // Exported field_instance: 'entityform-score_card-field_phase_sc'.
   $field_instances['entityform-score_card-field_phase_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -598,7 +599,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_player_sc'
+  // Exported field_instance: 'entityform-score_card-field_player_sc'.
   $field_instances['entityform-score_card-field_player_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -646,7 +647,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_registration_sc'
+  // Exported field_instance: 'entityform-score_card-field_registration_sc'.
   $field_instances['entityform-score_card-field_registration_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -693,7 +694,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_round_sc'
+  // Exported field_instance: 'entityform-score_card-field_round_sc'.
   $field_instances['entityform-score_card-field_round_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -735,7 +736,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_score_card_type'
+  // Exported field_instance: 'entityform-score_card-field_score_card_type'.
   $field_instances['entityform-score_card-field_score_card_type'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -770,7 +771,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_sportsmanship_sc'
+  // Exported field_instance: 'entityform-score_card-field_sportsmanship_sc'.
   $field_instances['entityform-score_card-field_sportsmanship_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -814,7 +815,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_state_sc'
+  // Exported field_instance: 'entityform-score_card-field_state_sc'.
   $field_instances['entityform-score_card-field_state_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -847,7 +848,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_strength_of_schedule_sc'
+  // Exported field_instance:
+  // 'entityform-score_card-field_strength_of_schedule_sc'.
   $field_instances['entityform-score_card-field_strength_of_schedule_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -891,7 +893,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_victory'
+  // Exported field_instance: 'entityform-score_card-field_victory'.
   $field_instances['entityform-score_card-field_victory'] = array(
     'bundle' => 'score_card',
     'deleted' => 0,
@@ -921,7 +923,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_victory_points_sc'
+  // Exported field_instance: 'entityform-score_card-field_victory_points_sc'.
   $field_instances['entityform-score_card-field_victory_points_sc'] = array(
     'bundle' => 'score_card',
     'default_value' => array(
@@ -965,7 +967,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-score_card-field_your_results'
+  // Exported field_instance: 'entityform-score_card-field_your_results'.
   $field_instances['entityform-score_card-field_your_results'] = array(
     'bundle' => 'score_card',
     'default_value' => NULL,
@@ -998,7 +1000,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_all_generate_article-field_article_body'
+  // Exported field_instance:
+  // 'entityform-war_zone_all_generate_article-field_article_body'.
   $field_instances['entityform-war_zone_all_generate_article-field_article_body'] = array(
     'bundle' => 'war_zone_all_generate_article',
     'default_value' => NULL,
@@ -1040,7 +1043,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_all_generate_article-field_event_link'
+  // Exported field_instance:
+  // 'entityform-war_zone_all_generate_article-field_event_link'.
   $field_instances['entityform-war_zone_all_generate_article-field_event_link'] = array(
     'bundle' => 'war_zone_all_generate_article',
     'default_value' => NULL,
@@ -1097,7 +1101,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_all_generate_article-field_title_chronicle'
+  // Exported field_instance:
+  // 'entityform-war_zone_all_generate_article-field_title_chronicle'.
   $field_instances['entityform-war_zone_all_generate_article-field_title_chronicle'] = array(
     'bundle' => 'war_zone_all_generate_article',
     'default_value' => NULL,
@@ -1133,7 +1138,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_event_link'
+  // Exported field_instance:
+  // 'entityform-war_zone_all_register_anonymous_-field_event_link'.
   $field_instances['entityform-war_zone_all_register_anonymous_-field_event_link'] = array(
     'bundle' => 'war_zone_all_register_anonymous_',
     'default_value' => NULL,
@@ -1180,7 +1186,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_player_email_registration'
+  // Exported field_instance:
+  // 'entityform-war_zone_all_register_anonymous_-field_player_email_registration'.
   $field_instances['entityform-war_zone_all_register_anonymous_-field_player_email_registration'] = array(
     'bundle' => 'war_zone_all_register_anonymous_',
     'default_value' => NULL,
@@ -1216,7 +1223,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_register_army'
+  // Exported field_instance:
+  // 'entityform-war_zone_all_register_anonymous_-field_register_army'.
   $field_instances['entityform-war_zone_all_register_anonymous_-field_register_army'] = array(
     'bundle' => 'war_zone_all_register_anonymous_',
     'default_value' => NULL,
@@ -1254,7 +1262,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_all_register_anonymous_-field_register_real_name'
+  // Exported field_instance:
+  // 'entityform-war_zone_all_register_anonymous_-field_register_real_name'.
   $field_instances['entityform-war_zone_all_register_anonymous_-field_register_real_name'] = array(
     'bundle' => 'war_zone_all_register_anonymous_',
     'default_value' => NULL,
@@ -1290,7 +1299,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_event_link'
+  // Exported field_instance:
+  // 'entityform-war_zone_grant_achievement-field_event_link'.
   $field_instances['entityform-war_zone_grant_achievement-field_event_link'] = array(
     'bundle' => 'war_zone_grant_achievement',
     'default_value' => NULL,
@@ -1347,7 +1357,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_image_custom_achievement'
+  // Exported field_instance:
+  // 'entityform-war_zone_grant_achievement-field_image_custom_achievement'.
   $field_instances['entityform-war_zone_grant_achievement-field_image_custom_achievement'] = array(
     'bundle' => 'war_zone_grant_achievement',
     'default_value' => NULL,
@@ -1380,7 +1391,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_player_achivement_reg'
+  // Exported field_instance:
+  // 'entityform-war_zone_grant_achievement-field_player_achivement_reg'.
   $field_instances['entityform-war_zone_grant_achievement-field_player_achivement_reg'] = array(
     'bundle' => 'war_zone_grant_achievement',
     'default_value' => NULL,
@@ -1421,7 +1433,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_points_custom_achievement'
+  // Exported field_instance:
+  // 'entityform-war_zone_grant_achievement-field_points_custom_achievement'.
   $field_instances['entityform-war_zone_grant_achievement-field_points_custom_achievement'] = array(
     'bundle' => 'war_zone_grant_achievement',
     'default_value' => NULL,
@@ -1454,7 +1467,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_registration_sc'
+  // Exported field_instance:
+  // 'entityform-war_zone_grant_achievement-field_registration_sc'.
   $field_instances['entityform-war_zone_grant_achievement-field_registration_sc'] = array(
     'bundle' => 'war_zone_grant_achievement',
     'default_value' => array(),
@@ -1502,7 +1516,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_short_description'
+  // Exported field_instance:
+  // 'entityform-war_zone_grant_achievement-field_short_description'.
   $field_instances['entityform-war_zone_grant_achievement-field_short_description'] = array(
     'bundle' => 'war_zone_grant_achievement',
     'default_value' => NULL,
@@ -1538,7 +1553,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_grant_achievement-field_title_custom_achievement'
+  // Exported field_instance:
+  // 'entityform-war_zone_grant_achievement-field_title_custom_achievement'.
   $field_instances['entityform-war_zone_grant_achievement-field_title_custom_achievement'] = array(
     'bundle' => 'war_zone_grant_achievement',
     'default_value' => NULL,
@@ -1574,7 +1590,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_tournament_missions-field_mission_name_tourney'
+  // Exported field_instance:
+  // 'field_collection_item-field_tournament_missions-field_mission_name_tourney'.
   $field_instances['field_collection_item-field_tournament_missions-field_mission_name_tourney'] = array(
     'bundle' => 'field_tournament_missions',
     'default_value' => NULL,
@@ -1609,7 +1626,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_tournament_missions-field_mission_text'
+  // Exported field_instance:
+  // 'field_collection_item-field_tournament_missions-field_mission_text'.
   $field_instances['field_collection_item-field_tournament_missions-field_mission_text'] = array(
     'bundle' => 'field_tournament_missions',
     'default_value' => NULL,
@@ -1645,7 +1663,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_tournament_missions-field_round_counter_tourney'
+  // Exported field_instance:
+  // 'field_collection_item-field_tournament_missions-field_round_counter_tourney'.
   $field_instances['field_collection_item-field_tournament_missions-field_round_counter_tourney'] = array(
     'bundle' => 'field_tournament_missions',
     'default_value' => NULL,
@@ -1685,7 +1704,115 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-stream_a_warzone_has_begun-field_stream_node_ref'
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_begun-field_associated_nodes_stream'.
+  $field_instances['message-stream_a_warzone_has_begun-field_associated_nodes_stream'] = array(
+    'bundle' => 'stream_a_warzone_has_begun',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_begun-field_reply_form'.
+  $field_instances['message-stream_a_warzone_has_begun-field_reply_form'] = array(
+    'bundle' => 'stream_a_warzone_has_begun',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'reply',
+        'settings' => array(),
+        'type' => 'reply_default',
+        'weight' => 2,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_reply_form',
+    'label' => 'Reply',
+    'required' => 0,
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'display' => -1,
+      'form' => -1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'reply',
+      'settings' => array(),
+      'type' => 'reply',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_begun-field_stream_node_ref'.
   $field_instances['message-stream_a_warzone_has_begun-field_stream_node_ref'] = array(
     'bundle' => 'stream_a_warzone_has_begun',
     'default_value' => NULL,
@@ -1701,6 +1828,18 @@ function war_zones_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 0,
       ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'message',
     'field_name' => 'field_stream_node_ref',
@@ -1726,7 +1865,168 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-stream_a_warzone_has_ended-field_stream_node_ref'
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_begun-field_timeline_icon'.
+  $field_instances['message-stream_a_warzone_has_begun-field_timeline_icon'] = array(
+    'bundle' => 'stream_a_warzone_has_begun',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fa-crosshairs',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_timeline_icon',
+    'label' => 'Timeline Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_ended-field_associated_nodes_stream'.
+  $field_instances['message-stream_a_warzone_has_ended-field_associated_nodes_stream'] = array(
+    'bundle' => 'stream_a_warzone_has_ended',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_ended-field_reply_form'.
+  $field_instances['message-stream_a_warzone_has_ended-field_reply_form'] = array(
+    'bundle' => 'stream_a_warzone_has_ended',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'reply',
+        'settings' => array(),
+        'type' => 'reply_default',
+        'weight' => 2,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_reply_form',
+    'label' => 'Reply',
+    'required' => 0,
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'display' => -1,
+      'form' => -1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'reply',
+      'settings' => array(),
+      'type' => 'reply',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_ended-field_stream_node_ref'.
   $field_instances['message-stream_a_warzone_has_ended-field_stream_node_ref'] = array(
     'bundle' => 'stream_a_warzone_has_ended',
     'default_value' => NULL,
@@ -1742,6 +2042,18 @@ function war_zones_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 0,
       ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'message',
     'field_name' => 'field_stream_node_ref',
@@ -1767,7 +2079,167 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-stream_new_war_zone-field_stream_node_ref'
+  // Exported field_instance:
+  // 'message-stream_a_warzone_has_ended-field_timeline_icon'.
+  $field_instances['message-stream_a_warzone_has_ended-field_timeline_icon'] = array(
+    'bundle' => 'stream_a_warzone_has_ended',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fa-crosshairs',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_timeline_icon',
+    'label' => 'Timeline Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_new_war_zone-field_associated_nodes_stream'.
+  $field_instances['message-stream_new_war_zone-field_associated_nodes_stream'] = array(
+    'bundle' => 'stream_new_war_zone',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'message-stream_new_war_zone-field_reply_form'.
+  $field_instances['message-stream_new_war_zone-field_reply_form'] = array(
+    'bundle' => 'stream_new_war_zone',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'reply',
+        'settings' => array(),
+        'type' => 'reply_default',
+        'weight' => 2,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_reply_form',
+    'label' => 'Reply',
+    'required' => 0,
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'display' => -1,
+      'form' => -1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'reply',
+      'settings' => array(),
+      'type' => 'reply',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_new_war_zone-field_stream_node_ref'.
   $field_instances['message-stream_new_war_zone-field_stream_node_ref'] = array(
     'bundle' => 'stream_new_war_zone',
     'default_value' => NULL,
@@ -1783,6 +2255,18 @@ function war_zones_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 0,
       ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'message',
     'field_name' => 'field_stream_node_ref',
@@ -1808,7 +2292,167 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-stream_player_cancels_registration_for_warzone-field_stream_node_ref'
+  // Exported field_instance: 'message-stream_new_war_zone-field_timeline_icon'.
+  $field_instances['message-stream_new_war_zone-field_timeline_icon'] = array(
+    'bundle' => 'stream_new_war_zone',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fa-crosshairs',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_timeline_icon',
+    'label' => 'Timeline Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_player_cancels_registration_for_warzone-field_associated_nodes_stream'.
+  $field_instances['message-stream_player_cancels_registration_for_warzone-field_associated_nodes_stream'] = array(
+    'bundle' => 'stream_player_cancels_registration_for_warzone',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_player_cancels_registration_for_warzone-field_reply_form'.
+  $field_instances['message-stream_player_cancels_registration_for_warzone-field_reply_form'] = array(
+    'bundle' => 'stream_player_cancels_registration_for_warzone',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'reply',
+        'settings' => array(),
+        'type' => 'reply_default',
+        'weight' => 2,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_reply_form',
+    'label' => 'Reply',
+    'required' => 0,
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'display' => -1,
+      'form' => -1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'reply',
+      'settings' => array(),
+      'type' => 'reply',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_player_cancels_registration_for_warzone-field_stream_node_ref'.
   $field_instances['message-stream_player_cancels_registration_for_warzone-field_stream_node_ref'] = array(
     'bundle' => 'stream_player_cancels_registration_for_warzone',
     'default_value' => NULL,
@@ -1824,45 +2468,16 @@ function war_zones_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 0,
       ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_stream_node_ref',
-    'label' => 'Stream Node',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'message-stream_player_registers_for_warzone-field_stream_node_ref'
-  $field_instances['message-stream_player_registers_for_warzone-field_stream_node_ref'] = array(
-    'bundle' => 'stream_player_registers_for_warzone',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
+      'message_notify_email_body' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -1890,7 +2505,382 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-war_zone_all_anonymous_actions-field_stream_node_ref'
+  // Exported field_instance:
+  // 'message-stream_player_cancels_registration_for_warzone-field_timeline_icon'.
+  $field_instances['message-stream_player_cancels_registration_for_warzone-field_timeline_icon'] = array(
+    'bundle' => 'stream_player_cancels_registration_for_warzone',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fa-mail-reply',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_timeline_icon',
+    'label' => 'Timeline Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_player_registers_for_warzone-field_associated_nodes_stream'.
+  $field_instances['message-stream_player_registers_for_warzone-field_associated_nodes_stream'] = array(
+    'bundle' => 'stream_player_registers_for_warzone',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_player_registers_for_warzone-field_reply_form'.
+  $field_instances['message-stream_player_registers_for_warzone-field_reply_form'] = array(
+    'bundle' => 'stream_player_registers_for_warzone',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'reply',
+        'settings' => array(),
+        'type' => 'reply_default',
+        'weight' => 2,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_reply_form',
+    'label' => 'Reply',
+    'required' => 0,
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'display' => -1,
+      'form' => -1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'reply',
+      'settings' => array(),
+      'type' => 'reply',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_player_registers_for_warzone-field_stream_node_ref'.
+  $field_instances['message-stream_player_registers_for_warzone-field_stream_node_ref'] = array(
+    'bundle' => 'stream_player_registers_for_warzone',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_stream_node_ref',
+    'label' => 'Stream Node',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-stream_player_registers_for_warzone-field_timeline_icon'.
+  $field_instances['message-stream_player_registers_for_warzone-field_timeline_icon'] = array(
+    'bundle' => 'stream_player_registers_for_warzone',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fa-mail-forward',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_timeline_icon',
+    'label' => 'Timeline Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-war_zone_all_anonymous_actions-field_associated_nodes_stream'.
+  $field_instances['message-war_zone_all_anonymous_actions-field_associated_nodes_stream'] = array(
+    'bundle' => 'war_zone_all_anonymous_actions',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-war_zone_all_anonymous_actions-field_reply_form'.
+  $field_instances['message-war_zone_all_anonymous_actions-field_reply_form'] = array(
+    'bundle' => 'war_zone_all_anonymous_actions',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'reply',
+        'settings' => array(),
+        'type' => 'reply_default',
+        'weight' => 3,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_reply_form',
+    'label' => 'Reply',
+    'required' => 0,
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'display' => -1,
+      'form' => -1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'reply',
+      'settings' => array(),
+      'type' => 'reply',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-war_zone_all_anonymous_actions-field_stream_node_ref'.
   $field_instances['message-war_zone_all_anonymous_actions-field_stream_node_ref'] = array(
     'bundle' => 'war_zone_all_anonymous_actions',
     'default_value' => NULL,
@@ -1905,6 +2895,18 @@ function war_zones_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -1937,7 +2939,168 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-war_zone_all_new_round_message-field_stream_node_ref'
+  // Exported field_instance:
+  // 'message-war_zone_all_anonymous_actions-field_timeline_icon'.
+  $field_instances['message-war_zone_all_anonymous_actions-field_timeline_icon'] = array(
+    'bundle' => 'war_zone_all_anonymous_actions',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fa-crosshairs',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_timeline_icon',
+    'label' => 'Timeline Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-war_zone_all_new_round_message-field_associated_nodes_stream'.
+  $field_instances['message-war_zone_all_new_round_message-field_associated_nodes_stream'] = array(
+    'bundle' => 'war_zone_all_new_round_message',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-war_zone_all_new_round_message-field_reply_form'.
+  $field_instances['message-war_zone_all_new_round_message-field_reply_form'] = array(
+    'bundle' => 'war_zone_all_new_round_message',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'reply',
+        'settings' => array(),
+        'type' => 'reply_default',
+        'weight' => 3,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_reply_form',
+    'label' => 'Reply',
+    'required' => 0,
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'display' => -1,
+      'form' => -1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'reply',
+      'settings' => array(),
+      'type' => 'reply',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'message-war_zone_all_new_round_message-field_stream_node_ref'.
   $field_instances['message-war_zone_all_new_round_message-field_stream_node_ref'] = array(
     'bundle' => 'war_zone_all_new_round_message',
     'default_value' => NULL,
@@ -1951,6 +3114,18 @@ function war_zones_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -1978,7 +3153,60 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-body'
+  // Exported field_instance:
+  // 'message-war_zone_all_new_round_message-field_timeline_icon'.
+  $field_instances['message-war_zone_all_new_round_message-field_timeline_icon'] = array(
+    'bundle' => 'war_zone_all_new_round_message',
+    'default_value' => array(
+      0 => array(
+        'value' => 'fa-crosshairs',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_timeline_icon',
+    'label' => 'Timeline Icon',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-league-body'.
   $field_instances['node-league-body'] = array(
     'bundle' => 'league',
     'default_value' => NULL,
@@ -2029,7 +3257,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_campaign_badge'
+  // Exported field_instance: 'node-league-field_campaign_badge'.
   $field_instances['node-league-field_campaign_badge'] = array(
     'bundle' => 'league',
     'deleted' => 0,
@@ -2100,7 +3328,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_entry_fee'
+  // Exported field_instance: 'node-league-field_entry_fee'.
   $field_instances['node-league-field_entry_fee'] = array(
     'bundle' => 'league',
     'default_value' => array(
@@ -2150,7 +3378,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_event_date'
+  // Exported field_instance: 'node-league-field_event_date'.
   $field_instances['node-league-field_event_date'] = array(
     'bundle' => 'league',
     'deleted' => 0,
@@ -2207,7 +3435,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_event_type'
+  // Exported field_instance: 'node-league-field_event_type'.
   $field_instances['node-league-field_event_type'] = array(
     'bundle' => 'league',
     'default_value' => array(
@@ -2250,7 +3478,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_location'
+  // Exported field_instance: 'node-league-field_location'.
   $field_instances['node-league-field_location'] = array(
     'bundle' => 'league',
     'default_value' => NULL,
@@ -2295,7 +3523,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_registration_deadline'
+  // Exported field_instance: 'node-league-field_registration_deadline'.
   $field_instances['node-league-field_registration_deadline'] = array(
     'bundle' => 'league',
     'deleted' => 0,
@@ -2352,7 +3580,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_slots_warzone'
+  // Exported field_instance: 'node-league-field_slots_warzone'.
   $field_instances['node-league-field_slots_warzone'] = array(
     'bundle' => 'league',
     'default_value' => array(
@@ -2402,7 +3630,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_status'
+  // Exported field_instance: 'node-league-field_status'.
   $field_instances['node-league-field_status'] = array(
     'bundle' => 'league',
     'default_value' => array(
@@ -2445,7 +3673,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-league-field_warzone_game'
+  // Exported field_instance: 'node-league-field_warzone_game'.
   $field_instances['node-league-field_warzone_game'] = array(
     'bundle' => 'league',
     'default_value' => NULL,
@@ -2484,7 +3712,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign-body'
+  // Exported field_instance: 'node-narrative_campaign-body'.
   $field_instances['node-narrative_campaign-body'] = array(
     'bundle' => 'narrative_campaign',
     'default_value' => NULL,
@@ -2499,12 +3727,22 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
           'trim_length' => 600,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'type' => 'smart_trim_format',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -2534,7 +3772,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign-field_blog_army'
+  // Exported field_instance: 'node-narrative_campaign-field_blog_army'.
   $field_instances['node-narrative_campaign-field_blog_army'] = array(
     'bundle' => 'narrative_campaign',
     'default_value' => NULL,
@@ -2551,7 +3789,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -2574,9 +3812,10 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign-field_campaign_badge'
+  // Exported field_instance: 'node-narrative_campaign-field_campaign_badge'.
   $field_instances['node-narrative_campaign-field_campaign_badge'] = array(
     'bundle' => 'narrative_campaign',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2590,7 +3829,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -2610,8 +3849,15 @@ function war_zones_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -2636,12 +3882,13 @@ function war_zones_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign-field_designers_notes_narrative'
+  // Exported field_instance:
+  // 'node-narrative_campaign-field_designers_notes_narrative'.
   $field_instances['node-narrative_campaign-field_designers_notes_narrative'] = array(
     'bundle' => 'narrative_campaign',
     'default_value' => NULL,
@@ -2658,7 +3905,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -2688,7 +3935,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign-field_game_warzone'
+  // Exported field_instance: 'node-narrative_campaign-field_game_warzone'.
   $field_instances['node-narrative_campaign-field_game_warzone'] = array(
     'bundle' => 'narrative_campaign',
     'default_value' => NULL,
@@ -2703,10 +3950,9 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -2727,9 +3973,10 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign-field_header_image'
+  // Exported field_instance: 'node-narrative_campaign-field_header_image'.
   $field_instances['node-narrative_campaign-field_header_image'] = array(
     'bundle' => 'narrative_campaign',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2743,7 +3990,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -2763,8 +4010,15 @@ function war_zones_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -2789,14 +4043,15 @@ function war_zones_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign-field_image'
+  // Exported field_instance: 'node-narrative_campaign-field_image'.
   $field_instances['node-narrative_campaign-field_image'] = array(
     'bundle' => 'narrative_campaign',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2807,10 +4062,14 @@ function war_zones_field_default_field_instances() {
         'weight' => 5,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -2830,8 +4089,15 @@ function war_zones_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -2856,12 +4122,66 @@ function war_zones_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-body'
+  // Exported field_instance: 'node-narrative_campaign-field_radioactivity'.
+  $field_instances['node-narrative_campaign-field_radioactivity'] = array(
+    'bundle' => 'narrative_campaign',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445266520,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-narrative_campaign_instance-body'.
   $field_instances['node-narrative_campaign_instance-body'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -2876,12 +4196,22 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
           'trim_length' => 600,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'type' => 'smart_trim_format',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -2911,7 +4241,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_allow_sign_up_narrative'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_allow_sign_up_narrative'.
   $field_instances['node-narrative_campaign_instance-field_allow_sign_up_narrative'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => array(
@@ -2951,7 +4282,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_campaign_badge'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_campaign_badge'.
   $field_instances['node-narrative_campaign_instance-field_campaign_badge'] = array(
     'bundle' => 'narrative_campaign_instance',
     'deleted' => 0,
@@ -2965,9 +4297,13 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -3018,7 +4354,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_eligible_battles_narrative'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_eligible_battles_narrative'.
   $field_instances['node-narrative_campaign_instance-field_eligible_battles_narrative'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => array(
@@ -3060,7 +4397,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_entry_fee'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_entry_fee'.
   $field_instances['node-narrative_campaign_instance-field_entry_fee'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -3100,7 +4438,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_event_date'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_event_date'.
   $field_instances['node-narrative_campaign_instance-field_event_date'] = array(
     'bundle' => 'narrative_campaign_instance',
     'deleted' => 0,
@@ -3148,7 +4487,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_event_link'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_event_link'.
   $field_instances['node-narrative_campaign_instance-field_event_link'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -3200,7 +4540,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_event_type'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_event_type'.
   $field_instances['node-narrative_campaign_instance-field_event_type'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => array(
@@ -3242,7 +4583,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_game_warzone'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_game_warzone'.
   $field_instances['node-narrative_campaign_instance-field_game_warzone'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -3257,10 +4599,9 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -3281,7 +4622,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_location'
+  // Exported field_instance: 'node-narrative_campaign_instance-field_location'.
   $field_instances['node-narrative_campaign_instance-field_location'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -3327,7 +4668,63 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_registration_deadline'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_radioactivity'.
+  $field_instances['node-narrative_campaign_instance-field_radioactivity'] = array(
+    'bundle' => 'narrative_campaign_instance',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445266618,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 30,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_registration_deadline'.
   $field_instances['node-narrative_campaign_instance-field_registration_deadline'] = array(
     'bundle' => 'narrative_campaign_instance',
     'deleted' => 0,
@@ -3375,7 +4772,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_slots_warzone'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_slots_warzone'.
   $field_instances['node-narrative_campaign_instance-field_slots_warzone'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => array(
@@ -3396,7 +4794,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -3419,7 +4817,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_status'
+  // Exported field_instance: 'node-narrative_campaign_instance-field_status'.
   $field_instances['node-narrative_campaign_instance-field_status'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -3457,7 +4855,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_victor_narrative'
+  // Exported field_instance:
+  // 'node-narrative_campaign_instance-field_victor_narrative'.
   $field_instances['node-narrative_campaign_instance-field_victor_narrative'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -3474,7 +4873,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -3494,7 +4893,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-narrative_campaign_instance-field_website'
+  // Exported field_instance: 'node-narrative_campaign_instance-field_website'.
   $field_instances['node-narrative_campaign_instance-field_website'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -3550,7 +4949,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-body'
+  // Exported field_instance: 'node-special_event-body'.
   $field_instances['node-special_event-body'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -3566,11 +4965,21 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
           'trim_length' => 300,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'smart_trim_format',
         'weight' => 2,
       ),
     ),
@@ -3595,7 +5004,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_campaign_badge'
+  // Exported field_instance: 'node-special_event-field_campaign_badge'.
   $field_instances['node-special_event-field_campaign_badge'] = array(
     'bundle' => 'special_event',
     'deleted' => 0,
@@ -3671,7 +5080,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_entry_fee'
+  // Exported field_instance: 'node-special_event-field_entry_fee'.
   $field_instances['node-special_event-field_entry_fee'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -3717,7 +5126,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_event_date'
+  // Exported field_instance: 'node-special_event-field_event_date'.
   $field_instances['node-special_event-field_event_date'] = array(
     'bundle' => 'special_event',
     'deleted' => 0,
@@ -3740,17 +5149,8 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => 'now',
-          'multiple_number' => 1,
-          'multiple_to' => '',
-          'show_remaining_days' => 0,
-          'show_repeat_rule' => 'hide',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
     ),
@@ -3784,7 +5184,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_event_type'
+  // Exported field_instance: 'node-special_event-field_event_type'.
   $field_instances['node-special_event-field_event_type'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -3824,7 +5224,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_game_warzone'
+  // Exported field_instance: 'node-special_event-field_game_warzone'.
   $field_instances['node-special_event-field_game_warzone'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -3863,7 +5263,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_location'
+  // Exported field_instance: 'node-special_event-field_location'.
   $field_instances['node-special_event-field_location'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -3908,7 +5308,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_points_per_army'
+  // Exported field_instance: 'node-special_event-field_points_per_army'.
   $field_instances['node-special_event-field_points_per_army'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -3956,7 +5356,61 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_registration_deadline'
+  // Exported field_instance: 'node-special_event-field_radioactivity'.
+  $field_instances['node-special_event-field_radioactivity'] = array(
+    'bundle' => 'special_event',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445266686,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'node-special_event-field_registration_deadline'.
   $field_instances['node-special_event-field_registration_deadline'] = array(
     'bundle' => 'special_event',
     'deleted' => 0,
@@ -4013,7 +5467,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_slots_warzone'
+  // Exported field_instance: 'node-special_event-field_slots_warzone'.
   $field_instances['node-special_event-field_slots_warzone'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -4061,7 +5515,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_special_event_type'
+  // Exported field_instance: 'node-special_event-field_special_event_type'.
   $field_instances['node-special_event-field_special_event_type'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -4101,7 +5555,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_status'
+  // Exported field_instance: 'node-special_event-field_status'.
   $field_instances['node-special_event-field_status'] = array(
     'bundle' => 'special_event',
     'default_value' => array(
@@ -4145,7 +5599,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_warzone_scheduling'
+  // Exported field_instance: 'node-special_event-field_warzone_scheduling'.
   $field_instances['node-special_event-field_warzone_scheduling'] = array(
     'bundle' => 'special_event',
     'default_value' => array(
@@ -4186,7 +5640,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_website'
+  // Exported field_instance: 'node-special_event-field_website'.
   $field_instances['node-special_event-field_website'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -4242,7 +5696,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-body'
+  // Exported field_instance: 'node-war_zone_tournament-body'.
   $field_instances['node-war_zone_tournament-body'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
@@ -4258,11 +5712,21 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
-          'trim_length' => 400,
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 600,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'smart_trim_format',
         'weight' => 3,
       ),
     ),
@@ -4286,7 +5750,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_campaign_badge'
+  // Exported field_instance: 'node-war_zone_tournament-field_campaign_badge'.
   $field_instances['node-war_zone_tournament-field_campaign_badge'] = array(
     'bundle' => 'war_zone_tournament',
     'deleted' => 0,
@@ -4361,7 +5825,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_entry_fee'
+  // Exported field_instance: 'node-war_zone_tournament-field_entry_fee'.
   $field_instances['node-war_zone_tournament-field_entry_fee'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
@@ -4407,7 +5871,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_event_date'
+  // Exported field_instance: 'node-war_zone_tournament-field_event_date'.
   $field_instances['node-war_zone_tournament-field_event_date'] = array(
     'bundle' => 'war_zone_tournament',
     'deleted' => 0,
@@ -4464,7 +5928,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_event_date_warzone'
+  // Exported field_instance:
+  // 'node-war_zone_tournament-field_event_date_warzone'.
   $field_instances['node-war_zone_tournament-field_event_date_warzone'] = array(
     'bundle' => 'war_zone_tournament',
     'deleted' => 0,
@@ -4521,7 +5986,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_event_type'
+  // Exported field_instance: 'node-war_zone_tournament-field_event_type'.
   $field_instances['node-war_zone_tournament-field_event_type'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => array(
@@ -4564,7 +6029,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_game_warzone'
+  // Exported field_instance: 'node-war_zone_tournament-field_game_warzone'.
   $field_instances['node-war_zone_tournament-field_game_warzone'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
@@ -4580,9 +6045,8 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
+        'type' => 'hidden',
         'weight' => 2,
       ),
     ),
@@ -4604,7 +6068,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_location'
+  // Exported field_instance: 'node-war_zone_tournament-field_location'.
   $field_instances['node-war_zone_tournament-field_location'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
@@ -4649,7 +6113,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_points_per_army'
+  // Exported field_instance: 'node-war_zone_tournament-field_points_per_army'.
   $field_instances['node-war_zone_tournament-field_points_per_army'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
@@ -4695,7 +6159,62 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_registration_deadline'
+  // Exported field_instance: 'node-war_zone_tournament-field_radioactivity'.
+  $field_instances['node-war_zone_tournament-field_radioactivity'] = array(
+    'bundle' => 'war_zone_tournament',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445267262,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-war_zone_tournament-field_registration_deadline'.
   $field_instances['node-war_zone_tournament-field_registration_deadline'] = array(
     'bundle' => 'war_zone_tournament',
     'deleted' => 0,
@@ -4753,7 +6272,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_slots_warzone'
+  // Exported field_instance: 'node-war_zone_tournament-field_slots_warzone'.
   $field_instances['node-war_zone_tournament-field_slots_warzone'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
@@ -4799,7 +6318,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_status'
+  // Exported field_instance: 'node-war_zone_tournament-field_status'.
   $field_instances['node-war_zone_tournament-field_status'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => array(
@@ -4842,7 +6361,8 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_tournament_missions'
+  // Exported field_instance:
+  // 'node-war_zone_tournament-field_tournament_missions'.
   $field_instances['node-war_zone_tournament-field_tournament_missions'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => array(),
@@ -4885,7 +6405,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_tournament_type'
+  // Exported field_instance: 'node-war_zone_tournament-field_tournament_type'.
   $field_instances['node-war_zone_tournament-field_tournament_type'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => array(
@@ -4928,7 +6448,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_warzone_round'
+  // Exported field_instance: 'node-war_zone_tournament-field_warzone_round'.
   $field_instances['node-war_zone_tournament-field_warzone_round'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => array(
@@ -4978,7 +6498,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_tournament-field_website'
+  // Exported field_instance: 'node-war_zone_tournament-field_website'.
   $field_instances['node-war_zone_tournament-field_website'] = array(
     'bundle' => 'war_zone_tournament',
     'default_value' => NULL,
@@ -5035,39 +6555,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-armies-field_army_game'
-  $field_instances['taxonomy_term-armies-field_army_game'] = array(
-    'bundle' => 'armies',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_army_game',
-    'label' => 'Game',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'taxonomy_term-armies-field_image'
+  // Exported field_instance: 'taxonomy_term-armies-field_image'.
   $field_instances['taxonomy_term-armies-field_image'] = array(
     'bundle' => 'armies',
     'deleted' => 0,
@@ -5133,7 +6621,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-armies-field_website'
+  // Exported field_instance: 'taxonomy_term-armies-field_website'.
   $field_instances['taxonomy_term-armies-field_website'] = array(
     'bundle' => 'armies',
     'default_value' => NULL,
@@ -5183,7 +6671,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-games-field_image'
+  // Exported field_instance: 'taxonomy_term-games-field_image'.
   $field_instances['taxonomy_term-games-field_image'] = array(
     'bundle' => 'games',
     'deleted' => 0,
@@ -5247,7 +6735,7 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-games-field_location_icon'
+  // Exported field_instance: 'taxonomy_term-games-field_location_icon'.
   $field_instances['taxonomy_term-games-field_location_icon'] = array(
     'bundle' => 'games',
     'deleted' => 0,
@@ -5321,6 +6809,7 @@ function war_zones_field_default_field_instances() {
   t('Army');
   t('Army Points');
   t('Article Body');
+  t('Associated Nodes');
   t('Badge');
   t('Battle Points');
   t('Battle icon');
@@ -5366,9 +6855,11 @@ function war_zones_field_default_field_instances() {
   t('Points per army');
   t('Provide potential organizers with some of your thoughts on this campaign.  Number of players, ideal armies, source material, and the like are all excellent things to put here.');
   t('Put the introduction to your campaign here.  This is used to not only introduce your campaign but as the campaign brief for players on any campaign instance.');
+  t('Radioactivity');
   t('Receipient');
   t('Registration');
   t('Registration Deadline');
+  t('Reply');
   t('Round');
   t('Scheduling');
   t('Score Card Type');
@@ -5381,6 +6872,7 @@ function war_zones_field_default_field_instances() {
   t('Strength of schedule');
   t('This determines whether or not both players must be signed up for the campaign.');
   t('This is the number of available slots in the War Zone.  Leave it at 0 for unlimited.');
+  t('Timeline Icon');
   t('Title');
   t('Toggle whether you\'d like iToysoldiers to automatically process the beginning and end of your War Zone using the start and end dates provided.  If you choose manual then you will need to start and end the war zone manually.');
   t('Tournament Missions');

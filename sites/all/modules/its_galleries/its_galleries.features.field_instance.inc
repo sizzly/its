@@ -38,9 +38,11 @@ function its_galleries_field_default_field_instances() {
           'more_text' => 'Read more',
           'summary_handler' => 'ignore',
           'trim_length' => 300,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 'text',
           ),
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
@@ -215,8 +217,15 @@ function its_galleries_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'dragdropfile_enabled' => 0,
         'filefield_sources' => array(
           'filefield_sources' => array(
@@ -242,7 +251,7 @@ function its_galleries_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 7,
     ),
   );

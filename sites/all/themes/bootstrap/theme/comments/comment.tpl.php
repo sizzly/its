@@ -59,7 +59,7 @@
  * @ingroup themeable
  */
 ?>
-    <li class="media">
+    <div class="media">
         <div class="pull-left">
             <?php print $picture ?>
         </div>
@@ -77,4 +77,4 @@
                 ?>
             </p>
         </div>
-    </li>
+    </div>

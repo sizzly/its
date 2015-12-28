@@ -1243,14 +1243,14 @@ class EntityformController extends EntityAPIController {
    */
   public function buildContent($entity, $view_mode = 'full', $langcode = NULL, $content = array()) {
     $content = parent::buildContent($entity, $view_mode, $langcode, $content);
-    $content['info']['user'] = array(
+    /*$content['info']['user'] = array(
       '#markup' => _entityform_get_submit_info($entity),
       '#weight' => -100,
       '#prefix' => '<div class="submitted">',
       '#suffix' => '</div>',
     );
 
-    $content['info']['#weight'] = -99;
+    $content['info']['#weight'] = -99; */
     return $content;
   }
 

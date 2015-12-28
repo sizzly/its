@@ -8,6 +8,14 @@
  * Views filter handler for selective values.
  */
 class views_handler_filter_selective extends views_handler_filter_in_operator {
+
+  /**
+   * The original filter value options, if it's an options list handler.
+   *
+   * @var array|false
+   */
+  protected $originalOptions;
+
   protected static $results;
 
   /**
@@ -129,6 +137,9 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
     // Add combo to pick sort for display.
     $options = array();
     // Add option for custom sortings.
+    if ($this->getOriginalOptions()) {
+      $options['ORIG'] = t('As the original filter');
+    }
     $options['ASC'] = t('Custom ascending (asort)');
     $options['DESC'] = t('Custom descending (asort reverse)');
     // TODO: Allow the use of view's sorts!
@@ -141,6 +152,14 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       '#description' => t('Choose wich field to use for display'),
       '#options' => $options,
       '#default_value' => 'ASC',
+    );
+    $form['selective_items_limit'] = array(
+      '#title' => t('Limit number of select items'),
+      '#type' => 'textfield',
+      '#description' => t("Don't allow a badly configured selective filter to return thousands of possible values. Enter a limit or remove any value for no limit. We recommend to set a limit no higher than 100."),
+      '#default_value' => $this->options['selective_items_limit'],
+      '#size' => 10,
+      '#element_validate' => array('element_validate_integer_positive'),
     );
   }
 
@@ -190,6 +209,8 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
     $options['selective_display_sort']['default'] = '';
     // Storage for aggregated fields
     $options['selective_aggregated_fields']['default'] = '';
+    // Limit aggregated items to prevent a huge number of options in select.
+    $options['selective_items_limit']['default'] = 100;
 
     return $options;
   }
@@ -224,7 +245,7 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
     if (empty(self::$results[$signature])) {
       // We don't want a badly configured selective filter
       // to return thousands of possible values.
-      $max_items = 100;
+      $max_items = (int) $this->options['selective_items_limit'];
 
       // Clone the view (so it works while editting) and get all results.
       $view_copy = $this->view->clone_view();
@@ -287,6 +308,11 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
         if ($key != $field_to_keep) {
           unset($display_options_fields[$key]);
         }
+        else {
+          // If there is a group column on the field, remove it so Field Collections will work.
+          // https://www.drupal.org/node/2333065
+          unset($display_options_fields[$key]['group_column']);
+        }
       }
 
       // Check to see if the user remembered to add the field.
@@ -345,6 +371,13 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       unset($display->display_options['query']['options']['distinct']);
       unset($display->display_options['query']['options']['pure_distinct']);
 
+      // Some style plugins can affect the built query, make sure
+      // we use a reliable field based style plugin.
+      $display->display_options['style_plugin'] = 'default';
+      $display->display_options['style_options'] = unserialize('a:4:{s:9:"row_class";s:0:"";s:17:"default_row_class";i:1;s:17:"row_class_special";i:1;s:11:"uses_fields";i:0;}');
+      $display->display_options['row_plugin'] = 'fields';
+      $display->display_options['row_options'] = unserialize('s:6:"fields";');
+
       // Run View.
       $view_copy->execute($this->view->current_display);
 
@@ -359,6 +392,11 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
       // Get Handler after execution.
       $display_field_handler = $view_copy->field[$display_field_id];
 
+      // We show human-readable values when case.
+      if (method_exists($display_field_handler, 'get_value_options')) {
+        $display_field_handler->get_value_options();
+      }
+
       // Create array of objects for selector.
       $oids = array();
       $field_alias = isset($display_field_handler->aliases[$display_field_handler->real_field]) ? $display_field_handler->aliases[$display_field_handler->real_field] : $display_field_handler->table_alias . '_' . $display_field_handler->real_field;
@@ -370,22 +408,24 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
         if (is_array($key)) {
           $key = $row->{$field_alias};
         }
-        $value = $view_copy->render_field($display_field_id, $index);
+        $value = strip_tags($view_copy->render_field($display_field_id, $index));
         $oids[$key] = empty($value) ? t('Empty (@key)', array('@key' => empty($key) ? json_encode($key) : $key)) : $value;
       }
 
-      // Sort values alphabetically.
+      // Sort values.
       $sort_option = $this->options['selective_display_sort'];
       if (empty($sort_option) || $sort_option == 'ASC') {
         asort($oids);
-      } 
-      else {
-        asort($oids);
-        $oids = array_reverse($oids);
+      }
+      elseif ($sort_option == 'DESC') {
+        arsort($oids);
+      }
+      elseif ($sort_option == 'ORIG') {
+        $oids = static::filterOriginalOptions($this->getOriginalOptions(), array_keys($oids));
       }
 
       // If limit exceeded this field is not good for being "selective".
-      if (count($oids) == $max_items) {
+      if (!empty($max_items) && count($oids) == $max_items) {
         drupal_set_message(t('Selective filter "@field" has limited the amount of total results. Please, review you query configuration.', array('@field' => $ui_name)), 'warning');
       }
 
@@ -394,4 +434,64 @@ class views_handler_filter_selective extends views_handler_filter_in_operator {
     }
     return self::$results[$signature];
   }
+
+  /**
+   * Filters a list of original options according to selected set.
+   *
+   * @param array $options
+   *   The options list of the original filter.
+   * @param array $set
+   *   The narrowed set of results provided by the cloned view.
+   *
+   * @return array
+   *   The original filter options list narrowed to the cloned query results.
+   */
+  static protected function filterOriginalOptions($options, $set) {
+    $filtered = array();
+
+    foreach ($options as $key => $value) {
+      // Handle grouped options.
+      // @see hook_options_list().
+      if (is_array($value)) {
+        $nested = self::filterOriginalOptions($value, $set);
+        if (!empty($nested)) {
+          $filtered[$key] = $nested;
+        }
+        continue;
+      }
+      if (in_array($key, $set)) {
+        $filtered[$key] = $value;
+      }
+    }
+
+    return $filtered;
+  }
+
+  /**
+   * Returns the original filter value options, if provides an options list.
+   *
+   * @return array|false
+   *   The original filter option list, if available, or FALSE.
+   */
+  protected function getOriginalOptions() {
+    if (!isset($this->originalOptions)) {
+      $this->originalOptions = FALSE;
+      $class = $this->definition['proxy'];
+      $original_filter = new $class();
+      if (method_exists($original_filter, 'get_value_options')) {
+        $original_filter->set_definition($this->definition);
+        $options = $original_filter->get_value_options();
+        // We store only non-empty array.
+        if (is_array($options) && !empty($options)) {
+          $this->originalOptions = $options;
+        }
+        else {
+          $this->originalOptions = array();
+        }
+      }
+    }
+
+    return $this->originalOptions;
+  }
+
 }

@@ -1,176 +1,273 @@
 <?php
-/**
- * @file
- * Default theme implementation to display a single Drupal page.
- *
- * The doctype, html, head and body tags are not in this template. Instead they
- * can be found in the html.tpl.php template in this directory.
- *
- * Available variables:
- *
- * General utility variables:
- * - $base_path: The base URL path of the Drupal installation. At the very
- *   least, this will always default to /.
- * - $directory: The directory the template is located in, e.g. modules/system
- *   or themes/bartik.
- * - $is_front: TRUE if the current page is the front page.
- * - $logged_in: TRUE if the user is registered and signed in.
- * - $is_admin: TRUE if the user has permission to access administration pages.
- *
- * Site identity:
- * - $front_page: The URL of the front page. Use this instead of $base_path,
- *   when linking to the front page. This includes the language domain or
- *   prefix.
- * - $logo: The path to the logo image, as defined in theme configuration.
- * - $site_name: The name of the site, empty when display has been disabled
- *   in theme settings.
- * - $site_slogan: The slogan of the site, empty when display has been disabled
- *   in theme settings.
- *
- * Navigation:
- * - $main_menu (array): An array containing the Main menu links for the
- *   site, if they have been configured.
- * - $secondary_menu (array): An array containing the Secondary menu links for
- *   the site, if they have been configured.
- * - $breadcrumb: The breadcrumb trail for the current page.
- *
- * Page content (in order of occurrence in the default page.tpl.php):
- * - $title_prefix (array): An array containing additional output populated by
- *   modules, intended to be displayed in front of the main title tag that
- *   appears in the template.
- * - $title: The page title, for use in the actual HTML content.
- * - $title_suffix (array): An array containing additional output populated by
- *   modules, intended to be displayed after the main title tag that appears in
- *   the template.
- * - $messages: HTML for status and error messages. Should be displayed
- *   prominently.
- * - $tabs (array): Tabs linking to any sub-pages beneath the current page
- *   (e.g., the view and edit tabs when displaying a node).
- * - $action_links (array): Actions local to the page, such as 'Add menu' on the
- *   menu administration interface.
- * - $feed_icons: A string of all feed icons for the current page.
- * - $node: The node object, if there is an automatically-loaded node
- *   associated with the page, and the node ID is the second argument
- *   in the page's path (e.g. node/12345 and node/12345/revisions, but not
- *   comment/reply/12345).
- *
- * Regions:
- * - $page['help']: Dynamic help text, mostly for admin pages.
- * - $page['highlighted']: Items for the highlighted content region.
- * - $page['content']: The main content of the current page.
- * - $page['sidebar_first']: Items for the first sidebar.
- * - $page['sidebar_second']: Items for the second sidebar.
- * - $page['header']: Items for the header region.
- * - $page['footer']: Items for the footer region.
- *
- * @see bootstrap_preprocess_page()
- * @see template_preprocess()
- * @see template_preprocess_page()
- * @see bootstrap_process_page()
- * @see template_process()
- * @see html.tpl.php
- *
- * @ingroup themeable
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 ?>
-<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
-  <div class="container">
-    <div class="navbar-header">
-      <?php if ($logo): ?>
-      <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-      <?php endif; ?>
+<!-- Overlay Div -->
+<a href="" id="theme-setting-icon"><i class="fa fa-cog fa-lg"></i></a>
+<div id="theme-setting">
+    <div class="title">
+        <strong class="no-margin">Skin Color</strong>
+    </div>
+    <div class="theme-box">
+        <a class="theme-color" style="background:#323447" id="default"></a>
+        <a class="theme-color" style="background:#efefef" id="skin-1"></a>
+        <a class="theme-color" style="background:#a93922" id="skin-2"></a>
+        <a class="theme-color" style="background:#3e6b96" id="skin-3"></a>
+        <a class="theme-color" style="background:#635247" id="skin-4"></a>
+        <a class="theme-color" style="background:#3a3a3a" id="skin-5"></a>
+        <a class="theme-color" style="background:#495B6C" id="skin-6"></a>
+    </div>
+    <div class="title">
+        <strong class="no-margin">Sidebar Menu</strong>
+    </div>
+    <div class="theme-box">
+        <label class="label-checkbox">
+            <input type="checkbox" checked id="fixedSidebar">
+            <span class="custom-checkbox"></span>
+            Fixed Sidebar
+        </label>
+    </div>
+</div><!-- /theme-setting -->
 
-      <?php if (!empty($site_name)): ?>
-      <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-      <?php endif; ?>
+<div id="wrapper" class="preload">
 
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div id="top-nav" class="skin-6 fixed">
+        <div class="brand">
+            <span>
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+                    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+            </span>
+            <span class="text-toggle"> iToysoldiers</span>
+        </div>
+        <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <button type="button" class="navbar-toggle pull-left hide-menu" id="menuToggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <?php print $nav_bar_option; ?>
     </div>
 
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!user_is_logged_in()): ?>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/user/login">login</a></li>
-              <li><a href="/user/register">register</a></li>
-            </ul>
-          <?php endif; ?>
+    <aside class="fixed">			
+        <div class="sidebar-inner scrollable-sidebar">
+            <div class="size-toggle">
+                <a class="btn btn-sm" id="sizeToggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="btn btn-sm pull-right logoutConfirm_open"  href="/user/logout">
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div><!-- /size-toggle -->	
+            <div class="user-block clearfix">
+                <?php print $user_avatar; ?>
+                <div class="detail">
+                    <ul class="list-inline">
+                        <li><strong><?php print $user_name; ?></strong></li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li><a href="/user">Profile</a></li>
+                    </ul>
+                </div>
+            </div><!-- /user-block -->
+            <div class="search-block">
+                <div class="input-group">
+                    <?php print $side_search_box; ?>
+                </div><!-- /input-group -->
+            </div><!-- /search-block -->
+            <div class="main-menu">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <span class="menu-icon">
+                                <i class="fa fa-home fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Home
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                    </li>
+                    <li class="openable open">
+                        <a href="/wargaming-decorations">
+                            <span class="menu-icon">
+                                <i class="fa fa-certificate fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Decorations
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/wargaming-decorations"><span class="submenu-label">Decorations</span></a></li>
+                            <li><a href="/wargaming-decorations/renown"><span class="submenu-label">Renown</span></a></li>
+                            <li><a href="/wargaming-decorations/achievements"><span class="submenu-label">Achievements</span></a></li>
+                            <li><a href="/wargaming-decorations/medals"><span class="submenu-label">Medals</span></a></li>
+                            <li><a href="/wargaming-decorations/leaderboards"><span class="submenu-label">Leaderboards</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="openable open">
+                        <a href="/battle-reports">
+                            <span class="menu-icon">
+                                <i class="fa fa-fire fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Battles
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/battle-reports"><span class="submenu-label">Battles</span></a></li>
+                            <li><a href="/battle-reports/stats"><span class="submenu-label">Stats</span></a></li>
+                            <li><a href="/battle-reports/battle-meta"><span class="submenu-label">Meta</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="openable open">
+                        <a href="/order-of-battle">
+                            <span class="menu-icon">
+                                <i class="fa fa-arrows-alt fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Order of Battle
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/order-of-battle"><span class="submenu-label">Order of Battle</span></a></li>
+                            <li><a href="/order-of-battle/player-armies"><span class="submenu-label">Armies</span></a></li>
+                            <li><a href="/order-of-battle/players"><span class="submenu-label">Players</span></a></li>
+                            <li><a href="/order-of-battle/listcrit"><span class="submenu-label">List Crit</span></a></li>
+                            <li><a href="/order-of-battle/gaming-clubs"><span class="submenu-label">Gaming Clubs</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="openable open">
+                        <a href="/warzone">
+                            <span class="menu-icon">
+                                <i class="fa fa-map fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Theater
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/theater"><span class="submenu-label">Theaters</span></a></li>
+                            <li><a href="/theater/battlefield"><span class="submenu-label">Battlefields</span></a></li>
+                            <li><a href="/theater/events"><span class="submenu-label">Events</span></a></li>
+                            <li><a href="/theater/narrative-campaigns"><span class="submenu-label">Campaigns</span></a></li>
+                            <li><a href="/theater/warzone"><span class="submenu-label">War Zones</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="openable open">
+                        <a href="/munitions">
+                            <span class="menu-icon">
+                                <i class="fa fa-bomb fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Munitions
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/munitions"><span class="submenu-label">Munitions</span></a></li>
+                            <li><a href="/munitions/modeling-projects"><span class="submenu-label">Modeling Projects</span></a></li>
+                            <li><a href="/munitions/gaming-stores"><span class="submenu-label">Gaming Stores</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="openable open">
+                        <a href="/gazetteer">
+                            <span class="menu-icon">
+                                <i class="fa fa-database fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Gazetteer
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/gazetteer"><span class="submenu-label">Gazetteer</span></a></li>
+                            <li><a href="/blog"><span class="submenu-label">Blogs</span></a></li>
+                            <li><a href="/galleries"><span class="submenu-label">Galleries</span></a></li>
+                            <li><a href="/forum"><span class="submenu-label">Discussions</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
 
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
-  </div>
-</header>
+                <div class="alert alert-info">
+                    <ins data-revive-zoneid="5" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
+                    <script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script> 
+                </div>
+            </div><!-- /main-menu -->
+        </div><!-- /sidebar-inner scrollable-sidebar -->
+    </aside>
 
-<div class="main-container container">
+    <div id="main-container">
+        <div class="padding-md main-content">
 
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
+                <div class="row">	
+                    <div<?php print $content_column_class; ?>>
+                        <section>
+                            <?php if (!empty($page['highlighted'])): ?>
+                                <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+                            <?php endif; ?>
+                            <?php
+                            if (!empty($breadcrumb)): print $breadcrumb;
+                            endif;
+                            ?>
+                            <a id="main-content"></a>
+                            <?php print render($title_prefix); ?>
+                            <?php if (!empty($title)): ?>
+                                <h1 class="page-header"><?php print $title; ?></h1>
+                            <?php endif; ?>
+                            <?php print render($title_suffix); ?>
+                            <?php print $messages; ?>
+                            <?php if (!empty($tabs)): ?>
+                                <?php print render($tabs); ?>
+                            <?php endif; ?>
+                            <?php if (!empty($page['help'])): ?>
+                                <?php print render($page['help']); ?>
+                            <?php endif; ?>
+                            <?php if (!empty($action_links)): ?>
+                                <ul class="action-links"><?php print render($action_links); ?></ul>
+                            <?php endif; ?>
+                            <?php print render($page['content']); ?>
+                            <div class="seperator"></div>
+                            <div class="seperator"></div>
+                        </section>
+                    </div><!-- /.col -->
+                    <?php if (!empty($page['sidebar_second'])): ?>
+                        <div class="col-md-4">
+                            <?php print render($page['sidebar_second']); ?>
+                            <div class="seperator"></div>
+                            <div class="seperator"></div>
+                        </div><!-- /.col -->
+                    <?php endif; ?>
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-xs-12 clearfix">
 
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
+                        <?php print render($page['footer']); ?>
 
-  <div class="row">
+                    </div>
+                </div>
 
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
-    <section<?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-    </section>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-md-4" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
-
-  </div>
-</div>
-<footer class="footer container">
-  <?php print render($page['footer']); ?>
-</footer>
+        </div><!-- /.padding-md -->
+    </div><!-- /main-container -->
+</div><!-- /wrapper -->
+<?php drupal_add_js('/sites/all/libraries/lazyads/lazyad-loader.js'); ?>
+<?php drupal_add_js("sites/all/themes/bootstrap/js/jquery.slimscroll.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
+<?php drupal_add_js("sites/all/themes/bootstrap/js/jquery.cookie.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
+<?php drupal_add_js("sites/all/themes/bootstrap/js/modernizr.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
+<?php drupal_add_js("sites/all/themes/bootstrap/js/pace.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
+<?php drupal_add_js("sites/all/themes/bootstrap/js/jquery.popupoverlay.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
+<?php drupal_add_js("sites/all/themes/bootstrap/js/endless/endless_form.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
+<?php drupal_add_js("sites/all/themes/bootstrap/js/endless/endless.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
 
