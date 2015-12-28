@@ -1,0 +1,29 @@
+From 1884bdec17d1502cabaa10c0a5967cb9c2002ffe Mon Sep 17 00:00:00 2001
+From: HLopes <horaciolopes@gmail.com>
+Date: Thu, 2 Jul 2015 12:09:40 +0200
+Subject: [PATCH] Issue #1201160 by omerida: Skip breadcrumb argument when
+ contextual filter exception value is empty.
+
+---
+ handlers/views_handler_argument.inc | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/handlers/views_handler_argument.inc b/handlers/views_handler_argument.inc
+index 5a5ec00..b056036 100644
+--- a/handlers/views_handler_argument.inc
++++ b/handlers/views_handler_argument.inc
+@@ -146,6 +146,12 @@ class views_handler_argument extends views_handler {
+    */
+   function uses_breadcrumb() {
+     $info = $this->default_actions($this->options['default_action']);
++
++    // if the exception value is not supplied, can't generate a breadcrumb
++    if (empty($this->options['exception']['value'])) {
++        $info['breadcrumb'] = FALSE;
++    }
++
+     return !empty($info['breadcrumb']);
+   }
+ 
+-- 
+1.9.1

@@ -12,8 +12,8 @@ function its_galleries_views_default_views() {
 
   $view = new view();
   $view->name = 'galleries_all_lists';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Various Lists of Galleries.';
+  $view->tag = 'Galleries 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Galleries: All: Lists';
   $view->core = 7;
@@ -30,13 +30,8 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Flags: glory counter */
-  $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'glory';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -65,16 +60,6 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['alter']['text'] = '<span data-toggle="tooltip" data-placement="bottom" title="comments"><i class="icon glyphicon glyphicon-comment" aria-hidden="true" aria-hidden="true" ></i> <span class="badge iconbuffer">[comment_count]</span></span>';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  /* Field: Flags: Flag counter */
-  $handler->display->display_options['fields']['count']['id'] = 'count';
-  $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
-  $handler->display->display_options['fields']['count']['field'] = 'count';
-  $handler->display->display_options['fields']['count']['relationship'] = 'flag_count_rel';
-  $handler->display->display_options['fields']['count']['label'] = '';
-  $handler->display->display_options['fields']['count']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['count']['alter']['text'] = '<span data-toggle="tooltip" data-placement="bottom" title="Salutes"><i class="icon glyphicon glyphicon-thumbs-up" aria-hidden="true" aria-hidden="true" ></i> <span class="badge iconbuffer">[count]</span></span>';
-  $handler->display->display_options['fields']['count']['element_label_colon'] = FALSE;
   /* Field: Content: Images */
   $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
   $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
@@ -192,55 +177,6 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'armies';
   $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '10';
 
-  /* Display: Replace Categories */
-  $handler = $view->new_display('views_rules', 'Replace Categories', 'views_rules_1');
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'gallery' => 'gallery',
-  );
-  $handler->display->display_options['rules_variables'] = array(
-    'title' => array(
-      'enabled' => 0,
-      'rendered' => 0,
-      'type' => '',
-      'label' => 'Content: Title',
-      'name' => 'title',
-    ),
-    'nid' => array(
-      'enabled' => 1,
-      'rendered' => 0,
-      'type' => 'integer',
-      'label' => 'Nid',
-      'name' => 'nid',
-    ),
-  );
-
   /* Display: Main Gallery Page */
   $handler = $view->new_display('page', 'Main Gallery Page', 'page_1');
   $handler->display->display_options['path'] = 'galleries';
@@ -248,8 +184,8 @@ function its_galleries_views_default_views() {
 
   $view = new view();
   $view->name = 'galleries_all_page_layout';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Page elements for Gallery nodes.';
+  $view->tag = 'Galleries 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Galleries: All: Page Layout';
   $view->core = 7;

@@ -43,7 +43,7 @@
     <a name="comments"></a>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
-    <ul class="media-list">
+    <ul class="media-list comment-list">
   <?php print render($content['comments']); ?>
     </ul>
 

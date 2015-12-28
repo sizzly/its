@@ -10,22 +10,46 @@
 function narrative_campaigns_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_army_elo_v2'
-  $field_bases['field_army_elo_v2'] = array(
+  // Exported field_base: 'field_associated_nodes_stream'
+  $field_bases['field_associated_nodes_stream'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_army_elo_v2',
-    'foreign keys' => array(),
-    'indexes' => array(),
+    'field_name' => 'field_associated_nodes_stream',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'field_hidden',
+    'module' => 'entityreference',
     'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(),
+      ),
       'profile2_private' => FALSE,
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'field_hidden_integer',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_campaign_points_narrative'
@@ -502,6 +526,59 @@ function narrative_campaigns_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_reply_form'
+  $field_bases['field_reply_form'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_reply_form',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'reply',
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'bundle' => 'status_comments',
+      'display' => -1,
+      'form' => -1,
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'reply',
+  );
+
+  // Exported field_base: 'field_timeline_icon'
+  $field_bases['field_timeline_icon'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_timeline_icon',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_title_chronicle'

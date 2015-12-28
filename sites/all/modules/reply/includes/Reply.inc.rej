@@ -1,0 +1,25 @@
+--- Reply.inc
++++ Reply.inc
+@@ -24,22 +24,6 @@
+   public $deleted = 0;
+ 
+   /**
+-   * Creates a default Reply object.
+-   *
+-   * @see Entity::__construct()
+-   */
+-  public function __construct(array $values = array()) {
+-
+-    // Add values that are not allowed as property default values.
+-    $values += array(
+-      'hostname' => ip_address(),
+-      'uid' => $GLOBALS['user']->uid,
+-    );
+-
+-    parent::__construct($values, 'reply');
+-  }
+-
+-  /**
+    * Permanently saves the entity.
+    *
+    * @see entity_save()

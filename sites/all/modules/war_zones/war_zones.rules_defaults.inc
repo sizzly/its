@@ -106,7 +106,9 @@ function war_zones_default_rules_configuration() {
                               "recipient" : [ "uid" ],
                               "author" : "1",
                               "subject" : "Achievement Awarded",
-                              "body" : "You have been awarded the [aid:link] Achievement."
+                              "body" : "You have been awarded the [aid:link] Achievement.",
+                              "feed_nid" : "1",
+                              "feed_node" : [ "aid" ]
                             },
                             "PROVIDE" : { "thread_id" : { "thread_id" : "ID of new thread" } }
                           }
@@ -193,7 +195,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
-                "league" : "league",
+                "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"

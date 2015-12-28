@@ -13,6 +13,124 @@ function war_zones_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_body_wrapper|node|narrative_campaign_instance|teaser';
+  $field_group->group_name = 'group_body_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign_instance';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Body Wrapper',
+    'weight' => '4',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_radioactivity',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Body Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-9',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_body_wrapper|node|narrative_campaign_instance|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_body_wrapper|node|narrative_campaign|teaser';
+  $field_group->group_name = 'group_body_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Body Wrapper',
+    'weight' => '5',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_radioactivity',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Body Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-9',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_body_wrapper|node|narrative_campaign|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|narrative_campaign_instance|teaser';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign_instance';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_campaign_badge',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-3 text-center',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_image_wrapper|node|narrative_campaign_instance|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|narrative_campaign|teaser';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-3 text-center',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_image_wrapper|node|narrative_campaign|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_logistics|node|special_event|form';
   $field_group->group_name = 'group_logistics';
   $field_group->entity_type = 'node';
@@ -85,19 +203,17 @@ function war_zones_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = 'group_media_wrapper';
   $field_group->data = array(
-    'label' => 'Media Body',
+    'label' => 'Body Wrapper',
     'weight' => '6',
     'children' => array(
       0 => 'body',
-      1 => 'field_event_date',
-      2 => 'registration_link',
-      3 => 'registration_slots_left',
+      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Media Body',
+      'label' => 'Body Wrapper',
       'instance_settings' => array(
-        'classes' => 'media-body',
+        'classes' => 'col-sm-9',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -121,14 +237,13 @@ function war_zones_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'body',
-      1 => 'field_game_warzone',
-      2 => 'registration_link',
+      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Media Body',
       'instance_settings' => array(
-        'classes' => 'media-body',
+        'classes' => 'col-sm-9',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -148,16 +263,16 @@ function war_zones_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = 'group_media_wrapper';
   $field_group->data = array(
-    'label' => 'Media Left',
+    'label' => 'Image Wrapper',
     'weight' => '5',
     'children' => array(
       0 => 'field_campaign_badge',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Media Left',
+      'label' => 'Image Wrapper',
       'instance_settings' => array(
-        'classes' => 'media-left pull-left',
+        'classes' => 'col-sm-3 text-center',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -186,7 +301,7 @@ function war_zones_field_group_info() {
     'format_settings' => array(
       'label' => 'Media Left',
       'instance_settings' => array(
-        'classes' => 'media-left pull-left hidden-xs',
+        'classes' => 'col-sm-3 text-center',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -206,17 +321,17 @@ function war_zones_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media Wrapper',
+    'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media_left',
-      1 => 'group_media_body',
+      0 => 'group_media_body',
+      1 => 'group_media_left',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Media Wrapper',
+      'label' => 'Wrapper',
       'instance_settings' => array(
-        'classes' => 'media',
+        'classes' => 'row',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -246,7 +361,7 @@ function war_zones_field_group_info() {
     'format_settings' => array(
       'label' => 'Media Wrapper',
       'instance_settings' => array(
-        'classes' => 'media',
+        'classes' => 'row',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -343,6 +458,66 @@ function war_zones_field_group_info() {
     ),
   );
   $export['group_mission_label_wrapper|field_collection_item|field_tournament_missions|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper|node|narrative_campaign_instance|teaser';
+  $field_group->group_name = 'group_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign_instance';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_image_wrapper',
+      1 => 'group_body_wrapper',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Wrapper',
+      'instance_settings' => array(
+        'classes' => 'row',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_wrapper|node|narrative_campaign_instance|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper|node|narrative_campaign|teaser';
+  $field_group->group_name = 'group_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_image_wrapper',
+      1 => 'group_body_wrapper',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Wrapper',
+      'instance_settings' => array(
+        'classes' => 'row',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_wrapper|node|narrative_campaign|teaser'] = $field_group;
 
   return $export;
 }

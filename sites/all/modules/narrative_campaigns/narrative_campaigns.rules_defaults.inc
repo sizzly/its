@@ -140,15 +140,12 @@ function narrative_campaigns_default_rules_configuration() {
       "LABEL" : "Rules link: Warzone: Campaign: Launch Instance rules set",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "php" ],
+      "REQUIRES" : [ "rules" ],
       "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
       "RULES" : [
         { "RULE" : {
-            "PROVIDE" : {
-              "variable_added" : { "timestamp" : "Timestamp" },
-              "entity_created" : { "new_instance" : "New Instance" }
-            },
+            "PROVIDE" : { "entity_created" : { "new_instance" : "New Instance" } },
             "IF" : [
               { "entity_is_of_bundle" : {
                   "entity" : [ "node" ],
@@ -158,19 +155,11 @@ function narrative_campaigns_default_rules_configuration() {
               }
             ],
             "DO" : [
-              { "variable_add" : {
-                  "USING" : {
-                    "type" : "text",
-                    "value" : "\\u003C?php\\r\\n$time = strtotime(\\u0027now\\u0027);\\r\\necho $time;\\r\\n?\\u003E"
-                  },
-                  "PROVIDE" : { "variable_added" : { "timestamp" : "Timestamp" } }
-                }
-              },
               { "entity_create" : {
                   "USING" : {
                     "type" : "node",
                     "param_type" : "narrative_campaign_instance",
-                    "param_title" : "Ref [timestamp:value]: [node:title]",
+                    "param_title" : "[node:title]",
                     "param_author" : [ "site:current-user" ]
                   },
                   "PROVIDE" : { "entity_created" : { "new_instance" : "New Instance" } }
@@ -284,7 +273,7 @@ function narrative_campaigns_default_rules_configuration() {
       "LABEL" : "War Zone: Campaign: Add Points",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional", "php" ],
+      "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "points" : { "label" : "Points", "type" : "entityform" } },
       "IF" : [
         { "entity_is_of_bundle" : {
@@ -336,49 +325,7 @@ function narrative_campaigns_default_rules_configuration() {
             "value" : [ "points:field-phase-sc" ]
           }
         },
-        { "data_set" : { "data" : [ "scorecard:field-state-sc" ], "value" : "40" } },
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "NOT data_is_empty" : { "data" : [ "points:field-narrative-text" ] } },
-              "DO" : [
-                { "entity_create" : {
-                    "USING" : {
-                      "type" : "message",
-                      "param_type" : "campaign_reported_battle",
-                      "param_user" : [ "points:field-event-link:author" ]
-                    },
-                    "PROVIDE" : { "entity_created" : { "message" : "Message" } }
-                  }
-                },
-                { "data_set" : {
-                    "data" : [ "message:field-stream-node-ref" ],
-                    "value" : [ "points:field-event-link" ]
-                  }
-                },
-                { "data_set" : {
-                    "data" : [ "message:arguments:messtext" ],
-                    "value" : "\\u003Cp\\u003E[points:field-narrative-text:value]\\u003C\\/p\\u003E\\r\\n\\u003Csmall class=\\u0022text-muted\\u0022\\u003E[scorecard:field-registration-sc:user] has been awarded additional points\\u003C\\/small\\u003E"
-                  }
-                },
-                { "data_set" : {
-                    "data" : [ "message:field-image" ],
-                    "value" : [ "points:field-event-link:field-campaign-badge" ]
-                  }
-                },
-                { "data_set" : { "data" : [ "message:field-chronicle-icon" ], "value" : "flag" } },
-                { "data_set" : {
-                    "data" : [ "message:field-title-chronicle" ],
-                    "value" : { "value" : {
-                        "value" : "\\u003Cp\\u003EObjective Secured\\u003C\\/p\\u003E\\r\\n",
-                        "format" : "filtered_html"
-                      }
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        }
+        { "data_set" : { "data" : [ "scorecard:field-state-sc" ], "value" : "40" } }
       ]
     }
   }');

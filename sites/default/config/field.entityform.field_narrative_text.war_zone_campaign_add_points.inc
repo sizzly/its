@@ -1,0 +1,116 @@
+<?php
+/**
+ * @file
+ * field.entityform.field_narrative_text.war_zone_campaign_add_points.inc
+ */
+
+$api = '2.0.0';
+
+$data = array(
+  'field_config' => array(
+    'entity_types' => array(),
+    'foreign keys' => array(
+      'format' => array(
+        'table' => 'filter_format',
+        'columns' => array(
+          'format' => 'format',
+        ),
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => '0',
+    'storage' => array(
+      'type' => 'field_sql_storage',
+      'settings' => array(),
+      'module' => 'field_sql_storage',
+      'active' => '1',
+      'details' => array(
+        'sql' => array(
+          'FIELD_LOAD_CURRENT' => array(
+            'field_data_field_narrative_text' => array(
+              'value' => 'field_narrative_text_value',
+              'format' => 'field_narrative_text_format',
+            ),
+          ),
+          'FIELD_LOAD_REVISION' => array(
+            'field_revision_field_narrative_text' => array(
+              'value' => 'field_narrative_text_value',
+              'format' => 'field_narrative_text_format',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'field_name' => 'field_narrative_text',
+    'type' => 'text_long',
+    'module' => 'text',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+    'columns' => array(
+      'value' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => FALSE,
+      ),
+      'format' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+    ),
+  ),
+  'field_instance' => array(
+    'default_value' => NULL,
+    'description' => 'This text will be used to generate a chronicle entry for the campaign.  Helpful if you want to add some flavor to the additional points.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'label' => 'Narrative text',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
+    ),
+    'field_name' => 'field_narrative_text',
+    'entity_type' => 'entityform',
+    'bundle' => 'war_zone_campaign_add_points',
+    'deleted' => '0',
+  ),
+);
+
+$dependencies = array();
+
+$optional = array();
+
+$modules = array(
+  0 => 'field_sql_storage',
+  1 => 'text',
+);

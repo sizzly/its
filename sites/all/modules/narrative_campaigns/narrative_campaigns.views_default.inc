@@ -12,8 +12,8 @@ function narrative_campaigns_views_default_views() {
 
   $view = new view();
   $view->name = 'war_zone_campaign_component_filters';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates component filters for Narrative campaign instances. Should be in War Zones and not NC.';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0, Rules';
   $view->base_table = 'entityform';
   $view->human_name = 'War Zone: Campaign: Component Filters';
   $view->core = 7;
@@ -95,8 +95,8 @@ function narrative_campaigns_views_default_views() {
 
   $view = new view();
   $view->name = 'war_zone_campaign_components';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Shows the various campaign components including faction list and campaign phases.';
+  $view->tag = 'Narrative Campaigns 1.0';
   $view->base_table = 'entityform';
   $view->human_name = 'War Zone: Campaign: Components';
   $view->core = 7;
@@ -440,8 +440,8 @@ function narrative_campaigns_views_default_views() {
 
   $view = new view();
   $view->name = 'war_zone_campaign_instance_active_phases';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Displays on the "operations" page for a narrative campaign.  Should be in War Zones and not Narrative Campaigns.';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0';
   $view->base_table = 'relation';
   $view->human_name = 'War Zone: Campaign Instance: Phase Displays';
   $view->core = 7;
@@ -710,8 +710,8 @@ function narrative_campaigns_views_default_views() {
 
   $view = new view();
   $view->name = 'war_zone_campaign_instance_page_layout';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Campaign Instance page layout elements. Should be part of War Zones and not Narrative Campaigns';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0';
   $view->base_table = 'node';
   $view->human_name = 'War Zone: Campaign Instance: Page Layout';
   $view->core = 7;
@@ -1625,8 +1625,8 @@ print $link;
 
   $view = new view();
   $view->name = 'war_zone_campaign_instance_phase_scoring';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Should be separated out from rules and display.  Should also be part of War Zones.';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0, Rules';
   $view->base_table = 'relation';
   $view->human_name = 'War Zone: Campaign Instance: Phase Stats';
   $view->core = 7;
@@ -2059,8 +2059,8 @@ print $link;
 
   $view = new view();
   $view->name = 'war_zone_campaign_instance_report_battle';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the report battle panel for a campaign instance. Should be part of War Zones and not Narrative Campaign';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0';
   $view->base_table = 'node_registration';
   $view->human_name = 'War Zone: Campaign Instance: Report Battle';
   $view->core = 7;
@@ -2156,8 +2156,8 @@ print $link;
 
   $view = new view();
   $view->name = 'war_zone_campaign_lists';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Various lists for Narrative Campaigns.';
+  $view->tag = 'Narrative Campaigns 1.0';
   $view->base_table = 'node';
   $view->human_name = 'War Zone: Campaign: Lists';
   $view->core = 7;
@@ -2247,8 +2247,8 @@ print $link;
 
   $view = new view();
   $view->name = 'war_zone_campaign_phase_rules';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Should be part of War Zones and not Narrative Campaigns. Various rules for handling campaign instance management.';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0, Rules';
   $view->base_table = 'relation';
   $view->human_name = 'War Zone: Campaign: Phase Rules';
   $view->core = 7;
@@ -2725,8 +2725,8 @@ print $link;
 
   $view = new view();
   $view->name = 'war_zone_campaign_phase_scoring';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Should be in War Zones AND should separate out displays and rules.';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0, Rules';
   $view->base_table = 'entityform';
   $view->human_name = 'War Zone: Campaign: Phase Scoring';
   $view->core = 7;
@@ -2893,8 +2893,8 @@ print $link;
 
   $view = new view();
   $view->name = 'war_zone_campaign_summary';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Displays info about instances associated with a campaign.';
+  $view->tag = 'Narrative Campaigns 1.0';
   $view->base_table = 'node';
   $view->human_name = 'War Zone: Campaign: Summary';
   $view->core = 7;
@@ -3715,10 +3715,10 @@ print $link;
 
   $view = new view();
   $view->name = 'warzone_campaign_timeline';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the Chronicle page and views for Narrative Campaign instances. Should be in War Zones and not Narrative Campaign.';
+  $view->tag = 'War Zones 4.1, Narrative Campaigns 1.0';
   $view->base_table = 'message';
-  $view->human_name = 'Warzone: Campaign: Timeline';
+  $view->human_name = 'War Zone: Campaign: Timeline';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

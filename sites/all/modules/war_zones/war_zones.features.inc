@@ -363,7 +363,6 @@ function war_zones_default_rules_link() {
       "link_type" : "confirm",
       "bundles" : {
         "war_zone_league" : "war_zone_league",
-        "league" : "league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
@@ -381,7 +380,12 @@ function war_zones_default_rules_link() {
     "settings" : {
       "text" : "Create Painting Scorecards",
       "link_type" : "confirm",
-      "bundles" : [],
+      "bundles" : {
+        "league" : "league",
+        "narrative_campaign_instance" : "narrative_campaign_instance",
+        "special_event" : "special_event",
+        "war_zone_tournament" : "war_zone_tournament"
+      },
       "entity_link" : 0,
       "confirm_question" : "Are you sure?",
       "confirm_description" : "This will generate the painting scorecards for this war zone."
@@ -396,7 +400,7 @@ function war_zones_default_rules_link() {
       "text" : "Open War Zone",
       "link_type" : "confirm",
       "bundles" : {
-        "league" : "league",
+        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
@@ -429,7 +433,7 @@ function war_zones_default_rules_link() {
       "text" : "Complete War Zone",
       "link_type" : "confirm",
       "bundles" : {
-        "league" : "league",
+        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
@@ -448,7 +452,7 @@ function war_zones_default_rules_link() {
       "text" : "Start War Zone",
       "link_type" : "confirm",
       "bundles" : {
-        "league" : "league",
+        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"

@@ -10,14 +10,13 @@
 function war_zones_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_additional_points_sc'
+  // Exported field_base: 'field_additional_points_sc'.
   $field_bases['field_additional_points_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_additional_points_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -28,14 +27,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_aggregate_score_sc'
+  // Exported field_base: 'field_aggregate_score_sc'.
   $field_bases['field_aggregate_score_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_aggregate_score_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'computed_field',
@@ -59,14 +57,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'computed',
   );
 
-  // Exported field_base: 'field_allow_sign_up_narrative'
+  // Exported field_base: 'field_allow_sign_up_narrative'.
   $field_bases['field_allow_sign_up_narrative'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_allow_sign_up_narrative',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -86,14 +83,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_army_points_sc'
+  // Exported field_base: 'field_army_points_sc'.
   $field_bases['field_army_points_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_army_points_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -104,21 +100,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_article_body'
+  // Exported field_base: 'field_article_body'.
   $field_bases['field_article_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_article_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -133,14 +121,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_battle_points_sc'
+  // Exported field_base: 'field_battle_points_sc'.
   $field_bases['field_battle_points_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_battle_points_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -151,21 +138,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_campaign_badge'
+  // Exported field_base: 'field_campaign_badge'.
   $field_bases['field_campaign_badge'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_campaign_badge',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -182,14 +161,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_comp_sc'
+  // Exported field_base: 'field_comp_sc'.
   $field_bases['field_comp_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_comp_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -200,21 +178,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_designers_notes_narrative'
+  // Exported field_base: 'field_designers_notes_narrative'.
   $field_bases['field_designers_notes_narrative'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_designers_notes_narrative',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -229,14 +199,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_display_sc'
+  // Exported field_base: 'field_display_sc'.
   $field_bases['field_display_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_display_sc',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -256,14 +225,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_eligible_battles_narrative'
+  // Exported field_base: 'field_eligible_battles_narrative'.
   $field_bases['field_eligible_battles_narrative'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_eligible_battles_narrative',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -283,14 +251,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_entry_fee'
+  // Exported field_base: 'field_entry_fee'.
   $field_bases['field_entry_fee'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_entry_fee',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -302,14 +269,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_event_date_warzone'
+  // Exported field_base: 'field_event_date_warzone'.
   $field_bases['field_event_date_warzone'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_date_warzone',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -334,21 +300,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_event_type'
+  // Exported field_base: 'field_event_type'.
   $field_bases['field_event_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_type',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -371,21 +329,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_explanation_sc'
+  // Exported field_base: 'field_explanation_sc'.
   $field_bases['field_explanation_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_explanation_sc',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -401,21 +351,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_game_warzone'
+  // Exported field_base: 'field_game_warzone'.
   $field_bases['field_game_warzone'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_game_warzone',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -438,21 +380,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_header_image'
+  // Exported field_base: 'field_header_image'.
   $field_bases['field_header_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_header_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -469,14 +403,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_image_custom_achievement'
+  // Exported field_base: 'field_image_custom_achievement'.
   $field_bases['field_image_custom_achievement'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_image_custom_achievement',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -500,21 +433,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_mission_name_tourney'
+  // Exported field_base: 'field_mission_name_tourney'.
   $field_bases['field_mission_name_tourney'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mission_name_tourney',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -536,21 +461,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_mission_text'
+  // Exported field_base: 'field_mission_text'.
   $field_bases['field_mission_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mission_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -565,21 +482,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_opponent_reg_sc'
+  // Exported field_base: 'field_opponent_reg_sc'.
   $field_bases['field_opponent_reg_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_opponent_reg_sc',
-    'foreign keys' => array(
-      'node_registration' => array(
-        'columns' => array(
-          'target_id' => 'registration_id',
-        ),
-        'table' => 'node_registration',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -607,21 +516,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_opponent_sc'
+  // Exported field_base: 'field_opponent_sc'.
   $field_bases['field_opponent_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_opponent_sc',
-    'foreign keys' => array(
-      'users' => array(
-        'columns' => array(
-          'target_id' => 'uid',
-        ),
-        'table' => 'users',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -649,14 +550,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_painting_sc'
+  // Exported field_base: 'field_painting_sc'.
   $field_bases['field_painting_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_painting_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -667,21 +567,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_phase_sc'
+  // Exported field_base: 'field_phase_sc'.
   $field_bases['field_phase_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_phase_sc',
-    'foreign keys' => array(
-      'relation' => array(
-        'columns' => array(
-          'target_id' => 'rid',
-        ),
-        'table' => 'relation',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -710,21 +602,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_player_achivement_reg'
+  // Exported field_base: 'field_player_achivement_reg'.
   $field_bases['field_player_achivement_reg'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_player_achivement_reg',
-    'foreign keys' => array(
-      'node_registration' => array(
-        'columns' => array(
-          'target_id' => 'registration_id',
-        ),
-        'table' => 'node_registration',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -753,21 +637,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_player_email_registration'
+  // Exported field_base: 'field_player_email_registration'.
   $field_bases['field_player_email_registration'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_player_email_registration',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -783,14 +659,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_points_custom_achievement'
+  // Exported field_base: 'field_points_custom_achievement'.
   $field_bases['field_points_custom_achievement'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_points_custom_achievement',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -811,21 +686,34 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_register_army'
+  // Exported field_base: 'field_radioactivity'.
+  $field_bases['field_radioactivity'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_radioactivity',
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'radioactivity',
+  );
+
+  // Exported field_base: 'field_register_army'.
   $field_bases['field_register_army'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_register_army',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -848,21 +736,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_register_real_name'
+  // Exported field_base: 'field_register_real_name'.
   $field_bases['field_register_real_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_register_real_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -878,14 +758,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_registration_deadline'
+  // Exported field_base: 'field_registration_deadline'.
   $field_bases['field_registration_deadline'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_registration_deadline',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -910,21 +789,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_registration_sc'
+  // Exported field_base: 'field_registration_sc'.
   $field_bases['field_registration_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_registration_sc',
-    'foreign keys' => array(
-      'node_registration' => array(
-        'columns' => array(
-          'target_id' => 'registration_id',
-        ),
-        'table' => 'node_registration',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -952,14 +823,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_round_counter_tourney'
+  // Exported field_base: 'field_round_counter_tourney'.
   $field_bases['field_round_counter_tourney'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_round_counter_tourney',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -970,14 +840,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_round_sc'
+  // Exported field_base: 'field_round_sc'.
   $field_bases['field_round_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_round_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -988,14 +857,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_score_card_type'
+  // Exported field_base: 'field_score_card_type'.
   $field_bases['field_score_card_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_score_card_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1019,14 +887,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_slots_warzone'
+  // Exported field_base: 'field_slots_warzone'.
   $field_bases['field_slots_warzone'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_slots_warzone',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -1037,21 +904,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_special_event_type'
+  // Exported field_base: 'field_special_event_type'.
   $field_bases['field_special_event_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_special_event_type',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -1074,14 +933,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_sportsmanship_sc'
+  // Exported field_base: 'field_sportsmanship_sc'.
   $field_bases['field_sportsmanship_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sportsmanship_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -1092,14 +950,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_state_sc'
+  // Exported field_base: 'field_state_sc'.
   $field_bases['field_state_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_state_sc',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1126,14 +983,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_status'
+  // Exported field_base: 'field_status'.
   $field_bases['field_status'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_status',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1156,14 +1012,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_strength_of_schedule_sc'
+  // Exported field_base: 'field_strength_of_schedule_sc'.
   $field_bases['field_strength_of_schedule_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_strength_of_schedule_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -1175,21 +1030,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_float',
   );
 
-  // Exported field_base: 'field_title_custom_achievement'
+  // Exported field_base: 'field_title_custom_achievement'.
   $field_bases['field_title_custom_achievement'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_title_custom_achievement',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1205,14 +1052,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_tournament_missions'
+  // Exported field_base: 'field_tournament_missions'.
   $field_bases['field_tournament_missions'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_tournament_missions',
-    'foreign keys' => array(),
     'indexes' => array(
       'revision_id' => array(
         0 => 'revision_id',
@@ -1229,14 +1075,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_tournament_type'
+  // Exported field_base: 'field_tournament_type'.
   $field_bases['field_tournament_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_tournament_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1255,14 +1100,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_victor_narrative'
+  // Exported field_base: 'field_victor_narrative'.
   $field_bases['field_victor_narrative'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_victor_narrative',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'field_hidden',
@@ -1274,14 +1118,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'field_hidden_text',
   );
 
-  // Exported field_base: 'field_victory_points_sc'
+  // Exported field_base: 'field_victory_points_sc'.
   $field_bases['field_victory_points_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_victory_points_sc',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -1292,21 +1135,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_warzone_game'
+  // Exported field_base: 'field_warzone_game'.
   $field_bases['field_warzone_game'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_warzone_game',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -1329,14 +1164,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_warzone_scheduling'
+  // Exported field_base: 'field_warzone_scheduling'.
   $field_bases['field_warzone_scheduling'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_warzone_scheduling',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -1356,14 +1190,13 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_your_results'
+  // Exported field_base: 'field_your_results'.
   $field_bases['field_your_results'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_your_results',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

@@ -1,0 +1,15 @@
+name = User Badges Reference
+description = Defines a field type that allows referencing a user badge from an entity
+dependencies[] = user_badges
+dependencies[] = options
+
+package = User interface
+core = 7.x
+
+
+; Information added by Drupal.org packaging script on 2014-10-06
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "user_badges_reference"
+datestamp = "1412619235"
+
