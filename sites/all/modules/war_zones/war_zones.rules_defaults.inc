@@ -1535,7 +1535,7 @@ function war_zones_default_rules_configuration() {
             {
               "IF" : { "entity_is_of_bundle" : {
                   "entity" : [ "p1-registration" ],
-                  "type" : "node_registration",
+                  "type" : "unknown",
                   "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
                 }
               },

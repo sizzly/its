@@ -10,7 +10,7 @@
 function listcrit_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-listcrit-body'
+  // Exported field_instance: 'node-listcrit-body'.
   $field_instances['node-listcrit-body'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -19,19 +19,28 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
-          'trim_length' => 600,
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 350,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'type' => 'smart_trim_format',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -51,11 +60,11 @@ function listcrit_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_aux'
+  // Exported field_instance: 'node-listcrit-field_aux'.
   $field_instances['node-listcrit-field_aux'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -64,16 +73,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -92,7 +100,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_batteresult_commander'
+  // Exported field_instance: 'node-listcrit-field_batteresult_commander'.
   $field_instances['node-listcrit-field_batteresult_commander'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -101,16 +109,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -133,7 +140,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_camp'
+  // Exported field_instance: 'node-listcrit-field_camp'.
   $field_instances['node-listcrit-field_camp'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -142,16 +149,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -170,7 +176,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_doctrine'
+  // Exported field_instance: 'node-listcrit-field_doctrine'.
   $field_instances['node-listcrit-field_doctrine'] = array(
     'bundle' => 'listcrit',
     'default_value' => array(),
@@ -179,16 +185,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -209,27 +214,28 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_image'
+  // Exported field_instance: 'node-listcrit-field_image'.
   $field_instances['node-listcrit-field_image'] = array(
     'bundle' => 'listcrit',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'content',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -237,51 +243,41 @@ function listcrit_field_default_field_instances() {
     'label' => 'Image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 20780,
+      'alt_field' => 0,
+      'default_image' => 21780,
       'file_directory' => 'user/u[current-user:uid]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '1024x1024',
-      'min_resolution' => '200x200',
-      'title_field' => 1,
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'dragdropfile_enabled' => 0,
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 'imce',
-            'reference' => 0,
-            'remote' => 'remote',
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 1,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'allowed_schemes' => array(
+          'public' => 'public',
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
-      'weight' => 2,
+      'type' => 'media_generic',
+      'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_listcrit_component_units'
+  // Exported field_instance: 'node-listcrit-field_listcrit_component_units'.
   $field_instances['node-listcrit-field_listcrit_component_units'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -322,7 +318,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_opponent_s_army'
+  // Exported field_instance: 'node-listcrit-field_opponent_s_army'.
   $field_instances['node-listcrit-field_opponent_s_army'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -331,16 +327,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -366,7 +361,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_points_per_army'
+  // Exported field_instance: 'node-listcrit-field_points_per_army'.
   $field_instances['node-listcrit-field_points_per_army'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -375,21 +370,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -412,7 +401,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_primary_role'
+  // Exported field_instance: 'node-listcrit-field_primary_role'.
   $field_instances['node-listcrit-field_primary_role'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -421,16 +410,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -451,7 +439,56 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_rate_content'
+  // Exported field_instance: 'node-listcrit-field_radioactivity'.
+  $field_instances['node-listcrit-field_radioactivity'] = array(
+    'bundle' => 'listcrit',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445265225,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-listcrit-field_rate_content'.
   $field_instances['node-listcrit-field_rate_content'] = array(
     'bundle' => 'listcrit',
     'default_value' => array(
@@ -465,16 +502,16 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
         'module' => 'vud_field',
         'settings' => array(),
         'type' => 'default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -491,11 +528,11 @@ function listcrit_field_default_field_instances() {
       'module' => 'vud_field',
       'settings' => array(),
       'type' => 'vud_field_default_widget',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_short_description'
+  // Exported field_instance: 'node-listcrit-field_short_description'.
   $field_instances['node-listcrit-field_short_description'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -535,7 +572,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_tactical_focus'
+  // Exported field_instance: 'node-listcrit-field_tactical_focus'.
   $field_instances['node-listcrit-field_tactical_focus'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -544,16 +581,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -572,7 +608,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_your_army'
+  // Exported field_instance: 'node-listcrit-field_your_army'.
   $field_instances['node-listcrit-field_your_army'] = array(
     'bundle' => 'listcrit',
     'default_value' => NULL,
@@ -581,16 +617,15 @@ function listcrit_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -616,7 +651,8 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-list_crit_tags-field_chronicle_icon'
+  // Exported field_instance:
+  // 'taxonomy_term-list_crit_tags-field_chronicle_icon'.
   $field_instances['taxonomy_term-list_crit_tags-field_chronicle_icon'] = array(
     'bundle' => 'list_crit_tags',
     'default_value' => NULL,
@@ -652,7 +688,7 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-list_crit_tags-field_image'
+  // Exported field_instance: 'taxonomy_term-list_crit_tags-field_image'.
   $field_instances['taxonomy_term-list_crit_tags-field_image'] = array(
     'bundle' => 'list_crit_tags',
     'deleted' => 0,
@@ -734,6 +770,7 @@ function listcrit_field_default_field_instances() {
   t('List and Commentary');
   t('Points');
   t('Primary Role');
+  t('Radioactivity');
   t('Rate List');
   t('Short Description');
   t('Tactical Focus');

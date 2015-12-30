@@ -17,10 +17,10 @@ function battlefields_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -26;
   $handler->conf = array(
     'title' => 'Battlefields',
-    'no_blocks' => 1,
+    'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
@@ -59,7 +59,7 @@ warzone/battlefield',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its';
+  $display->layout = 'bootopoly_its2';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -79,10 +79,10 @@ warzone/battlefield',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-7f90e354-50c9-40ce-b611-abd3b604045f';
+    $pane->pid = 'new-d22e8c4c-0c9b-4a52-8ca8-4b5ea569246b';
     $pane->panel = 'contentmainbottom';
     $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_page_layout-panel_pane_7';
+    $pane->subtype = 'battlefield_all_page_layout-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -94,16 +94,32 @@ warzone/battlefield',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '7f90e354-50c9-40ce-b611-abd3b604045f';
-    $display->content['new-7f90e354-50c9-40ce-b611-abd3b604045f'] = $pane;
-    $display->panels['contentmainbottom'][0] = 'new-7f90e354-50c9-40ce-b611-abd3b604045f';
+    $pane->uuid = 'd22e8c4c-0c9b-4a52-8ca8-4b5ea569246b';
+    $display->content['new-d22e8c4c-0c9b-4a52-8ca8-4b5ea569246b'] = $pane;
+    $display->panels['contentmainbottom'][0] = 'new-d22e8c4c-0c9b-4a52-8ca8-4b5ea569246b';
     $pane = new stdClass();
-    $pane->pid = 'new-f31df05d-52a3-4f5a-9f62-bad1a420f3f5';
+    $pane->pid = 'new-137d11e1-631a-46a6-93f9-f72d0884e320';
     $pane->panel = 'contentmainbottom';
     $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_calendar-panel_pane_2';
+    $pane->subtype = 'battlefield_all_page_layout-panel_pane_1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:location:body',
+          'settings' => array(
+            'body' => array(
+              'und' => array(),
+            ),
+            'body_value' => array(),
+            'body_summary' => array(),
+            'body_format' => array(),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
@@ -113,12 +129,50 @@ warzone/battlefield',
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'f31df05d-52a3-4f5a-9f62-bad1a420f3f5';
-    $display->content['new-f31df05d-52a3-4f5a-9f62-bad1a420f3f5'] = $pane;
-    $display->panels['contentmainbottom'][1] = 'new-f31df05d-52a3-4f5a-9f62-bad1a420f3f5';
+    $pane->uuid = '137d11e1-631a-46a6-93f9-f72d0884e320';
+    $display->content['new-137d11e1-631a-46a6-93f9-f72d0884e320'] = $pane;
+    $display->panels['contentmainbottom'][1] = 'new-137d11e1-631a-46a6-93f9-f72d0884e320';
+    $pane = new stdClass();
+    $pane->pid = 'new-5a454a8a-e7a9-46f0-8fa7-2c58deba3be3';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_all_node_timeline-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '5a454a8a-e7a9-46f0-8fa7-2c58deba3be3';
+    $display->content['new-5a454a8a-e7a9-46f0-8fa7-2c58deba3be3'] = $pane;
+    $display->panels['contentmainbottom'][2] = 'new-5a454a8a-e7a9-46f0-8fa7-2c58deba3be3';
+    $pane = new stdClass();
+    $pane->pid = 'new-0b9b2f40-1511-4ea6-80c7-c11f898d6117';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_all_node_layout-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0b9b2f40-1511-4ea6-80c7-c11f898d6117';
+    $display->content['new-0b9b2f40-1511-4ea6-80c7-c11f898d6117'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-0b9b2f40-1511-4ea6-80c7-c11f898d6117';
     $pane = new stdClass();
     $pane->pid = 'new-e14232de-fc67-493d-a4fd-0c4522fd5eaf';
-    $pane->panel = 'contentmainleft';
+    $pane->panel = 'contentmainright';
     $pane->type = 'views_panes';
     $pane->subtype = 'battlefield_all_page_layout-panel_pane_6';
     $pane->shown = TRUE;
@@ -126,14 +180,8 @@ warzone/battlefield',
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
+      'style' => 'default',
+      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
@@ -141,59 +189,7 @@ warzone/battlefield',
     $pane->locks = array();
     $pane->uuid = 'e14232de-fc67-493d-a4fd-0c4522fd5eaf';
     $display->content['new-e14232de-fc67-493d-a4fd-0c4522fd5eaf'] = $pane;
-    $display->panels['contentmainleft'][0] = 'new-e14232de-fc67-493d-a4fd-0c4522fd5eaf';
-    $pane = new stdClass();
-    $pane->pid = 'new-4274f85c-836b-4cbe-a14f-b91146000cbc';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_page_layout-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 0,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '4274f85c-836b-4cbe-a14f-b91146000cbc';
-    $display->content['new-4274f85c-836b-4cbe-a14f-b91146000cbc'] = $pane;
-    $display->panels['contentmainleft'][1] = 'new-4274f85c-836b-4cbe-a14f-b91146000cbc';
-    $pane = new stdClass();
-    $pane->pid = 'new-8a60e623-897d-4d91-b837-9f9c655ee780';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_messages-panel_pane_3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 0,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '8a60e623-897d-4d91-b837-9f9c655ee780';
-    $display->content['new-8a60e623-897d-4d91-b837-9f9c655ee780'] = $pane;
-    $display->panels['contentmainleft'][2] = 'new-8a60e623-897d-4d91-b837-9f9c655ee780';
+    $display->panels['contentmainright'][0] = 'new-e14232de-fc67-493d-a4fd-0c4522fd5eaf';
     $pane = new stdClass();
     $pane->pid = 'new-ecc92142-c97b-40f7-bdd1-3af723a997bf';
     $pane->panel = 'contentmainright';
@@ -249,101 +245,11 @@ warzone/battlefield',
       'css_class' => 'alert alert-danger',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'ecc92142-c97b-40f7-bdd1-3af723a997bf';
     $display->content['new-ecc92142-c97b-40f7-bdd1-3af723a997bf'] = $pane;
-    $display->panels['contentmainright'][0] = 'new-ecc92142-c97b-40f7-bdd1-3af723a997bf';
-    $pane = new stdClass();
-    $pane->pid = 'new-f999a964-da68-4558-992e-0ff460d04fbf';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_stats-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 0,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'f999a964-da68-4558-992e-0ff460d04fbf';
-    $display->content['new-f999a964-da68-4558-992e-0ff460d04fbf'] = $pane;
-    $display->panels['contentmainright'][1] = 'new-f999a964-da68-4558-992e-0ff460d04fbf';
-    $pane = new stdClass();
-    $pane->pid = 'new-d22e8c4c-0c9b-4a52-8ca8-4b5ea569246b';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_page_layout-panel_pane_3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'd22e8c4c-0c9b-4a52-8ca8-4b5ea569246b';
-    $display->content['new-d22e8c4c-0c9b-4a52-8ca8-4b5ea569246b'] = $pane;
-    $display->panels['contentmainright'][2] = 'new-d22e8c4c-0c9b-4a52-8ca8-4b5ea569246b';
-    $pane = new stdClass();
-    $pane->pid = 'new-225a1760-9501-45d7-983e-5d3c06620678';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_stats-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '225a1760-9501-45d7-983e-5d3c06620678';
-    $display->content['new-225a1760-9501-45d7-983e-5d3c06620678'] = $pane;
-    $display->panels['contentmainright'][3] = 'new-225a1760-9501-45d7-983e-5d3c06620678';
-    $pane = new stdClass();
-    $pane->pid = 'new-0b8c01e0-c52e-48a3-9c90-db3ac40de683';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'battlefield_all_stats-panel_pane_3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 0,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '0b8c01e0-c52e-48a3-9c90-db3ac40de683';
-    $display->content['new-0b8c01e0-c52e-48a3-9c90-db3ac40de683'] = $pane;
-    $display->panels['contentmainright'][4] = 'new-0b8c01e0-c52e-48a3-9c90-db3ac40de683';
+    $display->panels['contentmainright'][1] = 'new-ecc92142-c97b-40f7-bdd1-3af723a997bf';
     $pane = new stdClass();
     $pane->pid = 'new-1dd770cd-5220-42a0-a71b-d45558eaffcb';
     $pane->panel = 'header';
@@ -498,7 +404,7 @@ warzone/battlefield',
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'Location Type',
     'no_blocks' => 0,
@@ -606,7 +512,7 @@ function battlefields_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Battlefield';
   $page->admin_description = '';
-  $page->path = 'warzone/battlefield';
+  $page->path = 'theater/battlefield';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
@@ -667,7 +573,7 @@ function battlefields_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its';
+  $display->layout = 'bootopoly_its2';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -692,7 +598,7 @@ function battlefields_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-9c3a5604-22b0-4c9a-ab87-b008605e4cb8';
-    $pane->panel = 'contentmaintop';
+    $pane->panel = 'contentmainleft';
     $pane->type = 'views_panes';
     $pane->subtype = 'battlefields_all_lists-panel_pane_1';
     $pane->shown = TRUE;
@@ -708,32 +614,10 @@ function battlefields_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '9c3a5604-22b0-4c9a-ab87-b008605e4cb8';
     $display->content['new-9c3a5604-22b0-4c9a-ab87-b008605e4cb8'] = $pane;
-    $display->panels['contentmaintop'][0] = 'new-9c3a5604-22b0-4c9a-ab87-b008605e4cb8';
-    $pane = new stdClass();
-    $pane->pid = 'new-5230aa17-19b0-46b4-8acd-744c5e8c2b13';
-    $pane->panel = 'header';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'location_map-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'jumbotron',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5230aa17-19b0-46b4-8acd-744c5e8c2b13';
-    $display->content['new-5230aa17-19b0-46b4-8acd-744c5e8c2b13'] = $pane;
-    $display->panels['header'][0] = 'new-5230aa17-19b0-46b4-8acd-744c5e8c2b13';
+    $display->panels['contentmainleft'][0] = 'new-9c3a5604-22b0-4c9a-ab87-b008605e4cb8';
     $pane = new stdClass();
     $pane->pid = 'new-2b0b0d56-16bb-4ecc-b562-bd22b2a8e5cc';
-    $pane->panel = 'sidebar';
+    $pane->panel = 'contentmainright';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -758,10 +642,10 @@ function battlefields_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '2b0b0d56-16bb-4ecc-b562-bd22b2a8e5cc';
     $display->content['new-2b0b0d56-16bb-4ecc-b562-bd22b2a8e5cc'] = $pane;
-    $display->panels['sidebar'][0] = 'new-2b0b0d56-16bb-4ecc-b562-bd22b2a8e5cc';
+    $display->panels['contentmainright'][0] = 'new-2b0b0d56-16bb-4ecc-b562-bd22b2a8e5cc';
     $pane = new stdClass();
     $pane->pid = 'new-9a2a8c85-176a-4510-82ce-7eeaf596266e';
-    $pane->panel = 'sidebar';
+    $pane->panel = 'contentmainright';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -786,7 +670,29 @@ function battlefields_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '9a2a8c85-176a-4510-82ce-7eeaf596266e';
     $display->content['new-9a2a8c85-176a-4510-82ce-7eeaf596266e'] = $pane;
-    $display->panels['sidebar'][1] = 'new-9a2a8c85-176a-4510-82ce-7eeaf596266e';
+    $display->panels['contentmainright'][1] = 'new-9a2a8c85-176a-4510-82ce-7eeaf596266e';
+    $pane = new stdClass();
+    $pane->pid = 'new-5230aa17-19b0-46b4-8acd-744c5e8c2b13';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'location_map-panel_pane_2';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'jumbotron',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '5230aa17-19b0-46b4-8acd-744c5e8c2b13';
+    $display->content['new-5230aa17-19b0-46b4-8acd-744c5e8c2b13'] = $pane;
+    $display->panels['header'][0] = 'new-5230aa17-19b0-46b4-8acd-744c5e8c2b13';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

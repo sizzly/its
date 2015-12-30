@@ -150,7 +150,7 @@ function events_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -20;
+  $handler->weight = -24;
   $handler->conf = array(
     'title' => 'Events',
     'no_blocks' => 0,
@@ -405,7 +405,7 @@ warzone/events',
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -24;
   $handler->conf = array(
     'title' => 'Event Type',
     'no_blocks' => 0,
@@ -520,11 +520,11 @@ function events_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Events Main Page';
   $page->admin_description = '';
-  $page->path = 'warzone/events';
+  $page->path = 'theater/events';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'Events',
+    'title' => 'Calendar',
     'name' => 'main-menu',
     'weight' => '0',
     'parent' => array(
@@ -557,7 +557,7 @@ function events_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => '',
     'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_home' => 0,
@@ -565,7 +565,7 @@ function events_default_page_manager_pages() {
       'enabled' => 1,
       'metatags' => array(
         'title' => array(
-          'value' => 'Miniature War Gaming Events List|',
+          'value' => 'Miniature War Gaming Events List',
         ),
         'robots' => array(
           'value' => array(
@@ -585,7 +585,7 @@ function events_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its';
+  $display->layout = 'bootopoly_its2';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -600,10 +600,35 @@ function events_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Wargaming Calendar of Events';
   $display->uuid = 'cd4967bf-cc17-43fa-aa23-b8e2e94d5a66';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e71235e1-9861-4e1f-b909-81cc94cff7f4';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Write Up',
+      'title' => 'Upcoming Events',
+      'body' => 'Here you\'ll find a list of all the miniature wargaming events that have been submitted to iToysoldiers.  They run the gamut between open gaming to leagues to massive battles to tournaments and everything in between. ',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e71235e1-9861-4e1f-b909-81cc94cff7f4';
+    $display->content['new-e71235e1-9861-4e1f-b909-81cc94cff7f4'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-e71235e1-9861-4e1f-b909-81cc94cff7f4';
     $pane = new stdClass();
     $pane->pid = 'new-df48bf15-e13f-431c-bde8-062ecb223329';
     $pane->panel = 'contentmainleft';
@@ -625,11 +650,11 @@ function events_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'df48bf15-e13f-431c-bde8-062ecb223329';
     $display->content['new-df48bf15-e13f-431c-bde8-062ecb223329'] = $pane;
-    $display->panels['contentmainleft'][0] = 'new-df48bf15-e13f-431c-bde8-062ecb223329';
+    $display->panels['contentmainleft'][1] = 'new-df48bf15-e13f-431c-bde8-062ecb223329';
     $pane = new stdClass();
     $pane->pid = 'new-c646ed72-a3be-4e51-9f00-de3b82d8207e';
     $pane->panel = 'contentmainright';
@@ -750,7 +775,6 @@ function events_default_page_manager_pages() {
       'admin_title' => 'Page Header',
       'title' => '',
       'body' => '<div class="jumbotron">
-<h1>Wars and Rumors of Wars</h1>
 <h2>The iToysoldiers list of upcoming tabletop wargaming events</h2>
 </div>',
       'format' => 'pure_html',
@@ -850,7 +874,7 @@ function events_default_page_manager_pages() {
     $pane->uuid = '2917068d-a6ed-4f7c-92f6-725e223d6624';
     $display->content['new-2917068d-a6ed-4f7c-92f6-725e223d6624'] = $pane;
     $display->panels['sidebar'][2] = 'new-2917068d-a6ed-4f7c-92f6-725e223d6624';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2d56af53-17c8-4b45-aaad-18cccb40fbaa';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iTS Modelling Projects feature.
+ */
+
+include_once 'its_modelling_projects.features.inc';

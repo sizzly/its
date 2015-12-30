@@ -12,8 +12,8 @@ function its_articles_and_feed_views_default_views() {
 
   $view = new view();
   $view->name = 'articles_all_page_layout';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Page Layout elements for Article Nodes.';
+  $view->tag = 'Articles and Feeds 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Articles: All: Page Layout';
   $view->core = 7;
@@ -464,8 +464,8 @@ function its_articles_and_feed_views_default_views() {
 
   $view = new view();
   $view->name = 'articles_feed_lists';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Lists of Articles associated with their source feeds.';
+  $view->tag = 'Articles and Feeds 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Articles: Feed: Lists';
   $view->core = 7;

@@ -1791,6 +1791,12 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['register_link']['label'] = '';
   $handler->display->display_options['fields']['register_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['register_link']['text'] = 'Register';
+  /* Field: Content: Used slots */
+  $handler->display->display_options['fields']['registration_used_slots']['id'] = 'registration_used_slots';
+  $handler->display->display_options['fields']['registration_used_slots']['table'] = 'node';
+  $handler->display->display_options['fields']['registration_used_slots']['field'] = 'registration_used_slots';
+  $handler->display->display_options['fields']['registration_used_slots']['label'] = 'AUTOMATIC';
+  $handler->display->display_options['fields']['registration_used_slots']['exclude'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['war_zone_all_page_layout'] = $view;

@@ -154,6 +154,56 @@ function war_zones_default_entityform_type() {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function war_zones_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Indicates if a player has paid the registration fee.".
+  $flags['paid'] = array(
+    'content_type' => 'node_registration',
+    'title' => 'Indicates if a player has paid the registration fee.',
+    'global' => 1,
+    'types' => array(
+      0 => 'war_zone_league',
+      1 => 'war_zone_tournament',
+    ),
+    'flag_short' => 'Unpaid',
+    'flag_long' => '',
+    'flag_message' => 'Paid',
+    'unflag_short' => 'Paid',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'roles' => array(
+      'flag' => array(
+        0 => 3,
+        1 => 7,
+        2 => 9,
+        3 => 8,
+      ),
+      'unflag' => array(
+        0 => 3,
+        1 => 7,
+        2 => 9,
+        3 => 8,
+      ),
+    ),
+    'weight' => 0,
+    'show_on_entity' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'api_version' => 2,
+    'module' => 'war_zones',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_default_message_type().
  */
 function war_zones_default_message_type() {
@@ -307,14 +357,6 @@ function war_zones_default_message_type() {
  */
 function war_zones_node_info() {
   $items = array(
-    'league' => array(
-      'name' => t('League 2.0'),
-      'base' => 'node_content',
-      'description' => t('The totally revised IToysoldiers league system. Includes Journeyman 2015 leagues. '),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'narrative_campaign' => array(
       'name' => t('Narrative Campaign'),
       'base' => 'node_content',
@@ -335,6 +377,14 @@ function war_zones_node_info() {
       'name' => t('Special Event'),
       'base' => 'node_content',
       'description' => t('Create a <em>Special Event</em> to use iToysoldiers features with an event that doesn\'t quite line up with the structured events offered on the site. '),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'war_zone_league' => array(
+      'name' => t('League'),
+      'base' => 'node_content',
+      'description' => t('Manage a competitive league for your players.  IToysoldiers handles all the registration, calculations, scheduling, and pairings. Swiss Style and Casual league mechanics are supported.  '),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

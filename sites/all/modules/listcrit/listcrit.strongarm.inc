@@ -35,7 +35,7 @@ function listcrit_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_listcrit';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_form_location_listcrit'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -64,22 +64,47 @@ function listcrit_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__listcrit';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
-        ),
-        'xmlsitemap' => array(
           'weight' => '7',
         ),
+        'xmlsitemap' => array(
+          'weight' => '6',
+        ),
         'badges' => array(
+          'weight' => '9',
+        ),
+        'locations' => array(
           'weight' => '10',
         ),
       ),
@@ -125,8 +150,22 @@ function listcrit_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_listcrit';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_listcrit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_listcrit_pattern';
+  $strongarm->value = 'army-list/[node:title]';
+  $export['pathauto_node_listcrit_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_list_crit_tags_pattern';
+  $strongarm->value = 'listcrit/[term:name]';
+  $export['pathauto_taxonomy_term_list_crit_tags_pattern'] = $strongarm;
 
   return $export;
 }

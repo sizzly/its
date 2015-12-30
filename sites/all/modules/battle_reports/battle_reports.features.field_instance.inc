@@ -10,7 +10,155 @@
 function battle_reports_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-game_result_system_-body'
+  // Exported field_instance: 'entityform-quick_battle-field_location'.
+  $field_instances['entityform-quick_battle-field_location'] = array(
+    'bundle' => 'quick_battle',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_location',
+    'label' => 'Battlefield',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-quick_battle-field_opponent_s_army'.
+  $field_instances['entityform-quick_battle-field_opponent_s_army'] = array(
+    'bundle' => 'quick_battle',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_opponent_s_army',
+    'label' => 'Opponent\'s Army',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-quick_battle-field_your_army'.
+  $field_instances['entityform-quick_battle-field_your_army'] = array(
+    'bundle' => 'quick_battle',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_your_army',
+    'label' => 'Your Army',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'shs',
+      'settings' => array(
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 1,
+          'node_count' => 0,
+        ),
+      ),
+      'type' => 'taxonomy_shs',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'entityform-quick_battle-field_your_results'.
+  $field_instances['entityform-quick_battle-field_your_results'] = array(
+    'bundle' => 'quick_battle',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_your_results',
+    'label' => 'Your Results',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-game_result_system_-body'.
   $field_instances['node-game_result_system_-body'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -31,12 +179,22 @@ function battle_reports_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
           'trim_length' => 600,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'type' => 'smart_trim_format',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -59,7 +217,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_batteresult_commander'
+  // Exported field_instance:
+  // 'node-game_result_system_-field_batteresult_commander'.
   $field_instances['node-game_result_system_-field_batteresult_commander'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -82,7 +241,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -105,7 +264,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_battle_deployment'
+  // Exported field_instance:
+  // 'node-game_result_system_-field_battle_deployment'.
   $field_instances['node-game_result_system_-field_battle_deployment'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -128,7 +288,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -151,7 +311,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_battle_mission_rules'
+  // Exported field_instance:
+  // 'node-game_result_system_-field_battle_mission_rules'.
   $field_instances['node-game_result_system_-field_battle_mission_rules'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -174,7 +335,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -197,7 +358,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_battle_most_valuable_unit'
+  // Exported field_instance:
+  // 'node-game_result_system_-field_battle_most_valuable_unit'.
   $field_instances['node-game_result_system_-field_battle_most_valuable_unit'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -220,7 +382,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -243,7 +405,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_battleresult_enemy_command'
+  // Exported field_instance:
+  // 'node-game_result_system_-field_battleresult_enemy_command'.
   $field_instances['node-game_result_system_-field_battleresult_enemy_command'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -266,7 +429,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -290,7 +453,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_defeat'
+  // Exported field_instance: 'node-game_result_system_-field_defeat'.
   $field_instances['node-game_result_system_-field_defeat'] = array(
     'bundle' => 'game_result_system_',
     'deleted' => 0,
@@ -312,7 +475,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -331,7 +494,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_draw'
+  // Exported field_instance: 'node-game_result_system_-field_draw'.
   $field_instances['node-game_result_system_-field_draw'] = array(
     'bundle' => 'game_result_system_',
     'deleted' => 0,
@@ -353,7 +516,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
     ),
     'entity_type' => 'node',
@@ -372,7 +535,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_enemy_commander_survival'
+  // Exported field_instance:
+  // 'node-game_result_system_-field_enemy_commander_survival'.
   $field_instances['node-game_result_system_-field_enemy_commander_survival'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -395,7 +559,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -414,7 +578,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_event_link'
+  // Exported field_instance: 'node-game_result_system_-field_event_link'.
   $field_instances['node-game_result_system_-field_event_link'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -437,7 +601,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -458,51 +622,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_game'
-  $field_instances['node-game_result_system_-field_game'] = array(
-    'bundle' => 'game_result_system_',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_game',
-    'label' => 'Game',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-game_result_system_-field_game_date'
+  // Exported field_instance: 'node-game_result_system_-field_game_date'.
   $field_instances['node-game_result_system_-field_game_date'] = array(
     'bundle' => 'game_result_system_',
     'deleted' => 0,
@@ -524,7 +644,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
     ),
     'entity_type' => 'node',
@@ -556,7 +676,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_game_reference'
+  // Exported field_instance: 'node-game_result_system_-field_game_reference'.
   $field_instances['node-game_result_system_-field_game_reference'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -579,7 +699,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
     ),
     'entity_type' => 'node',
@@ -606,7 +726,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_image'
+  // Exported field_instance: 'node-game_result_system_-field_image'.
   $field_instances['node-game_result_system_-field_image'] = array(
     'bundle' => 'game_result_system_',
     'deleted' => 0,
@@ -625,10 +745,14 @@ function battle_reports_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -679,7 +803,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_images'
+  // Exported field_instance: 'node-game_result_system_-field_images'.
   $field_instances['node-game_result_system_-field_images'] = array(
     'bundle' => 'game_result_system_',
     'deleted' => 0,
@@ -699,14 +823,9 @@ function battle_reports_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'single_image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'medium',
-          'single_image_delta' => '',
-        ),
-        'type' => 'single_image',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -759,55 +878,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_its_rating'
-  $field_instances['node-game_result_system_-field_its_rating'] = array(
-    'bundle' => 'game_result_system_',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_its_rating',
-    'label' => 'iTS_Rating',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_hidden',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'field_hidden',
-      'weight' => 73,
-    ),
-  );
-
-  // Exported field_instance: 'node-game_result_system_-field_location'
+  // Exported field_instance: 'node-game_result_system_-field_location'.
   $field_instances['node-game_result_system_-field_location'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => array(),
@@ -830,7 +901,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -857,7 +928,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_mission'
+  // Exported field_instance: 'node-game_result_system_-field_mission'.
   $field_instances['node-game_result_system_-field_mission'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -880,7 +951,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -903,7 +974,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_opponent'
+  // Exported field_instance: 'node-game_result_system_-field_opponent'.
   $field_instances['node-game_result_system_-field_opponent'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -926,7 +997,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -953,7 +1024,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_opponent_s_army'
+  // Exported field_instance: 'node-game_result_system_-field_opponent_s_army'.
   $field_instances['node-game_result_system_-field_opponent_s_army'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => array(),
@@ -976,7 +1047,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -997,7 +1068,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_points_per_army'
+  // Exported field_instance: 'node-game_result_system_-field_points_per_army'.
   $field_instances['node-game_result_system_-field_points_per_army'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -1020,7 +1091,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -1043,7 +1114,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_victory'
+  // Exported field_instance: 'node-game_result_system_-field_victory'.
   $field_instances['node-game_result_system_-field_victory'] = array(
     'bundle' => 'game_result_system_',
     'deleted' => 0,
@@ -1065,7 +1136,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
     ),
     'entity_type' => 'node',
@@ -1084,7 +1155,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_your_army'
+  // Exported field_instance: 'node-game_result_system_-field_your_army'.
   $field_instances['node-game_result_system_-field_your_army'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -1107,7 +1178,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -1128,7 +1199,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_your_commander_survival'
+  // Exported field_instance:
+  // 'node-game_result_system_-field_your_commander_survival'.
   $field_instances['node-game_result_system_-field_your_commander_survival'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -1170,7 +1242,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_result_system_-field_your_results'
+  // Exported field_instance: 'node-game_result_system_-field_your_results'.
   $field_instances['node-game_result_system_-field_your_results'] = array(
     'bundle' => 'game_result_system_',
     'default_value' => NULL,
@@ -1193,7 +1265,7 @@ function battle_reports_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -1214,7 +1286,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-body'
+  // Exported field_instance: 'node-game_results-body'.
   $field_instances['node-game_results-body'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1240,10 +1312,12 @@ function battle_reports_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'ignore',
-          'trim_length' => 300,
+          'trim_length' => 600,
+          'trim_link' => 0,
           'trim_options' => array(
-            'text' => 0,
+            'text' => 'text',
           ),
+          'trim_preserve_tags' => '<a>',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
@@ -1271,7 +1345,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_allied_detatchment'
+  // Exported field_instance: 'node-game_results-field_allied_detatchment'.
   $field_instances['node-game_results-field_allied_detatchment'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1320,7 +1394,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_batteresult_commander'
+  // Exported field_instance: 'node-game_results-field_batteresult_commander'.
   $field_instances['node-game_results-field_batteresult_commander'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1366,7 +1440,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_battle_deployment'
+  // Exported field_instance: 'node-game_results-field_battle_deployment'.
   $field_instances['node-game_results-field_battle_deployment'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1412,7 +1486,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_battle_mission_rules'
+  // Exported field_instance: 'node-game_results-field_battle_mission_rules'.
   $field_instances['node-game_results-field_battle_mission_rules'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1458,7 +1532,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_battle_most_valuable_unit'
+  // Exported field_instance:
+  // 'node-game_results-field_battle_most_valuable_unit'.
   $field_instances['node-game_results-field_battle_most_valuable_unit'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1504,7 +1579,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_battle_my_vc'
+  // Exported field_instance: 'node-game_results-field_battle_my_vc'.
   $field_instances['node-game_results-field_battle_my_vc'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1550,7 +1625,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_battleresult_enemy_command'
+  // Exported field_instance:
+  // 'node-game_results-field_battleresult_enemy_command'.
   $field_instances['node-game_results-field_battleresult_enemy_command'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1598,7 +1674,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_defeat'
+  // Exported field_instance: 'node-game_results-field_defeat'.
   $field_instances['node-game_results-field_defeat'] = array(
     'bundle' => 'game_results',
     'deleted' => 0,
@@ -1639,7 +1715,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_draw'
+  // Exported field_instance: 'node-game_results-field_draw'.
   $field_instances['node-game_results-field_draw'] = array(
     'bundle' => 'game_results',
     'deleted' => 0,
@@ -1680,7 +1756,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_enemy_commander_survival'
+  // Exported field_instance:
+  // 'node-game_results-field_enemy_commander_survival'.
   $field_instances['node-game_results-field_enemy_commander_survival'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1722,7 +1799,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_event_link'
+  // Exported field_instance: 'node-game_results-field_event_link'.
   $field_instances['node-game_results-field_event_link'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1772,51 +1849,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_game'
-  $field_instances['node-game_results-field_game'] = array(
-    'bundle' => 'game_results',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 32,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_game',
-    'label' => 'Game',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 22,
-    ),
-  );
-
-  // Exported field_instance: 'node-game_results-field_game_date'
+  // Exported field_instance: 'node-game_results-field_game_date'.
   $field_instances['node-game_results-field_game_date'] = array(
     'bundle' => 'game_results',
     'deleted' => 0,
@@ -1836,12 +1869,8 @@ function battle_reports_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'interval' => 2,
-          'interval_display' => 'time ago',
-        ),
-        'type' => 'format_interval',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 34,
       ),
     ),
@@ -1874,7 +1903,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_game_reference'
+  // Exported field_instance: 'node-game_results-field_game_reference'.
   $field_instances['node-game_results-field_game_reference'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -1924,7 +1953,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_image'
+  // Exported field_instance: 'node-game_results-field_image'.
   $field_instances['node-game_results-field_image'] = array(
     'bundle' => 'game_results',
     'deleted' => 0,
@@ -1944,12 +1973,8 @@ function battle_reports_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 41,
       ),
     ),
@@ -2001,7 +2026,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_images'
+  // Exported field_instance: 'node-game_results-field_images'.
   $field_instances['node-game_results-field_images'] = array(
     'bundle' => 'game_results',
     'deleted' => 0,
@@ -2077,7 +2102,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_location'
+  // Exported field_instance: 'node-game_results-field_location'.
   $field_instances['node-game_results-field_location'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2098,9 +2123,8 @@ function battle_reports_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'node_reference',
         'settings' => array(),
-        'type' => 'node_reference_default',
+        'type' => 'hidden',
         'weight' => 33,
       ),
     ),
@@ -2128,7 +2152,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_mission'
+  // Exported field_instance: 'node-game_results-field_mission'.
   $field_instances['node-game_results-field_mission'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2174,7 +2198,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_opponent'
+  // Exported field_instance: 'node-game_results-field_opponent'.
   $field_instances['node-game_results-field_opponent'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2266,7 +2290,8 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_opponent_s_allied_detachme'
+  // Exported field_instance:
+  // 'node-game_results-field_opponent_s_allied_detachme'.
   $field_instances['node-game_results-field_opponent_s_allied_detachme'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2315,7 +2340,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_opponent_s_army'
+  // Exported field_instance: 'node-game_results-field_opponent_s_army'.
   $field_instances['node-game_results-field_opponent_s_army'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2364,7 +2389,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_opponent_s_name'
+  // Exported field_instance: 'node-game_results-field_opponent_s_name'.
   $field_instances['node-game_results-field_opponent_s_name'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2409,7 +2434,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_points_per_army'
+  // Exported field_instance: 'node-game_results-field_points_per_army'.
   $field_instances['node-game_results-field_points_per_army'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2455,7 +2480,67 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_victory'
+  // Exported field_instance: 'node-game_results-field_radioactivity'.
+  $field_instances['node-game_results-field_radioactivity'] = array(
+    'bundle' => 'game_results',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445264246,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 33,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 38,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 48,
+    ),
+  );
+
+  // Exported field_instance: 'node-game_results-field_victory'.
   $field_instances['node-game_results-field_victory'] = array(
     'bundle' => 'game_results',
     'deleted' => 0,
@@ -2496,7 +2581,7 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_your_army'
+  // Exported field_instance: 'node-game_results-field_your_army'.
   $field_instances['node-game_results-field_your_army'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2547,7 +2632,7 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_your_commander_survival'
+  // Exported field_instance: 'node-game_results-field_your_commander_survival'.
   $field_instances['node-game_results-field_your_commander_survival'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2589,7 +2674,7 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
-  // Exported field_instance: 'node-game_results-field_your_results'
+  // Exported field_instance: 'node-game_results-field_your_results'.
   $field_instances['node-game_results-field_your_results'] = array(
     'bundle' => 'game_results',
     'default_value' => NULL,
@@ -2633,7 +2718,7 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-deployment-field_image'
+  // Exported field_instance: 'taxonomy_term-deployment-field_image'.
   $field_instances['taxonomy_term-deployment-field_image'] = array(
     'bundle' => 'deployment',
     'deleted' => 0,
@@ -2699,7 +2784,8 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-scenario_special_rules-field_image'
+  // Exported field_instance:
+  // 'taxonomy_term-scenario_special_rules-field_image'.
   $field_instances['taxonomy_term-scenario_special_rules-field_image'] = array(
     'bundle' => 'scenario_special_rules',
     'deleted' => 0,
@@ -2765,7 +2851,7 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-units-field_contribute_term'
+  // Exported field_instance: 'taxonomy_term-units-field_contribute_term'.
   $field_instances['taxonomy_term-units-field_contribute_term'] = array(
     'bundle' => 'units',
     'default_value' => NULL,
@@ -2812,7 +2898,7 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-units-field_image'
+  // Exported field_instance: 'taxonomy_term-units-field_image'.
   $field_instances['taxonomy_term-units-field_image'] = array(
     'bundle' => 'units',
     'deleted' => 0,
@@ -2878,7 +2964,7 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-victory_conditions-field_image'
+  // Exported field_instance: 'taxonomy_term-victory_conditions-field_image'.
   $field_instances['taxonomy_term-victory_conditions-field_image'] = array(
     'bundle' => 'victory_conditions',
     'deleted' => 0,
@@ -2962,7 +3048,6 @@ You must select one of the available options.  If you do not see your army for s
 You must select one of the available options.  If you do not see your army for some reason please contact us.');
   t('Enter the army your opponent played during this game.  You must select one of the available options.  If you do not see your army for some reason please contact us.');
   t('Event');
-  t('Game');
   t('Game Reference');
   t('If you happen to know that your opponent is registered with iToysoldiers you can type in their ID here.  It\'ll send them a notification of the battle so that they can acknowledge it.');
   t('Image');
@@ -2977,6 +3062,7 @@ You must select one of the available options.  If you do not see your army for s
   t('Opponent\'s Army');
   t('Opponent\'s Name');
   t('Points per army');
+  t('Radioactivity');
   t('The battlefield represents the real life location of where the game was played.  You can start typing a likely name but if you don\'t find the location (many clubs and store locations are already there) then you can click the "Add Battlefield" button and you will be prompted to add a battlefield.');
   t('This is the unit or model that functions as the commander of your army.  It could represent your caster, your warlord, or captain.');
   t('Victory');
@@ -2984,7 +3070,6 @@ You must select one of the available options.  If you do not see your army for s
   t('Your Army');
   t('Your Commander Survival');
   t('Your Results');
-  t('iTS_Rating');
 
   return $field_instances;
 }

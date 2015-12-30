@@ -87,7 +87,7 @@ $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
 $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
 $handler->display->display_options['fields']['nid']['alter']['text'] = 'Battles:  [nid]';
 $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-/* Field: SUM(Field: Victory) */
+/* Field: SUM(Content: Victory) */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';

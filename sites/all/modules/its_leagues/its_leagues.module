@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the iTS Leagues feature.
- */
-
-include_once 'its_leagues.features.inc';

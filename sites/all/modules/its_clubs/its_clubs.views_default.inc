@@ -12,8 +12,8 @@ function its_clubs_views_default_views() {
 
   $view = new view();
   $view->name = 'group_all_distinction';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Various panels to display the distinction of clubs.';
+  $view->tag = 'Clubs 1.0';
   $view->base_table = 'userpoints_txn';
   $view->human_name = 'Groups: All: Distinction';
   $view->core = 7;
@@ -43,6 +43,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['arguments']['entity_id']['table'] = 'userpoints_txn';
   $handler->display->display_options['arguments']['entity_id']['field'] = 'entity_id';
   $handler->display->display_options['arguments']['entity_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['entity_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['entity_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['entity_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['entity_id']['summary_options']['items_per_page'] = '25';
@@ -348,6 +349,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'taxonomy_forums_tid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
@@ -377,6 +379,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'taxonomy_forums_tid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
@@ -396,8 +399,8 @@ function its_clubs_views_default_views() {
 
   $view = new view();
   $view->name = 'groups_all_lists';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Assorted list of Clubs';
+  $view->tag = 'Clubs 1.0';
   $view->base_table = 'node';
   $view->human_name = 'Groups: All: Lists';
   $view->core = 7;
@@ -418,6 +421,12 @@ function its_clubs_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Advanced options',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_supported_games_tid_selective' => array(
       'bef_format' => 'default',
@@ -430,12 +439,44 @@ function its_clubs_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_geofield_distance' => array(
       'bef_format' => 'default',
@@ -445,6 +486,13 @@ function its_clubs_views_default_views() {
         'bef_slider_step' => '1',
         'bef_slider_animate' => '',
         'bef_slider_orientation' => 'horizontal',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
       'more_options' => array(
         'is_secondary' => 0,
@@ -453,13 +501,52 @@ function its_clubs_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'filtered_html';
@@ -584,7 +671,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['path'] = 'community/gaming-clubs/list';
+  $handler->display->display_options['path'] = 'order-of-battle/gaming-clubs/list';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All Clubs';
   $handler->display->display_options['menu']['description'] = 'List of all Gaming Clubs on iToysoldiers';
@@ -630,8 +717,8 @@ function its_clubs_views_default_views() {
 
   $view = new view();
   $view->name = 'groups_all_page_layout';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Page Elements for club nodes';
+  $view->tag = 'Clubs 1.0';
   $view->base_table = 'node';
   $view->human_name = 'Groups: All: Page Layout';
   $view->core = 7;
@@ -649,6 +736,9 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -714,6 +804,7 @@ function its_clubs_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Meta', 'panel_pane_2');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -721,6 +812,12 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field: Battlefield (field_location) */
+  $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
+  $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
+  $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
+  $handler->display->display_options['relationships']['field_location_nid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Supported Games */
   $handler->display->display_options['fields']['field_supported_games']['id'] = 'field_supported_games';
@@ -736,31 +833,51 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel-stat3 bg-success">
-  <h2 class="m-top-none">[field_supported_games]</h2>
-  <h5>Game System</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-book fa-3" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-book"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_supported_games]</strong>
+        <div class="text-muted">Game Systems</div>
+    </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Field: Content: Address */
+  $handler->display->display_options['fields']['field_address_battlefield']['id'] = 'field_address_battlefield';
+  $handler->display->display_options['fields']['field_address_battlefield']['table'] = 'field_data_field_address_battlefield';
+  $handler->display->display_options['fields']['field_address_battlefield']['field'] = 'field_address_battlefield';
+  $handler->display->display_options['fields']['field_address_battlefield']['relationship'] = 'field_location_nid';
+  $handler->display->display_options['fields']['field_address_battlefield']['label'] = '';
+  $handler->display->display_options['fields']['field_address_battlefield']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_address_battlefield']['element_label_colon'] = FALSE;
   /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['label'] = '';
   $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['text'] = '<div class="panel-stat3 bg-warning">
-  <h2 class="m-top-none">[field_location]</h2>
-  <h5>Battlefield</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-globe fa-3" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['field_location']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-map-marker"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_location]</strong>
+        <div class="text-muted">[field_address_battlefield]</div>
+    </div>
 </div>';
-  $handler->display->display_options['fields']['field_location']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_location']['alter']['path'] = 'node/[field_location-nid]';
   $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['type'] = 'node_reference_plain';
+  $handler->display->display_options['fields']['field_location']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_location']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Organic Groups';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -837,8 +954,10 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group col-xs-12 col-sm-6';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = 'privatemsg_link';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -1016,7 +1135,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Address */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
@@ -1024,13 +1143,6 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['fields']['field_address']['label'] = '';
   $handler->display->display_options['fields']['field_address']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
-    ),
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1047,7 +1159,6 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['fields']['field_website_1']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website_1']['field'] = 'field_website';
   $handler->display->display_options['fields']['field_website_1']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_website_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_website_1']['click_sort_column'] = 'url';
   $handler->display->display_options['pane_category']['name'] = 'Organic Groups';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -1080,16 +1191,23 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
   $handler->display->display_options['fields']['uid']['label'] = '';
   $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['text'] = '<div class="panel-stat3 bg-info">
-  <h2 class="m-top-none">[uid]</h2>
-  <h5>members</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-user fa-3" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['uid']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-users"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[uid]</strong>
+        <div class="text-muted">Members</div>
+    </div>
 </div>';
   $handler->display->display_options['fields']['uid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['uid']['alter']['path'] = 'node/!1/roster';
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['uid']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -1098,6 +1216,14 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'gaming_club' => 'gaming_club',
+  );
+  /* Filter criterion: OG membership: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['relationship'] = 'og_membership_rel_group';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    1 => '1',
   );
   $handler->display->display_options['pane_category']['name'] = 'Organic Groups';
   $handler->display->display_options['pane_category']['weight'] = '0';

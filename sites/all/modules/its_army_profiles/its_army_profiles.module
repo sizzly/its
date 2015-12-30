@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iTS Army Profiles feature.
+ */
+
+include_once 'its_army_profiles.features.inc';

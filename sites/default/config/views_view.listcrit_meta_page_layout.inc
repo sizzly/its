@@ -54,14 +54,14 @@ $handler->display->display_options['fields']['name_1']['relationship'] = 'parent
 $handler->display->display_options['fields']['name_1']['label'] = '';
 $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['name_1']['link_to_taxonomy'] = TRUE;
-/* Field: Field: Chronicle Icon */
+/* Field: Taxonomy term: Chronicle Icon */
 $handler->display->display_options['fields']['field_chronicle_icon_1']['id'] = 'field_chronicle_icon_1';
 $handler->display->display_options['fields']['field_chronicle_icon_1']['table'] = 'field_data_field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon_1']['field'] = 'field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon_1']['label'] = '';
 $handler->display->display_options['fields']['field_chronicle_icon_1']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_chronicle_icon_1']['element_label_colon'] = FALSE;
-/* Field: Field: Chronicle Icon */
+/* Field: Taxonomy term: Chronicle Icon */
 $handler->display->display_options['fields']['field_chronicle_icon']['id'] = 'field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['table'] = 'field_data_field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['field'] = 'field_chronicle_icon';
@@ -129,7 +129,7 @@ $handler->display->display_options['fields']['name_1']['element_type'] = 'h5';
 $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['name_1']['empty'] = 'Primary';
 $handler->display->display_options['fields']['name_1']['link_to_taxonomy'] = TRUE;
-/* Field: Field: Chronicle Icon */
+/* Field: Taxonomy term: Chronicle Icon */
 $handler->display->display_options['fields']['field_chronicle_icon_1']['id'] = 'field_chronicle_icon_1';
 $handler->display->display_options['fields']['field_chronicle_icon_1']['table'] = 'field_data_field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon_1']['field'] = 'field_chronicle_icon';
@@ -139,7 +139,7 @@ $handler->display->display_options['fields']['field_chronicle_icon_1']['alter'][
     <span class="glyphicon glyphicon-[field_chronicle_icon_1-value]" aria-hidden="true"></span>
   </div>';
 $handler->display->display_options['fields']['field_chronicle_icon_1']['element_label_colon'] = FALSE;
-/* Field: Field: Chronicle Icon */
+/* Field: Taxonomy term: Chronicle Icon */
 $handler->display->display_options['fields']['field_chronicle_icon']['id'] = 'field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['table'] = 'field_data_field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['field'] = 'field_chronicle_icon';
@@ -184,7 +184,7 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Field: Chronicle Icon */
+/* Field: Taxonomy term: Chronicle Icon */
 $handler->display->display_options['fields']['field_chronicle_icon']['id'] = 'field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['table'] = 'field_data_field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['field'] = 'field_chronicle_icon';
@@ -244,7 +244,7 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Field: Chronicle Icon */
+/* Field: Taxonomy term: Chronicle Icon */
 $handler->display->display_options['fields']['field_chronicle_icon']['id'] = 'field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['table'] = 'field_data_field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['field'] = 'field_chronicle_icon';

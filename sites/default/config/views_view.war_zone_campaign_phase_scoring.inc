@@ -40,7 +40,7 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
 );
-/* Relationship: Entity Reference: Referenced Entity */
+/* Relationship: Broken/missing handler */
 $handler->display->display_options['relationships']['field_registration_sc_target_id']['id'] = 'field_registration_sc_target_id';
 $handler->display->display_options['relationships']['field_registration_sc_target_id']['table'] = 'field_data_field_registration_sc';
 $handler->display->display_options['relationships']['field_registration_sc_target_id']['field'] = 'field_registration_sc_target_id';
@@ -50,7 +50,7 @@ $handler->display->display_options['relationships']['field_register_faction_targ
 $handler->display->display_options['relationships']['field_register_faction_target_id']['table'] = 'field_data_field_register_faction';
 $handler->display->display_options['relationships']['field_register_faction_target_id']['field'] = 'field_register_faction_target_id';
 $handler->display->display_options['relationships']['field_register_faction_target_id']['relationship'] = 'field_registration_sc_target_id';
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
@@ -73,7 +73,7 @@ $handler->display->display_options['sorts']['field_your_results_value']['table']
 $handler->display->display_options['sorts']['field_your_results_value']['field'] = 'field_your_results_value';
 $handler->display->display_options['sorts']['field_your_results_value']['group_type'] = 'sum';
 $handler->display->display_options['sorts']['field_your_results_value']['order'] = 'DESC';
-/* Contextual filter: Entityform Submission: Phase (field_phase_sc) */
+/* Contextual filter: Broken/missing handler */
 $handler->display->display_options['arguments']['field_phase_sc_target_id']['id'] = 'field_phase_sc_target_id';
 $handler->display->display_options['arguments']['field_phase_sc_target_id']['table'] = 'field_data_field_phase_sc';
 $handler->display->display_options['arguments']['field_phase_sc_target_id']['field'] = 'field_phase_sc_target_id';
@@ -159,13 +159,13 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'field_register_faction_target_id';
 $handler->display->display_options['fields']['field_title_chronicle']['label'] = 'Faction';
-/* Field: SUM(Entityform Submission: Aggregate Score) */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_aggregate_score_sc']['id'] = 'field_aggregate_score_sc';
 $handler->display->display_options['fields']['field_aggregate_score_sc']['table'] = 'field_data_field_aggregate_score_sc';
 $handler->display->display_options['fields']['field_aggregate_score_sc']['field'] = 'field_aggregate_score_sc';
@@ -184,5 +184,4 @@ $modules = array(
   2 => 'text',
   3 => 'list',
   4 => 'views_content',
-  5 => 'computed_field',
 );

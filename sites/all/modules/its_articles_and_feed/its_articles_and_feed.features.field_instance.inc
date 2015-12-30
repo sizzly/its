@@ -10,7 +10,7 @@
 function its_articles_and_feed_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-article-body'
+  // Exported field_instance: 'node-article-body'.
   $field_instances['node-article-body'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -60,7 +60,7 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_event_link'
+  // Exported field_instance: 'node-article-field_event_link'.
   $field_instances['node-article-field_event_link'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -119,7 +119,7 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_image'
+  // Exported field_instance: 'node-article-field_image'.
   $field_instances['node-article-field_image'] = array(
     'bundle' => 'article',
     'deleted' => 0,
@@ -127,9 +127,12 @@ function its_articles_and_feed_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'lightbox2',
-        'settings' => array(),
-        'type' => 'lightbox2__lightbox__medium__original',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 1,
       ),
       'ical' => array(
@@ -198,7 +201,67 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_tags'
+  // Exported field_instance: 'node-article-field_radioactivity'.
+  $field_instances['node-article-field_radioactivity'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 50,
+        'radioactivity_timestamp' => 1445264157,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 9,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 5,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_tags'.
   $field_instances['node-article-field_tags'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -243,7 +306,7 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_website'
+  // Exported field_instance: 'node-article-field_website'.
   $field_instances['node-article-field_website'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -306,7 +369,7 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-og_group_ref'
+  // Exported field_instance: 'node-article-og_group_ref'.
   $field_instances['node-article-og_group_ref'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -387,7 +450,7 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_source-body'
+  // Exported field_instance: 'node-news_source-body'.
   $field_instances['node-news_source-body'] = array(
     'bundle' => 'news_source',
     'default_value' => NULL,
@@ -431,7 +494,7 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_source-field_website'
+  // Exported field_instance: 'node-news_source-field_website'.
   $field_instances['node-news_source-field_website'] = array(
     'bundle' => 'news_source',
     'default_value' => NULL,
@@ -494,6 +557,7 @@ function its_articles_and_feed_field_default_field_instances() {
   t('Enter a comma-separated list of words to describe your content.');
   t('Groups audience');
   t('Image');
+  t('Radioactivity');
   t('Source');
   t('Tags');
   t('Upload an image to go with this article.');

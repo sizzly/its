@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iTS Achievements feature.
+ */
+
+include_once 'its_achievements.features.inc';

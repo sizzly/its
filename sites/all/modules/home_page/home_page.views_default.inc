@@ -12,8 +12,8 @@ function home_page_views_default_views() {
 
   $view = new view();
   $view->name = 'home_page_element_count';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'For the Anonymous Home Page. Lists counts of various things.';
+  $view->tag = 'Home Page 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Home Page: Element Count';
   $view->core = 7;
@@ -198,8 +198,8 @@ function home_page_views_default_views() {
 
   $view = new view();
   $view->name = 'home_page_first_block';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the "Featured Content" panel on the Anonymous home page.';
+  $view->tag = 'Home Page 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Home Page: First Block';
   $view->core = 7;
@@ -290,7 +290,6 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div id="mycarousel" class="carousel slide" data-ride="carousel">
    <div class="carousel-inner">
       <div class="item active">
-      [field_images]
       [field_image]
          <div class="carousel-caption well well-sm shade">
          <h3>[title]</h3>
@@ -337,8 +336,8 @@ function home_page_views_default_views() {
 
   $view = new view();
   $view->name = 'home_page_game_list';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'The list of supported games - also has the meta page list.  Should be separate.';
+  $view->tag = 'Home Page 2.0';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'Home Page: Game List';
   $view->core = 7;
@@ -372,7 +371,7 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="glyphicon glyphicon-star"></span> [name]';
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="glyphicon glyphicon-book"></span> [name]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_type'] = 'h4';
@@ -400,12 +399,22 @@ function home_page_views_default_views() {
 
   /* Display: Meta Page */
   $handler = $view->new_display('panel_pane', 'Meta Page', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['home_page_game_list'] = $view;
 
   $view = new view();
   $view->name = 'home_page_list_crit';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the List Crit panel for the Anonymous Home Page';
+  $view->tag = 'Home Page 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Home Page: List Crit';
   $view->core = 7;
@@ -507,8 +516,8 @@ function home_page_views_default_views() {
 
   $view = new view();
   $view->name = 'home_page_recent_stuff';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the recent messages panel for the Anonymous Home page.';
+  $view->tag = 'Home Page 2.0';
   $view->base_table = 'message';
   $view->human_name = 'Home Page: Recent Stuff';
   $view->core = 7;
@@ -566,8 +575,8 @@ function home_page_views_default_views() {
 
   $view = new view();
   $view->name = 'home_page_second_block';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the panel of active factions/games for the anonymous home page.';
+  $view->tag = 'Home Page 2.0';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'Home Page: Second Block';
   $view->core = 7;
@@ -620,14 +629,13 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_army_game']['id'] = 'field_army_game';
   $handler->display->display_options['fields']['field_army_game']['table'] = 'field_data_field_army_game';
   $handler->display->display_options['fields']['field_army_game']['field'] = 'field_army_game';
   $handler->display->display_options['fields']['field_army_game']['label'] = '';
   $handler->display->display_options['fields']['field_army_game']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_army_game']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_army_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -686,14 +694,6 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: Game */
-  $handler->display->display_options['fields']['field_army_game']['id'] = 'field_army_game';
-  $handler->display->display_options['fields']['field_army_game']['table'] = 'field_data_field_army_game';
-  $handler->display->display_options['fields']['field_army_game']['field'] = 'field_army_game';
-  $handler->display->display_options['fields']['field_army_game']['label'] = '';
-  $handler->display->display_options['fields']['field_army_game']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_army_game']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_army_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -705,7 +705,6 @@ function home_page_views_default_views() {
          [field_image]
          <div class="carousel-caption well well-sm shade">
             <h3>[name]</h3>
-            [field_army_game]
          </div>
       </div>
    </div>
@@ -720,8 +719,8 @@ function home_page_views_default_views() {
 
   $view = new view();
   $view->name = 'home_page_trending_player';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the Trending Player panel (the real one)';
+  $view->tag = 'Home Page 2.0';
   $view->base_table = 'userpoints_txn';
   $view->human_name = 'Home Page: Trending Player';
   $view->core = 7;
@@ -828,8 +827,28 @@ function home_page_views_default_views() {
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'bef_filter_description' => '',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -935,20 +954,11 @@ function home_page_views_default_views() {
     'style_field' => '',
   );
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Field: Game (field_game) */
-  $handler->display->display_options['relationships']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['relationships']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['relationships']['field_game_tid']['field'] = 'field_game_tid';
   /* Relationship: Field: Battlefield (field_location) */
   $handler->display->display_options['relationships']['field_location_nid']['id'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['table'] = 'field_data_field_location';
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['delta'] = '-1';
-  /* Relationship: Taxonomy term: Location icon (field_location_icon:fid) */
-  $handler->display->display_options['relationships']['field_location_icon_fid']['id'] = 'field_location_icon_fid';
-  $handler->display->display_options['relationships']['field_location_icon_fid']['table'] = 'field_data_field_location_icon';
-  $handler->display->display_options['relationships']['field_location_icon_fid']['field'] = 'field_location_icon_fid';
-  $handler->display->display_options['relationships']['field_location_icon_fid']['relationship'] = 'field_game_tid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -973,12 +983,6 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: File: Path */
-  $handler->display->display_options['fields']['uri']['id'] = 'uri';
-  $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
-  $handler->display->display_options['fields']['uri']['field'] = 'uri';
-  $handler->display->display_options['fields']['uri']['relationship'] = 'taxonomy_term_to_file';
-  $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

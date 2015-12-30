@@ -268,6 +268,12 @@ function its_galleries_views_default_views() {
   );
   $handler->display->display_options['row_options']['separator'] = ' | ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="seperator"></div>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -519,6 +525,9 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -532,24 +541,24 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['fields']['field_blog_army']['table'] = 'field_data_field_blog_army';
   $handler->display->display_options['fields']['field_blog_army']['field'] = 'field_blog_army';
   $handler->display->display_options['fields']['field_blog_army']['label'] = '';
-  $handler->display->display_options['fields']['field_blog_army']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_blog_army']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_blog_army']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-tag"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_blog_army]</strong>
+    </div>
+</div>';
   $handler->display->display_options['fields']['field_blog_army']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_army']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_blog_army']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_blog_army']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_blog_army']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_blog_army']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_blog_army']['delta_offset'] = '0';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel-stat3 bg-info">
-  <h4 class="m-top-none">[field_blog_army]</h4>
-  <h5>Classification</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-  </div>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Blogs';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -826,7 +835,7 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['fields']['field_images']['label'] = '';
   $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_images']['type'] = 'lightbox2__lightbox__large_button__original';
+  $handler->display->display_options['fields']['field_images']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_images']['settings'] = array(
     'image_style' => '',
     'image_link' => '',
@@ -838,6 +847,18 @@ function its_galleries_views_default_views() {
 
   /* Display: Location Meta */
   $handler = $view->new_display('panel_pane', 'Location Meta', 'panel_pane_9');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Theater';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
@@ -845,16 +866,22 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['label'] = '';
   $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['text'] = '<div class="panel-stat3 bg-success">
-  <h2 class="m-top-none">[field_location]</h2>
-  <h5>Battlefield</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-globe fa-3" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['field_location']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-map-marker"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_location]</strong>
+        <div class="text-muted">Battlefield</div>
+    </div>
 </div>';
-  $handler->display->display_options['fields']['field_location']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_location']['alter']['path'] = 'node/[field_location-nid]';
   $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_location']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_location']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_location']['empty_zero'] = TRUE;
   /* Field: Field: Event */
@@ -863,20 +890,26 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['fields']['field_event_link']['field'] = 'field_event_link';
   $handler->display->display_options['fields']['field_event_link']['label'] = '';
   $handler->display->display_options['fields']['field_event_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['alter']['text'] = '<div class="panel-stat3 bg-dark">
-  <h2 class="m-top-none">[field_event_link]</h2>
-  <h5>War Zone</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['field_event_link']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-crosshairs"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_event_link]</strong>
+        <div class="text-muted">War Zone</div>
+    </div>
 </div>';
-  $handler->display->display_options['fields']['field_event_link']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_event_link']['alter']['path'] = 'node/[field_event_link-target_id]';
   $handler->display->display_options['fields']['field_event_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_link']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_event_link']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_event_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_event_link']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_event_link']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_event_link']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   $handler->display->display_options['pane_category']['name'] = 'Blogs';
   $handler->display->display_options['pane_category']['weight'] = '0';
