@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the iTS Activity Feed feature.
- */
-
-include_once 'its_activity_feed.features.inc';

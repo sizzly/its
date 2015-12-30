@@ -1551,13 +1551,182 @@ Rob</p>
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_home_page_panel_context_2';
+  $handler->name = 'page_home_page__panel_context_edd206fc-0014-4a68-ac49-c82d97525db9';
   $handler->task = 'page';
   $handler->subtask = 'home_page';
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Main Home Page',
+    'title' => 'Authenticated User',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '7077fdbc-6db4-43f9-8de0-d0d18be8e8ba';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_node_trending_content-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'hidden-xs',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ff19d553-d9bc-4b62-8c62-6fae301b609f';
+    $display->content['new-ff19d553-d9bc-4b62-8c62-6fae301b609f'] = $pane;
+    $display->panels['contentmain'][0] = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
+    $pane = new stdClass();
+    $pane->pid = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Add to Stream',
+      'title' => '',
+      'body' => '<div class="panel panel-default">
+    <div class="panel-tab clearfix">
+        <ul class="tab-bar">
+            <li class="active"><a href="#home1" data-toggle="tab"><i class="fa fa-bullhorn"></i>Status</a></li>
+            <li><a href="#profile1" data-toggle="tab"><i class="fa fa-fire"></i>Battle</a></li>
+            <li><a href="#message1" data-toggle="tab"><i class="fa fa-image"></i>Image</a></li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="home1">
+                <?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'status\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>
+            </div>
+            <div class="tab-pane fade" id="profile1">
+<div class="well well-sm">
+                <?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'quick_battle\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>
+</div>
+            </div>
+            <div class="tab-pane fade" id="message1">
+<div class="well well-sm">
+               <?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'status_all_upload_image\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+',
+      'format' => 'php_code',
+      'substitute' => 0,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '7a8d6a70-688f-4376-a556-704f146e3143';
+    $display->content['new-7a8d6a70-688f-4376-a556-704f146e3143'] = $pane;
+    $display->panels['contentmain'][1] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
+    $pane = new stdClass();
+    $pane->pid = 'new-70244192-bfd0-46cd-b527-a074a19aefee';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_all_node_timeline-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '70244192-bfd0-46cd-b527-a074a19aefee';
+    $display->content['new-70244192-bfd0-46cd-b527-a074a19aefee'] = $pane;
+    $display->panels['contentmain'][2] = 'new-70244192-bfd0-46cd-b527-a074a19aefee';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_home_page_panel_context_2';
+  $handler->task = 'page';
+  $handler->subtask = 'home_page';
+  $handler->handler = 'panel_context';
+  $handler->weight = -29;
+  $handler->conf = array(
+    'title' => 'Anonymous Home Page',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -1652,7 +1821,7 @@ Rob</p>
     $pane->panel = 'contentmain';
     $pane->type = 'views';
     $pane->subtype = 'maps_battle_map';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,

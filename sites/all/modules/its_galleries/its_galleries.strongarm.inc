@@ -159,8 +159,15 @@ function its_galleries_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_gallery';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_gallery'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_gallery_pattern';
+  $strongarm->value = 'galleries/[node:title]';
+  $export['pathauto_node_gallery_pattern'] = $strongarm;
 
   return $export;
 }

@@ -35,7 +35,7 @@ $handler->display->display_options['fields']['field_your_army']['table'] = 'fiel
 $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
 $handler->display->display_options['fields']['field_your_army']['label'] = 'Most wins commanding ';
 $handler->display->display_options['fields']['field_your_army']['element_type'] = 'strong';
-/* Sort criterion: SUM(Field: Victory (field_victory)) */
+/* Sort criterion: SUM(Content: Victory (field_victory)) */
 $handler->display->display_options['sorts']['field_victory_value']['id'] = 'field_victory_value';
 $handler->display->display_options['sorts']['field_victory_value']['table'] = 'field_data_field_victory';
 $handler->display->display_options['sorts']['field_victory_value']['field'] = 'field_victory_value';

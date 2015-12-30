@@ -382,7 +382,7 @@ $handler->display->display_options['fields']['field_image']['settings'] = array(
   'image_style' => '',
   'image_link' => '',
 );
-/* Field: Field: Short Description */
+/* Field: Content: Short Description */
 $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
 $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
 $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';
@@ -465,7 +465,7 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Field: Short Description */
+/* Field: Content: Short Description */
 $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
 $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
 $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';

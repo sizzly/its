@@ -10,21 +10,13 @@
 function listcrit_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_aux'
+  // Exported field_base: 'field_aux'.
   $field_bases['field_aux'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_aux',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -47,21 +39,13 @@ function listcrit_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_camp'
+  // Exported field_base: 'field_camp'.
   $field_bases['field_camp'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_camp',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -84,21 +68,13 @@ function listcrit_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_doctrine'
+  // Exported field_base: 'field_doctrine'.
   $field_bases['field_doctrine'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_doctrine',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -121,21 +97,13 @@ function listcrit_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_listcrit_component_units'
+  // Exported field_base: 'field_listcrit_component_units'.
   $field_bases['field_listcrit_component_units'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listcrit_component_units',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -157,21 +125,13 @@ function listcrit_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_primary_role'
+  // Exported field_base: 'field_primary_role'.
   $field_bases['field_primary_role'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_primary_role',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -194,14 +154,13 @@ function listcrit_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_rate_content'
+  // Exported field_base: 'field_rate_content'.
   $field_bases['field_rate_content'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_rate_content',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'vud_field',
@@ -214,21 +173,13 @@ function listcrit_field_default_field_bases() {
     'type' => 'vud_field',
   );
 
-  // Exported field_base: 'field_short_description'
+  // Exported field_base: 'field_short_description'.
   $field_bases['field_short_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -244,21 +195,13 @@ function listcrit_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_tactical_focus'
+  // Exported field_base: 'field_tactical_focus'.
   $field_bases['field_tactical_focus'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_tactical_focus',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',

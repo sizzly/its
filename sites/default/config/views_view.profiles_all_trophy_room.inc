@@ -343,7 +343,7 @@ $handler->display->display_options['fields']['field_achievement_category']['elem
 $handler->display->display_options['fields']['field_achievement_category']['settings'] = array(
   'link' => 1,
 );
-/* Field: Field: Short Description */
+/* Field: Content: Short Description */
 $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
 $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
 $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';

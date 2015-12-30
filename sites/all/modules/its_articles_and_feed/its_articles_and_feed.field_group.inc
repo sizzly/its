@@ -24,15 +24,17 @@ function its_articles_and_feed_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'body',
+      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Content Wrapper',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => 'media-body',
         'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
         'attributes' => '',
-        'id' => 'node_article_teaser_group_content_wrapper',
       ),
     ),
   );
@@ -57,10 +59,11 @@ function its_articles_and_feed_field_group_info() {
     'format_settings' => array(
       'label' => 'Image Wrapper',
       'instance_settings' => array(
-        'classes' => 'col-xs-3',
+        'classes' => 'pull-left media-left xs-hidden',
         'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
         'attributes' => '',
-        'id' => 'node_article_teaser_group_image_wrapper',
       ),
     ),
   );
@@ -86,10 +89,11 @@ function its_articles_and_feed_field_group_info() {
     'format_settings' => array(
       'label' => 'Wrapper',
       'instance_settings' => array(
-        'classes' => 'clearfix',
+        'classes' => 'media',
         'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
         'attributes' => '',
-        'id' => 'node_article_teaser_group_wrapper',
       ),
     ),
   );

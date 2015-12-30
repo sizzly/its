@@ -41,6 +41,5 @@ function home_page_menu_default_menu_custom() {
   t('Legal');
   t('iToysoldiers Elsewhere');
 
-
   return $menus;
 }

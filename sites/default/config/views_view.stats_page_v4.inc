@@ -85,19 +85,19 @@ $handler->display->display_options['fields']['field_your_army']['id'] = 'field_y
 $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
 $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
 $handler->display->display_options['fields']['field_your_army']['label'] = 'Army Played';
-/* Field: SUM(Field: Victory) */
+/* Field: SUM(Content: Victory) */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_victory']['label'] = 'Wins';
-/* Field: SUM(Field: Draw) */
+/* Field: SUM(Content: Draw) */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_draw']['label'] = 'Draws';
-/* Field: SUM(Field: Defeat) */
+/* Field: SUM(Content: Defeat) */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
@@ -188,7 +188,7 @@ $handler->display->display_options['filters']['field_points_per_army_value']['ex
   9 => 0,
   8 => 0,
 );
-/* Filter criterion: Field: Mission (field_mission) */
+/* Filter criterion: Content: Mission (field_mission) */
 $handler->display->display_options['filters']['field_mission_tid']['id'] = 'field_mission_tid';
 $handler->display->display_options['filters']['field_mission_tid']['table'] = 'field_data_field_mission';
 $handler->display->display_options['filters']['field_mission_tid']['field'] = 'field_mission_tid';

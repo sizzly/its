@@ -55,18 +55,14 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
 );
-/* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+/* Relationship: Broken/missing handler */
 $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
 $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
 $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
-$handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
-$handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 1;
-/* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+/* Relationship: Broken/missing handler */
 $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
 $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
 $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
-$handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
-$handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 1;
 /* Relationship: Entity Reference: Referenced Entity */
 $handler->display->display_options['relationships']['field_victorious_faction_target_id']['id'] = 'field_victorious_faction_target_id';
 $handler->display->display_options['relationships']['field_victorious_faction_target_id']['table'] = 'field_data_field_victorious_faction';
@@ -75,23 +71,19 @@ $handler->display->display_options['relationships']['field_victorious_faction_ta
 $handler->display->display_options['fields']['rid']['id'] = 'rid';
 $handler->display->display_options['fields']['rid']['table'] = 'relation';
 $handler->display->display_options['fields']['rid']['field'] = 'rid';
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
 $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
 $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
-/* Field: Entityform Submission: Campaign Points */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_campaign_points_narrative']['id'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['table'] = 'field_data_field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['field'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
-$handler->display->display_options['fields']['field_campaign_points_narrative']['settings'] = array(
-  'thousand_separator' => ' ',
-  'prefix_suffix' => 1,
-);
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
 $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
@@ -152,24 +144,20 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'field_victorious_faction_target_id';
 $handler->display->display_options['fields']['field_title_chronicle']['label'] = 'Victorious Faction';
 $handler->display->display_options['fields']['field_title_chronicle']['empty'] = 'Contested';
-/* Field: SUM(Entityform Submission: Campaign Points) */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_campaign_points_narrative']['id'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['table'] = 'field_data_field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['field'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['empty'] = '0';
-$handler->display->display_options['fields']['field_campaign_points_narrative']['settings'] = array(
-  'thousand_separator' => ' ',
-  'prefix_suffix' => 1,
-);
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Relation: Relation type */
@@ -196,17 +184,13 @@ $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '1';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: SUM(Entityform Submission: Campaign Points) */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_campaign_points_narrative']['id'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['table'] = 'field_data_field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['field'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['group_type'] = 'sum';
-$handler->display->display_options['fields']['field_campaign_points_narrative']['settings'] = array(
-  'thousand_separator' => ' ',
-  'prefix_suffix' => 1,
-);
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
 $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
@@ -220,7 +204,7 @@ $handler->display->display_options['fields']['entityform_id']['relationship'] = 
 $handler->display->display_options['fields']['entityform_id']['label'] = 'Faction ID';
 $handler->display->display_options['fields']['entityform_id']['separator'] = '';
 $handler->display->display_options['defaults']['sorts'] = FALSE;
-/* Sort criterion: SUM(Entityform Submission: Campaign Points (field_campaign_points_narrative)) */
+/* Sort criterion: Broken/missing handler */
 $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['id'] = 'field_campaign_points_narrative_value';
 $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['table'] = 'field_data_field_campaign_points_narrative';
 $handler->display->display_options['sorts']['field_campaign_points_narrative_value']['field'] = 'field_campaign_points_narrative_value';
@@ -285,14 +269,14 @@ $handler->display->display_options['fields']['rid']['id'] = 'rid';
 $handler->display->display_options['fields']['rid']['table'] = 'relation';
 $handler->display->display_options['fields']['rid']['field'] = 'rid';
 $handler->display->display_options['fields']['rid']['separator'] = '';
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
 $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
 $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
 $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
@@ -367,14 +351,14 @@ $handler->display->display_options['fields']['rid']['id'] = 'rid';
 $handler->display->display_options['fields']['rid']['table'] = 'relation';
 $handler->display->display_options['fields']['rid']['field'] = 'rid';
 $handler->display->display_options['fields']['rid']['separator'] = '';
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['relationship'] = 'relation_base_campaign_phase_instance_entityform';
 $handler->display->display_options['fields']['field_title_chronicle']['label'] = '';
 $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle_1']['id'] = 'field_title_chronicle_1';
 $handler->display->display_options['fields']['field_title_chronicle_1']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle_1']['field'] = 'field_title_chronicle';
@@ -448,7 +432,6 @@ $modules = array(
   0 => 'views',
   1 => 'relation',
   2 => 'text',
-  3 => 'number',
-  4 => 'views_content',
-  5 => 'list',
+  3 => 'views_content',
+  4 => 'list',
 );

@@ -10,14 +10,13 @@
 function profiles_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_facebook'
+  // Exported field_base: 'field_facebook'.
   $field_bases['field_facebook'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_facebook',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -41,14 +40,13 @@ function profiles_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_pinterest'
+  // Exported field_base: 'field_pinterest'.
   $field_bases['field_pinterest'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pinterest',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -72,14 +70,13 @@ function profiles_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_twitter'
+  // Exported field_base: 'field_twitter'.
   $field_bases['field_twitter'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_twitter',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',

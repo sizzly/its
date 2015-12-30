@@ -10,7 +10,183 @@
 function its_galleries_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-gallery-body'
+  // Exported field_instance:
+  // 'entityform-status_all_upload_image-field_associated_nodes_stream'.
+  $field_instances['entityform-status_all_upload_image-field_associated_nodes_stream'] = array(
+    'bundle' => 'status_all_upload_image',
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_associated_nodes_stream',
+    'label' => 'Associated Nodes',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'action' => 'hide',
+          'action_on_edit' => 1,
+          'fallback' => 'hide',
+          'providers' => array(
+            'og_context' => 0,
+            'token_patterns' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+          'token_patterns' => '',
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-status_all_upload_image-field_status_content_reference'.
+  $field_instances['entityform-status_all_upload_image-field_status_content_reference'] = array(
+    'bundle' => 'status_all_upload_image',
+    'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_status_content_reference',
+    'label' => 'Status Content Reference',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'action' => 'hide',
+          'action_on_edit' => 1,
+          'fallback' => 'hide',
+          'providers' => array(
+            'og_context' => 0,
+            'token_patterns' => 1,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+          'token_patterns' => '%node:nid',
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-status_all_upload_image-field_status_upload_images'.
+  $field_instances['entityform-status_all_upload_image-field_status_upload_images'] = array(
+    'bundle' => 'status_all_upload_image',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'colorbox',
+        'settings' => array(
+          'colorbox_caption' => 'custom',
+          'colorbox_caption_custom' => '[file:name]',
+          'colorbox_gallery' => 'post',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => 'large',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'large_button',
+          'colorbox_node_style_first' => '',
+        ),
+        'type' => 'colorbox',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_status_upload_images',
+    'label' => 'Upload',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-gallery-body'.
   $field_instances['node-gallery-body'] = array(
     'bundle' => 'gallery',
     'default_value' => NULL,
@@ -37,17 +213,17 @@ function its_galleries_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'ignore',
-          'trim_length' => 300,
-          'trim_link' => FALSE,
+          'trim_length' => 600,
+          'trim_link' => 0,
           'trim_options' => array(
             'text' => 'text',
           ),
-          'trim_preserve_tags' => '',
+          'trim_preserve_tags' => '<a>',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 13,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -70,7 +246,7 @@ function its_galleries_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_blog_army'
+  // Exported field_instance: 'node-gallery-field_blog_army'.
   $field_instances['node-gallery-field_blog_army'] = array(
     'bundle' => 'gallery',
     'default_value' => NULL,
@@ -117,7 +293,7 @@ function its_galleries_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_event_link'
+  // Exported field_instance: 'node-gallery-field_event_link'.
   $field_instances['node-gallery-field_event_link'] = array(
     'bundle' => 'gallery',
     'default_value' => array(),
@@ -168,7 +344,79 @@ function its_galleries_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_images'
+  // Exported field_instance: 'node-gallery-field_image'.
+  $field_instances['node-gallery-field_image'] = array(
+    'bundle' => 'gallery',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 9,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 18,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Teaser Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 21788,
+      'file_directory' => 'user/u[current-user:uid]',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-gallery-field_images'.
   $field_instances['node-gallery-field_images'] = array(
     'bundle' => 'gallery',
     'default_value' => array(),
@@ -190,20 +438,15 @@ function its_galleries_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'single_image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'user_avatar',
-          'single_image_delta' => '',
-        ),
-        'type' => 'single_image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_images',
     'label' => 'Images',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
@@ -223,40 +466,23 @@ function its_galleries_field_default_field_instances() {
           'public' => 'public',
         ),
         'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
           'image' => 'image',
+          'video' => 0,
         ),
-        'browser_plugins' => array(),
-        'dragdropfile_enabled' => 0,
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 'imce',
-            'reference' => 0,
-            'remote' => 'remote',
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_location'
+  // Exported field_instance: 'node-gallery-field_location'.
   $field_instances['node-gallery-field_location'] = array(
     'bundle' => 'gallery',
     'default_value' => NULL,
@@ -307,7 +533,67 @@ function its_galleries_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_site_event'
+  // Exported field_instance: 'node-gallery-field_radioactivity'.
+  $field_instances['node-gallery-field_radioactivity'] = array(
+    'bundle' => 'gallery',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445264626,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 8,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-gallery-field_site_event'.
   $field_instances['node-gallery-field_site_event'] = array(
     'bundle' => 'gallery',
     'default_value' => array(
@@ -357,6 +643,7 @@ function its_galleries_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Associated Nodes');
   t('Battlefield');
   t('Body');
   t('Categories');
@@ -364,8 +651,12 @@ function its_galleries_field_default_field_instances() {
   t('Event');
   t('If this series of photos was taken at a particular battlefield then enter that here.');
   t('Images');
+  t('Radioactivity');
   t('Select the event where the photos were taken.');
+  t('Status Content Reference');
   t('Taken at a listed event?');
+  t('Teaser Image');
+  t('Upload');
 
   return $field_instances;
 }

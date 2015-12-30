@@ -179,7 +179,7 @@ $handler->display->display_options['fields']['field_battle_deployment']['element
 $handler->display->display_options['fields']['field_battle_deployment']['element_wrapper_type'] = 'div';
 $handler->display->display_options['fields']['field_battle_deployment']['element_wrapper_class'] = 'list-group-item';
 $handler->display->display_options['fields']['field_battle_deployment']['hide_empty'] = TRUE;
-/* Field: Field: Mission */
+/* Field: Content: Mission */
 $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
 $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
 $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
@@ -1267,7 +1267,7 @@ $handler->display->display_options['fields']['field_battle_mission_rules']['fiel
 $handler->display->display_options['fields']['field_battle_mission_rules']['label'] = '';
 $handler->display->display_options['fields']['field_battle_mission_rules']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_battle_mission_rules']['delta_offset'] = '0';
-/* Field: Field: Mission */
+/* Field: Content: Mission */
 $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
 $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
 $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';

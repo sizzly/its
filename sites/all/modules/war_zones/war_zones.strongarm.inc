@@ -41,6 +41,13 @@ function war_zones_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_war_zone_league';
+  $strongarm->value = 0;
+  $export['comment_anonymous_war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_war_zone_tournament';
   $strongarm->value = 0;
   $export['comment_anonymous_war_zone_tournament'] = $strongarm;
@@ -72,6 +79,13 @@ function war_zones_strongarm() {
   $strongarm->name = 'comment_default_mode_special_event';
   $strongarm->value = 1;
   $export['comment_default_mode_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_war_zone_league';
+  $strongarm->value = 1;
+  $export['comment_default_mode_war_zone_league'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -111,6 +125,13 @@ function war_zones_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_war_zone_league';
+  $strongarm->value = '150';
+  $export['comment_default_per_page_war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_war_zone_tournament';
   $strongarm->value = '50';
   $export['comment_default_per_page_war_zone_tournament'] = $strongarm;
@@ -142,6 +163,13 @@ function war_zones_strongarm() {
   $strongarm->name = 'comment_form_location_special_event';
   $strongarm->value = 0;
   $export['comment_form_location_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_war_zone_league';
+  $strongarm->value = 0;
+  $export['comment_form_location_war_zone_league'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -202,6 +230,13 @@ function war_zones_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_war_zone_league';
+  $strongarm->value = '0';
+  $export['comment_preview_war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_war_zone_tournament';
   $strongarm->value = '1';
   $export['comment_preview_war_zone_tournament'] = $strongarm;
@@ -244,9 +279,23 @@ function war_zones_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_war_zone_league';
+  $strongarm->value = 0;
+  $export['comment_subject_field_war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_war_zone_tournament';
   $strongarm->value = 0;
   $export['comment_subject_field_war_zone_tournament'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_war_zone_league';
+  $strongarm->value = '2';
+  $export['comment_war_zone_league'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -289,7 +338,28 @@ function war_zones_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_a_warzone_has_begun'] = $strongarm;
@@ -302,7 +372,28 @@ function war_zones_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_a_warzone_has_ended'] = $strongarm;
@@ -315,7 +406,28 @@ function war_zones_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_new_war_zone'] = $strongarm;
@@ -328,7 +440,28 @@ function war_zones_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_cancels_registration_for_warzone'] = $strongarm;
@@ -341,7 +474,28 @@ function war_zones_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_registers_for_warzone'] = $strongarm;
@@ -354,7 +508,28 @@ function war_zones_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__war_zone_all_anonymous_actions'] = $strongarm;
@@ -664,6 +839,168 @@ function war_zones_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__war_zone_league';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '11',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '10',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '12',
+        ),
+        'badges' => array(
+          'weight' => '13',
+        ),
+        'locations' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(
+        'registration_link' => array(
+          'default' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_form' => array(
+          'default' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_start_round_robin_league' => array(
+          'default' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_close_war_zone' => array(
+          'default' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_open_war_zone' => array(
+          'default' => array(
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_join_war_zone' => array(
+          'default' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_next_round' => array(
+          'default' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_complete_warzone' => array(
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_war_zone_open_league' => array(
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'rules_links_war_zone_start_league' => array(
+          'teaser' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_slots_left' => array(
+          'teaser' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_unregistrable_reason' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_node__war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__war_zone_tournament';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -757,6 +1094,15 @@ function war_zones_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_war_zone_league';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_war_zone_tournament';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -790,6 +1136,13 @@ function war_zones_strongarm() {
   $strongarm->name = 'menu_parent_special_event';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_war_zone_league';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_war_zone_league'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -836,6 +1189,15 @@ function war_zones_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_war_zone_league';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_war_zone_tournament';
   $strongarm->value = array(
     0 => 'status',
@@ -869,6 +1231,13 @@ function war_zones_strongarm() {
   $strongarm->name = 'node_preview_special_event';
   $strongarm->value = '1';
   $export['node_preview_special_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_war_zone_league';
+  $strongarm->value = '1';
+  $export['node_preview_war_zone_league'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1255,6 +1624,13 @@ Event start: [node:event-start].',
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_war_zone_league';
+  $strongarm->value = 1;
+  $export['node_submitted_war_zone_league'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_war_zone_tournament';
   $strongarm->value = 1;
   $export['node_submitted_war_zone_tournament'] = $strongarm;
@@ -1286,6 +1662,13 @@ Event start: [node:event-start].',
   $strongarm->name = 'pathauto_node_special_event_pattern';
   $strongarm->value = 'warzone/[node:title]';
   $export['pathauto_node_special_event_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_war_zone_league_pattern';
+  $strongarm->value = 'leagues/[node:title]';
+  $export['pathauto_node_war_zone_league_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

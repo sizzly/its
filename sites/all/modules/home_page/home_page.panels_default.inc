@@ -50,7 +50,7 @@ function home_page_default_panels_mini() {
       'title' => '',
       'body' => '<!-- UserVoice JavaScript SDK (only needed once on a page) -->
 <script>(function(){var uv=document.createElement(\'script\');uv.type=\'text/javascript\';uv.async=true;uv.src=\'//widget.uservoice.com/btzCsfQb3IDIw5ApZEIYw.js\';var s=document.getElementsByTagName(\'script\')[0];s.parentNode.insertBefore(uv,s)})()</script>
-
+<div class="row">
 <div class="col-md-4">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -124,8 +124,9 @@ function home_page_default_panels_mini() {
         </ul>
     </div>
   </div>
+</div>
 </div>',
-      'format' => 'php_code',
+      'format' => 'pure_html',
       'substitute' => TRUE,
     );
     $pane->cache = array();

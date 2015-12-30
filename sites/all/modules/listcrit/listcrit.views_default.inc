@@ -12,8 +12,8 @@ function listcrit_views_default_views() {
 
   $view = new view();
   $view->name = 'listcrit_all_lists';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Lists of list crit nodes.';
+  $view->tag = 'ListCrit 2.0';
   $view->base_table = 'node';
   $view->human_name = 'ListCrit: All: Lists';
   $view->core = 7;
@@ -33,6 +33,12 @@ function listcrit_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Advanced options',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'term_node_tid_depth' => array(
       'bef_format' => 'default',
@@ -44,9 +50,36 @@ function listcrit_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'term_node_tid_depth_1' => array(
       'bef_format' => 'default',
@@ -58,9 +91,36 @@ function listcrit_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'term_node_tid_depth_2' => array(
       'bef_format' => 'bef',
@@ -72,100 +132,54 @@ function listcrit_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_points_per_army' => 'field_points_per_army',
-    'value' => 'title',
-    'expression' => 'title',
-    'field_image' => 'field_image',
-    'title' => 'title',
-    'name' => 'name',
-    'value_1' => 'title',
-    'comment_count' => 'name',
-    'field_game_system_armies' => 'field_game_system_armies',
-    'field_your_army' => 'field_game_system_armies',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_points_per_army' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'value' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'expression' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_image' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '<br>',
-      'empty_column' => 0,
-    ),
-    'name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '<br>',
-      'empty_column' => 0,
-    ),
-    'value_1' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'comment_count' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_game_system_armies' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '<br>',
-      'empty_column' => 0,
-    ),
-    'field_your_army' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -226,110 +240,23 @@ function listcrit_views_default_views() {
     'tag' => '',
     'function' => 'sum',
   );
-  /* Field: Field: Points per army */
-  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['label'] = '';
-  $handler->display->display_options['fields']['field_points_per_army']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 0,
-  );
-  /* Field: Vote results: Value */
-  $handler->display->display_options['fields']['value']['id'] = 'value';
-  $handler->display->display_options['fields']['value']['table'] = 'votingapi_cache';
-  $handler->display->display_options['fields']['value']['field'] = 'value';
-  $handler->display->display_options['fields']['value']['relationship'] = 'votingapi_cache_1';
-  $handler->display->display_options['fields']['value']['label'] = '';
-  $handler->display->display_options['fields']['value']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['value']['alter']['text'] = '<span class="glyphicon glyphicon-thumbs-down"></span> [value]
-';
-  $handler->display->display_options['fields']['value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['value']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['value']['empty'] = '0';
-  $handler->display->display_options['fields']['value']['precision'] = '0';
-  $handler->display->display_options['fields']['value']['separator'] = '';
-  /* Field: Global: Math expression */
-  $handler->display->display_options['fields']['expression']['id'] = 'expression';
-  $handler->display->display_options['fields']['expression']['table'] = 'views';
-  $handler->display->display_options['fields']['expression']['field'] = 'expression';
-  $handler->display->display_options['fields']['expression']['label'] = '';
-  $handler->display->display_options['fields']['expression']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['expression']['alter']['text'] = '<span class="glyphicon glyphicon-minus"></span> 
-';
-  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['expression']['empty'] = '0';
-  $handler->display->display_options['fields']['expression']['precision'] = '0';
-  $handler->display->display_options['fields']['expression']['expression'] = '([value]  * (-1))';
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'uc_thumbnail',
-    'image_link' => '',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Title (Points) / Ranking';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([field_points_per_army])';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = 'Player / Replies';
-  /* Field: Vote results: Value */
-  $handler->display->display_options['fields']['value_1']['id'] = 'value_1';
-  $handler->display->display_options['fields']['value_1']['table'] = 'votingapi_cache';
-  $handler->display->display_options['fields']['value_1']['field'] = 'value';
-  $handler->display->display_options['fields']['value_1']['relationship'] = 'votingapi_cache';
-  $handler->display->display_options['fields']['value_1']['label'] = '';
-  $handler->display->display_options['fields']['value_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['value_1']['alter']['text'] = '<span class="label label-primary"><span class="glyphicon glyphicon-plus"></span> [value_1]</span>
-<span class="label label-danger"><span class="glyphicon glyphicon-minus"></span> [expression]</span>
-';
-  $handler->display->display_options['fields']['value_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['value_1']['precision'] = '0';
-  /* Field: Content: Comment count */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['text'] = '<span class="glyphicon glyphicon-comment"></span> [comment_count]';
-  $handler->display->display_options['fields']['comment_count']['element_type'] = 'div';
-  $handler->display->display_options['fields']['comment_count']['element_class'] = 'badge';
-  $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['comment_count']['empty'] = '0';
-  $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = 'Game System / Army';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['label'] = 'Army';
+  $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_your_army']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Rendered Content */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   /* Sort criterion: Vote results: Value */
   $handler->display->display_options['sorts']['value']['id'] = 'value';
   $handler->display->display_options['sorts']['value']['table'] = 'votingapi_cache';
@@ -404,7 +331,7 @@ function listcrit_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'community/listcrit/all-army-lists';
+  $handler->display->display_options['path'] = 'order-of-battle/listcrit/all-army-lists';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All Lists';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -418,6 +345,7 @@ function listcrit_views_default_views() {
   /* Display: Term Page Panel */
   $handler = $view->new_display('panel_pane', 'Term Page Panel', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Army Lists';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -454,7 +382,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['group'] = 1;
   $handler->display->display_options['filters']['term_node_tid_depth']['exposed'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['label'] = 'Army';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['description'] = 'filter by Game System or Faction';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'army';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['multiple'] = TRUE;
@@ -475,6 +403,7 @@ function listcrit_views_default_views() {
   /* Display: Main Page Panel */
   $handler = $view->new_display('panel_pane', 'Main Page Panel', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Top Ranked Lists';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -503,28 +432,6 @@ function listcrit_views_default_views() {
     'listcrit' => 'listcrit',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Has taxonomy terms (with depth) */
-  $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['value'] = '';
-  $handler->display->display_options['filters']['term_node_tid_depth']['group'] = 1;
-  $handler->display->display_options['filters']['term_node_tid_depth']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['label'] = 'Army';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'army';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    7 => 0,
-    9 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'armies';
-  $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '10';
   $handler->display->display_options['pane_category']['name'] = 'ListCrit';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '0';
@@ -642,8 +549,8 @@ function listcrit_views_default_views() {
 
   $view = new view();
   $view->name = 'listcrit_all_page_layout';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Page elements for listcrit nodes.';
+  $view->tag = 'ListCrit 2.0';
   $view->base_table = 'node';
   $view->human_name = 'ListCrit: All: Page Layout';
   $view->core = 7;
@@ -695,26 +602,59 @@ function listcrit_views_default_views() {
 
   /* Display: Primary Meta */
   $handler = $view->new_display('panel_pane', 'Primary Meta', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Your Army */
+  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['label'] = '';
+  $handler->display->display_options['fields']['field_your_army']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_your_army']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-bookmark"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_your_army]</strong>
+        <div class="text-muted">Army</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_your_army']['alter']['path'] = 'taxonomy/term/[field_your_army-tid]';
+  $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_your_army']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_your_army']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_your_army']['element_default_classes'] = FALSE;
   /* Field: Field: Points per army */
   $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
   $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
   $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
   $handler->display->display_options['fields']['field_points_per_army']['label'] = '';
-  $handler->display->display_options['fields']['field_points_per_army']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_points_per_army']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_points_per_army']['alter']['text'] = '<div class="panel-stat3 bg-warning">
-  <h2 class="m-top-none">[field_points_per_army]</h2>
-  <h5>Points per Army</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-list fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-';
+  $handler->display->display_options['fields']['field_points_per_army']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-list"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_points_per_army]</strong>
+        <div class="text-muted">Points</div>
+    </div>
+</div>';
   $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_class'] = 'col-sm-6 col-md-6';
+  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_points_per_army']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_points_per_army']['empty'] = '<div class="hidden-xs hidden-sm col-md-6">
 <div class="panel-stat3 bg-grey">
@@ -734,75 +674,69 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_batteresult_commander']['id'] = 'field_batteresult_commander';
   $handler->display->display_options['fields']['field_batteresult_commander']['table'] = 'field_data_field_batteresult_commander';
   $handler->display->display_options['fields']['field_batteresult_commander']['field'] = 'field_batteresult_commander';
-  $handler->display->display_options['fields']['field_batteresult_commander']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_batteresult_commander']['label'] = '';
   $handler->display->display_options['fields']['field_batteresult_commander']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_batteresult_commander']['alter']['text'] = '<div class="panel-stat3 bg-success">
-  <h2 class="m-top-none">[field_batteresult_commander]</h2>
-  <h5>Commander</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-star fa-3" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['field_batteresult_commander']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-star"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_batteresult_commander]</strong>
+        <div class="text-muted">Commander</div>
+    </div>
 </div>';
-  $handler->display->display_options['fields']['field_batteresult_commander']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_batteresult_commander']['alter']['path'] = 'taxonomy/term/[field_batteresult_commander-tid]';
-  $handler->display->display_options['fields']['field_batteresult_commander']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Doctrine */
-  $handler->display->display_options['fields']['field_doctrine']['id'] = 'field_doctrine';
-  $handler->display->display_options['fields']['field_doctrine']['table'] = 'field_data_field_doctrine';
-  $handler->display->display_options['fields']['field_doctrine']['field'] = 'field_doctrine';
-  $handler->display->display_options['fields']['field_doctrine']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_doctrine']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_doctrine']['alter']['text'] = '<div class="panel-stat3 bg-info">
-  <h2 class="m-top-none">[field_doctrine]</h2>
-  <h5>Doctrine</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-fullscreen fa-3" aria-hidden="true"></span>
-  </div>
-</div>';
-  $handler->display->display_options['fields']['field_doctrine']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Tactical Focus */
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_batteresult_commander']['hide_empty'] = TRUE;
+  /* Field: Content: Tactical Focus */
   $handler->display->display_options['fields']['field_tactical_focus']['id'] = 'field_tactical_focus';
   $handler->display->display_options['fields']['field_tactical_focus']['table'] = 'field_data_field_tactical_focus';
   $handler->display->display_options['fields']['field_tactical_focus']['field'] = 'field_tactical_focus';
-  $handler->display->display_options['fields']['field_tactical_focus']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tactical_focus']['label'] = '';
   $handler->display->display_options['fields']['field_tactical_focus']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_tactical_focus']['alter']['text'] = '<div class="panel-stat3 bg-info">
-  <h2 class="m-top-none">[field_tactical_focus]</h2>
-  <h5>Tactical Focus</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-eye-open fa-3" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['field_tactical_focus']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-eye"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_tactical_focus]</strong>
+        <div class="text-muted">Tactical Focus</div>
+    </div>
 </div>';
-  $handler->display->display_options['fields']['field_tactical_focus']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_tactical_focus']['alter']['path'] = 'taxonomy/term/[field_tactical_focus-tid] ';
-  $handler->display->display_options['fields']['field_tactical_focus']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Your Army */
-  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_your_army']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_your_army']['alter']['text'] = '<div class="panel-stat3 bg-primary">
-  <h2 class="m-top-none">[field_your_army]</h2>
-  <h5>Army</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-bookmark fa-3" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['field_tactical_focus']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tactical_focus']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_tactical_focus']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_tactical_focus']['element_default_classes'] = FALSE;
+  /* Field: Content: Doctrine */
+  $handler->display->display_options['fields']['field_doctrine']['id'] = 'field_doctrine';
+  $handler->display->display_options['fields']['field_doctrine']['table'] = 'field_data_field_doctrine';
+  $handler->display->display_options['fields']['field_doctrine']['field'] = 'field_doctrine';
+  $handler->display->display_options['fields']['field_doctrine']['label'] = '';
+  $handler->display->display_options['fields']['field_doctrine']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_doctrine']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-arrows"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_doctrine]</strong>
+        <div class="text-muted">Doctrine</div>
+    </div>
 </div>';
-  $handler->display->display_options['fields']['field_your_army']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_your_army']['alter']['path'] = 'taxonomy/term/[field_your_army-tid]';
-  $handler->display->display_options['fields']['field_your_army']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_your_army]
-[field_points_per_army]
-[field_batteresult_commander]
-[field_tactical_focus]
-';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_doctrine']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_doctrine']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_doctrine']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_doctrine']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_doctrine']['hide_empty'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'ListCrit';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -952,7 +886,6 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['comments_link']['field'] = 'comments_link';
   $handler->display->display_options['fields']['comments_link']['label'] = '';
   $handler->display->display_options['fields']['comments_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['comments_link']['teaser'] = TRUE;
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
@@ -967,174 +900,183 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_rate_content']['field'] = 'field_rate_content';
   $handler->display->display_options['fields']['field_rate_content']['label'] = '';
   $handler->display->display_options['fields']['field_rate_content']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_rate_content']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_rate_content']['element_wrapper_class'] = 'text-center center-block';
+  $handler->display->display_options['fields']['field_rate_content']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_rate_content']['click_sort_column'] = 'vud_widget';
   $handler->display->display_options['pane_category']['name'] = 'ListCrit';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Secondary Meta */
   $handler = $view->new_display('panel_pane', 'Secondary Meta', 'panel_pane_2');
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'row';
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Secondary Meta';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Camp */
+  $handler->display->display_options['fields']['field_camp']['id'] = 'field_camp';
+  $handler->display->display_options['fields']['field_camp']['table'] = 'field_data_field_camp';
+  $handler->display->display_options['fields']['field_camp']['field'] = 'field_camp';
+  $handler->display->display_options['fields']['field_camp']['label'] = '';
+  $handler->display->display_options['fields']['field_camp']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_camp']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-bank"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_camp]</strong>
+        <div class="text-muted">Camp</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_camp']['alter']['path'] = 'taxonomy/term/[field_camp-tid]';
+  $handler->display->display_options['fields']['field_camp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_camp']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_camp']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_camp']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_camp']['hide_empty'] = TRUE;
+  /* Field: Content: Primary Role */
+  $handler->display->display_options['fields']['field_primary_role']['id'] = 'field_primary_role';
+  $handler->display->display_options['fields']['field_primary_role']['table'] = 'field_data_field_primary_role';
+  $handler->display->display_options['fields']['field_primary_role']['field'] = 'field_primary_role';
+  $handler->display->display_options['fields']['field_primary_role']['label'] = '';
+  $handler->display->display_options['fields']['field_primary_role']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_primary_role']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-dot-circle-o"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_primary_role]</strong>
+        <div class="text-muted">Primary Role</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_primary_role']['alter']['path'] = 'taxonomy/term/[field_primary_role-tid]';
+  $handler->display->display_options['fields']['field_primary_role']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_primary_role']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_primary_role']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_primary_role']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_primary_role']['hide_empty'] = TRUE;
+  /* Field: Field: Opponent's Army */
+  $handler->display->display_options['fields']['field_opponent_s_army']['id'] = 'field_opponent_s_army';
+  $handler->display->display_options['fields']['field_opponent_s_army']['table'] = 'field_data_field_opponent_s_army';
+  $handler->display->display_options['fields']['field_opponent_s_army']['field'] = 'field_opponent_s_army';
+  $handler->display->display_options['fields']['field_opponent_s_army']['label'] = '';
+  $handler->display->display_options['fields']['field_opponent_s_army']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_opponent_s_army']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-times-circle"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_opponent_s_army]</strong>
+        <div class="text-muted">Designed to Defeat</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_opponent_s_army']['alter']['path'] = 'taxonomy/term/[field_opponent_s_army-tid]';
+  $handler->display->display_options['fields']['field_opponent_s_army']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_opponent_s_army']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_opponent_s_army']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_opponent_s_army']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_opponent_s_army']['hide_empty'] = TRUE;
   /* Field: Content: Auxillary */
   $handler->display->display_options['fields']['field_aux']['id'] = 'field_aux';
   $handler->display->display_options['fields']['field_aux']['table'] = 'field_data_field_aux';
   $handler->display->display_options['fields']['field_aux']['field'] = 'field_aux';
   $handler->display->display_options['fields']['field_aux']['label'] = '';
-  $handler->display->display_options['fields']['field_aux']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_aux']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_aux']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-tags"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_aux]</strong>
+        <div class="text-muted">Auxillary</div>
+    </div>
+</div>';
   $handler->display->display_options['fields']['field_aux']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_aux']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_aux']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_aux']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_aux']['delta_offset'] = '0';
-  /* Field: Content: Camp */
-  $handler->display->display_options['fields']['field_camp']['id'] = 'field_camp';
-  $handler->display->display_options['fields']['field_camp']['table'] = 'field_data_field_camp';
-  $handler->display->display_options['fields']['field_camp']['field'] = 'field_camp';
-  $handler->display->display_options['fields']['field_camp']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_camp']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_camp']['alter']['text'] = '<div class="col-xs-12 col-sm-6">
-<div class="panel-stat3 bg-warning">
-  <h2 class="m-top-none">[field_camp]</h2>
-  <h5>Camp</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-tower fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_camp']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_camp']['alter']['path'] = 'taxonomy/term/[field_camp-tid]';
-  $handler->display->display_options['fields']['field_camp']['empty'] = '<div class="hidden-xs col-sm-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">[ Redacted ]</h2>
-  <h5>Camp</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-tower fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_camp']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Doctrine */
-  $handler->display->display_options['fields']['field_doctrine']['id'] = 'field_doctrine';
-  $handler->display->display_options['fields']['field_doctrine']['table'] = 'field_data_field_doctrine';
-  $handler->display->display_options['fields']['field_doctrine']['field'] = 'field_doctrine';
-  $handler->display->display_options['fields']['field_doctrine']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_doctrine']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_doctrine']['alter']['text'] = '<div class="col-xs-12 col-sm-6">
-<div class="panel-stat3 bg-danger">
-  <h2 class="m-top-none">[field_doctrine]</h2>
-  <h5>Doctrine</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-fullscreen fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_doctrine']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_doctrine']['alter']['path'] = 'taxonomy/term/[field_doctrine-tid]';
-  $handler->display->display_options['fields']['field_doctrine']['empty'] = '<div class="hidden-xs col-sm-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">[ Redacted ]</h2>
-  <h5>Camp</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-fullscreen fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_doctrine']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Primary Role */
-  $handler->display->display_options['fields']['field_primary_role']['id'] = 'field_primary_role';
-  $handler->display->display_options['fields']['field_primary_role']['table'] = 'field_data_field_primary_role';
-  $handler->display->display_options['fields']['field_primary_role']['field'] = 'field_primary_role';
-  $handler->display->display_options['fields']['field_primary_role']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_primary_role']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_primary_role']['alter']['text'] = '<div class="col-xs-12 col-sm-6">
-<div class="panel-stat3 bg-success">
-  <h2 class="m-top-none">[field_primary_role]</h2>
-  <h5>Primary Role</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-record fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_primary_role']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_primary_role']['alter']['path'] = 'taxonomy/term/[field_primary_role-tid]';
-  $handler->display->display_options['fields']['field_primary_role']['empty'] = '<div class="hidden-xs col-sm-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">[ Redacted ]</h2>
-  <h5>Primary Role</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-record fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_primary_role']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Opponent's Army */
-  $handler->display->display_options['fields']['field_opponent_s_army']['id'] = 'field_opponent_s_army';
-  $handler->display->display_options['fields']['field_opponent_s_army']['table'] = 'field_data_field_opponent_s_army';
-  $handler->display->display_options['fields']['field_opponent_s_army']['field'] = 'field_opponent_s_army';
-  $handler->display->display_options['fields']['field_opponent_s_army']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_opponent_s_army']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_opponent_s_army']['alter']['text'] = '<div class="col-xs-12 col-sm-6">
-<div class="panel-stat3 bg-info">
-  <h2 class="m-top-none">[field_opponent_s_army]</h2>
-  <h5>Designed to Defeat</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-ban-circle fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_opponent_s_army']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_opponent_s_army']['alter']['path'] = 'taxonomy/term/[field_opponent_s_army-tid]';
-  $handler->display->display_options['fields']['field_opponent_s_army']['empty'] = '<div class="hidden-xs col-sm-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">Redacted</h2>
-  <h5>Designed to Defeat</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-ban-circle fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_opponent_s_army']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Aux Wrapper */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Aux Wrapper';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="col-xs-12">
-<div class="panel-stat3 bg-primary">
-  <h4 class="m-top-none">[field_aux]</h2>
-  <h5>Auxillary</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-tags fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_1']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['hide_alter_empty'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_doctrine]
-[field_primary_role]
-<div class="clearfix"></div>
-[field_camp]
-[field_opponent_s_army]
-<div class="clearfix"></div>
-[nothing_1]
-';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_aux']['separator'] = '';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listcrit' => 'listcrit',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Camp (field_camp) */
+  $handler->display->display_options['filters']['field_camp_tid']['id'] = 'field_camp_tid';
+  $handler->display->display_options['filters']['field_camp_tid']['table'] = 'field_data_field_camp';
+  $handler->display->display_options['filters']['field_camp_tid']['field'] = 'field_camp_tid';
+  $handler->display->display_options['filters']['field_camp_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_camp_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_camp_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_camp_tid']['vocabulary'] = 'list_crit_tags';
+  /* Filter criterion: Content: Auxillary (field_aux) */
+  $handler->display->display_options['filters']['field_aux_tid']['id'] = 'field_aux_tid';
+  $handler->display->display_options['filters']['field_aux_tid']['table'] = 'field_data_field_aux';
+  $handler->display->display_options['filters']['field_aux_tid']['field'] = 'field_aux_tid';
+  $handler->display->display_options['filters']['field_aux_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_aux_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_aux_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_aux_tid']['vocabulary'] = 'list_crit_tags';
+  /* Filter criterion: Field: Opponent&#039;s Army (field_opponent_s_army) */
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['id'] = 'field_opponent_s_army_tid';
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['table'] = 'field_data_field_opponent_s_army';
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['field'] = 'field_opponent_s_army_tid';
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['type'] = 'textfield';
+  $handler->display->display_options['filters']['field_opponent_s_army_tid']['vocabulary'] = 'armies';
+  /* Filter criterion: Content: Primary Role (field_primary_role) */
+  $handler->display->display_options['filters']['field_primary_role_tid']['id'] = 'field_primary_role_tid';
+  $handler->display->display_options['filters']['field_primary_role_tid']['table'] = 'field_data_field_primary_role';
+  $handler->display->display_options['filters']['field_primary_role_tid']['field'] = 'field_primary_role_tid';
+  $handler->display->display_options['filters']['field_primary_role_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_primary_role_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_primary_role_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_primary_role_tid']['vocabulary'] = 'list_crit_tags';
   $handler->display->display_options['pane_category']['name'] = 'ListCrit';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['listcrit_all_page_layout'] = $view;
 
   $view = new view();
   $view->name = 'listcrit_meta_page_layout';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates panels for the list crit landing pages.';
+  $view->tag = 'ListCrit 2.0';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'ListCrit: Meta: Page Layout';
   $view->core = 7;
@@ -1281,32 +1223,29 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-xs-12 col-sm-6">
-  <div class="panel-stat3 bg-primary">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class="panel-stat3 bg-primary">
     <h2 class="m-top-none">[name_1]</h2>
     <h5>Classification</h5>
     <div class="stat-icon">
-      <span class="glyphicon glyphicon-[field_chronicle_icon]" aria-hidden="true"></span>
+      <i class="fa fa-[field_chronicle_icon] fa-3x"></i>
     </div>
-  </div>
-</div>
-<div class="col-xs-12 col-sm-6">
-[description]
-</div>';
+  </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'ListCrit';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Children */
   $handler = $view->new_display('panel_pane', 'Children', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Classifications';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-xs-6 col-sm-4 pull-left clearfix';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_chronicle_icon';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = 'description';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -1319,6 +1258,8 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_chronicle_icon']['relationship'] = 'parent';
   $handler->display->display_options['fields']['field_chronicle_icon']['label'] = '';
   $handler->display->display_options['fields']['field_chronicle_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_chronicle_icon']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_chronicle_icon']['alter']['text'] = '<i class="fa fa-[field_chronicle_icon]"></i>';
   $handler->display->display_options['fields']['field_chronicle_icon']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_chronicle_icon']['empty'] = '[field_chronicle_icon_1]';
   /* Field: Taxonomy term: Name */
@@ -1326,7 +1267,6 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="glyphicon glyphicon-[field_chronicle_icon]"></span> [name]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
@@ -1334,6 +1274,12 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['name']['element_class'] = 'lead';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -1356,9 +1302,10 @@ function listcrit_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_chronicle_icon';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = 'description';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -1369,7 +1316,10 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_chronicle_icon']['table'] = 'field_data_field_chronicle_icon';
   $handler->display->display_options['fields']['field_chronicle_icon']['field'] = 'field_chronicle_icon';
   $handler->display->display_options['fields']['field_chronicle_icon']['label'] = '';
-  $handler->display->display_options['fields']['field_chronicle_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_chronicle_icon']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_chronicle_icon']['alter']['text'] = '        <div class="activity-icon small">
+        <i class="fa fa-[field_chronicle_icon]"></i>
+        </div>';
   $handler->display->display_options['fields']['field_chronicle_icon']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_chronicle_icon']['empty'] = '[field_chronicle_icon_1]';
   /* Field: Taxonomy term: Name */
@@ -1377,12 +1327,9 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="glyphicon glyphicon-[field_chronicle_icon]"></span> [name]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_class'] = 'lead';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   /* Field: Taxonomy term: Term description */

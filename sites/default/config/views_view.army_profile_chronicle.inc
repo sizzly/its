@@ -58,7 +58,7 @@ $handler->display->display_options['fields']['field_date_call_to_battle']['setti
   'multiple_to' => '',
   'show_repeat_rule' => 'show',
 );
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
@@ -212,7 +212,7 @@ $handler->display->display_options['fields']['field_date_call_to_battle']['setti
   'multiple_to' => '',
   'show_repeat_rule' => 'show',
 );
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
