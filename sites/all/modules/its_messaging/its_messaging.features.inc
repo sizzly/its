@@ -112,11 +112,11 @@ function its_messaging_flag_default_flags() {
     'show_on_entity' => 1,
     'show_on_form' => 0,
     'access_author' => '',
-    'api_version' => 2,
     'module' => 'its_messaging',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   // Exported flag: "Salute Status".
   $flags['messages_all_salute'] = array(
@@ -144,11 +144,11 @@ function its_messaging_flag_default_flags() {
     'show_on_entity' => 0,
     'show_on_form' => 0,
     'access_author' => '',
-    'api_version' => 2,
     'module' => 'its_messaging',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 
