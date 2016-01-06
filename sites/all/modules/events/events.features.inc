@@ -8,14 +8,14 @@
  * Implements hook_ctools_plugin_api().
  */
 function events_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
-  }
-if ($module == 'field_group' && $api == 'field_group') {
-    return array('version' => 1);
   }
 }
 
@@ -69,7 +69,7 @@ function events_default_entityform_type() {
 function events_node_info() {
   $items = array(
     'event' => array(
-      'name' => t('Event'),
+      'name' => t('Calendar Only Event'),
       'base' => 'node_content',
       'description' => t('Let the gaming world know about your miniature wargaming <em>Event</em>. This is a simple calendar entry and is perfect for open game days, regular events, and the like.'),
       'has_title' => '1',

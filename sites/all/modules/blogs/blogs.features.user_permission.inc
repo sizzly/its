@@ -97,5 +97,25 @@ function blogs_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'search blog content'.
+  $permissions['search blog content'] = array(
+    'name' => 'search blog content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'search_config',
+  );
+
+  // Exported permission: 'search remote_blog content'.
+  $permissions['search remote_blog content'] = array(
+    'name' => 'search remote_blog content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'search_config',
+  );
+
   return $permissions;
 }

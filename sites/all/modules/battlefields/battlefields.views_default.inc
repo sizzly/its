@@ -2186,7 +2186,7 @@ function battlefields_views_default_views() {
   $handler->display->display_options['relationships']['field_your_army_tid']['relationship'] = 'reverse_field_location_node';
   $handler->display->display_options['relationships']['field_your_army_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Taxonomy term: Game */
   $handler->display->display_options['fields']['field_army_game']['id'] = 'field_army_game';
   $handler->display->display_options['fields']['field_army_game']['table'] = 'field_data_field_army_game';
   $handler->display->display_options['fields']['field_army_game']['field'] = 'field_army_game';
@@ -2312,7 +2312,7 @@ function battlefields_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
@@ -2554,7 +2554,7 @@ function battlefields_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'glory';
-  /* Field: Broken/missing handler */
+  /* Field: Content: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';

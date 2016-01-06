@@ -525,7 +525,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_game_system_armies']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_game_system_armies']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_game_system_armies']['hide_empty'] = TRUE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -1648,7 +1648,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
   $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
   $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
