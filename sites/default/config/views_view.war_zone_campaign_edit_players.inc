@@ -104,7 +104,7 @@ $handler->display->display_options['fields']['field_register_army']['id'] = 'fie
 $handler->display->display_options['fields']['field_register_army']['table'] = 'field_data_field_register_army';
 $handler->display->display_options['fields']['field_register_army']['field'] = 'field_register_army';
 $handler->display->display_options['fields']['field_register_army']['element_label_colon'] = FALSE;
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';

@@ -841,7 +841,7 @@ $handler->display->display_options['relationships']['reverse_field_event_link_en
 $handler->display->display_options['relationships']['reverse_field_event_link_entityform']['field'] = 'reverse_field_event_link_entityform';
 $handler->display->display_options['relationships']['reverse_field_event_link_entityform']['relationship'] = 'field_event_link_target_id';
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';

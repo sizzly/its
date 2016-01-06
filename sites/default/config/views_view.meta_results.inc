@@ -60,19 +60,19 @@ $handler->display->display_options['fields']['field_your_results']['table'] = 'f
 $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
 $handler->display->display_options['fields']['field_your_results']['group_type'] = 'avg';
 $handler->display->display_options['fields']['field_your_results']['label'] = 'AVG Battle Score';
-/* Field: SUM(Field: Victory) */
+/* Field: SUM(Content: Victory) */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_victory']['label'] = 'W';
-/* Field: SUM(Field: Draw) */
+/* Field: SUM(Content: Draw) */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_draw']['label'] = 'D';
-/* Field: SUM(Field: Defeat) */
+/* Field: SUM(Content: Defeat) */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
@@ -84,7 +84,7 @@ $handler->display->display_options['sorts']['field_your_results_value']['table']
 $handler->display->display_options['sorts']['field_your_results_value']['field'] = 'field_your_results_value';
 $handler->display->display_options['sorts']['field_your_results_value']['group_type'] = 'avg';
 $handler->display->display_options['sorts']['field_your_results_value']['order'] = 'DESC';
-/* Sort criterion: SUM(Field: Victory (field_victory)) */
+/* Sort criterion: SUM(Content: Victory (field_victory)) */
 $handler->display->display_options['sorts']['field_victory_value']['id'] = 'field_victory_value';
 $handler->display->display_options['sorts']['field_victory_value']['table'] = 'field_data_field_victory';
 $handler->display->display_options['sorts']['field_victory_value']['field'] = 'field_victory_value';
@@ -164,21 +164,21 @@ $handler->display->display_options['fields']['field_your_results']['table'] = 'f
 $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
 $handler->display->display_options['fields']['field_your_results']['group_type'] = 'avg';
 $handler->display->display_options['fields']['field_your_results']['label'] = 'AVG Battle Score';
-/* Field: SUM(Field: Victory) */
+/* Field: SUM(Content: Victory) */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_victory']['label'] = 'W';
 $handler->display->display_options['fields']['field_victory']['exclude'] = TRUE;
-/* Field: SUM(Field: Draw) */
+/* Field: SUM(Content: Draw) */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_draw']['label'] = 'D';
 $handler->display->display_options['fields']['field_draw']['exclude'] = TRUE;
-/* Field: SUM(Field: Defeat) */
+/* Field: SUM(Content: Defeat) */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
@@ -260,21 +260,21 @@ $handler->display->display_options['fields']['field_your_results']['table'] = 'f
 $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
 $handler->display->display_options['fields']['field_your_results']['group_type'] = 'avg';
 $handler->display->display_options['fields']['field_your_results']['label'] = 'AVG Battle Score';
-/* Field: SUM(Field: Victory) */
+/* Field: SUM(Content: Victory) */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_victory']['label'] = 'W';
 $handler->display->display_options['fields']['field_victory']['exclude'] = TRUE;
-/* Field: SUM(Field: Draw) */
+/* Field: SUM(Content: Draw) */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_draw']['label'] = 'D';
 $handler->display->display_options['fields']['field_draw']['exclude'] = TRUE;
-/* Field: SUM(Field: Defeat) */
+/* Field: SUM(Content: Defeat) */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
@@ -287,7 +287,7 @@ $handler->display->display_options['sorts']['field_your_results_value']['id'] = 
 $handler->display->display_options['sorts']['field_your_results_value']['table'] = 'field_data_field_your_results';
 $handler->display->display_options['sorts']['field_your_results_value']['field'] = 'field_your_results_value';
 $handler->display->display_options['sorts']['field_your_results_value']['group_type'] = 'avg';
-/* Sort criterion: SUM(Field: Victory (field_victory)) */
+/* Sort criterion: SUM(Content: Victory (field_victory)) */
 $handler->display->display_options['sorts']['field_victory_value']['id'] = 'field_victory_value';
 $handler->display->display_options['sorts']['field_victory_value']['table'] = 'field_data_field_victory';
 $handler->display->display_options['sorts']['field_victory_value']['field'] = 'field_victory_value';
@@ -404,21 +404,21 @@ $handler->display->display_options['fields']['field_your_results']['table'] = 'f
 $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
 $handler->display->display_options['fields']['field_your_results']['group_type'] = 'avg';
 $handler->display->display_options['fields']['field_your_results']['label'] = 'AVG Battle Score';
-/* Field: SUM(Field: Victory) */
+/* Field: SUM(Content: Victory) */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_victory']['label'] = 'W';
 $handler->display->display_options['fields']['field_victory']['exclude'] = TRUE;
-/* Field: SUM(Field: Draw) */
+/* Field: SUM(Content: Draw) */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_draw']['label'] = 'D';
 $handler->display->display_options['fields']['field_draw']['exclude'] = TRUE;
-/* Field: SUM(Field: Defeat) */
+/* Field: SUM(Content: Defeat) */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';

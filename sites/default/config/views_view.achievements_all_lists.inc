@@ -97,7 +97,7 @@ $handler->display->display_options['fields']['field_event_link']['element_label_
 $handler->display->display_options['fields']['field_event_link']['settings'] = array(
   'link' => 0,
 );
-/* Field: Field: Short Description */
+/* Field: Content: Short Description */
 $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
 $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
 $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';

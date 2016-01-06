@@ -47,7 +47,7 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
 );
-/* Relationship: Entity Reference: Referencing entity */
+/* Relationship: Broken/missing handler */
 $handler->display->display_options['relationships']['reverse_field_registration_sc_entityform']['id'] = 'reverse_field_registration_sc_entityform';
 $handler->display->display_options['relationships']['reverse_field_registration_sc_entityform']['table'] = 'node_registration';
 $handler->display->display_options['relationships']['reverse_field_registration_sc_entityform']['field'] = 'reverse_field_registration_sc_entityform';
@@ -58,7 +58,7 @@ $handler->display->display_options['fields']['registration_id']['field'] = 'regi
 $handler->display->display_options['fields']['registration_id']['link_to_node_registration'] = 0;
 $handler->display->display_options['fields']['registration_id']['link_to_node_registration_edit'] = 0;
 $handler->display->display_options['fields']['registration_id']['link_to_node_registration_email'] = 0;
-/* Sort criterion: Entityform Submission: Aggregate Score (field_aggregate_score_sc) */
+/* Sort criterion: Broken/missing handler */
 $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['id'] = 'field_aggregate_score_sc_value';
 $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['table'] = 'field_data_field_aggregate_score_sc';
 $handler->display->display_options['sorts']['field_aggregate_score_sc_value']['field'] = 'field_aggregate_score_sc_value';
@@ -101,7 +101,7 @@ $handler->display->display_options['sorts']['field_your_results_value']['field']
 $handler->display->display_options['sorts']['field_your_results_value']['relationship'] = 'reverse_field_registration_sc_entityform';
 $handler->display->display_options['sorts']['field_your_results_value']['group_type'] = 'sum';
 $handler->display->display_options['sorts']['field_your_results_value']['order'] = 'DESC';
-/* Sort criterion: Entityform Submission: Victory Points (field_victory_points_sc) */
+/* Sort criterion: Broken/missing handler */
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['id'] = 'field_victory_points_sc_value';
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['table'] = 'field_data_field_victory_points_sc';
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['field'] = 'field_victory_points_sc_value';
@@ -157,21 +157,17 @@ $handler->display->display_options['defaults']['group_by'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
-/* Relationship: Entity Reference: Referencing entity */
+/* Relationship: Broken/missing handler */
 $handler->display->display_options['relationships']['reverse_field_registration_sc_entityform']['id'] = 'reverse_field_registration_sc_entityform';
 $handler->display->display_options['relationships']['reverse_field_registration_sc_entityform']['table'] = 'node_registration';
 $handler->display->display_options['relationships']['reverse_field_registration_sc_entityform']['field'] = 'reverse_field_registration_sc_entityform';
 $handler->display->display_options['relationships']['reverse_field_registration_sc_entityform']['required'] = TRUE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Entityform Submission: Opponent Registration */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_opponent_reg_sc']['id'] = 'field_opponent_reg_sc';
 $handler->display->display_options['fields']['field_opponent_reg_sc']['table'] = 'field_data_field_opponent_reg_sc';
 $handler->display->display_options['fields']['field_opponent_reg_sc']['field'] = 'field_opponent_reg_sc';
 $handler->display->display_options['fields']['field_opponent_reg_sc']['relationship'] = 'reverse_field_registration_sc_entityform';
-$handler->display->display_options['fields']['field_opponent_reg_sc']['type'] = 'entityreference_entity_id';
-$handler->display->display_options['fields']['field_opponent_reg_sc']['settings'] = array(
-  'link' => 0,
-);
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Global: Random */
 $handler->display->display_options['sorts']['random']['id'] = 'random';
@@ -219,5 +215,4 @@ $optional = array();
 $modules = array(
   0 => 'views',
   1 => 'node_registration',
-  2 => 'entityreference',
 );

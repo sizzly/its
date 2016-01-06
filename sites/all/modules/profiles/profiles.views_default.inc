@@ -12,8 +12,8 @@ function profiles_views_default_views() {
 
   $view = new view();
   $view->name = 'leaderboards_all_tables';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates all of the leaderboard displays.';
+  $view->tag = 'Profiles 2.0';
   $view->base_table = 'users';
   $view->human_name = 'Leaderboards: All: Tables';
   $view->core = 7;
@@ -287,7 +287,7 @@ function profiles_views_default_views() {
     894 => '894',
     1261 => '1261',
   );
-  $handler->display->display_options['path'] = 'community/leaderboards/renown';
+  $handler->display->display_options['path'] = 'wargaming-decorations/leaderboards/renown';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Renown';
   $handler->display->display_options['menu']['description'] = 'All players ranked by renown';
@@ -352,7 +352,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['sorts']['field_achievement_points_value']['relationship'] = 'relation_achievement_node';
   $handler->display->display_options['sorts']['field_achievement_points_value']['group_type'] = 'sum';
   $handler->display->display_options['sorts']['field_achievement_points_value']['order'] = 'DESC';
-  $handler->display->display_options['path'] = 'community/leaderboards/achievement-points';
+  $handler->display->display_options['path'] = 'wargaming-decorations/leaderboards/achievement-points';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Achievement Points';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -544,13 +544,74 @@ function profiles_views_default_views() {
   $handler->display->display_options['filters']['nid']['group_type'] = 'count_distinct';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '5';
-  $handler->display->display_options['path'] = 'community/leaderboards/average-battle-score';
+  $handler->display->display_options['path'] = 'wargaming-decorations/leaderboards/average-battle-score';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Average Battle Score';
   $handler->display->display_options['menu']['description'] = 'All players ranked by average battle score';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Renown Landing Panel */
+  $handler = $view->new_display('panel_pane', 'Renown Landing Panel', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Generates the stat block for renown';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: SUM(Userpoints: Current renown in category) */
+  $handler->display->display_options['fields']['points']['id'] = 'points';
+  $handler->display->display_options['fields']['points']['table'] = 'userpoints';
+  $handler->display->display_options['fields']['points']['field'] = 'points';
+  $handler->display->display_options['fields']['points']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['points']['label'] = '';
+  $handler->display->display_options['fields']['points']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['points']['alter']['text'] = '<div class="panel-stat3 bg-primary">
+<h2 class="m2-top-none">[points]</h2>
+<h5>Renown</h5>
+<div class="stat-icon">
+  <i class="fa fa-line-chart fa-3x"></i>
+</div>
+</div>';
+  $handler->display->display_options['fields']['points']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['points']['alter']['path'] = '/wargaming-decorations/renown';
+  $handler->display->display_options['fields']['points']['alter']['alt'] = 'Renown';
+  $handler->display->display_options['fields']['points']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Userpoints: Points category */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'userpoints';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    894 => '894',
+    1261 => '1261',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Leaderboards';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['leaderboards_all_tables'] = $view;
 
   $view = new view();
@@ -1116,15 +1177,21 @@ function profiles_views_default_views() {
     'stream_player_posts_new_content' => 'stream_player_posts_new_content',
     'stream_player_likes_content' => 'stream_player_likes_content',
     'stream_player_earns_an_achievement' => 'stream_player_earns_an_achievement',
-    'stream_new_war_zone' => 'stream_new_war_zone',
     'stream_player_acknowledges_a_battle' => 'stream_player_acknowledges_a_battle',
     'stream_narrative_army_event' => 'stream_narrative_army_event',
     'stream_player_rates_list' => 'stream_player_rates_list',
-    'stream_call_to_battle' => 'stream_call_to_battle',
-    'stream_player_registers_for_warzone' => 'stream_player_registers_for_warzone',
-    'stream_player_cancels_registration_for_warzone' => 'stream_player_cancels_registration_for_warzone',
     'stream_a_warzone_has_begun' => 'stream_a_warzone_has_begun',
     'stream_a_warzone_has_ended' => 'stream_a_warzone_has_ended',
+    'stream_new_war_zone' => 'stream_new_war_zone',
+    'stream_player_cancels_registration_for_warzone' => 'stream_player_cancels_registration_for_warzone',
+    'stream_player_registers_for_warzone' => 'stream_player_registers_for_warzone',
+    'campaign_reported_battle' => 'campaign_reported_battle',
+    'war_zone_all_anonymous_actions' => 'war_zone_all_anonymous_actions',
+    'war_zone_all_new_round_message' => 'war_zone_all_new_round_message',
+    'statuses_all_new_status' => 'statuses_all_new_status',
+    'statuses_all_new_files' => 'statuses_all_new_files',
+    'models_all_start_project' => 'models_all_start_project',
+    'models_all_complete_project' => 'models_all_complete_project',
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Message: Render message (Get text) */

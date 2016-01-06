@@ -115,7 +115,7 @@ $handler->display->display_options['style_options']['bootstrap_styles'] = array(
 $handler->display->display_options['relationships']['field_event_link_target_id']['id'] = 'field_event_link_target_id';
 $handler->display->display_options['relationships']['field_event_link_target_id']['table'] = 'field_data_field_event_link';
 $handler->display->display_options['relationships']['field_event_link_target_id']['field'] = 'field_event_link_target_id';
-/* Relationship: Entity Reference: Referenced Entity */
+/* Relationship: Broken/missing handler */
 $handler->display->display_options['relationships']['field_registration_sc_target_id']['id'] = 'field_registration_sc_target_id';
 $handler->display->display_options['relationships']['field_registration_sc_target_id']['table'] = 'field_data_field_registration_sc';
 $handler->display->display_options['relationships']['field_registration_sc_target_id']['field'] = 'field_registration_sc_target_id';
@@ -133,54 +133,38 @@ $handler->display->display_options['fields']['field_register_real_name']['field'
 $handler->display->display_options['fields']['field_register_real_name']['relationship'] = 'field_registration_sc_target_id';
 $handler->display->display_options['fields']['field_register_real_name']['label'] = 'Player';
 $handler->display->display_options['fields']['field_register_real_name']['element_type'] = 'strong';
-/* Field: SUM(Entityform Submission: Victory Points) */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_victory_points_sc']['id'] = 'field_victory_points_sc';
 $handler->display->display_options['fields']['field_victory_points_sc']['table'] = 'field_data_field_victory_points_sc';
 $handler->display->display_options['fields']['field_victory_points_sc']['field'] = 'field_victory_points_sc';
 $handler->display->display_options['fields']['field_victory_points_sc']['group_type'] = 'sum';
 $handler->display->display_options['fields']['field_victory_points_sc']['label'] = 'VP';
-$handler->display->display_options['fields']['field_victory_points_sc']['settings'] = array(
-  'thousand_separator' => ',',
-  'prefix_suffix' => 1,
-);
-/* Field: SUM(Entityform Submission: Sportsmanship) */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_sportsmanship_sc']['id'] = 'field_sportsmanship_sc';
 $handler->display->display_options['fields']['field_sportsmanship_sc']['table'] = 'field_data_field_sportsmanship_sc';
 $handler->display->display_options['fields']['field_sportsmanship_sc']['field'] = 'field_sportsmanship_sc';
 $handler->display->display_options['fields']['field_sportsmanship_sc']['group_type'] = 'sum';
-$handler->display->display_options['fields']['field_sportsmanship_sc']['settings'] = array(
-  'thousand_separator' => ' ',
-  'prefix_suffix' => 1,
-);
-/* Field: SUM(Entityform Submission: Comp) */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_comp_sc']['id'] = 'field_comp_sc';
 $handler->display->display_options['fields']['field_comp_sc']['table'] = 'field_data_field_comp_sc';
 $handler->display->display_options['fields']['field_comp_sc']['field'] = 'field_comp_sc';
 $handler->display->display_options['fields']['field_comp_sc']['group_type'] = 'sum';
-$handler->display->display_options['fields']['field_comp_sc']['settings'] = array(
-  'thousand_separator' => ' ',
-  'prefix_suffix' => 1,
-);
-/* Field: SUM(Entityform Submission: Painting) */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_painting_sc']['id'] = 'field_painting_sc';
 $handler->display->display_options['fields']['field_painting_sc']['table'] = 'field_data_field_painting_sc';
 $handler->display->display_options['fields']['field_painting_sc']['field'] = 'field_painting_sc';
 $handler->display->display_options['fields']['field_painting_sc']['group_type'] = 'sum';
-$handler->display->display_options['fields']['field_painting_sc']['settings'] = array(
-  'thousand_separator' => ' ',
-  'prefix_suffix' => 1,
-);
-/* Field: SUM(Field: Victory) */
+/* Field: SUM(Content: Victory) */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
-/* Field: SUM(Field: Defeat) */
+/* Field: SUM(Content: Defeat) */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['group_type'] = 'sum';
-/* Field: SUM(Field: Draw) */
+/* Field: SUM(Content: Draw) */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
@@ -193,25 +177,25 @@ $handler->display->display_options['fields']['name']['relationship'] = 'field_re
 $handler->display->display_options['fields']['name']['label'] = '';
 $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-/* Sort criterion: SUM(Field: Victory (field_victory)) */
+/* Sort criterion: SUM(Content: Victory (field_victory)) */
 $handler->display->display_options['sorts']['field_victory_value']['id'] = 'field_victory_value';
 $handler->display->display_options['sorts']['field_victory_value']['table'] = 'field_data_field_victory';
 $handler->display->display_options['sorts']['field_victory_value']['field'] = 'field_victory_value';
 $handler->display->display_options['sorts']['field_victory_value']['group_type'] = 'sum';
 $handler->display->display_options['sorts']['field_victory_value']['order'] = 'DESC';
-/* Sort criterion: SUM(Entityform Submission: Victory Points (field_victory_points_sc)) */
+/* Sort criterion: Broken/missing handler */
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['id'] = 'field_victory_points_sc_value';
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['table'] = 'field_data_field_victory_points_sc';
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['field'] = 'field_victory_points_sc_value';
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['group_type'] = 'sum';
 $handler->display->display_options['sorts']['field_victory_points_sc_value']['order'] = 'DESC';
-/* Sort criterion: SUM(Entityform Submission: Army Points (field_army_points_sc)) */
+/* Sort criterion: Broken/missing handler */
 $handler->display->display_options['sorts']['field_army_points_sc_value']['id'] = 'field_army_points_sc_value';
 $handler->display->display_options['sorts']['field_army_points_sc_value']['table'] = 'field_data_field_army_points_sc';
 $handler->display->display_options['sorts']['field_army_points_sc_value']['field'] = 'field_army_points_sc_value';
 $handler->display->display_options['sorts']['field_army_points_sc_value']['group_type'] = 'sum';
 $handler->display->display_options['sorts']['field_army_points_sc_value']['order'] = 'DESC';
-/* Sort criterion: SUM(Entityform Submission: Strength of schedule (field_strength_of_schedule_sc)) */
+/* Sort criterion: Broken/missing handler */
 $handler->display->display_options['sorts']['field_strength_of_schedule_sc_value']['id'] = 'field_strength_of_schedule_sc_value';
 $handler->display->display_options['sorts']['field_strength_of_schedule_sc_value']['table'] = 'field_data_field_strength_of_schedule_sc';
 $handler->display->display_options['sorts']['field_strength_of_schedule_sc_value']['field'] = 'field_strength_of_schedule_sc_value';
@@ -249,7 +233,6 @@ $modules = array(
   0 => 'views',
   1 => 'entityform',
   2 => 'text',
-  3 => 'number',
-  4 => 'computed_field',
-  5 => 'views_content',
+  3 => 'computed_field',
+  4 => 'views_content',
 );

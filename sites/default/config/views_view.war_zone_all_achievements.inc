@@ -75,7 +75,7 @@ $handler->display->display_options['fields']['picture']['field'] = 'picture';
 $handler->display->display_options['fields']['picture']['relationship'] = 'relation_base_achievement_user';
 $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
 $handler->display->display_options['fields']['picture']['image_style'] = 'button';
-/* Field: Field: Short Description */
+/* Field: Content: Short Description */
 $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
 $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
 $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';

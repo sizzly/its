@@ -130,7 +130,7 @@ $handler->display->display_options['fields']['field_image']['settings'] = array(
   'image_style' => 'button',
   'image_link' => '',
 );
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
@@ -138,13 +138,13 @@ $handler->display->display_options['fields']['field_title_chronicle']['label'] =
 $handler->display->display_options['fields']['field_title_chronicle']['element_type'] = 'h3';
 $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_title_chronicle']['element_default_classes'] = FALSE;
-/* Field: Field: Narrative text */
+/* Field: Relation: Narrative text */
 $handler->display->display_options['fields']['field_narrative_text']['id'] = 'field_narrative_text';
 $handler->display->display_options['fields']['field_narrative_text']['table'] = 'field_data_field_narrative_text';
 $handler->display->display_options['fields']['field_narrative_text']['field'] = 'field_narrative_text';
 $handler->display->display_options['fields']['field_narrative_text']['label'] = '';
 $handler->display->display_options['fields']['field_narrative_text']['element_label_colon'] = FALSE;
-/* Field: Entityform Submission: Mechanics text */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_mechanics_text']['id'] = 'field_mechanics_text';
 $handler->display->display_options['fields']['field_mechanics_text']['table'] = 'field_data_field_mechanics_text';
 $handler->display->display_options['fields']['field_mechanics_text']['field'] = 'field_mechanics_text';
@@ -243,14 +243,14 @@ $handler->display->display_options['fields']['edit_entityform']['exclude'] = TRU
 $handler->display->display_options['fields']['edit_entityform']['alter']['strip_tags'] = TRUE;
 $handler->display->display_options['fields']['edit_entityform']['alter']['preserve_tags'] = '<a>';
 $handler->display->display_options['fields']['edit_entityform']['element_label_colon'] = FALSE;
-/* Field: Entityform Submission: Mechanics text */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_mechanics_text']['id'] = 'field_mechanics_text';
 $handler->display->display_options['fields']['field_mechanics_text']['table'] = 'field_data_field_mechanics_text';
 $handler->display->display_options['fields']['field_mechanics_text']['field'] = 'field_mechanics_text';
 $handler->display->display_options['fields']['field_mechanics_text']['label'] = '';
 $handler->display->display_options['fields']['field_mechanics_text']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_mechanics_text']['element_label_colon'] = FALSE;
-/* Field: Field: Round */
+/* Field: Content: Round */
 $handler->display->display_options['fields']['field_warzone_round']['id'] = 'field_warzone_round';
 $handler->display->display_options['fields']['field_warzone_round']['table'] = 'field_data_field_warzone_round';
 $handler->display->display_options['fields']['field_warzone_round']['field'] = 'field_warzone_round';
@@ -259,20 +259,16 @@ $handler->display->display_options['fields']['field_warzone_round']['settings'] 
   'thousand_separator' => '',
   'prefix_suffix' => 0,
 );
-/* Field: Entityform Submission: Prerequisite */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_prerequisite_narrative']['id'] = 'field_prerequisite_narrative';
 $handler->display->display_options['fields']['field_prerequisite_narrative']['table'] = 'field_data_field_prerequisite_narrative';
 $handler->display->display_options['fields']['field_prerequisite_narrative']['field'] = 'field_prerequisite_narrative';
 $handler->display->display_options['fields']['field_prerequisite_narrative']['exclude'] = TRUE;
-/* Field: Entityform Submission: Campaign Points */
+/* Field: Broken/missing handler */
 $handler->display->display_options['fields']['field_campaign_points_narrative']['id'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['table'] = 'field_data_field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['field'] = 'field_campaign_points_narrative';
 $handler->display->display_options['fields']['field_campaign_points_narrative']['exclude'] = TRUE;
-$handler->display->display_options['fields']['field_campaign_points_narrative']['settings'] = array(
-  'thousand_separator' => ',',
-  'prefix_suffix' => 1,
-);
 /* Field: Field: Image */
 $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
 $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -285,7 +281,7 @@ $handler->display->display_options['fields']['field_image']['settings'] = array(
   'image_style' => 'button',
   'image_link' => '',
 );
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';
@@ -293,7 +289,7 @@ $handler->display->display_options['fields']['field_title_chronicle']['label'] =
 $handler->display->display_options['fields']['field_title_chronicle']['element_type'] = 'h3';
 $handler->display->display_options['fields']['field_title_chronicle']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_title_chronicle']['element_default_classes'] = FALSE;
-/* Field: Field: Narrative text */
+/* Field: Relation: Narrative text */
 $handler->display->display_options['fields']['field_narrative_text']['id'] = 'field_narrative_text';
 $handler->display->display_options['fields']['field_narrative_text']['table'] = 'field_data_field_narrative_text';
 $handler->display->display_options['fields']['field_narrative_text']['field'] = 'field_narrative_text';

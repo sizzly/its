@@ -21,12 +21,8 @@ function narrative_campaigns_relation_default_relation_types() {
   $relation_type->r_unique = 1;
   $relation_type->min_arity = 2;
   $relation_type->max_arity = 2;
-  $relation_type->source_bundles = array(
-    0 => 'node:narrative_campaign_instance',
-  );
-  $relation_type->target_bundles = array(
-    0 => 'entityform:warzone_campaign_phase',
-  );
+  $relation_type->source_bundles = array();
+  $relation_type->target_bundles = array();
   $export['campaign_phase_instance'] = $relation_type;
 
   return $export;

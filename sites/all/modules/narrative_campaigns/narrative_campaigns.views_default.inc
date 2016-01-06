@@ -462,19 +462,15 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 1;
-  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 1;
   /* Field: Relation: Rid */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'relation';
@@ -542,19 +538,15 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Completed';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 1;
-  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 1;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_victorious_faction_target_id']['id'] = 'field_victorious_faction_target_id';
   $handler->display->display_options['relationships']['field_victorious_faction_target_id']['table'] = 'field_data_field_victorious_faction';
@@ -1619,6 +1611,12 @@ print $link;
   $handler->display->display_options['fields']['field_victor_narrative']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_victor_narrative']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_victor_narrative']['type'] = 'field_hidden_text_plain';
+  /* Field: Content: Used slots */
+  $handler->display->display_options['fields']['registration_used_slots']['id'] = 'registration_used_slots';
+  $handler->display->display_options['fields']['registration_used_slots']['table'] = 'node';
+  $handler->display->display_options['fields']['registration_used_slots']['field'] = 'registration_used_slots';
+  $handler->display->display_options['fields']['registration_used_slots']['label'] = 'AUTOMATIC';
+  $handler->display->display_options['fields']['registration_used_slots']['exclude'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['war_zone_campaign_instance_page_layout'] = $view;
@@ -1672,18 +1670,14 @@ print $link;
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 1;
-  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 1;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_victorious_faction_target_id']['id'] = 'field_victorious_faction_target_id';
   $handler->display->display_options['relationships']['field_victorious_faction_target_id']['table'] = 'field_data_field_victorious_faction';
@@ -2266,13 +2260,11 @@ print $link;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 0;
   /* Field: Relation: Rid */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'relation';
@@ -2350,20 +2342,16 @@ print $link;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '0';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 0;
-  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Relation: Rid */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
@@ -2499,20 +2487,16 @@ print $link;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 0;
-  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Relation: Rid */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
@@ -2607,20 +2591,16 @@ print $link;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Relation: Relation: campaign_phase_target (relation → node) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['id'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['field'] = 'relation_base_campaign_phase_instance_node';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_node']['entity_deduplication_right'] = 0;
-  /* Relationship: Relation: Relation: Campaign Phase Instance (relation → entityform) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['id'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['table'] = 'relation';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['field'] = 'relation_base_campaign_phase_instance_entityform';
   $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_base_campaign_phase_instance_entityform']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Relation: Rid */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';

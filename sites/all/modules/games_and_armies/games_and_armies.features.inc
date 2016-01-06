@@ -28,17 +28,9 @@ function games_and_armies_image_default_styles() {
 
   // Exported image style: hero_image_page.
   $styles['hero_image_page'] = array(
-    'name' => 'hero_image_page',
     'label' => 'Hero Image Page',
     'effects' => array(
-      18 => array(
-        'label' => 'Crop',
-        'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
-        'effect callback' => 'image_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_crop_form',
-        'summary theme' => 'image_crop_summary',
-        'module' => 'image',
+      23 => array(
         'name' => 'image_crop',
         'data' => array(
           'width' => 750,

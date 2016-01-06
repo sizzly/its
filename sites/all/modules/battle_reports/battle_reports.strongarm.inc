@@ -219,6 +219,9 @@ function battle_reports_strongarm() {
         'badges' => array(
           'weight' => '18',
         ),
+        'locations' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
@@ -352,15 +355,64 @@ function battle_reports_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_game_results';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_game_results'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_game_result_system_';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_game_result_system_'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_game_results_pattern';
+  $strongarm->value = 'battles/[node:nid]';
+  $export['pathauto_node_game_results_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_game_result_system__pattern';
+  $strongarm->value = 'battles/[node:nid]';
+  $export['pathauto_node_game_result_system__pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_custom_property_pattern';
+  $strongarm->value = 'meta/[term:name]';
+  $export['pathauto_taxonomy_term_custom_property_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_deployment_pattern';
+  $strongarm->value = 'meta/[term:name]';
+  $export['pathauto_taxonomy_term_deployment_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_scenario_special_rules_pattern';
+  $strongarm->value = 'meta/[term:name]';
+  $export['pathauto_taxonomy_term_scenario_special_rules_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_units_pattern';
+  $strongarm->value = 'meta/[term:name]';
+  $export['pathauto_taxonomy_term_units_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_victory_conditions_pattern';
+  $strongarm->value = 'meta/[term:name]';
+  $export['pathauto_taxonomy_term_victory_conditions_pattern'] = $strongarm;
 
   return $export;
 }

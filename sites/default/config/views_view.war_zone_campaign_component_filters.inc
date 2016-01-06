@@ -44,7 +44,7 @@ $handler->display->display_options['fields']['entityform_id']['id'] = 'entityfor
 $handler->display->display_options['fields']['entityform_id']['table'] = 'entityform';
 $handler->display->display_options['fields']['entityform_id']['field'] = 'entityform_id';
 $handler->display->display_options['fields']['entityform_id']['exclude'] = TRUE;
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';

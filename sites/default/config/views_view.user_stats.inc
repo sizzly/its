@@ -1012,17 +1012,17 @@ $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
 $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
 $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-/* Field: Field: Victory */
+/* Field: Content: Victory */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
-/* Field: Field: Draw */
+/* Field: Content: Draw */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
-/* Field: Field: Defeat */
+/* Field: Content: Defeat */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
@@ -1042,7 +1042,7 @@ $handler->display->display_options['fields']['field_battle_deployment']['label']
 $handler->display->display_options['fields']['field_battle_deployment']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_battle_deployment']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_battle_deployment']['type'] = 'taxonomy_term_reference_plain';
-/* Field: Field: Mission */
+/* Field: Content: Mission */
 $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
 $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
 $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
@@ -1924,7 +1924,7 @@ $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
-/* Relationship: Field: Mission (field_mission) */
+/* Relationship: Content: Mission (field_mission) */
 $handler->display->display_options['relationships']['field_mission_tid']['id'] = 'field_mission_tid';
 $handler->display->display_options['relationships']['field_mission_tid']['table'] = 'field_data_field_mission';
 $handler->display->display_options['relationships']['field_mission_tid']['field'] = 'field_mission_tid';
@@ -1946,7 +1946,7 @@ $handler->display->display_options['fields']['field_image']['settings'] = array(
   'image_link' => 'content',
 );
 $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
-/* Field: Field: Mission */
+/* Field: Content: Mission */
 $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
 $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
 $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
@@ -2136,7 +2136,7 @@ $handler->display->display_options['fields']['nid']['label'] = '';
 $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
 $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['nid']['separator'] = '';
-/* Field: Field: Victory */
+/* Field: Content: Victory */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
@@ -2526,17 +2526,17 @@ $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
 $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
 $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-/* Field: Field: Victory */
+/* Field: Content: Victory */
 $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
 $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
 $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
-/* Field: Field: Draw */
+/* Field: Content: Draw */
 $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
 $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
 $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
-/* Field: Field: Defeat */
+/* Field: Content: Defeat */
 $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
 $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
 $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
@@ -2556,7 +2556,7 @@ $handler->display->display_options['fields']['field_battle_deployment']['label']
 $handler->display->display_options['fields']['field_battle_deployment']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_battle_deployment']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_battle_deployment']['type'] = 'taxonomy_term_reference_plain';
-/* Field: Field: Mission */
+/* Field: Content: Mission */
 $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
 $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
 $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';

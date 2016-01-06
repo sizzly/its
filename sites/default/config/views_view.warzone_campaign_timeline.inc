@@ -78,7 +78,7 @@ $handler->display->display_options['fields']['timestamp_1']['element_label_colon
 $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'time ago';
 $handler->display->display_options['fields']['timestamp_1']['second_date_format'] = 'privatemsg_current_day';
 $handler->display->display_options['fields']['timestamp_1']['format_date_sql'] = 0;
-/* Field: Field: Chronicle Icon */
+/* Field: Taxonomy term: Chronicle Icon */
 $handler->display->display_options['fields']['field_chronicle_icon']['id'] = 'field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['table'] = 'field_data_field_chronicle_icon';
 $handler->display->display_options['fields']['field_chronicle_icon']['field'] = 'field_chronicle_icon';
@@ -86,7 +86,7 @@ $handler->display->display_options['fields']['field_chronicle_icon']['label'] = 
 $handler->display->display_options['fields']['field_chronicle_icon']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_chronicle_icon']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_chronicle_icon']['type'] = 'text_plain';
-/* Field: Field: Title */
+/* Field: Entityform Submission: Title */
 $handler->display->display_options['fields']['field_title_chronicle']['id'] = 'field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['table'] = 'field_data_field_title_chronicle';
 $handler->display->display_options['fields']['field_title_chronicle']['field'] = 'field_title_chronicle';

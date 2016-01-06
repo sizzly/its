@@ -10,7 +10,8 @@
 function narrative_campaigns_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_event_link'
+  // Exported field_instance:
+  // 'entityform-war_zone_campaign_add_points-field_event_link'.
   $field_instances['entityform-war_zone_campaign_add_points-field_event_link'] = array(
     'bundle' => 'war_zone_campaign_add_points',
     'default_value' => NULL,
@@ -67,7 +68,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_explanation_sc'
+  // Exported field_instance:
+  // 'entityform-war_zone_campaign_add_points-field_explanation_sc'.
   $field_instances['entityform-war_zone_campaign_add_points-field_explanation_sc'] = array(
     'bundle' => 'war_zone_campaign_add_points',
     'default_value' => NULL,
@@ -103,7 +105,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_narrative_text'
+  // Exported field_instance:
+  // 'entityform-war_zone_campaign_add_points-field_narrative_text'.
   $field_instances['entityform-war_zone_campaign_add_points-field_narrative_text'] = array(
     'bundle' => 'war_zone_campaign_add_points',
     'default_value' => NULL,
@@ -141,7 +144,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_phase_sc'
+  // Exported field_instance:
+  // 'entityform-war_zone_campaign_add_points-field_phase_sc'.
   $field_instances['entityform-war_zone_campaign_add_points-field_phase_sc'] = array(
     'bundle' => 'war_zone_campaign_add_points',
     'default_value' => NULL,
@@ -180,7 +184,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_points_to_award'
+  // Exported field_instance:
+  // 'entityform-war_zone_campaign_add_points-field_points_to_award'.
   $field_instances['entityform-war_zone_campaign_add_points-field_points_to_award'] = array(
     'bundle' => 'war_zone_campaign_add_points',
     'default_value' => NULL,
@@ -220,7 +225,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-war_zone_campaign_add_points-field_registration_sc'
+  // Exported field_instance:
+  // 'entityform-war_zone_campaign_add_points-field_registration_sc'.
   $field_instances['entityform-war_zone_campaign_add_points-field_registration_sc'] = array(
     'bundle' => 'war_zone_campaign_add_points',
     'default_value' => NULL,
@@ -261,7 +267,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_factions-field_event_link'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_factions-field_event_link'.
   $field_instances['entityform-warzone_campaign_factions-field_event_link'] = array(
     'bundle' => 'warzone_campaign_factions',
     'default_value' => NULL,
@@ -318,7 +325,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_factions-field_image'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_factions-field_image'.
   $field_instances['entityform-warzone_campaign_factions-field_image'] = array(
     'bundle' => 'warzone_campaign_factions',
     'deleted' => 0,
@@ -383,7 +391,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_factions-field_mechanics_text'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_factions-field_mechanics_text'.
   $field_instances['entityform-warzone_campaign_factions-field_mechanics_text'] = array(
     'bundle' => 'warzone_campaign_factions',
     'default_value' => NULL,
@@ -421,7 +430,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_factions-field_narrative_text'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_factions-field_narrative_text'.
   $field_instances['entityform-warzone_campaign_factions-field_narrative_text'] = array(
     'bundle' => 'warzone_campaign_factions',
     'default_value' => NULL,
@@ -459,7 +469,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_factions-field_title_chronicle'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_factions-field_title_chronicle'.
   $field_instances['entityform-warzone_campaign_factions-field_title_chronicle'] = array(
     'bundle' => 'warzone_campaign_factions',
     'default_value' => NULL,
@@ -495,7 +506,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_campaign_points_narrative'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_phase-field_campaign_points_narrative'.
   $field_instances['entityform-warzone_campaign_phase-field_campaign_points_narrative'] = array(
     'bundle' => 'warzone_campaign_phase',
     'default_value' => array(
@@ -539,7 +551,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_event_link'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_phase-field_event_link'.
   $field_instances['entityform-warzone_campaign_phase-field_event_link'] = array(
     'bundle' => 'warzone_campaign_phase',
     'default_value' => NULL,
@@ -596,7 +609,7 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_image'
+  // Exported field_instance: 'entityform-warzone_campaign_phase-field_image'.
   $field_instances['entityform-warzone_campaign_phase-field_image'] = array(
     'bundle' => 'warzone_campaign_phase',
     'deleted' => 0,
@@ -661,7 +674,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_mechanics_text'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_phase-field_mechanics_text'.
   $field_instances['entityform-warzone_campaign_phase-field_mechanics_text'] = array(
     'bundle' => 'warzone_campaign_phase',
     'default_value' => NULL,
@@ -699,7 +713,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_narrative_text'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_phase-field_narrative_text'.
   $field_instances['entityform-warzone_campaign_phase-field_narrative_text'] = array(
     'bundle' => 'warzone_campaign_phase',
     'default_value' => NULL,
@@ -737,7 +752,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_prerequisite_narrative'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_phase-field_prerequisite_narrative'.
   $field_instances['entityform-warzone_campaign_phase-field_prerequisite_narrative'] = array(
     'bundle' => 'warzone_campaign_phase',
     'default_value' => array(
@@ -777,7 +793,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_title_chronicle'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_phase-field_title_chronicle'.
   $field_instances['entityform-warzone_campaign_phase-field_title_chronicle'] = array(
     'bundle' => 'warzone_campaign_phase',
     'default_value' => NULL,
@@ -813,7 +830,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_phase-field_warzone_round'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_phase-field_warzone_round'.
   $field_instances['entityform-warzone_campaign_phase-field_warzone_round'] = array(
     'bundle' => 'warzone_campaign_phase',
     'default_value' => NULL,
@@ -853,7 +871,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_event_link'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_event_link'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_event_link'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -910,7 +929,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_mission'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_mission'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_mission'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -945,7 +965,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => array(),
@@ -993,7 +1014,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -1034,7 +1056,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_p1_army_wz'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_p1_army_wz'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_p1_army_wz'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -1072,7 +1095,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_p2_army_wz'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_p2_army_wz'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_p2_army_wz'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -1110,7 +1134,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_phase_sc'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_phase_sc'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_phase_sc'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => array(),
@@ -1151,7 +1176,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_player_sc'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_player_sc'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_player_sc'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -1208,7 +1234,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_points_per_army'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_points_per_army'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_points_per_army'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -1248,7 +1275,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-warzone_campaign_report_battle_p-field_your_results'
+  // Exported field_instance:
+  // 'entityform-warzone_campaign_report_battle_p-field_your_results'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_your_results'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
     'default_value' => NULL,
@@ -1281,7 +1309,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-campaign_reported_battle-field_associated_nodes_stream'
+  // Exported field_instance:
+  // 'message-campaign_reported_battle-field_associated_nodes_stream'.
   $field_instances['message-campaign_reported_battle-field_associated_nodes_stream'] = array(
     'bundle' => 'campaign_reported_battle',
     'default_value' => NULL,
@@ -1340,7 +1369,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-campaign_reported_battle-field_chronicle_icon'
+  // Exported field_instance:
+  // 'message-campaign_reported_battle-field_chronicle_icon'.
   $field_instances['message-campaign_reported_battle-field_chronicle_icon'] = array(
     'bundle' => 'campaign_reported_battle',
     'default_value' => array(
@@ -1392,7 +1422,7 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-campaign_reported_battle-field_image'
+  // Exported field_instance: 'message-campaign_reported_battle-field_image'.
   $field_instances['message-campaign_reported_battle-field_image'] = array(
     'bundle' => 'campaign_reported_battle',
     'deleted' => 0,
@@ -1469,7 +1499,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-campaign_reported_battle-field_reply_form'
+  // Exported field_instance:
+  // 'message-campaign_reported_battle-field_reply_form'.
   $field_instances['message-campaign_reported_battle-field_reply_form'] = array(
     'bundle' => 'campaign_reported_battle',
     'deleted' => 0,
@@ -1515,7 +1546,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-campaign_reported_battle-field_stream_node_ref'
+  // Exported field_instance:
+  // 'message-campaign_reported_battle-field_stream_node_ref'.
   $field_instances['message-campaign_reported_battle-field_stream_node_ref'] = array(
     'bundle' => 'campaign_reported_battle',
     'default_value' => NULL,
@@ -1568,7 +1600,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-campaign_reported_battle-field_timeline_icon'
+  // Exported field_instance:
+  // 'message-campaign_reported_battle-field_timeline_icon'.
   $field_instances['message-campaign_reported_battle-field_timeline_icon'] = array(
     'bundle' => 'campaign_reported_battle',
     'default_value' => array(
@@ -1620,7 +1653,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-campaign_reported_battle-field_title_chronicle'
+  // Exported field_instance:
+  // 'message-campaign_reported_battle-field_title_chronicle'.
   $field_instances['message-campaign_reported_battle-field_title_chronicle'] = array(
     'bundle' => 'campaign_reported_battle',
     'default_value' => NULL,
@@ -1668,7 +1702,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node_registration-narrative_campaign_instance-field_register_army'
+  // Exported field_instance:
+  // 'node_registration-narrative_campaign_instance-field_register_army'.
   $field_instances['node_registration-narrative_campaign_instance-field_register_army'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -1706,7 +1741,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node_registration-narrative_campaign_instance-field_register_faction'
+  // Exported field_instance:
+  // 'node_registration-narrative_campaign_instance-field_register_faction'.
   $field_instances['node_registration-narrative_campaign_instance-field_register_faction'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -1745,7 +1781,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node_registration-narrative_campaign_instance-field_register_real_name'
+  // Exported field_instance:
+  // 'node_registration-narrative_campaign_instance-field_register_real_name'.
   $field_instances['node_registration-narrative_campaign_instance-field_register_real_name'] = array(
     'bundle' => 'narrative_campaign_instance',
     'default_value' => NULL,
@@ -1781,7 +1818,7 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-campaign_phase_instance-endpoints'
+  // Exported field_instance: 'relation-campaign_phase_instance-endpoints'.
   $field_instances['relation-campaign_phase_instance-endpoints'] = array(
     'bundle' => 'campaign_phase_instance',
     'default_value' => NULL,
@@ -1839,7 +1876,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-campaign_phase_instance-field_narrative_text'
+  // Exported field_instance:
+  // 'relation-campaign_phase_instance-field_narrative_text'.
   $field_instances['relation-campaign_phase_instance-field_narrative_text'] = array(
     'bundle' => 'campaign_phase_instance',
     'default_value' => NULL,
@@ -1877,7 +1915,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-campaign_phase_instance-field_phase_state_narrative'
+  // Exported field_instance:
+  // 'relation-campaign_phase_instance-field_phase_state_narrative'.
   $field_instances['relation-campaign_phase_instance-field_phase_state_narrative'] = array(
     'bundle' => 'campaign_phase_instance',
     'default_value' => array(
@@ -1914,7 +1953,8 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-campaign_phase_instance-field_victorious_faction'
+  // Exported field_instance:
+  // 'relation-campaign_phase_instance-field_victorious_faction'.
   $field_instances['relation-campaign_phase_instance-field_victorious_faction'] = array(
     'bundle' => 'campaign_phase_instance',
     'default_value' => NULL,
@@ -1961,7 +2001,7 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-armies-field_game_system_armies'
+  // Exported field_instance: 'taxonomy_term-armies-field_game_system_armies'.
   $field_instances['taxonomy_term-armies-field_game_system_armies'] = array(
     'bundle' => 'armies',
     'default_value' => NULL,
@@ -1994,7 +2034,7 @@ function narrative_campaigns_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-missions-field_image'
+  // Exported field_instance: 'taxonomy_term-missions-field_image'.
   $field_instances['taxonomy_term-missions-field_image'] = array(
     'bundle' => 'missions',
     'deleted' => 0,

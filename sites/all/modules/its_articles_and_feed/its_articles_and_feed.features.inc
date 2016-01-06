@@ -42,14 +42,6 @@ function its_articles_and_feed_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'news_source' => array(
-      'name' => t('News Source'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
   );
   drupal_alter('node_info', $items);
   return $items;
