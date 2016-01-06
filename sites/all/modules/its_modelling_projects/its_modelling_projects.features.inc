@@ -71,7 +71,7 @@ function its_modelling_projects_default_message_type() {
 function its_modelling_projects_node_info() {
   $items = array(
     'models' => array(
-      'name' => t('Models'),
+      'name' => t('Modeling Project'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

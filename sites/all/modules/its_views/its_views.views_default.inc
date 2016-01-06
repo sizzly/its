@@ -1027,7 +1027,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -1042,7 +1042,7 @@ function its_views_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Broken/missing handler */
+  /* Contextual filter: Content: slug (field_achievement_slug) */
   $handler->display->display_options['arguments']['field_achievement_slug_value']['id'] = 'field_achievement_slug_value';
   $handler->display->display_options['arguments']['field_achievement_slug_value']['table'] = 'field_data_field_achievement_slug';
   $handler->display->display_options['arguments']['field_achievement_slug_value']['field'] = 'field_achievement_slug_value';
@@ -1104,7 +1104,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -1565,7 +1565,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_army_profile_node_entityform']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_army_profile_node_entityform']['field'] = 'reverse_field_army_profile_node_entityform';
   $handler->display->display_options['relationships']['reverse_field_army_profile_node_entityform']['required'] = TRUE;
-  /* Field: Entityform Submission: Date */
+  /* Field: Entityform Submission: When */
   $handler->display->display_options['fields']['field_date_call_to_battle']['id'] = 'field_date_call_to_battle';
   $handler->display->display_options['fields']['field_date_call_to_battle']['table'] = 'field_data_field_date_call_to_battle';
   $handler->display->display_options['fields']['field_date_call_to_battle']['field'] = 'field_date_call_to_battle';
@@ -1673,7 +1673,7 @@ function its_views_views_default_views() {
     'type' => '',
     'field_api_classes' => 0,
   );
-  /* Sort criterion: Entityform Submission: Date (field_date_call_to_battle) */
+  /* Sort criterion: Entityform Submission: When (field_date_call_to_battle) */
   $handler->display->display_options['sorts']['field_date_call_to_battle_value']['id'] = 'field_date_call_to_battle_value';
   $handler->display->display_options['sorts']['field_date_call_to_battle_value']['table'] = 'field_data_field_date_call_to_battle';
   $handler->display->display_options['sorts']['field_date_call_to_battle_value']['field'] = 'field_date_call_to_battle_value';
@@ -1719,7 +1719,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Entityform Submission: Date */
+  /* Field: Entityform Submission: When */
   $handler->display->display_options['fields']['field_date_call_to_battle']['id'] = 'field_date_call_to_battle';
   $handler->display->display_options['fields']['field_date_call_to_battle']['table'] = 'field_data_field_date_call_to_battle';
   $handler->display->display_options['fields']['field_date_call_to_battle']['field'] = 'field_date_call_to_battle';
@@ -2109,11 +2109,10 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_your_army_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_your_army_tid']['vocabulary'] = 'armies';
   $handler->display->display_options['filters']['field_your_army_tid']['hierarchy'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
   $handler->display->display_options['filters']['field_game_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
@@ -2133,6 +2132,7 @@ function its_views_views_default_views() {
     2 => array(),
     3 => array(),
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   /* Filter criterion: Field: Your Army (field_your_army) */
   $handler->display->display_options['filters']['field_your_army_tid_1']['id'] = 'field_your_army_tid_1';
   $handler->display->display_options['filters']['field_your_army_tid_1']['table'] = 'field_data_field_your_army';
@@ -2343,11 +2343,10 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_your_army_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_your_army_tid']['vocabulary'] = 'armies';
   $handler->display->display_options['filters']['field_your_army_tid']['hierarchy'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
   $handler->display->display_options['filters']['field_game_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
@@ -2368,6 +2367,7 @@ function its_views_views_default_views() {
     2 => array(),
     3 => array(),
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   /* Filter criterion: Field: Your Army (field_your_army) */
   $handler->display->display_options['filters']['field_your_army_tid_1']['id'] = 'field_your_army_tid_1';
   $handler->display->display_options['filters']['field_your_army_tid_1']['table'] = 'field_data_field_your_army';
@@ -2442,7 +2442,7 @@ function its_views_views_default_views() {
     'image_style' => '',
     'image_link' => 'content',
   );
-  /* Field: Broken/missing handler */
+  /* Field: Content: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
@@ -5122,17 +5122,15 @@ function its_views_views_default_views() {
   $handler->display->display_options['style_options']['height'] = '175';
   $handler->display->display_options['style_options']['isstacked'] = 0;
   $handler->display->display_options['style_options']['pointsize'] = '0';
-  /* Relationship: Broken/missing handler */
+  /* Relationship: Field: Game (field_game) */
   $handler->display->display_options['relationships']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['relationships']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['relationships']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['relationships']['field_game_tid']['label'] = 'term from field_game';
   $handler->display->display_options['relationships']['field_game_tid']['required'] = TRUE;
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['label'] = 'Game';
   /* Field: COUNT(DISTINCT Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -5309,11 +5307,10 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'game_results' => 'game_results',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game Filter';
@@ -5325,6 +5322,7 @@ function its_views_views_default_views() {
     3 => '3',
     1 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $handler->display->display_options['path'] = 'stats/armies/battles-by-army';
   $export['game_views'] = $view;
 
@@ -8087,12 +8085,11 @@ Salute  Comment  Share
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['field_game']['label'] = 'Game';
   /* Field: COUNT(DISTINCT User: Name) */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -8120,12 +8117,13 @@ Salute  Comment  Share
     'game_results' => 'game_results',
     'game_result_system_' => 'game_result_system_',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['relationship'] = 'uid';
   $handler->display->display_options['filters']['field_game_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $export['player_stats_and_charts'] = $view;
 
   $view = new view();
@@ -9549,11 +9547,10 @@ Salute  Comment  Share
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['label'] = 'Game';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -9578,12 +9575,10 @@ Salute  Comment  Share
     'game_results' => 'game_results',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = array();
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
@@ -9600,6 +9595,7 @@ Salute  Comment  Share
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $handler->display->display_options['path'] = 'stats/yearly';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'By Year';
@@ -9626,7 +9622,7 @@ Salute  Comment  Share
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -9664,12 +9660,10 @@ Salute  Comment  Share
     'game_results' => 'game_results',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = array();
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
@@ -9686,6 +9680,7 @@ Salute  Comment  Share
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
     'page_1' => 0,
@@ -9865,12 +9860,10 @@ Salute  Comment  Share
     'game_result_system_' => 'game_result_system_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = array();
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
@@ -9887,6 +9880,7 @@ Salute  Comment  Share
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -10254,11 +10248,10 @@ return $lastmonth;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['label'] = 'Game';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -10283,12 +10276,10 @@ return $lastmonth;
     'game_results' => 'game_results',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = array();
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
@@ -10305,6 +10296,7 @@ return $lastmonth;
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $handler->display->display_options['path'] = 'stats/yearly';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'By Year';
@@ -10331,7 +10323,7 @@ return $lastmonth;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -10369,12 +10361,10 @@ return $lastmonth;
     'game_results' => 'game_results',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = array();
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
@@ -10391,6 +10381,7 @@ return $lastmonth;
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $handler->display->display_options['displays'] = array(
     'default' => 0,
     'page_1' => 0,
@@ -10570,12 +10561,10 @@ return $lastmonth;
     'game_result_system_' => 'game_result_system_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = array();
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
@@ -10592,6 +10581,7 @@ return $lastmonth;
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -10914,7 +10904,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['expression']['field'] = 'expression';
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['expression'] = '[expression] + [nid]';
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -10926,7 +10916,7 @@ return $lastmonth;
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Sort criterion: Content: Date (field_game_date) */
+  /* Sort criterion: Field: Date (field_game_date) */
   $handler->display->display_options['sorts']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['sorts']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['sorts']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -11512,11 +11502,10 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: State */
   $handler->display->display_options['fields']['field_state_challenge']['id'] = 'field_state_challenge';
   $handler->display->display_options['fields']['field_state_challenge']['table'] = 'field_data_field_state_challenge';
   $handler->display->display_options['fields']['field_state_challenge']['field'] = 'field_state_challenge';
-  $handler->display->display_options['fields']['field_state_challenge']['label'] = 'State';
   /* Field: Content: Opponent */
   $handler->display->display_options['fields']['field_opponent']['id'] = 'field_opponent';
   $handler->display->display_options['fields']['field_opponent']['table'] = 'field_data_field_opponent';
@@ -11525,11 +11514,10 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_opponent']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Broken/missing handler */
+  /* Field: Content: Player 1 */
   $handler->display->display_options['fields']['field_player_1_challenge']['id'] = 'field_player_1_challenge';
   $handler->display->display_options['fields']['field_player_1_challenge']['table'] = 'field_data_field_player_1_challenge';
   $handler->display->display_options['fields']['field_player_1_challenge']['field'] = 'field_player_1_challenge';
-  $handler->display->display_options['fields']['field_player_1_challenge']['label'] = 'Player 1';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -11557,11 +11545,10 @@ return $lastmonth;
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: State (field_state_challenge) */
   $handler->display->display_options['filters']['field_state_challenge_value']['id'] = 'field_state_challenge_value';
   $handler->display->display_options['filters']['field_state_challenge_value']['table'] = 'field_data_field_state_challenge';
   $handler->display->display_options['filters']['field_state_challenge_value']['field'] = 'field_state_challenge_value';
-  $handler->display->display_options['filters']['field_state_challenge_value']['operator'] = 'or';
   $handler->display->display_options['filters']['field_state_challenge_value']['value'] = array(
     5 => '5',
   );
@@ -13357,7 +13344,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -13472,7 +13459,7 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
-  /* Filter criterion: Content: Date (field_game_date) */
+  /* Filter criterion: Field: Date (field_game_date) */
   $handler->display->display_options['filters']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['filters']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['filters']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -13540,7 +13527,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
-  /* Filter criterion: Content: Date (field_game_date) */
+  /* Filter criterion: Field: Date (field_game_date) */
   $handler->display->display_options['filters']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['filters']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['filters']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -14409,7 +14396,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'strong';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -14425,7 +14412,7 @@ return $lastmonth;
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
@@ -14502,7 +14489,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'strong';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -14518,7 +14505,7 @@ return $lastmonth;
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
@@ -14875,11 +14862,10 @@ return $lastmonth;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['label'] = 'Game';
   /* Field: COUNT(Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -16380,11 +16366,10 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['label'] = 'Game';
   $handler->display->display_options['fields']['field_game']['exclude'] = TRUE;
   /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
@@ -16428,12 +16413,11 @@ return $lastmonth;
     'game_result_system_' => 'game_result_system_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Game (field_game) (selective) */
   $handler->display->display_options['filters']['field_game_tid_selective']['id'] = 'field_game_tid_selective';
   $handler->display->display_options['filters']['field_game_tid_selective']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid_selective']['field'] = 'field_game_tid_selective';
   $handler->display->display_options['filters']['field_game_tid_selective']['ui_name'] = 'Game (field_game) (selective)';
-  $handler->display->display_options['filters']['field_game_tid_selective']['operator'] = 'in';
   $handler->display->display_options['filters']['field_game_tid_selective']['group'] = 1;
   $handler->display->display_options['filters']['field_game_tid_selective']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid_selective']['expose']['operator_id'] = '';
@@ -16705,7 +16689,7 @@ return $lastmonth;
   );
   $handler->display->display_options['filters']['field_location_nid_selective']['selective_display_field'] = 'field_location';
   $handler->display->display_options['filters']['field_location_nid_selective']['selective_display_sort'] = 'ASC';
-  /* Filter criterion: Content: Date (field_game_date) */
+  /* Filter criterion: Field: Date (field_game_date) */
   $handler->display->display_options['filters']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['filters']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['filters']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -17889,11 +17873,10 @@ return $lastmonth;
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
-  /* Field: Broken/missing handler */
+  /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['label'] = 'Game';
   $handler->display->display_options['fields']['field_game']['exclude'] = TRUE;
   /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
@@ -18649,15 +18632,15 @@ return $lastmonth;
     'game_results' => 'game_results',
     'game_result_system_' => 'game_result_system_',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Field: Game (field_game) */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['field_game_tid']['operator'] = 'or';
   $handler->display->display_options['filters']['field_game_tid']['value'] = array(
     0 => '16',
   );
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   /* Filter criterion: Content: Enemy Commander Survival (field_enemy_commander_survival) */
   $handler->display->display_options['filters']['field_enemy_commander_survival_value']['id'] = 'field_enemy_commander_survival_value';
   $handler->display->display_options['filters']['field_enemy_commander_survival_value']['table'] = 'field_data_field_enemy_commander_survival';

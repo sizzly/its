@@ -1050,5 +1050,51 @@ function its_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_utility_update_associated_nodes'] = entity_import('rules_config', '{ "rules_utility_update_associated_nodes" : {
+      "LABEL" : "Utility: Update Associated Nodes",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "views_rules", "rules", "rules_conditional" ],
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "utility_update_associated_nodes",
+            "DISPLAY" : "views_rules_1",
+            "ROW VARIABLES" : { "mid" : { "mid" : "Message ID" } },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "message", "id" : [ "mid" ] },
+                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                }
+              },
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "entity_is_of_bundle" : {
+                        "entity" : [ "entity-fetched" ],
+                        "type" : "message",
+                        "bundle" : { "value" : { "stream_player_comments_on_post" : "stream_player_comments_on_post" } }
+                      }
+                    },
+                    "DO" : [
+                      { "component_rules_status_all_get_associated_nodes" : {
+                          "USING" : { "srid" : [ "entity-fetched:field-stream-node-ref" ] },
+                          "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                        }
+                      },
+                      { "data_set" : {
+                          "data" : [ "entity-fetched:field-associated-nodes-stream" ],
+                          "value" : [ "assoc-nodes" ]
+                        }
+                      },
+                      { "entity_save" : { "data" : [ "entity-fetched" ], "immediate" : "1" } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }

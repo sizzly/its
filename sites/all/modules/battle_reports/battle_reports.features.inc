@@ -57,7 +57,7 @@ function battle_reports_default_entityform_type() {
       "form_status" : "ENTITYFORM_OPEN",
       "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
       "resubmit_action" : "new",
-      "redirect_path" : "",
+      "redirect_path" : "[current-page:url:path]",
       "instruction_pre" : { "value" : "", "format" : "filtered_html" }
     },
     "weight" : "0",

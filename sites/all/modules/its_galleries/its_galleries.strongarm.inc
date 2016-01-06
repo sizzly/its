@@ -105,16 +105,16 @@ function its_galleries_strongarm() {
           'weight' => '8',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
-        ),
-        'metatags' => array(
           'weight' => '9',
         ),
+        'metatags' => array(
+          'weight' => '10',
+        ),
         'badges' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'locations' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
       ),
       'display' => array(),

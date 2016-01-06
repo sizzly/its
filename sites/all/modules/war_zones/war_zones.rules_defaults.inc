@@ -224,35 +224,6 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_link_condition_warzone_award_achievement'] = entity_import('rules_config', '{ "rules_link_condition_warzone_award_achievement" : {
-      "LABEL" : "Rules link: Warzone: Award Achievement condition",
-      "PLUGIN" : "and",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
-      "USES VARIABLES" : {
-        "node_registration" : { "label" : "node_registration", "type" : "node_registration" },
-        "aid" : { "label" : "Indicated Award", "type" : "field_collection_item" }
-      },
-      "AND" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "aid" ],
-            "type" : "field_collection_item",
-            "bundle" : { "value" : { "field_available_awards_comp" : "field_available_awards_comp" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "node-registration" ],
-            "type" : "node_registration",
-            "bundle" : { "value" : {
-                "war_zone_league" : "war_zone_league",
-                "war_zone_tournament" : "war_zone_tournament"
-              }
-            }
-          }
-        }
-      ]
-    }
-  }');
   $items['rules_link_condition_wz_complete'] = entity_import('rules_config', '{ "rules_link_condition_wz_complete" : {
       "LABEL" : "Rules link: War Zone: All: Complete condition",
       "PLUGIN" : "and",
@@ -1337,14 +1308,6 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_war_zone_all_submit_news'] = entity_import('rules_config', '{ "rules_war_zone_all_submit_news" : {
-      "LABEL" : "War Zone: All: Submit News",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "USES VARIABLES" : { "fid" : { "label" : "Form", "type" : "entityform" } },
-      "DO" : []
-    }
-  }');
   $items['rules_war_zone_campaign_create_phase_relationships'] = entity_import('rules_config', '{ "rules_war_zone_campaign_create_phase_relationships" : {
       "LABEL" : "War Zone: Campaign: Create Phase Relationships",
       "PLUGIN" : "rule",
@@ -1535,7 +1498,7 @@ function war_zones_default_rules_configuration() {
             {
               "IF" : { "entity_is_of_bundle" : {
                   "entity" : [ "p1-registration" ],
-                  "type" : "unknown",
+                  "type" : "node_registration",
                   "bundle" : { "value" : { "narrative_campaign_instance" : "narrative_campaign_instance" } }
                 }
               },

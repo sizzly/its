@@ -193,11 +193,11 @@ function war_zones_flag_default_flags() {
     'show_on_entity' => 0,
     'show_on_form' => 0,
     'access_author' => '',
-    'api_version' => 2,
     'module' => 'war_zones',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 
@@ -374,9 +374,9 @@ function war_zones_node_info() {
       'help' => '',
     ),
     'special_event' => array(
-      'name' => t('Special Event'),
+      'name' => t('Event'),
       'base' => 'node_content',
-      'description' => t('Create a <em>Special Event</em> to use iToysoldiers features with an event that doesn\'t quite line up with the structured events offered on the site. '),
+      'description' => t('Create an <em>Event</em> to use iToysoldiers features with an event that doesn\'t quite line up with the structured events offered on the site. Perfect for club days, meetings, seminars, and competitive play events that aren\'t being managed through iToysoldiers.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

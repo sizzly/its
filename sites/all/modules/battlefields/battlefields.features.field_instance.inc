@@ -181,6 +181,7 @@ function battlefields_field_default_field_instances() {
   // Exported field_instance: 'node-location-field_image'.
   $field_instances['node-location-field_image'] = array(
     'bundle' => 'location',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -228,8 +229,15 @@ function battlefields_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'dragdropfile_enabled' => 1,
         'filefield_sources' => array(
           'filefield_sources' => array(
@@ -255,7 +263,7 @@ function battlefields_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 1,
     ),
   );

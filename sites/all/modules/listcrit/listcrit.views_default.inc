@@ -693,7 +693,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_batteresult_commander']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_batteresult_commander']['hide_empty'] = TRUE;
-  /* Field: Content: Tactical Focus */
+  /* Field: Field: Tactical Focus */
   $handler->display->display_options['fields']['field_tactical_focus']['id'] = 'field_tactical_focus';
   $handler->display->display_options['fields']['field_tactical_focus']['table'] = 'field_data_field_tactical_focus';
   $handler->display->display_options['fields']['field_tactical_focus']['field'] = 'field_tactical_focus';
@@ -715,7 +715,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_tactical_focus']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_tactical_focus']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_tactical_focus']['element_default_classes'] = FALSE;
-  /* Field: Content: Doctrine */
+  /* Field: Field: Doctrine */
   $handler->display->display_options['fields']['field_doctrine']['id'] = 'field_doctrine';
   $handler->display->display_options['fields']['field_doctrine']['table'] = 'field_data_field_doctrine';
   $handler->display->display_options['fields']['field_doctrine']['field'] = 'field_doctrine';
@@ -946,7 +946,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_camp']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_camp']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_camp']['hide_empty'] = TRUE;
-  /* Field: Content: Primary Role */
+  /* Field: Field: Primary Role */
   $handler->display->display_options['fields']['field_primary_role']['id'] = 'field_primary_role';
   $handler->display->display_options['fields']['field_primary_role']['table'] = 'field_data_field_primary_role';
   $handler->display->display_options['fields']['field_primary_role']['field'] = 'field_primary_role';
@@ -1061,7 +1061,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['vocabulary'] = 'armies';
-  /* Filter criterion: Content: Primary Role (field_primary_role) */
+  /* Filter criterion: Field: Primary Role (field_primary_role) */
   $handler->display->display_options['filters']['field_primary_role_tid']['id'] = 'field_primary_role_tid';
   $handler->display->display_options['filters']['field_primary_role_tid']['table'] = 'field_data_field_primary_role';
   $handler->display->display_options['filters']['field_primary_role_tid']['field'] = 'field_primary_role_tid';

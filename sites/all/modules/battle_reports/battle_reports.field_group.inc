@@ -260,6 +260,37 @@ function battle_reports_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_content_wrapper|node|game_results|teaser';
+  $field_group->group_name = 'group_content_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_results';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Content Wrapper',
+    'weight' => '8',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_game_date',
+      2 => 'field_location',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'element' => 'div',
+        'classes' => '',
+        'attributes' => '',
+        'required_fields' => 1,
+        'id' => 'node_game_results_teaser_group_content_wrapper',
+      ),
+    ),
+  );
+  $export['group_content_wrapper|node|game_results|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_display_order_of_battle|node|game_result_system_|default';
   $field_group->group_name = 'group_display_order_of_battle';
   $field_group->entity_type = 'node';
@@ -408,6 +439,34 @@ function battle_reports_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|game_results|teaser';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_results';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '7',
+    'children' => array(
+      0 => 'group_spacer',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-xs-3 col-sm-3 col-md-2 pull-left',
+        'element' => 'div',
+        'attributes' => '',
+        'id' => 'node_game_results_teaser_group_image_wrapper',
+      ),
+    ),
+  );
+  $export['group_image_wrapper|node|game_results|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_order_of_battle|node|game_result_system_|form';
   $field_group->group_name = 'group_order_of_battle';
   $field_group->entity_type = 'node';
@@ -469,6 +528,34 @@ function battle_reports_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_spacer|node|game_results|teaser';
+  $field_group->group_name = 'group_spacer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_results';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->data = array(
+    'label' => 'Spacer',
+    'weight' => '40',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Spacer',
+      'instance_settings' => array(
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'attributes' => '',
+        'id' => 'node_game_results_teaser_group_spacer',
+      ),
+    ),
+  );
+  $export['group_spacer|node|game_results|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_wrapper|node|game_result_system_|teaser';
   $field_group->group_name = 'group_wrapper';
   $field_group->entity_type = 'node';
@@ -495,6 +582,35 @@ function battle_reports_field_group_info() {
     ),
   );
   $export['group_wrapper|node|game_result_system_|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper|node|game_results|teaser';
+  $field_group->group_name = 'group_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_results';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_image_wrapper',
+      1 => 'group_content_wrapper',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Wrapper',
+      'instance_settings' => array(
+        'classes' => 'clearfix',
+        'element' => 'div',
+        'attributes' => '',
+        'id' => 'node_game_results_teaser_group_wrapper',
+      ),
+    ),
+  );
+  $export['group_wrapper|node|game_results|teaser'] = $field_group;
 
   return $export;
 }

@@ -151,7 +151,7 @@ function its_modelling_projects_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_models';
-  $strongarm->value = 'main-menu:18120';
+  $strongarm->value = 'main-menu:0';
   $export['menu_parent_models'] = $strongarm;
 
   $strongarm = new stdClass();

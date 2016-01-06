@@ -31,7 +31,9 @@ function its_modelling_projects_user_default_permissions() {
   // Exported permission: 'create models content'.
   $permissions['create models content'] = array(
     'name' => 'create models content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
@@ -59,7 +61,9 @@ function its_modelling_projects_user_default_permissions() {
   // Exported permission: 'edit own models content'.
   $permissions['edit own models content'] = array(
     'name' => 'edit own models content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
