@@ -53,11 +53,11 @@ function profiles_flag_default_flags() {
     'access_author' => '',
     'show_on_profile' => 0,
     'access_uid' => '',
-    'api_version' => 2,
     'module' => 'profiles',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 
