@@ -1135,7 +1135,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['relationships']['field_location_nid']['field'] = 'field_location_nid';
   $handler->display->display_options['relationships']['field_location_nid']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Content: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
