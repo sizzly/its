@@ -1086,9 +1086,7 @@ function war_zones_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_special_event';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_special_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1618,7 +1616,7 @@ Event start: [node:event-start].',
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_special_event';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_special_event'] = $strongarm;
 
   $strongarm = new stdClass();
