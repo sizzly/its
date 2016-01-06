@@ -412,7 +412,7 @@ function its_galleries_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 15,
+      'weight' => 1,
     ),
   );
 

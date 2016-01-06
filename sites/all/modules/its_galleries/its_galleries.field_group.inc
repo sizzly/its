@@ -43,6 +43,34 @@ function its_galleries_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_thumb|node|gallery|teaser';
+  $field_group->group_name = 'group_image_thumb';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gallery';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->data = array(
+    'label' => 'Thumbnail',
+    'weight' => '16',
+    'children' => array(
+      0 => 'field_images',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Thumbnail',
+      'instance_settings' => array(
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'attributes' => '',
+        'id' => 'node_gallery_teaser_group_image_thumb',
+      ),
+    ),
+  );
+  $export['group_image_thumb|node|gallery|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_image_wrapper|node|gallery|teaser';
   $field_group->group_name = 'group_image_wrapper';
   $field_group->entity_type = 'node';
