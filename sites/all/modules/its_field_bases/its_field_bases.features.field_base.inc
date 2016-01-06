@@ -1572,6 +1572,35 @@ $entity_field[0][\'value\'] = "0";
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_games_played_multi'.
+  $field_bases['field_games_played_multi'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_games_played_multi',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'armies',
+          'parent' => 0,
+          'depth' => 1,
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_geolocation'.
   $field_bases['field_geolocation'] = array(
     'active' => 1,
@@ -1638,7 +1667,7 @@ $entity_field[0][\'value\'] = "0";
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 21790,
+      'default_image' => 0,
       'profile2_private' => FALSE,
       'uri_scheme' => 'public',
     ),
@@ -2883,6 +2912,42 @@ $entity_field[0][\'value\'] = "0";
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_unit'.
+  $field_bases['field_unit'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_unit',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'units' => 'units',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
