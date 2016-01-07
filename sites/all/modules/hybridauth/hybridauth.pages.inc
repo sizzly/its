@@ -94,7 +94,7 @@ function _hybridauth_window_close($redirect = TRUE) {
 
   $destination = drupal_get_destination();
   $destination = token_replace($destination['destination'], array('user' => $user), array('clear' => TRUE));
-  $destination_error = $_GET['destination_error'];
+  $destination_error = !empty($_GET['destination_error']) ? $_GET['destination_error'] : variable_get('hybridauth_destination_error', '');
 
   $destination_options = drupal_parse_url($destination) + array('absolute' => TRUE);
   $destination_error_options = drupal_parse_url($destination_error) + array('absolute' => TRUE);
@@ -270,8 +270,8 @@ function _hybridauth_window_process_auth($data) {
   // Create new user account.
   else {
     // Visitors can create accounts.
-    if ((!variable_get('hybridauth_register', 0) && variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL))
-      || variable_get('hybridauth_register', 0) != 3) {
+    if ((variable_get('hybridauth_register', 0) == 0 && variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL))
+      || variable_get('hybridauth_register', 0) == 1 || variable_get('hybridauth_register', 0) == 2) {
       _hybridauth_invoke_hooks('hybridauth_user_preinsert', $user, $data);
 
       // Check profile information for required fields.
@@ -293,7 +293,7 @@ function _hybridauth_window_process_auth($data) {
       $userinfo = array(
         'name' => $name,
         'pass' => empty($user_password) ? user_password() : $user_password,
-        'init' => $name,
+        'init' => $data['email'],
         'status' => 1,
         'access' => REQUEST_TIME,
         'mail' => $data['email'],
@@ -304,7 +304,7 @@ function _hybridauth_window_process_auth($data) {
 
       $admin_approval_required = FALSE;
       // Admin approval is required.
-      if ((!variable_get('hybridauth_register', 0) && variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL) == USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)
+      if ((variable_get('hybridauth_register', 0) == 0 && variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL) == USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)
         || variable_get('hybridauth_register', 0) == 2) {
         $userinfo['status'] = 0;
         $admin_approval_required = TRUE;
@@ -439,7 +439,6 @@ function _hybridauth_window_render_form($form, $provider_id) {
 }
 
 function hybridauth_additional_info_form($form, &$form_state, $data) {
-  $form = array();
   $form['data'] = array(
     '#type' => 'value',
     '#value' => $data,
@@ -457,7 +456,7 @@ function hybridauth_additional_info_form($form, &$form_state, $data) {
       '#maxlength' => USERNAME_MAX_LENGTH,
       '#required' => TRUE,
       '#attributes' => array('class' => array('username')),
-      '#default_value' => _hybridauth_make_username($data),
+      '#default_value' => _hybridauth_make_username($data, TRUE),
       '#description' => t('Choose your username.') . ' '
         . t('Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores.'),
     );
@@ -560,14 +559,15 @@ function hybridauth_additional_info_form_submit($form, &$form_state) {
       $data['manual'][] = 'pass';
     }
   }
-  $data['manual'] = implode(',', $data['manual']);
+
+  if (isset($data['manual']) && is_array($data['manual'])) {
+    $data['manual'] = implode(',', $data['manual']);
+  }
 
   _hybridauth_window_process_auth($data);
 }
 
 function hybridauth_openid_form($form, &$form_state) {
-  $form = array();
-
   $form['openid_identifier'] = array(
     '#type' => 'textfield',
     '#title' => t('OpenID Identity'),
@@ -633,6 +633,7 @@ function hybridauth_user_identity($form, &$form_state, $account) {
       '#weight' => 10,
       '#hybridauth_widget_type' => 'list',
       '#hybridauth_destination' => '',
+      '#hybridauth_destination_error' => '',
     );
   }
 
@@ -760,6 +761,7 @@ function hybridauth_user_identity_delete($form, &$form_state, $account, $id) {
           '#weight' => 10,
           '#hybridauth_widget_type' => 'list',
           '#hybridauth_destination' => '',
+          '#hybridauth_destination_error' => '',
         );
       }
       return $form;

@@ -10,32 +10,47 @@
 function narrative_campaigns_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_army_elo_v2'
-  $field_bases['field_army_elo_v2'] = array(
+  // Exported field_base: 'field_associated_nodes_stream'.
+  $field_bases['field_associated_nodes_stream'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_army_elo_v2',
-    'foreign keys' => array(),
-    'indexes' => array(),
+    'field_name' => 'field_associated_nodes_stream',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'field_hidden',
+    'module' => 'entityreference',
     'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(),
+      ),
       'profile2_private' => FALSE,
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'field_hidden_integer',
+    'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_campaign_points_narrative'
+  // Exported field_base: 'field_campaign_points_narrative'.
   $field_bases['field_campaign_points_narrative'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_campaign_points_narrative',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -46,21 +61,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_chronicle_icon'
+  // Exported field_base: 'field_chronicle_icon'.
   $field_bases['field_chronicle_icon'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_chronicle_icon',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -76,21 +83,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_game_system_armies'
+  // Exported field_base: 'field_game_system_armies'.
   $field_bases['field_game_system_armies'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_game_system_armies',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -113,21 +112,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_mechanics_text'
+  // Exported field_base: 'field_mechanics_text'.
   $field_bases['field_mechanics_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mechanics_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -142,21 +133,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_mission'
+  // Exported field_base: 'field_mission'.
   $field_bases['field_mission'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mission',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -178,21 +161,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_narrative_text'
+  // Exported field_base: 'field_narrative_text'.
   $field_bases['field_narrative_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_narrative_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -207,21 +182,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_opponent_report_battle'
+  // Exported field_base: 'field_opponent_report_battle'.
   $field_bases['field_opponent_report_battle'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_opponent_report_battle',
-    'foreign keys' => array(
-      'node_registration' => array(
-        'columns' => array(
-          'target_id' => 'registration_id',
-        ),
-        'table' => 'node_registration',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -250,21 +217,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_p1_army_wz'
+  // Exported field_base: 'field_p1_army_wz'.
   $field_bases['field_p1_army_wz'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_p1_army_wz',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -287,21 +246,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_p2_army_wz'
+  // Exported field_base: 'field_p2_army_wz'.
   $field_bases['field_p2_army_wz'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_p2_army_wz',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -324,14 +275,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_phase_state_narrative'
+  // Exported field_base: 'field_phase_state_narrative'.
   $field_bases['field_phase_state_narrative'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_phase_state_narrative',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -353,21 +303,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_player_sc'
+  // Exported field_base: 'field_player_sc'.
   $field_bases['field_player_sc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_player_sc',
-    'foreign keys' => array(
-      'users' => array(
-        'columns' => array(
-          'target_id' => 'uid',
-        ),
-        'table' => 'users',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -395,14 +337,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_points_per_army'
+  // Exported field_base: 'field_points_per_army'.
   $field_bases['field_points_per_army'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_points_per_army',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -413,14 +354,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_points_to_award'
+  // Exported field_base: 'field_points_to_award'.
   $field_bases['field_points_to_award'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_points_to_award',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -431,21 +371,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_prerequisite_narrative'
+  // Exported field_base: 'field_prerequisite_narrative'.
   $field_bases['field_prerequisite_narrative'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_prerequisite_narrative',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -461,21 +393,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_register_faction'
+  // Exported field_base: 'field_register_faction'.
   $field_bases['field_register_faction'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_register_faction',
-    'foreign keys' => array(
-      'entityform' => array(
-        'columns' => array(
-          'target_id' => 'entityform_id',
-        ),
-        'table' => 'entityform',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -504,21 +428,35 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_title_chronicle'
-  $field_bases['field_title_chronicle'] = array(
+  // Exported field_base: 'field_reply_form'.
+  $field_bases['field_reply_form'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_title_chronicle',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
+    'field_name' => 'field_reply_form',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'reply',
+    'settings' => array(
+      'access' => -1,
+      'allow_reply' => -1,
+      'bundle' => 'status_comments',
+      'display' => -1,
+      'form' => -1,
+      'profile2_private' => FALSE,
     ),
+    'translatable' => 0,
+    'type' => 'reply',
+  );
+
+  // Exported field_base: 'field_timeline_icon'.
+  $field_bases['field_timeline_icon'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_timeline_icon',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -534,21 +472,35 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_victorious_faction'
+  // Exported field_base: 'field_title_chronicle'.
+  $field_bases['field_title_chronicle'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_title_chronicle',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_victorious_faction'.
   $field_bases['field_victorious_faction'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_victorious_faction',
-    'foreign keys' => array(
-      'entityform' => array(
-        'columns' => array(
-          'target_id' => 'entityform_id',
-        ),
-        'table' => 'entityform',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -578,14 +530,13 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_warzone_round'
+  // Exported field_base: 'field_warzone_round'.
   $field_bases['field_warzone_round'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_warzone_round',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',

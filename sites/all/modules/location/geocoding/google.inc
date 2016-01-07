@@ -6,94 +6,14 @@
  */
 
 /**
- * Returns an XML document containing the list of countries supported by the
- * Google geocoder.
- * A cached version is stored in the Drupal cache in case Google is unreachable.
- */
-function google_geocode_country_list_xml() {
-  // Get the google data from the feed.
-  $source = drupal_http_request(
-    'http://spreadsheets.google.com/feeds/list/p9pdwsai2hDMsLkXsoM05KQ/default/public/values'
-  );
-
-  if (!$source->data) {
-    // Use the cache.
-    $data = cache_get('location_google');
-    if (!defined('LIBXML_VERSION') || (version_compare(phpversion(), '5.1.0', '<'))) {
-      $xml = simplexml_load_string($data->data, NULL);
-    }
-    else {
-      $xml = simplexml_load_string($data->data, NULL, LIBXML_NOERROR | LIBXML_NOWARNING);
-    }
-  }
-  else {
-    if (!defined('LIBXML_VERSION') || (version_compare(phpversion(), '5.1.0', '<'))) {
-      $xml = simplexml_load_string($source->data, NULL);
-      // Stores the XML in the cache to eventually use it later.
-      cache_set('location_google', $xml->asXML());
-    }
-    else {
-      $xml = simplexml_load_string($source->data, NULL, LIBXML_NOERROR | LIBXML_NOWARNING);
-      // Store the XML in the cache to eventually use it later.
-      cache_set('location_google', $xml->asXML());
-    }
-  }
-
-  return $xml;
-}
-
-/**
- * Return the list of ISO3166 codes supported by this geocoder.
- * Coverage list: http://gmaps-samples.googlecode.com/svn/trunk/mapcoverage_filtered.html
- * Coverage list feed: http://spreadsheets.google.com/feeds/list/p9pdwsai2hDMsLkXsoM05KQ/default/public/values
+ * Return the list of ISO3166 codes supported by this geocoder. 
+ * 
+ * Google now supports geocoding for all countries:
+ * https://developers.google.com/maps/coverage
  */
 function google_geocode_country_list() {
-  // Get the google data from the feed.
-  $xml = google_geocode_country_list_xml();
-
-  // Loop through google data and find all valid entries.
-  $regionclean = array();
-  foreach ($xml->entry as $region) {
-    $pos = strpos($region->content, 'geocoding:') + 11;
-    $geocoding = substr($region->content, $pos, strpos($region->content, ',', $pos) - $pos);
-    if (strpos($geocoding, "Yes") !== FALSE) {
-      $regionclean[] = t(htmlentities($region->title));
-    }
-  }
-
-  // Get the countries list and clean it up so that names will match to google.
-  // The regex removes parenthetical items so that both of the "Congo" entries
-  // and the "Coco Islands" work.
-  // The $countriesfixes overwrites values in the Drupal API countries list
-  // with values that will match to google's entries.
-  // "Sao Tome and Principe" are non-accented in the Drupal API so the entry
-  // here is to match the htmlentities() fix in the foreach loop below.
-  // Note: it may be neccessary to adjust/add to the fixes list in the future
-  // if google adds countries that don't match the Drupal API list for whatever
-  // reason.
   $countries = location_get_iso3166_list();
-  $regex = "#[ (].*[)]#";
-  $cntryclean = preg_replace($regex, "", $countries);
-  $countriesfixes = array_merge(
-    $cntryclean,
-    array(
-      "hk" => t("China"),
-      "mo" => t("China"),
-      "pn" => t("Pitcairn Islands"),
-      "wf" => t("Wallis Futuna"),
-      "st" => t("S&Atilde;&pound;o Tom&Atilde;&copy; and Pr&Atilde;&shy;ncipe"),
-    )
-  );
-
-  // Compare new google data found to fixed country name values and return
-  // matches with abbreviations as keys.
-  $googlematched = array_intersect($countriesfixes, $regionclean);
-
-  // Compare new keys to original Drupal API and return the array with the
-  // original name values.
-  $fixedkeys = array_intersect_key($countries, $googlematched);
-
-  return array_keys($fixedkeys);
+  return array_keys($countries);
 }
 
 /**
@@ -110,9 +30,11 @@ function google_geocode_info() {
 
 /**
  * Perform a geocode on a location array.
- * @param $location
+ *
+ * @param array $location
  *   The location array to process.
- * @return
+ *
+ * @return array
  *   an associative array with keys 'lat' and 'lon' containing the coordinates.
  */
 function google_geocode_location($location = array()) {
@@ -181,7 +103,7 @@ function google_geocode_location($location = array()) {
       'Google geocoding returned status code: %status_code for the query url: %url',
       array(
         '%status_code' => $data->status,
-        '%url' => $url
+        '%url' => $url,
       )
     );
 
@@ -208,9 +130,9 @@ function google_geocode_settings() {
       'In order to use the Google Geocoding API web-service, you will need a Google Geocoding API Server Key.  You can obtain one at the !sign_up_link for the !google_maps_api.  Without a key daily requests from a single IP address will be automaticaly limited.  If you do not enter a key here this module will use the Google Maps API Key from gmap if one is present. NOTE: You will <em>not</em> have to re-enter your API key for each country for which you have selected Google Maps for geocoding.  This setting is global.',
       array(
         '!sign_up_link' => '<a href="http://console.developers.google.com/">sign-up page</a>',
-        '!google_maps_api' => '<a href="http://developers.google.com/maps/documentation/geocoding/">Google Geocoding API</a>'
+        '!google_maps_api' => '<a href="http://developers.google.com/maps/documentation/geocoding/">Google Geocoding API</a>',
       )
-    )
+    ),
   );
 
   $form['location_geocode_google_delay'] = array(
@@ -240,8 +162,11 @@ function google_geocode_settings() {
   return $form;
 }
 
+/**
+ * Returns address.
+ */
 function _google_geocode_flatten($location = array()) {
-  // Check if its a valid address
+  // Check if its a valid address.
   if (empty($location)) {
     return '';
   }
@@ -302,7 +227,7 @@ function _google_geocode_flatten($location = array()) {
  *   A components string formatted as per the docs page linked to above.
  */
 function _google_geocode_get_components($location = array()) {
-  // Check if its a valid address
+  // Check if its a valid address.
   if (empty($location)) {
     return '';
   }

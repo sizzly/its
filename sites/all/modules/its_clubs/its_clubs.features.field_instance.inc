@@ -10,7 +10,7 @@
 function its_clubs_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-forum-og_group_ref'
+  // Exported field_instance: 'node-forum-og_group_ref'.
   $field_instances['node-forum-og_group_ref'] = array(
     'bundle' => 'forum',
     'default_value' => NULL,
@@ -28,7 +28,7 @@ function its_clubs_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -74,7 +74,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-forum-taxonomy_forums'
+  // Exported field_instance: 'node-forum-taxonomy_forums'.
   $field_instances['node-forum-taxonomy_forums'] = array(
     'bundle' => 'forum',
     'default_value' => NULL,
@@ -93,7 +93,7 @@ function its_clubs_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -113,7 +113,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gaming_club-body'
+  // Exported field_instance: 'node-gaming_club-body'.
   $field_instances['node-gaming_club-body'] = array(
     'bundle' => 'gaming_club',
     'default_value' => NULL,
@@ -129,11 +129,21 @@ function its_clubs_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
           'trim_length' => 300,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'smart_trim_format',
         'weight' => 1,
       ),
     ),
@@ -157,7 +167,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gaming_club-field_group_contact'
+  // Exported field_instance: 'node-gaming_club-field_group_contact'.
   $field_instances['node-gaming_club-field_group_contact'] = array(
     'bundle' => 'gaming_club',
     'default_value' => NULL,
@@ -220,7 +230,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gaming_club-field_image'
+  // Exported field_instance: 'node-gaming_club-field_image'.
   $field_instances['node-gaming_club-field_image'] = array(
     'bundle' => 'gaming_club',
     'deleted' => 0,
@@ -253,8 +263,8 @@ function its_clubs_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
+      'default_image' => 21783,
+      'file_directory' => 'user/u[current-user:uid]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -295,7 +305,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gaming_club-field_location'
+  // Exported field_instance: 'node-gaming_club-field_location'.
   $field_instances['node-gaming_club-field_location'] = array(
     'bundle' => 'gaming_club',
     'default_value' => NULL,
@@ -341,7 +351,61 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gaming_club-field_supported_games'
+  // Exported field_instance: 'node-gaming_club-field_radioactivity'.
+  $field_instances['node-gaming_club-field_radioactivity'] = array(
+    'bundle' => 'gaming_club',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 100,
+        'radioactivity_timestamp' => 1445264698,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Radioactivity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'default_daily',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-gaming_club-field_supported_games'.
   $field_instances['node-gaming_club-field_supported_games'] = array(
     'bundle' => 'gaming_club',
     'default_value' => NULL,
@@ -356,7 +420,7 @@ function its_clubs_field_default_field_instances() {
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
@@ -379,7 +443,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gaming_club-field_website'
+  // Exported field_instance: 'node-gaming_club-field_website'.
   $field_instances['node-gaming_club-field_website'] = array(
     'bundle' => 'gaming_club',
     'default_value' => NULL,
@@ -436,7 +500,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gaming_club-group_access'
+  // Exported field_instance: 'node-gaming_club-group_access'.
   $field_instances['node-gaming_club-group_access'] = array(
     'bundle' => 'gaming_club',
     'default_value' => array(
@@ -487,7 +551,7 @@ function its_clubs_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-gaming_club-group_group'
+  // Exported field_instance: 'node-gaming_club-group_group'.
   $field_instances['node-gaming_club-group_group'] = array(
     'bundle' => 'gaming_club',
     'default_value' => array(
@@ -545,7 +609,7 @@ function its_clubs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-forums-og_group_ref'
+  // Exported field_instance: 'taxonomy_term-forums-og_group_ref'.
   $field_instances['taxonomy_term-forums-og_group_ref'] = array(
     'bundle' => 'forums',
     'default_value' => NULL,
@@ -609,6 +673,7 @@ function its_clubs_field_default_field_instances() {
   t('Group visibility');
   t('Groups audience');
   t('Image');
+  t('Radioactivity');
   t('Supported Games');
   t('Website');
 

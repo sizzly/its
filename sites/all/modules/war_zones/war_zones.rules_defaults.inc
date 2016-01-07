@@ -106,7 +106,9 @@ function war_zones_default_rules_configuration() {
                               "recipient" : [ "uid" ],
                               "author" : "1",
                               "subject" : "Achievement Awarded",
-                              "body" : "You have been awarded the [aid:link] Achievement."
+                              "body" : "You have been awarded the [aid:link] Achievement.",
+                              "feed_nid" : "1",
+                              "feed_node" : [ "aid" ]
                             },
                             "PROVIDE" : { "thread_id" : { "thread_id" : "ID of new thread" } }
                           }
@@ -193,7 +195,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
-                "league" : "league",
+                "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"
@@ -219,35 +221,6 @@ function war_zones_default_rules_configuration() {
           }
         },
         { "data_is" : { "data" : [ "node:field-status" ], "value" : "5" } }
-      ]
-    }
-  }');
-  $items['rules_link_condition_warzone_award_achievement'] = entity_import('rules_config', '{ "rules_link_condition_warzone_award_achievement" : {
-      "LABEL" : "Rules link: Warzone: Award Achievement condition",
-      "PLUGIN" : "and",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
-      "USES VARIABLES" : {
-        "node_registration" : { "label" : "node_registration", "type" : "node_registration" },
-        "aid" : { "label" : "Indicated Award", "type" : "field_collection_item" }
-      },
-      "AND" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "aid" ],
-            "type" : "field_collection_item",
-            "bundle" : { "value" : { "field_available_awards_comp" : "field_available_awards_comp" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "node-registration" ],
-            "type" : "node_registration",
-            "bundle" : { "value" : {
-                "war_zone_league" : "war_zone_league",
-                "war_zone_tournament" : "war_zone_tournament"
-              }
-            }
-          }
-        }
       ]
     }
   }');
@@ -1333,14 +1306,6 @@ function war_zones_default_rules_configuration() {
           }
         }
       ]
-    }
-  }');
-  $items['rules_war_zone_all_submit_news'] = entity_import('rules_config', '{ "rules_war_zone_all_submit_news" : {
-      "LABEL" : "War Zone: All: Submit News",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "USES VARIABLES" : { "fid" : { "label" : "Form", "type" : "entityform" } },
-      "DO" : []
     }
   }');
   $items['rules_war_zone_campaign_create_phase_relationships'] = entity_import('rules_config', '{ "rules_war_zone_campaign_create_phase_relationships" : {

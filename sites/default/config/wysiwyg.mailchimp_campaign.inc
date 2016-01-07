@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * wysiwyg.mailchimp_campaign.inc
+ */
+
+$api = '2.0.0';
+
+$data = FALSE;
+
+$dependencies = array(
+  'text_format.mailchimp_campaign' => 'text_format.mailchimp_campaign',
+);
+
+$optional = array();
+
+$modules = array(
+  0 => 'wysiwyg',
+);

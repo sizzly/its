@@ -1,0 +1,53 @@
+diff --git a/README.txt b/README.txt
+index dde38f6..d1b0fe6 100644
+--- a/README.txt
++++ b/README.txt
+@@ -39,3 +39,15 @@ Q) Is there an easy way to return the reply count for a particular entity the re
+ A) You can do the following:
+ $instance = field_info_instance($entity_type, $field_name, $bundle_name);
+ $count = count(reply_get_entity($entity_id, $entity_type, $instance['id']));
++
++3. Add a breadcrumb title for a custom entity that does not have 'title' attribute
++For unkown entities, or in case a title is missing the entity id will be used for populating the breadcrumb trail.
++
++<?php
++function mymodule_reply_entity_crumb_title_alter($title, $context) {
++	if ($context['entity_type'] == 'mytype') {
++		$title = $context['entity']->mytitlefieldfallback;
++	}
++}
++?>
++You can access the comment for which this breadcrumb is generated via $context['reply_instance'].
+diff --git a/reply.module b/reply.module
+index d836eab..74c5318 100644
+--- a/reply.module
++++ b/reply.module
+@@ -952,7 +952,24 @@ function reply_menu_breadcrumb_alter(&$active_trail, $item) {
+       $entity = reset($entity);
+       $parent_path = drupal_get_path_alias($entity_type . '/' . $entity_id);
+       $crumb['href'] = $parent_path;
+-      $crumb['title'] = htmlspecialchars_decode($entity->title);
++      switch ($entity_type) {
++        case 'user':
++          $crumb['title'] = htmlspecialchars_decode($entity->name);
++          break;
++        case 'node':
++          $crumb['title'] = htmlspecialchars_decode($entity->title);
++          break;
++        default:
++          $title = $entity_id;
++          break;
++      }
++      // Let other modules change the breadcrumb title:
++      $context = array(
++        'entity' => $entity,
++        'entity_type' => $entity_type,
++        'reply_instance' => $instance,
++      );
++      $title = drupal_alter('reply_entity_crumb_title', $title, $context);
+       $active_trail[$key] = $crumb;
+     }
+   }
+-- 
+1.8.5.2 (Apple Git-48)
+

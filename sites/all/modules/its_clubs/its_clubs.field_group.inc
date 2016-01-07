@@ -26,12 +26,13 @@ function its_clubs_field_group_info() {
       0 => 'body',
       1 => 'field_supported_games',
       2 => 'field_location',
+      3 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Media Body',
       'instance_settings' => array(
-        'classes' => 'media-body',
+        'classes' => 'col-sm-9',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -60,7 +61,7 @@ function its_clubs_field_group_info() {
     'format_settings' => array(
       'label' => 'Media Left',
       'instance_settings' => array(
-        'classes' => 'media-left pull-left hidden-xs',
+        'classes' => 'col-sm-3 text-center',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -90,7 +91,7 @@ function its_clubs_field_group_info() {
     'format_settings' => array(
       'label' => 'Media Wrapper',
       'instance_settings' => array(
-        'classes' => 'media',
+        'classes' => 'row',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',

@@ -154,6 +154,56 @@ function war_zones_default_entityform_type() {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function war_zones_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Indicates if a player has paid the registration fee.".
+  $flags['paid'] = array(
+    'content_type' => 'node_registration',
+    'title' => 'Indicates if a player has paid the registration fee.',
+    'global' => 1,
+    'types' => array(
+      0 => 'war_zone_league',
+      1 => 'war_zone_tournament',
+    ),
+    'flag_short' => 'Unpaid',
+    'flag_long' => '',
+    'flag_message' => 'Paid',
+    'unflag_short' => 'Paid',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'roles' => array(
+      'flag' => array(
+        0 => 3,
+        1 => 7,
+        2 => 9,
+        3 => 8,
+      ),
+      'unflag' => array(
+        0 => 3,
+        1 => 7,
+        2 => 9,
+        3 => 8,
+      ),
+    ),
+    'weight' => 0,
+    'show_on_entity' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'module' => 'war_zones',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 2,
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_default_message_type().
  */
 function war_zones_default_message_type() {
@@ -307,14 +357,6 @@ function war_zones_default_message_type() {
  */
 function war_zones_node_info() {
   $items = array(
-    'league' => array(
-      'name' => t('League 2.0'),
-      'base' => 'node_content',
-      'description' => t('The totally revised IToysoldiers league system. Includes Journeyman 2015 leagues. '),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'narrative_campaign' => array(
       'name' => t('Narrative Campaign'),
       'base' => 'node_content',
@@ -332,9 +374,17 @@ function war_zones_node_info() {
       'help' => '',
     ),
     'special_event' => array(
-      'name' => t('Special Event'),
+      'name' => t('Event'),
       'base' => 'node_content',
-      'description' => t('Create a <em>Special Event</em> to use iToysoldiers features with an event that doesn\'t quite line up with the structured events offered on the site. '),
+      'description' => t('Create an <em>Event</em> to use iToysoldiers features with an event that doesn\'t quite line up with the structured events offered on the site. Perfect for club days, meetings, seminars, and competitive play events that aren\'t being managed through iToysoldiers.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'war_zone_league' => array(
+      'name' => t('League'),
+      'base' => 'node_content',
+      'description' => t('Manage a competitive league for your players.  IToysoldiers handles all the registration, calculations, scheduling, and pairings. Swiss Style and Casual league mechanics are supported.  '),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -363,7 +413,6 @@ function war_zones_default_rules_link() {
       "link_type" : "confirm",
       "bundles" : {
         "war_zone_league" : "war_zone_league",
-        "league" : "league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
@@ -381,7 +430,12 @@ function war_zones_default_rules_link() {
     "settings" : {
       "text" : "Create Painting Scorecards",
       "link_type" : "confirm",
-      "bundles" : [],
+      "bundles" : {
+        "league" : "league",
+        "narrative_campaign_instance" : "narrative_campaign_instance",
+        "special_event" : "special_event",
+        "war_zone_tournament" : "war_zone_tournament"
+      },
       "entity_link" : 0,
       "confirm_question" : "Are you sure?",
       "confirm_description" : "This will generate the painting scorecards for this war zone."
@@ -396,7 +450,7 @@ function war_zones_default_rules_link() {
       "text" : "Open War Zone",
       "link_type" : "confirm",
       "bundles" : {
-        "league" : "league",
+        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
@@ -429,7 +483,7 @@ function war_zones_default_rules_link() {
       "text" : "Complete War Zone",
       "link_type" : "confirm",
       "bundles" : {
-        "league" : "league",
+        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
@@ -448,7 +502,7 @@ function war_zones_default_rules_link() {
       "text" : "Start War Zone",
       "link_type" : "confirm",
       "bundles" : {
-        "league" : "league",
+        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"

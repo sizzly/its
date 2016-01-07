@@ -10,7 +10,123 @@
 function profiles_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'profile2-main-field_bio'
+  // Exported field_instance: 'profile2-ironmonger-field_image'.
+  $field_instances['profile2-ironmonger-field_image'] = array(
+    'bundle' => 'ironmonger',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_image',
+    'label' => 'Banner',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'ironmonger',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'dragdropfile_enabled' => 1,
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-ironmonger-field_website'.
+  $field_instances['profile2-ironmonger-field_website'] = array(
+    'bundle' => 'ironmonger',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_website',
+    'label' => 'Organization Website',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => FALSE,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-main-field_bio'.
   $field_instances['profile2-main-field_bio'] = array(
     'bundle' => 'main',
     'default_value' => NULL,
@@ -46,7 +162,7 @@ function profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-main-field_facebook'
+  // Exported field_instance: 'profile2-main-field_facebook'.
   $field_instances['profile2-main-field_facebook'] = array(
     'bundle' => 'main',
     'default_value' => NULL,
@@ -97,7 +213,7 @@ function profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-main-field_geolocation'
+  // Exported field_instance: 'profile2-main-field_geolocation'.
   $field_instances['profile2-main-field_geolocation'] = array(
     'bundle' => 'main',
     'deleted' => 0,
@@ -145,7 +261,7 @@ function profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-main-field_pinterest'
+  // Exported field_instance: 'profile2-main-field_pinterest'.
   $field_instances['profile2-main-field_pinterest'] = array(
     'bundle' => 'main',
     'default_value' => NULL,
@@ -196,7 +312,7 @@ function profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-main-field_profile_location'
+  // Exported field_instance: 'profile2-main-field_profile_location'.
   $field_instances['profile2-main-field_profile_location'] = array(
     'bundle' => 'main',
     'default_value' => NULL,
@@ -227,7 +343,7 @@ function profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-main-field_twitter'
+  // Exported field_instance: 'profile2-main-field_twitter'.
   $field_instances['profile2-main-field_twitter'] = array(
     'bundle' => 'main',
     'default_value' => NULL,
@@ -278,7 +394,7 @@ function profiles_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-main-field_website'
+  // Exported field_instance: 'profile2-main-field_website'.
   $field_instances['profile2-main-field_website'] = array(
     'bundle' => 'main',
     'default_value' => NULL,
@@ -330,10 +446,12 @@ function profiles_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Banner');
   t('Bio');
   t('Facebook');
   t('Geolocation');
   t('Location');
+  t('Organization Website');
   t('Pinterest');
   t('Twitter');
   t('Website');

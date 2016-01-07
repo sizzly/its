@@ -10,941 +10,7 @@
 function war_zones_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_player_sc',
-    'dependee' => 'field_registration_sc',
-    'options' => array(
-      'state' => '!visible',
-      'condition' => '!empty',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value' => array(),
-      'values' => array(),
-      'value_form' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_your_results',
-    'dependee' => 'field_score_card_type',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value_form' => 0,
-      'value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_victory_points_sc',
-    'dependee' => 'field_score_card_type',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value_form' => 0,
-      'value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_army_points_sc',
-    'dependee' => 'field_score_card_type',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value_form' => 0,
-      'value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_round_sc',
-    'dependee' => 'field_registration_sc',
-    'options' => array(
-      'state' => '!visible',
-      'condition' => '!empty',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value' => array(),
-      'values' => array(),
-      'value_form' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_display_sc',
-    'dependee' => 'field_registration_sc',
-    'options' => array(
-      'state' => '!visible',
-      'condition' => '!empty',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value' => array(),
-      'values' => array(),
-      'value_form' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_opponent_sc',
-    'dependee' => 'field_registration_sc',
-    'options' => array(
-      'state' => '!visible',
-      'condition' => '!empty',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value' => array(),
-      'values' => array(),
-      'value_form' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_state_sc',
-    'dependee' => 'field_registration_sc',
-    'options' => array(
-      'state' => '!visible',
-      'condition' => '!empty',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value' => array(),
-      'values' => array(),
-      'value_form' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
-    'dependent' => 'field_sportsmanship_sc',
-    'dependee' => 'field_score_card_type',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value_form' => 0,
-      'value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
+  $items["entityform:score_card:0"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_additional_points_sc',
@@ -1050,7 +116,113 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["entityform:score_card:1"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_army_points_sc',
+    'dependee' => 'field_score_card_type',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value_form' => 0,
+      'value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items["entityform:score_card:2"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_comp_sc',
@@ -1156,7 +328,109 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["entityform:score_card:3"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_display_sc',
+    'dependee' => 'field_registration_sc',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => '!empty',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+    ),
+  );
+
+  $items["entityform:score_card:4"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_explanation_sc',
@@ -1262,7 +536,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["entityform:score_card:5"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_opponent_reg_sc',
@@ -1368,7 +642,109 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["entityform:score_card:6"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_opponent_sc',
+    'dependee' => 'field_registration_sc',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => '!empty',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+    ),
+  );
+
+  $items["entityform:score_card:7"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_painting_sc',
@@ -1474,7 +850,419 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["entityform:score_card:8"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_round_sc',
+    'dependee' => 'field_registration_sc',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => '!empty',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+    ),
+  );
+
+  $items["entityform:score_card:9"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_score_card_type',
+    'dependee' => 'field_registration_sc',
+    'options' => array(
+      'state' => 'disabled',
+      'condition' => '!empty',
+      'grouping' => 'AND',
+      'effect' => FALSE,
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+    ),
+  );
+
+  $items["entityform:score_card:10"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_sportsmanship_sc',
+    'dependee' => 'field_score_card_type',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value_form' => 0,
+      'value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items["entityform:score_card:11"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_state_sc',
+    'dependee' => 'field_registration_sc',
+    'options' => array(
+      'state' => '!visible',
+      'condition' => '!empty',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+    ),
+  );
+
+  $items["entityform:score_card:12"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_strength_of_schedule_sc',
@@ -1580,16 +1368,16 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["entityform:score_card:13"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
-    'dependent' => 'field_score_card_type',
-    'dependee' => 'field_registration_sc',
+    'dependent' => 'field_victory_points_sc',
+    'dependee' => 'field_score_card_type',
     'options' => array(
-      'state' => 'disabled',
-      'condition' => '!empty',
+      'state' => 'visible',
+      'condition' => 'value',
       'grouping' => 'AND',
-      'effect' => FALSE,
+      'effect' => 'show',
       'effect_options' => array(),
       'element_view' => array(
         1 => 1,
@@ -1676,13 +1464,123 @@ function war_zones_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => 1,
-      'value' => array(),
+      'value_form' => 0,
+      'value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
       'values' => array(),
-      'value_form' => array(),
     ),
   );
 
-  $items[] = array(
+  $items["entityform:score_card:14"] = array(
+    'entity' => 'entityform',
+    'bundle' => 'score_card',
+    'dependent' => 'field_your_results',
+    'dependee' => 'field_score_card_type',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value_form' => 0,
+      'value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items["node:narrative_campaign_instance:0"] = array(
     'entity' => 'node',
     'bundle' => 'narrative_campaign_instance',
     'dependent' => 'field_registration_deadline',

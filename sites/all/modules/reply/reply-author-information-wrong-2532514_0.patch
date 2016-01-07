@@ -1,0 +1,46 @@
+diff --git a/includes/Reply.inc b/includes/Reply.inc
+index aa050c5..1d8e975 100644
+--- a/includes/Reply.inc
++++ b/includes/Reply.inc
+@@ -24,22 +24,6 @@ class Reply extends Entity {
+   public $deleted = 0;
+ 
+   /**
+-   * Creates a default Reply object.
+-   *
+-   * @see Entity::__construct()
+-   */
+-  public function __construct(array $values = array()) {
+-
+-    // Add values that are not allowed as property default values.
+-    $values += array(
+-      'hostname' => ip_address(),
+-      'uid' => $GLOBALS['user']->uid,
+-    );
+-
+-    parent::__construct($values, 'reply');
+-  }
+-
+-  /**
+    * Permanently saves the entity.
+    *
+    * @see entity_save()
+diff --git a/reply.module b/reply.module
+index 7c92b74..f719441 100644
+--- a/reply.module
++++ b/reply.module
+@@ -1065,6 +1065,14 @@ function reply_form($form, &$form_state, $reply) {
+     '#type' => 'value',
+     '#value' => isset($entity->language) ? $entity->language : LANGUAGE_NONE,
+   );
++  $form['hostname'] = array(
++    '#type' => 'value',
++    '#value' => isset($reply->hostname) ? $reply->hostname : ip_address(),
++  );
++  $form['uid'] = array(
++    '#type' => 'value',
++    '#value' => isset($reply->uid) ? $reply->uid : $GLOBALS['user']->uid,
++  );
+ 
+   field_attach_form('reply', $reply, $form, $form_state);
+ 

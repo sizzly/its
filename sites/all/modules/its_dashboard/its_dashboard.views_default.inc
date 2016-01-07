@@ -12,8 +12,8 @@ function its_dashboard_views_default_views() {
 
   $view = new view();
   $view->name = 'dashboard_all_content_stats';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Content stat panels for player dashboards.';
+  $view->tag = 'Dashboard 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Dashboard: All: Content Stats';
   $view->core = 7;
@@ -22,8 +22,12 @@ function its_dashboard_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Content Stats';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -68,6 +72,7 @@ function its_dashboard_views_default_views() {
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
@@ -438,6 +443,122 @@ function its_dashboard_views_default_views() {
   $handler->display->display_options['filters']['yearcount']['value']['value'] = '0';
   $handler->display->display_options['pane_category']['name'] = 'Dashboard';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Dashboard Block */
+  $handler = $view->new_display('block', 'Dashboard Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Content Stats';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content statistics: Total views */
+  $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
+  $handler->display->display_options['fields']['totalcount']['group_type'] = 'sum';
+  /* Field: Content statistics: Views this month */
+  $handler->display->display_options['fields']['monthcount']['id'] = 'monthcount';
+  $handler->display->display_options['fields']['monthcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['monthcount']['field'] = 'monthcount';
+  $handler->display->display_options['fields']['monthcount']['group_type'] = 'sum';
+  /* Field: Content statistics: Views this week */
+  $handler->display->display_options['fields']['weekcount']['id'] = 'weekcount';
+  $handler->display->display_options['fields']['weekcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['weekcount']['field'] = 'weekcount';
+  $handler->display->display_options['fields']['weekcount']['group_type'] = 'sum';
+  /* Field: Content statistics: Views this year */
+  $handler->display->display_options['fields']['yearcount']['id'] = 'yearcount';
+  $handler->display->display_options['fields']['yearcount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['yearcount']['field'] = 'yearcount';
+  $handler->display->display_options['fields']['yearcount']['group_type'] = 'sum';
+  /* Field: Content statistics: Views today */
+  $handler->display->display_options['fields']['daycount']['id'] = 'daycount';
+  $handler->display->display_options['fields']['daycount']['table'] = 'node_counter';
+  $handler->display->display_options['fields']['daycount']['field'] = 'daycount';
+  $handler->display->display_options['fields']['daycount']['group_type'] = 'sum';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'totalcount' => 'totalcount',
+    'monthcount' => 'monthcount',
+    'weekcount' => 'weekcount',
+    'yearcount' => 'yearcount',
+    'daycount' => 'daycount',
+  );
+  $handler->display->display_options['style_options']['default'] = 'daycount';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'totalcount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'monthcount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'weekcount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'yearcount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'daycount' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['path'] = 'dashboard/content_stats';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Content Stats';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['dashboard_all_content_stats'] = $view;
 
   return $export;

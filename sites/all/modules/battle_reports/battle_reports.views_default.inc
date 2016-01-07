@@ -12,8 +12,8 @@ function battle_reports_views_default_views() {
 
   $view = new view();
   $view->name = 'battles_all_lists';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Various Lists of Battles.';
+  $view->tag = 'Battles 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Battles: All: Lists';
   $view->core = 7;
@@ -62,61 +62,6 @@ Displaying @start - @end of @total
   $handler->display->display_options['relationships']['flag_count_rel_1']['label'] = 'acknowledged';
   $handler->display->display_options['relationships']['flag_count_rel_1']['required'] = 0;
   $handler->display->display_options['relationships']['flag_count_rel_1']['flag'] = 'acknowledge_battle';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Images */
-  $handler->display->display_options['fields']['field_images_1']['id'] = 'field_images_1';
-  $handler->display->display_options['fields']['field_images_1']['table'] = 'field_data_field_images';
-  $handler->display->display_options['fields']['field_images_1']['field'] = 'field_images';
-  $handler->display->display_options['fields']['field_images_1']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_images_1']['label'] = '';
-  $handler->display->display_options['fields']['field_images_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_images_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_images_1']['empty'] = '[field_image]';
-  $handler->display->display_options['fields']['field_images_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_images_1']['type'] = 'single_image';
-  $handler->display->display_options['fields']['field_images_1']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-    'single_image_delta' => '',
-  );
-  $handler->display->display_options['fields']['field_images_1']['delta_offset'] = '0';
-  /* Field: Content: Images */
-  $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
-  $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
-  $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
-  $handler->display->display_options['fields']['field_images']['label'] = '';
-  $handler->display->display_options['fields']['field_images']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_images']['empty'] = '[field_images_1]';
-  $handler->display->display_options['fields']['field_images']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_images']['type'] = 'single_image';
-  $handler->display->display_options['fields']['field_images']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-    'single_image_delta' => '',
-  );
-  $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   /* Field: Taxonomy term: Game System */
   $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
   $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
@@ -126,172 +71,16 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_game_system_armies']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Your Army */
-  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['label'] = '';
-  $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_your_army']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Opponent's Army */
-  $handler->display->display_options['fields']['field_opponent_s_army']['id'] = 'field_opponent_s_army';
-  $handler->display->display_options['fields']['field_opponent_s_army']['table'] = 'field_data_field_opponent_s_army';
-  $handler->display->display_options['fields']['field_opponent_s_army']['field'] = 'field_opponent_s_army';
-  $handler->display->display_options['fields']['field_opponent_s_army']['label'] = '';
-  $handler->display->display_options['fields']['field_opponent_s_army']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_opponent_s_army']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_opponent_s_army']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Comment count */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['text'] = '<span data-toggle="tooltip" data-placement="bottom" title="comments"><i class="icon glyphicon glyphicon-comment" aria-hidden="true" aria-hidden="true" ></i> <span class="badge iconbuffer">[comment_count]</span></span>';
-  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  /* Field: Flags: Flag counter */
-  $handler->display->display_options['fields']['count']['id'] = 'count';
-  $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
-  $handler->display->display_options['fields']['count']['field'] = 'count';
-  $handler->display->display_options['fields']['count']['relationship'] = 'flag_count_rel';
-  $handler->display->display_options['fields']['count']['label'] = '';
-  $handler->display->display_options['fields']['count']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['count']['alter']['text'] = '<span data-toggle="tooltip" data-placement="bottom" title="Salutes"><i class="icon glyphicon glyphicon-thumbs-up" aria-hidden="true" aria-hidden="true" ></i> <span class="badge iconbuffer">[count]</span></span>';
-  $handler->display->display_options['fields']['count']['element_label_colon'] = FALSE;
-  /* Field: Field: Battlefield */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['label'] = '';
-  $handler->display->display_options['fields']['field_location']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['text'] = '@ [field_location]';
-  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['type'] = 'node_reference_plain';
-  /* Field: Field: Event */
-  $handler->display->display_options['fields']['field_event_link']['id'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['table'] = 'field_data_field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['field'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['label'] = '';
-  $handler->display->display_options['fields']['field_event_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['alter']['text'] = '<i class="icon glyphicon glyphicon-screenshot iconbuffer" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="War Zone Battle"></i>';
-  $handler->display->display_options['fields']['field_event_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_link']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['settings'] = array(
-    'link' => 0,
-  );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '<i class="icon glyphicon glyphicon-folder-open" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Battle Commentary Present"></i>';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
-  /* Field: Content: Images */
-  $handler->display->display_options['fields']['field_images_2']['id'] = 'field_images_2';
-  $handler->display->display_options['fields']['field_images_2']['table'] = 'field_data_field_images';
-  $handler->display->display_options['fields']['field_images_2']['field'] = 'field_images';
-  $handler->display->display_options['fields']['field_images_2']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_images_2']['label'] = '';
-  $handler->display->display_options['fields']['field_images_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_images_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_images_2']['alter']['text'] = '<i class="icon glyphicon glyphicon-picture" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Battle Imagery Present"></i>';
-  $handler->display->display_options['fields']['field_images_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_images_2']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_images_2']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_images_2']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_images_2']['type'] = 'single_image';
-  $handler->display->display_options['fields']['field_images_2']['settings'] = array(
-    'image_style' => 'button',
-    'image_link' => '',
-    'single_image_delta' => '',
-  );
-  $handler->display->display_options['fields']['field_images_2']['delta_offset'] = '0';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body_1']['id'] = 'body_1';
-  $handler->display->display_options['fields']['body_1']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body_1']['field'] = 'body';
-  $handler->display->display_options['fields']['body_1']['label'] = '';
-  $handler->display->display_options['fields']['body_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['body_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body_1']['alter']['text'] = '<i class="icon glyphicon glyphicon-folder-open iconbuffer" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Battle Commentary Present"></i>';
-  $handler->display->display_options['fields']['body_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body_1']['empty'] = '[body]';
-  /* Field: Content: Images */
-  $handler->display->display_options['fields']['field_images_3']['id'] = 'field_images_3';
-  $handler->display->display_options['fields']['field_images_3']['table'] = 'field_data_field_images';
-  $handler->display->display_options['fields']['field_images_3']['field'] = 'field_images';
-  $handler->display->display_options['fields']['field_images_3']['label'] = '';
-  $handler->display->display_options['fields']['field_images_3']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_images_3']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_images_3']['alter']['text'] = '<i class="icon glyphicon glyphicon-picture iconbuffer" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Battle Imagery Present"></i>';
-  $handler->display->display_options['fields']['field_images_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_images_3']['empty'] = '[field_images_2]';
-  $handler->display->display_options['fields']['field_images_3']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_images_3']['type'] = 'single_image';
-  $handler->display->display_options['fields']['field_images_3']['settings'] = array(
-    'image_style' => 'button',
-    'image_link' => '',
-    'single_image_delta' => '',
-  );
-  $handler->display->display_options['fields']['field_images_3']['delta_offset'] = '0';
-  /* Field: Flags: Flag counter */
-  $handler->display->display_options['fields']['count_1']['id'] = 'count_1';
-  $handler->display->display_options['fields']['count_1']['table'] = 'flag_counts';
-  $handler->display->display_options['fields']['count_1']['field'] = 'count';
-  $handler->display->display_options['fields']['count_1']['relationship'] = 'flag_count_rel_1';
-  $handler->display->display_options['fields']['count_1']['label'] = '';
-  $handler->display->display_options['fields']['count_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['count_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['count_1']['alter']['text'] = '<i class="icon glyphicon glyphicon-check iconbuffer" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Acknowledged"></i>';
-  $handler->display->display_options['fields']['count_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['count_1']['empty'] = '<i class="icon glyphicon glyphicon-unchecked iconbuffer" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Unacknowledged"></i>';
-  $handler->display->display_options['fields']['count_1']['empty_zero'] = TRUE;
-  /* Field: Content: Has new content */
-  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
-  $handler->display->display_options['fields']['timestamp']['table'] = 'history';
-  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
-  $handler->display->display_options['fields']['timestamp']['label'] = '';
-  $handler->display->display_options['fields']['timestamp']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['timestamp']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['timestamp']['alter']['text'] = '<span class="label label-primary">[timestamp]</span>';
-  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['timestamp']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['timestamp']['empty_zero'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media">
-  <div class="pull-left">
-    <span class="thumbnail">[field_images]</span>
-  </div>
-  <div class="media-body">
-<div>
-  <div class="pull-right"><strong>[field_game_system_armies]</strong></div>
-  <div><h4 class="media-heading">[title]</h4></div>
-</div>
-
-<div>
-  <div>
-    <strong>[field_your_army] vs [field_opponent_s_army] [field_location]</strong>
-  </div>
-  <div class="well well-sm">
-    [count] [comment_count] [count_1] [body_1] [field_images_3] [field_event_link] [timestamp]
-  </div>
-</div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Rendered Content */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -643,8 +432,8 @@ Displaying @start - @end of @total
 
   $view = new view();
   $view->name = 'battles_all_page_layout';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Page Elements for the Battle node pages.';
+  $view->tag = 'Battles 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Battles: All: Page Layout';
   $view->core = 7;
@@ -692,253 +481,149 @@ Displaying @start - @end of @total
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'game_results' => 'game_results',
+    'game_result_system_' => 'game_result_system_',
   );
 
   /* Display: Battle Meta */
   $handler = $view->new_display('panel_pane', 'Battle Meta', 'panel_pane_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'row';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
   $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Battlefield */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['label'] = '';
-  $handler->display->display_options['fields']['field_location']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['text'] = '<div class="col-sm-6 col-md-6">
-<div class="panel-stat3 bg-danger">
-  <h2 class="m-top-none">[field_location]</h2>
-  <h5>Battlefield</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-globe fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_location']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_location']['alter']['path'] = 'node/[field_location-nid]';
-  $handler->display->display_options['fields']['field_location']['alter']['max_length'] = '17';
-  $handler->display->display_options['fields']['field_location']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_location']['element_wrapper_class'] = 'col-sm-6 col-md-6';
-  $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['empty'] = '<div class="hidden-xs hidden-sm col-md-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">[Redacted]</h2>
-  <h5>Battlefield</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-globe fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_location']['type'] = 'node_reference_plain';
-  /* Field: Field: Points per army */
-  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['label'] = '';
-  $handler->display->display_options['fields']['field_points_per_army']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_points_per_army']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_points_per_army']['alter']['text'] = '<div class="col-sm-6 col-md-6">
-<div class="panel-stat3 bg-warning">
-  <h2 class="m-top-none">[field_points_per_army]</h2>
-  <h5>Points per Army</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-list fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>
-';
-  $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_class'] = 'col-sm-6 col-md-6';
-  $handler->display->display_options['fields']['field_points_per_army']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_points_per_army']['empty'] = '<div class="hidden-xs hidden-sm col-md-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">[Redacted]</h2>
-  <h5>Points per Army</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-list fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>
-';
-  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
-    'thousand_separator' => ',',
-    'prefix_suffix' => 0,
-  );
-  /* Field: Field: Mission */
-  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
-  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['label'] = '';
-  $handler->display->display_options['fields']['field_mission']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_mission']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_mission']['alter']['text'] = '<div class="col-sm-6 col-md-6">
-<div class="panel-stat3 bg-info">
-  <h2 class="m-top-none">[field_mission]</h2>
-  <h5>Mission</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_mission']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_mission']['alter']['path'] = 'taxonomy/term/[field_mission-tid]';
-  $handler->display->display_options['fields']['field_mission']['alter']['alt'] = '[field_mission]';
-  $handler->display->display_options['fields']['field_mission']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_mission']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_mission']['element_wrapper_class'] = 'col-sm-6 col-md-6';
-  $handler->display->display_options['fields']['field_mission']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_mission']['empty'] = '<div class="hidden-xs hidden-sm col-md-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">[Redacted]</h2>
-  <h5>Mission</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-folder-close fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_mission']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Deployment */
-  $handler->display->display_options['fields']['field_battle_deployment']['id'] = 'field_battle_deployment';
-  $handler->display->display_options['fields']['field_battle_deployment']['table'] = 'field_data_field_battle_deployment';
-  $handler->display->display_options['fields']['field_battle_deployment']['field'] = 'field_battle_deployment';
-  $handler->display->display_options['fields']['field_battle_deployment']['label'] = '';
-  $handler->display->display_options['fields']['field_battle_deployment']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_deployment']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_deployment']['alter']['text'] = '<div class="col-sm-6 col-md-6">
-<div class="panel-stat3 bg-success">
-  <h2 class="m-top-none">[field_battle_deployment]</h2>
-  <h5>Deployment</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-resize-small" aria-hidden="true"></span>
-  </div>
-</div>
-</div>
-';
-  $handler->display->display_options['fields']['field_battle_deployment']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_deployment']['alter']['path'] = 'taxonomy/term/[field_battle_deployment-tid]';
-  $handler->display->display_options['fields']['field_battle_deployment']['alter']['alt'] = '[field_battle_deployment]';
-  $handler->display->display_options['fields']['field_battle_deployment']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_battle_deployment']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_battle_deployment']['element_wrapper_class'] = 'col-sm-6 col-md-6';
-  $handler->display->display_options['fields']['field_battle_deployment']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_battle_deployment']['empty'] = '<div class="hidden-xs hidden-sm col-md-6">
-<div class="panel-stat3 bg-grey">
-  <h2 class="m-top-none">[Redacted]</h2>
-  <h5>Deployment</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-resize-small fa-3" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_battle_deployment']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Event */
-  $handler->display->display_options['fields']['field_event_link']['id'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['table'] = 'field_data_field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['field'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['label'] = '';
-  $handler->display->display_options['fields']['field_event_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['alter']['text'] = '<div class="col-sm-12 col-md-12">
-<div class="panel-stat3 bg-dark">
-  <h2 class="m-top-none">[field_event_link]</h2>
-  <h5>War Zone</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
-  </div>
-</div>
-</div>
-';
-  $handler->display->display_options['fields']['field_event_link']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['alter']['path'] = 'node/[field_event_link-target_id]';
-  $handler->display->display_options['fields']['field_event_link']['alter']['alt'] = '[field_event_link]';
-  $handler->display->display_options['fields']['field_event_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_link']['settings'] = array(
-    'link' => 0,
-  );
-  /* Field: Global: View */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'battles_all_page_layout';
-  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_14';
-  $handler->display->display_options['fields']['view']['arguments'] = '!1';
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['label'] = '';
-  $handler->display->display_options['fields']['field_game_date']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_game_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_game_date']['alter']['text'] = '<div class="col-sm-6 col-md-6">
-<div class="panel-stat3 bg-info">
-  <h2 class="m-top-none">[field_game_date]</h2>
-  <h5>Date</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-  </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_game_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_game_date']['settings'] = array(
-    'format_type' => 'medium',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
   /* Field: Taxonomy term: Game System */
   $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
   $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
   $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
   $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
   $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_game_system_armies']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_game_system_armies']['alter']['text'] = '<div class="col-sm-6 col-md-6">
-<div class="panel-stat3 bg-primary">
-  <h2 class="m-top-none">[field_game_system_armies]</h2>
-  <h5>Game System</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-  </div>
-</div>
-</div>
-';
-  $handler->display->display_options['fields']['field_game_system_armies']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_game_system_armies']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-book"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_game_system_armies]</strong>
+        <div class="text-muted">Game System</div>
+    </div>
+</div>';
   $handler->display->display_options['fields']['field_game_system_armies']['alter']['path'] = 'taxonomy/term/[field_game_system_armies-tid]';
   $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_game_system_armies]
-[field_game_date]
-<div class="clearfix"></div>
-[field_event_link]
-<div class="clearfix"></div>
-[field_location]
-[field_points_per_army]
-<div class="clearfix"></div>
-[field_battle_deployment]
-[field_mission]
-<div class="clearfix"></div>
-[view]';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_game_system_armies']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_game_system_armies']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_game_system_armies']['hide_empty'] = TRUE;
+  /* Field: Field: Date */
+  $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
+  $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
+  $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
+  $handler->display->display_options['fields']['field_game_date']['label'] = '';
+  $handler->display->display_options['fields']['field_game_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_game_date']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-calendar-o"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_game_date]</strong>
+        <div class="text-muted">Date</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_game_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_game_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_game_date']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_game_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_game_date']['settings'] = array(
+    'format_type' => 'uc_store',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Field: Points per army */
+  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['label'] = '';
+  $handler->display->display_options['fields']['field_points_per_army']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_points_per_army']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-list"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_points_per_army]</strong>
+        <div class="text-muted">Points per Army</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_points_per_army']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_points_per_army']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_points_per_army']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 0,
+  );
+  /* Field: Content: Deployment */
+  $handler->display->display_options['fields']['field_battle_deployment']['id'] = 'field_battle_deployment';
+  $handler->display->display_options['fields']['field_battle_deployment']['table'] = 'field_data_field_battle_deployment';
+  $handler->display->display_options['fields']['field_battle_deployment']['field'] = 'field_battle_deployment';
+  $handler->display->display_options['fields']['field_battle_deployment']['label'] = '';
+  $handler->display->display_options['fields']['field_battle_deployment']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_battle_deployment']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-compress"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_battle_deployment]</strong>
+        <div class="text-muted">Deployment</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_battle_deployment']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_battle_deployment']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_battle_deployment']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_battle_deployment']['hide_empty'] = TRUE;
+  /* Field: Field: Mission */
+  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
+  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['label'] = '';
+  $handler->display->display_options['fields']['field_mission']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_mission']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-folder-open"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_mission]</strong>
+        <div class="text-muted">Mission</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_mission']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_mission']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_mission']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_mission']['hide_empty'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'Battles';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -950,6 +635,16 @@ Displaying @start - @end of @total
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'battles_all_page_layout';
+  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_10';
+  $handler->display->display_options['fields']['view']['arguments'] = '!1';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -965,137 +660,31 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_your_army']['label'] = '';
   $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
-  /* Field: Field: Victory */
-  $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
-  $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['label'] = '';
-  $handler->display->display_options['fields']['field_victory']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_victory']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_victory']['alter']['text'] = 'bg-success';
-  $handler->display->display_options['fields']['field_victory']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_victory']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_victory']['empty_zero'] = TRUE;
-  /* Field: Field: Defeat */
-  $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['label'] = '';
-  $handler->display->display_options['fields']['field_defeat']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_defeat']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_defeat']['alter']['text'] = 'bg-danger';
-  $handler->display->display_options['fields']['field_defeat']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_defeat']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_defeat']['empty_zero'] = TRUE;
-  /* Field: Field: Draw */
-  $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
-  $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['label'] = '';
-  $handler->display->display_options['fields']['field_draw']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_draw']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_draw']['alter']['text'] = 'bg-warning';
-  $handler->display->display_options['fields']['field_draw']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_draw']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_draw']['empty_zero'] = TRUE;
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['label'] = '';
-  $handler->display->display_options['fields']['field_your_results']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_your_results']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_your_results']['alter']['text'] = 'RESULTS<br>
-<strong>[field_your_results]</strong>';
-  $handler->display->display_options['fields']['field_your_results']['element_label_colon'] = FALSE;
-  /* Field: Content: Commander */
-  $handler->display->display_options['fields']['field_batteresult_commander']['id'] = 'field_batteresult_commander';
-  $handler->display->display_options['fields']['field_batteresult_commander']['table'] = 'field_data_field_batteresult_commander';
-  $handler->display->display_options['fields']['field_batteresult_commander']['field'] = 'field_batteresult_commander';
-  $handler->display->display_options['fields']['field_batteresult_commander']['label'] = '';
-  $handler->display->display_options['fields']['field_batteresult_commander']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_batteresult_commander']['element_label_colon'] = FALSE;
-  /* Field: Content: Your Allied Detatchment */
-  $handler->display->display_options['fields']['field_allied_detatchment']['id'] = 'field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['table'] = 'field_data_field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['field'] = 'field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['text'] = '<div class="seperator"></div>
-ALLIED DETACHMENTS<br>
-[field_allied_detatchment]';
-  $handler->display->display_options['fields']['field_allied_detatchment']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['delta_offset'] = '0';
-  /* Field: Content: Your Commander Survival */
-  $handler->display->display_options['fields']['field_your_commander_survival']['id'] = 'field_your_commander_survival';
-  $handler->display->display_options['fields']['field_your_commander_survival']['table'] = 'field_data_field_your_commander_survival';
-  $handler->display->display_options['fields']['field_your_commander_survival']['field'] = 'field_your_commander_survival';
-  $handler->display->display_options['fields']['field_your_commander_survival']['label'] = '';
-  $handler->display->display_options['fields']['field_your_commander_survival']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_your_commander_survival']['element_label_colon'] = FALSE;
-  /* Field: Content: Most Valuable Unit */
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['id'] = 'field_battle_most_valuable_unit';
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['table'] = 'field_data_field_battle_most_valuable_unit';
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['field'] = 'field_battle_most_valuable_unit';
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['exclude'] = TRUE;
-  /* Field: Content: My Victory Conditions met */
-  $handler->display->display_options['fields']['field_battle_my_vc']['id'] = 'field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['table'] = 'field_data_field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['field'] = 'field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['label'] = '';
-  $handler->display->display_options['fields']['field_battle_my_vc']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['text'] = '<div class="seperator"></div>
-VICTORY CONDITIONS MET<br>
-<strong>[field_battle_my_vc]</strong>';
-  $handler->display->display_options['fields']['field_battle_my_vc']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['delta_offset'] = '0';
-  /* Field: Global: View */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'battles_all_page_layout';
-  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_10';
-  $handler->display->display_options['fields']['view']['arguments'] = '!1';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['picture']['alter']['link_class'] = 'pull-left avatar';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'avatar_small';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel [field_victory][field_defeat][field_draw]">
-  <div class="panel-body text-center">
-    <span class="h4 block pull-right m-bottom-md">[name]</span>
-    <div class="seperator"></div>
-    <div class="m-top-md">
-      <span class="h1">[field_your_army]</span>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel panel-default bg-primary">
+    <div class="panel-body">
+        <span class="pull-left">[picture]</span>
+        <div class="pull-left">
+            <strong class="font-18">[name]</strong>
+            <br>
+            <span class="font-16">[field_your_army]</span>
+        </div>
     </div>
-  </div>
-  <div class="panel-footer">
-    <div class="row">
-      <div class="col-xs-4">
-      [field_your_results]
-      </div>
-      <div class="col-xs-4">
-      COMMANDER<br>
-      <strong>[field_batteresult_commander]</strong>
-      <span class="pull-right">[view]</span>
-      </div>
-      <div class="col-xs-4">
-      MOST VALUABLE UNIT<br>
-      <strong>[field_battle_most_valuable_unit]</strong>
-      </div>
-    </div>
-    <div>
-      [field_allied_detatchment]
-    </div>
-    <div>
-      [field_battle_my_vc]
-    </div>
-  </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Battles';
@@ -1103,6 +692,7 @@ VICTORY CONDITIONS MET<br>
 
   /* Display: Shortcuts */
   $handler = $view->new_display('panel_pane', 'Shortcuts', 'panel_pane_3');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -1288,188 +878,6 @@ VICTORY CONDITIONS MET<br>
 [count_1]
 </div>
 ';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'Battles';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Player 2 */
-  $handler = $view->new_display('panel_pane', 'Player 2', 'panel_pane_4');
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referencing entity */
-  $handler->display->display_options['relationships']['reverse_field_game_reference_node']['id'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['relationships']['reverse_field_game_reference_node']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_game_reference_node']['field'] = 'reverse_field_game_reference_node';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Field: Your Army */
-  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_your_army']['label'] = '';
-  $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
-  /* Field: Field: Victory */
-  $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
-  $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_victory']['label'] = '';
-  $handler->display->display_options['fields']['field_victory']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_victory']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_victory']['alter']['text'] = 'bg-success';
-  $handler->display->display_options['fields']['field_victory']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_victory']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_victory']['empty_zero'] = TRUE;
-  /* Field: Field: Defeat */
-  $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_defeat']['label'] = '';
-  $handler->display->display_options['fields']['field_defeat']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_defeat']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_defeat']['alter']['text'] = 'bg-danger';
-  $handler->display->display_options['fields']['field_defeat']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_defeat']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_defeat']['empty_zero'] = TRUE;
-  /* Field: Field: Draw */
-  $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
-  $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_draw']['label'] = '';
-  $handler->display->display_options['fields']['field_draw']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_draw']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_draw']['alter']['text'] = 'bg-warning';
-  $handler->display->display_options['fields']['field_draw']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_draw']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_draw']['empty_zero'] = TRUE;
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_your_results']['label'] = '';
-  $handler->display->display_options['fields']['field_your_results']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_your_results']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_your_results']['alter']['text'] = 'RESULTS<br>
-<strong>[field_your_results]</strong>';
-  $handler->display->display_options['fields']['field_your_results']['element_label_colon'] = FALSE;
-  /* Field: Content: Commander */
-  $handler->display->display_options['fields']['field_batteresult_commander']['id'] = 'field_batteresult_commander';
-  $handler->display->display_options['fields']['field_batteresult_commander']['table'] = 'field_data_field_batteresult_commander';
-  $handler->display->display_options['fields']['field_batteresult_commander']['field'] = 'field_batteresult_commander';
-  $handler->display->display_options['fields']['field_batteresult_commander']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_batteresult_commander']['label'] = '';
-  $handler->display->display_options['fields']['field_batteresult_commander']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_batteresult_commander']['element_label_colon'] = FALSE;
-  /* Field: Content: Your Allied Detatchment */
-  $handler->display->display_options['fields']['field_allied_detatchment']['id'] = 'field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['table'] = 'field_data_field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['field'] = 'field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_allied_detatchment']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['text'] = '<div class="seperator"></div>
-ALLIED DETACHMENTS<br>
-[field_allied_detatchment]';
-  $handler->display->display_options['fields']['field_allied_detatchment']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['delta_offset'] = '0';
-  /* Field: Content: Your Commander Survival */
-  $handler->display->display_options['fields']['field_your_commander_survival']['id'] = 'field_your_commander_survival';
-  $handler->display->display_options['fields']['field_your_commander_survival']['table'] = 'field_data_field_your_commander_survival';
-  $handler->display->display_options['fields']['field_your_commander_survival']['field'] = 'field_your_commander_survival';
-  $handler->display->display_options['fields']['field_your_commander_survival']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_your_commander_survival']['label'] = '';
-  $handler->display->display_options['fields']['field_your_commander_survival']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_your_commander_survival']['element_label_colon'] = FALSE;
-  /* Field: Content: Most Valuable Unit */
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['id'] = 'field_battle_most_valuable_unit';
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['table'] = 'field_data_field_battle_most_valuable_unit';
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['field'] = 'field_battle_most_valuable_unit';
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['exclude'] = TRUE;
-  /* Field: Content: My Victory Conditions met */
-  $handler->display->display_options['fields']['field_battle_my_vc']['id'] = 'field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['table'] = 'field_data_field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['field'] = 'field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['field_battle_my_vc']['label'] = '';
-  $handler->display->display_options['fields']['field_battle_my_vc']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['text'] = '<div class="seperator"></div>
-VICTORY CONDITIONS MET<br>
-<strong>[field_battle_my_vc]</strong>';
-  $handler->display->display_options['fields']['field_battle_my_vc']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['delta_offset'] = '0';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_game_reference_node';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Global: View */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'battles_all_page_layout';
-  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_10';
-  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel [field_victory][field_defeat][field_draw]">
-  <div class="panel-body text-center">
-    <span class="h4 block pull-right m-bottom-md">[name]</span>
-    <div class="seperator"></div>
-    <div class="m-top-md">
-      <span class="h1">[field_your_army]</span>
-    </div>
-  </div>
-  <div class="panel-footer">
-    <div class="row">
-      <div class="col-xs-4">
-      [field_your_results]
-      </div>
-      <div class="col-xs-4">
-      COMMANDER<br>
-      <strong>[field_batteresult_commander]</strong>
-      <span class="pull-right">[view]</span>
-      </div>
-      <div class="col-xs-4">
-      MOST VALUABLE UNIT<br>
-      <strong>[field_battle_most_valuable_unit]</strong>
-      </div>
-    </div>
-    <div>
-      [field_allied_detatchment]
-    </div>
-    <div>
-      [field_battle_my_vc]
-    </div>
-  </div>
-</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Battles';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -1862,6 +1270,18 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['fields']['edit_node_1']['label'] = '';
   $handler->display->display_options['fields']['edit_node_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node_1']['text'] = 'Edit Battle';
+  /* Field: Content: Radioactivity */
+  $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['field'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['label'] = '';
+  $handler->display->display_options['fields']['field_radioactivity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_radioactivity']['click_sort_column'] = 'radioactivity_energy';
+  $handler->display->display_options['fields']['field_radioactivity']['settings'] = array(
+    'energy' => '10',
+    'type' => 'none',
+    'accuracy' => '100',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Battles';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -2211,12 +1631,301 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['filters']['field_battle_mission_rules_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_battle_mission_rules_tid']['value'] = '';
   $handler->display->display_options['filters']['field_battle_mission_rules_tid']['vocabulary'] = 'scenario_special_rules';
+
+  /* Display: Battle Meta */
+  $handler = $view->new_display('panel_pane', 'Battle Meta', 'panel_pane_13');
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field: Your Army (field_your_army) */
+  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
+  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Game System */
+  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
+  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
+  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
+  /* Field: Field: Date */
+  $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
+  $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
+  $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
+  $handler->display->display_options['fields']['field_game_date']['label'] = '';
+  $handler->display->display_options['fields']['field_game_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_game_date']['settings'] = array(
+    'format_type' => 'uc_store',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Field: Event */
+  $handler->display->display_options['fields']['field_event_link']['id'] = 'field_event_link';
+  $handler->display->display_options['fields']['field_event_link']['table'] = 'field_data_field_event_link';
+  $handler->display->display_options['fields']['field_event_link']['field'] = 'field_event_link';
+  $handler->display->display_options['fields']['field_event_link']['label'] = '';
+  $handler->display->display_options['fields']['field_event_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_link']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Field: Battlefield */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
+  /* Field: Content: Deployment */
+  $handler->display->display_options['fields']['field_battle_deployment']['id'] = 'field_battle_deployment';
+  $handler->display->display_options['fields']['field_battle_deployment']['table'] = 'field_data_field_battle_deployment';
+  $handler->display->display_options['fields']['field_battle_deployment']['field'] = 'field_battle_deployment';
+  $handler->display->display_options['fields']['field_battle_deployment']['label'] = '';
+  $handler->display->display_options['fields']['field_battle_deployment']['element_label_colon'] = FALSE;
+  /* Field: Content: Mission Rules in Effect */
+  $handler->display->display_options['fields']['field_battle_mission_rules']['id'] = 'field_battle_mission_rules';
+  $handler->display->display_options['fields']['field_battle_mission_rules']['table'] = 'field_data_field_battle_mission_rules';
+  $handler->display->display_options['fields']['field_battle_mission_rules']['field'] = 'field_battle_mission_rules';
+  $handler->display->display_options['fields']['field_battle_mission_rules']['label'] = '';
+  $handler->display->display_options['fields']['field_battle_mission_rules']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_battle_mission_rules']['delta_offset'] = '0';
+  /* Field: Field: Mission */
+  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
+  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['label'] = '';
+  $handler->display->display_options['fields']['field_mission']['element_label_colon'] = FALSE;
+  /* Field: Field: Points per army */
+  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['label'] = '';
+  $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Battles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Player 1 Meta */
+  $handler = $view->new_display('panel_pane', 'Player 1 Meta', 'panel_pane_15');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'battles_all_page_layout';
+  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_10';
+  $handler->display->display_options['fields']['view']['arguments'] = '!1';
+  /* Field: Field: Your Army */
+  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['label'] = '';
+  $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
+  /* Field: Field: Your Results */
+  $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
+  $handler->display->display_options['fields']['field_your_results']['table'] = 'field_data_field_your_results';
+  $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
+  $handler->display->display_options['fields']['field_your_results']['label'] = '';
+  $handler->display->display_options['fields']['field_your_results']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_your_results']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-balance-scale"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_your_results]</strong>
+        <div class="text-muted">Results</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_your_results']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_your_results']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_your_results']['element_wrapper_class'] = 'list-group-item';
+  /* Field: Content: Commander */
+  $handler->display->display_options['fields']['field_batteresult_commander']['id'] = 'field_batteresult_commander';
+  $handler->display->display_options['fields']['field_batteresult_commander']['table'] = 'field_data_field_batteresult_commander';
+  $handler->display->display_options['fields']['field_batteresult_commander']['field'] = 'field_batteresult_commander';
+  $handler->display->display_options['fields']['field_batteresult_commander']['label'] = '';
+  $handler->display->display_options['fields']['field_batteresult_commander']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_batteresult_commander']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-flag"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_batteresult_commander]</strong>
+        <div class="text-muted">Commander <span class="badge">[view]</span></div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_batteresult_commander']['hide_empty'] = TRUE;
+  /* Field: Content: Your Allied Detatchment */
+  $handler->display->display_options['fields']['field_allied_detatchment']['id'] = 'field_allied_detatchment';
+  $handler->display->display_options['fields']['field_allied_detatchment']['table'] = 'field_data_field_allied_detatchment';
+  $handler->display->display_options['fields']['field_allied_detatchment']['field'] = 'field_allied_detatchment';
+  $handler->display->display_options['fields']['field_allied_detatchment']['label'] = '';
+  $handler->display->display_options['fields']['field_allied_detatchment']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['text'] = '<div class="list-group-item">
+<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-arrows-alt"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_allied_detatchment]</strong>
+        <div class="text-muted">Allied Detatchment</div>
+    </div>
+</div>
+</div>';
+  $handler->display->display_options['fields']['field_allied_detatchment']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_allied_detatchment']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_allied_detatchment']['delta_offset'] = '0';
+  /* Field: Content: Most Valuable Unit */
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['id'] = 'field_battle_most_valuable_unit';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['table'] = 'field_data_field_battle_most_valuable_unit';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['field'] = 'field_battle_most_valuable_unit';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['label'] = '';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-trophy"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_battle_most_valuable_unit]</strong>
+        <div class="text-muted">Most Valuable Unit</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['alter']['path'] = 'taxonomy/term/[field_battle_most_valuable_unit-tid]';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['alter']['link_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_battle_most_valuable_unit']['hide_empty'] = TRUE;
+  /* Field: Content: My Victory Conditions met */
+  $handler->display->display_options['fields']['field_battle_my_vc']['id'] = 'field_battle_my_vc';
+  $handler->display->display_options['fields']['field_battle_my_vc']['table'] = 'field_data_field_battle_my_vc';
+  $handler->display->display_options['fields']['field_battle_my_vc']['field'] = 'field_battle_my_vc';
+  $handler->display->display_options['fields']['field_battle_my_vc']['label'] = '';
+  $handler->display->display_options['fields']['field_battle_my_vc']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['text'] = '<div class="list-group-item">
+<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-arrows-alt"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_battle_my_vc]</strong>
+        <div class="text-muted">Victory Condition Met</div>
+    </div>
+</div>
+</div>';
+  $handler->display->display_options['fields']['field_battle_my_vc']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_battle_my_vc']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_battle_my_vc']['delta_offset'] = '0';
+  $handler->display->display_options['pane_category']['name'] = 'Battles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Theater */
+  $handler = $view->new_display('panel_pane', 'Theater', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Theater';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Battlefield */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_location']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-map-marker"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_location]</strong>
+        <div class="text-muted">Battlefield</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_location']['alter']['path'] = 'node/[field_location-nid]';
+  $handler->display->display_options['fields']['field_location']['alter']['max_length'] = '17';
+  $handler->display->display_options['fields']['field_location']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_location']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_location']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['hide_empty'] = TRUE;
+  /* Field: Field: Event */
+  $handler->display->display_options['fields']['field_event_link']['id'] = 'field_event_link';
+  $handler->display->display_options['fields']['field_event_link']['table'] = 'field_data_field_event_link';
+  $handler->display->display_options['fields']['field_event_link']['field'] = 'field_event_link';
+  $handler->display->display_options['fields']['field_event_link']['label'] = '';
+  $handler->display->display_options['fields']['field_event_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_event_link']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-crosshairs"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_event_link]</strong>
+        <div class="text-muted">War Zone</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_event_link']['alter']['path'] = 'node/[field_event_link-target_id]';
+  $handler->display->display_options['fields']['field_event_link']['alter']['alt'] = '[field_event_link]';
+  $handler->display->display_options['fields']['field_event_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_link']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_event_link']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_event_link']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_event_link']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Battles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['battles_all_page_layout'] = $view;
 
   $view = new view();
   $view->name = 'battles_all_stats_and_charts';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Probably should go into a new release called Stats. But it\'s used to show battle stats on the battle landing page.';
+  $view->tag = 'Battles 2.0';
   $view->base_table = 'node';
   $view->human_name = 'Battles: All: Stats and Charts';
   $view->core = 7;
@@ -2600,10 +2309,10 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group-item';
-  $handler->display->display_options['style_options']['class'] = 'list-group';
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = 'field_your_results';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -2640,7 +2349,10 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
   $handler->display->display_options['fields']['field_your_results']['group_type'] = 'avg';
   $handler->display->display_options['fields']['field_your_results']['label'] = '';
+  $handler->display->display_options['fields']['field_your_results']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_your_results']['element_class'] = 'text-muted';
   $handler->display->display_options['fields']['field_your_results']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_your_results']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_your_results']['type'] = 'list_key';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: AVG(Field: Your Results (field_your_results)) */
@@ -2685,10 +2397,10 @@ VICTORY CONDITIONS MET<br>
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group-item';
-  $handler->display->display_options['style_options']['class'] = 'list-group';
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'field_your_army';
+  $handler->display->display_options['style_options']['body_field'] = 'field_your_results';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';

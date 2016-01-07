@@ -13,6 +13,184 @@ function war_zones_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_body_wrapper|node|narrative_campaign_instance|teaser';
+  $field_group->group_name = 'group_body_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign_instance';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Body Wrapper',
+    'weight' => '4',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_radioactivity',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Body Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-9',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_body_wrapper|node|narrative_campaign_instance|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_body_wrapper|node|narrative_campaign|teaser';
+  $field_group->group_name = 'group_body_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Body Wrapper',
+    'weight' => '5',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_radioactivity',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Body Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-9',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_body_wrapper|node|narrative_campaign|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_body_wrapper|node|war_zone_league|teaser';
+  $field_group->group_name = 'group_body_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Body Wrapper',
+    'weight' => '16',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_warzone_game',
+      2 => 'field_radioactivity',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Body Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-9',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_body_wrapper|node|war_zone_league|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|narrative_campaign_instance|teaser';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign_instance';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_campaign_badge',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-3 text-center',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_image_wrapper|node|narrative_campaign_instance|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|narrative_campaign|teaser';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-3 text-center',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_image_wrapper|node|narrative_campaign|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_wrapper|node|war_zone_league|teaser';
+  $field_group->group_name = 'group_image_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_wrapper';
+  $field_group->data = array(
+    'label' => 'Image Wrapper',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_campaign_badge',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Image Wrapper',
+      'instance_settings' => array(
+        'classes' => 'col-sm-3 text-center',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_image_wrapper|node|war_zone_league|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_logistics|node|special_event|form';
   $field_group->group_name = 'group_logistics';
   $field_group->entity_type = 'node';
@@ -85,19 +263,17 @@ function war_zones_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = 'group_media_wrapper';
   $field_group->data = array(
-    'label' => 'Media Body',
+    'label' => 'Body Wrapper',
     'weight' => '6',
     'children' => array(
       0 => 'body',
-      1 => 'field_event_date',
-      2 => 'registration_link',
-      3 => 'registration_slots_left',
+      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Media Body',
+      'label' => 'Body Wrapper',
       'instance_settings' => array(
-        'classes' => 'media-body',
+        'classes' => 'col-sm-9',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -121,14 +297,13 @@ function war_zones_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'body',
-      1 => 'field_game_warzone',
-      2 => 'registration_link',
+      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Media Body',
       'instance_settings' => array(
-        'classes' => 'media-body',
+        'classes' => 'col-sm-9',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -148,16 +323,16 @@ function war_zones_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = 'group_media_wrapper';
   $field_group->data = array(
-    'label' => 'Media Left',
+    'label' => 'Image Wrapper',
     'weight' => '5',
     'children' => array(
       0 => 'field_campaign_badge',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Media Left',
+      'label' => 'Image Wrapper',
       'instance_settings' => array(
-        'classes' => 'media-left pull-left',
+        'classes' => 'col-sm-3 text-center',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -186,7 +361,7 @@ function war_zones_field_group_info() {
     'format_settings' => array(
       'label' => 'Media Left',
       'instance_settings' => array(
-        'classes' => 'media-left pull-left hidden-xs',
+        'classes' => 'col-sm-3 text-center',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -206,17 +381,17 @@ function war_zones_field_group_info() {
   $field_group->mode = 'teaser';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Media Wrapper',
+    'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media_left',
-      1 => 'group_media_body',
+      0 => 'group_media_body',
+      1 => 'group_media_left',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
-      'label' => 'Media Wrapper',
+      'label' => 'Wrapper',
       'instance_settings' => array(
-        'classes' => 'media',
+        'classes' => 'row',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -246,7 +421,7 @@ function war_zones_field_group_info() {
     'format_settings' => array(
       'label' => 'Media Wrapper',
       'instance_settings' => array(
-        'classes' => 'media',
+        'classes' => 'row',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -343,6 +518,238 @@ function war_zones_field_group_info() {
     ),
   );
   $export['group_mission_label_wrapper|field_collection_item|field_tournament_missions|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_warzone_details|node|war_zone_league|default';
+  $field_group->group_name = 'group_warzone_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Details',
+    'weight' => '3',
+    'children' => array(
+      0 => 'body',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-warzone-details field-group-fieldset',
+      ),
+    ),
+  );
+  $export['group_warzone_details|node|war_zone_league|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_warzone_logistics|node|war_zone_league|form';
+  $field_group->group_name = 'group_warzone_logistics';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Logistics',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_event_date',
+      1 => 'field_more_info_link',
+      2 => 'field_location',
+      3 => 'field_narrative_warzone',
+      4 => 'field_entry_fee',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-warzone-logistics field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_warzone_logistics|node|war_zone_league|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_warzone_meta|node|war_zone_league|form';
+  $field_group->group_name = 'group_warzone_meta';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Meta',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_status',
+      1 => 'field_warzone_game',
+      2 => 'field_event_type',
+      3 => 'field_warzone_round',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Meta',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'classes' => 'group-warzone-meta field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_warzone_meta|node|war_zone_league|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_warzone_options|node|war_zone_league|form';
+  $field_group->group_name = 'group_warzone_options';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Options',
+    'weight' => '8',
+    'children' => array(
+      0 => 'group_warzone_swiss',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-warzone-options field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_warzone_options|node|war_zone_league|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_warzone_swiss|node|war_zone_league|form';
+  $field_group->group_name = 'group_warzone_swiss';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_warzone_options';
+  $field_group->data = array(
+    'label' => 'Swiss Style',
+    'weight' => '22',
+    'children' => array(
+      0 => 'field_round_duration',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-warzone-swiss field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_warzone_swiss|node|war_zone_league|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper|node|narrative_campaign_instance|teaser';
+  $field_group->group_name = 'group_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign_instance';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_image_wrapper',
+      1 => 'group_body_wrapper',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Wrapper',
+      'instance_settings' => array(
+        'classes' => 'row',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_wrapper|node|narrative_campaign_instance|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper|node|narrative_campaign|teaser';
+  $field_group->group_name = 'group_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_image_wrapper',
+      1 => 'group_body_wrapper',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Wrapper',
+      'instance_settings' => array(
+        'classes' => 'row',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_wrapper|node|narrative_campaign|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper|node|war_zone_league|teaser';
+  $field_group->group_name = 'group_wrapper';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_league';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_image_wrapper',
+      1 => 'group_body_wrapper',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Wrapper',
+      'instance_settings' => array(
+        'classes' => 'row',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $export['group_wrapper|node|war_zone_league|teaser'] = $field_group;
 
   return $export;
 }

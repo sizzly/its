@@ -429,9 +429,15 @@ function uservoice_get_widget_script() {
         // Custom triggers.
         $custom_triggers = variable_get('uservoice_new_widget_custom_triggers', USERVOICE_NEW_WIDGET_DEFAULT_CUSTOM_TRIGGERS);
         if ($custom_triggers) {
-          $script .= "UserVoice.push(['addTrigger', '.uservoice-contact-trigger', { mode: 'contact' }]);";
-          $script .= "UserVoice.push(['addTrigger', '.uservoice-satisfaction-trigger', { mode: 'satisfaction' }]);";
-          $script .= "UserVoice.push(['addTrigger', '.uservoice-smartvote-trigger', { mode: 'smartvote' }]);";
+          $script .= "UserVoice.push(['addTrigger', '#uservoice-contact-trigger', { mode: 'contact' }]);";
+          $script .= "UserVoice.push(['addTrigger', '#uservoice-satisfaction-trigger', { mode: 'satisfaction' }]);";
+          $script .= "UserVoice.push(['addTrigger', '#uservoice-smartvote-trigger', { mode: 'smartvote' }]);";
+        }
+
+        // Default feedback forum
+        $default_forum = variable_get('uservoice_new_widget_default_forum', '');
+        if (!empty($default_forum)) {
+          $script .= "UserVoice.push(['set', {default_forum: '$default_forum'}]);";
         }
 
         // Autoprompt for Satisfaction and SmartVote (only displayed under

@@ -45,10 +45,10 @@ function listcrit_default_page_manager_handlers() {
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Community
+    'panels_breadcrumbs_titles' => 'Order of Battle
 ListCrit',
-    'panels_breadcrumbs_paths' => 'community
-community/listcrit',
+    'panels_breadcrumbs_paths' => 'order-of-battle
+order-of-battle/listcrit',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -72,8 +72,27 @@ community/listcrit',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-2283d6be-adb9-46c2-9ce6-5b022937b90b';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_all_node_layout-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '2283d6be-adb9-46c2-9ce6-5b022937b90b';
+    $display->content['new-2283d6be-adb9-46c2-9ce6-5b022937b90b'] = $pane;
+    $display->panels['contentmainbottom'][0] = 'new-2283d6be-adb9-46c2-9ce6-5b022937b90b';
+    $pane = new stdClass();
     $pane->pid = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
-    $pane->panel = 'contentmainleft';
+    $pane->panel = 'contentmainbottom';
     $pane->type = 'node_body';
     $pane->subtype = 'node_body';
     $pane->shown = TRUE;
@@ -90,11 +109,30 @@ community/listcrit',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '760550aa-4af8-4acc-8f45-b3f05a0e4828';
     $display->content['new-760550aa-4af8-4acc-8f45-b3f05a0e4828'] = $pane;
-    $display->panels['contentmainleft'][0] = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
+    $display->panels['contentmainbottom'][1] = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
+    $pane = new stdClass();
+    $pane->pid = 'new-043cb46c-4687-4ddb-8c91-c810103190d5';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_all_node_layout-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '043cb46c-4687-4ddb-8c91-c810103190d5';
+    $display->content['new-043cb46c-4687-4ddb-8c91-c810103190d5'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-043cb46c-4687-4ddb-8c91-c810103190d5';
     $pane = new stdClass();
     $pane->pid = 'new-db26f124-e580-4ac1-82b8-d0db64392945';
     $pane->panel = 'contentmainright';
@@ -115,6 +153,36 @@ community/listcrit',
     $display->content['new-db26f124-e580-4ac1-82b8-d0db64392945'] = $pane;
     $display->panels['contentmainright'][0] = 'new-db26f124-e580-4ac1-82b8-d0db64392945';
     $pane = new stdClass();
+    $pane->pid = 'new-e1565f82-59d8-42ec-b23a-83dd0d742d76';
+    $pane->panel = 'contentmainright';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_rate_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'e1565f82-59d8-42ec-b23a-83dd0d742d76';
+    $display->content['new-e1565f82-59d8-42ec-b23a-83dd0d742d76'] = $pane;
+    $display->panels['contentmainright'][1] = 'new-e1565f82-59d8-42ec-b23a-83dd0d742d76';
+    $pane = new stdClass();
     $pane->pid = 'new-abb1884a-ae8e-4088-a616-e9c25929e0bf';
     $pane->panel = 'footer';
     $pane->type = 'views_panes';
@@ -134,10 +202,10 @@ community/listcrit',
     $display->content['new-abb1884a-ae8e-4088-a616-e9c25929e0bf'] = $pane;
     $display->panels['footer'][0] = 'new-abb1884a-ae8e-4088-a616-e9c25929e0bf';
     $pane = new stdClass();
-    $pane->pid = 'new-8c4794e2-36d2-4ef2-99e3-63bd9ee72b1e';
+    $pane->pid = 'new-7a41320a-488f-4905-98ef-eadc9f8f9641';
     $pane->panel = 'footer';
     $pane->type = 'views_panes';
-    $pane->subtype = 'listcrit_all_page_layout-panel_pane_9';
+    $pane->subtype = 'core_all_node_layout-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -145,21 +213,62 @@ community/listcrit',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'well well-sm',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '8c4794e2-36d2-4ef2-99e3-63bd9ee72b1e';
-    $display->content['new-8c4794e2-36d2-4ef2-99e3-63bd9ee72b1e'] = $pane;
-    $display->panels['footer'][1] = 'new-8c4794e2-36d2-4ef2-99e3-63bd9ee72b1e';
+    $pane->uuid = '7a41320a-488f-4905-98ef-eadc9f8f9641';
+    $display->content['new-7a41320a-488f-4905-98ef-eadc9f8f9641'] = $pane;
+    $display->panels['footer'][1] = 'new-7a41320a-488f-4905-98ef-eadc9f8f9641';
     $pane = new stdClass();
-    $pane->pid = 'new-3687c4fc-71a1-4535-aca3-19609b353faf';
+    $pane->pid = 'new-93e963a5-5f04-4ee4-b967-09363968f701';
     $pane->panel = 'footer';
-    $pane->type = 'node_comment_wrapper';
-    $pane->subtype = 'node_comment_wrapper';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_node_trending_content-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '93e963a5-5f04-4ee4-b967-09363968f701';
+    $display->content['new-93e963a5-5f04-4ee4-b967-09363968f701'] = $pane;
+    $display->panels['footer'][2] = 'new-93e963a5-5f04-4ee4-b967-09363968f701';
+    $pane = new stdClass();
+    $pane->pid = 'new-5373d93c-0175-440a-a125-4e7471029cc9';
+    $pane->panel = 'footer';
+    $pane->type = 'custom';
+    $pane->subtype = 'posts_update_no_battle';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '5373d93c-0175-440a-a125-4e7471029cc9';
+    $display->content['new-5373d93c-0175-440a-a125-4e7471029cc9'] = $pane;
+    $display->panels['footer'][3] = 'new-5373d93c-0175-440a-a125-4e7471029cc9';
+    $pane = new stdClass();
+    $pane->pid = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
+    $pane->panel = 'footer';
+    $pane->type = 'node_comments';
+    $pane->subtype = 'node_comments';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -176,30 +285,11 @@ community/listcrit',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 4;
     $pane->locks = array();
-    $pane->uuid = '3687c4fc-71a1-4535-aca3-19609b353faf';
-    $display->content['new-3687c4fc-71a1-4535-aca3-19609b353faf'] = $pane;
-    $display->panels['footer'][2] = 'new-3687c4fc-71a1-4535-aca3-19609b353faf';
-    $pane = new stdClass();
-    $pane->pid = 'new-f5abb7d5-a7a4-46b4-9268-d0eece1062b1';
-    $pane->panel = 'header';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'listcrit_all_page_layout-panel_pane_3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'f5abb7d5-a7a4-46b4-9268-d0eece1062b1';
-    $display->content['new-f5abb7d5-a7a4-46b4-9268-d0eece1062b1'] = $pane;
-    $display->panels['header'][0] = 'new-f5abb7d5-a7a4-46b4-9268-d0eece1062b1';
+    $pane->uuid = '5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
+    $display->content['new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4'] = $pane;
+    $display->panels['footer'][4] = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -212,7 +302,7 @@ community/listcrit',
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'ListCrit Meta',
     'no_blocks' => 0,
@@ -259,11 +349,11 @@ community/listcrit',
       ),
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Community
+    'panels_breadcrumbs_titles' => 'Order of Battle
 ListCrit
 ',
-    'panels_breadcrumbs_paths' => 'community
-community/listcrit
+    'panels_breadcrumbs_paths' => 'order-of-battle
+order-of-battle/listcrit
 ',
     'panels_breadcrumbs_home' => 1,
   );
@@ -301,6 +391,30 @@ community/listcrit
     $display->content['new-309a8b90-6616-44cc-9a61-19fe0908651e'] = $pane;
     $display->panels['contentmain'][0] = 'new-309a8b90-6616-44cc-9a61-19fe0908651e';
     $pane = new stdClass();
+    $pane->pid = 'new-5764a19e-2d30-4a4e-a944-cde5596acddd';
+    $pane->panel = 'contentmain';
+    $pane->type = 'term_description';
+    $pane->subtype = 'term_description';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_term_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '5764a19e-2d30-4a4e-a944-cde5596acddd';
+    $display->content['new-5764a19e-2d30-4a4e-a944-cde5596acddd'] = $pane;
+    $display->panels['contentmain'][1] = 'new-5764a19e-2d30-4a4e-a944-cde5596acddd';
+    $pane = new stdClass();
     $pane->pid = 'new-fedde95a-d3aa-4571-8d5c-6eb0bfdae1b6';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
@@ -314,11 +428,11 @@ community/listcrit
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'fedde95a-d3aa-4571-8d5c-6eb0bfdae1b6';
     $display->content['new-fedde95a-d3aa-4571-8d5c-6eb0bfdae1b6'] = $pane;
-    $display->panels['contentmain'][1] = 'new-fedde95a-d3aa-4571-8d5c-6eb0bfdae1b6';
+    $display->panels['contentmain'][2] = 'new-fedde95a-d3aa-4571-8d5c-6eb0bfdae1b6';
     $pane = new stdClass();
     $pane->pid = 'new-e6037fb8-62a2-4602-ae00-0bda7d30bc19';
     $pane->panel = 'contentmain';
@@ -333,11 +447,11 @@ community/listcrit
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'e6037fb8-62a2-4602-ae00-0bda7d30bc19';
     $display->content['new-e6037fb8-62a2-4602-ae00-0bda7d30bc19'] = $pane;
-    $display->panels['contentmain'][2] = 'new-e6037fb8-62a2-4602-ae00-0bda7d30bc19';
+    $display->panels['contentmain'][3] = 'new-e6037fb8-62a2-4602-ae00-0bda7d30bc19';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -357,7 +471,7 @@ function listcrit_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'List Crit Main Page';
   $page->admin_description = '';
-  $page->path = 'community/listcrit';
+  $page->path = 'order-of-battle/listcrit';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
@@ -394,7 +508,7 @@ function listcrit_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => '',
     'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_home' => 0,
@@ -422,7 +536,7 @@ function listcrit_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its';
+  $display->layout = 'bootopoly_its2';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -496,14 +610,8 @@ function listcrit_default_page_manager_pages() {
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
+      'style' => 'default',
+      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
@@ -512,6 +620,31 @@ function listcrit_default_page_manager_pages() {
     $pane->uuid = 'aa7869fc-d01d-4ff2-a99b-789064dcb865';
     $display->content['new-aa7869fc-d01d-4ff2-a99b-789064dcb865'] = $pane;
     $display->panels['contentmainright'][0] = 'new-aa7869fc-d01d-4ff2-a99b-789064dcb865';
+    $pane = new stdClass();
+    $pane->pid = 'new-03951300-c2a8-4920-a1c5-244055830127';
+    $pane->panel = 'contentmaintop';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Write Up',
+      'title' => 'Are You Hard Enough?',
+      'body' => 'ListCrit on iToysoldiers is the perfect place to find peer reviewed and assessed army lists for all of your favorite miniature wargames. Conveniently categorized by meta data and army, you can find great lists to use with your army or review what opposing commanders are using with their armies.',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '03951300-c2a8-4920-a1c5-244055830127';
+    $display->content['new-03951300-c2a8-4920-a1c5-244055830127'] = $pane;
+    $display->panels['contentmaintop'][0] = 'new-03951300-c2a8-4920-a1c5-244055830127';
     $pane = new stdClass();
     $pane->pid = 'new-fdedd176-bf73-415d-8fb4-3082d9cbdba9';
     $pane->panel = 'header';
@@ -522,7 +655,7 @@ function listcrit_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Page Header',
       'title' => '',
-      'body' => '<h1>ListCrit</h1>
+      'body' => '
 <h2>Peer reviewed army lists. Does your list pass muster?</h2>',
       'format' => 'pure_html',
       'substitute' => TRUE,
@@ -590,7 +723,7 @@ function listcrit_default_page_manager_pages() {
     $pane->uuid = '3bcb7be3-4248-4eef-af09-4b08bc778a12';
     $display->content['new-3bcb7be3-4248-4eef-af09-4b08bc778a12'] = $pane;
     $display->panels['sidebar'][1] = 'new-3bcb7be3-4248-4eef-af09-4b08bc778a12';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

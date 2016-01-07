@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * page.vars.php
@@ -10,65 +11,76 @@
  * @see page.tpl.php
  */
 function bootstrap_preprocess_page(&$variables) {
-  // Add information about the number of sidebars.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = ' class="col-sm-6"';
-  }
-  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = ' class="col-md-8"';
-  }
-  else {
-    $variables['content_column_class'] = ' class="col-md-12"';
-  }
+    // Add search box
+    $side_search_box = drupal_render(drupal_get_form('search_form'));
+    $variables['side_search_box'] = $side_search_box;
+    // Add variables for user info on side bar
+    if ($variables['logged_in']) {
+        $user = user_load($variables['user']->uid);
+        $message_count = privatemsg_unread_count($user);
+        $variables['user_name'] = '<a href="/user">'. $user->name .'</a>';
+        $variables['nav_bar_option'] = '<ul class="nav-notification clearfix"><li><a href="/dashboard"><i class="fa fa-tachometer fa-lg"></i></a></li><li><a href="/node/add"><i class="fa fa-plus-square-o fa-lg"></i></a></li><li><a href="/messages"><i class="fa fa-envelope fa-lg"></i><span class="notification-label bounceIn animation-delay4">'. $message_count .'</span></a></li><li class="profile"><a href="/user"><strong>'. $user->name .'</strong></a></li></ul>';
 
-  // Primary nav.
-  $variables['primary_nav'] = FALSE;
-  if ($variables['main_menu']) {
-    // Build links.
-    $variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-    // Provide default theme wrapper function.
-    $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
-  }
+        if ($user->picture) {
+            $variables['user_avatar'] = theme_image_style(
+                    array(
+                        'style_name' => 'thumbnail',
+                        'path' => $user->picture->uri,
+                        'attributes' => array(
+                            'class' => 'avatar'
+                        ),
+                        'width' => NULL,
+                        'height' => NULL,
+                    )
+            );
+        } else {
+            $variables['user_avatar'] = '<a title="Profile" href=/user><img class="avatar" src="/sites/default/files/default_images/profile.png" /></a>';
+            $variables['user_name'] = "Warmonger";
+        }
+    } else {
+        $variables['user_avatar'] = '<img class="avatar" src="/sites/default/files/default_images/profile.png" />';
+        $variables['user_name'] = "Warmonger";
+        $variables['nav_bar_option'] = '<ul class="nav-notification clearfix"><li><a href="/user"><strong>Login</strong></a></li><li><a href="/user/register"><strong>Register</strong></a></li>';
+    }
+    // Add information about the number of sidebars.
+    if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+        $variables['content_column_class'] = ' class="col-md-8"';
+    } elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
+        $variables['content_column_class'] = ' class="col-md-8"';
+    } else {
+        $variables['content_column_class'] = ' class="col-md-12"';
+    }
 
-  // Search Bubble
-  $variables['navbar_search_form'] = FALSE;
-  if (module_exists('search')) {
-    //$form = drupal_get_form('search_form');
-    //unset($form['basic']['keys']['#theme_wrappers']);
-    //$form['basic']['keys']['#attributes']['class'][] = 'search-query';
-   // $form['#attributes']['class'][] = 'navbar-search';
-   // $form['#attributes']['class'][] = 'navbar-search-elastic';
-  //  $form['#attributes']['class'][] = 'pull-left';
-  //  $form['#theme_wrappers'][] = 'pure_form_wrapper';
-  //  $variables['navbar_search_form'] = $form;
-  }
-  $variables['navbar_search_form']['#attributes']['class'][] = 'pull-right';
+    // Primary nav.
+    $variables['primary_nav'] = FALSE;
+    if ($variables['main_menu']) {
+        // Build links.
+        $variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+        // Provide default theme wrapper function.
+        $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
+    }
 
+    // Secondary nav.
+    $variables['secondary_nav'] = FALSE;
+    if ($variables['secondary_menu']) {
+        // Build links.
+        $variables['secondary_nav'] = menu_tree(variable_get('menu_secondary_links_source', 'user-menu'));
+        // Provide default theme wrapper function.
+        $variables['secondary_nav']['#theme_wrappers'] = array('menu_tree__secondary');
+    }
 
+    $variables['navbar_classes_array'] = array('navbar');
 
-  // Secondary nav.
-  $variables['secondary_nav'] = FALSE;
-  if ($variables['secondary_menu']) {
-    // Build links.
-    $variables['secondary_nav'] = menu_tree(variable_get('menu_secondary_links_source', 'user-menu'));
-    // Provide default theme wrapper function.
-    $variables['secondary_nav']['#theme_wrappers'] = array('menu_tree__secondary');
-  }
-
-  $variables['navbar_classes_array'] = array('navbar');
-
-  if (theme_get_setting('bootstrap_navbar_position') !== '') {
-    $variables['navbar_classes_array'][] = 'navbar-' . theme_get_setting('bootstrap_navbar_position');
-  }
-  else {
-    $variables['navbar_classes_array'][] = 'container';
-  }
-  if (theme_get_setting('bootstrap_navbar_inverse')) {
-    $variables['navbar_classes_array'][] = 'navbar-inverse';
-  }
-  else {
-    $variables['navbar_classes_array'][] = 'navbar-default';
-  }
+    if (theme_get_setting('bootstrap_navbar_position') !== '') {
+        $variables['navbar_classes_array'][] = 'navbar-' . theme_get_setting('bootstrap_navbar_position');
+    } else {
+        $variables['navbar_classes_array'][] = 'container';
+    }
+    if (theme_get_setting('bootstrap_navbar_inverse')) {
+        $variables['navbar_classes_array'][] = 'navbar-inverse';
+    } else {
+        $variables['navbar_classes_array'][] = 'navbar-default';
+    }
 }
 
 /**
@@ -77,8 +89,5 @@ function bootstrap_preprocess_page(&$variables) {
  * @see page.tpl.php
  */
 function bootstrap_process_page(&$variables) {
-  $variables['navbar_classes'] = implode(' ',   $variables['navbar_classes_array']);
-//$variables['navbar_search'] = drupal_render($variables['navbar_search_form']);
-  $variables['navbar_search'] = drupal_render(drupal_get_form('search_form'));
+    $variables['navbar_classes'] = implode(' ', $variables['navbar_classes_array']);
 }
-

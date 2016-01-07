@@ -399,11 +399,250 @@ function war_zones_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view__league_1_0';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -20;
+  $handler->conf = array(
+    'title' => 'League 1.0',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'league_1_0',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'war_zone_league' => 'war_zone_league',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'War Zones',
+    'panels_breadcrumbs_paths' => 'warzone',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_its2';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
+      'contentmaintop' => NULL,
+      'contentmainbottom' => NULL,
+      'contentmainright' => NULL,
+      'contentmainleft' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = '4a6f86da-02a1-4e7f-956e-766160159ec8';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-d64cd383-a40a-40e7-ac53-78e6a69b7e56';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_achievements-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd64cd383-a40a-40e7-ac53-78e6a69b7e56';
+    $display->content['new-d64cd383-a40a-40e7-ac53-78e6a69b7e56'] = $pane;
+    $display->panels['contentmainbottom'][0] = 'new-d64cd383-a40a-40e7-ac53-78e6a69b7e56';
+    $pane = new stdClass();
+    $pane->pid = 'new-d15eb854-a0ec-4202-b69f-d01dc41c9d93';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'node_body';
+    $pane->subtype = 'node_body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'd15eb854-a0ec-4202-b69f-d01dc41c9d93';
+    $display->content['new-d15eb854-a0ec-4202-b69f-d01dc41c9d93'] = $pane;
+    $display->panels['contentmainbottom'][1] = 'new-d15eb854-a0ec-4202-b69f-d01dc41c9d93';
+    $pane = new stdClass();
+    $pane->pid = 'new-3f2d58fc-a008-42a1-9a8d-0e506dfcc723';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'master_v2_challenges-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '3f2d58fc-a008-42a1-9a8d-0e506dfcc723';
+    $display->content['new-3f2d58fc-a008-42a1-9a8d-0e506dfcc723'] = $pane;
+    $display->panels['contentmainbottom'][2] = 'new-3f2d58fc-a008-42a1-9a8d-0e506dfcc723';
+    $pane = new stdClass();
+    $pane->pid = 'new-8ba12542-77a3-4999-8a72-1ba308c95140';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'league_standings-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '8ba12542-77a3-4999-8a72-1ba308c95140';
+    $display->content['new-8ba12542-77a3-4999-8a72-1ba308c95140'] = $pane;
+    $display->panels['contentmainbottom'][3] = 'new-8ba12542-77a3-4999-8a72-1ba308c95140';
+    $pane = new stdClass();
+    $pane->pid = 'new-9eb650e4-aa7b-4475-ad0b-992873e2c5b1';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'node_comment_wrapper';
+    $pane->subtype = 'node_comment_wrapper';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'mode' => '1',
+      'comments_per_page' => '50',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '9eb650e4-aa7b-4475-ad0b-992873e2c5b1';
+    $display->content['new-9eb650e4-aa7b-4475-ad0b-992873e2c5b1'] = $pane;
+    $display->panels['contentmainbottom'][4] = 'new-9eb650e4-aa7b-4475-ad0b-992873e2c5b1';
+    $pane = new stdClass();
+    $pane->pid = 'new-7cb45f62-d736-463b-84fc-b9897484e693';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7cb45f62-d736-463b-84fc-b9897484e693';
+    $display->content['new-7cb45f62-d736-463b-84fc-b9897484e693'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-7cb45f62-d736-463b-84fc-b9897484e693';
+    $pane = new stdClass();
+    $pane->pid = 'new-0d121490-77db-4211-9d50-9ab249e10a19';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_news-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '0d121490-77db-4211-9d50-9ab249e10a19';
+    $display->content['new-0d121490-77db-4211-9d50-9ab249e10a19'] = $pane;
+    $display->panels['contentmainleft'][1] = 'new-0d121490-77db-4211-9d50-9ab249e10a19';
+    $pane = new stdClass();
+    $pane->pid = 'new-13946273-c9ed-49bb-b4b1-f20d76524dd4';
+    $pane->panel = 'contentmainright';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'warzone_special_event_page_layout-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '13946273-c9ed-49bb-b4b1-f20d76524dd4';
+    $display->content['new-13946273-c9ed-49bb-b4b1-f20d76524dd4'] = $pane;
+    $display->panels['contentmainright'][0] = 'new-13946273-c9ed-49bb-b4b1-f20d76524dd4';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-7cb45f62-d736-463b-84fc-b9897484e693';
+  $handler->conf['display'] = $display;
+  $export['node_view__league_1_0'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view_panel_context';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -15;
   $handler->conf = array(
     'title' => 'Narrative Campaign Instance',
     'no_blocks' => 1,
@@ -1122,7 +1361,7 @@ warzone/narrative-campaigns',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -24;
+  $handler->weight = -19;
   $handler->conf = array(
     'title' => 'League 2.0',
     'no_blocks' => 1,
@@ -1200,7 +1439,7 @@ warzone/narrative-campaigns',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -13;
   $handler->conf = array(
     'title' => 'Tournament',
     'no_blocks' => 0,
@@ -1258,6 +1497,28 @@ Tournament',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-08d9fc4a-bdad-411c-b847-ae237f8d25a3';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'well well-sm',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '08d9fc4a-bdad-411c-b847-ae237f8d25a3';
+    $display->content['new-08d9fc4a-bdad-411c-b847-ae237f8d25a3'] = $pane;
+    $display->panels['contentmainbottom'][0] = 'new-08d9fc4a-bdad-411c-b847-ae237f8d25a3';
+    $pane = new stdClass();
     $pane->pid = 'new-a4cfc20b-945c-43df-9453-80c6cb15b733';
     $pane->panel = 'contentmainbottom';
     $pane->type = 'views_panes';
@@ -1291,11 +1552,11 @@ Tournament',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'a4cfc20b-945c-43df-9453-80c6cb15b733';
     $display->content['new-a4cfc20b-945c-43df-9453-80c6cb15b733'] = $pane;
-    $display->panels['contentmainbottom'][0] = 'new-a4cfc20b-945c-43df-9453-80c6cb15b733';
+    $display->panels['contentmainbottom'][1] = 'new-a4cfc20b-945c-43df-9453-80c6cb15b733';
     $pane = new stdClass();
     $pane->pid = 'new-93d546e5-d751-4738-8374-c9092b46b983';
     $pane->panel = 'contentmainbottom';
@@ -1330,11 +1591,11 @@ Tournament',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '93d546e5-d751-4738-8374-c9092b46b983';
     $display->content['new-93d546e5-d751-4738-8374-c9092b46b983'] = $pane;
-    $display->panels['contentmainbottom'][1] = 'new-93d546e5-d751-4738-8374-c9092b46b983';
+    $display->panels['contentmainbottom'][2] = 'new-93d546e5-d751-4738-8374-c9092b46b983';
     $pane = new stdClass();
     $pane->pid = 'new-cb6946d8-c3aa-4241-8491-29f76f7760d9';
     $pane->panel = 'contentmainbottom';
@@ -1349,33 +1610,11 @@ Tournament',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'cb6946d8-c3aa-4241-8491-29f76f7760d9';
     $display->content['new-cb6946d8-c3aa-4241-8491-29f76f7760d9'] = $pane;
-    $display->panels['contentmainbottom'][2] = 'new-cb6946d8-c3aa-4241-8491-29f76f7760d9';
-    $pane = new stdClass();
-    $pane->pid = 'new-08d9fc4a-bdad-411c-b847-ae237f8d25a3';
-    $pane->panel = 'contentmainbottom';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_page_layout-panel_pane_10';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'well well-sm',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '08d9fc4a-bdad-411c-b847-ae237f8d25a3';
-    $display->content['new-08d9fc4a-bdad-411c-b847-ae237f8d25a3'] = $pane;
-    $display->panels['contentmainbottom'][3] = 'new-08d9fc4a-bdad-411c-b847-ae237f8d25a3';
+    $display->panels['contentmainbottom'][3] = 'new-cb6946d8-c3aa-4241-8491-29f76f7760d9';
     $pane = new stdClass();
     $pane->pid = 'new-8dada78f-5311-482c-9912-5a1d4197c0d9';
     $pane->panel = 'contentmainbottom';
@@ -1396,6 +1635,32 @@ Tournament',
     $display->content['new-8dada78f-5311-482c-9912-5a1d4197c0d9'] = $pane;
     $display->panels['contentmainbottom'][4] = 'new-8dada78f-5311-482c-9912-5a1d4197c0d9';
     $pane = new stdClass();
+    $pane->pid = 'new-68487d9b-c777-4a4b-b905-428fa01634d4';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'node_comments';
+    $pane->subtype = 'node_comments';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'mode' => '0',
+      'comments_per_page' => '50',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '68487d9b-c777-4a4b-b905-428fa01634d4';
+    $display->content['new-68487d9b-c777-4a4b-b905-428fa01634d4'] = $pane;
+    $display->panels['contentmainbottom'][5] = 'new-68487d9b-c777-4a4b-b905-428fa01634d4';
+    $pane = new stdClass();
     $pane->pid = 'new-be2b0be6-4e48-41fc-87d2-46823b8c69df';
     $pane->panel = 'contentmainleft';
     $pane->type = 'views_panes';
@@ -1415,84 +1680,8 @@ Tournament',
     $display->content['new-be2b0be6-4e48-41fc-87d2-46823b8c69df'] = $pane;
     $display->panels['contentmainleft'][0] = 'new-be2b0be6-4e48-41fc-87d2-46823b8c69df';
     $pane = new stdClass();
-    $pane->pid = 'new-4381b7b9-85cc-4f02-bbc0-a18b03850cff';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_page_layout-panel_pane_8';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '4381b7b9-85cc-4f02-bbc0-a18b03850cff';
-    $display->content['new-4381b7b9-85cc-4f02-bbc0-a18b03850cff'] = $pane;
-    $display->panels['contentmainleft'][1] = 'new-4381b7b9-85cc-4f02-bbc0-a18b03850cff';
-    $pane = new stdClass();
-    $pane->pid = 'new-a95152a6-a619-4ef8-89b7-53f3b142e3cf';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_page_layout-panel_pane_7';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'a95152a6-a619-4ef8-89b7-53f3b142e3cf';
-    $display->content['new-a95152a6-a619-4ef8-89b7-53f3b142e3cf'] = $pane;
-    $display->panels['contentmainright'][0] = 'new-a95152a6-a619-4ef8-89b7-53f3b142e3cf';
-    $pane = new stdClass();
-    $pane->pid = 'new-823c445a-397f-4e46-8436-a9b166c05f49';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_page_layout-panel_pane_5';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '823c445a-397f-4e46-8436-a9b166c05f49';
-    $display->content['new-823c445a-397f-4e46-8436-a9b166c05f49'] = $pane;
-    $display->panels['contentmainright'][1] = 'new-823c445a-397f-4e46-8436-a9b166c05f49';
-    $pane = new stdClass();
-    $pane->pid = 'new-b8ccbf22-51ce-47d0-a15b-3f3902d3e5fb';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_page_layout-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'b8ccbf22-51ce-47d0-a15b-3f3902d3e5fb';
-    $display->content['new-b8ccbf22-51ce-47d0-a15b-3f3902d3e5fb'] = $pane;
-    $display->panels['contentmainright'][2] = 'new-b8ccbf22-51ce-47d0-a15b-3f3902d3e5fb';
-    $pane = new stdClass();
     $pane->pid = 'new-59aeb9a2-7923-4711-be4d-1b925926396f';
-    $pane->panel = 'contentmainright';
+    $pane->panel = 'contentmainleft';
     $pane->type = 'views_panes';
     $pane->subtype = 'war_zone_all_news-panel_pane_1';
     $pane->shown = TRUE;
@@ -1504,16 +1693,16 @@ Tournament',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '59aeb9a2-7923-4711-be4d-1b925926396f';
     $display->content['new-59aeb9a2-7923-4711-be4d-1b925926396f'] = $pane;
-    $display->panels['contentmainright'][3] = 'new-59aeb9a2-7923-4711-be4d-1b925926396f';
+    $display->panels['contentmainleft'][1] = 'new-59aeb9a2-7923-4711-be4d-1b925926396f';
     $pane = new stdClass();
-    $pane->pid = 'new-8468b1f7-1179-4a8b-a549-121bfcd2d2e4';
+    $pane->pid = 'new-4381b7b9-85cc-4f02-bbc0-a18b03850cff';
     $pane->panel = 'contentmainright';
     $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_page_layout-panel_pane_6';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_8';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -1523,37 +1712,11 @@ Tournament',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '8468b1f7-1179-4a8b-a549-121bfcd2d2e4';
-    $display->content['new-8468b1f7-1179-4a8b-a549-121bfcd2d2e4'] = $pane;
-    $display->panels['contentmainright'][4] = 'new-8468b1f7-1179-4a8b-a549-121bfcd2d2e4';
-    $pane = new stdClass();
-    $pane->pid = 'new-267d4890-4376-432d-b417-d6dc69e1cb1c';
-    $pane->panel = 'footer';
-    $pane->type = 'node_comment_wrapper';
-    $pane->subtype = 'node_comment_wrapper';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'mode' => '1',
-      'comments_per_page' => '50',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '267d4890-4376-432d-b417-d6dc69e1cb1c';
-    $display->content['new-267d4890-4376-432d-b417-d6dc69e1cb1c'] = $pane;
-    $display->panels['footer'][0] = 'new-267d4890-4376-432d-b417-d6dc69e1cb1c';
+    $pane->uuid = '4381b7b9-85cc-4f02-bbc0-a18b03850cff';
+    $display->content['new-4381b7b9-85cc-4f02-bbc0-a18b03850cff'] = $pane;
+    $display->panels['contentmainright'][0] = 'new-4381b7b9-85cc-4f02-bbc0-a18b03850cff';
     $pane = new stdClass();
     $pane->pid = 'new-d122de7e-9331-4260-a810-09b44f32a2bc';
     $pane->panel = 'sidebar';
@@ -1592,7 +1755,7 @@ Tournament',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -14;
   $handler->conf = array(
     'title' => 'Special Events',
     'no_blocks' => 0,
@@ -1620,10 +1783,11 @@ Tournament',
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'War Zones
-Special Events',
-    'panels_breadcrumbs_paths' => 'warzone
-warzone/special-events',
+    'panels_breadcrumbs_titles' => 'Theater
+War Zone
+',
+    'panels_breadcrumbs_paths' => 'theater
+theater/warzone',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -1962,10 +2126,10 @@ warzone/special-events',
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -16;
   $handler->conf = array(
     'title' => 'Narrative Campaigns',
-    'no_blocks' => 1,
+    'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
@@ -1996,7 +2160,7 @@ warzone/narrative-campaigns',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its';
+  $display->layout = 'bootopoly_its2';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -2025,8 +2189,86 @@ warzone/narrative-campaigns',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-9551c216-4787-47a9-b3e5-82151805aeb7';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_campaign_components-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9551c216-4787-47a9-b3e5-82151805aeb7';
+    $display->content['new-9551c216-4787-47a9-b3e5-82151805aeb7'] = $pane;
+    $display->panels['contentmainbottom'][0] = 'new-9551c216-4787-47a9-b3e5-82151805aeb7';
+    $pane = new stdClass();
+    $pane->pid = 'new-8f3a210b-8a49-430c-9b2d-c8b10221ec88';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_campaign_components-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '8f3a210b-8a49-430c-9b2d-c8b10221ec88';
+    $display->content['new-8f3a210b-8a49-430c-9b2d-c8b10221ec88'] = $pane;
+    $display->panels['contentmainbottom'][1] = 'new-8f3a210b-8a49-430c-9b2d-c8b10221ec88';
+    $pane = new stdClass();
+    $pane->pid = 'new-644bf573-39c4-4cfb-890b-4b942b5e9ee8';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Designer Notes',
+      'title' => '',
+      'body' => '<div id="designer-notes" class="collapse row">
+<div class="col-md-8">
+<div class="panel panel-default">
+  <div class="panel-heading">Designer Notes</div>
+  <div class="panel-body">
+    %node:field_designers_notes_narrative
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+<?php print views_embed_view("war_zone_all_page_layout" , "panel_pane_9"); ?>
+</div>
+</div>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '644bf573-39c4-4cfb-890b-4b942b5e9ee8';
+    $display->content['new-644bf573-39c4-4cfb-890b-4b942b5e9ee8'] = $pane;
+    $display->panels['contentmainbottom'][2] = 'new-644bf573-39c4-4cfb-890b-4b942b5e9ee8';
+    $pane = new stdClass();
     $pane->pid = 'new-a696564f-5d5e-496a-b7e7-a05d9c06f1c5';
-    $pane->panel = 'contentmaintop';
+    $pane->panel = 'contentmainbottom';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -2082,54 +2324,33 @@ warzone/narrative-campaigns',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'a696564f-5d5e-496a-b7e7-a05d9c06f1c5';
     $display->content['new-a696564f-5d5e-496a-b7e7-a05d9c06f1c5'] = $pane;
-    $display->panels['contentmaintop'][0] = 'new-a696564f-5d5e-496a-b7e7-a05d9c06f1c5';
+    $display->panels['contentmainbottom'][3] = 'new-a696564f-5d5e-496a-b7e7-a05d9c06f1c5';
     $pane = new stdClass();
-    $pane->pid = 'new-644bf573-39c4-4cfb-890b-4b942b5e9ee8';
-    $pane->panel = 'contentmaintop';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->pid = 'new-61e97e10-9e8b-4cd5-a238-5f216724c99e';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'core_all_node_layout-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Designer Notes',
-      'title' => '',
-      'body' => '<div id="designer-notes" class="collapse row">
-<div class="col-md-8">
-<div class="panel panel-default">
-  <div class="panel-heading">Designer Notes</div>
-  <div class="panel-body">
-    %node:field_designers_notes_narrative
-  </div>
-</div>
-</div>
-<div class="col-md-4">
-<?php print views_embed_view("war_zone_all_page_layout" , "panel_pane_9"); ?>
-</div>
-</div>',
-      'format' => 'php_code',
-      'substitute' => 1,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'clearfix',
-    );
+    $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '644bf573-39c4-4cfb-890b-4b942b5e9ee8';
-    $display->content['new-644bf573-39c4-4cfb-890b-4b942b5e9ee8'] = $pane;
-    $display->panels['contentmaintop'][1] = 'new-644bf573-39c4-4cfb-890b-4b942b5e9ee8';
+    $pane->uuid = '61e97e10-9e8b-4cd5-a238-5f216724c99e';
+    $display->content['new-61e97e10-9e8b-4cd5-a238-5f216724c99e'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-61e97e10-9e8b-4cd5-a238-5f216724c99e';
     $pane = new stdClass();
     $pane->pid = 'new-8c0b1573-4321-4f86-874e-947d49662239';
-    $pane->panel = 'contentmaintop';
+    $pane->panel = 'contentmainright';
     $pane->type = 'node_body';
     $pane->subtype = 'node_body';
     $pane->shown = TRUE;
@@ -2145,49 +2366,11 @@ warzone/narrative-campaigns',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '8c0b1573-4321-4f86-874e-947d49662239';
     $display->content['new-8c0b1573-4321-4f86-874e-947d49662239'] = $pane;
-    $display->panels['contentmaintop'][2] = 'new-8c0b1573-4321-4f86-874e-947d49662239';
-    $pane = new stdClass();
-    $pane->pid = 'new-8f3a210b-8a49-430c-9b2d-c8b10221ec88';
-    $pane->panel = 'contentmaintop';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_campaign_components-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '8f3a210b-8a49-430c-9b2d-c8b10221ec88';
-    $display->content['new-8f3a210b-8a49-430c-9b2d-c8b10221ec88'] = $pane;
-    $display->panels['contentmaintop'][3] = 'new-8f3a210b-8a49-430c-9b2d-c8b10221ec88';
-    $pane = new stdClass();
-    $pane->pid = 'new-9551c216-4787-47a9-b3e5-82151805aeb7';
-    $pane->panel = 'contentmaintop';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_campaign_components-panel_pane_5';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '9551c216-4787-47a9-b3e5-82151805aeb7';
-    $display->content['new-9551c216-4787-47a9-b3e5-82151805aeb7'] = $pane;
-    $display->panels['contentmaintop'][4] = 'new-9551c216-4787-47a9-b3e5-82151805aeb7';
+    $display->panels['contentmainright'][0] = 'new-8c0b1573-4321-4f86-874e-947d49662239';
     $pane = new stdClass();
     $pane->pid = 'new-7e6d4180-f105-4210-8b81-475b913996a4';
     $pane->panel = 'sidebar';
@@ -3421,13 +3604,13 @@ Manage',
   $page->api_version = 1;
   $page->name = 'war_zone_main_page';
   $page->task = 'page';
-  $page->admin_title = 'War Zone Main Page';
+  $page->admin_title = 'Theater Main Page';
   $page->admin_description = '';
-  $page->path = 'warzone';
+  $page->path = 'theater';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'War Zones',
+    'title' => 'Theater',
     'name' => 'main-menu',
     'weight' => '0',
     'parent' => array(
@@ -3488,12 +3671,19 @@ Manage',
     'panels_breadcrumbs_home' => 0,
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_boxton';
+  $display->layout = 'bootopoly_its2';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'contentmain' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
+      'contentmaintop' => NULL,
+      'contentmainbottom' => NULL,
+      'contentmainright' => NULL,
+      'contentmainleft' => NULL,
+      'footer' => NULL,
     ),
   );
   $display->cache = array();
@@ -3502,25 +3692,69 @@ Manage',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-595564dd-216b-46ce-a90a-ee5fd51b010d';
-    $pane->panel = 'contentmain';
+    $pane->pid = 'new-a638f55d-281b-4f2f-9a0f-8057843edab0';
+    $pane->panel = 'contentmainleft';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Page Header',
+      'admin_title' => 'Calendar Block',
+      'title' => 'This Month',
+      'body' => '<div class="seperator"></div>
+<?php
+  $block = module_invoke(\'views\', \'block_view\', \'event_calendar-block_1\');
+  print render($block[\'content\']);
+?>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a638f55d-281b-4f2f-9a0f-8057843edab0';
+    $display->content['new-a638f55d-281b-4f2f-9a0f-8057843edab0'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-a638f55d-281b-4f2f-9a0f-8057843edab0';
+    $pane = new stdClass();
+    $pane->pid = 'new-9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac';
+    $pane->panel = 'contentmainright';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_lists-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac';
+    $display->content['new-9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac'] = $pane;
+    $display->panels['contentmainright'][0] = 'new-9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac';
+    $pane = new stdClass();
+    $pane->pid = 'new-595564dd-216b-46ce-a90a-ee5fd51b010d';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Jumbotron',
       'title' => '',
       'body' => '<div class="jumbotron">
-  <h1>War Zones</h1>
+  <h1>Theaters</h1>
   <h2>a world of war - events and locations to field your toy soldier armies</h2>
-
-  <div>
-    <?php print views_embed_view("location_map" , "panel_pane_2"); ?> 
-  </div>
 </div>
 ',
-      'format' => 'php_code',
+      'format' => 'pure_html',
       'substitute' => TRUE,
     );
     $pane->cache = array();
@@ -3533,72 +3767,55 @@ Manage',
     $pane->locks = array();
     $pane->uuid = '595564dd-216b-46ce-a90a-ee5fd51b010d';
     $display->content['new-595564dd-216b-46ce-a90a-ee5fd51b010d'] = $pane;
-    $display->panels['contentmain'][0] = 'new-595564dd-216b-46ce-a90a-ee5fd51b010d';
+    $display->panels['header'][0] = 'new-595564dd-216b-46ce-a90a-ee5fd51b010d';
     $pane = new stdClass();
-    $pane->pid = 'new-ea43f1cd-0f39-41e9-bfef-ed8733782d19';
-    $pane->panel = 'contentmain';
+    $pane->pid = 'new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
+    $pane->panel = 'header';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Triptich',
+      'admin_title' => 'Nav',
       'title' => '',
-      'body' => '<div class="col-md-4">
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Leagues</h3>
-  </div>
-  <div class="panel-body">
-<p>
-<?php print views_embed_view("war_zone_list2" , "panel_pane_2"); ?> 
-</p>
-  </div>
-</div>
-</div>
+      'body' => '<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Theaters</a>
+    </div>
 
-<div class="col-md-4">
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Tournaments</h3>
-  </div>
-  <div class="panel-body">
-<p>
-    <?php print views_embed_view("war_zone_list2" , "panel_pane_3"); ?> 
-</p>
-  </div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title"><?php echo date("F"); ?> Calendar</h3>
-  </div>
-  <div class="panel-body">
-<?php print views_embed_view("event_calendar" , "block_1"); ?> 
-<h4>Upcoming</h4>
-<p><?php print views_embed_view("event_calendar" , "block_2"); ?> </p>
-  </div>
-</div>
-</div>',
-      'format' => 'php_code',
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/theater/battlefield">Battlefields</a></li>
+        <li><a href="/theater/events">Calendar</a></li>
+        <li><a href="/theater/narrative-campaigns">Campaigns</a></li>
+        <li><a href="/theater/warzone">War Zones</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>',
+      'format' => 'pure_html',
       'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'row',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'ea43f1cd-0f39-41e9-bfef-ed8733782d19';
-    $display->content['new-ea43f1cd-0f39-41e9-bfef-ed8733782d19'] = $pane;
-    $display->panels['contentmain'][1] = 'new-ea43f1cd-0f39-41e9-bfef-ed8733782d19';
+    $pane->uuid = 'c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
+    $display->content['new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5'] = $pane;
+    $display->panels['header'][1] = 'new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

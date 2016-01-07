@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * template.php
@@ -23,7 +24,6 @@
  * from inside the particular extension's directory.
  * @see https://drupal.org/node/2102287
  */
-
 /**
  * Include common functions used through out theme.
  */
@@ -43,8 +43,8 @@ include_once dirname(__FILE__) . '/theme/common.inc';
  * @see _bootstrap_theme()
  */
 function bootstrap_theme(&$existing, $type, $theme, $path) {
-  bootstrap_include($theme, 'theme/registry.inc');
-  return _bootstrap_theme($existing, $type, $theme, $path);
+    bootstrap_include($theme, 'theme/registry.inc');
+    return _bootstrap_theme($existing, $type, $theme, $path);
 }
 
 /**
@@ -54,3 +54,4 @@ function bootstrap_theme(&$existing, $type, $theme, $path) {
  * they are properly detected when drupal_alter() is invoked.
  */
 bootstrap_include('bootstrap', 'theme/alter.inc');
+

@@ -316,17 +316,17 @@ function profiles_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Leaderboards';
   $page->admin_description = '';
-  $page->path = 'community/leaderboards/main';
+  $page->path = 'wargaming-decorations/leaderboards/main';
   $page->access = array();
   $page->menu = array(
     'type' => 'default tab',
-    'title' => 'Leaderboards',
+    'title' => 'Summary',
     'name' => 'navigation',
     'weight' => '-50',
     'parent' => array(
       'type' => 'normal',
       'title' => 'Leaderboards',
-      'name' => 'navigation',
+      'name' => 'main-menu',
       'weight' => '0',
     ),
   );

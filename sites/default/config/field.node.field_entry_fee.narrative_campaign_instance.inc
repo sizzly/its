@@ -1,0 +1,102 @@
+<?php
+/**
+ * @file
+ * field.node.field_entry_fee.narrative_campaign_instance.inc
+ */
+
+$api = '2.0.0';
+
+$data = array(
+  'field_config' => array(
+    'entity_types' => array(),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'settings' => array(
+      'decimal_separator' => '.',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => '0',
+    'storage' => array(
+      'type' => 'field_sql_storage',
+      'settings' => array(),
+      'module' => 'field_sql_storage',
+      'active' => '1',
+      'details' => array(
+        'sql' => array(
+          'FIELD_LOAD_CURRENT' => array(
+            'field_data_field_entry_fee' => array(
+              'value' => 'field_entry_fee_value',
+            ),
+          ),
+          'FIELD_LOAD_REVISION' => array(
+            'field_revision_field_entry_fee' => array(
+              'value' => 'field_entry_fee_value',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'field_name' => 'field_entry_fee',
+    'type' => 'number_float',
+    'module' => 'number',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+    'columns' => array(
+      'value' => array(
+        'type' => 'float',
+        'not null' => FALSE,
+      ),
+    ),
+  ),
+  'field_instance' => array(
+    'default_value' => NULL,
+    'description' => 'If there\'s a fee associated with participating in this campaign then enter it here. <strong>iToysoldiers does not collect the funds!</strong> You can keep track of who\'s paid on the manage tab.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'hidden',
+        'weight' => '13',
+        'settings' => array(),
+      ),
+    ),
+    'label' => 'Entry Fee',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '0.00',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => '28',
+    ),
+    'field_name' => 'field_entry_fee',
+    'entity_type' => 'node',
+    'bundle' => 'narrative_campaign_instance',
+    'deleted' => '0',
+  ),
+);
+
+$dependencies = array(
+  'content_type.narrative_campaign_instance' => 'content_type.narrative_campaign_instance',
+);
+
+$optional = array();
+
+$modules = array(
+  0 => 'field_sql_storage',
+  1 => 'number',
+);

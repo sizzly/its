@@ -1,0 +1,12 @@
+name = iTS Media
+description = Media functions for iTS
+core = 7.x
+package = _iTS
+version = 7.x-4.0-rc1
+dependencies[] = features
+dependencies[] = its_field_bases
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = file-image-field_description_image
+features[field_instance][] = file-image-field_file_image_alt_text
+features[field_instance][] = file-image-field_file_image_title_text

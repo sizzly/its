@@ -164,7 +164,15 @@ function uservoice_admin_form($form, &$form_state) {
     '#type' => 'checkbox',
     '#title' => t("Scan DOM for custom triggers?"),
     '#default_value' => variable_get('uservoice_new_widget_custom_triggers', USERVOICE_NEW_WIDGET_DEFAULT_CUSTOM_TRIGGERS),
-    '#description' => t("Selecting this option will make the UserVoice widget trigger for a click event on any DOM element with the followign classes: '.uservoice-contact-trigger', '.uservoice-satisfaction-trigger', '.uservoice-smartvote-trigger'; select the appropriate class depending on which widget mode you want to trigger. (Only select this option if you need it, as it will add some time to DOM processing.)"),
+    '#description' => t("Selecting this option will make the UserVoice widget trigger for a click event on any DOM element with the following ids: '#uservoice-contact-trigger', '#uservoice-satisfaction-trigger', '#uservoice-smartvote-trigger'; select the appropriate id depending on which widget mode you want to trigger. (Only select this option if you need it, as it will add some time to DOM processing.)"),
+  );
+
+  // Default forum.
+  $form['widget_settings']['widget_style']['new_widget']['uservoice_new_widget_default_forum'] = array(
+    '#type' => 'textfield',
+    '#title' => t("Feedback Forum ID (optional)"),
+    '#default_value' => variable_get('uservoice_new_widget_default_forum', ''),
+    '#description' => t("The default feedback forum used in this widget is the default forum configured on UserVoice. You can set this to a different Forum ID if you wish to use a different forum for collecting widget feedback."),
   );
 
   // ---------------------------------------------------------------------------
@@ -375,7 +383,7 @@ function uservoice_admin_form($form, &$form_state) {
   $form['gadgets'] = array(
     '#type' => 'fieldset',
     '#title' => t('Gadgets'),
-    '#description' => t("Custom gadgets can display relevant information about an individual user from your website when you view a ticket within the UserVoice admin console. To use these gadgets, copy the url shown, then visit your <a href=\"https://app.uservoice.com/admin/settings/gadgets/\">your account's gadgets integration page</a> and add a custom gadget using the copied url.<br/><br/>IMPORTANT: To use these gadgets, these urls must be accessible over SSL."),
+    '#description' => t("Custom gadgets can display relevant information about an individual user from your website when you view a ticket within the UserVoice admin console. To use these gadgets, copy the url shown, then visit your <a href=\"https://app.uservoice.com/admin/settings/gadgets/\">your account's gadgets integration page</a> and add a custom gadget using the copied url.<br/><br/>IMPORTANT: To use these gadgets, these urls must be accessible over https."),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#attached' => array(
@@ -430,7 +438,7 @@ function uservoice_admin_form($form, &$form_state) {
     '#type' => 'item',
     '#title' => t("Web hook URL"),
     '#markup' => '<span id="webhook-url">' . $base_url . '/' . USERVOICE_WEBHOOK_PATH . '</span>',
-    '#description' => t("To enable this feature, you need to visit your <a href=\"https://app.uservoice.com/admin/settings/service-hooks/\">your account's service hooks page</a> and add a custom web hook using the above url. Content type should be 'JSON', and you should tick whichever notifications you want to be recorded."),
+    '#description' => t("To enable this feature, you need to visit <a href=\"https://app.uservoice.com/admin/settings/service-hooks/\">your account's service hooks page</a> and add a custom web hook using the above url. Content type should be 'JSON', and you should tick whichever notifications you want to be recorded."),
     '#states' => array(
       // @see https://api.drupal.org/api/drupal/includes%21common.inc/function/drupal_process_states/7
       'visible' => array(
