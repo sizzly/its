@@ -106,9 +106,7 @@ function war_zones_default_rules_configuration() {
                               "recipient" : [ "uid" ],
                               "author" : "1",
                               "subject" : "Achievement Awarded",
-                              "body" : "You have been awarded the [aid:link] Achievement.",
-                              "feed_nid" : "1",
-                              "feed_node" : [ "aid" ]
+                              "body" : "You have been awarded the [aid:link] Achievement."
                             },
                             "PROVIDE" : { "thread_id" : { "thread_id" : "ID of new thread" } }
                           }

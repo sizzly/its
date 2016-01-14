@@ -102,10 +102,10 @@ function its_galleries_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'xmlsitemap' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
         'metatags' => array(
           'weight' => '10',

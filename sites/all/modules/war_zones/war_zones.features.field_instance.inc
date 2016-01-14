@@ -1468,55 +1468,6 @@ function war_zones_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-war_zone_grant_achievement-field_registration_sc'.
-  $field_instances['entityform-war_zone_grant_achievement-field_registration_sc'] = array(
-    'bundle' => 'war_zone_grant_achievement',
-    'default_value' => array(),
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_registration_sc',
-    'label' => 'Receipient',
-    'required' => 1,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
   // 'entityform-war_zone_grant_achievement-field_short_description'.
   $field_instances['entityform-war_zone_grant_achievement-field_short_description'] = array(
     'bundle' => 'war_zone_grant_achievement',
@@ -1765,53 +1716,6 @@ function war_zones_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'message-stream_a_warzone_has_begun-field_reply_form'.
-  $field_instances['message-stream_a_warzone_has_begun-field_reply_form'] = array(
-    'bundle' => 'stream_a_warzone_has_begun',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
   // 'message-stream_a_warzone_has_begun-field_stream_node_ref'.
   $field_instances['message-stream_a_warzone_has_begun-field_stream_node_ref'] = array(
     'bundle' => 'stream_a_warzone_has_begun',
@@ -1882,7 +1786,7 @@ function war_zones_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -1914,7 +1818,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -1975,53 +1879,6 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_a_warzone_has_ended-field_reply_form'.
-  $field_instances['message-stream_a_warzone_has_ended-field_reply_form'] = array(
-    'bundle' => 'stream_a_warzone_has_ended',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
     ),
   );
 
@@ -2096,7 +1953,7 @@ function war_zones_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -2128,7 +1985,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -2189,52 +2046,6 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'message-stream_new_war_zone-field_reply_form'.
-  $field_instances['message-stream_new_war_zone-field_reply_form'] = array(
-    'bundle' => 'stream_new_war_zone',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
     ),
   );
 
@@ -2308,7 +2119,7 @@ function war_zones_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -2340,113 +2151,6 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_cancels_registration_for_warzone-field_associated_nodes_stream'.
-  $field_instances['message-stream_player_cancels_registration_for_warzone-field_associated_nodes_stream'] = array(
-    'bundle' => 'stream_player_cancels_registration_for_warzone',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_associated_nodes_stream',
-    'label' => 'Associated Nodes',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_cancels_registration_for_warzone-field_reply_form'.
-  $field_instances['message-stream_player_cancels_registration_for_warzone-field_reply_form'] = array(
-    'bundle' => 'stream_player_cancels_registration_for_warzone',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
       'weight' => 6,
     ),
   );
@@ -2502,59 +2206,6 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_cancels_registration_for_warzone-field_timeline_icon'.
-  $field_instances['message-stream_player_cancels_registration_for_warzone-field_timeline_icon'] = array(
-    'bundle' => 'stream_player_cancels_registration_for_warzone',
-    'default_value' => array(
-      0 => array(
-        'value' => 'fa-mail-reply',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_timeline_icon',
-    'label' => 'Timeline Icon',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 8,
     ),
   );
 
@@ -2615,53 +2266,6 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_registers_for_warzone-field_reply_form'.
-  $field_instances['message-stream_player_registers_for_warzone-field_reply_form'] = array(
-    'bundle' => 'stream_player_registers_for_warzone',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
     ),
   );
 
@@ -2736,7 +2340,7 @@ function war_zones_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -2768,114 +2372,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-war_zone_all_anonymous_actions-field_associated_nodes_stream'.
-  $field_instances['message-war_zone_all_anonymous_actions-field_associated_nodes_stream'] = array(
-    'bundle' => 'war_zone_all_anonymous_actions',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_associated_nodes_stream',
-    'label' => 'Associated Nodes',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-war_zone_all_anonymous_actions-field_reply_form'.
-  $field_instances['message-war_zone_all_anonymous_actions-field_reply_form'] = array(
-    'bundle' => 'war_zone_all_anonymous_actions',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 3,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -2940,59 +2437,6 @@ function war_zones_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'message-war_zone_all_anonymous_actions-field_timeline_icon'.
-  $field_instances['message-war_zone_all_anonymous_actions-field_timeline_icon'] = array(
-    'bundle' => 'war_zone_all_anonymous_actions',
-    'default_value' => array(
-      0 => array(
-        'value' => 'fa-crosshairs',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_timeline_icon',
-    'label' => 'Timeline Icon',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
   // 'message-war_zone_all_new_round_message-field_associated_nodes_stream'.
   $field_instances['message-war_zone_all_new_round_message-field_associated_nodes_stream'] = array(
     'bundle' => 'war_zone_all_new_round_message',
@@ -3008,7 +2452,7 @@ function war_zones_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -3048,54 +2492,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-war_zone_all_new_round_message-field_reply_form'.
-  $field_instances['message-war_zone_all_new_round_message-field_reply_form'] = array(
-    'bundle' => 'war_zone_all_new_round_message',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 3,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -3170,7 +2567,7 @@ function war_zones_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -3202,7 +2599,7 @@ function war_zones_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -3727,22 +3124,12 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'smart_trim',
+        'module' => 'text',
         'settings' => array(
-          'more_link' => 0,
-          'more_text' => 'Read more',
-          'summary_handler' => 'full',
           'trim_length' => 600,
-          'trim_link' => 0,
-          'trim_options' => array(
-            'text' => 'text',
-          ),
-          'trim_preserve_tags' => '<a>',
-          'trim_suffix' => '...',
-          'trim_type' => 'chars',
         ),
-        'type' => 'smart_trim_format',
-        'weight' => 2,
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -3789,7 +3176,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -3815,7 +3202,6 @@ function war_zones_field_default_field_instances() {
   // Exported field_instance: 'node-narrative_campaign-field_campaign_badge'.
   $field_instances['node-narrative_campaign-field_campaign_badge'] = array(
     'bundle' => 'narrative_campaign',
-    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3829,7 +3215,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -3849,15 +3235,8 @@ function war_zones_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'image' => 'image',
-        ),
-        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -3882,7 +3261,7 @@ function war_zones_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'image_image',
       'weight' => 4,
     ),
   );
@@ -3905,7 +3284,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -3950,9 +3329,10 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -3976,7 +3356,6 @@ function war_zones_field_default_field_instances() {
   // Exported field_instance: 'node-narrative_campaign-field_header_image'.
   $field_instances['node-narrative_campaign-field_header_image'] = array(
     'bundle' => 'narrative_campaign',
-    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3990,7 +3369,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -4010,15 +3389,8 @@ function war_zones_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'image' => 'image',
-        ),
-        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -4043,7 +3415,7 @@ function war_zones_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'image_image',
       'weight' => 2,
     ),
   );
@@ -4051,7 +3423,6 @@ function war_zones_field_default_field_instances() {
   // Exported field_instance: 'node-narrative_campaign-field_image'.
   $field_instances['node-narrative_campaign-field_image'] = array(
     'bundle' => 'narrative_campaign',
-    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -4062,14 +3433,10 @@ function war_zones_field_default_field_instances() {
         'weight' => 5,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 1,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -4089,15 +3456,8 @@ function war_zones_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'image' => 'image',
-        ),
-        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -4122,62 +3482,8 @@ function war_zones_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'image_image',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-narrative_campaign-field_radioactivity'.
-  $field_instances['node-narrative_campaign-field_radioactivity'] = array(
-    'bundle' => 'narrative_campaign',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 100,
-        'radioactivity_timestamp' => 1445266520,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_radioactivity',
-    'label' => 'Radioactivity',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'default_daily',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 17,
     ),
   );
 
@@ -4196,22 +3502,12 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'smart_trim',
+        'module' => 'text',
         'settings' => array(
-          'more_link' => 0,
-          'more_text' => 'Read more',
-          'summary_handler' => 'full',
           'trim_length' => 600,
-          'trim_link' => 0,
-          'trim_options' => array(
-            'text' => 'text',
-          ),
-          'trim_preserve_tags' => '<a>',
-          'trim_suffix' => '...',
-          'trim_type' => 'chars',
         ),
-        'type' => 'smart_trim_format',
-        'weight' => 1,
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -4297,13 +3593,9 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'medium',
-        ),
-        'type' => 'image',
-        'weight' => 2,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -4599,9 +3891,10 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -4665,61 +3958,6 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'node_reference_autocomplete',
       'weight' => 25,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-narrative_campaign_instance-field_radioactivity'.
-  $field_instances['node-narrative_campaign_instance-field_radioactivity'] = array(
-    'bundle' => 'narrative_campaign_instance',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 100,
-        'radioactivity_timestamp' => 1445266618,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 22,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_radioactivity',
-    'label' => 'Radioactivity',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'default_daily',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 30,
     ),
   );
 
@@ -4794,7 +4032,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -4873,7 +4111,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -4965,21 +4203,11 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'smart_trim',
+        'module' => 'text',
         'settings' => array(
-          'more_link' => 0,
-          'more_text' => 'Read more',
-          'summary_handler' => 'full',
           'trim_length' => 300,
-          'trim_link' => 0,
-          'trim_options' => array(
-            'text' => 'text',
-          ),
-          'trim_preserve_tags' => '<a>',
-          'trim_suffix' => '...',
-          'trim_type' => 'chars',
         ),
-        'type' => 'smart_trim_format',
+        'type' => 'text_summary_or_trimmed',
         'weight' => 2,
       ),
     ),
@@ -5035,7 +4263,7 @@ function war_zones_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_campaign_badge',
     'label' => 'Campaign Badge',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -5055,16 +4283,32 @@ function war_zones_field_default_field_instances() {
           'public' => 'public',
         ),
         'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
           'image' => 'image',
-          'video' => 0,
         ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 0,
-          'upload' => 'upload',
+        'browser_plugins' => array(),
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 'attach',
+            'clipboard' => 0,
+            'imce' => 'imce',
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'campaign',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 1,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
         ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 3,
@@ -5140,8 +4384,17 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => 'now',
+          'multiple_number' => 1,
+          'multiple_to' => '',
+          'show_remaining_days' => 0,
+          'show_repeat_rule' => 'hide',
+        ),
+        'type' => 'date_default',
         'weight' => 3,
       ),
     ),
@@ -5165,7 +4418,7 @@ function war_zones_field_default_field_instances() {
         'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'no_fieldset' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'repeat_collapsed' => 1,
         'text_parts' => array(),
         'year_range' => '-3:+3',
@@ -5344,60 +4597,6 @@ function war_zones_field_default_field_instances() {
       ),
       'type' => 'number',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-special_event-field_radioactivity'.
-  $field_instances['node-special_event-field_radioactivity'] = array(
-    'bundle' => 'special_event',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 100,
-        'radioactivity_timestamp' => 1445266686,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 18,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_radioactivity',
-    'label' => 'Radioactivity',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'default_daily',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 32,
     ),
   );
 
@@ -5708,17 +4907,17 @@ function war_zones_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
-          'trim_length' => 400,
-          'trim_link' => 0,
+          'trim_length' => 350,
+          'trim_link' => FALSE,
           'trim_options' => array(
             'text' => 'text',
           ),
-          'trim_preserve_tags' => '<a>',
+          'trim_preserve_tags' => '',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 19,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -5758,7 +4957,7 @@ function war_zones_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'medium',
+          'image_style' => '',
         ),
         'type' => 'image',
         'weight' => 26,
@@ -5836,7 +5035,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -5877,7 +5076,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -5966,7 +5165,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -6005,7 +5204,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -6043,7 +5242,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -6087,7 +5286,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -6142,7 +5341,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -6209,60 +5408,6 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-war_zone_league-field_radioactivity'.
-  $field_instances['node-war_zone_league-field_radioactivity'] = array(
-    'bundle' => 'war_zone_league',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 100,
-        'radioactivity_timestamp' => 1445265150,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 22,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 20,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_radioactivity',
-    'label' => 'Radioactivity',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'default_daily',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 32,
-    ),
-  );
-
   // Exported field_instance: 'node-war_zone_league-field_round_duration'.
   $field_instances['node-war_zone_league-field_round_duration'] = array(
     'bundle' => 'war_zone_league',
@@ -6326,7 +5471,7 @@ function war_zones_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -6361,7 +5506,7 @@ function war_zones_field_default_field_instances() {
         'weight' => 12,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
@@ -6447,7 +5592,7 @@ function war_zones_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
-          'trim_length' => 600,
+          'trim_length' => 400,
           'trim_link' => 0,
           'trim_options' => array(
             'text' => 'text',
@@ -6775,8 +5920,9 @@ function war_zones_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 2,
       ),
     ),
@@ -6886,60 +6032,6 @@ function war_zones_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-war_zone_tournament-field_radioactivity'.
-  $field_instances['node-war_zone_tournament-field_radioactivity'] = array(
-    'bundle' => 'war_zone_tournament',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 100,
-        'radioactivity_timestamp' => 1445267262,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 20,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_radioactivity',
-    'label' => 'Radioactivity',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'default_daily',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 18,
     ),
   );
 
@@ -7285,6 +6377,76 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-armies-field_army_elo_v2'.
+  $field_instances['taxonomy_term-armies-field_army_elo_v2'] = array(
+    'bundle' => 'armies',
+    'default_value' => array(
+      0 => array(
+        'value' => 1400,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_army_elo_v2',
+    'label' => 'Army Ranking',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_hidden',
+      'settings' => array(),
+      'type' => 'field_hidden',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-armies-field_army_game'.
+  $field_instances['taxonomy_term-armies-field_army_game'] = array(
+    'bundle' => 'armies',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_army_game',
+    'label' => 'Game',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-armies-field_image'.
   $field_instances['taxonomy_term-armies-field_image'] = array(
     'bundle' => 'armies',
@@ -7539,6 +6701,7 @@ function war_zones_field_default_field_instances() {
   t('Allow sign up after campaign starts?');
   t('Army');
   t('Army Points');
+  t('Army Ranking');
   t('Article Body');
   t('Associated Nodes');
   t('Badge');
@@ -7589,11 +6752,8 @@ function war_zones_field_default_field_instances() {
   t('Points per army');
   t('Provide potential organizers with some of your thoughts on this campaign.  Number of players, ideal armies, source material, and the like are all excellent things to put here.');
   t('Put the introduction to your campaign here.  This is used to not only introduce your campaign but as the campaign brief for players on any campaign instance.');
-  t('Radioactivity');
-  t('Receipient');
   t('Registration');
   t('Registration Deadline');
-  t('Reply');
   t('Round');
   t('Round Duration');
   t('Scheduling');

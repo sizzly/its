@@ -23,8 +23,8 @@ function battlefields_field_group_info() {
     'label' => 'Content Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_wrapper',
-      1 => 'group_image_wrapper',
+      0 => 'group_image_wrapper',
+      1 => 'group_wrapper',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -144,6 +144,8 @@ function battlefields_field_group_info() {
     'children' => array(
       0 => 'field_location_type',
       1 => 'body',
+      2 => 'field_address_battlefield',
+      3 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -172,8 +174,8 @@ function battlefields_field_group_info() {
     'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_image_group',
-      1 => 'group_content_wrapper',
+      0 => 'group_content_wrapper',
+      1 => 'group_image_group',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

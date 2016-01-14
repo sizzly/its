@@ -97,6 +97,13 @@ function blogs_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'import atom_to_blog feeds'.
+  $permissions['import atom_to_blog feeds'] = array(
+    'name' => 'import atom_to_blog feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'search blog content'.
   $permissions['search blog content'] = array(
     'name' => 'search blog content',

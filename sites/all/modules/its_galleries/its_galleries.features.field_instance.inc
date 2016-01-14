@@ -21,12 +21,9 @@ function its_galleries_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'entityform',
@@ -41,12 +38,12 @@ function its_galleries_field_default_field_instances() {
           'fallback' => 'hide',
           'providers' => array(
             'og_context' => 0,
-            'token_patterns' => 0,
+            'token_patterns' => 1,
             'url' => 1,
           ),
           'skip_perm' => 0,
           'status' => 1,
-          'token_patterns' => '',
+          'token_patterns' => '%node:nid',
         ),
       ),
       'user_register_form' => FALSE,
@@ -64,7 +61,7 @@ function its_galleries_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -78,10 +75,13 @@ function its_galleries_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'entityform',
@@ -119,70 +119,7 @@ function its_galleries_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'entityform-status_all_upload_image-field_status_upload_images'.
-  $field_instances['entityform-status_all_upload_image-field_status_upload_images'] = array(
-    'bundle' => 'status_all_upload_image',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'colorbox',
-        'settings' => array(
-          'colorbox_caption' => 'custom',
-          'colorbox_caption_custom' => '[file:name]',
-          'colorbox_gallery' => 'post',
-          'colorbox_gallery_custom' => '',
-          'colorbox_image_style' => 'large',
-          'colorbox_multivalue_index' => NULL,
-          'colorbox_node_style' => 'large_button',
-          'colorbox_node_style_first' => '',
-        ),
-        'type' => 'colorbox',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_status_upload_images',
-    'label' => 'Upload',
-    'required' => 1,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'upload' => 'upload',
-        ),
-      ),
-      'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -223,7 +160,7 @@ function its_galleries_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 14,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -339,7 +276,7 @@ function its_galleries_field_default_field_instances() {
         'references_dialog_search_view' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'entityreference_autocomplete_tags',
       'weight' => 4,
     ),
   );
@@ -383,8 +320,8 @@ function its_galleries_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 21788,
-      'file_directory' => 'user/u[current-user:uid]',
+      'default_image' => 22204,
+      'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -453,7 +390,7 @@ function its_galleries_field_default_field_instances() {
       'file_directory' => 'user/u[current-user:uid]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '1024x1024',
+      'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
@@ -539,7 +476,7 @@ function its_galleries_field_default_field_instances() {
     'default_value' => array(
       0 => array(
         'radioactivity_energy' => 100,
-        'radioactivity_timestamp' => 1445264626,
+        'radioactivity_timestamp' => 1452203047,
       ),
     ),
     'deleted' => 0,
@@ -571,7 +508,7 @@ function its_galleries_field_default_field_instances() {
           'type' => 'none',
         ),
         'type' => 'radioactivity_combo_formatter',
-        'weight' => 15,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -656,7 +593,6 @@ function its_galleries_field_default_field_instances() {
   t('Status Content Reference');
   t('Taken at a listed event?');
   t('Teaser Image');
-  t('Upload');
 
   return $field_instances;
 }

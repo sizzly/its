@@ -63,7 +63,7 @@ function its_media_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 41,
+      'weight' => 2,
     ),
   );
 
@@ -120,7 +120,7 @@ function its_media_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -4,
+      'weight' => 3,
     ),
   );
 
@@ -177,7 +177,7 @@ function its_media_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -3,
+      'weight' => 4,
     ),
   );
 

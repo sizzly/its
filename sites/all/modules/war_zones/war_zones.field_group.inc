@@ -297,7 +297,6 @@ function war_zones_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'body',
-      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -414,8 +413,8 @@ function war_zones_field_group_info() {
     'label' => 'Media Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media_left',
-      1 => 'group_media_body',
+      0 => 'group_media_body',
+      1 => 'group_media_left',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

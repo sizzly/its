@@ -128,6 +128,34 @@ function blogs_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_spacer|node|blog|teaser';
+  $field_group->group_name = 'group_spacer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blog';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->data = array(
+    'label' => 'spacer',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'spacer',
+      'instance_settings' => array(
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'attributes' => '',
+        'id' => 'node_blog_teaser_group_spacer',
+      ),
+    ),
+  );
+  $export['group_spacer|node|blog|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_wrapper|node|blog|default';
   $field_group->group_name = 'group_wrapper';
   $field_group->entity_type = 'node';

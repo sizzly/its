@@ -232,7 +232,7 @@ function blogs_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 20451,
-      'file_directory' => 'user/u[current-user:uid]',
+      'file_directory' => 'user/blog_teasers',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -248,32 +248,16 @@ function blogs_field_default_field_instances() {
           'public' => 'public',
         ),
         'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
           'image' => 'image',
+          'video' => 0,
         ),
-        'browser_plugins' => array(),
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 'imce',
-            'reference' => 0,
-            'remote' => 0,
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 10,

@@ -180,6 +180,12 @@ function its_galleries_views_default_views() {
   /* Display: Main Gallery Page */
   $handler = $view->new_display('page', 'Main Gallery Page', 'page_1');
   $handler->display->display_options['path'] = 'galleries';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Galleries';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['galleries_all_lists'] = $view;
 
   $view = new view();
