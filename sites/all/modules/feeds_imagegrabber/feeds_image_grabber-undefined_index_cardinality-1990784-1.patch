@@ -1,0 +1,23 @@
+diff --git a/feeds_imagegrabber.module b/feeds_imagegrabber.module
+index c06d1b3..0920cc0 100644
+--- a/feeds_imagegrabber.module
++++ b/feeds_imagegrabber.module
+@@ -552,7 +552,7 @@ function feeds_imagegrabber_scrape_images($content, $base_url, $settings, array
+     if ($options['getsize']) {
+       if (($imagesize = feeds_imagegrabber_validate_download_size($url, $options['max_imagesize'], ($options['timeout'] - timer_read(__FUNCTION__) / 1000))) != -1) {
+         $images[$url] = $imagesize;
+-        if ($settings['feeling_lucky'] && count($images) == $settings['cardinality']) {
++        if ($settings['feeling_lucky'] && count($images) == $options['cardinality']) {
+           break;
+         }
+       }
+@@ -564,7 +564,7 @@ function feeds_imagegrabber_scrape_images($content, $base_url, $settings, array
+     }
+     else {
+       $images[$url] = $imagesize;
+-      if ($settings['feeling_lucky'] && count($images) == $settings['cardinality']) {
++      if ($settings['feeling_lucky'] && count($images) == $options['cardinality']) {
+         break;
+       }
+     }
+
