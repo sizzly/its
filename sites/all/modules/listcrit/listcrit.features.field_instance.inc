@@ -244,7 +244,7 @@ function listcrit_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 21780,
+      'default_image' => 22213,
       'file_directory' => 'user/u[current-user:uid]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',

@@ -966,55 +966,6 @@ function narrative_campaigns_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'.
-  $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_reg_sc'] = array(
-    'bundle' => 'warzone_campaign_report_battle_p',
-    'default_value' => array(),
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_opponent_reg_sc',
-    'label' => 'Opponent',
-    'required' => 1,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
   // 'entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'.
   $field_instances['entityform-warzone_campaign_report_battle_p-field_opponent_report_battle'] = array(
     'bundle' => 'warzone_campaign_report_battle_p',
@@ -1310,66 +1261,6 @@ function narrative_campaigns_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'message-campaign_reported_battle-field_associated_nodes_stream'.
-  $field_instances['message-campaign_reported_battle-field_associated_nodes_stream'] = array(
-    'bundle' => 'campaign_reported_battle',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 4,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_associated_nodes_stream',
-    'label' => 'Associated Nodes',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
   // 'message-campaign_reported_battle-field_chronicle_icon'.
   $field_instances['message-campaign_reported_battle-field_chronicle_icon'] = array(
     'bundle' => 'campaign_reported_battle',
@@ -1500,53 +1391,6 @@ function narrative_campaigns_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'message-campaign_reported_battle-field_reply_form'.
-  $field_instances['message-campaign_reported_battle-field_reply_form'] = array(
-    'bundle' => 'campaign_reported_battle',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 5,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance:
   // 'message-campaign_reported_battle-field_stream_node_ref'.
   $field_instances['message-campaign_reported_battle-field_stream_node_ref'] = array(
     'bundle' => 'campaign_reported_battle',
@@ -1597,59 +1441,6 @@ function narrative_campaigns_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-campaign_reported_battle-field_timeline_icon'.
-  $field_instances['message-campaign_reported_battle-field_timeline_icon'] = array(
-    'bundle' => 'campaign_reported_battle',
-    'default_value' => array(
-      0 => array(
-        'value' => 'fa-fire',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_timeline_icon',
-    'label' => 'Timeline Icon',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 13,
     ),
   );
 
@@ -2103,7 +1894,6 @@ function narrative_campaigns_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Army');
-  t('Associated Nodes');
   t('Campaign Points');
   t('Chronicle Icon');
   t('Event');
@@ -2128,12 +1918,10 @@ function narrative_campaigns_field_default_field_instances() {
   t('Prerequisite');
   t('Real Name');
   t('Receipient');
-  t('Reply');
   t('Stream Node');
   t('This field determines the order a phase shows up in lists of phases.  Lower weights are at the top.');
   t('This is the conditions that apply to a phase in order to start.  Most often this is simply "Previous Phase Complete" but it could also be that a certain faction won the previous round.');
   t('This text will be used to generate a chronicle entry for the campaign.  Helpful if you want to add some flavor to the additional points.');
-  t('Timeline Icon');
   t('Title');
   t('Victorious Faction');
   t('Weight');

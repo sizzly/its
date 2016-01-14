@@ -964,6 +964,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -1408,6 +1409,26 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['register_link']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['register_link']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['register_link']['text'] = 'Register';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['label'] = '';
+  $handler->display->display_options['fields']['field_status']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_status']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-spinner"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_status]</strong>
+        <div class="text-muted">Status</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_status']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_status']['element_wrapper_class'] = 'list-group-item';
   /* Field: Field: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
@@ -1797,6 +1818,119 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['registration_used_slots']['field'] = 'registration_used_slots';
   $handler->display->display_options['fields']['registration_used_slots']['label'] = 'AUTOMATIC';
   $handler->display->display_options['fields']['registration_used_slots']['exclude'] = TRUE;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'war_zone_all_page_layout';
+  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_11';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
+  $handler->display->display_options['fields']['view_1']['table'] = 'views';
+  $handler->display->display_options['fields']['view_1']['field'] = 'view';
+  $handler->display->display_options['fields']['view_1']['label'] = '';
+  $handler->display->display_options['fields']['view_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_1']['view'] = 'war_zone_all_page_layout';
+  $handler->display->display_options['fields']['view_1']['display'] = 'panel_pane_12';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="p-top-sm">
+<div class="inline-block m-top-xs">
+[view]
+</div>
+<div class="inline-block m-top-xs">
+[view_1]
+</div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'text-center';
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Battle Count Buttons */
+  $handler = $view->new_display('panel_pane', 'Battle Count Buttons', 'panel_pane_11');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['id'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['field'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['relationships']['reverse_field_event_link_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="badge badge-danger">[nid]</span>
+<strong class="m-left-xs m-right-sm"> Battles</strong>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = '/node/!1/battle-list';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['empty'] = '<span class="badge badge-danger">0</span>
+<strong class="m-left-xs m-right-sm"> Battles</strong>';
+  $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['nid']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_event_link_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'War Zone';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Player Count Buttons */
+  $handler = $view->new_display('panel_pane', 'Player Count Buttons', 'panel_pane_12');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Node registration: Registrations */
+  $handler->display->display_options['relationships']['node_registration_rel']['id'] = 'node_registration_rel';
+  $handler->display->display_options['relationships']['node_registration_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['node_registration_rel']['field'] = 'node_registration_rel';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Node registration: Registration ID */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['relationship'] = 'node_registration_rel';
+  $handler->display->display_options['fields']['registration_id']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['registration_id']['label'] = '';
+  $handler->display->display_options['fields']['registration_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['registration_id']['alter']['text'] = '<span class="badge badge-info">[registration_id]</span>
+<strong class="m-left-xs m-right-sm"> Players</strong>';
+  $handler->display->display_options['fields']['registration_id']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['registration_id']['alter']['path'] = 'node/!1/player-list';
+  $handler->display->display_options['fields']['registration_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['registration_id']['empty'] = '0';
+  $handler->display->display_options['fields']['registration_id']['empty_zero'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Node registration: Cancelled */
+  $handler->display->display_options['filters']['cancelled']['id'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['table'] = 'node_registration';
+  $handler->display->display_options['filters']['cancelled']['field'] = 'cancelled';
+  $handler->display->display_options['filters']['cancelled']['relationship'] = 'node_registration_rel';
+  $handler->display->display_options['filters']['cancelled']['value'] = '0';
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['war_zone_all_page_layout'] = $view;
@@ -1823,10 +1957,10 @@ function war_zones_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'pull-left col-xs-12 col-sm-6';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'uid';
+  $handler->display->display_options['style_options']['body_field'] = 'nothing';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Node registration: User */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -1870,20 +2004,28 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
   $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'button';
+  /* Field: Node registration: Cancel link */
+  $handler->display->display_options['fields']['cancel_node_registration']['id'] = 'cancel_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['field'] = 'cancel_node_registration';
+  $handler->display->display_options['fields']['cancel_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['cancel_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['cancel_node_registration']['element_label_colon'] = FALSE;
+  /* Field: Node registration: Edit link */
+  $handler->display->display_options['fields']['edit_node_registration']['id'] = 'edit_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['table'] = 'views_entity_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['field'] = 'edit_node_registration';
+  $handler->display->display_options['fields']['edit_node_registration']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_registration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_registration']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel panel-default">
-<div class="panel-body">
-<div class="pull-left iconbuffer">
-[picture]
-</div>
-<strong>[uid]</strong><br>
-<small class="text-muted">[field_register_army]</small>
-</div>
-</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_register_army]
+<br>[cancel_node_registration] [edit_node_registration]
+
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Contextual filter: Node registration: Node nid */
@@ -3758,8 +3900,8 @@ function war_zones_views_default_views() {
 
   $view = new view();
   $view->name = 'war_zone_list2';
-  $view->description = 'Consolidate this one with War Zone: All: Lists';
-  $view->tag = 'War Zones 4.1, Consolidate';
+  $view->description = '';
+  $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'War Zone List';
   $view->core = 7;
@@ -3894,6 +4036,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'war_zone_league' => 'war_zone_league',
+    'league' => 'league',
     'narrative_campaign_instance' => 'narrative_campaign_instance',
     'special_event' => 'special_event',
     'war_zone_tournament' => 'war_zone_tournament',
@@ -3904,13 +4047,6 @@ function war_zones_views_default_views() {
   $handler = $view->new_display('page', 'League Page', 'page_1');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -4003,8 +4139,8 @@ function war_zones_views_default_views() {
   /* Display: All Warzones */
   $handler = $view->new_display('page', 'All Warzones', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'All War Zones';
-  $handler->display->display_options['path'] = 'theater/warzone/list';
+  $handler->display->display_options['title'] = 'War Zones';
+  $handler->display->display_options['path'] = 'theater/warzone/all';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All War Zones';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -4144,38 +4280,6 @@ function war_zones_views_default_views() {
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['pane_category']['name'] = 'War Zone';
   $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Events Page */
-  $handler = $view->new_display('page', 'Events Page', 'page_6');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Other Events';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'special_event' => 'special_event',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  $handler->display->display_options['path'] = 'theater/warzone/leagues';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Leagues';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['type'] = 'tab';
-  $handler->display->display_options['tab_options']['title'] = 'Warzones';
-  $handler->display->display_options['tab_options']['weight'] = '0';
   $export['war_zone_list2'] = $view;
 
   $view = new view();

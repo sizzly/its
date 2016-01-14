@@ -428,28 +428,6 @@ function narrative_campaigns_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_reply_form'.
-  $field_bases['field_reply_form'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_reply_form',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'reply',
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'bundle' => 'status_comments',
-      'display' => -1,
-      'form' => -1,
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'reply',
-  );
-
   // Exported field_base: 'field_timeline_icon'.
   $field_bases['field_timeline_icon'] = array(
     'active' => 1,

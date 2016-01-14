@@ -201,66 +201,6 @@ function its_articles_and_feed_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_radioactivity'.
-  $field_instances['node-article-field_radioactivity'] = array(
-    'bundle' => 'article',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 50,
-        'radioactivity_timestamp' => 1445264157,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 9,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 5,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_radioactivity',
-    'label' => 'Radioactivity',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'default_daily',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 14,
-    ),
-  );
-
   // Exported field_instance: 'node-article-field_tags'.
   $field_instances['node-article-field_tags'] = array(
     'bundle' => 'article',
@@ -557,7 +497,6 @@ function its_articles_and_feed_field_default_field_instances() {
   t('Enter a comma-separated list of words to describe your content.');
   t('Groups audience');
   t('Image');
-  t('Radioactivity');
   t('Source');
   t('Tags');
   t('Upload an image to go with this article.');

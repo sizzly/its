@@ -130,6 +130,7 @@ function its_clubs_field_default_field_bases() {
       'profile2_private' => FALSE,
       'target_type' => 'node',
     ),
+    'target_type' => 'node',
     'translatable' => 0,
     'type' => 'entityreference',
   );

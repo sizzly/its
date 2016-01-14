@@ -101,7 +101,28 @@ function its_modelling_projects_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_earns_an_achievement'] = $strongarm;
@@ -177,6 +198,13 @@ function its_modelling_projects_strongarm() {
   $strongarm->name = 'node_submitted_models';
   $strongarm->value = 1;
   $export['node_submitted_models'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_models_pattern';
+  $strongarm->value = 'munitions/modeling-projects/[node:title]';
+  $export['pathauto_node_models_pattern'] = $strongarm;
 
   return $export;
 }

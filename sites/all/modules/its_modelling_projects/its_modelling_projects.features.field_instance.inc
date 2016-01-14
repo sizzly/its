@@ -15,7 +15,7 @@ function its_modelling_projects_field_default_field_instances() {
   $field_instances['message-models_all_complete_project-field_associated_nodes_stream'] = array(
     'bundle' => 'models_all_complete_project',
     'default_value' => NULL,
-    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -26,7 +26,7 @@ function its_modelling_projects_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -48,17 +48,7 @@ function its_modelling_projects_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'hide',
-          'action_on_edit' => 0,
-          'fallback' => 'hide',
-          'providers' => array(
-            'og_context' => 0,
-            'token_patterns' => 0,
-            'url' => 1,
-          ),
-          'skip_perm' => 0,
-          'status' => 1,
-          'token_patterns' => '',
+          'status' => 0,
         ),
       ),
       'user_register_form' => FALSE,
@@ -76,54 +66,7 @@ function its_modelling_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-models_all_complete_project-field_reply_form'.
-  $field_instances['message-models_all_complete_project-field_reply_form'] = array(
-    'bundle' => 'models_all_complete_project',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 3,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -204,7 +147,7 @@ function its_modelling_projects_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -236,7 +179,7 @@ function its_modelling_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 6,
     ),
   );
 
@@ -362,53 +305,6 @@ function its_modelling_projects_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'message-stream_player_earns_an_achievement-field_reply_form'.
-  $field_instances['message-stream_player_earns_an_achievement-field_reply_form'] = array(
-    'bundle' => 'stream_player_earns_an_achievement',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
   // 'message-stream_player_earns_an_achievement-field_stream_node_ref'.
   $field_instances['message-stream_player_earns_an_achievement-field_stream_node_ref'] = array(
     'bundle' => 'stream_player_earns_an_achievement',
@@ -479,7 +375,7 @@ function its_modelling_projects_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -511,7 +407,7 @@ function its_modelling_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -807,7 +703,7 @@ function its_modelling_projects_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 22203,
       'file_directory' => 'user/u[current-user:uid]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -1050,7 +946,6 @@ function its_modelling_projects_field_default_field_instances() {
   t('Image');
   t('Model Count');
   t('Radioactivity');
-  t('Reply');
   t('Started Date');
   t('Stream Node');
   t('Stream Reference Node');

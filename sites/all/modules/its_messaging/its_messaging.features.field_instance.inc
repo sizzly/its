@@ -10,40 +10,6 @@
 function its_messaging_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-status-field_reply_form'.
-  $field_instances['entityform-status-field_reply_form'] = array(
-    'bundle' => 'status',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'entityform-status-field_status_body'.
   $field_instances['entityform-status-field_status_body'] = array(
     'bundle' => 'status',
@@ -78,6 +44,62 @@ function its_messaging_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'entityform-status_all_upload_image-field_field_status_upload_images'.
+  $field_instances['entityform-status_all_upload_image-field_field_status_upload_images'] = array(
+    'bundle' => 'status_all_upload_image',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'teaser',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_field_status_upload_images',
+    'label' => 'Upload',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
       'weight' => 1,
     ),
   );
@@ -358,7 +380,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 7,
     ),
   );
 
@@ -483,52 +505,6 @@ function its_messaging_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-statuses_all_new_files-field_reply_form'.
-  $field_instances['message-statuses_all_new_files-field_reply_form'] = array(
-    'bundle' => 'statuses_all_new_files',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 3,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance:
   // 'message-statuses_all_new_files-field_stream_node_ref'.
   $field_instances['message-statuses_all_new_files-field_stream_node_ref'] = array(
@@ -603,7 +579,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -635,7 +611,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 11,
     ),
   );
 
@@ -773,7 +749,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -805,7 +781,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
@@ -927,53 +903,6 @@ function its_messaging_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_narrative_army_event-field_reply_form'.
-  $field_instances['message-stream_narrative_army_event-field_reply_form'] = array(
-    'bundle' => 'stream_narrative_army_event',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 3,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 7,
     ),
   );
 
@@ -1113,7 +1042,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -1145,7 +1074,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -1206,53 +1135,6 @@ function its_messaging_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_acknowledges_a_battle-field_reply_form'.
-  $field_instances['message-stream_player_acknowledges_a_battle-field_reply_form'] = array(
-    'bundle' => 'stream_player_acknowledges_a_battle',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 1,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 4,
     ),
   );
 
@@ -1327,7 +1209,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -1359,7 +1241,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 10,
     ),
   );
 
@@ -1419,7 +1301,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 1,
     ),
   );
 
@@ -1479,7 +1361,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 3,
     ),
   );
 
@@ -1533,7 +1415,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -1554,7 +1436,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -1586,7 +1468,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 2,
     ),
   );
 
@@ -1647,53 +1529,6 @@ function its_messaging_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_likes_content-field_reply_form'.
-  $field_instances['message-stream_player_likes_content-field_reply_form'] = array(
-    'bundle' => 'stream_player_likes_content',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 3,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 8,
     ),
   );
 
@@ -1768,7 +1603,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -1800,7 +1635,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
@@ -1861,53 +1696,6 @@ function its_messaging_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_posts_a_battle-field_reply_form'.
-  $field_instances['message-stream_player_posts_a_battle-field_reply_form'] = array(
-    'bundle' => 'stream_player_posts_a_battle',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
     ),
   );
 
@@ -1982,7 +1770,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -2014,7 +1802,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -2139,53 +1927,6 @@ function its_messaging_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'message-stream_player_posts_new_content-field_reply_form'.
-  $field_instances['message-stream_player_posts_new_content-field_reply_form'] = array(
-    'bundle' => 'stream_player_posts_new_content',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance:
   // 'message-stream_player_posts_new_content-field_stream_node_ref'.
   $field_instances['message-stream_player_posts_new_content-field_stream_node_ref'] = array(
     'bundle' => 'stream_player_posts_new_content',
@@ -2256,7 +1997,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 7,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -2288,7 +2029,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 12,
     ),
   );
 
@@ -2349,53 +2090,6 @@ function its_messaging_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'message-stream_player_rates_list-field_reply_form'.
-  $field_instances['message-stream_player_rates_list-field_reply_form'] = array(
-    'bundle' => 'stream_player_rates_list',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'reply',
-        'settings' => array(),
-        'type' => 'reply_default',
-        'weight' => 2,
-      ),
-      'message_notify_email_body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'message_notify_email_subject' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'message',
-    'field_name' => 'field_reply_form',
-    'label' => 'Reply',
-    'required' => 0,
-    'settings' => array(
-      'access' => -1,
-      'allow_reply' => -1,
-      'display' => -1,
-      'form' => -1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'reply',
-      'settings' => array(),
-      'type' => 'reply',
-      'weight' => 6,
     ),
   );
 
@@ -2470,7 +2164,7 @@ function its_messaging_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'message_notify_email_body' => array(
         'label' => 'above',
@@ -2502,7 +2196,7 @@ function its_messaging_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -2594,6 +2288,7 @@ function its_messaging_field_default_field_instances() {
   t('Stream: Army Event Ref');
   t('Timeline Icon');
   t('Update Reference');
+  t('Upload');
   t('Write something...');
 
   return $field_instances;
