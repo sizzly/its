@@ -49,24 +49,28 @@ function its_messaging_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_message__statuses_all_new_files';
   $strongarm->value = array(
-    'view_modes' => array(
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
+    'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(
         'message__message_text__0' => array(
-          'default' => array(
-            'weight' => '0',
+          'message_notify_email_subject' => array(
             'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
           ),
         ),
       ),
@@ -79,24 +83,28 @@ function its_messaging_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_message__statuses_all_new_status';
   $strongarm->value = array(
-    'view_modes' => array(
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'ical' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
+    'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(
         'message__message_text__0' => array(
-          'default' => array(
-            'weight' => '0',
+          'message_notify_email_subject' => array(
             'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
           ),
         ),
       ),
@@ -124,9 +132,23 @@ function its_messaging_strongarm() {
       'form' => array(),
       'display' => array(
         'message__message_text__0' => array(
-          'default' => array(
-            'weight' => '0',
+          'message_notify_email_subject' => array(
             'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
           ),
         ),
       ),
@@ -142,7 +164,28 @@ function its_messaging_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_acknowledges_a_battle'] = $strongarm;
@@ -155,7 +198,28 @@ function its_messaging_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_comments_on_post'] = $strongarm;
@@ -168,7 +232,28 @@ function its_messaging_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_likes_content'] = $strongarm;
@@ -181,7 +266,28 @@ function its_messaging_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_posts_a_battle'] = $strongarm;
@@ -194,7 +300,28 @@ function its_messaging_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_posts_new_content'] = $strongarm;
@@ -207,7 +334,28 @@ function its_messaging_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_message__stream_player_rates_list'] = $strongarm;

@@ -18,28 +18,7 @@ function narrative_campaigns_strongarm() {
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
-      'display' => array(
-        'message__message_text__0' => array(
-          'message_notify_email_subject' => array(
-            'visible' => TRUE,
-            'weight' => 0,
-          ),
-          'message_notify_email_body' => array(
-            'visible' => FALSE,
-            'weight' => 0,
-          ),
-        ),
-        'message__message_text__1' => array(
-          'message_notify_email_subject' => array(
-            'visible' => FALSE,
-            'weight' => 0,
-          ),
-          'message_notify_email_body' => array(
-            'visible' => TRUE,
-            'weight' => 0,
-          ),
-        ),
-      ),
+      'display' => array(),
     ),
   );
   $export['field_bundle_settings_message__campaign_reported_battle'] = $strongarm;

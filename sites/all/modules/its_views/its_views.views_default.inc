@@ -1051,6 +1051,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['arguments']['field_achievement_slug_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_achievement_slug_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_achievement_slug_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_achievement_slug_value']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1529,8 +1530,8 @@ function its_views_views_default_views() {
 
   $view = new view();
   $view->name = 'army_profile_chronicle';
-  $view->description = 'Used to format the old Army Chronicles.  Need to revisit.';
-  $view->tag = 'Obsolete, fix';
+  $view->description = '';
+  $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Army Profile: Chronicle';
   $view->core = 7;
@@ -1899,11 +1900,15 @@ function its_views_views_default_views() {
   /* Display: Army Profile List */
   $handler = $view->new_display('panel_pane', 'Army Profile List', 'panel_pane_1');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group-item clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['class'] = 'list-group';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
@@ -1946,10 +1951,6 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['field_army_profile']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_army_profile']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -2113,6 +2114,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
@@ -2132,7 +2134,9 @@ function its_views_views_default_views() {
     2 => array(),
     3 => array(),
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   /* Filter criterion: Field: Your Army (field_your_army) */
   $handler->display->display_options['filters']['field_your_army_tid_1']['id'] = 'field_your_army_tid_1';
   $handler->display->display_options['filters']['field_your_army_tid_1']['table'] = 'field_data_field_your_army';
@@ -2347,6 +2351,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
@@ -2367,7 +2372,9 @@ function its_views_views_default_views() {
     2 => array(),
     3 => array(),
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   /* Filter criterion: Field: Your Army (field_your_army) */
   $handler->display->display_options['filters']['field_your_army_tid_1']['id'] = 'field_your_army_tid_1';
   $handler->display->display_options['filters']['field_your_army_tid_1']['table'] = 'field_data_field_your_army';
@@ -2397,10 +2404,10 @@ function its_views_views_default_views() {
 
   $view = new view();
   $view->name = 'battlefields_pages_layout_etc';
-  $view->description = 'Should probably be consolidated into Battlefields: All: Lists it is in use.';
-  $view->tag = 'Battlefields 2.0, Consolidate';
+  $view->description = '';
+  $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Battlefields: All: Pages and Lists';
+  $view->human_name = 'Battlefields: Pages, layout, etc';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -2442,7 +2449,7 @@ function its_views_views_default_views() {
     'image_style' => '',
     'image_link' => 'content',
   );
-  /* Field: Content: Address */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
@@ -2833,8 +2840,8 @@ function its_views_views_default_views() {
 
   $view = new view();
   $view->name = 'blogs_all_lists';
-  $view->description = 'Various Lists of Blogs. Should probably be consolidated with Core: Node: Lists';
-  $view->tag = 'Blogs 2.0, Consolidate';
+  $view->description = '';
+  $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Blogs: All: Lists';
   $view->core = 7;
@@ -3022,6 +3029,88 @@ function its_views_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Blogs';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: All Classification */
+  $handler = $view->new_display('panel_pane', 'All Classification', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Classification';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'btn-group';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'name' => 'name',
+    'created' => 'created',
+    'comment_count' => 'comment_count',
+    'field_website' => 'field_website',
+    'count' => 'count',
+  );
+  $handler->display->display_options['row_options']['separator'] = ' | ';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Categories */
+  $handler->display->display_options['fields']['field_blog_army']['id'] = 'field_blog_army';
+  $handler->display->display_options['fields']['field_blog_army']['table'] = 'field_data_field_blog_army';
+  $handler->display->display_options['fields']['field_blog_army']['field'] = 'field_blog_army';
+  $handler->display->display_options['fields']['field_blog_army']['label'] = '';
+  $handler->display->display_options['fields']['field_blog_army']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_blog_army']['element_class'] = 'btn btn-default';
+  $handler->display->display_options['fields']['field_blog_army']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_army']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_blog_army']['element_wrapper_class'] = 'btn-group';
+  $handler->display->display_options['fields']['field_blog_army']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_blog_army']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_army']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog' => 'blog',
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['rid']['operator'] = 'not';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    3 => '3',
+    8 => '8',
+  );
+  /* Filter criterion: Content: Categories (field_blog_army) */
+  $handler->display->display_options['filters']['field_blog_army_tid']['id'] = 'field_blog_army_tid';
+  $handler->display->display_options['filters']['field_blog_army_tid']['table'] = 'field_data_field_blog_army';
+  $handler->display->display_options['filters']['field_blog_army_tid']['field'] = 'field_blog_army_tid';
+  $handler->display->display_options['filters']['field_blog_army_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_blog_army_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_blog_army_tid']['vocabulary'] = 'armies';
+  $handler->display->display_options['pane_category']['name'] = 'Blogs';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['blogs_all_lists'] = $view;
 
   $view = new view();
@@ -3110,8 +3199,8 @@ function its_views_views_default_views() {
 
   $view = new view();
   $view->name = 'blogs_all_page_layout';
-  $view->description = 'Generates various displays for the Blog page layout.';
-  $view->tag = 'Blogs 2.0';
+  $view->description = '';
+  $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Blogs: All: Page Layout';
   $view->core = 7;
@@ -5033,7 +5122,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'like_image';
-  /* Relationship: File: Entityform Submission using Upload */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['reverse_field_status_upload_images_entityform']['id'] = 'reverse_field_status_upload_images_entityform';
   $handler->display->display_options['relationships']['reverse_field_status_upload_images_entityform']['table'] = 'file_managed';
   $handler->display->display_options['relationships']['reverse_field_status_upload_images_entityform']['field'] = 'reverse_field_status_upload_images_entityform';
@@ -5096,8 +5185,8 @@ function its_views_views_default_views() {
 
   $view = new view();
   $view->name = 'game_views';
-  $view->description = 'This displays the counts - By Game System, Army, etc. Needs to be redone.';
-  $view->tag = 'Stats 1.0, fix';
+  $view->description = 'This displays the counts - By Game System, Army, etc.';
+  $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Count of Battle Views';
   $view->core = 7;
@@ -5131,6 +5220,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: COUNT(DISTINCT Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -5311,6 +5401,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game Filter';
@@ -5372,6 +5463,28 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'army_profile' => 'army_profile',
+    'article' => 'article',
+    'game_results' => 'game_results',
+    'location' => 'location',
+    'blog' => 'blog',
+    'event' => 'event',
+    'special_event' => 'special_event',
+    'forum' => 'forum',
+    'gallery' => 'gallery',
+    'gaming_club' => 'gaming_club',
+    'war_zone_league' => 'war_zone_league',
+    'listcrit' => 'listcrit',
+    'models' => 'models',
+    'narrative_campaign' => 'narrative_campaign',
+    'narrative_campaign_instance' => 'narrative_campaign_instance',
+    'war_zone_tournament' => 'war_zone_tournament',
+  );
 
   /* Display: Latest Content: Simple */
   $handler = $view->new_display('block', 'Latest Content: Simple', 'block_1');
@@ -5524,8 +5637,8 @@ Salute  Comment  Share
 
   $view = new view();
   $view->name = 'home_page_new_at_itoysoldiers';
-  $view->description = 'Generates the Site News displays (page and panel).';
-  $view->tag = 'Home Page 2.0';
+  $view->description = '';
+  $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Home Page - New at iToysoldiers';
   $view->core = 7;
@@ -5844,7 +5957,7 @@ Salute  Comment  Share
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'like_image';
-  /* Relationship: File: Entityform Submission using Upload */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['reverse_field_status_upload_images_entityform']['id'] = 'reverse_field_status_upload_images_entityform';
   $handler->display->display_options['relationships']['reverse_field_status_upload_images_entityform']['table'] = 'file_managed';
   $handler->display->display_options['relationships']['reverse_field_status_upload_images_entityform']['field'] = 'reverse_field_status_upload_images_entityform';
@@ -5868,8 +5981,8 @@ Salute  Comment  Share
 
   $view = new view();
   $view->name = 'ironmonger_co_branding';
-  $view->description = 'Generates the co-branding block for Ironmonger content.';
-  $view->tag = 'Ironmonger 0.1';
+  $view->description = '';
+  $view->tag = 'default';
   $view->base_table = 'profile';
   $view->human_name = 'Ironmonger: Co Branding';
   $view->core = 7;
@@ -6879,7 +6992,7 @@ Salute  Comment  Share
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Modeling Projects';
+  $handler->display->display_options['title'] = 'List of Modeling Projects';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -6932,7 +7045,7 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['field_army_models_tid_selective']['ui_name'] = 'Army (field_army_models) (selective)';
   $handler->display->display_options['filters']['field_army_models_tid_selective']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_army_models_tid_selective']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['field_army_models_tid_selective']['expose']['label'] = 'Army';
+  $handler->display->display_options['filters']['field_army_models_tid_selective']['expose']['description'] = 'filter by Army';
   $handler->display->display_options['filters']['field_army_models_tid_selective']['expose']['identifier'] = 'field_army_models_tid_selective';
   $handler->display->display_options['filters']['field_army_models_tid_selective']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_army_models_tid_selective']['expose']['remember_roles'] = array(
@@ -6945,10 +7058,17 @@ Salute  Comment  Share
   );
   $handler->display->display_options['filters']['field_army_models_tid_selective']['selective_display_field'] = 'field_army_models';
   $handler->display->display_options['filters']['field_army_models_tid_selective']['selective_display_sort'] = 'ASC';
+  $handler->display->display_options['filters']['field_army_models_tid_selective']['selective_items_limit'] = '100';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['path'] = 'modeling-projects';
+  $handler->display->display_options['path'] = 'munitions/modeling-projects/list';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'All Modeling Projects';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['models_all_lists'] = $view;
 
   $view = new view();
@@ -7299,14 +7419,13 @@ Salute  Comment  Share
   $handler->display->display_options['relationships']['field_update_reference_target_id']['table'] = 'field_data_field_update_reference';
   $handler->display->display_options['relationships']['field_update_reference_target_id']['field'] = 'field_update_reference_target_id';
   $handler->display->display_options['relationships']['field_update_reference_target_id']['label'] = 'status_update';
-  /* Field: Field: Reply */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_reply_form']['id'] = 'field_reply_form';
   $handler->display->display_options['fields']['field_reply_form']['table'] = 'field_data_field_reply_form';
   $handler->display->display_options['fields']['field_reply_form']['field'] = 'field_reply_form';
   $handler->display->display_options['fields']['field_reply_form']['label'] = '';
   $handler->display->display_options['fields']['field_reply_form']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_reply_form']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_reply_form']['click_sort_column'] = 'access';
   /* Field: Message: Message ID */
   $handler->display->display_options['fields']['mid']['id'] = 'mid';
   $handler->display->display_options['fields']['mid']['table'] = 'message';
@@ -8090,6 +8209,7 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: COUNT(DISTINCT User: Name) */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -8123,6 +8243,7 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['relationship'] = 'uid';
   $handler->display->display_options['filters']['field_game_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $export['player_stats_and_charts'] = $view;
 
@@ -9238,6 +9359,9 @@ Salute  Comment  Share
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_game_tid' => array(
       'bef_format' => 'default',
@@ -9253,21 +9377,32 @@ Salute  Comment  Share
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
             'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
           'secondary_label' => NULL,
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'secondary_label' => NULL,
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_your_army_tid' => array(
       'bef_format' => 'default',
@@ -9283,26 +9418,40 @@ Salute  Comment  Share
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
             'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
           'secondary_label' => NULL,
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'secondary_label' => NULL,
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'secondary_label' => NULL,
     'collapsible_label' => NULL,
     'combine_rewrite' => NULL,
     'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -9368,6 +9517,29 @@ Salute  Comment  Share
     'game_result_system_' => 'game_result_system_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Game (field_game) */
+  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
+  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
 
   /* Display: Armies/Factions */
   $handler = $view->new_display('attachment', 'Armies/Factions', 'attachment_1');
@@ -9551,6 +9723,7 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -9595,7 +9768,9 @@ Salute  Comment  Share
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'stats/yearly';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'By Year';
@@ -9680,12 +9855,82 @@ Salute  Comment  Share
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   $handler->display->display_options['displays'] = array(
     'default' => 0,
     'page_1' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
+  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
+  $handler->display->display_options['inherit_pager'] = TRUE;
+
+  /* Display: Summary */
+  $handler = $view->new_display('attachment', 'Summary', 'attachment_3');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Global: Math expression */
+  $handler->display->display_options['fields']['expression']['id'] = 'expression';
+  $handler->display->display_options['fields']['expression']['table'] = 'views';
+  $handler->display->display_options['fields']['expression']['field'] = 'expression';
+  $handler->display->display_options['fields']['expression']['label'] = '# Battles';
+  $handler->display->display_options['fields']['expression']['precision'] = '0';
+  $handler->display->display_options['fields']['expression']['expression'] = '[nid]/2';
+  /* Field: Content: Author uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'node';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['uid']['label'] = '# Players';
+  /* Field: Field: Your Army */
+  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_your_army']['label'] = '# Armies/factions';
+  /* Field: Field: Game */
+  $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
+  $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_game']['label'] = '# Game Systems';
+  $handler->display->display_options['fields']['field_game']['separator'] = ', ';
+  /* Field: Field: Mission */
+  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
+  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_mission']['label'] = '# Different Missions';
+  $handler->display->display_options['fields']['field_mission']['separator'] = ', ';
+  /* Field: Field: Points per army */
+  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['group_type'] = 'avg';
+  $handler->display->display_options['fields']['field_points_per_army']['label'] = 'Avg Points Per Army';
+  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['displays'] = array(
+    'page_1' => 'page_1',
+    'default' => 0,
+  );
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
   $handler->display->display_options['inherit_pager'] = TRUE;
 
@@ -9880,7 +10125,9 @@ Salute  Comment  Share
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -9923,6 +10170,9 @@ Salute  Comment  Share
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_game_tid' => array(
       'bef_format' => 'default',
@@ -9938,21 +10188,32 @@ Salute  Comment  Share
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
             'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
           'secondary_label' => NULL,
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'secondary_label' => NULL,
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_your_army_tid' => array(
       'bef_format' => 'default',
@@ -9968,26 +10229,40 @@ Salute  Comment  Share
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
             'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
           'secondary_label' => NULL,
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'secondary_label' => NULL,
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'secondary_label' => NULL,
     'collapsible_label' => NULL,
     'combine_rewrite' => NULL,
     'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -10047,7 +10322,6 @@ Salute  Comment  Share
 return $lastmonth;
 
 ';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'year';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'node.created' => 'node.created',
@@ -10068,6 +10342,29 @@ return $lastmonth;
     'game_result_system_' => 'game_result_system_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Game (field_game) */
+  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
+  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
+  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
 
   /* Display: Armies/Factions */
   $handler = $view->new_display('attachment', 'Armies/Factions', 'attachment_1');
@@ -10252,6 +10549,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -10296,7 +10594,9 @@ return $lastmonth;
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   $handler->display->display_options['path'] = 'stats/yearly';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'By Year';
@@ -10381,12 +10681,82 @@ return $lastmonth;
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   $handler->display->display_options['displays'] = array(
     'default' => 0,
     'page_1' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
+  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
+  $handler->display->display_options['inherit_pager'] = TRUE;
+
+  /* Display: Summary */
+  $handler = $view->new_display('attachment', 'Summary', 'attachment_3');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Global: Math expression */
+  $handler->display->display_options['fields']['expression']['id'] = 'expression';
+  $handler->display->display_options['fields']['expression']['table'] = 'views';
+  $handler->display->display_options['fields']['expression']['field'] = 'expression';
+  $handler->display->display_options['fields']['expression']['label'] = '# Battles';
+  $handler->display->display_options['fields']['expression']['precision'] = '0';
+  $handler->display->display_options['fields']['expression']['expression'] = '[nid]/2';
+  /* Field: Content: Author uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'node';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['uid']['label'] = '# Players';
+  /* Field: Field: Your Army */
+  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
+  $handler->display->display_options['fields']['field_your_army']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_your_army']['label'] = '# Armies/factions';
+  /* Field: Field: Game */
+  $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
+  $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_game']['label'] = '# Game Systems';
+  $handler->display->display_options['fields']['field_game']['separator'] = ', ';
+  /* Field: Field: Mission */
+  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
+  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
+  $handler->display->display_options['fields']['field_mission']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_mission']['label'] = '# Different Missions';
+  $handler->display->display_options['fields']['field_mission']['separator'] = ', ';
+  /* Field: Field: Points per army */
+  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['group_type'] = 'avg';
+  $handler->display->display_options['fields']['field_points_per_army']['label'] = 'Avg Points Per Army';
+  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['displays'] = array(
+    'page_1' => 'page_1',
+    'default' => 0,
+  );
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
   $handler->display->display_options['inherit_pager'] = TRUE;
 
@@ -10581,7 +10951,9 @@ return $lastmonth;
     7 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
+  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -11518,6 +11890,10 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_player_1_challenge']['id'] = 'field_player_1_challenge';
   $handler->display->display_options['fields']['field_player_1_challenge']['table'] = 'field_data_field_player_1_challenge';
   $handler->display->display_options['fields']['field_player_1_challenge']['field'] = 'field_player_1_challenge';
+  $handler->display->display_options['fields']['field_player_1_challenge']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_player_1_challenge']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -12066,7 +12442,6 @@ return $lastmonth;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['description']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['description']['element_wrapper_class'] = 'grey-container';
-  $handler->display->display_options['fields']['description']['hide_empty'] = TRUE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
@@ -12095,7 +12470,6 @@ return $lastmonth;
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Deployment';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -12149,47 +12523,40 @@ return $lastmonth;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
-  $handler->display->display_options['style_options']['image_field'] = 'nothing';
-  $handler->display->display_options['style_options']['heading_field'] = 'name';
-  $handler->display->display_options['style_options']['body_field'] = 'field_game_system_armies';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6 ';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Taxonomy term: Content with term */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  /* Relationship: Field: Your Army (field_your_army) */
-  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
-  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
-  $handler->display->display_options['relationships']['field_your_army_tid']['relationship'] = 'nid';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_image']['element_class'] = 'thumbnail';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_image']['element_wrapper_class'] = 'pull-left iconbuffer';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'large_button',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="fa fa-folder-open"></span> [name]';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['name']['element_type'] = 'strong';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="activity-icon small">
-<i class="fa fa-folder-open"></i>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
   /* Sort criterion: COUNT(DISTINCT Content: Nid) */
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
   $handler->display->display_options['sorts']['nid']['table'] = 'node';
@@ -12207,8 +12574,6 @@ return $lastmonth;
 
   /* Display: Mission Panel */
   $handler = $view->new_display('panel_pane', 'Mission Panel', 'panel_pane_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Missions';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -12220,8 +12585,6 @@ return $lastmonth;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pane_category']['name'] = 'Meta';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Mission Page */
   $handler = $view->new_display('page', 'Mission Page', 'page_1');
@@ -12243,7 +12606,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['name']['operator'] = 'contains';
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['description'] = 'Filter by name';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Search';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
@@ -12254,7 +12617,7 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
-  $handler->display->display_options['path'] = 'battle-reports/battle-meta/missions';
+  $handler->display->display_options['path'] = 'battle-meta/missions';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Missions';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -12264,8 +12627,6 @@ return $lastmonth;
 
   /* Display: Victory Conditions */
   $handler = $view->new_display('panel_pane', 'Victory Conditions', 'panel_pane_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Victory Conditions';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -12279,27 +12640,6 @@ return $lastmonth;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="fa fa-folder-open"></span> [name]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="activity-icon small">
-<i class="fa fa-flag"></i>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
@@ -12309,8 +12649,6 @@ return $lastmonth;
   $handler->display->display_options['filters']['vid']['value'] = array(
     15 => '15',
   );
-  $handler->display->display_options['pane_category']['name'] = 'Meta';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Victory Conditions Page */
   $handler = $view->new_display('page', 'Victory Conditions Page', 'page_2');
@@ -12332,7 +12670,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['name']['operator'] = 'contains';
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['description'] = 'Filter by name';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Search';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
@@ -12343,7 +12681,7 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
-  $handler->display->display_options['path'] = 'battle-reports/battle-meta/victory-conditions';
+  $handler->display->display_options['path'] = 'battle-meta/victory-conditions';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Victory Conditions';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -12353,8 +12691,6 @@ return $lastmonth;
 
   /* Display: Deployment Panel */
   $handler = $view->new_display('panel_pane', 'Deployment Panel', 'panel_pane_3');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Deployment';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -12368,35 +12704,6 @@ return $lastmonth;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="fa fa-folder-open"></span> [name]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="activity-icon small">
-<i class="fa fa-compress"></i>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
@@ -12406,8 +12713,6 @@ return $lastmonth;
   $handler->display->display_options['filters']['vid']['value'] = array(
     17 => '17',
   );
-  $handler->display->display_options['pane_category']['name'] = 'Meta';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Deployment Page */
   $handler = $view->new_display('page', 'Deployment Page', 'page_3');
@@ -12429,7 +12734,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['name']['operator'] = 'contains';
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['description'] = 'Filter by name';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Search';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
@@ -12440,7 +12745,7 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
-  $handler->display->display_options['path'] = 'battle-reports/battle-meta/deployment';
+  $handler->display->display_options['path'] = 'battle-meta/deployment';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Deployment';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -12450,8 +12755,6 @@ return $lastmonth;
 
   /* Display: Special Rules Panel */
   $handler = $view->new_display('panel_pane', 'Special Rules Panel', 'panel_pane_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Special Rules';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -12465,34 +12768,6 @@ return $lastmonth;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="fa fa-folder-open"></span> [name]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="activity-icon small">
-<i class="fa fa-bolt"></i>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
@@ -12502,41 +12777,11 @@ return $lastmonth;
   $handler->display->display_options['filters']['vid']['value'] = array(
     16 => '16',
   );
-  $handler->display->display_options['pane_category']['name'] = 'Meta';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Special Rules Page */
   $handler = $view->new_display('page', 'Special Rules Page', 'page_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Scenario Rules in Effect';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="fa fa-folder-open"></span> [name]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="activity-icon small">
-<i class="fa fa-bolt"></i>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
@@ -12553,7 +12798,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['name']['operator'] = 'contains';
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['description'] = 'Filter by name';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Search';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
@@ -12564,7 +12809,7 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
-  $handler->display->display_options['path'] = 'battle-reports/battle-meta/scenario-rules-effect';
+  $handler->display->display_options['path'] = 'battle-meta/scenario-rules-effect';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Scenario Rules';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -12574,8 +12819,6 @@ return $lastmonth;
 
   /* Display: Units and Commanders Panel */
   $handler = $view->new_display('panel_pane', 'Units and Commanders Panel', 'panel_pane_5');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Units and Commanders';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -12589,35 +12832,6 @@ return $lastmonth;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="fa fa-folder-open"></span> [name]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="activity-icon small">
-<i class="fa fa-users"></i>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
@@ -12627,42 +12841,11 @@ return $lastmonth;
   $handler->display->display_options['filters']['vid']['value'] = array(
     18 => '18',
   );
-  $handler->display->display_options['pane_category']['name'] = 'Meta';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Units and Commanders Page */
   $handler = $view->new_display('page', 'Units and Commanders Page', 'page_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Units and Commanders';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="fa fa-folder-open"></span> [name]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="activity-icon small">
-<i class="fa fa-users"></i>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy term: Vocabulary */
@@ -12679,7 +12862,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['name']['operator'] = 'contains';
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['description'] = 'Filter by name';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Search';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
@@ -12690,7 +12873,7 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
-  $handler->display->display_options['path'] = 'battle-reports/battle-meta/units-and-commanders';
+  $handler->display->display_options['path'] = 'battle-meta/units-and-commanders';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Units';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -13375,7 +13558,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  /* Field: Content: Opponent's Name */
+  /* Field: Field: Opponent's Name */
   $handler->display->display_options['fields']['field_opponent_s_name']['id'] = 'field_opponent_s_name';
   $handler->display->display_options['fields']['field_opponent_s_name']['table'] = 'field_data_field_opponent_s_name';
   $handler->display->display_options['fields']['field_opponent_s_name']['field'] = 'field_opponent_s_name';
@@ -13420,7 +13603,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
-  /* Filter criterion: Content: Opponent&#039;s Name (field_opponent_s_name) */
+  /* Filter criterion: Field: Opponent&#039;s Name (field_opponent_s_name) */
   $handler->display->display_options['filters']['field_opponent_s_name_value']['id'] = 'field_opponent_s_name_value';
   $handler->display->display_options['filters']['field_opponent_s_name_value']['table'] = 'field_data_field_opponent_s_name';
   $handler->display->display_options['filters']['field_opponent_s_name_value']['field'] = 'field_opponent_s_name_value';
@@ -14866,6 +15049,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
+  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: COUNT(Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -16268,6 +16452,10 @@ return $lastmonth;
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['relationship'] = 'reverse_field_game_reference_node';
+  /* Relationship: Field: Your Army (field_your_army) */
+  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
+  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
   /* Field: Field: Opponent's Army */
   $handler->display->display_options['fields']['field_opponent_s_army']['id'] = 'field_opponent_s_army';
   $handler->display->display_options['fields']['field_opponent_s_army']['table'] = 'field_data_field_opponent_s_army';
@@ -16371,6 +16559,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
@@ -16385,6 +16574,13 @@ return $lastmonth;
   $handler->display->display_options['fields']['name']['label'] = 'Opponent';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Taxonomy term: Game System */
+  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
+  $handler->display->display_options['fields']['field_game_system_armies']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
@@ -16413,17 +16609,19 @@ return $lastmonth;
     'game_result_system_' => 'game_result_system_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Game (field_game) (selective) */
-  $handler->display->display_options['filters']['field_game_tid_selective']['id'] = 'field_game_tid_selective';
-  $handler->display->display_options['filters']['field_game_tid_selective']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid_selective']['field'] = 'field_game_tid_selective';
-  $handler->display->display_options['filters']['field_game_tid_selective']['ui_name'] = 'Game (field_game) (selective)';
-  $handler->display->display_options['filters']['field_game_tid_selective']['group'] = 1;
-  $handler->display->display_options['filters']['field_game_tid_selective']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid_selective']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['field_game_tid_selective']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid_selective']['expose']['identifier'] = 'field_game_tid_selective';
-  $handler->display->display_options['filters']['field_game_tid_selective']['expose']['remember_roles'] = array(
+  /* Filter criterion: Game System (field_game_system_armies) (selective) */
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['id'] = 'field_game_system_armies_tid_selective';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['table'] = 'field_data_field_game_system_armies';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['field'] = 'field_game_system_armies_tid_selective';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['relationship'] = 'field_your_army_tid';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['ui_name'] = 'Game System (field_game_system_armies) (selective)';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['group'] = 1;
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['expose']['label'] = 'Game System';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['expose']['identifier'] = 'field_game_system_armies_tid_selective';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -16431,6 +16629,9 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['selective_display_field'] = 'field_game_system_armies';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['selective_display_sort'] = 'ASC';
+  $handler->display->display_options['filters']['field_game_system_armies_tid_selective']['selective_items_limit'] = '100';
   /* Filter criterion: Your Army (field_your_army) (selective) */
   $handler->display->display_options['filters']['field_your_army_tid_selective']['id'] = 'field_your_army_tid_selective';
   $handler->display->display_options['filters']['field_your_army_tid_selective']['table'] = 'field_data_field_your_army';
@@ -17873,11 +18074,6 @@ return $lastmonth;
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
-  /* Field: Field: Game */
-  $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
-  $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['exclude'] = TRUE;
   /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
@@ -17892,6 +18088,13 @@ return $lastmonth;
   $handler->display->display_options['fields']['name']['label'] = 'Opponent';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Taxonomy term: Game System */
+  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
+  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
+  $handler->display->display_options['fields']['field_game_system_armies']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_game_system_armies']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['path'] = 'user/%/stats/by-player-army';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Player\'s Army';
@@ -18222,7 +18425,6 @@ return $lastmonth;
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',

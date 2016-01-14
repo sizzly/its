@@ -1641,14 +1641,16 @@ Rob</p>
       'body' => '<div class="panel panel-default">
     <div class="panel-tab clearfix">
         <ul class="tab-bar">
-            <li class="active"><a href="#home1" data-toggle="tab"><i class="fa fa-bullhorn"></i>Status</a></li>
-            <li><a href="#profile1" data-toggle="tab"><i class="fa fa-fire"></i>Battle</a></li>
-            <li><a href="#message1" data-toggle="tab"><i class="fa fa-image"></i>Image</a></li>
+            <li class="active"><a href="#stream" data-toggle="tab"><i class="fa fa-road"></i> Activity</a></li>
+            <li><a href="#home1" data-toggle="tab"><i class="fa fa-bullhorn"></i> Status</a></li>
+            <li><a href="#profile1" data-toggle="tab"><i class="fa fa-fire"></i> Battle</a></li>
+            <li><a href="#message1" data-toggle="tab"><i class="fa fa-image"></i> Image</a></li>
         </ul>
     </div>
     <div class="panel-body">
         <div class="tab-content">
-            <div class="tab-pane fade in active" id="home1">
+            <div class="tab-pane fade in active" id="stream"></div>
+            <div class="tab-pane fade" id="home1">
                 <?php
   module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
   $entity_form_name = \'status\';

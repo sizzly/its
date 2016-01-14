@@ -110,11 +110,12 @@ function listcrit_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Order of Battle',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_your_army',
       1 => 'field_points_per_army',
       2 => 'field_batteresult_commander',
+      3 => 'field_listcrit_component_units',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -139,7 +140,7 @@ function listcrit_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Classification',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_doctrine',
       1 => 'field_primary_role',
