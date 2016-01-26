@@ -838,6 +838,236 @@ function battle_reports_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['battles_main_page'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'stats';
+  $page->task = 'page';
+  $page->admin_title = 'Stats';
+  $page->admin_description = 'The main stats page for the whole site.';
+  $page->path = 'battle-reports/stats/main';
+  $page->access = array();
+  $page->menu = array(
+    'type' => 'default tab',
+    'title' => 'Main',
+    'name' => 'main-menu',
+    'weight' => '-50',
+    'parent' => array(
+      'type' => 'normal',
+      'title' => 'Stats',
+      'name' => 'main-menu',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_stats_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'stats';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_moscone';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'left_above' => NULL,
+      'right_above' => NULL,
+      'middle' => NULL,
+      'left_below' => NULL,
+      'right_below' => NULL,
+      'bottom' => NULL,
+      'two_brick_top' => NULL,
+      'two_brick_left_above' => NULL,
+      'two_brick_right_above' => NULL,
+      'two_brick_middle' => NULL,
+      'two_brick_left_below' => NULL,
+      'two_brick_right_below' => NULL,
+      'two_brick_bottom' => NULL,
+      'one_main' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
+      'header' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Battle Stats';
+  $display->uuid = 'b202a638-6244-4f2a-9fb2-9502b3f4ff7f';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-071aaa48-b84d-4d5d-926b-bba7de3aacc8';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'battles_stats_main_battle_stats-panel_pane_6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'panel bg-info',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '071aaa48-b84d-4d5d-926b-bba7de3aacc8';
+    $display->content['new-071aaa48-b84d-4d5d-926b-bba7de3aacc8'] = $pane;
+    $display->panels['contentmain'][0] = 'new-071aaa48-b84d-4d5d-926b-bba7de3aacc8';
+    $pane = new stdClass();
+    $pane->pid = 'new-57242e70-7890-4b11-8e42-d74f0d6f80c8';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Count Block',
+      'title' => '',
+      'body' => '<div class="row">
+<div class="padding-md">
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-danger">
+                <h2 class="m-top-none" id="userCount"><?php print views_embed_view("battles_stats_main_battle_stats" , "panel_pane_1"); ?></h2>
+                <h5>Battles</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-fire fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-info">
+                <h2 class="m-top-none"><?php print views_embed_view("battles_stats_main_battle_stats" , "panel_pane_2"); ?></h2>
+                <h5>Players</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-user fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-warning">
+                <h2 class="m-top-none"><?php print views_embed_view("battles_stats_main_battle_stats" , "panel_pane_3"); ?></h2>
+                <h5>Battlefields</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-map-marker fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-success">
+                <h2 class="m-top-none"><?php print views_embed_view("battles_stats_main_battle_stats" , "panel_pane_4"); ?></h2>
+                <h5>Factions</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-bookmark fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        
+        
+    </div>
+</div>
+</div>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '57242e70-7890-4b11-8e42-d74f0d6f80c8';
+    $display->content['new-57242e70-7890-4b11-8e42-d74f0d6f80c8'] = $pane;
+    $display->panels['header'][0] = 'new-57242e70-7890-4b11-8e42-d74f0d6f80c8';
+    $pane = new stdClass();
+    $pane->pid = 'new-9ebcdf2e-0641-40f0-91ae-24b5a5fb1c20';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'battles_stats_main_battle_stats-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9ebcdf2e-0641-40f0-91ae-24b5a5fb1c20';
+    $display->content['new-9ebcdf2e-0641-40f0-91ae-24b5a5fb1c20'] = $pane;
+    $display->panels['sidebar'][0] = 'new-9ebcdf2e-0641-40f0-91ae-24b5a5fb1c20';
+    $pane = new stdClass();
+    $pane->pid = 'new-668c49dc-97a6-40f6-8e8b-8d87ea28263c';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'battles_stats_main_battle_stats-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '668c49dc-97a6-40f6-8e8b-8d87ea28263c';
+    $display->content['new-668c49dc-97a6-40f6-8e8b-8d87ea28263c'] = $pane;
+    $display->panels['sidebar'][1] = 'new-668c49dc-97a6-40f6-8e8b-8d87ea28263c';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['stats'] = $page;
+
   return $pages;
 
 }

@@ -40,22 +40,6 @@ function war_zones_user_default_permissions() {
     'module' => 'rules_link',
   );
 
-  // Exported permission: 'add league node registration'.
-  $permissions['add league node registration'] = array(
-    'name' => 'add league node registration',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node_registration',
-  );
-
-  // Exported permission: 'create league content'.
-  $permissions['create league content'] = array(
-    'name' => 'create league content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create narrative_campaign content'.
   $permissions['create narrative_campaign content'] = array(
     'name' => 'create narrative_campaign content',
@@ -90,13 +74,6 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any league content'.
-  $permissions['delete any league content'] = array(
-    'name' => 'delete any league content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any narrative_campaign content'.
   $permissions['delete any narrative_campaign content'] = array(
     'name' => 'delete any narrative_campaign content',
@@ -124,13 +101,6 @@ function war_zones_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own league content'.
-  $permissions['delete own league content'] = array(
-    'name' => 'delete own league content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -164,13 +134,6 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any league content'.
-  $permissions['edit any league content'] = array(
-    'name' => 'edit any league content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any narrative_campaign content'.
   $permissions['edit any narrative_campaign content'] = array(
     'name' => 'edit any narrative_campaign content',
@@ -198,13 +161,6 @@ function war_zones_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own league content'.
-  $permissions['edit own league content'] = array(
-    'name' => 'edit own league content',
-    'roles' => array(),
     'module' => 'node',
   );
 

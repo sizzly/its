@@ -25,7 +25,6 @@ function its_modelling_projects_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_army_models',
-      2 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -83,8 +82,8 @@ function its_modelling_projects_field_group_info() {
     'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_image_wrapper',
-      1 => 'group_body_wrapper',
+      0 => 'group_body_wrapper',
+      1 => 'group_image_wrapper',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

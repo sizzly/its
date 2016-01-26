@@ -295,13 +295,8 @@ function blogs_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 10,
       ),
     ),
@@ -321,55 +316,6 @@ function blogs_field_default_field_instances() {
       'settings' => array(),
       'type' => 'radioactivity_basic_widget',
       'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-blog-field_rate_content'.
-  $field_instances['node-blog-field_rate_content'] = array(
-    'bundle' => 'blog',
-    'default_value' => array(
-      0 => array(
-        'vud_widget' => 'updown',
-        'votingapi_tag' => 'vote',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_rate_content',
-    'label' => 'Rate List',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-      'votingapi_tag' => 'thumbs',
-      'vud_widget' => 'thumbs',
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud_field',
-      'settings' => array(),
-      'type' => 'vud_field_default_widget',
-      'weight' => 15,
     ),
   );
 
@@ -438,7 +384,6 @@ function blogs_field_default_field_instances() {
   t('Comment');
   t('Image');
   t('Radioactivity');
-  t('Rate List');
   t('Website');
 
   return $field_instances;

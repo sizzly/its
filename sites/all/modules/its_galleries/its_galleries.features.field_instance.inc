@@ -501,13 +501,8 @@ function its_galleries_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 14,
       ),
     ),

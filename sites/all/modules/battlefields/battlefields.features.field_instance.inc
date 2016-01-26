@@ -431,11 +431,11 @@ function battlefields_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'radioactivity',
         'settings' => array(
-          'accuracy' => 100,
-          'energy' => 5,
+          'accuracy' => 80,
+          'energy' => 2,
           'type' => 'none',
         ),
         'type' => 'radioactivity_combo_formatter',
@@ -449,13 +449,8 @@ function battlefields_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 5,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
     ),

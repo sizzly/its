@@ -198,6 +198,7 @@ function its_achievements_default_rules_configuration() {
   $items['rules_master_renown_awarded_v2'] = entity_import('rules_config', '{ "rules_master_renown_awarded_v2" : {
       "LABEL" : "Master: Renown Awarded V2",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "TAGS" : [ "Master", "Renown" ],
       "REQUIRES" : [

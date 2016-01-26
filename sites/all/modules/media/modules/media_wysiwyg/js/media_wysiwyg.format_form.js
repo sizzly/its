@@ -25,7 +25,7 @@ Drupal.behaviors.mediaFormatForm = {
     // Adding the buttons should only be done once in order to prevent multiple
     // buttons from being added if part of the form is updated via AJAX
     $('#media-wysiwyg-format-form').once('format', function() {
-      $('<a class="button fake-ok">' + Drupal.t('Submit') + '</a>').appendTo($('#media-wysiwyg-format-form')).bind('click', Drupal.media.formatForm.submit);
+      $('<a class="button btn btn-default fake-ok">' + Drupal.t('Submit') + '</a>').appendTo($('#media-wysiwyg-format-form')).bind('click', Drupal.media.formatForm.submit);
     });
   }
 };

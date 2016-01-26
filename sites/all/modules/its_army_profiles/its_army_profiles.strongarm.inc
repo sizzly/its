@@ -82,6 +82,9 @@ function its_army_profiles_strongarm() {
         'badges' => array(
           'weight' => '6',
         ),
+        'locations' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),

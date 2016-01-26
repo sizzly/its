@@ -11,8 +11,7 @@
 }
 
 #media-wysiwyg-format-form .media-item {
-  float: left;
-  margin-right: 10px;
+  align-content: center;
 }
 
 #media-wysiwyg-format-form .form-item-format label {
