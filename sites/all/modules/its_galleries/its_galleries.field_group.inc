@@ -24,7 +24,6 @@ function its_galleries_field_group_info() {
     'weight' => '13',
     'children' => array(
       0 => 'body',
-      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

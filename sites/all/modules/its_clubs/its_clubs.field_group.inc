@@ -24,9 +24,8 @@ function its_clubs_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
-      1 => 'field_supported_games',
-      2 => 'field_location',
-      3 => 'field_radioactivity',
+      1 => 'field_location',
+      2 => 'field_supported_games',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -84,8 +83,8 @@ function its_clubs_field_group_info() {
     'label' => 'Media Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media_left',
-      1 => 'group_media_body',
+      0 => 'group_media_body',
+      1 => 'group_media_left',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

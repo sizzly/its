@@ -35,14 +35,14 @@ function its_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_draggable';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['media_draggable'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_height';
-  $strongarm->value = '280';
+  $strongarm->value = '';
   $export['media_height'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,14 +56,14 @@ function its_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_minwidth';
-  $strongarm->value = '85%';
+  $strongarm->value = '';
   $export['media_minwidth'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_modal';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['media_modal'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -91,7 +91,7 @@ function its_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_width';
-  $strongarm->value = '670';
+  $strongarm->value = '480';
   $export['media_width'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -124,7 +124,7 @@ function its_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_wysiwyg_wysiwyg_upload_directory';
-  $strongarm->value = '';
+  $strongarm->value = 'user/u[current-user:uid]';
   $export['media_wysiwyg_wysiwyg_upload_directory'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -312,10 +312,10 @@ blog/%node:author:uid
     $display->content['new-49c691bd-daa5-418a-a667-e41b8f9becd6'] = $pane;
     $display->panels['contentmain'][2] = 'new-49c691bd-daa5-418a-a667-e41b8f9becd6';
     $pane = new stdClass();
-    $pane->pid = 'new-f9934437-6285-4389-b5a0-d8e4b9eae6a8';
+    $pane->pid = 'new-eb82bd7d-9cbd-4cea-ad0a-04abfe1d9b56';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'blogs_all_page_layout-panel_pane_5';
+    $pane->subtype = 'core_all_node_layout-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -323,16 +323,13 @@ blog/%node:author:uid
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'well well-sm',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = 'f9934437-6285-4389-b5a0-d8e4b9eae6a8';
-    $display->content['new-f9934437-6285-4389-b5a0-d8e4b9eae6a8'] = $pane;
-    $display->panels['contentmain'][3] = 'new-f9934437-6285-4389-b5a0-d8e4b9eae6a8';
+    $pane->uuid = 'eb82bd7d-9cbd-4cea-ad0a-04abfe1d9b56';
+    $display->content['new-eb82bd7d-9cbd-4cea-ad0a-04abfe1d9b56'] = $pane;
+    $display->panels['contentmain'][3] = 'new-eb82bd7d-9cbd-4cea-ad0a-04abfe1d9b56';
     $pane = new stdClass();
     $pane->pid = 'new-8ae3751e-25f0-4abf-85c6-2da56e8bd0b0';
     $pane->panel = 'contentmain';

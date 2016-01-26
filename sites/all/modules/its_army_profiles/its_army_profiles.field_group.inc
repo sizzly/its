@@ -81,8 +81,8 @@ function its_army_profiles_field_group_info() {
     'label' => 'Wrapper',
     'weight' => '1',
     'children' => array(
-      0 => 'group_image_wrapper',
-      1 => 'group_body_wrapper',
+      0 => 'group_body_wrapper',
+      1 => 'group_image_wrapper',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

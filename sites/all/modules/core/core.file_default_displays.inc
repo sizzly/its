@@ -248,8 +248,8 @@ function core_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'large',
-    'image_link' => 'content',
+    'image_style' => 'medium',
+    'image_link' => '',
   );
   $export['image__wysiwyg__file_field_image'] = $file_display;
 

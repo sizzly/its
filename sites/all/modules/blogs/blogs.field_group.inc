@@ -24,7 +24,6 @@ function blogs_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'body',
-      1 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -133,13 +132,11 @@ function blogs_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'blog';
   $field_group->mode = 'teaser';
-  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'spacer',
     'weight' => '18',
-    'children' => array(
-      0 => 'field_image',
-    ),
+    'children' => array(),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'spacer',
@@ -196,8 +193,8 @@ function blogs_field_group_info() {
     'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_image_wrapper',
-      1 => 'group_body_wrapper',
+      0 => 'group_body_wrapper',
+      1 => 'group_image_wrapper',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

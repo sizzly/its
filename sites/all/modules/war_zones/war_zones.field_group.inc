@@ -297,6 +297,8 @@ function war_zones_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'body',
+      1 => 'field_game_warzone',
+      2 => 'registration_link',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

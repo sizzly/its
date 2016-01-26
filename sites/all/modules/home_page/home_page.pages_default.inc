@@ -2670,31 +2670,6 @@ Rob<br />
     $display->content['new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f'] = $pane;
     $display->panels['contentmain'][3] = 'new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f';
     $pane = new stdClass();
-    $pane->pid = 'new-39ff1cac-1b99-4962-86f9-b7441050386d';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'home_page_register_now';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '39ff1cac-1b99-4962-86f9-b7441050386d';
-    $display->content['new-39ff1cac-1b99-4962-86f9-b7441050386d'] = $pane;
-    $display->panels['contentmain'][4] = 'new-39ff1cac-1b99-4962-86f9-b7441050386d';
-    $pane = new stdClass();
     $pane->pid = 'new-324372b2-309a-46a2-afc8-5d49653d2406';
     $pane->panel = 'contentmain';
     $pane->type = 'block';
@@ -2715,11 +2690,11 @@ Rob<br />
       'css_class' => 'form-group ranking75 center-block text-center',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = '324372b2-309a-46a2-afc8-5d49653d2406';
     $display->content['new-324372b2-309a-46a2-afc8-5d49653d2406'] = $pane;
-    $display->panels['contentmain'][5] = 'new-324372b2-309a-46a2-afc8-5d49653d2406';
+    $display->panels['contentmain'][4] = 'new-324372b2-309a-46a2-afc8-5d49653d2406';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-42d92332-2f59-4859-be30-cd3093e09f3a';
   $handler->conf['display'] = $display;
