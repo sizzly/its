@@ -148,7 +148,7 @@
                         </ul>
                     </li>
                     <li class="openable open">
-                        <a href="/warzone">
+                        <a href="/theater">
                             <span class="menu-icon">
                                 <i class="fa fa-map fa-lg"></i> 
                             </span>

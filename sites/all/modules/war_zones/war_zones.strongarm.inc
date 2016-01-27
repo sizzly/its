@@ -886,7 +886,7 @@ function war_zones_strongarm() {
       'display' => array(
         'registration_link' => array(
           'teaser' => array(
-            'weight' => '4',
+            'weight' => '5',
             'visible' => TRUE,
           ),
         ),

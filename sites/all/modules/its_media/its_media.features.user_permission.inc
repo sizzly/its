@@ -29,15 +29,6 @@ function its_media_user_default_permissions() {
     'module' => 'media',
   );
 
-  // Exported permission: 'administer media wysiwyg view mode'.
-  $permissions['administer media wysiwyg view mode'] = array(
-    'name' => 'administer media wysiwyg view mode',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'media_wysiwyg_view_mode',
-  );
-
   // Exported permission: 'import media'.
   $permissions['import media'] = array(
     'name' => 'import media',

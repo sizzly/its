@@ -943,6 +943,18 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['fields']['group_group']['settings'] = array(
     'field_name' => '0',
   );
+  /* Field: Content: Radioactivity */
+  $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['field'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['label'] = '';
+  $handler->display->display_options['fields']['field_radioactivity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_radioactivity']['click_sort_column'] = 'radioactivity_energy';
+  $handler->display->display_options['fields']['field_radioactivity']['settings'] = array(
+    'energy' => '15',
+    'type' => 'none',
+    'accuracy' => '100',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Organic Groups';
   $handler->display->display_options['pane_category']['weight'] = '0';
 

@@ -55,7 +55,6 @@ function battlefields_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_address_battlefield',
-      2 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

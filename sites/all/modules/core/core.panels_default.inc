@@ -13,6 +13,191 @@ function core_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
+  $mini->name = 'core_uservoice_widget';
+  $mini->category = 'Home';
+  $mini->admin_title = 'Core: Uservoice Widget';
+  $mini->admin_description = 'Generates the user voice Widget on iTS.';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array(
+    0 => array(
+      'identifier' => 'User',
+      'keyword' => 'user',
+      'name' => 'user',
+      'type' => 'current',
+      'uid' => '',
+      'id' => 1,
+    ),
+  );
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '755a5b65-2918-43ad-87f7-5e65402cae82';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-9f83aa31-c869-4a76-89c6-ccc06be0a7f5';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'context_user_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Uservoice Widget - Authenticated User',
+      'title' => '',
+      'body' => '<script>
+// Include the UserVoice JavaScript SDK (only needed once on a page)
+UserVoice=window.UserVoice||[];(function(){var uv=document.createElement(\'script\');uv.type=\'text/javascript\';uv.async=true;uv.src=\'//widget.uservoice.com/btzCsfQb3IDIw5ApZEIYw.js\';var s=document.getElementsByTagName(\'script\')[0];s.parentNode.insertBefore(uv,s)})();
+
+//
+// UserVoice Javascript SDK developer documentation:
+// https://www.uservoice.com/o/javascript-sdk
+//
+
+// Set colors
+UserVoice.push([\'set\', {
+  accent_color: \'#808283\',
+  trigger_color: \'white\',
+  trigger_background_color: \'rgba(46, 49, 51, 0.6)\'
+}]);
+
+// Identify the user and pass traits
+// To enable, replace sample data with actual user traits and uncomment the line
+UserVoice.push([\'identify\', {
+  email:      \'%user:mail\', // User’s email address
+  name:       \'%user:name\', // User’s real name
+  created_at: <?php print strtotime(\'%user:created\'); ?>, // Unix timestamp for the date the user signed up
+  id:         %user:uid, // Optional: Unique id of the user (if set, this should not change)
+  type:       \'%user:roles\' // Optional: segment your users by type
+  //account: {
+  //  id:           123, // Optional: associate multiple users with a single account
+  //  name:         \'Acme, Co.\', // Account name
+  //  created_at:   1364406966, // Unix timestamp for the date the account was created
+  //  monthly_rate: 9.99, // Decimal; monthly rate of the account
+  //  ltv:          1495.00, // Decimal; lifetime value of the account
+  //  plan:         \'Enhanced\' // Plan name for the account
+  //}
+}]);
+
+// Add default trigger to the bottom-right corner of the window:
+UserVoice.push([\'addTrigger\', {mode: \'contact\', trigger_position: \'bottom-right\' }]);
+
+// Or, use your own custom trigger:
+//UserVoice.push([\'addTrigger\', \'#id\', { mode: \'contact\' }]);
+
+// Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+UserVoice.push([\'autoprompt\', {}]);
+</script>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9f83aa31-c869-4a76-89c6-ccc06be0a7f5';
+    $display->content['new-9f83aa31-c869-4a76-89c6-ccc06be0a7f5'] = $pane;
+    $display->panels['contentmain'][0] = 'new-9f83aa31-c869-4a76-89c6-ccc06be0a7f5';
+    $pane = new stdClass();
+    $pane->pid = 'new-0d0ebfe4-6a21-437d-90e9-65d6dddd46f8';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Uservoice Widget - Anonymous User',
+      'title' => '',
+      'body' => '<script>
+// Include the UserVoice JavaScript SDK (only needed once on a page)
+UserVoice=window.UserVoice||[];(function(){var uv=document.createElement(\'script\');uv.type=\'text/javascript\';uv.async=true;uv.src=\'//widget.uservoice.com/btzCsfQb3IDIw5ApZEIYw.js\';var s=document.getElementsByTagName(\'script\')[0];s.parentNode.insertBefore(uv,s)})();
+
+//
+// UserVoice Javascript SDK developer documentation:
+// https://www.uservoice.com/o/javascript-sdk
+//
+
+// Set colors
+UserVoice.push([\'set\', {
+  accent_color: \'#808283\',
+  trigger_color: \'white\',
+  trigger_background_color: \'rgba(46, 49, 51, 0.6)\'
+}]);
+
+// Identify the user and pass traits
+// To enable, replace sample data with actual user traits and uncomment the line
+UserVoice.push([\'identify\', {
+  // email:      \'%user:mail\', // User’s email address
+  name:       \'Warmonger\', // User’s real name
+  // created_at: n/a, // Unix timestamp for the date the user signed up
+  // id:         %user:uid, // Optional: Unique id of the user (if set, this should not change)
+  type:       \'Anonymous\' // Optional: segment your users by type
+  //account: {
+  //  id:           123, // Optional: associate multiple users with a single account
+  //  name:         \'Acme, Co.\', // Account name
+  //  created_at:   1364406966, // Unix timestamp for the date the account was created
+  //  monthly_rate: 9.99, // Decimal; monthly rate of the account
+  //  ltv:          1495.00, // Decimal; lifetime value of the account
+  //  plan:         \'Enhanced\' // Plan name for the account
+  //}
+}]);
+
+// Add default trigger to the bottom-right corner of the window:
+UserVoice.push([\'addTrigger\', {mode: \'contact\', trigger_position: \'bottom-right\' }]);
+
+// Or, use your own custom trigger:
+//UserVoice.push([\'addTrigger\', \'#id\', { mode: \'contact\' }]);
+
+// Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+UserVoice.push([\'autoprompt\', {}]);
+</script>',
+      'format' => 'php_code',
+      'substitute' => 0,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '0d0ebfe4-6a21-437d-90e9-65d6dddd46f8';
+    $display->content['new-0d0ebfe4-6a21-437d-90e9-65d6dddd46f8'] = $pane;
+    $display->panels['contentmain'][1] = 'new-0d0ebfe4-6a21-437d-90e9-65d6dddd46f8';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-9f83aa31-c869-4a76-89c6-ccc06be0a7f5';
+  $mini->display = $display;
+  $export['core_uservoice_widget'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
   $mini->name = 'home_page_header';
   $mini->category = 'Home';
   $mini->admin_title = 'Home Page Header';

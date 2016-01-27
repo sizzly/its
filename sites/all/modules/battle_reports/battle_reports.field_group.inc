@@ -270,11 +270,10 @@ function battle_reports_field_group_info() {
     'label' => 'Content Wrapper',
     'weight' => '8',
     'children' => array(
-      0 => 'body',
-      1 => 'field_game_date',
-      2 => 'field_location',
+      0 => 'field_game_date',
+      1 => 'field_location',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
@@ -451,7 +450,7 @@ function battle_reports_field_group_info() {
     'children' => array(
       0 => 'group_spacer',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'Image Wrapper',
       'instance_settings' => array(
@@ -460,6 +459,7 @@ function battle_reports_field_group_info() {
         'attributes' => '',
         'id' => 'node_game_results_teaser_group_image_wrapper',
       ),
+      'formatter' => '',
     ),
   );
   $export['group_image_wrapper|node|game_results|teaser'] = $field_group;
@@ -540,7 +540,7 @@ function battle_reports_field_group_info() {
     'children' => array(
       0 => 'field_image',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'Spacer',
       'instance_settings' => array(
@@ -549,6 +549,7 @@ function battle_reports_field_group_info() {
         'attributes' => '',
         'id' => 'node_game_results_teaser_group_spacer',
       ),
+      'formatter' => '',
     ),
   );
   $export['group_spacer|node|game_results|teaser'] = $field_group;
@@ -594,12 +595,12 @@ function battle_reports_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Wrapper',
-    'weight' => '0',
+    'weight' => '2',
     'children' => array(
-      0 => 'group_image_wrapper',
-      1 => 'group_content_wrapper',
+      0 => 'group_content_wrapper',
+      1 => 'group_image_wrapper',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'Wrapper',
       'instance_settings' => array(
@@ -608,6 +609,7 @@ function battle_reports_field_group_info() {
         'attributes' => '',
         'id' => 'node_game_results_teaser_group_wrapper',
       ),
+      'formatter' => '',
     ),
   );
   $export['group_wrapper|node|game_results|teaser'] = $field_group;
