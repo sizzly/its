@@ -3415,6 +3415,257 @@ Manage',
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'war_zone_landing_page';
+  $page->task = 'page';
+  $page->admin_title = 'War Zone Landing Page';
+  $page->admin_description = '';
+  $page->path = 'theater/warzone';
+  $page->access = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'War Zones',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_war_zone_landing_page__panel_context_f4519bee-311e-4dc5-9084-cefa006fb50f';
+  $handler->task = 'page';
+  $handler->subtask = 'war_zone_landing_page';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => 'War Zones | iToysoldiers',
+        ),
+        'description' => array(
+          'value' => 'Competitive and structured miniature wargaming events.  Leagues, Tournaments, Campaigns.',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_its2';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
+      'contentmaintop' => NULL,
+      'contentmainbottom' => NULL,
+      'contentmainright' => NULL,
+      'contentmainleft' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'War Zones';
+  $display->uuid = '4c7c5ffe-39b0-466d-921a-308bb4c1edc9';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-189d8393-80b1-43e9-8b5e-f267f770398f';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'War Zone Types',
+      'title' => 'War Zone Classifications',
+      'body' => '<div class="media">
+  <div class="pull-left">
+    <a href="/theater/warzone/tournaments">
+      <img class="media-object" src="/sites/default/files/styles/button/public/default_images/location.png" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+      <h4 class="media-heading"><a href="/theater/warzone/tournaments">Tournaments</a></h4>
+    <p>The iToysoldiers tournament manager makes it easy to run and participate in a miniature wargaming tournament.</p>
+    <p>View past and future <a href="/theater/warzone/tournaments/">tournaments</a>.
+  </div>
+</div>
+<div class="media">
+  <div class="pull-left">
+    <a href="/theater/warzone/leagues">
+      <img class="media-object" src="/sites/default/files/styles/button/public/default_images/league.png" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+      <h4 class="media-heading"><a href="/theater/warzone/leagues">Leagues</a></h4>
+    <p>The iToysoldiers tournament manager makes it easy to run and participate in a miniature wargaming tournament.</p>
+    <p>View past and future <a href="/theater/warzone/leagues">leagues</a>.
+  </div>
+</div>
+<div class="media">
+  <div class="pull-left">
+    <a href="/theater/warzone/narrative-campaigns/operational">
+      <img class="media-object" src="/sites/default/files/styles/button/public/default_images/narrative.png" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+      <h4 class="media-heading"><a href="/theater/warzone/narrative-campaigns/operational">Campaigns</a></h4>
+    <p>The iToysoldiers tournament manager makes it easy to run and participate in a miniature wargaming tournament.</p>
+    <p>View past and future <a href="/theater/warzone/narrative-campaigns/operational">campaigns</a>.
+  </div>
+</div>',
+      'format' => 'pure_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '189d8393-80b1-43e9-8b5e-f267f770398f';
+    $display->content['new-189d8393-80b1-43e9-8b5e-f267f770398f'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-189d8393-80b1-43e9-8b5e-f267f770398f';
+    $pane = new stdClass();
+    $pane->pid = 'new-b7083836-b9a1-46bd-8818-c946d3864451';
+    $pane->panel = 'contentmainright';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_lists-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b7083836-b9a1-46bd-8818-c946d3864451';
+    $display->content['new-b7083836-b9a1-46bd-8818-c946d3864451'] = $pane;
+    $display->panels['contentmainright'][0] = 'new-b7083836-b9a1-46bd-8818-c946d3864451';
+    $pane = new stdClass();
+    $pane->pid = 'new-4a869d36-0fef-4b65-89d4-937dc1b1b4a6';
+    $pane->panel = 'contentmaintop';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Nav Bar',
+      'title' => '',
+      'body' => '<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">War Zones</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/theater/warzone/leagues">Leagues</a></li>
+        <li><a href="/theater/warzone/tournaments">Tournaments</a></li>
+        <li><a href="/theater/warzone/narrative-campaigns/operational">Campaigns</a></li>
+        <li><a href="/theater/warzone/all">All</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>',
+      'format' => 'pure_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '4a869d36-0fef-4b65-89d4-937dc1b1b4a6';
+    $display->content['new-4a869d36-0fef-4b65-89d4-937dc1b1b4a6'] = $pane;
+    $display->panels['contentmaintop'][0] = 'new-4a869d36-0fef-4b65-89d4-937dc1b1b4a6';
+    $pane = new stdClass();
+    $pane->pid = 'new-002d325a-45e6-4223-bba1-22343703f3ca';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Page Header',
+      'title' => '',
+      'body' => '<div class="jumbotron">
+<h2>structured and competitive play on iToysoldiers</h2>
+</div>',
+      'format' => 'pure_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '002d325a-45e6-4223-bba1-22343703f3ca';
+    $display->content['new-002d325a-45e6-4223-bba1-22343703f3ca'] = $pane;
+    $display->panels['header'][0] = 'new-002d325a-45e6-4223-bba1-22343703f3ca';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-002d325a-45e6-4223-bba1-22343703f3ca';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['war_zone_landing_page'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'war_zone_main_page';
   $page->task = 'page';
   $page->admin_title = 'Theater Main Page';
