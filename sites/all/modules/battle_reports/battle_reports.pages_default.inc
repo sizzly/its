@@ -434,6 +434,287 @@ function battle_reports_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'battle_meta';
+  $page->task = 'page';
+  $page->admin_title = 'Battle Meta';
+  $page->admin_description = '';
+  $page->path = 'battle-reports/battle-meta';
+  $page->access = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Meta',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_battle_meta__panel_context_f6b30bd8-ed57-4c83-8522-f4f21f06b062';
+  $handler->task = 'page';
+  $handler->subtask = 'battle_meta';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => 'Battle Meta Data',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+      ),
+    ),
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => '',
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_home' => 0,
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_its2';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'two_brick_top' => NULL,
+      'two_brick_left_above' => NULL,
+      'two_brick_right_above' => NULL,
+      'two_brick_middle' => NULL,
+      'two_brick_left_below' => NULL,
+      'two_brick_right_below' => NULL,
+      'two_brick_bottom' => NULL,
+      'contentmain' => NULL,
+      'header' => NULL,
+      'quarter1' => NULL,
+      'quarter2' => NULL,
+      'half' => NULL,
+      'sidebar' => NULL,
+      'footer' => NULL,
+      'contentmaintop' => NULL,
+      'contentmainbottom' => NULL,
+      'contentmainright' => NULL,
+      'contentmainleft' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Battle Meta';
+  $display->uuid = '1cddb8cc-1776-4640-975f-c91abf9bfa07';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-004b8221-fa84-48a2-afd8-5b131caaa87c';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'term_meta_pages-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '004b8221-fa84-48a2-afd8-5b131caaa87c';
+    $display->content['new-004b8221-fa84-48a2-afd8-5b131caaa87c'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-004b8221-fa84-48a2-afd8-5b131caaa87c';
+    $pane = new stdClass();
+    $pane->pid = 'new-17212233-28e5-456d-aff7-ebb23ece0512';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'term_meta_pages-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '17212233-28e5-456d-aff7-ebb23ece0512';
+    $display->content['new-17212233-28e5-456d-aff7-ebb23ece0512'] = $pane;
+    $display->panels['contentmainleft'][1] = 'new-17212233-28e5-456d-aff7-ebb23ece0512';
+    $pane = new stdClass();
+    $pane->pid = 'new-fd5d52d3-8eac-4863-8e4b-96dd080e53ef';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'term_meta_pages-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'fd5d52d3-8eac-4863-8e4b-96dd080e53ef';
+    $display->content['new-fd5d52d3-8eac-4863-8e4b-96dd080e53ef'] = $pane;
+    $display->panels['contentmainleft'][2] = 'new-fd5d52d3-8eac-4863-8e4b-96dd080e53ef';
+    $pane = new stdClass();
+    $pane->pid = 'new-4f538ef2-fae9-4a6c-a5fe-6b6e0b6c72f1';
+    $pane->panel = 'contentmainright';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'term_meta_pages-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '4f538ef2-fae9-4a6c-a5fe-6b6e0b6c72f1';
+    $display->content['new-4f538ef2-fae9-4a6c-a5fe-6b6e0b6c72f1'] = $pane;
+    $display->panels['contentmainright'][0] = 'new-4f538ef2-fae9-4a6c-a5fe-6b6e0b6c72f1';
+    $pane = new stdClass();
+    $pane->pid = 'new-b1fa2411-b2f2-4ed5-a44f-83b03f51b2e0';
+    $pane->panel = 'contentmainright';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'term_meta_pages-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'b1fa2411-b2f2-4ed5-a44f-83b03f51b2e0';
+    $display->content['new-b1fa2411-b2f2-4ed5-a44f-83b03f51b2e0'] = $pane;
+    $display->panels['contentmainright'][1] = 'new-b1fa2411-b2f2-4ed5-a44f-83b03f51b2e0';
+    $pane = new stdClass();
+    $pane->pid = 'new-f2675078-824f-45a8-8573-5e180128f9af';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Page Header',
+      'title' => '',
+      'body' => '<h2>Classification and codification of your miniature wargaming battles</h2>',
+      'format' => 'pure_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'jumbotron',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f2675078-824f-45a8-8573-5e180128f9af';
+    $display->content['new-f2675078-824f-45a8-8573-5e180128f9af'] = $pane;
+    $display->panels['header'][0] = 'new-f2675078-824f-45a8-8573-5e180128f9af';
+    $pane = new stdClass();
+    $pane->pid = 'new-a272c169-c7be-4dc7-a7a7-0335bd359e6d';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Nav',
+      'title' => '',
+      'body' => '<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Battle Meta</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/battle-reports/battle-meta/missions">Missions</a></li>
+        <li><a href="/battle-reports/battle-meta/deployment">Deployment</a></li>
+        <li><a href="/battle-reports/battle-meta/units-and-commanders">Units/Commanders</a></li>
+        <li><a href="/battle-reports/battle-meta/scenario-rules-effect">Special Rules</a></li>
+        <li><a href="/battle-reports/battle-meta/victory-conditions">Victory Conditions</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>',
+      'format' => 'pure_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a272c169-c7be-4dc7-a7a7-0335bd359e6d';
+    $display->content['new-a272c169-c7be-4dc7-a7a7-0335bd359e6d'] = $pane;
+    $display->panels['header'][1] = 'new-a272c169-c7be-4dc7-a7a7-0335bd359e6d';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['battle_meta'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'battles_main_page';
   $page->task = 'page';
   $page->admin_title = 'Battles Main Page';
