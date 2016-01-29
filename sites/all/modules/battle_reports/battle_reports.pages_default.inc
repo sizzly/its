@@ -13,6 +13,264 @@ function battle_reports_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_edit_form_mutator_7';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -26;
+  $handler->conf = array(
+    'title' => 'Battle Results',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Title',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 0,
+        'label' => 'Body',
+        'hidden_field' => 0,
+      ),
+      'field_images' => array(
+        'override' => 0,
+        'label' => 'Images',
+        'hidden_field' => 0,
+      ),
+      'field_game' => array(
+        'override' => 1,
+        'label' => 'Game',
+        'hidden_field' => '1',
+      ),
+      'field_mission' => array(
+        'override' => 0,
+        'label' => 'Mission',
+        'hidden_field' => 0,
+      ),
+      'field_game_date' => array(
+        'override' => 0,
+        'label' => 'Date',
+        'hidden_field' => 0,
+      ),
+      'field_your_army' => array(
+        'override' => 0,
+        'label' => 'Your Army',
+        'hidden_field' => 0,
+      ),
+      'field_opponent_s_army' => array(
+        'override' => 0,
+        'label' => 'Opponent\'s Army',
+        'hidden_field' => 0,
+      ),
+      'field_your_results' => array(
+        'override' => 0,
+        'label' => 'Your Results',
+        'hidden_field' => 0,
+      ),
+      'field_opponent' => array(
+        'override' => 0,
+        'label' => 'Opponent ID',
+        'hidden_field' => 0,
+      ),
+      'field_victory' => array(
+        'override' => 0,
+        'label' => 'Victory',
+        'hidden_field' => 0,
+      ),
+      'field_draw' => array(
+        'override' => 0,
+        'label' => 'Draw',
+        'hidden_field' => 0,
+      ),
+      'field_defeat' => array(
+        'override' => 0,
+        'label' => 'Defeat',
+        'hidden_field' => 0,
+      ),
+      'field_location' => array(
+        'override' => 0,
+        'label' => 'Battlefield',
+        'hidden_field' => 0,
+      ),
+      'field_event_link' => array(
+        'override' => 1,
+        'label' => 'Event',
+        'hidden_field' => '1',
+      ),
+      'field_opponent_s_name' => array(
+        'override' => 0,
+        'label' => 'Opponent\'s Name',
+        'hidden_field' => 0,
+      ),
+      'field_game_reference' => array(
+        'override' => 1,
+        'label' => 'Game Reference',
+        'hidden_field' => '1',
+      ),
+      'field_points_per_army' => array(
+        'override' => 0,
+        'label' => 'Points per army',
+        'hidden_field' => 0,
+      ),
+      'field_batteresult_commander' => array(
+        'override' => 0,
+        'label' => 'Commander',
+        'hidden_field' => 0,
+      ),
+      'field_battle_most_valuable_unit' => array(
+        'override' => 0,
+        'label' => 'Most Valuable Unit',
+        'hidden_field' => 0,
+      ),
+      'field_battle_deployment' => array(
+        'override' => 0,
+        'label' => 'Deployment',
+        'hidden_field' => 0,
+      ),
+      'field_battle_mission_rules' => array(
+        'override' => 0,
+        'label' => 'Mission Rules in Effect',
+        'hidden_field' => 0,
+      ),
+      'field_battle_my_vc' => array(
+        'override' => 0,
+        'label' => 'My Victory Conditions met',
+        'hidden_field' => 0,
+      ),
+      'field_image' => array(
+        'override' => 1,
+        'label' => 'Image',
+        'hidden_field' => '1',
+      ),
+      'field_allied_detatchment' => array(
+        'override' => 0,
+        'label' => 'Your Allied Detatchment',
+        'hidden_field' => 0,
+      ),
+      'field_opponent_s_allied_detachme' => array(
+        'override' => 0,
+        'label' => 'Opponent\'s Allied Detachment',
+        'hidden_field' => 0,
+      ),
+      'field_tourney_p1_battle' => array(
+        'override' => 0,
+        'label' => 'Tourney P1',
+        'hidden_field' => 0,
+      ),
+      'field_tourney_p2_battle' => array(
+        'override' => 0,
+        'label' => 'Tourney P2',
+        'hidden_field' => 0,
+      ),
+      'field_your_commander_survival' => array(
+        'override' => 0,
+        'label' => 'Your Commander Survival',
+        'hidden_field' => 0,
+      ),
+      'field_enemy_commander_survival' => array(
+        'override' => 0,
+        'label' => 'Enemy Commander Survival',
+        'hidden_field' => 0,
+      ),
+      'field_its_rating' => array(
+        'override' => 0,
+        'label' => 'iTS_Rating',
+        'hidden_field' => 0,
+      ),
+      'field_battleresult_enemy_command' => array(
+        'override' => 0,
+        'label' => 'Enemy Commander',
+        'hidden_field' => 0,
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 1,
+        'label' => 'Revision information',
+        'hidden_field' => '1',
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':flag' => array(
+        'override' => 0,
+        'label' => 'Flags',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'game_results' => 'game_results',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $export['node_edit_form_mutator_7'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_6';
   $handler->task = 'node_view';
   $handler->subtask = '';
@@ -79,6 +337,28 @@ function battle_reports_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-af97c993-441a-487c-965e-ee1957f6afcb';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'battles_all_page_layout-panel_pane_9';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grey-container',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'af97c993-441a-487c-965e-ee1957f6afcb';
+    $display->content['new-af97c993-441a-487c-965e-ee1957f6afcb'] = $pane;
+    $display->panels['contentmainbottom'][0] = 'new-af97c993-441a-487c-965e-ee1957f6afcb';
+    $pane = new stdClass();
     $pane->pid = 'new-4ff7101e-a0ad-4ca3-a5d3-73ba72109d3f';
     $pane->panel = 'contentmainbottom';
     $pane->type = 'views_panes';
@@ -92,11 +372,11 @@ function battle_reports_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '4ff7101e-a0ad-4ca3-a5d3-73ba72109d3f';
     $display->content['new-4ff7101e-a0ad-4ca3-a5d3-73ba72109d3f'] = $pane;
-    $display->panels['contentmainbottom'][0] = 'new-4ff7101e-a0ad-4ca3-a5d3-73ba72109d3f';
+    $display->panels['contentmainbottom'][1] = 'new-4ff7101e-a0ad-4ca3-a5d3-73ba72109d3f';
     $pane = new stdClass();
     $pane->pid = 'new-cb8674ff-a3d5-4600-aca6-16a044111c22';
     $pane->panel = 'contentmainbottom';
@@ -126,16 +406,16 @@ function battle_reports_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'cb8674ff-a3d5-4600-aca6-16a044111c22';
     $display->content['new-cb8674ff-a3d5-4600-aca6-16a044111c22'] = $pane;
-    $display->panels['contentmainbottom'][1] = 'new-cb8674ff-a3d5-4600-aca6-16a044111c22';
+    $display->panels['contentmainbottom'][2] = 'new-cb8674ff-a3d5-4600-aca6-16a044111c22';
     $pane = new stdClass();
-    $pane->pid = 'new-af97c993-441a-487c-965e-ee1957f6afcb';
+    $pane->pid = 'new-908e293a-e296-432c-a4fd-03acc0186014';
     $pane->panel = 'contentmainbottom';
     $pane->type = 'views_panes';
-    $pane->subtype = 'battles_all_page_layout-panel_pane_9';
+    $pane->subtype = 'files_test_modal-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -143,16 +423,13 @@ function battle_reports_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grey-container',
-    );
+    $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = 'af97c993-441a-487c-965e-ee1957f6afcb';
-    $display->content['new-af97c993-441a-487c-965e-ee1957f6afcb'] = $pane;
-    $display->panels['contentmainbottom'][2] = 'new-af97c993-441a-487c-965e-ee1957f6afcb';
+    $pane->uuid = '908e293a-e296-432c-a4fd-03acc0186014';
+    $display->content['new-908e293a-e296-432c-a4fd-03acc0186014'] = $pane;
+    $display->panels['contentmainbottom'][3] = 'new-908e293a-e296-432c-a4fd-03acc0186014';
     $pane = new stdClass();
     $pane->pid = 'new-a60629d9-248b-487d-9316-1fce41c2cef1';
     $pane->panel = 'contentmainbottom';
@@ -172,11 +449,11 @@ function battle_reports_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'a60629d9-248b-487d-9316-1fce41c2cef1';
     $display->content['new-a60629d9-248b-487d-9316-1fce41c2cef1'] = $pane;
-    $display->panels['contentmainbottom'][3] = 'new-a60629d9-248b-487d-9316-1fce41c2cef1';
+    $display->panels['contentmainbottom'][4] = 'new-a60629d9-248b-487d-9316-1fce41c2cef1';
     $pane = new stdClass();
     $pane->pid = 'new-2aaa0565-fe46-4a54-b1fa-a516a194f6f3';
     $pane->panel = 'contentmainbottom';
@@ -196,11 +473,11 @@ function battle_reports_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '2aaa0565-fe46-4a54-b1fa-a516a194f6f3';
     $display->content['new-2aaa0565-fe46-4a54-b1fa-a516a194f6f3'] = $pane;
-    $display->panels['contentmainbottom'][4] = 'new-2aaa0565-fe46-4a54-b1fa-a516a194f6f3';
+    $display->panels['contentmainbottom'][5] = 'new-2aaa0565-fe46-4a54-b1fa-a516a194f6f3';
     $pane = new stdClass();
     $pane->pid = 'new-8153254c-2d8f-4fb9-91f9-12b1a54f90f4';
     $pane->panel = 'contentmainleft';
