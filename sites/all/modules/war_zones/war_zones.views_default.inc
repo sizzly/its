@@ -4335,7 +4335,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Field: Round (field_round_counter_tourney) */
+  /* Contextual filter: Field collection item: Round (field_round_counter_tourney) */
   $handler->display->display_options['arguments']['field_round_counter_tourney_value']['id'] = 'field_round_counter_tourney_value';
   $handler->display->display_options['arguments']['field_round_counter_tourney_value']['table'] = 'field_data_field_round_counter_tourney';
   $handler->display->display_options['arguments']['field_round_counter_tourney_value']['field'] = 'field_round_counter_tourney_value';

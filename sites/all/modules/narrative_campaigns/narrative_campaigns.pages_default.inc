@@ -432,6 +432,56 @@ function narrative_campaigns_default_page_manager_pages() {
     $pane->uuid = 'ef67429a-e5ed-40fd-a7b6-680185207c97';
     $display->content['new-ef67429a-e5ed-40fd-a7b6-680185207c97'] = $pane;
     $display->panels['contentmain'][1] = 'new-ef67429a-e5ed-40fd-a7b6-680185207c97';
+    $pane = new stdClass();
+    $pane->pid = 'new-d46933c3-ed50-4ace-b751-59a64f7b4ec3';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:narrative_campaign_instance:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '5',
+                ),
+              ),
+            ),
+            'field_status_value' => array(
+              0 => '5',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Submit Battle Form',
+      'title' => 'Submit Battle',
+      'body' => '<?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'warzone_campaign_report_battle_p\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>',
+      'format' => 'php_code',
+      'substitute' => 0,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'd46933c3-ed50-4ace-b751-59a64f7b4ec3';
+    $display->content['new-d46933c3-ed50-4ace-b751-59a64f7b4ec3'] = $pane;
+    $display->panels['contentmain'][2] = 'new-d46933c3-ed50-4ace-b751-59a64f7b4ec3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

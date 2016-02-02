@@ -5871,76 +5871,6 @@ function war_zones_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-armies-field_army_elo_v2'.
-  $field_instances['taxonomy_term-armies-field_army_elo_v2'] = array(
-    'bundle' => 'armies',
-    'default_value' => array(
-      0 => array(
-        'value' => 1400,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_army_elo_v2',
-    'label' => 'Army Ranking',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_hidden',
-      'settings' => array(),
-      'type' => 'field_hidden',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'taxonomy_term-armies-field_army_game'.
-  $field_instances['taxonomy_term-armies-field_army_game'] = array(
-    'bundle' => 'armies',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_army_game',
-    'label' => 'Game',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'taxonomy_term-armies-field_image'.
   $field_instances['taxonomy_term-armies-field_image'] = array(
     'bundle' => 'armies',
@@ -6195,7 +6125,6 @@ function war_zones_field_default_field_instances() {
   t('Allow sign up after campaign starts?');
   t('Army');
   t('Army Points');
-  t('Army Ranking');
   t('Article Body');
   t('Associated Nodes');
   t('Badge');
