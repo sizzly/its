@@ -1027,7 +1027,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -1104,7 +1104,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -1429,6 +1429,10 @@ function its_views_views_default_views() {
 
   /* Display: Meta Data */
   $handler = $view->new_display('panel_pane', 'Meta Data', 'panel_pane_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'list-group';
@@ -1456,6 +1460,8 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['field_army_profile']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_army_profile']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_army_profile']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_army_profile']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_army_profile']['delta_offset'] = '0';
   $handler->display->display_options['pane_category']['name'] = 'Army Profile';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -1473,56 +1479,6 @@ function its_views_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  $handler->display->display_options['pane_category']['name'] = 'Model Projects';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Tools */
-  $handler = $view->new_display('panel_pane', 'Tools', 'panel_pane_3');
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'panel panel-default';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'panel-body';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: glory */
-  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'glory';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: ShareThis Link */
-  $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['table'] = 'node';
-  $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['label'] = '';
-  $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['sharethis']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['sharethis']['element_wrapper_class'] = 'pull-right';
-  /* Field: Content: Models: All: Start Project */
-  $handler->display->display_options['fields']['models_all_start_project']['id'] = 'models_all_start_project';
-  $handler->display->display_options['fields']['models_all_start_project']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['models_all_start_project']['field'] = 'models_all_start_project';
-  $handler->display->display_options['fields']['models_all_start_project']['label'] = '';
-  $handler->display->display_options['fields']['models_all_start_project']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['models_all_start_project']['alter']['preserve_tags'] = '<a>';
-  $handler->display->display_options['fields']['models_all_start_project']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['models_all_start_project']['rules_link'] = array(
-    'rules_link_parameters' => '',
-    'rules_link_rewrite' => '',
-  );
-  /* Field: Flags: Flag link */
-  $handler->display->display_options['fields']['ops']['id'] = 'ops';
-  $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
-  $handler->display->display_options['fields']['ops']['field'] = 'ops';
-  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['ops']['label'] = '';
-  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['ops']['link_type'] = 'toggle';
   $handler->display->display_options['pane_category']['name'] = 'Model Projects';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['army_profile_all_page_layout'] = $view;
@@ -2109,11 +2065,10 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_your_army_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_your_army_tid']['vocabulary'] = 'armies';
   $handler->display->display_options['filters']['field_your_army_tid']['hierarchy'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
@@ -2133,9 +2088,6 @@ function its_views_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   /* Filter criterion: Field: Your Army (field_your_army) */
   $handler->display->display_options['filters']['field_your_army_tid_1']['id'] = 'field_your_army_tid_1';
   $handler->display->display_options['filters']['field_your_army_tid_1']['table'] = 'field_data_field_your_army';
@@ -2346,11 +2298,10 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_your_army_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_your_army_tid']['vocabulary'] = 'armies';
   $handler->display->display_options['filters']['field_your_army_tid']['hierarchy'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
@@ -2371,9 +2322,6 @@ function its_views_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
   /* Filter criterion: Field: Your Army (field_your_army) */
   $handler->display->display_options['filters']['field_your_army_tid_1']['id'] = 'field_your_army_tid_1';
   $handler->display->display_options['filters']['field_your_army_tid_1']['table'] = 'field_data_field_your_army';
@@ -5210,16 +5158,15 @@ function its_views_views_default_views() {
   $handler->display->display_options['style_options']['height'] = '175';
   $handler->display->display_options['style_options']['isstacked'] = 0;
   $handler->display->display_options['style_options']['pointsize'] = '0';
-  /* Relationship: Field: Game (field_game) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['relationships']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['relationships']['field_game_tid']['field'] = 'field_game_tid';
   $handler->display->display_options['relationships']['field_game_tid']['required'] = TRUE;
-  /* Field: Field: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: COUNT(DISTINCT Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -5396,11 +5343,10 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'game_results' => 'game_results',
   );
-  /* Filter criterion: Field: Game (field_game) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
   $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game Filter';
@@ -5412,7 +5358,6 @@ function its_views_views_default_views() {
     3 => '3',
     1 => 0,
   );
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $handler->display->display_options['path'] = 'stats/armies/battles-by-army';
   $export['game_views'] = $view;
 
@@ -8215,12 +8160,11 @@ Salute  Comment  Share
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: COUNT(DISTINCT User: Name) */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -8248,14 +8192,12 @@ Salute  Comment  Share
     'game_results' => 'game_results',
     'game_result_system_' => 'game_result_system_',
   );
-  /* Filter criterion: Field: Game (field_game) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['relationship'] = 'uid';
   $handler->display->display_options['filters']['field_game_tid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   $export['player_stats_and_charts'] = $view;
 
   $view = new view();
@@ -9347,1643 +9289,6 @@ Salute  Comment  Share
   $export['reference_lookup'] = $view;
 
   $view = new view();
-  $view->name = 'reports_battle_data_all_time';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Reports: Battle Data - All Time';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['bef'] = array(
-    'general' => array(
-      'allow_secondary' => 0,
-      'secondary_label' => 'Advanced options',
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
-    ),
-    'field_game_tid' => array(
-      'bef_format' => 'default',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
-          ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
-        ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'any_label' => NULL,
-        'filter_rewrite_values' => NULL,
-      ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
-    ),
-    'field_your_army_tid' => array(
-      'bef_format' => 'default',
-      'more_options' => array(
-        'bef_select_all_none' => 1,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
-          ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
-        ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'any_label' => NULL,
-        'filter_rewrite_values' => NULL,
-      ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
-    ),
-    'secondary_label' => NULL,
-    'collapsible_label' => NULL,
-    'combine_rewrite' => NULL,
-    'reset_label' => NULL,
-    'bef_filter_description' => NULL,
-    'any_label' => NULL,
-    'filter_rewrite_values' => NULL,
-  );
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'counter' => 'counter',
-    'field_game' => 'field_game',
-    'nid' => 'nid',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'counter' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_game' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['date_format'] = 'short';
-  $handler->display->display_options['fields']['created']['format_date_sql'] = 0;
-  /* Field: Global: View result counter */
-  $handler->display->display_options['fields']['counter']['id'] = 'counter';
-  $handler->display->display_options['fields']['counter']['table'] = 'views';
-  $handler->display->display_options['fields']['counter']['field'] = 'counter';
-  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-    'game_result_system_' => 'game_result_system_',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-
-  /* Display: Armies/Factions */
-  $handler = $view->new_display('attachment', 'Armies/Factions', 'attachment_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Army/Faction Stats';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_image' => 'field_image',
-    'field_your_army' => 'field_your_army',
-    'nid' => 'nid',
-    'field_your_results' => 'field_your_results',
-    'field_victory' => 'field_victory',
-    'field_draw' => 'field_draw',
-    'field_defeat' => 'field_defeat',
-    'field_your_results_1' => 'field_your_results_1',
-  );
-  $handler->display->display_options['style_options']['default'] = 'field_your_results';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_image' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_army' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_victory' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_draw' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_defeat' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results_1' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Your Army (field_your_army) */
-  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
-  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'button',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
-  /* Field: Field: Your Army */
-  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['label'] = '';
-  $handler->display->display_options['fields']['field_your_army']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_your_results']['label'] = 'Battle Score';
-  $handler->display->display_options['fields']['field_your_results']['type'] = 'list_key';
-  /* Field: Field: Victory */
-  $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
-  $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_victory']['label'] = 'Victories';
-  /* Field: Field: Draw */
-  $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
-  $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_draw']['label'] = 'Draws';
-  /* Field: Field: Defeat */
-  $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_defeat']['label'] = 'Defeats';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results_1']['id'] = 'field_your_results_1';
-  $handler->display->display_options['fields']['field_your_results_1']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['group_type'] = 'avg';
-  $handler->display->display_options['fields']['field_your_results_1']['label'] = 'Avg Battle Score';
-  $handler->display->display_options['fields']['field_your_results_1']['type'] = 'list_key';
-  /* Field: Content: Author uid */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'node';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['uid']['label'] = '# Players';
-  $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
-    'default' => 0,
-  );
-  $handler->display->display_options['attachment_position'] = 'after';
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-
-  /* Display: Yearly Stats */
-  $handler = $view->new_display('page', 'Yearly Stats', 'page_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'google_chart_tools_views';
-  $handler->display->display_options['style_options']['title'] = 'Game Systems';
-  $handler->display->display_options['style_options']['type'] = 'PieChart';
-  $handler->display->display_options['style_options']['width'] = '647';
-  $handler->display->display_options['style_options']['height'] = '400';
-  $handler->display->display_options['style_options']['3d'] = 1;
-  $handler->display->display_options['style_options']['isstacked'] = 0;
-  $handler->display->display_options['style_options']['pointsize'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Game */
-  $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
-  $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-  $handler->display->display_options['path'] = 'stats/yearly';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'By Year';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Games over Time */
-  $handler = $view->new_display('attachment', 'Games over Time', 'attachment_2');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'google_chart_tools_views';
-  $handler->display->display_options['style_options']['title'] = '# Games per day';
-  $handler->display->display_options['style_options']['type'] = 'ColumnChart';
-  $handler->display->display_options['style_options']['width'] = '600';
-  $handler->display->display_options['style_options']['height'] = '400';
-  $handler->display->display_options['style_options']['3d'] = 1;
-  $handler->display->display_options['style_options']['isstacked'] = 0;
-  $handler->display->display_options['style_options']['pointsize'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_game_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_game_date']['settings'] = array(
-    'format_type' => 'privatemsg_current_year',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-  $handler->display->display_options['displays'] = array(
-    'default' => 0,
-    'page_1' => 0,
-  );
-  $handler->display->display_options['attachment_position'] = 'after';
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-
-  /* Display: Summary */
-  $handler = $view->new_display('attachment', 'Summary', 'attachment_3');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  /* Field: Global: Math expression */
-  $handler->display->display_options['fields']['expression']['id'] = 'expression';
-  $handler->display->display_options['fields']['expression']['table'] = 'views';
-  $handler->display->display_options['fields']['expression']['field'] = 'expression';
-  $handler->display->display_options['fields']['expression']['label'] = '# Battles';
-  $handler->display->display_options['fields']['expression']['precision'] = '0';
-  $handler->display->display_options['fields']['expression']['expression'] = '[nid]/2';
-  /* Field: Content: Author uid */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'node';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['uid']['label'] = '# Players';
-  /* Field: Field: Your Army */
-  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['field_your_army']['label'] = '# Armies/factions';
-  /* Field: Field: Game */
-  $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
-  $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['field_game']['label'] = '# Game Systems';
-  $handler->display->display_options['fields']['field_game']['separator'] = ', ';
-  /* Field: Field: Mission */
-  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
-  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['field_mission']['label'] = '# Different Missions';
-  $handler->display->display_options['fields']['field_mission']['separator'] = ', ';
-  /* Field: Field: Points per army */
-  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['group_type'] = 'avg';
-  $handler->display->display_options['fields']['field_points_per_army']['label'] = 'Avg Points Per Army';
-  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
-    'thousand_separator' => ',',
-    'prefix_suffix' => 1,
-  );
-  $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
-    'default' => 0,
-  );
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-
-  /* Display: Players */
-  $handler = $view->new_display('attachment', 'Players', 'attachment_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Player Stats';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_image' => 'field_image',
-    'field_your_army' => 'field_your_army',
-    'nid' => 'nid',
-    'field_your_results' => 'field_your_results',
-    'field_victory' => 'field_victory',
-    'field_draw' => 'field_draw',
-    'field_defeat' => 'field_defeat',
-    'field_your_results_1' => 'field_your_results_1',
-  );
-  $handler->display->display_options['style_options']['default'] = 'field_your_results';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_image' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_army' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_victory' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_draw' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_defeat' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results_1' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Player Stats</h3>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Your Army (field_your_army) */
-  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
-  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_your_results']['label'] = 'Battle Score';
-  $handler->display->display_options['fields']['field_your_results']['type'] = 'list_key';
-  /* Field: Field: Victory */
-  $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
-  $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_victory']['label'] = 'Victories';
-  /* Field: Field: Draw */
-  $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
-  $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_draw']['label'] = 'Draws';
-  /* Field: Field: Defeat */
-  $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_defeat']['label'] = 'Defeats';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results_1']['id'] = 'field_your_results_1';
-  $handler->display->display_options['fields']['field_your_results_1']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['group_type'] = 'avg';
-  $handler->display->display_options['fields']['field_your_results_1']['label'] = 'Avg Battle Score';
-  $handler->display->display_options['fields']['field_your_results_1']['type'] = 'list_key';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-    'game_result_system_' => 'game_result_system_',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-  /* Filter criterion: User: Roles */
-  $handler->display->display_options['filters']['rid']['id'] = 'rid';
-  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
-  $handler->display->display_options['filters']['rid']['field'] = 'rid';
-  $handler->display->display_options['filters']['rid']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['rid']['operator'] = 'not';
-  $handler->display->display_options['filters']['rid']['value'] = array(
-    8 => '8',
-  );
-  $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
-    'default' => 0,
-  );
-  $handler->display->display_options['attachment_position'] = 'after';
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-  $export['reports_battle_data_all_time'] = $view;
-
-  $view = new view();
-  $view->name = 'reports_battle_data_yearly';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Reports: Battle Data - Yearly';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['bef'] = array(
-    'general' => array(
-      'allow_secondary' => 0,
-      'secondary_label' => 'Advanced options',
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
-    ),
-    'field_game_tid' => array(
-      'bef_format' => 'default',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
-          ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
-        ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'any_label' => NULL,
-        'filter_rewrite_values' => NULL,
-      ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
-    ),
-    'field_your_army_tid' => array(
-      'bef_format' => 'default',
-      'more_options' => array(
-        'bef_select_all_none' => 1,
-        'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            'secondary_label' => NULL,
-            'collapsible_label' => NULL,
-            'combine_rewrite' => NULL,
-            'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
-          ),
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
-        ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'any_label' => NULL,
-        'filter_rewrite_values' => NULL,
-      ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
-    ),
-    'secondary_label' => NULL,
-    'collapsible_label' => NULL,
-    'combine_rewrite' => NULL,
-    'reset_label' => NULL,
-    'bef_filter_description' => NULL,
-    'any_label' => NULL,
-    'filter_rewrite_values' => NULL,
-  );
-  $handler->display->display_options['pager']['type'] = 'date_views_pager';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'counter' => 'counter',
-    'field_game' => 'field_game',
-    'nid' => 'nid',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'counter' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_game' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['date_format'] = 'short';
-  $handler->display->display_options['fields']['created']['format_date_sql'] = 0;
-  /* Field: Global: View result counter */
-  $handler->display->display_options['fields']['counter']['id'] = 'counter';
-  $handler->display->display_options['fields']['counter']['table'] = 'views';
-  $handler->display->display_options['fields']['counter']['field'] = 'counter';
-  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Contextual filter: Date: Date (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_options']['code'] = '$lastmonth =  date(\'Y\', strtotime(\'now -1 year\'));
-
-return $lastmonth;
-
-';
-  $handler->display->display_options['arguments']['date_argument']['granularity'] = 'year';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'node.created' => 'node.created',
-  );
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-    'game_result_system_' => 'game_result_system_',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-
-  /* Display: Armies/Factions */
-  $handler = $view->new_display('attachment', 'Armies/Factions', 'attachment_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Army/Faction Stats';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_image' => 'field_image',
-    'field_your_army' => 'field_your_army',
-    'nid' => 'nid',
-    'field_your_results' => 'field_your_results',
-    'field_victory' => 'field_victory',
-    'field_draw' => 'field_draw',
-    'field_defeat' => 'field_defeat',
-    'field_your_results_1' => 'field_your_results_1',
-  );
-  $handler->display->display_options['style_options']['default'] = 'field_your_results';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_image' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_army' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_victory' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_draw' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_defeat' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results_1' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Your Army (field_your_army) */
-  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
-  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'button',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
-  /* Field: Field: Your Army */
-  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['label'] = '';
-  $handler->display->display_options['fields']['field_your_army']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_your_results']['label'] = 'Battle Score';
-  $handler->display->display_options['fields']['field_your_results']['type'] = 'list_key';
-  /* Field: Field: Victory */
-  $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
-  $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_victory']['label'] = 'Victories';
-  /* Field: Field: Draw */
-  $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
-  $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_draw']['label'] = 'Draws';
-  /* Field: Field: Defeat */
-  $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_defeat']['label'] = 'Defeats';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results_1']['id'] = 'field_your_results_1';
-  $handler->display->display_options['fields']['field_your_results_1']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['group_type'] = 'avg';
-  $handler->display->display_options['fields']['field_your_results_1']['label'] = 'Avg Battle Score';
-  $handler->display->display_options['fields']['field_your_results_1']['type'] = 'list_key';
-  /* Field: Content: Author uid */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'node';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['uid']['label'] = '# Players';
-  $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
-    'default' => 0,
-  );
-  $handler->display->display_options['attachment_position'] = 'after';
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-
-  /* Display: Yearly Stats */
-  $handler = $view->new_display('page', 'Yearly Stats', 'page_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Yearly Stats';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'google_chart_tools_views';
-  $handler->display->display_options['style_options']['title'] = 'Game Systems';
-  $handler->display->display_options['style_options']['type'] = 'PieChart';
-  $handler->display->display_options['style_options']['width'] = '647';
-  $handler->display->display_options['style_options']['height'] = '400';
-  $handler->display->display_options['style_options']['3d'] = 1;
-  $handler->display->display_options['style_options']['isstacked'] = 0;
-  $handler->display->display_options['style_options']['pointsize'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Game */
-  $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
-  $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-  $handler->display->display_options['path'] = 'stats/yearly';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'By Year';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Games over Time */
-  $handler = $view->new_display('attachment', 'Games over Time', 'attachment_2');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'google_chart_tools_views';
-  $handler->display->display_options['style_options']['title'] = '# Games per day';
-  $handler->display->display_options['style_options']['type'] = 'ColumnChart';
-  $handler->display->display_options['style_options']['width'] = '600';
-  $handler->display->display_options['style_options']['height'] = '400';
-  $handler->display->display_options['style_options']['3d'] = 1;
-  $handler->display->display_options['style_options']['isstacked'] = 0;
-  $handler->display->display_options['style_options']['pointsize'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_game_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_game_date']['settings'] = array(
-    'format_type' => 'privatemsg_current_year',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-  $handler->display->display_options['displays'] = array(
-    'default' => 0,
-    'page_1' => 0,
-  );
-  $handler->display->display_options['attachment_position'] = 'after';
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-
-  /* Display: Summary */
-  $handler = $view->new_display('attachment', 'Summary', 'attachment_3');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  /* Field: Global: Math expression */
-  $handler->display->display_options['fields']['expression']['id'] = 'expression';
-  $handler->display->display_options['fields']['expression']['table'] = 'views';
-  $handler->display->display_options['fields']['expression']['field'] = 'expression';
-  $handler->display->display_options['fields']['expression']['label'] = '# Battles';
-  $handler->display->display_options['fields']['expression']['precision'] = '0';
-  $handler->display->display_options['fields']['expression']['expression'] = '[nid]/2';
-  /* Field: Content: Author uid */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'node';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['uid']['label'] = '# Players';
-  /* Field: Field: Your Army */
-  $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
-  $handler->display->display_options['fields']['field_your_army']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['field_your_army']['label'] = '# Armies/factions';
-  /* Field: Field: Game */
-  $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
-  $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['field_game']['label'] = '# Game Systems';
-  $handler->display->display_options['fields']['field_game']['separator'] = ', ';
-  /* Field: Field: Mission */
-  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
-  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['field_mission']['label'] = '# Different Missions';
-  $handler->display->display_options['fields']['field_mission']['separator'] = ', ';
-  /* Field: Field: Points per army */
-  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['group_type'] = 'avg';
-  $handler->display->display_options['fields']['field_points_per_army']['label'] = 'Avg Points Per Army';
-  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
-    'thousand_separator' => ',',
-    'prefix_suffix' => 1,
-  );
-  $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
-    'default' => 0,
-  );
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-
-  /* Display: Players */
-  $handler = $view->new_display('attachment', 'Players', 'attachment_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Player Stats';
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_image' => 'field_image',
-    'field_your_army' => 'field_your_army',
-    'nid' => 'nid',
-    'field_your_results' => 'field_your_results',
-    'field_victory' => 'field_victory',
-    'field_draw' => 'field_draw',
-    'field_defeat' => 'field_defeat',
-    'field_your_results_1' => 'field_your_results_1',
-  );
-  $handler->display->display_options['style_options']['default'] = 'field_your_results';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_image' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_army' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_victory' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_draw' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_defeat' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_results_1' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Player Stats</h3>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Your Army (field_your_army) */
-  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
-  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '# Battles';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results']['id'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_your_results']['label'] = 'Battle Score';
-  $handler->display->display_options['fields']['field_your_results']['type'] = 'list_key';
-  /* Field: Field: Victory */
-  $handler->display->display_options['fields']['field_victory']['id'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['table'] = 'field_data_field_victory';
-  $handler->display->display_options['fields']['field_victory']['field'] = 'field_victory';
-  $handler->display->display_options['fields']['field_victory']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_victory']['label'] = 'Victories';
-  /* Field: Field: Draw */
-  $handler->display->display_options['fields']['field_draw']['id'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['table'] = 'field_data_field_draw';
-  $handler->display->display_options['fields']['field_draw']['field'] = 'field_draw';
-  $handler->display->display_options['fields']['field_draw']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_draw']['label'] = 'Draws';
-  /* Field: Field: Defeat */
-  $handler->display->display_options['fields']['field_defeat']['id'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['table'] = 'field_data_field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['field'] = 'field_defeat';
-  $handler->display->display_options['fields']['field_defeat']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_defeat']['label'] = 'Defeats';
-  /* Field: Field: Your Results */
-  $handler->display->display_options['fields']['field_your_results_1']['id'] = 'field_your_results_1';
-  $handler->display->display_options['fields']['field_your_results_1']['table'] = 'field_data_field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['field'] = 'field_your_results';
-  $handler->display->display_options['fields']['field_your_results_1']['group_type'] = 'avg';
-  $handler->display->display_options['fields']['field_your_results_1']['label'] = 'Avg Battle Score';
-  $handler->display->display_options['fields']['field_your_results_1']['type'] = 'list_key';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'game_results' => 'game_results',
-    'game_result_system_' => 'game_result_system_',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Game (field_game) */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator_id'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['label'] = 'Game';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['operator'] = 'field_game_tid_op';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['identifier'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_game_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
-  $handler->display->display_options['filters']['field_game_tid']['hierarchy'] = 1;
-  /* Filter criterion: User: Roles */
-  $handler->display->display_options['filters']['rid']['id'] = 'rid';
-  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
-  $handler->display->display_options['filters']['rid']['field'] = 'rid';
-  $handler->display->display_options['filters']['rid']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['rid']['operator'] = 'not';
-  $handler->display->display_options['filters']['rid']['value'] = array(
-    8 => '8',
-  );
-  $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
-    'default' => 0,
-  );
-  $handler->display->display_options['attachment_position'] = 'after';
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-  $handler->display->display_options['inherit_pager'] = TRUE;
-  $export['reports_battle_data_yearly'] = $view;
-
-  $view = new view();
   $view->name = 'results_views';
   $view->description = '';
   $view->tag = 'Player';
@@ -11287,7 +9592,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['expression']['field'] = 'expression';
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['expression'] = '[expression] + [nid]';
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -11299,7 +9604,7 @@ return $lastmonth;
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Sort criterion: Field: Date (field_game_date) */
+  /* Sort criterion: Content: Date (field_game_date) */
   $handler->display->display_options['sorts']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['sorts']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['sorts']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -11885,7 +10190,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: State */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_state_challenge']['id'] = 'field_state_challenge';
   $handler->display->display_options['fields']['field_state_challenge']['table'] = 'field_data_field_state_challenge';
   $handler->display->display_options['fields']['field_state_challenge']['field'] = 'field_state_challenge';
@@ -11897,14 +10202,10 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_opponent']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Player 1 */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_player_1_challenge']['id'] = 'field_player_1_challenge';
   $handler->display->display_options['fields']['field_player_1_challenge']['table'] = 'field_data_field_player_1_challenge';
   $handler->display->display_options['fields']['field_player_1_challenge']['field'] = 'field_player_1_challenge';
-  $handler->display->display_options['fields']['field_player_1_challenge']['type'] = 'entityreference_entity_id';
-  $handler->display->display_options['fields']['field_player_1_challenge']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -11932,7 +10233,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['type']['value'] = array(
     'challenge' => 'challenge',
   );
-  /* Filter criterion: Content: State (field_state_challenge) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_state_challenge_value']['id'] = 'field_state_challenge_value';
   $handler->display->display_options['filters']['field_state_challenge_value']['table'] = 'field_data_field_state_challenge';
   $handler->display->display_options['filters']['field_state_challenge_value']['field'] = 'field_state_challenge_value';
@@ -13538,7 +11839,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -13653,7 +11954,7 @@ return $lastmonth;
     9 => 0,
     8 => 0,
   );
-  /* Filter criterion: Field: Date (field_game_date) */
+  /* Filter criterion: Content: Date (field_game_date) */
   $handler->display->display_options['filters']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['filters']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['filters']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -13721,7 +12022,7 @@ return $lastmonth;
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
-  /* Filter criterion: Field: Date (field_game_date) */
+  /* Filter criterion: Content: Date (field_game_date) */
   $handler->display->display_options['filters']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['filters']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['filters']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -14598,7 +12899,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'strong';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -14614,7 +12915,7 @@ return $lastmonth;
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Field: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
@@ -14691,7 +12992,7 @@ return $lastmonth;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'strong';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -14707,7 +13008,7 @@ return $lastmonth;
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Field: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
@@ -15064,11 +13365,10 @@ return $lastmonth;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
-  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: COUNT(Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -16573,12 +14873,11 @@ return $lastmonth;
   $handler->display->display_options['fields']['field_your_army']['table'] = 'field_data_field_your_army';
   $handler->display->display_options['fields']['field_your_army']['field'] = 'field_your_army';
   $handler->display->display_options['fields']['field_your_army']['exclude'] = TRUE;
-  /* Field: Field: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_game']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field: Battlefield */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
@@ -16909,7 +15208,7 @@ return $lastmonth;
   );
   $handler->display->display_options['filters']['field_location_nid_selective']['selective_display_field'] = 'field_location';
   $handler->display->display_options['filters']['field_location_nid_selective']['selective_display_sort'] = 'ASC';
-  /* Filter criterion: Field: Date (field_game_date) */
+  /* Filter criterion: Content: Date (field_game_date) */
   $handler->display->display_options['filters']['field_game_date_value']['id'] = 'field_game_date_value';
   $handler->display->display_options['filters']['field_game_date_value']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['filters']['field_game_date_value']['field'] = 'field_game_date_value';
@@ -18444,6 +16743,7 @@ return $lastmonth;
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
@@ -18853,7 +17153,7 @@ return $lastmonth;
     'game_results' => 'game_results',
     'game_result_system_' => 'game_result_system_',
   );
-  /* Filter criterion: Field: Game (field_game) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
   $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
   $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
@@ -18861,7 +17161,6 @@ return $lastmonth;
   $handler->display->display_options['filters']['field_game_tid']['value'] = array(
     0 => '16',
   );
-  $handler->display->display_options['filters']['field_game_tid']['vocabulary'] = 'games';
   /* Filter criterion: Content: Enemy Commander Survival (field_enemy_commander_survival) */
   $handler->display->display_options['filters']['field_enemy_commander_survival_value']['id'] = 'field_enemy_commander_survival_value';
   $handler->display->display_options['filters']['field_enemy_commander_survival_value']['table'] = 'field_data_field_enemy_commander_survival';
