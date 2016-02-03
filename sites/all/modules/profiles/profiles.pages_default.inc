@@ -671,6 +671,270 @@ function profiles_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['profiles_all_trophy_room'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'user_stats';
+  $page->task = 'page';
+  $page->admin_title = 'User Stats';
+  $page->admin_description = '';
+  $page->path = 'user/%user/stats/main';
+  $page->access = array(
+    'plugins' => array(),
+    'logic' => 'and',
+  );
+  $page->menu = array(
+    'type' => 'default tab',
+    'title' => 'Summary',
+    'name' => 'navigation',
+    'weight' => '-1',
+    'parent' => array(
+      'type' => 'tab',
+      'title' => 'Stats',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'user' => array(
+      'id' => 1,
+      'identifier' => 'User: ID',
+      'name' => 'entity_id:user',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_user_stats__panel_context_6e376f25-9573-4fa9-89b3-9986f26a9313';
+  $handler->task = 'page';
+  $handler->subtask = 'user_stats';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'left_above' => NULL,
+      'right_above' => NULL,
+      'middle' => NULL,
+      'left_below' => NULL,
+      'right_below' => NULL,
+      'bottom' => NULL,
+      'header' => NULL,
+      'quarter1' => NULL,
+      'quarter2' => NULL,
+      'half' => NULL,
+      'sidebar' => NULL,
+      'footer' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%user:name Stats';
+  $display->uuid = '5ba042ef-3ea9-44ff-9f1a-68234f049142';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e1c4dcf5-d855-430f-991c-b662fb9d38d8';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = '_player_profile_201406-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e1c4dcf5-d855-430f-991c-b662fb9d38d8';
+    $display->content['new-e1c4dcf5-d855-430f-991c-b662fb9d38d8'] = $pane;
+    $display->panels['contentmain'][0] = 'new-e1c4dcf5-d855-430f-991c-b662fb9d38d8';
+    $pane = new stdClass();
+    $pane->pid = 'new-06c0b4b5-ab2a-4eda-8940-1cc77b9f733d';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_stats-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '06c0b4b5-ab2a-4eda-8940-1cc77b9f733d';
+    $display->content['new-06c0b4b5-ab2a-4eda-8940-1cc77b9f733d'] = $pane;
+    $display->panels['contentmain'][1] = 'new-06c0b4b5-ab2a-4eda-8940-1cc77b9f733d';
+    $pane = new stdClass();
+    $pane->pid = 'new-08f056ea-c8db-408b-9bf1-1df762053aaa';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_stats-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '08f056ea-c8db-408b-9bf1-1df762053aaa';
+    $display->content['new-08f056ea-c8db-408b-9bf1-1df762053aaa'] = $pane;
+    $display->panels['contentmain'][2] = 'new-08f056ea-c8db-408b-9bf1-1df762053aaa';
+    $pane = new stdClass();
+    $pane->pid = 'new-0f78d26d-19d5-488b-94ed-570b08c1d080';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_stats-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '0f78d26d-19d5-488b-94ed-570b08c1d080';
+    $display->content['new-0f78d26d-19d5-488b-94ed-570b08c1d080'] = $pane;
+    $display->panels['contentmain'][3] = 'new-0f78d26d-19d5-488b-94ed-570b08c1d080';
+    $pane = new stdClass();
+    $pane->pid = 'new-2d2cfe5a-aae6-43f2-ae74-5415724f5cd9';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_stats-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '2d2cfe5a-aae6-43f2-ae74-5415724f5cd9';
+    $display->content['new-2d2cfe5a-aae6-43f2-ae74-5415724f5cd9'] = $pane;
+    $display->panels['contentmain'][4] = 'new-2d2cfe5a-aae6-43f2-ae74-5415724f5cd9';
+    $pane = new stdClass();
+    $pane->pid = 'new-2b87b68d-289b-4019-91dd-755d3cfd1e4a';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_stats-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '2b87b68d-289b-4019-91dd-755d3cfd1e4a';
+    $display->content['new-2b87b68d-289b-4019-91dd-755d3cfd1e4a'] = $pane;
+    $display->panels['contentmain'][5] = 'new-2b87b68d-289b-4019-91dd-755d3cfd1e4a';
+    $pane = new stdClass();
+    $pane->pid = 'new-440affee-298a-47d5-b81f-7fe465bf3415';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'user_stats-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '440affee-298a-47d5-b81f-7fe465bf3415';
+    $display->content['new-440affee-298a-47d5-b81f-7fe465bf3415'] = $pane;
+    $display->panels['contentmain'][6] = 'new-440affee-298a-47d5-b81f-7fe465bf3415';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['user_stats'] = $page;
+
   return $pages;
 
 }
