@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function its_achievements_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function its_achievements_field_group_info() {
       ),
     ),
   );
-  $export['group_content_wrapper|node|achievement|teaser'] = $field_group;
+  $field_groups['group_content_wrapper|node|achievement|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -69,7 +69,7 @@ function its_achievements_field_group_info() {
       ),
     ),
   );
-  $export['group_image_wrapper|node|achievement|teaser'] = $field_group;
+  $field_groups['group_image_wrapper|node|achievement|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -97,7 +97,7 @@ function its_achievements_field_group_info() {
       ),
     ),
   );
-  $export['group_label|node|achievement|teaser'] = $field_group;
+  $field_groups['group_label|node|achievement|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -127,7 +127,14 @@ function its_achievements_field_group_info() {
       ),
     ),
   );
-  $export['group_wrapper|node|achievement|teaser'] = $field_group;
+  $field_groups['group_wrapper|node|achievement|teaser'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Content Wrapper');
+  t('Image Wrapper');
+  t('Label Wrapper');
+  t('Wrapper');
+
+  return $field_groups;
 }

@@ -198,7 +198,6 @@ function its_achievements_default_rules_configuration() {
   $items['rules_master_renown_awarded_v2'] = entity_import('rules_config', '{ "rules_master_renown_awarded_v2" : {
       "LABEL" : "Master: Renown Awarded V2",
       "PLUGIN" : "reaction rule",
-      "ACTIVE" : false,
       "OWNER" : "rules",
       "TAGS" : [ "Master", "Renown" ],
       "REQUIRES" : [
@@ -647,45 +646,33 @@ function its_achievements_default_rules_configuration() {
         },
         { "CONDITIONAL" : [
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "0" } },
+              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "39" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3286", "uid" : [ "uid" ] } },
-                { "CONDITIONAL" : [
-                    {
-                      "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "9" } },
-                      "DO" : [
-                        { "component_rules_award_achievement" : { "aid" : "3304", "uid" : [ "uid" ] } },
-                        { "CONDITIONAL" : [
-                            {
-                              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "19" } },
-                              "DO" : [
-                                { "component_rules_award_achievement" : { "aid" : "3305", "uid" : [ "uid" ] } },
-                                { "CONDITIONAL" : [
-                                    {
-                                      "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "29" } },
-                                      "DO" : [
-                                        { "component_rules_award_achievement" : { "aid" : "3306", "uid" : [ "uid" ] } },
-                                        { "CONDITIONAL" : [
-                                            {
-                                              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "39" } },
-                                              "DO" : [
-                                                { "component_rules_award_achievement" : { "aid" : "3307", "uid" : [ "uid" ] } }
-                                              ]
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
+                { "component_rules_award_achievement" : { "aid" : "3307", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "29" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3306", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "19" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3305", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "9" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3304", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "0" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3286", "uid" : [ "uid" ] } }
               ]
             }
           ]
