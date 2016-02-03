@@ -17127,6 +17127,17 @@ Salute  Comment  Share
   /* Display: Mage Hunter */
   $handler = $view->new_display('views_rules', 'Mage Hunter', 'views_rules_3');
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Content authored */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'users';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Relationship: Field: Your Army (field_your_army) */
+  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
+  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
+  $handler->display->display_options['relationships']['field_your_army_tid']['relationship'] = 'uid';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -17153,14 +17164,6 @@ Salute  Comment  Share
     'game_results' => 'game_results',
     'game_result_system_' => 'game_result_system_',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_game_tid']['id'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['table'] = 'field_data_field_game';
-  $handler->display->display_options['filters']['field_game_tid']['field'] = 'field_game_tid';
-  $handler->display->display_options['filters']['field_game_tid']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['field_game_tid']['value'] = array(
-    0 => '16',
-  );
   /* Filter criterion: Content: Enemy Commander Survival (field_enemy_commander_survival) */
   $handler->display->display_options['filters']['field_enemy_commander_survival_value']['id'] = 'field_enemy_commander_survival_value';
   $handler->display->display_options['filters']['field_enemy_commander_survival_value']['table'] = 'field_data_field_enemy_commander_survival';
@@ -17169,6 +17172,16 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['field_enemy_commander_survival_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Taxonomy term: Game System (field_game_system_armies) */
+  $handler->display->display_options['filters']['field_game_system_armies_tid']['id'] = 'field_game_system_armies_tid';
+  $handler->display->display_options['filters']['field_game_system_armies_tid']['table'] = 'field_data_field_game_system_armies';
+  $handler->display->display_options['filters']['field_game_system_armies_tid']['field'] = 'field_game_system_armies_tid';
+  $handler->display->display_options['filters']['field_game_system_armies_tid']['relationship'] = 'field_your_army_tid';
+  $handler->display->display_options['filters']['field_game_system_armies_tid']['value'] = array(
+    42 => '42',
+  );
+  $handler->display->display_options['filters']['field_game_system_armies_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_game_system_armies_tid']['vocabulary'] = 'armies';
   $handler->display->display_options['rules_parameter'] = array(
     'uid' => array(
       'enabled' => 1,
