@@ -262,7 +262,7 @@
         </div><!-- /.padding-md -->
     </div><!-- /main-container -->
 </div><!-- /wrapper -->
-<?php drupal_add_js('/sites/all/libraries/lazyads/lazyad-loader.js'); ?>
+<?php drupal_add_js("sites/all/libraries/lazyads/lazyad-loader.js"); ?>
 <?php drupal_add_js("sites/all/themes/bootstrap/js/jquery.slimscroll.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
 <?php drupal_add_js("sites/all/themes/bootstrap/js/jquery.cookie.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
 <?php drupal_add_js("sites/all/themes/bootstrap/js/modernizr.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
