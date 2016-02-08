@@ -80,13 +80,13 @@ function core_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'colorbox_node_style' => 'avatar_small',
+    'colorbox_node_style' => 'large_button',
     'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
-    'colorbox_gallery' => 'post',
+    'colorbox_gallery' => 'page',
     'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'none',
-    'colorbox_caption_custom' => '[file:field_description_image]',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:url]',
   );
   $export['image__preview__file_field_colorbox'] = $file_display;
 
@@ -132,15 +132,15 @@ function core_file_default_displays() {
   $file_display->api_version = 1;
   $file_display->name = 'image__teaser__file_field_colorbox';
   $file_display->weight = 0;
-  $file_display->status = FALSE;
+  $file_display->status = TRUE;
   $file_display->settings = array(
-    'colorbox_node_style' => 'button',
+    'colorbox_node_style' => 'large_button',
     'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'page',
     'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'none',
-    'colorbox_caption_custom' => '',
+    'colorbox_caption' => 'custom',
+    'colorbox_caption_custom' => '[file:name]',
   );
   $export['image__teaser__file_field_colorbox'] = $file_display;
 
