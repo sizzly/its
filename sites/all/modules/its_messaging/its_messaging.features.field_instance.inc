@@ -2208,7 +2208,7 @@ function its_messaging_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -2217,8 +2217,8 @@ function its_messaging_field_default_field_instances() {
     ),
     'entity_type' => 'reply',
     'field_name' => 'field_reply_body',
-    'label' => 'Reply Body',
-    'required' => 0,
+    'label' => 'Write something...',
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -2227,10 +2227,6 @@ function its_messaging_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
         'rows' => 2,
       ),
       'type' => 'text_textarea',
@@ -2281,7 +2277,6 @@ function its_messaging_field_default_field_instances() {
   t('Associated Nodes');
   t('Message Comment Reference');
   t('Reply');
-  t('Reply Body');
   t('Status Content Reference');
   t('Stream Node');
   t('Stream Reference Node');

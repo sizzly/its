@@ -143,7 +143,9 @@ function its_messaging_user_default_permissions() {
   // Exported permission: 'edit own file_comments reply'.
   $permissions['edit own file_comments reply'] = array(
     'name' => 'edit own file_comments reply',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'reply',
   );
 
