@@ -2207,7 +2207,7 @@ function battlefields_views_default_views() {
   $handler->display->display_options['relationships']['field_your_army_tid']['relationship'] = 'reverse_field_location_node';
   $handler->display->display_options['relationships']['field_your_army_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_army_game']['id'] = 'field_army_game';
   $handler->display->display_options['fields']['field_army_game']['table'] = 'field_data_field_army_game';
   $handler->display->display_options['fields']['field_army_game']['field'] = 'field_army_game';
@@ -2333,7 +2333,7 @@ function battlefields_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_game']['id'] = 'field_game';
   $handler->display->display_options['fields']['field_game']['table'] = 'field_data_field_game';
   $handler->display->display_options['fields']['field_game']['field'] = 'field_game';

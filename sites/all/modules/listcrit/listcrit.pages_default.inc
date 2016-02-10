@@ -302,7 +302,7 @@ order-of-battle/listcrit',
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'ListCrit Meta',
     'no_blocks' => 0,
