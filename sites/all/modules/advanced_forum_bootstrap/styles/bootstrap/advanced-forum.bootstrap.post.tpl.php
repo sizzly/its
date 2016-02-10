@@ -28,7 +28,7 @@
 <div id="<?php print $post_id; ?>" class="<?php print $classes; ?> panel panel-default" <?php print $attributes; ?>>
   <div class="panel-heading">
     <span class="pull-right"><?php print $permalink; ?></span>
-    <span class="text-muted"><?php print $date ?></span>
+    <span class="text-muted"><span class="hidden-sm hidden-md hidden-lg">by <?php print $account->name; ?> on <?php print $date ?></span><span class="hidden-xs"><?php print $date ?></span></span>
 
     <?php if (!$top_post): ?>
       <?php if (!empty($new)): ?>
@@ -51,6 +51,7 @@
     <?php if (!$node->status): ?>
       <span class="unpublished-post-note"><?php print t("Unpublished post") ?></span>
     <?php endif; ?>
+    
   </div>
 
   <div class="panel-body">
@@ -65,6 +66,7 @@
         <?php if (!empty($title)): ?>
           <h4 class="media-heading"><?php print $title ?></h4>
         <?php endif; ?>
+          
 
         <?php
           // We hide the comments and links now so that we can render them later.
