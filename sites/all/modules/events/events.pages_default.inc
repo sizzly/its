@@ -405,7 +405,7 @@ warzone/events',
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -24;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'Event Type',
     'no_blocks' => 0,

@@ -13,6 +13,284 @@ function battlefields_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_edit_form_mutator_10';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -30;
+  $handler->conf = array(
+    'title' => 'Battlefield',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Name',
+        'hidden_field' => 0,
+      ),
+      'field_address' => array(
+        'override' => 1,
+        'label' => 'Address',
+        'hidden_field' => '1',
+      ),
+      'field_geolocation' => array(
+        'override' => 0,
+        'label' => 'Geolocation',
+        'hidden_field' => 0,
+      ),
+      'field_location_type' => array(
+        'override' => 0,
+        'label' => 'Location type',
+        'hidden_field' => 0,
+      ),
+      'field_image' => array(
+        'override' => 0,
+        'label' => 'Image',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 0,
+        'label' => 'Description',
+        'hidden_field' => 0,
+      ),
+      'field_website' => array(
+        'override' => 0,
+        'label' => 'Website',
+        'hidden_field' => 0,
+      ),
+      'field_supported_games' => array(
+        'override' => 0,
+        'label' => 'Supported Games',
+        'hidden_field' => 0,
+      ),
+      'field_phone' => array(
+        'override' => 0,
+        'label' => 'Phone',
+        'hidden_field' => 0,
+      ),
+      'field_address_2' => array(
+        'override' => 0,
+        'label' => 'Address',
+        'hidden_field' => 0,
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 0,
+        'label' => 'Revision information',
+        'hidden_field' => 0,
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'location' => 'location',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $export['node_edit_form_mutator_10'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_edit_form_mutator_8';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -22;
+  $handler->conf = array(
+    'title' => 'Battlefield - not Iron Monger',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Name',
+        'hidden_field' => 0,
+      ),
+      'field_address' => array(
+        'override' => 0,
+        'label' => 'Address',
+        'hidden_field' => 0,
+      ),
+      'field_geolocation' => array(
+        'override' => 0,
+        'label' => 'Geolocation',
+        'hidden_field' => 0,
+      ),
+      'field_location_type' => array(
+        'override' => 0,
+        'label' => 'Location type',
+        'hidden_field' => 0,
+      ),
+      'group_group' => array(
+        'override' => 1,
+        'label' => 'Group',
+        'hidden_field' => '1',
+      ),
+      'field_image' => array(
+        'override' => 0,
+        'label' => 'Image',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 1,
+        'label' => 'Description',
+        'hidden_field' => '1',
+      ),
+      'field_website' => array(
+        'override' => 1,
+        'label' => 'Website',
+        'hidden_field' => '1',
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 0,
+        'label' => 'Revision information',
+        'hidden_field' => 0,
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'location' => 'location',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+              1 => 9,
+              2 => 8,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $export['node_edit_form_mutator_8'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view_panel_context_4';
   $handler->task = 'node_view';
   $handler->subtask = '';
@@ -423,7 +701,7 @@ warzone/battlefield',
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -28;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Location Type',
     'no_blocks' => 0,
