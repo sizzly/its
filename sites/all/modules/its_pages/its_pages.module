@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the iTS Pages feature.
- */
-
-include_once 'its_pages.features.inc';
