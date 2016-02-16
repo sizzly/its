@@ -208,19 +208,19 @@ function battle_reports_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '13',
         ),
         'metatags' => array(
           'weight' => '15',
         ),
         'xmlsitemap' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'badges' => array(
-          'weight' => '18',
+          'weight' => '16',
         ),
         'locations' => array(
-          'weight' => '30',
+          'weight' => '17',
         ),
       ),
       'display' => array(),
@@ -268,16 +268,19 @@ function battle_reports_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '7',
         ),
         'metatags' => array(
-          'weight' => '19',
+          'weight' => '12',
         ),
         'xmlsitemap' => array(
-          'weight' => '18',
+          'weight' => '11',
         ),
         'badges' => array(
-          'weight' => '30',
+          'weight' => '14',
+        ),
+        'locations' => array(
+          'weight' => '15',
         ),
       ),
       'display' => array(),

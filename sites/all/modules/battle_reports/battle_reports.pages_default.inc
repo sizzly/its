@@ -13,6 +13,229 @@ function battle_reports_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_edit_form_mutator_3';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -29;
+  $handler->conf = array(
+    'title' => 'Acknowledged Battle',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Title',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 0,
+        'label' => 'Body',
+        'hidden_field' => 0,
+      ),
+      'field_game_date' => array(
+        'override' => 1,
+        'label' => 'Date',
+        'hidden_field' => '1',
+      ),
+      'field_opponent' => array(
+        'override' => 1,
+        'label' => 'Opponent',
+        'hidden_field' => '1',
+      ),
+      'field_images' => array(
+        'override' => 0,
+        'label' => 'Images',
+        'hidden_field' => 0,
+      ),
+      'field_your_results' => array(
+        'override' => 1,
+        'label' => 'Your Results',
+        'hidden_field' => '1',
+      ),
+      'field_mission' => array(
+        'override' => 0,
+        'label' => 'Mission',
+        'hidden_field' => 1,
+      ),
+      'field_opponent_s_army' => array(
+        'override' => 1,
+        'label' => 'Opponent\'s Army',
+        'hidden_field' => '1',
+      ),
+      'field_your_army' => array(
+        'override' => 0,
+        'label' => 'Your Army',
+        'hidden_field' => 1,
+      ),
+      'field_game_reference' => array(
+        'override' => 1,
+        'label' => 'Game Reference',
+        'hidden_field' => '1',
+      ),
+      'field_victory' => array(
+        'override' => 0,
+        'label' => 'Victory',
+        'hidden_field' => 0,
+      ),
+      'field_draw' => array(
+        'override' => 0,
+        'label' => 'Draw',
+        'hidden_field' => 0,
+      ),
+      'field_defeat' => array(
+        'override' => 0,
+        'label' => 'Defeat',
+        'hidden_field' => 0,
+      ),
+      'field_location' => array(
+        'override' => 0,
+        'label' => 'Battlefield',
+        'hidden_field' => 1,
+      ),
+      'field_event_link' => array(
+        'override' => 1,
+        'label' => 'Event',
+        'hidden_field' => '1',
+      ),
+      'field_points_per_army' => array(
+        'override' => 0,
+        'label' => 'Points per army',
+        'hidden_field' => 0,
+      ),
+      'field_batteresult_commander' => array(
+        'override' => 0,
+        'label' => 'Commander',
+        'hidden_field' => 0,
+      ),
+      'field_battle_most_valuable_unit' => array(
+        'override' => 0,
+        'label' => 'Most Valuable Unit',
+        'hidden_field' => 0,
+      ),
+      'field_battle_deployment' => array(
+        'override' => 0,
+        'label' => 'Deployment',
+        'hidden_field' => 0,
+      ),
+      'field_battle_mission_rules' => array(
+        'override' => 0,
+        'label' => 'Mission Rules in Effect',
+        'hidden_field' => 0,
+      ),
+      'field_your_commander_survival' => array(
+        'override' => 0,
+        'label' => 'Your Commander Survival',
+        'hidden_field' => 0,
+      ),
+      'field_enemy_commander_survival' => array(
+        'override' => 0,
+        'label' => 'Enemy Commander Survival',
+        'hidden_field' => 0,
+      ),
+      'field_battleresult_enemy_command' => array(
+        'override' => 0,
+        'label' => 'Enemy Commander',
+        'hidden_field' => 0,
+      ),
+      'field_image' => array(
+        'override' => 1,
+        'label' => 'Image',
+        'hidden_field' => '1',
+      ),
+      'field_battle_my_vc' => array(
+        'override' => 0,
+        'label' => 'My Victory Conditions met',
+        'hidden_field' => 0,
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 0,
+        'label' => 'Revision information',
+        'hidden_field' => 0,
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':flag' => array(
+        'override' => 0,
+        'label' => 'Flags',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'game_result_system_' => 'game_result_system_',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $export['node_edit_form_mutator_3'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_edit_form_mutator_7';
   $handler->task = 'node_edit';
   $handler->subtask = '';
@@ -38,11 +261,6 @@ function battle_reports_default_page_manager_handlers() {
         'override' => 0,
         'label' => 'Images',
         'hidden_field' => 0,
-      ),
-      'field_game' => array(
-        'override' => 1,
-        'label' => 'Game',
-        'hidden_field' => '1',
       ),
       'field_mission' => array(
         'override' => 0,
@@ -141,8 +359,8 @@ function battle_reports_default_page_manager_handlers() {
       ),
       'field_image' => array(
         'override' => 1,
-        'label' => 'Image',
-        'hidden_field' => '1',
+        'label' => 'Teaser Image',
+        'hidden_field' => '0',
       ),
       'field_allied_detatchment' => array(
         'override' => 0,
@@ -152,16 +370,6 @@ function battle_reports_default_page_manager_handlers() {
       'field_opponent_s_allied_detachme' => array(
         'override' => 0,
         'label' => 'Opponent\'s Allied Detachment',
-        'hidden_field' => 0,
-      ),
-      'field_tourney_p1_battle' => array(
-        'override' => 0,
-        'label' => 'Tourney P1',
-        'hidden_field' => 0,
-      ),
-      'field_tourney_p2_battle' => array(
-        'override' => 0,
-        'label' => 'Tourney P2',
         'hidden_field' => 0,
       ),
       'field_your_commander_survival' => array(
@@ -174,14 +382,14 @@ function battle_reports_default_page_manager_handlers() {
         'label' => 'Enemy Commander Survival',
         'hidden_field' => 0,
       ),
-      'field_its_rating' => array(
-        'override' => 0,
-        'label' => 'iTS_Rating',
-        'hidden_field' => 0,
-      ),
       'field_battleresult_enemy_command' => array(
         'override' => 0,
         'label' => 'Enemy Commander',
+        'hidden_field' => 0,
+      ),
+      'field_radioactivity' => array(
+        'override' => 0,
+        'label' => 'Radioactivity',
         'hidden_field' => 0,
       ),
       ':author' => array(
@@ -412,13 +620,17 @@ function battle_reports_default_page_manager_handlers() {
     $display->content['new-cb8674ff-a3d5-4600-aca6-16a044111c22'] = $pane;
     $display->panels['contentmainbottom'][2] = 'new-cb8674ff-a3d5-4600-aca6-16a044111c22';
     $pane = new stdClass();
-    $pane->pid = 'new-908e293a-e296-432c-a4fd-03acc0186014';
+    $pane->pid = 'new-479a990f-56bd-4dda-a800-56f744cd1c21';
     $pane->panel = 'contentmainbottom';
     $pane->type = 'views_panes';
-    $pane->subtype = 'files_test_modal-panel_pane_2';
+    $pane->subtype = 'media_all_image_field_displays-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'id' => '%node:nid',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -427,9 +639,9 @@ function battle_reports_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '908e293a-e296-432c-a4fd-03acc0186014';
-    $display->content['new-908e293a-e296-432c-a4fd-03acc0186014'] = $pane;
-    $display->panels['contentmainbottom'][3] = 'new-908e293a-e296-432c-a4fd-03acc0186014';
+    $pane->uuid = '479a990f-56bd-4dda-a800-56f744cd1c21';
+    $display->content['new-479a990f-56bd-4dda-a800-56f744cd1c21'] = $pane;
+    $display->panels['contentmainbottom'][3] = 'new-479a990f-56bd-4dda-a800-56f744cd1c21';
     $pane = new stdClass();
     $pane->pid = 'new-a60629d9-248b-487d-9316-1fce41c2cef1';
     $pane->panel = 'contentmainbottom';

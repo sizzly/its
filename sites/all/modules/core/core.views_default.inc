@@ -125,6 +125,18 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['ops']['link_type'] = 'toggle';
+  /* Field: Content: Radioactivity */
+  $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['field'] = 'field_radioactivity';
+  $handler->display->display_options['fields']['field_radioactivity']['label'] = '';
+  $handler->display->display_options['fields']['field_radioactivity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_radioactivity']['click_sort_column'] = 'radioactivity_energy';
+  $handler->display->display_options['fields']['field_radioactivity']['settings'] = array(
+    'energy' => '10',
+    'type' => 'none',
+    'accuracy' => '80',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Node';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -1373,7 +1385,7 @@ function core_views_default_views() {
 </span>
 <span class="text">Blog Posts</span>';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = '/test';
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/blogs';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
@@ -1412,7 +1424,7 @@ function core_views_default_views() {
 </span>
 <span class="text">Galleries</span>';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = '/test';
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/galleries';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
@@ -1451,7 +1463,7 @@ function core_views_default_views() {
 </span>
 <span class="text">Battles</span>';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = '/test';
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/battles';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;

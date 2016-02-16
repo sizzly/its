@@ -17,7 +17,7 @@ function games_and_armies_default_page_manager_handlers() {
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'Armies',
     'no_blocks' => 0,
@@ -353,7 +353,7 @@ print views_embed_view(\'term_armies_stats\',\'panel_pane_1\', $trimmed);
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -23;
+  $handler->weight = -26;
   $handler->conf = array(
     'title' => 'Games',
     'no_blocks' => 0,

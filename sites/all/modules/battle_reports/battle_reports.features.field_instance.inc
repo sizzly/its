@@ -247,7 +247,7 @@ function battle_reports_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -341,7 +341,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 63,
+      'weight' => 7,
     ),
   );
 
@@ -388,7 +388,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 64,
+      'weight' => 8,
     ),
   );
 
@@ -435,7 +435,54 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 59,
+      'weight' => 60,
+    ),
+  );
+
+  // Exported field_instance: 'node-game_result_system_-field_battle_my_vc'.
+  $field_instances['node-game_result_system_-field_battle_my_vc'] = array(
+    'bundle' => 'game_result_system_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 32,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_battle_my_vc',
+    'label' => 'My Victory Conditions met',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 9,
     ),
   );
 
@@ -483,7 +530,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 75,
+      'weight' => 61,
     ),
   );
 
@@ -524,7 +571,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 17,
+      'weight' => 10,
     ),
   );
 
@@ -565,7 +612,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 16,
+      'weight' => 9,
     ),
   );
 
@@ -608,7 +655,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 71,
+      'weight' => 62,
     ),
   );
 
@@ -652,7 +699,7 @@ function battle_reports_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 21,
+      'weight' => 13,
     ),
   );
 
@@ -706,7 +753,7 @@ function battle_reports_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 7,
+      'weight' => 12,
     ),
   );
 
@@ -756,7 +803,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 13,
+      'weight' => 16,
     ),
   );
 
@@ -833,13 +880,14 @@ function battle_reports_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 77,
+      'weight' => 1,
     ),
   );
 
   // Exported field_instance: 'node-game_result_system_-field_images'.
   $field_instances['node-game_result_system_-field_images'] = array(
     'bundle' => 'game_result_system_',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -874,41 +922,30 @@ function battle_reports_field_default_field_instances() {
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'random_default' => 0,
-      'random_default_path' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 'clipboard',
-            'imce' => 0,
-            'reference' => 0,
-            'remote' => 'remote',
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'allowed_schemes' => array(
+          'public' => 'public',
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
-      'weight' => 12,
+      'type' => 'media_generic',
+      'weight' => 6,
     ),
   );
 
@@ -958,7 +995,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 20,
+      'weight' => 17,
     ),
   );
 
@@ -1004,7 +1041,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1054,7 +1091,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 18,
     ),
   );
 
@@ -1098,7 +1135,7 @@ function battle_reports_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 15,
     ),
   );
 
@@ -1144,7 +1181,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 25,
+      'weight' => 16,
     ),
   );
 
@@ -1185,7 +1222,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 15,
+      'weight' => 8,
     ),
   );
 
@@ -1229,7 +1266,7 @@ function battle_reports_field_default_field_instances() {
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 13,
     ),
   );
 
@@ -1316,7 +1353,7 @@ function battle_reports_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 14,
     ),
   );
 
@@ -1375,7 +1412,7 @@ function battle_reports_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -1424,7 +1461,7 @@ function battle_reports_field_default_field_instances() {
         ),
       ),
       'type' => 'taxonomy_shs',
-      'weight' => 36,
+      'weight' => 37,
     ),
   );
 
@@ -1516,7 +1553,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 39,
+      'weight' => 45,
     ),
   );
 
@@ -1562,7 +1599,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 40,
+      'weight' => 46,
     ),
   );
 
@@ -1609,7 +1646,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 35,
+      'weight' => 36,
     ),
   );
 
@@ -1655,7 +1692,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 42,
+      'weight' => 47,
     ),
   );
 
@@ -1704,7 +1741,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 37,
+      'weight' => 38,
     ),
   );
 
@@ -1745,7 +1782,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 
@@ -1786,7 +1823,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -1829,7 +1866,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 46,
+      'weight' => 39,
     ),
   );
 
@@ -1879,7 +1916,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -1928,12 +1965,13 @@ function battle_reports_field_default_field_instances() {
         'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 1,
         'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 27,
+      'weight' => 36,
     ),
   );
 
@@ -1983,13 +2021,14 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 16,
+      'weight' => 11,
     ),
   );
 
   // Exported field_instance: 'node-game_results-field_image'.
   $field_instances['node-game_results-field_image'] = array(
     'bundle' => 'game_results',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'A single image to "define" the battle.  Don\'t worry.  We\'ll put one in if you don\'t have one.  If you have a series of images make sure to put them in as well.',
     'display' => array(
@@ -2023,39 +2062,30 @@ function battle_reports_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '1024x1024',
-      'min_resolution' => '500x500',
+      'min_resolution' => '200x200',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 0,
-            'reference' => 0,
-            'remote' => 'remote',
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'allowed_schemes' => array(
+          'public' => 'public',
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 1,
     ),
   );
@@ -2063,6 +2093,7 @@ function battle_reports_field_default_field_instances() {
   // Exported field_instance: 'node-game_results-field_images'.
   $field_instances['node-game_results-field_images'] = array(
     'bundle' => 'game_results',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2095,44 +2126,32 @@ function battle_reports_field_default_field_instances() {
       'file_directory' => 'user/u[current-user:uid]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '1024x1024',
+      'max_resolution' => '',
       'min_resolution' => '',
-      'random_default' => 0,
-      'random_default_path' => 'default',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'dragdropfile_enabled' => 1,
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 'clipboard',
-            'imce' => 0,
-            'reference' => 0,
-            'remote' => 'remote',
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'allowed_schemes' => array(
+          'public' => 'public',
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
-      'weight' => 7,
+      'type' => 'media_generic',
+      'weight' => 6,
     ),
   );
 
@@ -2182,7 +2201,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 25,
+      'weight' => 41,
     ),
   );
 
@@ -2228,7 +2247,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 24,
+      'weight' => 44,
     ),
   );
 
@@ -2320,7 +2339,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 31,
+      'weight' => 42,
     ),
   );
 
@@ -2370,7 +2389,7 @@ function battle_reports_field_default_field_instances() {
         ),
       ),
       'type' => 'taxonomy_shs',
-      'weight' => 38,
+      'weight' => 40,
     ),
   );
 
@@ -2403,7 +2422,7 @@ function battle_reports_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_opponent_s_army',
     'label' => 'Opponent\'s Army',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2419,7 +2438,7 @@ function battle_reports_field_default_field_instances() {
         ),
       ),
       'type' => 'taxonomy_shs',
-      'weight' => 32,
+      'weight' => 39,
     ),
   );
 
@@ -2464,7 +2483,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 43,
     ),
   );
 
@@ -2510,7 +2529,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 23,
+      'weight' => 40,
     ),
   );
 
@@ -2565,7 +2584,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'radioactivity',
       'settings' => array(),
       'type' => 'radioactivity_basic_widget',
-      'weight' => 48,
+      'weight' => 12,
     ),
   );
 
@@ -2606,7 +2625,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -2641,7 +2660,7 @@ You must select one of the available options.  If you do not see your army for s
     'entity_type' => 'node',
     'field_name' => 'field_your_army',
     'label' => 'Your Army',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2657,7 +2676,7 @@ You must select one of the available options.  If you do not see your army for s
         ),
       ),
       'type' => 'taxonomy_shs',
-      'weight' => 28,
+      'weight' => 37,
     ),
   );
 
@@ -2699,7 +2718,7 @@ You must select one of the available options.  If you do not see your army for s
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 45,
+      'weight' => 35,
     ),
   );
 
@@ -2743,7 +2762,7 @@ You must select one of the available options.  If you do not see your army for s
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 29,
+      'weight' => 38,
     ),
   );
 
