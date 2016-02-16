@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function battle_reports_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -20,23 +20,27 @@ function battle_reports_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Additional Meta',
-    'weight' => '2',
+    'label' => 'Battle Meta',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_battle_deployment',
-      1 => 'field_battle_mission_rules',
+      0 => 'field_mission',
+      1 => 'field_battle_deployment',
+      2 => 'field_battle_mission_rules',
+      3 => 'field_battle_my_vc',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Battle Meta',
       'instance_settings' => array(
-        'description' => '',
+        'required_fields' => 0,
+        'id' => '',
         'classes' => 'group-additional-meta field-group-fieldset',
-        'required_fields' => 1,
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
-  $export['group_additional_meta|node|game_result_system_|form'] = $field_group;
+  $field_groups['group_additional_meta|node|game_result_system_|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -51,15 +55,14 @@ function battle_reports_field_group_info() {
     'label' => 'Core',
     'weight' => '2',
     'children' => array(
-      0 => 'field_mission',
-      1 => 'field_game_date',
-      2 => 'field_your_army',
-      3 => 'field_opponent_s_army',
-      4 => 'field_your_results',
-      5 => 'field_opponent',
-      6 => 'field_location',
-      7 => 'field_opponent_s_name',
-      8 => 'field_points_per_army',
+      0 => 'field_game_date',
+      1 => 'field_your_army',
+      2 => 'field_opponent_s_army',
+      3 => 'field_your_results',
+      4 => 'field_opponent',
+      5 => 'field_location',
+      6 => 'field_opponent_s_name',
+      7 => 'field_points_per_army',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -72,7 +75,7 @@ function battle_reports_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_battle_core|node|game_results|form'] = $field_group;
+  $field_groups['group_battle_core|node|game_results|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -100,7 +103,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_battle_events_commander|node|game_results|form'] = $field_group;
+  $field_groups['group_battle_events_commander|node|game_results|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -112,30 +115,27 @@ function battle_reports_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Battle Events',
-    'weight' => '3',
+    'label' => 'Battle Meta',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_battle_deployment',
-      1 => 'field_battle_mission_rules',
-      2 => 'field_battle_my_vc',
+      0 => 'field_mission',
+      1 => 'field_battle_deployment',
+      2 => 'field_battle_mission_rules',
+      3 => 'field_battle_my_vc',
     ),
-    'format_type' => 'div',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Battle Events',
+      'label' => 'Battle Meta',
       'instance_settings' => array(
         'required_fields' => 0,
-        'id' => 'node_game_results_form_group_battle_events',
-        'classes' => ' group-battle-events field-group-div',
+        'id' => '',
+        'classes' => '',
         'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_battle_events|node|game_results|form'] = $field_group;
+  $field_groups['group_battle_events|node|game_results|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -168,7 +168,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_battle_stats|node|game_result_system_|default'] = $field_group;
+  $field_groups['group_battle_stats|node|game_result_system_|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -200,7 +200,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_battle_stats|node|game_results|default'] = $field_group;
+  $field_groups['group_battle_stats|node|game_results|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -229,7 +229,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_body_wrapper|node|game_result_system_|teaser'] = $field_group;
+  $field_groups['group_body_wrapper|node|game_result_system_|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -255,7 +255,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_campaign|node|game_result_system_|default'] = $field_group;
+  $field_groups['group_campaign|node|game_result_system_|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -285,7 +285,41 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_content_wrapper|node|game_results|teaser'] = $field_group;
+  $field_groups['group_content_wrapper|node|game_results|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_core|node|game_result_system_|form';
+  $field_group->group_name = 'group_core';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_result_system_';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Core',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_game_date',
+      1 => 'field_opponent',
+      2 => 'field_your_results',
+      3 => 'field_opponent_s_army',
+      4 => 'field_your_army',
+      5 => 'field_location',
+      6 => 'field_points_per_army',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-core field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_core|node|game_result_system_|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -314,7 +348,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_display_order_of_battle|node|game_result_system_|default'] = $field_group;
+  $field_groups['group_display_order_of_battle|node|game_result_system_|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -344,7 +378,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_display_order_of_battle|node|game_results|default'] = $field_group;
+  $field_groups['group_display_order_of_battle|node|game_results|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -374,7 +408,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_display_theater|node|game_result_system_|default'] = $field_group;
+  $field_groups['group_display_theater|node|game_result_system_|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -404,7 +438,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_display_theater|node|game_results|default'] = $field_group;
+  $field_groups['group_display_theater|node|game_results|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -433,7 +467,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_image_wrapper|node|game_result_system_|teaser'] = $field_group;
+  $field_groups['group_image_wrapper|node|game_result_system_|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -462,7 +496,7 @@ function battle_reports_field_group_info() {
       'formatter' => '',
     ),
   );
-  $export['group_image_wrapper|node|game_results|teaser'] = $field_group;
+  $field_groups['group_image_wrapper|node|game_results|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -475,23 +509,27 @@ function battle_reports_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Order of Battle',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
       0 => 'field_batteresult_commander',
       1 => 'field_battle_most_valuable_unit',
-      2 => 'field_battleresult_enemy_command',
+      2 => 'field_your_commander_survival',
+      3 => 'field_enemy_commander_survival',
+      4 => 'field_battleresult_enemy_command',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Order of Battle',
       'instance_settings' => array(
-        'description' => '',
+        'required_fields' => 0,
+        'id' => '',
         'classes' => 'group-order-of-battle field-group-fieldset',
-        'required_fields' => 1,
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
-  $export['group_order_of_battle|node|game_result_system_|form'] = $field_group;
+  $field_groups['group_order_of_battle|node|game_result_system_|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -504,26 +542,29 @@ function battle_reports_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Order of Battle',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_batteresult_commander',
       1 => 'field_battle_most_valuable_unit',
       2 => 'field_allied_detatchment',
       3 => 'field_opponent_s_allied_detachme',
-      4 => 'field_battleresult_enemy_command',
-      5 => 'group_battle_events_commander',
+      4 => 'field_your_commander_survival',
+      5 => 'field_enemy_commander_survival',
+      6 => 'field_battleresult_enemy_command',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Order of Battle',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-order-of-battle field-group-fieldset',
         'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-order-of-battle field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
-  $export['group_order_of_battle|node|game_results|form'] = $field_group;
+  $field_groups['group_order_of_battle|node|game_results|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -552,7 +593,7 @@ function battle_reports_field_group_info() {
       'formatter' => '',
     ),
   );
-  $export['group_spacer|node|game_results|teaser'] = $field_group;
+  $field_groups['group_spacer|node|game_results|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -582,7 +623,7 @@ function battle_reports_field_group_info() {
       ),
     ),
   );
-  $export['group_wrapper|node|game_result_system_|teaser'] = $field_group;
+  $field_groups['group_wrapper|node|game_result_system_|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -612,7 +653,22 @@ function battle_reports_field_group_info() {
       'formatter' => '',
     ),
   );
-  $export['group_wrapper|node|game_results|teaser'] = $field_group;
+  $field_groups['group_wrapper|node|game_results|teaser'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Battle Meta');
+  t('Battle Stats');
+  t('Body Wrapper');
+  t('Campaign');
+  t('Commanders Slain');
+  t('Content Wrapper');
+  t('Core');
+  t('Image Wrapper');
+  t('Order of Battle');
+  t('Spacer');
+  t('Theater of War');
+  t('Wrapper');
+
+  return $field_groups;
 }

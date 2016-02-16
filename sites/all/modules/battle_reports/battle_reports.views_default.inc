@@ -433,7 +433,7 @@ Displaying @start - @end of @total
   $view = new view();
   $view->name = 'battles_all_page_layout';
   $view->description = 'Page Elements for the Battle node pages.';
-  $view->tag = 'Battles 2.0';
+  $view->tag = '4.2-rc9, Battles';
   $view->base_table = 'node';
   $view->human_name = 'Battles: All: Page Layout';
   $view->core = 7;
@@ -525,7 +525,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_game_system_armies']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_game_system_armies']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_game_system_armies']['hide_empty'] = TRUE;
-  /* Field: Field: Date */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
   $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
   $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
@@ -624,6 +624,16 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_mission']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_mission']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_mission']['hide_empty'] = TRUE;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'battles_all_page_layout';
+  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_14';
+  $handler->display->display_options['fields']['view']['arguments'] = '!1';
   $handler->display->display_options['pane_category']['name'] = 'Battles';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -678,7 +688,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="panel panel-default bg-primary">
     <div class="panel-body">
-        <span class="pull-left">[picture]</span>
+        <span class="pull-left iconbuffer">[picture]</span>
         <div class="pull-left">
             <strong class="font-18">[name]</strong>
             <br>
@@ -1584,6 +1594,14 @@ Displaying @start - @end of @total
 
   /* Display: Mission Rules in Effect */
   $handler = $view->new_display('panel_pane', 'Mission Rules in Effect', 'panel_pane_14');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Mission Rules in Effect */
   $handler->display->display_options['fields']['field_battle_mission_rules']['id'] = 'field_battle_mission_rules';
@@ -1598,16 +1616,21 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-sm-12 col-md-12">
-<div class="panel-stat3 bg-primary">
-  <h4 class="m-top-none">[field_battle_mission_rules]</h5>
-  <h5>Mission Rules</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-list-alt fa-3" aria-hidden="true"></span>
-  </div>
-</div>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-asterisk"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_battle_mission_rules]</strong>
+        <div class="text-muted">Mission Rules in Effect</div>
+    </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1631,84 +1654,6 @@ Displaying @start - @end of @total
   $handler->display->display_options['filters']['field_battle_mission_rules_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_battle_mission_rules_tid']['value'] = '';
   $handler->display->display_options['filters']['field_battle_mission_rules_tid']['vocabulary'] = 'scenario_special_rules';
-
-  /* Display: Battle Meta */
-  $handler = $view->new_display('panel_pane', 'Battle Meta', 'panel_pane_13');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Your Army (field_your_army) */
-  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
-  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
-  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['relationship'] = 'field_your_army_tid';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_game_date']['id'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['table'] = 'field_data_field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['field'] = 'field_game_date';
-  $handler->display->display_options['fields']['field_game_date']['label'] = '';
-  $handler->display->display_options['fields']['field_game_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_game_date']['settings'] = array(
-    'format_type' => 'uc_store',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Field: Event */
-  $handler->display->display_options['fields']['field_event_link']['id'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['table'] = 'field_data_field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['field'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['label'] = '';
-  $handler->display->display_options['fields']['field_event_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_link']['settings'] = array(
-    'link' => 1,
-  );
-  /* Field: Field: Battlefield */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['label'] = '';
-  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  /* Field: Content: Deployment */
-  $handler->display->display_options['fields']['field_battle_deployment']['id'] = 'field_battle_deployment';
-  $handler->display->display_options['fields']['field_battle_deployment']['table'] = 'field_data_field_battle_deployment';
-  $handler->display->display_options['fields']['field_battle_deployment']['field'] = 'field_battle_deployment';
-  $handler->display->display_options['fields']['field_battle_deployment']['label'] = '';
-  $handler->display->display_options['fields']['field_battle_deployment']['element_label_colon'] = FALSE;
-  /* Field: Content: Mission Rules in Effect */
-  $handler->display->display_options['fields']['field_battle_mission_rules']['id'] = 'field_battle_mission_rules';
-  $handler->display->display_options['fields']['field_battle_mission_rules']['table'] = 'field_data_field_battle_mission_rules';
-  $handler->display->display_options['fields']['field_battle_mission_rules']['field'] = 'field_battle_mission_rules';
-  $handler->display->display_options['fields']['field_battle_mission_rules']['label'] = '';
-  $handler->display->display_options['fields']['field_battle_mission_rules']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_battle_mission_rules']['delta_offset'] = '0';
-  /* Field: Field: Mission */
-  $handler->display->display_options['fields']['field_mission']['id'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['table'] = 'field_data_field_mission';
-  $handler->display->display_options['fields']['field_mission']['field'] = 'field_mission';
-  $handler->display->display_options['fields']['field_mission']['label'] = '';
-  $handler->display->display_options['fields']['field_mission']['element_label_colon'] = FALSE;
-  /* Field: Field: Points per army */
-  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
-  $handler->display->display_options['fields']['field_points_per_army']['label'] = '';
-  $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Battles';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Player 1 Meta */
   $handler = $view->new_display('panel_pane', 'Player 1 Meta', 'panel_pane_15');
@@ -1778,30 +1723,28 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_batteresult_commander']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_class'] = 'list-group-item';
-  $handler->display->display_options['fields']['field_batteresult_commander']['hide_empty'] = TRUE;
-  /* Field: Content: Your Allied Detatchment */
-  $handler->display->display_options['fields']['field_allied_detatchment']['id'] = 'field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['table'] = 'field_data_field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['field'] = 'field_allied_detatchment';
-  $handler->display->display_options['fields']['field_allied_detatchment']['label'] = '';
-  $handler->display->display_options['fields']['field_allied_detatchment']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['alter']['text'] = '<div class="list-group-item">
-<div class="media">
+  $handler->display->display_options['fields']['field_batteresult_commander']['empty'] = '<div class="media">
     <div class="media-left pull-left">
         <div class="activity-icon small">
-            <i class="fa fa-arrows-alt"></i>
+            <i class="fa fa-flag"></i>
         </div>
     </div>
     <div class="media-body">
-        <strong class="font-14">[field_allied_detatchment]</strong>
-        <div class="text-muted">Allied Detatchment</div>
+        <strong class="font-14">Classified</strong>
+        <div class="text-muted">Commander <span class="badge">[view]</span></div>
     </div>
-</div>
 </div>';
-  $handler->display->display_options['fields']['field_allied_detatchment']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_allied_detatchment']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_batteresult_commander']['hide_alter_empty'] = FALSE;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view_2']['id'] = 'view_2';
+  $handler->display->display_options['fields']['view_2']['table'] = 'views';
+  $handler->display->display_options['fields']['view_2']['field'] = 'view';
+  $handler->display->display_options['fields']['view_2']['label'] = '';
+  $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_2']['view'] = 'battles_all_page_layout';
+  $handler->display->display_options['fields']['view_2']['display'] = 'panel_pane_16';
+  $handler->display->display_options['fields']['view_2']['arguments'] = '!1';
   /* Field: Content: Most Valuable Unit */
   $handler->display->display_options['fields']['field_battle_most_valuable_unit']['id'] = 'field_battle_most_valuable_unit';
   $handler->display->display_options['fields']['field_battle_most_valuable_unit']['table'] = 'field_data_field_battle_most_valuable_unit';
@@ -1825,29 +1768,15 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_battle_most_valuable_unit']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_battle_most_valuable_unit']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_battle_most_valuable_unit']['hide_empty'] = TRUE;
-  /* Field: Content: My Victory Conditions met */
-  $handler->display->display_options['fields']['field_battle_my_vc']['id'] = 'field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['table'] = 'field_data_field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['field'] = 'field_battle_my_vc';
-  $handler->display->display_options['fields']['field_battle_my_vc']['label'] = '';
-  $handler->display->display_options['fields']['field_battle_my_vc']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['alter']['text'] = '<div class="list-group-item">
-<div class="media">
-    <div class="media-left pull-left">
-        <div class="activity-icon small">
-            <i class="fa fa-arrows-alt"></i>
-        </div>
-    </div>
-    <div class="media-body">
-        <strong class="font-14">[field_battle_my_vc]</strong>
-        <div class="text-muted">Victory Condition Met</div>
-    </div>
-</div>
-</div>';
-  $handler->display->display_options['fields']['field_battle_my_vc']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_battle_my_vc']['delta_offset'] = '0';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
+  $handler->display->display_options['fields']['view_1']['table'] = 'views';
+  $handler->display->display_options['fields']['view_1']['field'] = 'view';
+  $handler->display->display_options['fields']['view_1']['label'] = '';
+  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_1']['view'] = 'battles_all_page_layout';
+  $handler->display->display_options['fields']['view_1']['display'] = 'panel_pane_13';
+  $handler->display->display_options['fields']['view_1']['arguments'] = '!1';
   $handler->display->display_options['pane_category']['name'] = 'Battles';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -1918,8 +1847,172 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_event_link']['settings'] = array(
     'link' => 1,
   );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Battlefield (field_location) */
+  $handler->display->display_options['filters']['field_location_nid']['id'] = 'field_location_nid';
+  $handler->display->display_options['filters']['field_location_nid']['table'] = 'field_data_field_location';
+  $handler->display->display_options['filters']['field_location_nid']['field'] = 'field_location_nid';
+  $handler->display->display_options['filters']['field_location_nid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_location_nid']['group'] = 2;
+  /* Filter criterion: Field: Event (field_event_link) */
+  $handler->display->display_options['filters']['field_event_link_target_id']['id'] = 'field_event_link_target_id';
+  $handler->display->display_options['filters']['field_event_link_target_id']['table'] = 'field_data_field_event_link';
+  $handler->display->display_options['filters']['field_event_link_target_id']['field'] = 'field_event_link_target_id';
+  $handler->display->display_options['filters']['field_event_link_target_id']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_event_link_target_id']['group'] = 2;
   $handler->display->display_options['pane_category']['name'] = 'Battles';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Victory Conditions */
+  $handler = $view->new_display('panel_pane', 'Victory Conditions', 'panel_pane_13');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: My Victory Conditions met */
+  $handler->display->display_options['fields']['field_battle_my_vc']['id'] = 'field_battle_my_vc';
+  $handler->display->display_options['fields']['field_battle_my_vc']['table'] = 'field_data_field_battle_my_vc';
+  $handler->display->display_options['fields']['field_battle_my_vc']['field'] = 'field_battle_my_vc';
+  $handler->display->display_options['fields']['field_battle_my_vc']['label'] = '';
+  $handler->display->display_options['fields']['field_battle_my_vc']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_battle_my_vc']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_battle_my_vc']['delta_offset'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-check-circle-o"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_battle_my_vc]</strong>
+        <div class="text-muted">Victory Conditions Met</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+    'game_result_system_' => 'game_result_system_',
+  );
+  /* Filter criterion: Content: My Victory Conditions met (field_battle_my_vc) */
+  $handler->display->display_options['filters']['field_battle_my_vc_tid']['id'] = 'field_battle_my_vc_tid';
+  $handler->display->display_options['filters']['field_battle_my_vc_tid']['table'] = 'field_data_field_battle_my_vc';
+  $handler->display->display_options['filters']['field_battle_my_vc_tid']['field'] = 'field_battle_my_vc_tid';
+  $handler->display->display_options['filters']['field_battle_my_vc_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_battle_my_vc_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_battle_my_vc_tid']['vocabulary'] = 'victory_conditions';
+
+  /* Display: Allies */
+  $handler = $view->new_display('panel_pane', 'Allies', 'panel_pane_16');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Your Allied Detatchment */
+  $handler->display->display_options['fields']['field_allied_detatchment']['id'] = 'field_allied_detatchment';
+  $handler->display->display_options['fields']['field_allied_detatchment']['table'] = 'field_data_field_allied_detatchment';
+  $handler->display->display_options['fields']['field_allied_detatchment']['field'] = 'field_allied_detatchment';
+  $handler->display->display_options['fields']['field_allied_detatchment']['label'] = '';
+  $handler->display->display_options['fields']['field_allied_detatchment']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_allied_detatchment']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_allied_detatchment']['delta_offset'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-hand-rock-o"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[field_allied_detatchment]</strong>
+        <div class="text-muted">Allied Forces</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+    'game_result_system_' => 'game_result_system_',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Your Allied Detatchment (field_allied_detatchment) */
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['id'] = 'field_allied_detatchment_tid';
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['table'] = 'field_data_field_allied_detatchment';
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['field'] = 'field_allied_detatchment_tid';
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['type'] = 'textfield';
+  $handler->display->display_options['filters']['field_allied_detatchment_tid']['vocabulary'] = 'armies';
   $export['battles_all_page_layout'] = $view;
 
   $view = new view();
@@ -2190,6 +2283,22 @@ Displaying @start - @end of @total
   $handler->display->display_options['sorts']['nid']['field'] = 'nid';
   $handler->display->display_options['sorts']['nid']['group_type'] = 'count_distinct';
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Battles';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '1';

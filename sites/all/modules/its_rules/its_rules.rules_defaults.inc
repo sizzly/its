@@ -290,54 +290,17 @@ function its_rules_default_rules_configuration() {
             "value" : [ "flagged-node" ]
           }
         },
-        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
-      ]
-    }
-  }');
-  $items['rules_master_on_register'] = entity_import('rules_config', '{ "rules_master_on_register" : {
-      "LABEL" : "Master: On Register",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "TAGS" : [ "Register", "War Zone" ],
-      "REQUIRES" : [ "rules", "userpoints_rules", "node_registration" ],
-      "ON" : { "node_registration_insert" : [] },
-      "DO" : [
-        { "entity_create" : {
-            "USING" : {
-              "type" : "message",
-              "param_type" : "stream_player_registers_for_warzone",
-              "param_user" : [ "node-registration:user" ]
-            },
-            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+        { "component_rules_status_all_get_associated_nodes" : {
+            "USING" : { "srid" : [ "flagged-node" ] },
+            "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
           }
         },
         { "data_set" : {
-            "data" : [ "entity-created:field-stream-node-ref" ],
-            "value" : [ "node-registration:node" ]
+            "data" : [ "entity-created:field-associated-nodes-stream" ],
+            "value" : [ "assoc-nodes" ]
           }
         },
-        { "userpoints_action_grant_points" : {
-            "user" : [ "node-registration:user" ],
-            "points" : "2",
-            "tid" : "0",
-            "entity" : [ "node-registration:node" ],
-            "description" : "Joining a Warzone.",
-            "operation" : "Add",
-            "display" : 1,
-            "moderate" : "approved"
-          }
-        },
-        { "userpoints_action_grant_points" : {
-            "user" : [ "node-registration:node:author" ],
-            "points" : "1",
-            "tid" : "894",
-            "entity" : [ "node-registration:node" ],
-            "description" : "A Player has commited forces to your war zone.",
-            "operation" : "Add",
-            "display" : 0,
-            "moderate" : "approved"
-          }
-        }
+        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
       ]
     }
   }');
@@ -797,6 +760,16 @@ function its_rules_default_rules_configuration() {
             "data" : [ "message-created:field-stream-node-ref" ],
             "value" : [ "flagged-node" ]
           }
+        },
+        { "component_rules_status_all_get_associated_nodes" : {
+            "USING" : { "srid" : [ "flagged-node" ] },
+            "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "message-created:field-associated-nodes-stream" ],
+            "value" : [ "assoc-nodes" ]
+          }
         }
       ]
     }
@@ -1071,7 +1044,7 @@ function its_rules_default_rules_configuration() {
                     "IF" : { "entity_is_of_bundle" : {
                         "entity" : [ "entity-fetched" ],
                         "type" : "message",
-                        "bundle" : { "value" : { "stream_player_comments_on_post" : "stream_player_comments_on_post" } }
+                        "bundle" : { "value" : { "stream_player_earns_an_achievement" : "stream_player_earns_an_achievement" } }
                       }
                     },
                     "DO" : [
