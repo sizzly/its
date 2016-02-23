@@ -218,7 +218,7 @@ function games_and_armies_views_default_views() {
   $view = new view();
   $view->name = 'term_armies_page_layout';
   $view->description = '';
-  $view->tag = 'armies-3.0';
+  $view->tag = '4.2';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'Term: Armies: Page Layout';
   $view->core = 7;
@@ -263,28 +263,18 @@ function games_and_armies_views_default_views() {
     'armies' => 'armies',
   );
 
-  /* Display: Header Image */
-  $handler = $view->new_display('panel_pane', 'Header Image', 'panel_pane_1');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'large',
-    'image_link' => '',
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Armies';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Parent or Game System */
-  $handler = $view->new_display('panel_pane', 'Parent or Game System', 'panel_pane_3');
+  /* Display: Meta */
+  $handler = $view->new_display('panel_pane', 'Meta', 'panel_pane_3');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'list-group';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Parent term */
   $handler->display->display_options['relationships']['parent']['id'] = 'parent';
@@ -299,22 +289,32 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'parent';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<div class="panel-stat3 bg-primary">
-  <h2 class="m-top-none">[name]</h2>
-  <h5>faction</h5>
-  <div class="stat-icon">
-    <span class="glyphicon glyphicon-eject" aria-hidden="true"></span>
-  </div>
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <div class="activity-icon small">
+            <i class="fa fa-eject"></i>
+        </div>
+    </div>
+    <div class="media-body">
+        <strong class="font-14">[name]</strong>
+        <div class="text-muted">Parent</div>
+    </div>
 </div>';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'Armies';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Children */
   $handler = $view->new_display('panel_pane', 'Children', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Factions';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -359,73 +359,29 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Armies';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
-  /* Display: Description */
-  $handler = $view->new_display('panel_pane', 'Description', 'panel_pane_2');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'grey-container';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  /* Display: Game Description and Meta */
+  $handler = $view->new_display('panel_pane', 'Game Description and Meta', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Brief';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['description']['field'] = 'description';
   $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['element_type'] = 'div';
-  $handler->display->display_options['fields']['description']['element_class'] = 'lead';
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['description']['hide_empty'] = TRUE;
   /* Field: Field: Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['label'] = '';
-  $handler->display->display_options['fields']['field_website']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_website']['element_class'] = 'lead text-center';
   $handler->display->display_options['fields']['field_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['pane_category']['name'] = 'Armies';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Game System List */
-  $handler = $view->new_display('panel_pane', 'Game System List', 'panel_pane_5');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Parent term */
-  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
-  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
-  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<span class="glyphicon glyphicon-book" aria-hidden="true"></span> [name]
-';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_class'] = 'lead';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: Term description */
-  $handler->display->display_options['fields']['description']['id'] = 'description';
-  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['description']['field'] = 'description';
-  $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['alter']['max_length'] = '125';
-  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['description']['element_type'] = 'p';
-  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
@@ -434,127 +390,21 @@ function games_and_armies_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'armies' => 'armies',
   );
-  /* Filter criterion: Taxonomy term: Term ID */
-  $handler->display->display_options['filters']['tid_raw']['id'] = 'tid_raw';
-  $handler->display->display_options['filters']['tid_raw']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_raw']['field'] = 'tid_raw';
-  $handler->display->display_options['filters']['tid_raw']['relationship'] = 'parent';
-  $handler->display->display_options['filters']['tid_raw']['operator'] = 'empty';
-  $handler->display->display_options['pane_category']['name'] = 'Armies';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Top Game Systems */
-  $handler = $view->new_display('panel_pane', 'Top Game Systems', 'panel_pane_6');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
-  $handler->display->display_options['style_options']['interval'] = '5000';
-  $handler->display->display_options['style_options']['navigation'] = 1;
-  $handler->display->display_options['style_options']['indicators'] = 1;
-  $handler->display->display_options['style_options']['pause'] = 1;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Unfiltered text */
-  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="seperator"></div>
-<div class="seperator"></div>';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Content with term */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
-  /* Relationship: Taxonomy term: Game System (field_game_system_armies) */
-  $handler->display->display_options['relationships']['field_game_system_armies_tid']['id'] = 'field_game_system_armies_tid';
-  $handler->display->display_options['relationships']['field_game_system_armies_tid']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['relationships']['field_game_system_armies_tid']['field'] = 'field_game_system_armies_tid';
-  $handler->display->display_options['relationships']['field_game_system_armies_tid']['required'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_game_system_armies_tid';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'hero_image_page',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
-  /* Field: Taxonomy term: Game System */
-  $handler->display->display_options['fields']['field_game_system_armies']['id'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['table'] = 'field_data_field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['field'] = 'field_game_system_armies';
-  $handler->display->display_options['fields']['field_game_system_armies']['label'] = '';
-  $handler->display->display_options['fields']['field_game_system_armies']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_game_system_armies']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Nid */
-  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['table'] = 'node';
-  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['relationship'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['group_type'] = 'count_distinct';
-  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'armies' => 'armies',
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Armies';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Hero Header Image */
-  $handler = $view->new_display('panel_pane', 'Hero Header Image', 'panel_pane_7');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
-  $handler->display->display_options['style_options']['interval'] = '5000';
-  $handler->display->display_options['style_options']['navigation'] = 0;
-  $handler->display->display_options['style_options']['indicators'] = 0;
-  $handler->display->display_options['style_options']['pause'] = 0;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'hero_image_page',
-    'image_link' => '',
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Armies';
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
+  /* Filter criterion: Field: Website (field_website:url) */
+  $handler->display->display_options['filters']['field_website_url_1']['id'] = 'field_website_url_1';
+  $handler->display->display_options['filters']['field_website_url_1']['table'] = 'field_data_field_website';
+  $handler->display->display_options['filters']['field_website_url_1']['field'] = 'field_website_url';
+  $handler->display->display_options['filters']['field_website_url_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_website_url_1']['group'] = 2;
+  /* Filter criterion: Taxonomy term: Term description */
+  $handler->display->display_options['filters']['description']['id'] = 'description';
+  $handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['description']['field'] = 'description';
+  $handler->display->display_options['filters']['description']['operator'] = 'longerthan';
+  $handler->display->display_options['filters']['description']['value'] = '0';
+  $handler->display->display_options['filters']['description']['group'] = 2;
+  $handler->display->display_options['pane_category']['name'] = 'Game Systems';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['term_armies_page_layout'] = $view;
 

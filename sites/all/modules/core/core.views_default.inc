@@ -420,13 +420,6 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['field_timeline_icon']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_timeline_icon']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_timeline_icon']['empty'] = 'fa-plus-square';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_reply_form']['id'] = 'field_reply_form';
-  $handler->display->display_options['fields']['field_reply_form']['table'] = 'field_data_field_reply_form';
-  $handler->display->display_options['fields']['field_reply_form']['field'] = 'field_reply_form';
-  $handler->display->display_options['fields']['field_reply_form']['label'] = '';
-  $handler->display->display_options['fields']['field_reply_form']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_reply_form']['element_label_colon'] = FALSE;
   /* Field: Message: Message ID */
   $handler->display->display_options['fields']['mid']['id'] = 'mid';
   $handler->display->display_options['fields']['mid']['table'] = 'message';
@@ -774,6 +767,9 @@ function core_views_default_views() {
 
   /* Display: Term Page */
   $handler = $view->new_display('panel_pane', 'Term Page', 'panel_pane_3');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_associated_nodes_stream_target_id']['id'] = 'field_associated_nodes_stream_target_id';
@@ -805,7 +801,7 @@ function core_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['relationship'] = 'field_associated_nodes_stream_target_id';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['relationship'] = 'field_stream_node_ref_target_id';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
   $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
@@ -1063,6 +1059,216 @@ function core_views_default_views() {
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'TestMessages';
+
+  /* Display: Term Page */
+  $handler = $view->new_display('panel_pane', 'Term Page', 'panel_pane_4');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_associated_nodes_stream_target_id']['id'] = 'field_associated_nodes_stream_target_id';
+  $handler->display->display_options['relationships']['field_associated_nodes_stream_target_id']['table'] = 'field_data_field_associated_nodes_stream';
+  $handler->display->display_options['relationships']['field_associated_nodes_stream_target_id']['field'] = 'field_associated_nodes_stream_target_id';
+  $handler->display->display_options['relationships']['field_associated_nodes_stream_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['id'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['table'] = 'field_data_field_stream_node_ref';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['field'] = 'field_stream_node_ref_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['id'] = 'field_update_reference_target_id';
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['table'] = 'field_data_field_update_reference';
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['field'] = 'field_update_reference_target_id';
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['label'] = 'status_update';
+  /* Relationship: Flags: messages_all_salute */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'message';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'messages_all_salute';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['id'] = 'field_message_comment_reference_target_id';
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['table'] = 'field_data_field_message_comment_reference';
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['field'] = 'field_message_comment_reference_target_id';
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['label'] = 'comment';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Message: Stream Node */
+  $handler->display->display_options['fields']['field_stream_node_ref']['id'] = 'field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['table'] = 'field_data_field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['field'] = 'field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_stream_node_ref']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['alter']['text'] = '<small class="text-muted">in reply to [field_stream_node_ref]</small>';
+  $handler->display->display_options['fields']['field_stream_node_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_stream_node_ref']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 1,
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Global: Math expression */
+  $handler->display->display_options['fields']['expression']['id'] = 'expression';
+  $handler->display->display_options['fields']['expression']['table'] = 'views';
+  $handler->display->display_options['fields']['expression']['field'] = 'expression';
+  $handler->display->display_options['fields']['expression']['label'] = '';
+  $handler->display->display_options['fields']['expression']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['expression']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['expression']['alter']['text'] = '[field_stream_node_ref]
+';
+  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['expression']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['expression']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['expression']['precision'] = '0';
+  $handler->display->display_options['fields']['expression']['expression'] = '!1 - [nid]';
+  /* Field: Comment: Rendered Comment */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_comment';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'field_message_comment_reference_target_id';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['empty'] = '[expression]';
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Field: Entityform Submission: Rendered Entityform Submission */
+  $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
+  $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_entityform';
+  $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity_1']['relationship'] = 'field_update_reference_target_id';
+  $handler->display->display_options['fields']['rendered_entity_1']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity_1']['empty'] = '[rendered_entity]';
+  $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
+  /* Field: Message: Timeline Icon */
+  $handler->display->display_options['fields']['field_timeline_icon']['id'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['table'] = 'field_data_field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['field'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_timeline_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_timeline_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_timeline_icon']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_timeline_icon']['empty'] = 'fa-plus-square';
+  /* Field: Message: Message ID */
+  $handler->display->display_options['fields']['mid']['id'] = 'mid';
+  $handler->display->display_options['fields']['mid']['table'] = 'message';
+  $handler->display->display_options['fields']['mid']['field'] = 'mid';
+  $handler->display->display_options['fields']['mid']['label'] = '';
+  $handler->display->display_options['fields']['mid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mid']['separator'] = '';
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp']['format_date_sql'] = 0;
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp_1']['id'] = 'timestamp_1';
+  $handler->display->display_options['fields']['timestamp_1']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp_1']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp_1']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_1']['alter']['text'] = '<div class="timeline-icon bg-grey">
+<i class="fa fa-file-text-o"></i>
+</div>
+<div class="time">[timestamp_1]</div>';
+  $handler->display->display_options['fields']['timestamp_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['timestamp_1']['element_wrapper_class'] = 'timeline-info';
+  $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'event_time';
+  $handler->display->display_options['fields']['timestamp_1']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp_1']['format_date_sql'] = 0;
+  /* Field: Message: Render message (Get text) */
+  $handler->display->display_options['fields']['message_render']['id'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['table'] = 'message';
+  $handler->display->display_options['fields']['message_render']['field'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['label'] = '';
+  $handler->display->display_options['fields']['message_render']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['message_render']['alter']['text'] = '<div class="panel panel-default timeline-panel">
+  <div class="panel-heading">
+     [message_render]
+     <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> [timestamp]</small>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['message_render']['partials'] = 0;
+  $handler->display->display_options['fields']['message_render']['partials_delta'] = '1';
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp_2']['id'] = 'timestamp_2';
+  $handler->display->display_options['fields']['timestamp_2']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp_2']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp_2']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_2']['alter']['text'] = '<div class="timeline-date">
+[timestamp_2]
+</div>';
+  $handler->display->display_options['fields']['timestamp_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_2']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['timestamp_2']['element_wrapper_class'] = 'timeline-date';
+  $handler->display->display_options['fields']['timestamp_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_2']['date_format'] = 'uc_store';
+  $handler->display->display_options['fields']['timestamp_2']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp_2']['format_date_sql'] = 1;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '        <div class="timeline-info">
+            <div class="timeline-icon bg-grey">
+                <i class="fa [field_timeline_icon]"></i>
+            </div>
+            <div class="time">[timestamp_1]</div>
+        </div>
+        <div class="panel panel-default timeline-panel">
+            <div class="panel-heading">
+                [message_render]
+                <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> [timestamp]</small>
+            </div>
+            <div class="panel-body">
+            [rendered_entity_1]
+            </div>
+        </div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['relationship'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '10';
+  $handler->display->display_options['pane_category']['name'] = 'Term';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['core_all_node_timeline'] = $view;
 
   $view = new view();
@@ -1308,8 +1514,8 @@ function core_views_default_views() {
 
   $view = new view();
   $view->name = 'core_taxonomy_content_count';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Generates the counts and pages for term content';
+  $view->tag = '4.2';
   $view->base_table = 'node';
   $view->human_name = 'Core: Taxonomy: Content Count';
   $view->core = 7;
@@ -1318,6 +1524,7 @@ function core_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['hide_admin_links'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -1348,6 +1555,7 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['path'] = '#';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
@@ -1387,6 +1595,8 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/blogs';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
+  $handler->display->display_options['fields']['nid']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['preserve_tags'] = '<span> <i> <a>';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
@@ -1426,6 +1636,8 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/galleries';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
+  $handler->display->display_options['fields']['nid']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['preserve_tags'] = '<span> <i> <a>';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
@@ -1447,8 +1659,8 @@ function core_views_default_views() {
     'gallery' => 'gallery',
   );
 
-  /* Display: Battles */
-  $handler = $view->new_display('panel_pane', 'Battles', 'panel_pane_2');
+  /* Display: Battle Stats */
+  $handler = $view->new_display('panel_pane', 'Battle Stats', 'panel_pane_2');
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: COUNT(DISTINCT Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1458,17 +1670,27 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="shortcut-icon">
-     <i class="fa fa-fire"></i>
-     <span class="shortcut-alert">[nid]</span>
+     <i class="fa fa-line-chart"></i>
 </span>
-<span class="text">Battles</span>';
+<span class="text">Battle Stats</span>';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/battles';
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/stats';
   $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '10';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1520,6 +1742,14 @@ function core_views_default_views() {
   $handler->display->display_options['filters']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['filters']['timestamp']['table'] = 'history';
   $handler->display->display_options['filters']['timestamp']['field'] = 'timestamp';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_result_system_' => 'game_result_system_',
+  );
 
   /* Display: New Content */
   $handler = $view->new_display('page', 'New Content', 'page_1');
@@ -1581,6 +1811,10 @@ function core_views_default_views() {
     'game_result_system_' => 'game_result_system_',
     'remote_blog' => 'remote_blog',
   );
+  /* Filter criterion: Content: Has new content */
+  $handler->display->display_options['filters']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['filters']['timestamp']['table'] = 'history';
+  $handler->display->display_options['filters']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['path'] = 'taxonomy/term/%/new-content';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'New Content';
@@ -1779,6 +2013,257 @@ function core_views_default_views() {
   $handler->display->display_options['path'] = 'taxonomy/term/%/battles';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Battles';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 1;
+  $handler->display->display_options['menu']['context_only_inline'] = 1;
+
+  /* Display: Army Profiles */
+  $handler = $view->new_display('panel_pane', 'Army Profiles', 'panel_pane_5');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(DISTINCT Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="shortcut-icon">
+     <i class="fa fa-arrows"></i>
+     <span class="shortcut-alert">[nid]</span>
+</span>
+<span class="text">Armies</span>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/armies';
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
+  $handler->display->display_options['fields']['nid']['alter']['preserve_tags'] = '<span> <i> <a>';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'army_profile' => 'army_profile',
+  );
+
+  /* Display: Modeling Projects */
+  $handler = $view->new_display('panel_pane', 'Modeling Projects', 'panel_pane_6');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(DISTINCT Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="shortcut-icon">
+     <i class="fa fa-paint-brush"></i>
+     <span class="shortcut-alert">[nid]</span>
+</span>
+<span class="text">Projects</span>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/modeling-projects';
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
+  $handler->display->display_options['fields']['nid']['alter']['preserve_tags'] = '<span> <i> <a>';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+
+  /* Display: Battles */
+  $handler = $view->new_display('panel_pane', 'Battles', 'panel_pane_7');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(DISTINCT Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="shortcut-icon">
+     <i class="fa fa-fire"></i>
+     <span class="shortcut-alert">[nid]</span>
+</span>
+<span class="text">Battles</span>';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'taxonomy/term/!1/battles';
+  $handler->display->display_options['fields']['nid']['alter']['link_class'] = 'shortcut-link';
+  $handler->display->display_options['fields']['nid']['alter']['preserve_tags'] = '<span> <i> <a>';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['nid']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+  );
+
+  /* Display: Army Profile Page */
+  $handler = $view->new_display('page', 'Army Profile Page', 'page_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'New Content';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['title'] = '%1 Army Profiles';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['breadcrumb_enable'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['breadcrumb'] = 'Armies';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '10';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'army_profile' => 'army_profile',
+  );
+  $handler->display->display_options['path'] = 'taxonomy/term/%/armies';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Armies';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 1;
+  $handler->display->display_options['menu']['context_only_inline'] = 1;
+
+  /* Display: Modeling Project Page */
+  $handler = $view->new_display('page', 'Modeling Project Page', 'page_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'New Content';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['title'] = '%1 Modeling Projects';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['breadcrumb_enable'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['breadcrumb'] = 'Projects';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '10';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  $handler->display->display_options['path'] = 'taxonomy/term/%/modeling-projects';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Projects';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 1;
   $handler->display->display_options['menu']['context_only_inline'] = 1;
