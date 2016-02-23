@@ -543,41 +543,6 @@ function its_field_bases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_army_profile_node'.
-  $field_bases['field_army_profile_node'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_army_profile_node',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'views',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 1,
-          ),
-        ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'army_profile_chronicle',
-        ),
-      ),
-      'profile2_private' => FALSE,
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
   // Exported field_base: 'field_batteresult_commander'.
   $field_bases['field_batteresult_commander'] = array(
     'active' => 1,
@@ -1078,37 +1043,6 @@ function its_field_bases_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_date_call_to_battle'.
-  $field_bases['field_date_call_to_battle'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_date_call_to_battle',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'date',
-    'settings' => array(
-      'cache_count' => 4,
-      'cache_enabled' => 0,
-      'granularity' => array(
-        'day' => 'day',
-        'hour' => 'hour',
-        'minute' => 'minute',
-        'month' => 'month',
-        'second' => 0,
-        'year' => 'year',
-      ),
-      'profile2_private' => FALSE,
-      'repeat' => 0,
-      'timezone_db' => 'UTC',
-      'todate' => '',
-      'tz_handling' => 'site',
-    ),
-    'translatable' => 0,
-    'type' => 'datestamp',
-  );
-
   // Exported field_base: 'field_defeat'.
   $field_bases['field_defeat'] = array(
     'active' => 1,
@@ -1191,27 +1125,6 @@ $entity_field[0][\'value\'] = "0";
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_description_image',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_details_ap_event_txt'.
-  $field_bases['field_details_ap_event_txt'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_details_ap_event_txt',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1399,33 +1312,6 @@ $entity_field[0][\'value\'] = "0";
     ),
     'translatable' => 0,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_focus'.
-  $field_bases['field_focus'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_focus',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 'Narrative',
-        1 => 'Gaming',
-        2 => 'Modelling',
-      ),
-      'allowed_values_function' => '',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_forfeit_wzscore'.
@@ -1857,56 +1743,6 @@ $entity_field[0][\'value\'] = "0";
     ),
     'translatable' => 0,
     'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_more_ap_event'.
-  $field_bases['field_more_ap_event'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_more_ap_event',
-    'indexes' => array(
-      'nid' => array(
-        0 => 'nid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'node_reference',
-    'settings' => array(
-      'profile2_private' => FALSE,
-      'referenceable_types' => array(
-        'achievement' => 0,
-        'article' => 0,
-        'blog' => 'blog',
-        'challenge' => 0,
-        'club' => 0,
-        'event' => 'event',
-        'faq' => 0,
-        'gallery' => 'gallery',
-        'game_result_system_' => 0,
-        'game_results' => 'game_results',
-        'listcrit' => 0,
-        'location' => 0,
-        'narrative_campaign' => 'narrative_campaign',
-        'product' => 0,
-        'question' => 0,
-        'remote_blog' => 0,
-        'simplenews' => 0,
-        'special_event' => 'special_event',
-        'tournament_score_card' => 0,
-        'war_zone_league' => 'war_zone_league',
-        'war_zone_tournament' => 'war_zone_tournament',
-        'webform' => 0,
-      ),
-      'view' => array(
-        'args' => array(),
-        'display_name' => '',
-        'view_name' => '',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_more_info_link'.
@@ -2870,42 +2706,6 @@ $entity_field[0][\'value\'] = "0";
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_unit'.
-  $field_bases['field_unit'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_unit',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'units' => 'units',
-        ),
-      ),
-      'profile2_private' => FALSE,
-      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
     'type' => 'entityreference',

@@ -1,7 +1,7 @@
 name = Core
 core = 7.x
 package = _iTS
-version = 7.x-4.2-rc9
+version = 7.x-4.2-rc10
 project = core
 dependencies[] = advanced_forum
 dependencies[] = advanced_help
@@ -206,6 +206,7 @@ features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panels_mini:panels_default:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+features[ctools_custom_content][] = coming_soon
 features[ctools_custom_content][] = core_taxonomy_content_count
 features[ctools_custom_content][] = post_update_with_battle
 features[ctools_custom_content][] = posts_update_no_battle

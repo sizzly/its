@@ -2766,6 +2766,44 @@ You must select one of the available options.  If you do not see your army for s
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-armies-field_chart_color'.
+  $field_instances['taxonomy_term-armies-field_chart_color'] = array(
+    'bundle' => 'armies',
+    'default_value' => array(
+      0 => array(
+        'value' => '13,35,58',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_chart_color',
+    'label' => 'Chart Color',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-deployment-field_image'.
   $field_instances['taxonomy_term-deployment-field_image'] = array(
     'bundle' => 'deployment',
@@ -3083,6 +3121,7 @@ You must select one of the available options.  If you do not see your army for s
   t('A single image to "define" the battle.  Don\'t worry.  We\'ll put one in if you don\'t have one.  If you have a series of images make sure to put them in as well.');
   t('Battlefield');
   t('Body');
+  t('Chart Color');
   t('Commander');
   t('Contribute Term');
   t('Date');
