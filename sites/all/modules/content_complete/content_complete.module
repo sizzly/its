@@ -295,15 +295,17 @@ function content_complete_get_data($node, $recalculate = FALSE) {
     
     // Compare the two arrays and compute percentages etc.
     foreach ($tagged_fields as $tagged_field) {
-      if ($fields_values[$tagged_field] == '') { // Empty field
-        if ($nextfield_set === FALSE) {
-          $nextfield_set = TRUE;
-          $nextfield = $fields[$tagged_field]['label'];
-          $nextname = $tagged_field;
+      if (isset($fields_values[$tagged_field])) {
+        if ($fields_values[$tagged_field] == '') { // Empty field
+          if ($nextfield_set === FALSE) {
+            $nextfield_set = TRUE;
+            $nextfield = $fields[$tagged_field]['label'];
+            $nextname = $tagged_field;
+          }
         }
-      }
-      else {
-        $complete++;
+        else {
+          $complete++;
+        }
       }
     }
     

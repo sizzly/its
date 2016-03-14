@@ -1,0 +1,54 @@
+diff --git a/CHANGELOG.txt b/CHANGELOG.txt
+index ffe870b..d783222 100644
+--- a/CHANGELOG.txt
++++ b/CHANGELOG.txt
+@@ -2,5 +2,6 @@ CHANGELOG for Content Complete 1 for Drupal 7
+ 
+ Content Complete 1.4-beta2, 2011-10-4
+ --------------------------------
++- Issue #1142450 by mike.prinsloo: only calculate field values if the field is CC enabled
+ - Issue #1299064 by Steven Jones: Fixed check for emptiness field
+ - Issue #1299078 by Steven Jones: Fixed bulk rebuild
+\ No newline at end of file
+diff --git a/content_complete.install b/content_complete.install
+index b82a4c3..ed01f20 100755
+--- a/content_complete.install
++++ b/content_complete.install
+@@ -46,6 +46,7 @@ function content_complete_schema() {
+ function content_complete_uninstall() {
+   variable_del('content_complete_hide_complete');
+   
++  module_load_include('module', 'content_complete');
+   foreach (array_keys(content_complete_get_enabled_types()) as $type) {
+     variable_del('content_complete_' . $type);
+     variable_del('content_complete_fields_' . $type);
+diff --git a/content_complete.module b/content_complete.module
+index bfb1c8f..7331611 100755
+--- a/content_complete.module
++++ b/content_complete.module
+@@ -295,15 +295,17 @@ function content_complete_get_data($node, $recalculate = FALSE) {
+     
+     // Compare the two arrays and compute percentages etc.
+     foreach ($tagged_fields as $tagged_field) {
+-      if ($fields_values[$tagged_field] == '') { // Empty field
+-        if ($nextfield_set === FALSE) {
+-          $nextfield_set = TRUE;
+-          $nextfield = $fields[$tagged_field]['label'];
+-          $nextname = $tagged_field;
++      if (isset($fields_values[$tagged_field])) {
++        if ($fields_values[$tagged_field] == '') { // Empty field
++          if ($nextfield_set === FALSE) {
++            $nextfield_set = TRUE;
++            $nextfield = $fields[$tagged_field]['label'];
++            $nextname = $tagged_field;
++          }
++        }
++        else {
++          $complete++;
+         }
+-      }
+-      else {
+-        $complete++;
+       }
+     }
+     

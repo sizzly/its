@@ -223,7 +223,10 @@ order-of-battle/gaming-clubs',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'types' => array(),
+      'types' => array(
+        'article' => 'article',
+        'war_zone_league' => 'war_zone_league',
+      ),
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,

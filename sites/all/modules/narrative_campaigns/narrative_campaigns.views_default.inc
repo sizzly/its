@@ -850,7 +850,7 @@ function narrative_campaigns_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Field: Content: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_warzone_game']['id'] = 'field_warzone_game';
   $handler->display->display_options['fields']['field_warzone_game']['table'] = 'field_data_field_warzone_game';
   $handler->display->display_options['fields']['field_warzone_game']['field'] = 'field_warzone_game';
@@ -865,7 +865,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_special_event_type']['label'] = '';
   $handler->display->display_options['fields']['field_special_event_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_special_event_type']['element_label_colon'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Content: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
@@ -1251,7 +1251,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_event_type']['element_label_class'] = 'text-muted';
   $handler->display->display_options['fields']['field_event_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_type']['element_default_classes'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Content: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';
@@ -3615,7 +3615,7 @@ print $link;
     'image_style' => '',
     'image_link' => '',
   );
-  /* Field: Field: Game */
+  /* Field: Content: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';

@@ -126,7 +126,7 @@ function war_zones_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_war_zone_league';
-  $strongarm->value = '150';
+  $strongarm->value = '50';
   $export['comment_default_per_page_war_zone_league'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -731,19 +731,22 @@ function war_zones_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '9',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '8',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '10',
         ),
         'badges' => array(
-          'weight' => '13',
+          'weight' => '11',
+        ),
+        'locations' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(
@@ -1054,7 +1057,9 @@ function war_zones_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_war_zone_league';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'status',
+  );
   $export['node_options_war_zone_league'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1107,90 +1112,6 @@ function war_zones_strongarm() {
   $strongarm->name = 'node_preview_war_zone_tournament';
   $strongarm->value = '1';
   $export['node_preview_war_zone_tournament'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_registration_type_settings_league';
-  $strongarm->value = array(
-    'toggle_enabled_in_node_form' => 1,
-    'no_register_page' => 0,
-    'allow_registration_until' => '1 day',
-    'registration_success_message' => 'Thank you, your registration has been received!',
-    'allow_cancellation_until' => '1 day',
-    'allow_exceeding_capacity' => 1,
-    'max_slots_per_registration_authenticated' => 1,
-    'max_slots_per_registration_anonymous' => 1,
-    'allow_email_change' => 0,
-    'require_email_verification' => FALSE,
-    'sender_name' => '',
-    'sender_mail' => '',
-    'mail_system' => '0',
-    'send_mail_to_registree' => 1,
-    'mail_to_registree_bcc' => '',
-    'mail_to_registree_subject' => 'You\'ve registered for: [node:title]',
-    'mail_to_registree_body' => '<p>This is what you\'ve registered with:</p>
-
-<p>E-mail address: [node-registration:email]</p>
-
-<p>To edit, go to [node-registration:edit-url]. To cancel, go to [node-registration:cancel-url].</p>',
-    'change_mail_for_waiting_list_registree' => 0,
-    'mail_for_waiting_list_registree_subject' => 'You\'ve registered for: [node:title] (BUT YOU\'RE ON THE WAITING LIST)',
-    'mail_for_waiting_list_registree_body' => 'This is what you\'ve registered with:
-
-E-mail address: [node-registration:email]
-
-BUT YOU\'RE ON THE WAITING LIST.
-
-To edit, go to [node-registration:edit-url].',
-    'send_mail_to_admin' => 0,
-    'mail_to_admin_recipients' => 'admin@itoysoldiers.com',
-    'mail_to_admin_subject' => 'Somebody\'s registered for: [node:title]',
-    'mail_to_admin_body' => 'This is what they entered:
-
-E-mail address: [node-registration:email]
-
-To view the registration, go to [node-registration:url].',
-    'send_reminder_mail_to_registrees' => 0,
-    'send_reminders_before' => '1 day',
-    'reminder_mail_to_registrees_subject' => '[node:title] begins in [node:time-left]',
-    'reminder_mail_to_registrees_body' => 'Hey [node-registration:email],
-
-this [node:content-type:name] starts in [node:time-left].
-
-Don\'t forget to go! It begins at [node:event-start].',
-    'send_cancel_mail_to_registree' => 0,
-    'cancel_mail_to_registree_bcc' => '',
-    'cancel_mail_to_registree_subject' => 'You\'ve cancelled for: [node:title]',
-    'cancel_mail_to_registree_body' => 'This is what you were registered with:
-
-E-mail address: [node-registration:email]
-
-But now it\'s gone...',
-    'send_cancel_mail_to_admin' => 0,
-    'cancel_mail_to_admin_recipients' => 'admin@itoysoldiers.com',
-    'cancel_mail_to_admin_subject' => 'Somebody\'s cancelled for: [node:title]',
-    'cancel_mail_to_admin_body' => 'They had ID [node-registration:registration-id] but it\'s now gone...',
-    'send_unwaitinglist_mail_to_registree' => 0,
-    'unwaitinglist_mail_to_registree_subject' => 'You\'ve been moved from the waiting list to the regular list',
-    'unwaitinglist_mail_to_registree_body' => 'Hi [node-registration:email],
-
-due to a cancellation you\'ve been moved from the waiting list to the regular list.
-
-Event name: [node:title].
-Event start: [node:event-start].',
-    'show_message_access' => 1,
-    'show_message_date' => 1,
-    'show_message_capacity' => 1,
-    'show_message_registered' => 1,
-    'extra_nr_owners_no_settings_tab' => 0,
-    'date_field' => 'field_event_date',
-    'max_registration_date_field' => 'field_registration_deadline',
-    'min_registration_date_field' => '0',
-    'capacity_field' => 'field_slots_warzone',
-    'status' => 1,
-  );
-  $export['node_registration_type_settings_league'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

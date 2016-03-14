@@ -138,6 +138,40 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_bye'.
+  $field_bases['field_bye'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_bye',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_calculated_rounds'.
+  $field_bases['field_calculated_rounds'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_calculated_rounds',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_campaign_badge'.
   $field_bases['field_campaign_badge'] = array(
     'active' => 1,
@@ -433,6 +467,101 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
+  // Exported field_base: 'field_league_match_scorecard'.
+  $field_bases['field_league_match_scorecard'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_league_match_scorecard',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'views',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 1,
+          ),
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'war_zone_league_scorecard_filter',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'entityform',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_league_rule_set'.
+  $field_bases['field_league_rule_set'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_league_rule_set',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'event_type',
+          'parent' => 163,
+          'depth' => '',
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_league_start_date'.
+  $field_bases['field_league_start_date'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_league_start_date',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'granularity' => array(
+        'day' => 'day',
+        'hour' => 'hour',
+        'minute' => 'minute',
+        'month' => 'month',
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'profile2_private' => FALSE,
+      'repeat' => 0,
+      'timezone_db' => 'UTC',
+      'todate' => '',
+      'tz_handling' => 'user',
+    ),
+    'translatable' => 0,
+    'type' => 'datestamp',
+  );
+
   // Exported field_base: 'field_mission_name_tourney'.
   $field_bases['field_mission_name_tourney'] = array(
     'active' => 1,
@@ -507,7 +636,9 @@ function war_zones_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(),
+        'target_bundles' => array(
+          'war_zone_league' => 'war_zone_league',
+        ),
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
@@ -545,6 +676,42 @@ function war_zones_field_default_field_bases() {
       ),
       'profile2_private' => FALSE,
       'target_type' => 'user',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_opponent_scorecard'.
+  $field_bases['field_opponent_scorecard'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_opponent_scorecard',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'score_card' => 'score_card',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'entityform',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
@@ -783,6 +950,37 @@ function war_zones_field_default_field_bases() {
       'repeat' => 0,
       'timezone_db' => 'UTC',
       'todate' => '',
+      'tz_handling' => 'user',
+    ),
+    'translatable' => 0,
+    'type' => 'datestamp',
+  );
+
+  // Exported field_base: 'field_registration_open'.
+  $field_bases['field_registration_open'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_registration_open',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'granularity' => array(
+        'day' => 'day',
+        'hour' => 'hour',
+        'minute' => 'minute',
+        'month' => 'month',
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'profile2_private' => FALSE,
+      'repeat' => 0,
+      'timezone_db' => 'UTC',
+      'todate' => '',
       'tz_handling' => 'site',
     ),
     'translatable' => 0,
@@ -975,6 +1173,7 @@ function war_zones_field_default_field_bases() {
         30 => 'Forfeit',
         35 => 'Opponent Forfeit',
         40 => 'Admin added',
+        45 => 'Bye',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
@@ -1133,35 +1332,6 @@ function war_zones_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_warzone_game'.
-  $field_bases['field_warzone_game'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_warzone_game',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'games',
-          'parent' => 0,
-          'depth' => '',
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_warzone_scheduling'.

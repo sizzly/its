@@ -13,6 +13,210 @@ function war_zones_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_edit__form_mutator_17e133c0-d01f-4426-b2f6-242f21e39a2d';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -19;
+  $handler->conf = array(
+    'title' => 'League Edit Variant',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Title',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 0,
+        'label' => 'Body',
+        'hidden_field' => 0,
+      ),
+      'field_event_date' => array(
+        'override' => 1,
+        'label' => 'Date',
+        'hidden_field' => '1',
+      ),
+      'field_campaign_badge' => array(
+        'override' => 0,
+        'label' => 'Campaign Badge',
+        'hidden_field' => 0,
+      ),
+      'field_status' => array(
+        'override' => 1,
+        'label' => 'Status',
+        'hidden_field' => '1',
+      ),
+      'field_location' => array(
+        'override' => 0,
+        'label' => 'Battlefield',
+        'hidden_field' => 0,
+      ),
+      'field_event_type' => array(
+        'override' => 1,
+        'label' => 'Event type',
+        'hidden_field' => '1',
+      ),
+      'field_round_duration' => array(
+        'override' => 0,
+        'label' => 'Round Duration',
+        'hidden_field' => 0,
+      ),
+      'field_warzone_round' => array(
+        'override' => 1,
+        'label' => 'Round',
+        'hidden_field' => '1',
+      ),
+      'field_points_per_army' => array(
+        'override' => 0,
+        'label' => 'Points per army',
+        'hidden_field' => 0,
+      ),
+      'field_entry_fee' => array(
+        'override' => 0,
+        'label' => 'Entry Fee',
+        'hidden_field' => 0,
+      ),
+      'field_game_warzone' => array(
+        'override' => 0,
+        'label' => 'Game',
+        'hidden_field' => 0,
+      ),
+      'field_website' => array(
+        'override' => 0,
+        'label' => 'More Info',
+        'hidden_field' => 0,
+      ),
+      'field_registration_deadline' => array(
+        'override' => 0,
+        'label' => 'Registration Deadline',
+        'hidden_field' => 0,
+      ),
+      'field_slots_warzone' => array(
+        'override' => 0,
+        'label' => 'Slots',
+        'hidden_field' => 0,
+      ),
+      'field_league_rule_set' => array(
+        'override' => 1,
+        'label' => 'League Rule Set',
+        'hidden_field' => '1',
+      ),
+      'field_league_start_date' => array(
+        'override' => 0,
+        'label' => 'League Start Date',
+        'hidden_field' => 0,
+      ),
+      'og_group_ref' => array(
+        'override' => 0,
+        'label' => 'Club Sponsor',
+        'hidden_field' => 0,
+      ),
+      'field_warzone_scheduling' => array(
+        'override' => 1,
+        'label' => 'Scheduling',
+        'hidden_field' => '1',
+      ),
+      'field_calculated_rounds' => array(
+        'override' => 1,
+        'label' => 'calculated rounds',
+        'hidden_field' => '1',
+      ),
+      'field_registration_open' => array(
+        'override' => 1,
+        'label' => 'Registration Open',
+        'hidden_field' => '1',
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 0,
+        'label' => 'Revision information',
+        'hidden_field' => 0,
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':flag' => array(
+        'override' => 0,
+        'label' => 'Flags',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'war_zone_league' => 'war_zone_league',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $export['node_edit__form_mutator_17e133c0-d01f-4426-b2f6-242f21e39a2d'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_edit_form_mutator_11';
   $handler->task = 'node_edit';
   $handler->subtask = '';
@@ -421,7 +625,10 @@ function war_zones_default_page_manager_handlers() {
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
+              'narrative_campaign_instance' => 'narrative_campaign_instance',
+              'special_event' => 'special_event',
               'war_zone_league' => 'war_zone_league',
+              'war_zone_tournament' => 'war_zone_tournament',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
@@ -605,35 +812,321 @@ function war_zones_default_page_manager_handlers() {
     $display->content['new-0d121490-77db-4211-9d50-9ab249e10a19'] = $pane;
     $display->panels['contentmainleft'][1] = 'new-0d121490-77db-4211-9d50-9ab249e10a19';
     $pane = new stdClass();
-    $pane->pid = 'new-13946273-c9ed-49bb-b4b1-f20d76524dd4';
+    $pane->pid = 'new-f0d1fc26-de37-4431-8fad-2fd171f0df3a';
     $pane->panel = 'contentmainright';
     $pane->type = 'views_panes';
-    $pane->subtype = 'warzone_special_event_page_layout-panel_pane_2';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_8';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-default',
-      ),
-      'style' => 'bootstrap_panel',
+      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '13946273-c9ed-49bb-b4b1-f20d76524dd4';
-    $display->content['new-13946273-c9ed-49bb-b4b1-f20d76524dd4'] = $pane;
-    $display->panels['contentmainright'][0] = 'new-13946273-c9ed-49bb-b4b1-f20d76524dd4';
+    $pane->uuid = 'f0d1fc26-de37-4431-8fad-2fd171f0df3a';
+    $display->content['new-f0d1fc26-de37-4431-8fad-2fd171f0df3a'] = $pane;
+    $display->panels['contentmainright'][0] = 'new-f0d1fc26-de37-4431-8fad-2fd171f0df3a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-7cb45f62-d736-463b-84fc-b9897484e693';
   $handler->conf['display'] = $display;
   $export['node_view__league_1_0'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__panel_context_78730d90-a0ad-4a7b-b9f2-7780953b764f';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -9;
+  $handler->conf = array(
+    'title' => 'League',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'narrative_campaign_instance' => 'narrative_campaign_instance',
+              'special_event' => 'special_event',
+              'war_zone_league' => 'war_zone_league',
+              'war_zone_tournament' => 'war_zone_tournament',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Theater
+War Zone
+%node:content-type',
+    'panels_breadcrumbs_paths' => 'theater
+theater/warzone
+theater/warzone/%node:content-type',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_its2';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
+      'contentmaintop' => NULL,
+      'contentmainbottom' => NULL,
+      'contentmainright' => NULL,
+      'contentmainleft' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = 'a2565dba-dfa9-42a7-b357-cabc039a1a18';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-ae361772-97c9-4c6c-bd39-138109fa4e2c';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'custom';
+    $pane->subtype = 'war_zone_all_content_count';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ae361772-97c9-4c6c-bd39-138109fa4e2c';
+    $display->content['new-ae361772-97c9-4c6c-bd39-138109fa4e2c'] = $pane;
+    $display->panels['contentmainbottom'][0] = 'new-ae361772-97c9-4c6c-bd39-138109fa4e2c';
+    $pane = new stdClass();
+    $pane->pid = 'new-e1590787-314b-4e61-b4aa-3a7f04ccceac';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_achievements-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'e1590787-314b-4e61-b4aa-3a7f04ccceac';
+    $display->content['new-e1590787-314b-4e61-b4aa-3a7f04ccceac'] = $pane;
+    $display->panels['contentmainbottom'][1] = 'new-e1590787-314b-4e61-b4aa-3a7f04ccceac';
+    $pane = new stdClass();
+    $pane->pid = 'new-699a80c9-ff92-45ff-8893-88251d95b727';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_player_final_scores-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '699a80c9-ff92-45ff-8893-88251d95b727';
+    $display->content['new-699a80c9-ff92-45ff-8893-88251d95b727'] = $pane;
+    $display->panels['contentmainbottom'][2] = 'new-699a80c9-ff92-45ff-8893-88251d95b727';
+    $pane = new stdClass();
+    $pane->pid = 'new-71e4c435-fad8-41e7-87c9-bc97f39af44a';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_13';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '71e4c435-fad8-41e7-87c9-bc97f39af44a';
+    $display->content['new-71e4c435-fad8-41e7-87c9-bc97f39af44a'] = $pane;
+    $display->panels['contentmainbottom'][3] = 'new-71e4c435-fad8-41e7-87c9-bc97f39af44a';
+    $pane = new stdClass();
+    $pane->pid = 'new-57936230-e7de-4097-b43f-70478583950a';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '57936230-e7de-4097-b43f-70478583950a';
+    $display->content['new-57936230-e7de-4097-b43f-70478583950a'] = $pane;
+    $display->panels['contentmainbottom'][4] = 'new-57936230-e7de-4097-b43f-70478583950a';
+    $pane = new stdClass();
+    $pane->pid = 'new-48af2bd7-5160-4d4e-813f-5655670565fb';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_9';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '48af2bd7-5160-4d4e-813f-5655670565fb';
+    $display->content['new-48af2bd7-5160-4d4e-813f-5655670565fb'] = $pane;
+    $display->panels['contentmainbottom'][5] = 'new-48af2bd7-5160-4d4e-813f-5655670565fb';
+    $pane = new stdClass();
+    $pane->pid = 'new-12b2a8e6-92a2-4098-94c5-a5579627e08d';
+    $pane->panel = 'contentmainbottom';
+    $pane->type = 'node_comments';
+    $pane->subtype = 'node_comments';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'mode' => '1',
+      'comments_per_page' => '50',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '12b2a8e6-92a2-4098-94c5-a5579627e08d';
+    $display->content['new-12b2a8e6-92a2-4098-94c5-a5579627e08d'] = $pane;
+    $display->panels['contentmainbottom'][6] = 'new-12b2a8e6-92a2-4098-94c5-a5579627e08d';
+    $pane = new stdClass();
+    $pane->pid = 'new-47143b37-a2c6-4ead-ad63-ef50fe6e3200';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '47143b37-a2c6-4ead-ad63-ef50fe6e3200';
+    $display->content['new-47143b37-a2c6-4ead-ad63-ef50fe6e3200'] = $pane;
+    $display->panels['contentmainleft'][0] = 'new-47143b37-a2c6-4ead-ad63-ef50fe6e3200';
+    $pane = new stdClass();
+    $pane->pid = 'new-c8310d8d-3ede-4334-8f8d-f3299fb02620';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'c8310d8d-3ede-4334-8f8d-f3299fb02620';
+    $display->content['new-c8310d8d-3ede-4334-8f8d-f3299fb02620'] = $pane;
+    $display->panels['contentmainleft'][1] = 'new-c8310d8d-3ede-4334-8f8d-f3299fb02620';
+    $pane = new stdClass();
+    $pane->pid = 'new-ca29bdd3-910f-4a98-9dad-2ee54fcf52fa';
+    $pane->panel = 'contentmainleft';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_news-panel_pane_1';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'ca29bdd3-910f-4a98-9dad-2ee54fcf52fa';
+    $display->content['new-ca29bdd3-910f-4a98-9dad-2ee54fcf52fa'] = $pane;
+    $display->panels['contentmainleft'][2] = 'new-ca29bdd3-910f-4a98-9dad-2ee54fcf52fa';
+    $pane = new stdClass();
+    $pane->pid = 'new-76214262-53e6-44ae-8497-a41e3551950f';
+    $pane->panel = 'contentmainright';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_page_layout-panel_pane_8';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '76214262-53e6-44ae-8497-a41e3551950f';
+    $display->content['new-76214262-53e6-44ae-8497-a41e3551950f'] = $pane;
+    $display->panels['contentmainright'][0] = 'new-76214262-53e6-44ae-8497-a41e3551950f';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__panel_context_78730d90-a0ad-4a7b-b9f2-7780953b764f'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
@@ -1563,7 +2056,6 @@ Tournament',
           'settings' => array(
             'type' => array(
               'special_event' => 'special_event',
-              'war_zone_league' => 'war_zone_league',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
@@ -3515,26 +4007,26 @@ Manage',
       'title' => 'War Zone Classifications',
       'body' => '<div class="media">
   <div class="pull-left">
-    <a href="/theater/warzone/tournaments">
+    <a href="/theater/warzone/tournament">
       <img class="media-object" src="/sites/default/files/styles/button/public/default_images/location.png" alt="...">
     </a>
   </div>
   <div class="media-body">
-      <h4 class="media-heading"><a href="/theater/warzone/tournaments">Tournaments</a></h4>
+      <h4 class="media-heading"><a href="/theater/warzone/tournament">Tournaments</a></h4>
     <p>The iToysoldiers tournament manager makes it easy to run and participate in a miniature wargaming tournament.</p>
-    <p>View past and future <a href="/theater/warzone/tournaments/">tournaments</a>.
+    <p>View past and future <a href="/theater/warzone/tournaments/">tournament</a>.
   </div>
 </div>
 <div class="media">
   <div class="pull-left">
-    <a href="/theater/warzone/leagues">
+    <a href="/theater/warzone/league">
       <img class="media-object" src="/sites/default/files/styles/button/public/default_images/league.png" alt="...">
     </a>
   </div>
   <div class="media-body">
-      <h4 class="media-heading"><a href="/theater/warzone/leagues">Leagues</a></h4>
+      <h4 class="media-heading"><a href="/theater/warzone/league">Leagues</a></h4>
     <p>The iToysoldiers tournament manager makes it easy to run and participate in a miniature wargaming tournament.</p>
-    <p>View past and future <a href="/theater/warzone/leagues">leagues</a>.
+    <p>View past and future <a href="/theater/warzone/league">leagues</a>.
   </div>
 </div>
 <div class="media">
@@ -3608,8 +4100,8 @@ Manage',
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/theater/warzone/leagues">Leagues</a></li>
-        <li><a href="/theater/warzone/tournaments">Tournaments</a></li>
+        <li><a href="/theater/warzone/league">Leagues</a></li>
+        <li><a href="/theater/warzone/tournament">Tournaments</a></li>
         <li><a href="/theater/warzone/narrative-campaigns/operational">Campaigns</a></li>
         <li><a href="/theater/warzone/all">All</a></li>
       </ul>
@@ -3967,6 +4459,22 @@ Manage',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'war_zone_league' => 'war_zone_league',
+              'war_zone_tournament' => 'war_zone_tournament',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_its2';

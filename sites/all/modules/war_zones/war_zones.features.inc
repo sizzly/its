@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function war_zones_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ctools_custom_content" && $api == "ctools_content") {
+    return array("version" => "1");
+  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -57,7 +60,7 @@ function war_zones_default_entityform_type() {
       "form_status" : "ENTITYFORM_CLOSED",
       "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
       "resubmit_action" : "new",
-      "redirect_path" : "",
+      "redirect_path" : "[current-page:url:path]",
       "instruction_pre" : { "value" : "", "format" : "filtered_html" }
     },
     "weight" : "0",
@@ -145,6 +148,35 @@ function war_zones_default_entityform_type() {
       "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
       "resubmit_action" : "new",
       "redirect_path" : "[current-page:url:relative]",
+      "instruction_pre" : { "value" : "", "format" : "filtered_html" }
+    },
+    "weight" : "0",
+    "paths" : []
+  }');
+  $items['war_zone_league_report_battle'] = entity_import('entityform_type', '{
+    "type" : "war_zone_league_report_battle",
+    "label" : "War Zone: League: Report Battle",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "filtered_html" },
+      "submit_button_text" : "Report Battle",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "filtered_html" },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : { "2" : "2", "3" : "3", "7" : "7", "9" : "9", "8" : "8", "1" : 0 },
+      "resubmit_action" : "new",
+      "redirect_path" : "[current-page:url:path]",
       "instruction_pre" : { "value" : "", "format" : "filtered_html" }
     },
     "weight" : "0",
@@ -384,7 +416,7 @@ function war_zones_node_info() {
     'war_zone_league' => array(
       'name' => t('League'),
       'base' => 'node_content',
-      'description' => t('Manage a competitive league for your players.  IToysoldiers handles all the registration, calculations, scheduling, and pairings. Swiss Style and Casual league mechanics are supported.  '),
+      'description' => t('Manage a competitive league for your players.  IToysoldiers handles all the registration, calculations, scheduling, and pairings.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -462,6 +494,34 @@ function war_zones_default_rules_link() {
     "name" : "war_zone_all_open_registration",
     "label" : "War Zone: All: Open Registration",
     "path" : "wz-open",
+    "entity_type" : "node"
+  }');
+  $items['war_zone_league_forfeit_match'] = entity_import('rules_link', '{
+    "settings" : {
+      "text" : "Forfeit",
+      "link_type" : "confirm",
+      "bundles" : { "score_card" : "score_card" },
+      "entity_link" : 1,
+      "confirm_question" : "Are you sure?",
+      "confirm_description" : "This will record a loss for you and cannot be undone."
+    },
+    "name" : "war_zone_league_forfeit_match",
+    "label" : "War Zone: League: Forfeit Match",
+    "path" : "war_zone_league_forfeit_match",
+    "entity_type" : "entityform"
+  }');
+  $items['war_zone_league_next_round'] = entity_import('rules_link', '{
+    "settings" : {
+      "text" : "Start Next Round",
+      "link_type" : "confirm",
+      "bundles" : { "war_zone_league" : "war_zone_league" },
+      "entity_link" : 0,
+      "confirm_question" : "Are you sure?",
+      "confirm_description" : "This will increment the round and process scoring for the current round.  It cannot be undone."
+    },
+    "name" : "war_zone_league_next_round",
+    "label" : "War Zone: League: Next Round",
+    "path" : "war_zone_league_next_round",
     "entity_type" : "node"
   }');
   $items['war_zone_tournament_next_round'] = entity_import('rules_link', '{
