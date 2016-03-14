@@ -328,6 +328,7 @@ function narrative_campaigns_default_page_manager_pages() {
         'settings' => array(
           'type' => array(
             'narrative_campaign_instance' => 'narrative_campaign_instance',
+            'war_zone_league' => 'war_zone_league',
           ),
         ),
         'context' => 'argument_entity_id:node_1',
@@ -369,7 +370,7 @@ function narrative_campaigns_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'title' => 'Narrative Campaign',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -378,6 +379,21 @@ function narrative_campaigns_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'narrative_campaign_instance' => 'narrative_campaign_instance',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_boxton';
@@ -484,6 +500,112 @@ function narrative_campaigns_default_page_manager_pages() {
     $display->panels['contentmain'][2] = 'new-d46933c3-ed50-4ace-b751-59a64f7b4ec3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_war_zone_campaign_instance_operations__panel_context_a57424f1-55f3-429e-a52a-8417bf8381f5';
+  $handler->task = 'page';
+  $handler->subtask = 'war_zone_campaign_instance_operations';
+  $handler->handler = 'panel_context';
+  $handler->weight = 1;
+  $handler->conf = array(
+    'title' => 'League',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'war_zone_league' => 'war_zone_league',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title Operations';
+  $display->uuid = '13b5d7fb-0918-41e3-88f5-ffe16e5c5b43';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e8a8c614-7e9c-4509-913a-82e84ee90d1c';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Report a League Battle',
+      'title' => 'Report a Battle',
+      'body' => '<?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'war_zone_league_report_battle\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>',
+      'format' => 'php_code',
+      'substitute' => 0,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e8a8c614-7e9c-4509-913a-82e84ee90d1c';
+    $display->content['new-e8a8c614-7e9c-4509-913a-82e84ee90d1c'] = $pane;
+    $display->panels['contentmain'][0] = 'new-e8a8c614-7e9c-4509-913a-82e84ee90d1c';
+    $pane = new stdClass();
+    $pane->pid = 'new-388d1d1c-286e-49b0-ac5a-503e3bfa0164';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_league_operations_page-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_round_sc_value' => '%node:field_warzone_round',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '388d1d1c-286e-49b0-ac5a-503e3bfa0164';
+    $display->content['new-388d1d1c-286e-49b0-ac5a-503e3bfa0164'] = $pane;
+    $display->panels['contentmain'][1] = 'new-388d1d1c-286e-49b0-ac5a-503e3bfa0164';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-388d1d1c-286e-49b0-ac5a-503e3bfa0164';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['war_zone_campaign_instance_operations'] = $page;

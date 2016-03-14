@@ -1054,13 +1054,14 @@ function its_field_bases_field_default_field_bases() {
     'locked' => 0,
     'module' => 'computed_field',
     'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "1")
-{
-$entity_field[0][\'value\'] = "1";
+      'code' => '$results = NULL;
+if ($all_items = field_get_items($entity_type, $entity, \'field_your_results\')) {
+  $results = $all_items[0][\'value\'];
 }
-else
-{
-$entity_field[0][\'value\'] = "0";
+if ($results == "1") {
+    $entity_field[0][\'value\'] = "1";
+} else {
+    $entity_field[0][\'value\'] = "0";
 }',
       'database' => array(
         'data_default' => '',
@@ -1150,13 +1151,14 @@ $entity_field[0][\'value\'] = "0";
     'locked' => 0,
     'module' => 'computed_field',
     'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "3")
-{
-$entity_field[0][\'value\'] = "1";
+      'code' => '$results = NULL;
+if ($all_items = field_get_items($entity_type, $entity, \'field_your_results\')) {
+  $results = $all_items[0][\'value\'];
 }
-else
-{
-$entity_field[0][\'value\'] = "0";
+if ($results == "3") {
+    $entity_field[0][\'value\'] = "1";
+} else {
+    $entity_field[0][\'value\'] = "0";
 }',
       'database' => array(
         'data_default' => '',
@@ -1562,35 +1564,6 @@ $entity_field[0][\'value\'] = "0";
     'type' => 'mailchimp_lists_subscription',
   );
 
-  // Exported field_base: 'field_league_type'.
-  $field_bases['field_league_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_league_type',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'league_type',
-          'parent' => 230,
-          'depth' => '',
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_location'.
   $field_bases['field_location'] = array(
     'active' => 1,
@@ -1743,72 +1716,6 @@ $entity_field[0][\'value\'] = "0";
     ),
     'translatable' => 0,
     'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_more_info_link'.
-  $field_bases['field_more_info_link'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_more_info_link',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'profile2_private' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'link_field',
-  );
-
-  // Exported field_base: 'field_narrative_warzone'.
-  $field_bases['field_narrative_warzone'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_narrative_warzone',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'narrative_campaign' => 'narrative_campaign',
-        ),
-      ),
-      'profile2_private' => FALSE,
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_opponent'.
@@ -2365,7 +2272,6 @@ $entity_field[0][\'value\'] = "0";
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Manual',
         1 => 'One Week',
         2 => 'Two Weeks',
         3 => 'One Month',
@@ -2786,13 +2692,14 @@ $entity_field[0][\'value\'] = "0";
     'locked' => 0,
     'module' => 'computed_field',
     'settings' => array(
-      'code' => 'if (array_pop(array_pop(field_get_items($entity_type, $entity, \'field_your_results\'))) == "5")
-{
-$entity_field[0][\'value\'] = "1";
+      'code' => '$results = NULL;
+if ($all_items = field_get_items($entity_type, $entity, \'field_your_results\')) {
+  $results = $all_items[0][\'value\'];
 }
-else
-{
-$entity_field[0][\'value\'] = "0";
+if ($results == "5") {
+    $entity_field[0][\'value\'] = "1";
+} else {
+    $entity_field[0][\'value\'] = "0";
 }',
       'database' => array(
         'data_default' => '',

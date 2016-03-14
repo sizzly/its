@@ -46,6 +46,7 @@ function content_complete_schema() {
 function content_complete_uninstall() {
   variable_del('content_complete_hide_complete');
   
+  module_load_include('module', 'content_complete');
   foreach (array_keys(content_complete_get_enabled_types()) as $type) {
     variable_del('content_complete_' . $type);
     variable_del('content_complete_fields_' . $type);

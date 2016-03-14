@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function its_clubs_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -39,7 +39,7 @@ function its_clubs_field_group_info() {
       ),
     ),
   );
-  $export['group_media_body|node|gaming_club|teaser'] = $field_group;
+  $field_groups['group_media_body|node|gaming_club|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -68,7 +68,7 @@ function its_clubs_field_group_info() {
       ),
     ),
   );
-  $export['group_media_left|node|gaming_club|teaser'] = $field_group;
+  $field_groups['group_media_left|node|gaming_club|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -98,7 +98,13 @@ function its_clubs_field_group_info() {
       ),
     ),
   );
-  $export['group_media_wrapper|node|gaming_club|teaser'] = $field_group;
+  $field_groups['group_media_wrapper|node|gaming_club|teaser'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Media Body');
+  t('Media Left');
+  t('Media Wrapper');
+
+  return $field_groups;
 }

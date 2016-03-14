@@ -59,7 +59,7 @@ function its_messaging_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'file_entity',
         'settings' => array(
-          'file_view_mode' => 'teaser',
+          'file_view_mode' => 'default',
         ),
         'type' => 'file_rendered',
         'weight' => 0,
