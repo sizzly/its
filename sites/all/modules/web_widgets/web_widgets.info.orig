@@ -2,7 +2,6 @@ name =  Web Widgets
 description = Create dynamic snippets of this site that users can copy and paste to their websites. Plays nice with Views module. See README.txt for more installation instructions.
 core = 7.x
 
-configure = admin/config/services/web_widgets
 
 files[] = views/web_widgets_plugin_display_web_widgets.inc
 

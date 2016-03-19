@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function web_widgets_uninstall() {
+  variable_del('web_widgets_use_ajax');
+  variable_del('web_widgets_use_pager');
+  variable_del('web_widgets_iframe_autoheight');
+  variable_del('web_widgets_iframe_autoheight_method');
+}

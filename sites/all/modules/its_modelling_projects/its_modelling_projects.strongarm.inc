@@ -35,7 +35,7 @@ function its_modelling_projects_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_models';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_form_location_models'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -136,22 +136,22 @@ function its_modelling_projects_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
-        ),
-        'xmlsitemap' => array(
           'weight' => '12',
         ),
+        'xmlsitemap' => array(
+          'weight' => '13',
+        ),
         'badges' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
       ),
       'display' => array(),

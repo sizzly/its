@@ -858,3 +858,48 @@ td.multi-day .calendar .contents a {
 .chart {
     width:100%;
 }
+.photo-stream-widget {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0px;
+}
+.photo-stream-widget li {
+  display: inline-block;
+}
+.photo-stream-widget li a {
+  display: inline-block;
+  border: 1px solid #3c8dbc;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+.photo-stream-widget li a:hover,
+.photo-stream-widget li a:focus {
+  box-shadow: 0 0 0 10px #3c8dbc inset;
+  -moz-box-shadow: 0 0 0 10px #3c8dbc inset;
+  -webkit-box-shadow: 0 0 0 10px #3c8dbc inset;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+.photo-stream-widget li a img {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.photo-stream-widget li div span img {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.widget-panel {
+  margin-bottom: 0px;    
+}
+.modal-sm {
+    width: 300px;
+}

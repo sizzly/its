@@ -371,6 +371,18 @@ function its_modelling_projects_default_rules_configuration() {
                     }
                   ]
                 }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "forum" },
+                  "DO" : [
+                    { "list_add" : {
+                        "list" : [ "assoc-nodes" ],
+                        "item" : [ "srid:og-group-ref:0" ],
+                        "unique" : "1"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }

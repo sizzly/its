@@ -1,0 +1,270 @@
+--- iframe_autoheight_and_show_more-2653350-1.patch
++++ /dev/null
+@@ -1,267 +0,0 @@
+-diff --git a/iframe/web_widgets_iframe.js b/iframe/web_widgets_iframe.js
+-index 859fb08..19b5bb5 100644
+---- a/iframe/web_widgets_iframe.js
+-+++ b/iframe/web_widgets_iframe.js
+-@@ -6,34 +6,44 @@ if (document.getElementsByTagName && document.createElement && document.createTe
+-     wid: widgetContext['widgetid'],
+-     width: widgetContext['width'],
+-     height: widgetContext['height'],
+--    scrolling: widgetContext['scrolling']
+-+    scrolling: widgetContext['scrolling'],
+-+    autoheight: widgetContext['autoheight'],
+-+    autoheight_method: widgetContext['autoheight_method']
+-   };
+- 
+-   for (var i in DrupalEmbed) {
+-     if (!DrupalEmbed[i]['processed']) {
+-       DrupalEmbed[i]['processed'] = true;
+--      
+-+
+-       var separator = DrupalEmbed[i].src.indexOf('?') == -1 ? '?' : '&';
+--      
+-+
+-       if (undefined===window.widget_count){
+-         window.widget_count = 0;
+-       }
+-       else {
+-         widget_count++;
+-       }
+--      
+-+
+-       var script = document.getElementById(DrupalEmbed[i].wid);
+-       script.setAttribute('id', DrupalEmbed[i].wid);
+--      
+-+
+-       var iframe = document.createElement('iframe');
+-       iframe.setAttribute('id', 'widgets-' + widget_count);
+-       iframe.setAttribute('frameBorder', '0');
+--      iframe.setAttribute('width', DrupalEmbed[i].width);
+--      iframe.setAttribute('height', DrupalEmbed[i].height);
+-+      if (DrupalEmbed[i].autoheight) {
+-+        iframe.setAttribute('width', '100%');
+-+      }
+-+      else {
+-+        iframe.setAttribute('height', DrupalEmbed[i].height);
+-+        iframe.setAttribute('width', DrupalEmbed[i].width);
+-+      }
+-       iframe.setAttribute('src', DrupalEmbed[i].src);
+-       iframe.setAttribute('scrolling', DrupalEmbed[i].scrolling);
+--      
+-+
+-       script.parentNode.insertBefore(iframe, script);
+-+      if (DrupalEmbed[i].autoheight && (typeof window.iFrameResize == 'function')) {
+-+        iFrameResize({checkOrigin:false, heightCalculationMethod: DrupalEmbed[i].autoheight_method});
+-+      }
+-     }
+-   }
+- }
+-diff --git a/iframe/web_widgets_iframe.tpl.php b/iframe/web_widgets_iframe.tpl.php
+-index d369bf3..2c4f086 100644
+---- a/iframe/web_widgets_iframe.tpl.php
+-+++ b/iframe/web_widgets_iframe.tpl.php
+-@@ -7,4 +7,7 @@
+- <script type="text/javascript">
+- widgetContext = <?php print $js_variables ?>;
+- </script>
+-+<?php if (!empty($script_resize_url)): ?>
+-+  <script id="<?php print $wid ?>-resize" src="<?php print $script_resize_url ?>"></script>
+-+<?php endif ?>
+- <script id="<?php print $wid ?>" src="<?php print $script_url ?>"></script>
+-diff --git a/iframe_autoheight_and_show_more-2653350-1.patch b/iframe_autoheight_and_show_more-2653350-1.patch
+-index 0d0eab1..e69de29 100644
+---- a/iframe_autoheight_and_show_more-2653350-1.patch
+-+++ b/iframe_autoheight_and_show_more-2653350-1.patch
+-@@ -1,131 +0,0 @@
+--diff --git a/iframe/web_widgets_iframe.js b/iframe/web_widgets_iframe.js
+--index 859fb08..19b5bb5 100644
+----- a/iframe/web_widgets_iframe.js
+--+++ b/iframe/web_widgets_iframe.js
+--@@ -6,34 +6,44 @@ if (document.getElementsByTagName && document.createElement && document.createTe
+--     wid: widgetContext['widgetid'],
+--     width: widgetContext['width'],
+--     height: widgetContext['height'],
+---    scrolling: widgetContext['scrolling']
+--+    scrolling: widgetContext['scrolling'],
+--+    autoheight: widgetContext['autoheight'],
+--+    autoheight_method: widgetContext['autoheight_method']
+--   };
+-- 
+--   for (var i in DrupalEmbed) {
+--     if (!DrupalEmbed[i]['processed']) {
+--       DrupalEmbed[i]['processed'] = true;
+---      
+--+
+--       var separator = DrupalEmbed[i].src.indexOf('?') == -1 ? '?' : '&';
+---      
+--+
+--       if (undefined===window.widget_count){
+--         window.widget_count = 0;
+--       }
+--       else {
+--         widget_count++;
+--       }
+---      
+--+
+--       var script = document.getElementById(DrupalEmbed[i].wid);
+--       script.setAttribute('id', DrupalEmbed[i].wid);
+---      
+--+
+--       var iframe = document.createElement('iframe');
+--       iframe.setAttribute('id', 'widgets-' + widget_count);
+--       iframe.setAttribute('frameBorder', '0');
+---      iframe.setAttribute('width', DrupalEmbed[i].width);
+---      iframe.setAttribute('height', DrupalEmbed[i].height);
+--+      if (DrupalEmbed[i].autoheight) {
+--+        iframe.setAttribute('width', '100%');
+--+      }
+--+      else {
+--+        iframe.setAttribute('height', DrupalEmbed[i].height);
+--+        iframe.setAttribute('width', DrupalEmbed[i].width);
+--+      }
+--       iframe.setAttribute('src', DrupalEmbed[i].src);
+--       iframe.setAttribute('scrolling', DrupalEmbed[i].scrolling);
+---      
+--+
+--       script.parentNode.insertBefore(iframe, script);
+--+      if (DrupalEmbed[i].autoheight && (typeof window.iFrameResize == 'function')) {
+--+        iFrameResize({checkOrigin:false, heightCalculationMethod: DrupalEmbed[i].autoheight_method});
+--+      }
+--     }
+--   }
+-- }
+--diff --git a/iframe/web_widgets_iframe.tpl.php b/iframe/web_widgets_iframe.tpl.php
+--index d369bf3..2c4f086 100644
+----- a/iframe/web_widgets_iframe.tpl.php
+--+++ b/iframe/web_widgets_iframe.tpl.php
+--@@ -7,4 +7,7 @@
+-- <script type="text/javascript">
+-- widgetContext = <?php print $js_variables ?>;
+-- </script>
+--+<?php if (!empty($script_resize_url)): ?>
+--+  <script id="<?php print $wid ?>-resize" src="<?php print $script_resize_url ?>"></script>
+--+<?php endif ?>
+-- <script id="<?php print $wid ?>" src="<?php print $script_url ?>"></script>
+--diff --git a/views/web_widgets.views.inc b/views/web_widgets.views.inc
+--index 9ddc7d8..be939ab 100644
+----- a/views/web_widgets.views.inc
+--+++ b/views/web_widgets.views.inc
+--@@ -19,8 +19,8 @@ function web_widgets_views_plugins() {
+--         'path' => drupal_get_path('module', 'web_widgets') . '/views',
+--         'uses hook menu' => TRUE,
+--         'theme' => 'views_view',
+---        'use ajax' => FALSE,
+---        'use pager' => FALSE,
+--+        'use ajax' => variable_get('web_widgets_use_ajax', FALSE),
+--+        'use pager' => variable_get('web_widgets_use_pager', FALSE),
+--         'accept attachments' => FALSE,
+--       ),
+--     ),
+--diff --git a/web_widgets.info b/web_widgets.info
+--index 5d08071..1fe0692 100644
+----- a/web_widgets.info
+--+++ b/web_widgets.info
+--@@ -2,5 +2,6 @@ name =  Web Widgets
+-- description = Create dynamic snippets of this site that users can copy and paste to their websites. Plays nice with Views module. See README.txt for more installation instructions.
+-- core = 7.x
+-- 
+--+configure = admin/config/services/web_widgets
+-- 
+-- files[] = views/web_widgets_plugin_display_web_widgets.inc
+--diff --git a/web_widgets.module b/web_widgets.module
+--index e8d63aa..c62109e 100644
+----- a/web_widgets.module
+--+++ b/web_widgets.module
+--@@ -5,6 +5,22 @@
+--  */
+-- 
+-- /**
+--+ * Implements hook_menu().
+--+ */
+--+function web_widgets_menu() {
+--+  $items['admin/config/services/web_widgets'] = array(
+--+    'title' => 'Web Widgets',
+--+    'description' => 'Configurations for Web Widgets.',
+--+    'page callback' => 'drupal_get_form',
+--+    'page arguments' => array('web_widgets_admin_settings_form'),
+--+    'access arguments' => array('access administration pages'),
+--+    'file' => 'includes/web_widgets.admin.inc',
+--+  );
+--+
+--+  return $items;
+--+}
+--+
+--+/**
+--  * Implements hook_views_api().
+--  */
+-- function web_widgets_views_api() {
+--@@ -191,7 +207,7 @@ function theme_web_widgets_embed_code($variables) {
+-- 
+--   $styles = web_widgets_get_styles();
+--   $style_name = $styles[$style];
+---  
+--+
+--   static $num = 0;
+--   $form = array(
+--     '#type' => 'textarea',
+-diff --git a/views/web_widgets.views.inc b/views/web_widgets.views.inc
+-index 9ddc7d8..be939ab 100644
+---- a/views/web_widgets.views.inc
+-+++ b/views/web_widgets.views.inc
+-@@ -19,8 +19,8 @@ function web_widgets_views_plugins() {
+-         'path' => drupal_get_path('module', 'web_widgets') . '/views',
+-         'uses hook menu' => TRUE,
+-         'theme' => 'views_view',
+--        'use ajax' => FALSE,
+--        'use pager' => FALSE,
+-+        'use ajax' => variable_get('web_widgets_use_ajax', FALSE),
+-+        'use pager' => variable_get('web_widgets_use_pager', FALSE),
+-         'accept attachments' => FALSE,
+-       ),
+-     ),
+-diff --git a/web_widgets.info b/web_widgets.info
+-index 5d08071..1fe0692 100644
+---- a/web_widgets.info
+-+++ b/web_widgets.info
+-@@ -2,5 +2,6 @@ name =  Web Widgets
+- description = Create dynamic snippets of this site that users can copy and paste to their websites. Plays nice with Views module. See README.txt for more installation instructions.
+- core = 7.x
+- 
+-+configure = admin/config/services/web_widgets
+- 
+- files[] = views/web_widgets_plugin_display_web_widgets.inc
+-diff --git a/web_widgets.module b/web_widgets.module
+-index e8d63aa..c62109e 100644
+---- a/web_widgets.module
+-+++ b/web_widgets.module
+-@@ -5,6 +5,22 @@
+-  */
+- 
+- /**
+-+ * Implements hook_menu().
+-+ */
+-+function web_widgets_menu() {
+-+  $items['admin/config/services/web_widgets'] = array(
+-+    'title' => 'Web Widgets',
+-+    'description' => 'Configurations for Web Widgets.',
+-+    'page callback' => 'drupal_get_form',
+-+    'page arguments' => array('web_widgets_admin_settings_form'),
+-+    'access arguments' => array('access administration pages'),
+-+    'file' => 'includes/web_widgets.admin.inc',
+-+  );
+-+
+-+  return $items;
+-+}
+-+
+-+/**
+-  * Implements hook_views_api().
+-  */
+- function web_widgets_views_api() {
+-@@ -191,7 +207,7 @@ function theme_web_widgets_embed_code($variables) {
+- 
+-   $styles = web_widgets_get_styles();
+-   $style_name = $styles[$style];
+--  
+-+
+-   static $num = 0;
+-   $form = array(
+-     '#type' => 'textarea',

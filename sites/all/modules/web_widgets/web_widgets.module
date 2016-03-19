@@ -5,6 +5,22 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function web_widgets_menu() {
+  $items['admin/config/services/web_widgets'] = array(
+    'title' => 'Web Widgets',
+    'description' => 'Configurations for Web Widgets.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('web_widgets_admin_settings_form'),
+    'access arguments' => array('access administration pages'),
+    'file' => 'includes/web_widgets.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_views_api().
  */
 function web_widgets_views_api() {
@@ -191,7 +207,7 @@ function theme_web_widgets_embed_code($variables) {
 
   $styles = web_widgets_get_styles();
   $style_name = $styles[$style];
-  
+
   static $num = 0;
   $form = array(
     '#type' => 'textarea',

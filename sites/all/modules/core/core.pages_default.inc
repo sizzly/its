@@ -243,6 +243,93 @@ function core_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'node_stats_page';
+  $page->task = 'page';
+  $page->admin_title = 'Node Stats Page';
+  $page->admin_description = '';
+  $page->path = 'node/%node/stats';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Content: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_node_stats_page__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'node_stats_page';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title Stats - Coming Soon.';
+  $display->uuid = 'e08b4969-b2e6-45ce-92c1-01c41ab90c28';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-a662b306-76a1-41b2-b914-284269dd7e8f';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'coming_soon';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a662b306-76a1-41b2-b914-284269dd7e8f';
+    $display->content['new-a662b306-76a1-41b2-b914-284269dd7e8f'] = $pane;
+    $display->panels['contentmain'][0] = 'new-a662b306-76a1-41b2-b914-284269dd7e8f';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-a662b306-76a1-41b2-b914-284269dd7e8f';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['node_stats_page'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'renown_all_main_page';
   $page->task = 'page';
   $page->admin_title = 'Decorations: All: Main Page';
@@ -493,6 +580,259 @@ function core_default_page_manager_pages() {
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['renown_all_main_page'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'widgets';
+  $page->task = 'page';
+  $page->admin_title = 'Widgets';
+  $page->admin_description = '';
+  $page->path = 'widgets';
+  $page->access = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Widgets',
+    'name' => 'menu-extras',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_widgets__panel_context_7ff0c812-792f-49ce-b6e1-9d397c74851c';
+  $handler->task = 'page';
+  $handler->subtask = 'widgets';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'name' => '',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'Blog and forum widgets to show off your miniature war gaming exploits. Drawn from activity on iToysoldiers you can decorate your blog and forum signatures with a wide variety of widgets.',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+        'og:type' => array(
+          'value' => 'website',
+        ),
+        'og:description' => array(
+          'value' => 'Widgets to showcase your miniature war gaming exploits.',
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'left_above' => NULL,
+      'right_above' => NULL,
+      'middle' => NULL,
+      'left_below' => NULL,
+      'right_below' => NULL,
+      'bottom' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Widgets';
+  $display->uuid = 'c29cad9b-d84e-4ad2-8fb2-f211462c4aac';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-5a397c3e-5dc1-4203-a830-4f7affaab502';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<div class="jumbotron">
+Raise the banners! Sound the Horns! Share the glory of your army!
+</div>',
+      'format' => 'pure_html',
+      'substitute' => 0,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '5a397c3e-5dc1-4203-a830-4f7affaab502';
+    $display->content['new-5a397c3e-5dc1-4203-a830-4f7affaab502'] = $pane;
+    $display->panels['contentmain'][0] = 'new-5a397c3e-5dc1-4203-a830-4f7affaab502';
+    $pane = new stdClass();
+    $pane->pid = 'new-bda2626b-dd05-44c2-8235-ef51766201dc';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Current Modeling Project',
+      'title' => 'Current Modeling Project Blog Widget',
+      'body' => '<!-- Sidebar Widget -->
+<div class="row">
+    <div class="col-md-8">
+        <p>Show off your current hobby project on your blog using this widget. It selects the most recently updated modeling project on iToysoldiers that’s a) been marked as “Started” and b) isn’t complete and then displays it in a panel that’s perfect as a sidebar on any of the major blog platforms (like blogger, blogspot, and wordpress).  If you see, “No projects detected” then get on it and start tracking your modeling projects.</p>
+        <h5>Your Widget</strong></h5>
+        <p>This is what your widget will look like right now.  If it\'s empty you just need to create some of the relevant content in order for your widget to display properly. Click "Example Widget" to see what it looks like fully populated.</p>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Example Widget
+            </button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <!-- insert Widget here -->
+        <?php print views_embed_view("modeling_all_widgets", "panel_pane_1"); ?> 
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Example</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--insert Widget Code Here -->
+                        <script type="text/javascript">
+                            widgetContext = {"url": "\\/widget\\/current-project\\/16?width=100%\\u0026height=450", "width": "100%", "height": "450", "widgetid": "web_widget_iframe_3975b96452893d309931aec92087cae8", "scrolling": "auto"};
+                        </script>
+                        <script id="web_widget_iframe_3975b96452893d309931aec92087cae8" src="/sites/all/modules/web_widgets/iframe/web_widgets_iframe.js"></script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>',
+      'format' => 'php_code',
+      'substitute' => 0,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'bda2626b-dd05-44c2-8235-ef51766201dc';
+    $display->content['new-bda2626b-dd05-44c2-8235-ef51766201dc'] = $pane;
+    $display->panels['contentmain'][1] = 'new-bda2626b-dd05-44c2-8235-ef51766201dc';
+    $pane = new stdClass();
+    $pane->pid = 'new-eb029834-5915-463a-abe2-be7574d6f9f8';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'BBcode Widget',
+      'title' => 'Battle Results BBcode Signature Widget',
+      'body' => '<p>Cut and paste this into a forum that uses BBcode like phpBB</p>
+<p><textarea id=txtArea cols=60 rows=2 onFocus=this.select() onmouseup="return false">
+[url=http://itoysoldiers.com/user/%user:uid][img]http://itoysoldiers.com/widget/bbcode.php?user_id=%user:uid[/img][/url]
+</textarea></p>
+
+<p>It\'ll look like this:</p>
+
+<a href="http://itoysoldiers.com/user/%user:uid"><img src="http://itoysoldiers.com/widget/bbcode.php?user_id=%user:uid" /></a>
+
+<p>If you haven\'t reported any battles you may want to take a look at what an example looks like when there are battles reported:</p>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#bbcodeModal">
+                Example Widget
+            </button>
+        </div>
+        <div class="modal fade" id="bbcodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Example</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--insert Widget Code Here -->
+<a href="http://itoysoldiers.com/user/16"><img src="http://itoysoldiers.com/widget/bbcode.php?user_id=16" /></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'eb029834-5915-463a-abe2-be7574d6f9f8';
+    $display->content['new-eb029834-5915-463a-abe2-be7574d6f9f8'] = $pane;
+    $display->panels['contentmain'][2] = 'new-eb029834-5915-463a-abe2-be7574d6f9f8';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['widgets'] = $page;
 
   return $pages;
 
