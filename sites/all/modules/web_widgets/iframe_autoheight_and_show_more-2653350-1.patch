@@ -1,0 +1,526 @@
+ iframe/iframeResizer.contentWindow.min.js       |  10 +
+ iframe/iframeResizer.min.js                     |   9 +
+ iframe/web_widgets_iframe.js                    |  26 ++-
+ iframe/web_widgets_iframe.tpl.php               |   3 +
+ iframe_autoheight_and_show_more-2653350-1.patch | 267 ++++++++++++++++++++++++
+ includes/web_widgets.admin.inc                  |  54 +++++
+ views/web_widgets.views.inc                     |   4 +-
+ web_widgets.info                                |   1 +
+ web_widgets.install                             |  11 +
+ web_widgets.module                              |  18 +-
+ 10 files changed, 392 insertions(+), 11 deletions(-)
+
+diff --git a/iframe/iframeResizer.contentWindow.min.js b/iframe/iframeResizer.contentWindow.min.js
+new file mode 100644
+index 0000000..c58bc78
+--- /dev/null
++++ b/iframe/iframeResizer.contentWindow.min.js
+@@ -0,0 +1,10 @@
++/*! iFrame Resizer (iframeSizer.contentWindow.min.js) - v3.5.1 - 2015-11-04
++ *  Desc: Include this file in any page being loaded into an iframe
++ *        to force the iframe to resize to the content size.
++ *  Requires: iframeResizer.min.js on host page.
++ *  Copyright: (c) 2015 David J. Bradshaw - dave@bradshaw.net
++ *  License: MIT
++ */
++
++!function(a){"use strict";function b(b,c,d){"addEventListener"in a?b.addEventListener(c,d,!1):"attachEvent"in a&&b.attachEvent("on"+c,d)}function c(b,c,d){"removeEventListener"in a?b.removeEventListener(c,d,!1):"detachEvent"in a&&b.detachEvent("on"+c,d)}function d(a){return a.charAt(0).toUpperCase()+a.slice(1)}function e(a){var b,c,d,e=null,f=0,g=function(){f=Fa(),e=null,d=a.apply(b,c),e||(b=c=null)};return function(){var h=Fa();f||(f=h);var i=xa-(h-f);return b=this,c=arguments,0>=i||i>xa?(e&&(clearTimeout(e),e=null),f=h,d=a.apply(b,c),e||(b=c=null)):e||(e=setTimeout(g,i)),d}}function f(a){return ma+"["+oa+"] "+a}function g(b){la&&"object"==typeof a.console&&console.log(f(b))}function h(b){"object"==typeof a.console&&console.warn(f(b))}function i(){j(),g("Initialising iFrame ("+location.href+")"),k(),n(),m("background",W),m("padding",$),A(),s(),t(),o(),C(),u(),ia=B(),N("init","Init message from host page"),Da()}function j(){function a(a){return"true"===a?!0:!1}var b=ha.substr(na).split(":");oa=b[0],X=void 0!==b[1]?Number(b[1]):X,_=void 0!==b[2]?a(b[2]):_,la=void 0!==b[3]?a(b[3]):la,ja=void 0!==b[4]?Number(b[4]):ja,U=void 0!==b[6]?a(b[6]):U,Y=b[7],fa=void 0!==b[8]?b[8]:fa,W=b[9],$=b[10],ua=void 0!==b[11]?Number(b[11]):ua,ia.enable=void 0!==b[12]?a(b[12]):!1,qa=void 0!==b[13]?b[13]:qa,Aa=void 0!==b[14]?b[14]:Aa}function k(){function b(){var b=a.iFrameResizer;g("Reading data from page: "+JSON.stringify(b)),Ca="messageCallback"in b?b.messageCallback:Ca,Da="readyCallback"in b?b.readyCallback:Da,ta="targetOrigin"in b?b.targetOrigin:ta,fa="heightCalculationMethod"in b?b.heightCalculationMethod:fa,Aa="widthCalculationMethod"in b?b.widthCalculationMethod:Aa}"iFrameResizer"in a&&Object===a.iFrameResizer.constructor&&b(),g("TargetOrigin for parent set to: "+ta)}function l(a,b){return-1!==b.indexOf("-")&&(h("Negative CSS value ignored for "+a),b=""),b}function m(a,b){void 0!==b&&""!==b&&"null"!==b&&(document.body.style[a]=b,g("Body "+a+' set to "'+b+'"'))}function n(){void 0===Y&&(Y=X+"px"),m("margin",l("margin",Y))}function o(){document.documentElement.style.height="",document.body.style.height="",g('HTML & body height set to "auto"')}function p(e){function f(){N(e.eventName,e.eventType)}var h={add:function(c){b(a,c,f)},remove:function(b){c(a,b,f)}};e.eventNames&&Array.prototype.map?(e.eventName=e.eventNames[0],e.eventNames.map(h[e.method])):h[e.method](e.eventName),g(d(e.method)+" event listener: "+e.eventType)}function q(a){p({method:a,eventType:"Animation Start",eventNames:["animationstart","webkitAnimationStart"]}),p({method:a,eventType:"Animation Iteration",eventNames:["animationiteration","webkitAnimationIteration"]}),p({method:a,eventType:"Animation End",eventNames:["animationend","webkitAnimationEnd"]}),p({method:a,eventType:"Input",eventName:"input"}),p({method:a,eventType:"Mouse Up",eventName:"mouseup"}),p({method:a,eventType:"Mouse Down",eventName:"mousedown"}),p({method:a,eventType:"Orientation Change",eventName:"orientationchange"}),p({method:a,eventType:"Touch Start",eventName:"touchstart"}),p({method:a,eventType:"Touch End",eventName:"touchend"}),p({method:a,eventType:"Touch Cancel",eventName:"touchcancel"}),p({method:a,eventType:"Print",eventName:["afterprint","beforeprint"]}),p({method:a,eventType:"Transition Start",eventNames:["transitionstart","webkitTransitionStart","MSTransitionStart","oTransitionStart","otransitionstart"]}),p({method:a,eventType:"Transition Iteration",eventNames:["transitioniteration","webkitTransitionIteration","MSTransitionIteration","oTransitionIteration","otransitioniteration"]}),p({method:a,eventType:"Transition End",eventNames:["transitionend","webkitTransitionEnd","MSTransitionEnd","oTransitionEnd","otransitionend"]}),"child"===qa&&p({method:a,eventType:"IFrame Resized",eventName:"resize"})}function r(a,b,c,d){return b!==a&&(a in c||(h(a+" is not a valid option for "+d+"CalculationMethod."),a=b),g(d+' calculation method set to "'+a+'"')),a}function s(){fa=r(fa,ea,Ga,"height")}function t(){Aa=r(Aa,za,Ha,"width")}function u(){!0===U?(q("add"),F()):g("Auto Resize disabled")}function v(){g("Disable outgoing messages"),ra=!1}function w(){g("Remove event listener: Message"),c(a,"message",S)}function x(){null!==Z&&Z.disconnect()}function y(){q("remove"),x(),clearInterval(ka)}function z(){v(),w(),!0===U&&y()}function A(){var a=document.createElement("div");a.style.clear="both",a.style.display="block",document.body.appendChild(a)}function B(){function c(){return{x:void 0!==a.pageXOffset?a.pageXOffset:document.documentElement.scrollLeft,y:void 0!==a.pageYOffset?a.pageYOffset:document.documentElement.scrollTop}}function d(a){var b=a.getBoundingClientRect(),d=c();return{x:parseInt(b.left,10)+parseInt(d.x,10),y:parseInt(b.top,10)+parseInt(d.y,10)}}function e(a){function b(a){var b=d(a);g("Moving to in page link (#"+c+") at x: "+b.x+" y: "+b.y),R(b.y,b.x,"scrollToOffset")}var c=a.split("#")[1]||a,e=decodeURIComponent(c),f=document.getElementById(e)||document.getElementsByName(e)[0];void 0!==f?b(f):(g("In page link (#"+c+") not found in iFrame, so sending to parent"),R(0,0,"inPageLink","#"+c))}function f(){""!==location.hash&&"#"!==location.hash&&e(location.href)}function i(){function a(a){function c(a){a.preventDefault(),e(this.getAttribute("href"))}"#"!==a.getAttribute("href")&&b(a,"click",c)}Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'),a)}function j(){b(a,"hashchange",f)}function k(){setTimeout(f,ba)}function l(){Array.prototype.forEach&&document.querySelectorAll?(g("Setting up location.hash handlers"),i(),j(),k()):h("In page linking not fully supported in this browser! (See README.md for IE8 workaround)")}return ia.enable?l():g("In page linking not enabled"),{findTarget:e}}function C(){g("Enable public methods"),Ba.parentIFrame={autoResize:function(a){return!0===a&&!1===U?(U=!0,u()):!1===a&&!0===U&&(U=!1,y()),U},close:function(){R(0,0,"close"),z()},getId:function(){return oa},getPageInfo:function(a){"function"==typeof a?(Ea=a,R(0,0,"pageInfo")):(Ea=a,R(0,0,"pageInfoStop"))},moveToAnchor:function(a){ia.findTarget(a)},reset:function(){Q("parentIFrame.reset")},scrollTo:function(a,b){R(b,a,"scrollTo")},scrollToOffset:function(a,b){R(b,a,"scrollToOffset")},sendMessage:function(a,b){R(0,0,"message",JSON.stringify(a),b)},setHeightCalculationMethod:function(a){fa=a,s()},setWidthCalculationMethod:function(a){Aa=a,t()},setTargetOrigin:function(a){g("Set targetOrigin: "+a),ta=a},size:function(a,b){var c=""+(a?a:"")+(b?","+b:"");N("size","parentIFrame.size("+c+")",a,b)}}}function D(){0!==ja&&(g("setInterval: "+ja+"ms"),ka=setInterval(function(){N("interval","setInterval: "+ja)},Math.abs(ja)))}function E(){function b(a){function b(a){!1===a.complete&&(g("Attach listeners to "+a.src),a.addEventListener("load",f,!1),a.addEventListener("error",h,!1),k.push(a))}"attributes"===a.type&&"src"===a.attributeName?b(a.target):"childList"===a.type&&Array.prototype.forEach.call(a.target.querySelectorAll("img"),b)}function c(a){k.splice(k.indexOf(a),1)}function d(a){g("Remove listeners from "+a.src),a.removeEventListener("load",f,!1),a.removeEventListener("error",h,!1),c(a)}function e(a,b,c){d(a.target),N(b,c+": "+a.target.src,void 0,void 0)}function f(a){e(a,"imageLoad","Image loaded")}function h(a){e(a,"imageLoadFailed","Image load failed")}function i(a){N("mutationObserver","mutationObserver: "+a[0].target+" "+a[0].type),a.forEach(b)}function j(){var a=document.querySelector("body"),b={attributes:!0,attributeOldValue:!1,characterData:!0,characterDataOldValue:!1,childList:!0,subtree:!0};return m=new l(i),g("Create body MutationObserver"),m.observe(a,b),m}var k=[],l=a.MutationObserver||a.WebKitMutationObserver,m=j();return{disconnect:function(){"disconnect"in m&&(g("Disconnect body MutationObserver"),m.disconnect(),k.forEach(d))}}}function F(){var b=0>ja;a.MutationObserver||a.WebKitMutationObserver?b?D():Z=E():(g("MutationObserver not supported in this browser!"),D())}function G(a,b){function c(a){var c=/^\d+(px)?$/i;if(c.test(a))return parseInt(a,V);var d=b.style.left,e=b.runtimeStyle.left;return b.runtimeStyle.left=b.currentStyle.left,b.style.left=a||0,a=b.style.pixelLeft,b.style.left=d,b.runtimeStyle.left=e,a}var d=0;return b=b||document.body,"defaultView"in document&&"getComputedStyle"in document.defaultView?(d=document.defaultView.getComputedStyle(b,null),d=null!==d?d[a]:0):d=c(b.currentStyle[a]),parseInt(d,V)}function H(a){a>xa/2&&(xa=2*a,g("Event throttle increased to "+xa+"ms"))}function I(a,b){for(var c=b.length,e=0,f=0,h=d(a),i=Fa(),j=0;c>j;j++)e=b[j].getBoundingClientRect()[a]+G("margin"+h,b[j]),e>f&&(f=e);return i=Fa()-i,g("Parsed "+c+" HTML elements"),g("Element position calculated in "+i+"ms"),H(i),f}function J(a){return[a.bodyOffset(),a.bodyScroll(),a.documentElementOffset(),a.documentElementScroll()]}function K(a,b){function c(){return h("No tagged elements ("+b+") found on page"),da}var d=document.querySelectorAll("["+b+"]");return 0===d.length?c():I(a,d)}function L(){return document.querySelectorAll("body *")}function M(a,b,c,d){function e(){da=l,ya=m,R(da,ya,a)}function f(){function a(a,b){var c=Math.abs(a-b)<=ua;return!c}return l=void 0!==c?c:Ga[fa](),m=void 0!==d?d:Ha[Aa](),a(da,l)||_&&a(ya,m)}function h(){return!(a in{init:1,interval:1,size:1})}function i(){return fa in pa||_&&Aa in pa}function j(){g("No change in size detected")}function k(){h()&&i()?Q(b):a in{interval:1}||j()}var l,m;f()||"init"===a?(O(),e()):k()}function N(a,b,c,d){function e(){a in{reset:1,resetPage:1,init:1}||g("Trigger event: "+b)}function f(){return va&&a in aa}f()?g("Trigger event cancelled: "+a):(e(),Ia(a,b,c,d))}function O(){va||(va=!0,g("Trigger event lock on")),clearTimeout(wa),wa=setTimeout(function(){va=!1,g("Trigger event lock off"),g("--")},ba)}function P(a){da=Ga[fa](),ya=Ha[Aa](),R(da,ya,a)}function Q(a){var b=fa;fa=ea,g("Reset trigger event: "+a),O(),P("reset"),fa=b}function R(a,b,c,d,e){function f(){void 0===e?e=ta:g("Message targetOrigin: "+e)}function h(){var f=a+":"+b,h=oa+":"+f+":"+c+(void 0!==d?":"+d:"");g("Sending message to host page ("+h+")"),sa.postMessage(ma+h,e)}!0===ra&&(f(),h())}function S(b){function c(){return ma===(""+b.data).substr(0,na)}function d(){ha=b.data,sa=b.source,i(),ca=!1,setTimeout(function(){ga=!1},ba)}function e(){ga?g("Page reset ignored by init"):(g("Page size reset by host page"),P("resetPage"))}function f(){N("resizeParent","Parent window requested size check")}function j(){var a=l();ia.findTarget(a)}function k(){return b.data.split("]")[1].split(":")[0]}function l(){return b.data.substr(b.data.indexOf(":")+1)}function m(){return"iFrameResize"in a}function n(){var a=l();g("MessageCallback called from parent: "+a),Ca(JSON.parse(a)),g(" --")}function o(){var a=l();g("PageInfoFromParent called from parent: "+a),Ea(JSON.parse(a)),g(" --")}function p(){return b.data.split(":")[2]in{"true":1,"false":1}}function q(){switch(k()){case"reset":e();break;case"resize":f();break;case"moveToAnchor":j();break;case"message":n();break;case"pageInfo":o();break;default:m()||p()||h("Unexpected message ("+b.data+")")}}function r(){!1===ca?q():p()?d():g('Ignored message of type "'+k()+'". Received before initialization.')}c()&&r()}function T(){"loading"!==document.readyState&&a.parent.postMessage("[iFrameResizerChild]Ready","*")}var U=!0,V=10,W="",X=0,Y="",Z=null,$="",_=!1,aa={resize:1,click:1},ba=128,ca=!0,da=1,ea="bodyOffset",fa=ea,ga=!0,ha="",ia={},ja=32,ka=null,la=!1,ma="[iFrameSizer]",na=ma.length,oa="",pa={max:1,min:1,bodyScroll:1,documentElementScroll:1},qa="child",ra=!0,sa=a.parent,ta="*",ua=0,va=!1,wa=null,xa=16,ya=1,za="scroll",Aa=za,Ba=a,Ca=function(){h("MessageCallback function not defined")},Da=function(){},Ea=function(){},Fa=Date.now||function(){return(new Date).getTime()},Ga={bodyOffset:function(){return document.body.offsetHeight+G("marginTop")+G("marginBottom")},offset:function(){return Ga.bodyOffset()},bodyScroll:function(){return document.body.scrollHeight},documentElementOffset:function(){return document.documentElement.offsetHeight},documentElementScroll:function(){return document.documentElement.scrollHeight},max:function(){return Math.max.apply(null,J(Ga))},min:function(){return Math.min.apply(null,J(Ga))},grow:function(){return Ga.max()},lowestElement:function(){return Math.max(Ga.bodyOffset(),I("bottom",L()))},taggedElement:function(){return K("bottom","data-iframe-height")}},Ha={bodyScroll:function(){return document.body.scrollWidth},bodyOffset:function(){return document.body.offsetWidth},documentElementScroll:function(){return document.documentElement.scrollWidth},documentElementOffset:function(){return document.documentElement.offsetWidth},scroll:function(){return Math.max(Ha.bodyScroll(),Ha.documentElementScroll())},max:function(){return Math.max.apply(null,J(Ha))},min:function(){return Math.min.apply(null,J(Ha))},rightMostElement:function(){return I("right",L())},taggedElement:function(){return K("right","data-iframe-width")}},Ia=e(M);b(a,"message",S),T()}(window||{});
++//# sourceMappingURL=iframeResizer.contentWindow.map
+\ No newline at end of file
+diff --git a/iframe/iframeResizer.min.js b/iframe/iframeResizer.min.js
+new file mode 100644
+index 0000000..2afd536
+--- /dev/null
++++ b/iframe/iframeResizer.min.js
+@@ -0,0 +1,9 @@
++/*! iFrame Resizer (iframeSizer.min.js ) - v3.5.1 - 2015-11-04
++ *  Desc: Force cross domain iframes to size to content.
++ *  Requires: iframeResizer.contentWindow.min.js to be loaded into the target frame.
++ *  Copyright: (c) 2015 David J. Bradshaw - dave@bradshaw.net
++ *  License: MIT
++ */
++
++!function(a){"use strict";function b(b,c,d){"addEventListener"in a?b.addEventListener(c,d,!1):"attachEvent"in a&&b.attachEvent("on"+c,d)}function c(b,c,d){"removeEventListener"in a?b.removeEventListener(c,d,!1):"detachEvent"in a&&b.detachEvent("on"+c,d)}function d(){var b,c=["moz","webkit","o","ms"];for(b=0;b<c.length&&!N;b+=1)N=a[c[b]+"RequestAnimationFrame"];N||h("setup","RequestAnimationFrame not supported")}function e(b){var c="Host page: "+b;return a.top!==a.self&&(c=a.parentIFrame&&a.parentIFrame.getId?a.parentIFrame.getId()+": "+b:"Nested host page: "+b),c}function f(a){return K+"["+e(a)+"]"}function g(a){return P[a]?P[a].log:G}function h(a,b){k("log",a,b,g(a))}function i(a,b){k("info",a,b,g(a))}function j(a,b){k("warn",a,b,!0)}function k(b,c,d,e){!0===e&&"object"==typeof a.console&&console[b](f(c),d)}function l(d){function e(){function a(){s(V),p(W)}g("Height"),g("Width"),t(a,V,"init")}function f(){var a=U.substr(L).split(":");return{iframe:P[a[0]].iframe,id:a[0],height:a[1],width:a[2],type:a[3]}}function g(a){var b=Number(P[W]["max"+a]),c=Number(P[W]["min"+a]),d=a.toLowerCase(),e=Number(V[d]);h(W,"Checking "+d+" is in range "+c+"-"+b),c>e&&(e=c,h(W,"Set "+d+" to min value")),e>b&&(e=b,h(W,"Set "+d+" to max value")),V[d]=""+e}function k(){function a(){function a(){var a=0,d=!1;for(h(W,"Checking connection is from allowed list of origins: "+c);a<c.length;a++)if(c[a]===b){d=!0;break}return d}function d(){var a=P[W].remoteHost;return h(W,"Checking connection is from: "+a),b===a}return c.constructor===Array?a():d()}var b=d.origin,c=P[W].checkOrigin;if(c&&""+b!="null"&&!a())throw new Error("Unexpected message received from: "+b+" for "+V.iframe.id+". Message was: "+d.data+". This error can be disabled by setting the checkOrigin: false option or by providing of array of trusted domains.");return!0}function l(){return K===(""+U).substr(0,L)&&U.substr(L).split(":")[0]in P}function w(){var a=V.type in{"true":1,"false":1,undefined:1};return a&&h(W,"Ignoring init message from meta parent page"),a}function y(a){return U.substr(U.indexOf(":")+J+a)}function z(a){h(W,"MessageCallback passed: {iframe: "+V.iframe.id+", message: "+a+"}"),N("messageCallback",{iframe:V.iframe,message:JSON.parse(a)}),h(W,"--")}function A(){var b=document.body.getBoundingClientRect(),c=V.iframe.getBoundingClientRect();return JSON.stringify({clientHeight:Math.max(document.documentElement.clientHeight,a.innerHeight||0),clientWidth:Math.max(document.documentElement.clientWidth,a.innerWidth||0),offsetTop:parseInt(c.top-b.top,10),offsetLeft:parseInt(c.left-b.left,10),scrollTop:a.pageYOffset,scrollLeft:a.pageXOffset})}function B(a,b){function c(){u("Send Page Info","pageInfo:"+A(),a,b)}x(c,32)}function C(){function d(b,c){function d(){P[g]?B(P[g].iframe,g):e()}["scroll","resize"].forEach(function(e){h(g,b+e+" listener for sendPageInfo"),c(a,e,d)})}function e(){d("Remove ",c)}function f(){d("Add ",b)}var g=W;f(),P[g].stopPageInfo=e}function D(){P[W]&&P[W].stopPageInfo&&(P[W].stopPageInfo(),delete P[W].stopPageInfo)}function E(){var a=!0;return null===V.iframe&&(j(W,"IFrame ("+V.id+") not found"),a=!1),a}function F(a){var b=a.getBoundingClientRect();return o(W),{x:Math.floor(Number(b.left)+Number(M.x)),y:Math.floor(Number(b.top)+Number(M.y))}}function G(b){function c(){M=g,H(),h(W,"--")}function d(){return{x:Number(V.width)+f.x,y:Number(V.height)+f.y}}function e(){a.parentIFrame?a.parentIFrame["scrollTo"+(b?"Offset":"")](g.x,g.y):j(W,"Unable to scroll to requested position, window.parentIFrame not found")}var f=b?F(V.iframe):{x:0,y:0},g=d();h(W,"Reposition requested from iFrame (offset x:"+f.x+" y:"+f.y+")"),a.top!==a.self?e():c()}function H(){!1!==N("scrollCallback",M)?p(W):q()}function I(b){function c(){var a=F(g);h(W,"Moving to in page link (#"+e+") at x: "+a.x+" y: "+a.y),M={x:a.x,y:a.y},H(),h(W,"--")}function d(){a.parentIFrame?a.parentIFrame.moveToAnchor(e):h(W,"In page link #"+e+" not found and window.parentIFrame not found")}var e=b.split("#")[1]||"",f=decodeURIComponent(e),g=document.getElementById(f)||document.getElementsByName(f)[0];g?c():a.top!==a.self?d():h(W,"In page link #"+e+" not found")}function N(a,b){return m(W,a,b)}function O(){switch(P[W].firstRun&&T(),V.type){case"close":n(V.iframe);break;case"message":z(y(6));break;case"scrollTo":G(!1);break;case"scrollToOffset":G(!0);break;case"pageInfo":B(P[W].iframe,W),C();break;case"pageInfoStop":D();break;case"inPageLink":I(y(9));break;case"reset":r(V);break;case"init":e(),N("initCallback",V.iframe),N("resizedCallback",V);break;default:e(),N("resizedCallback",V)}}function Q(a){var b=!0;return P[a]||(b=!1,j(V.type+" No settings for "+a+". Message was: "+U)),b}function S(){for(var a in P)u("iFrame requested init",v(a),document.getElementById(a),a)}function T(){P[W].firstRun=!1}var U=d.data,V={},W=null;"[iFrameResizerChild]Ready"===U?S():l()?(V=f(),W=R=V.id,!w()&&Q(W)&&(h(W,"Received: "+U),E()&&k()&&O())):i(W,"Ignored: "+U)}function m(a,b,c){var d=null,e=null;if(P[a]){if(d=P[a][b],"function"!=typeof d)throw new TypeError(b+" on iFrame["+a+"] is not a function");e=d(c)}return e}function n(a){var b=a.id;h(b,"Removing iFrame: "+b),a.parentNode.removeChild(a),m(b,"closedCallback",b),h(b,"--"),delete P[b]}function o(b){null===M&&(M={x:void 0!==a.pageXOffset?a.pageXOffset:document.documentElement.scrollLeft,y:void 0!==a.pageYOffset?a.pageYOffset:document.documentElement.scrollTop},h(b,"Get page position: "+M.x+","+M.y))}function p(b){null!==M&&(a.scrollTo(M.x,M.y),h(b,"Set page position: "+M.x+","+M.y),q())}function q(){M=null}function r(a){function b(){s(a),u("reset","reset",a.iframe,a.id)}h(a.id,"Size reset requested by "+("init"===a.type?"host page":"iFrame")),o(a.id),t(b,a,"reset")}function s(a){function b(b){a.iframe.style[b]=a[b]+"px",h(a.id,"IFrame ("+e+") "+b+" set to "+a[b]+"px")}function c(b){H||"0"!==a[b]||(H=!0,h(e,"Hidden iFrame detected, creating visibility listener"),y())}function d(a){b(a),c(a)}var e=a.iframe.id;P[e]&&(P[e].sizeHeight&&d("height"),P[e].sizeWidth&&d("width"))}function t(a,b,c){c!==b.type&&N?(h(b.id,"Requesting animation frame"),N(a)):a()}function u(a,b,c,d){function e(){var e=P[d].targetOrigin;h(d,"["+a+"] Sending msg to iframe["+d+"] ("+b+") targetOrigin: "+e),c.contentWindow.postMessage(K+b,e)}function f(){i(d,"["+a+"] IFrame("+d+") not found"),P[d]&&delete P[d]}function g(){c&&"contentWindow"in c&&null!==c.contentWindow?e():f()}d=d||c.id,P[d]&&g()}function v(a){return a+":"+P[a].bodyMarginV1+":"+P[a].sizeWidth+":"+P[a].log+":"+P[a].interval+":"+P[a].enablePublicMethods+":"+P[a].autoResize+":"+P[a].bodyMargin+":"+P[a].heightCalculationMethod+":"+P[a].bodyBackground+":"+P[a].bodyPadding+":"+P[a].tolerance+":"+P[a].inPageLinks+":"+P[a].resizeFrom+":"+P[a].widthCalculationMethod}function w(a,c){function d(){function b(b){1/0!==P[w][b]&&0!==P[w][b]&&(a.style[b]=P[w][b]+"px",h(w,"Set "+b+" = "+P[w][b]+"px"))}function c(a){if(P[w]["min"+a]>P[w]["max"+a])throw new Error("Value for min"+a+" can not be greater than max"+a)}c("Height"),c("Width"),b("maxHeight"),b("minHeight"),b("maxWidth"),b("minWidth")}function e(){var a=c&&c.id||S.id+F++;return null!==document.getElementById(a)&&(a+=F++),a}function f(b){return R=b,""===b&&(a.id=b=e(),G=(c||{}).log,R=b,h(b,"Added missing iframe ID: "+b+" ("+a.src+")")),b}function g(){h(w,"IFrame scrolling "+(P[w].scrolling?"enabled":"disabled")+" for "+w),a.style.overflow=!1===P[w].scrolling?"hidden":"auto",a.scrolling=!1===P[w].scrolling?"no":"yes"}function i(){("number"==typeof P[w].bodyMargin||"0"===P[w].bodyMargin)&&(P[w].bodyMarginV1=P[w].bodyMargin,P[w].bodyMargin=""+P[w].bodyMargin+"px")}function k(){var b=P[w].firstRun,c=P[w].heightCalculationMethod in O;!b&&c&&r({iframe:a,height:0,width:0,type:"init"})}function l(){Function.prototype.bind&&(P[w].iframe.iFrameResizer={close:n.bind(null,P[w].iframe),resize:u.bind(null,"Window resize","resize",P[w].iframe),moveToAnchor:function(a){u("Move to anchor","inPageLink:"+a,P[w].iframe,w)},sendMessage:function(a){a=JSON.stringify(a),u("Send Message","message:"+a,P[w].iframe,w)}})}function m(c){function d(){u("iFrame.onload",c,a),k()}b(a,"load",d),u("init",c,a)}function o(a){if("object"!=typeof a)throw new TypeError("Options is not an object")}function p(a){for(var b in S)S.hasOwnProperty(b)&&(P[w][b]=a.hasOwnProperty(b)?a[b]:S[b])}function q(a){return""===a||"file://"===a?"*":a}function s(b){b=b||{},P[w]={firstRun:!0,iframe:a,remoteHost:a.src.split("/").slice(0,3).join("/")},o(b),p(b),P[w].targetOrigin=!0===P[w].checkOrigin?q(P[w].remoteHost):"*"}function t(){return w in P&&"iFrameResizer"in a}var w=f(a.id);t()?j(w,"Ignored iFrame, already setup."):(s(c),g(),d(),i(),m(v(w)),l())}function x(a,b){null===Q&&(Q=setTimeout(function(){Q=null,a()},b))}function y(){function b(){function a(a){function b(b){return"0px"===P[a].iframe.style[b]}function c(a){return null!==a.offsetParent}c(P[a].iframe)&&(b("height")||b("width"))&&u("Visibility change","resize",P[a].iframe,a)}for(var b in P)a(b)}function c(a){h("window","Mutation observed: "+a[0].target+" "+a[0].type),x(b,16)}function d(){var a=document.querySelector("body"),b={attributes:!0,attributeOldValue:!1,characterData:!0,characterDataOldValue:!1,childList:!0,subtree:!0},d=new e(c);d.observe(a,b)}var e=a.MutationObserver||a.WebKitMutationObserver;e&&d()}function z(a){function b(){B("Window "+a,"resize")}h("window","Trigger event: "+a),x(b,16)}function A(){function a(){B("Tab Visable","resize")}"hidden"!==document.visibilityState&&(h("document","Trigger event: Visiblity change"),x(a,16))}function B(a,b){function c(a){return"parent"===P[a].resizeFrom&&P[a].autoResize&&!P[a].firstRun}for(var d in P)c(d)&&u(a,b,document.getElementById(d),d)}function C(){b(a,"message",l),b(a,"resize",function(){z("resize")}),b(document,"visibilitychange",A),b(document,"-webkit-visibilitychange",A),b(a,"focusin",function(){z("focus")}),b(a,"focus",function(){z("focus")})}function D(){function a(a,c){function d(){if(!c.tagName)throw new TypeError("Object is not a valid DOM element");if("IFRAME"!==c.tagName.toUpperCase())throw new TypeError("Expected <IFRAME> tag, found <"+c.tagName+">")}c&&(d(),w(c,a),b.push(c))}var b;return d(),C(),function(c,d){switch(b=[],typeof d){case"undefined":case"string":Array.prototype.forEach.call(document.querySelectorAll(d||"iframe"),a.bind(void 0,c));break;case"object":a(c,d);break;default:throw new TypeError("Unexpected data type ("+typeof d+")")}return b}}function E(a){a.fn.iFrameResize=function(a){return this.filter("iframe").each(function(b,c){w(c,a)}).end()}}var F=0,G=!1,H=!1,I="message",J=I.length,K="[iFrameSizer]",L=K.length,M=null,N=a.requestAnimationFrame,O={max:1,scroll:1,bodyScroll:1,documentElementScroll:1},P={},Q=null,R="Host Page",S={autoResize:!0,bodyBackground:null,bodyMargin:null,bodyMarginV1:8,bodyPadding:null,checkOrigin:!0,inPageLinks:!1,enablePublicMethods:!0,heightCalculationMethod:"bodyOffset",id:"iFrameResizer",interval:32,log:!1,maxHeight:1/0,maxWidth:1/0,minHeight:0,minWidth:0,resizeFrom:"parent",scrolling:!1,sizeHeight:!0,sizeWidth:!1,tolerance:0,widthCalculationMethod:"scroll",closedCallback:function(){},initCallback:function(){},messageCallback:function(){j("MessageCallback function not defined")},resizedCallback:function(){},scrollCallback:function(){return!0}};a.jQuery&&E(jQuery),"function"==typeof define&&define.amd?define([],D):"object"==typeof module&&"object"==typeof module.exports?module.exports=D():a.iFrameResize=a.iFrameResize||D()}(window||{});
++//# sourceMappingURL=iframeResizer.map
+\ No newline at end of file
+diff --git a/iframe/web_widgets_iframe.js b/iframe/web_widgets_iframe.js
+index 859fb08..19b5bb5 100644
+--- a/iframe/web_widgets_iframe.js
++++ b/iframe/web_widgets_iframe.js
+@@ -6,34 +6,44 @@ if (document.getElementsByTagName && document.createElement && document.createTe
+     wid: widgetContext['widgetid'],
+     width: widgetContext['width'],
+     height: widgetContext['height'],
+-    scrolling: widgetContext['scrolling']
++    scrolling: widgetContext['scrolling'],
++    autoheight: widgetContext['autoheight'],
++    autoheight_method: widgetContext['autoheight_method']
+   };
+ 
+   for (var i in DrupalEmbed) {
+     if (!DrupalEmbed[i]['processed']) {
+       DrupalEmbed[i]['processed'] = true;
+-      
++
+       var separator = DrupalEmbed[i].src.indexOf('?') == -1 ? '?' : '&';
+-      
++
+       if (undefined===window.widget_count){
+         window.widget_count = 0;
+       }
+       else {
+         widget_count++;
+       }
+-      
++
+       var script = document.getElementById(DrupalEmbed[i].wid);
+       script.setAttribute('id', DrupalEmbed[i].wid);
+-      
++
+       var iframe = document.createElement('iframe');
+       iframe.setAttribute('id', 'widgets-' + widget_count);
+       iframe.setAttribute('frameBorder', '0');
+-      iframe.setAttribute('width', DrupalEmbed[i].width);
+-      iframe.setAttribute('height', DrupalEmbed[i].height);
++      if (DrupalEmbed[i].autoheight) {
++        iframe.setAttribute('width', '100%');
++      }
++      else {
++        iframe.setAttribute('height', DrupalEmbed[i].height);
++        iframe.setAttribute('width', DrupalEmbed[i].width);
++      }
+       iframe.setAttribute('src', DrupalEmbed[i].src);
+       iframe.setAttribute('scrolling', DrupalEmbed[i].scrolling);
+-      
++
+       script.parentNode.insertBefore(iframe, script);
++      if (DrupalEmbed[i].autoheight && (typeof window.iFrameResize == 'function')) {
++        iFrameResize({checkOrigin:false, heightCalculationMethod: DrupalEmbed[i].autoheight_method});
++      }
+     }
+   }
+ }
+diff --git a/iframe/web_widgets_iframe.tpl.php b/iframe/web_widgets_iframe.tpl.php
+index d369bf3..2c4f086 100644
+--- a/iframe/web_widgets_iframe.tpl.php
++++ b/iframe/web_widgets_iframe.tpl.php
+@@ -7,4 +7,7 @@
+ <script type="text/javascript">
+ widgetContext = <?php print $js_variables ?>;
+ </script>
++<?php if (!empty($script_resize_url)): ?>
++  <script id="<?php print $wid ?>-resize" src="<?php print $script_resize_url ?>"></script>
++<?php endif ?>
+ <script id="<?php print $wid ?>" src="<?php print $script_url ?>"></script>
+diff --git a/iframe_autoheight_and_show_more-2653350-1.patch b/iframe_autoheight_and_show_more-2653350-1.patch
+new file mode 100644
+index 0000000..9ac7090
+--- /dev/null
++++ b/iframe_autoheight_and_show_more-2653350-1.patch
+@@ -0,0 +1,267 @@
++diff --git a/iframe/web_widgets_iframe.js b/iframe/web_widgets_iframe.js
++index 859fb08..19b5bb5 100644
++--- a/iframe/web_widgets_iframe.js
+++++ b/iframe/web_widgets_iframe.js
++@@ -6,34 +6,44 @@ if (document.getElementsByTagName && document.createElement && document.createTe
++     wid: widgetContext['widgetid'],
++     width: widgetContext['width'],
++     height: widgetContext['height'],
++-    scrolling: widgetContext['scrolling']
+++    scrolling: widgetContext['scrolling'],
+++    autoheight: widgetContext['autoheight'],
+++    autoheight_method: widgetContext['autoheight_method']
++   };
++ 
++   for (var i in DrupalEmbed) {
++     if (!DrupalEmbed[i]['processed']) {
++       DrupalEmbed[i]['processed'] = true;
++-      
+++
++       var separator = DrupalEmbed[i].src.indexOf('?') == -1 ? '?' : '&';
++-      
+++
++       if (undefined===window.widget_count){
++         window.widget_count = 0;
++       }
++       else {
++         widget_count++;
++       }
++-      
+++
++       var script = document.getElementById(DrupalEmbed[i].wid);
++       script.setAttribute('id', DrupalEmbed[i].wid);
++-      
+++
++       var iframe = document.createElement('iframe');
++       iframe.setAttribute('id', 'widgets-' + widget_count);
++       iframe.setAttribute('frameBorder', '0');
++-      iframe.setAttribute('width', DrupalEmbed[i].width);
++-      iframe.setAttribute('height', DrupalEmbed[i].height);
+++      if (DrupalEmbed[i].autoheight) {
+++        iframe.setAttribute('width', '100%');
+++      }
+++      else {
+++        iframe.setAttribute('height', DrupalEmbed[i].height);
+++        iframe.setAttribute('width', DrupalEmbed[i].width);
+++      }
++       iframe.setAttribute('src', DrupalEmbed[i].src);
++       iframe.setAttribute('scrolling', DrupalEmbed[i].scrolling);
++-      
+++
++       script.parentNode.insertBefore(iframe, script);
+++      if (DrupalEmbed[i].autoheight && (typeof window.iFrameResize == 'function')) {
+++        iFrameResize({checkOrigin:false, heightCalculationMethod: DrupalEmbed[i].autoheight_method});
+++      }
++     }
++   }
++ }
++diff --git a/iframe/web_widgets_iframe.tpl.php b/iframe/web_widgets_iframe.tpl.php
++index d369bf3..2c4f086 100644
++--- a/iframe/web_widgets_iframe.tpl.php
+++++ b/iframe/web_widgets_iframe.tpl.php
++@@ -7,4 +7,7 @@
++ <script type="text/javascript">
++ widgetContext = <?php print $js_variables ?>;
++ </script>
+++<?php if (!empty($script_resize_url)): ?>
+++  <script id="<?php print $wid ?>-resize" src="<?php print $script_resize_url ?>"></script>
+++<?php endif ?>
++ <script id="<?php print $wid ?>" src="<?php print $script_url ?>"></script>
++diff --git a/iframe_autoheight_and_show_more-2653350-1.patch b/iframe_autoheight_and_show_more-2653350-1.patch
++index 0d0eab1..e69de29 100644
++--- a/iframe_autoheight_and_show_more-2653350-1.patch
+++++ b/iframe_autoheight_and_show_more-2653350-1.patch
++@@ -1,131 +0,0 @@
++-diff --git a/iframe/web_widgets_iframe.js b/iframe/web_widgets_iframe.js
++-index 859fb08..19b5bb5 100644
++---- a/iframe/web_widgets_iframe.js
++-+++ b/iframe/web_widgets_iframe.js
++-@@ -6,34 +6,44 @@ if (document.getElementsByTagName && document.createElement && document.createTe
++-     wid: widgetContext['widgetid'],
++-     width: widgetContext['width'],
++-     height: widgetContext['height'],
++--    scrolling: widgetContext['scrolling']
++-+    scrolling: widgetContext['scrolling'],
++-+    autoheight: widgetContext['autoheight'],
++-+    autoheight_method: widgetContext['autoheight_method']
++-   };
++- 
++-   for (var i in DrupalEmbed) {
++-     if (!DrupalEmbed[i]['processed']) {
++-       DrupalEmbed[i]['processed'] = true;
++--      
++-+
++-       var separator = DrupalEmbed[i].src.indexOf('?') == -1 ? '?' : '&';
++--      
++-+
++-       if (undefined===window.widget_count){
++-         window.widget_count = 0;
++-       }
++-       else {
++-         widget_count++;
++-       }
++--      
++-+
++-       var script = document.getElementById(DrupalEmbed[i].wid);
++-       script.setAttribute('id', DrupalEmbed[i].wid);
++--      
++-+
++-       var iframe = document.createElement('iframe');
++-       iframe.setAttribute('id', 'widgets-' + widget_count);
++-       iframe.setAttribute('frameBorder', '0');
++--      iframe.setAttribute('width', DrupalEmbed[i].width);
++--      iframe.setAttribute('height', DrupalEmbed[i].height);
++-+      if (DrupalEmbed[i].autoheight) {
++-+        iframe.setAttribute('width', '100%');
++-+      }
++-+      else {
++-+        iframe.setAttribute('height', DrupalEmbed[i].height);
++-+        iframe.setAttribute('width', DrupalEmbed[i].width);
++-+      }
++-       iframe.setAttribute('src', DrupalEmbed[i].src);
++-       iframe.setAttribute('scrolling', DrupalEmbed[i].scrolling);
++--      
++-+
++-       script.parentNode.insertBefore(iframe, script);
++-+      if (DrupalEmbed[i].autoheight && (typeof window.iFrameResize == 'function')) {
++-+        iFrameResize({checkOrigin:false, heightCalculationMethod: DrupalEmbed[i].autoheight_method});
++-+      }
++-     }
++-   }
++- }
++-diff --git a/iframe/web_widgets_iframe.tpl.php b/iframe/web_widgets_iframe.tpl.php
++-index d369bf3..2c4f086 100644
++---- a/iframe/web_widgets_iframe.tpl.php
++-+++ b/iframe/web_widgets_iframe.tpl.php
++-@@ -7,4 +7,7 @@
++- <script type="text/javascript">
++- widgetContext = <?php print $js_variables ?>;
++- </script>
++-+<?php if (!empty($script_resize_url)): ?>
++-+  <script id="<?php print $wid ?>-resize" src="<?php print $script_resize_url ?>"></script>
++-+<?php endif ?>
++- <script id="<?php print $wid ?>" src="<?php print $script_url ?>"></script>
++-diff --git a/views/web_widgets.views.inc b/views/web_widgets.views.inc
++-index 9ddc7d8..be939ab 100644
++---- a/views/web_widgets.views.inc
++-+++ b/views/web_widgets.views.inc
++-@@ -19,8 +19,8 @@ function web_widgets_views_plugins() {
++-         'path' => drupal_get_path('module', 'web_widgets') . '/views',
++-         'uses hook menu' => TRUE,
++-         'theme' => 'views_view',
++--        'use ajax' => FALSE,
++--        'use pager' => FALSE,
++-+        'use ajax' => variable_get('web_widgets_use_ajax', FALSE),
++-+        'use pager' => variable_get('web_widgets_use_pager', FALSE),
++-         'accept attachments' => FALSE,
++-       ),
++-     ),
++-diff --git a/web_widgets.info b/web_widgets.info
++-index 5d08071..1fe0692 100644
++---- a/web_widgets.info
++-+++ b/web_widgets.info
++-@@ -2,5 +2,6 @@ name =  Web Widgets
++- description = Create dynamic snippets of this site that users can copy and paste to their websites. Plays nice with Views module. See README.txt for more installation instructions.
++- core = 7.x
++- 
++-+configure = admin/config/services/web_widgets
++- 
++- files[] = views/web_widgets_plugin_display_web_widgets.inc
++-diff --git a/web_widgets.module b/web_widgets.module
++-index e8d63aa..c62109e 100644
++---- a/web_widgets.module
++-+++ b/web_widgets.module
++-@@ -5,6 +5,22 @@
++-  */
++- 
++- /**
++-+ * Implements hook_menu().
++-+ */
++-+function web_widgets_menu() {
++-+  $items['admin/config/services/web_widgets'] = array(
++-+    'title' => 'Web Widgets',
++-+    'description' => 'Configurations for Web Widgets.',
++-+    'page callback' => 'drupal_get_form',
++-+    'page arguments' => array('web_widgets_admin_settings_form'),
++-+    'access arguments' => array('access administration pages'),
++-+    'file' => 'includes/web_widgets.admin.inc',
++-+  );
++-+
++-+  return $items;
++-+}
++-+
++-+/**
++-  * Implements hook_views_api().
++-  */
++- function web_widgets_views_api() {
++-@@ -191,7 +207,7 @@ function theme_web_widgets_embed_code($variables) {
++- 
++-   $styles = web_widgets_get_styles();
++-   $style_name = $styles[$style];
++--  
++-+
++-   static $num = 0;
++-   $form = array(
++-     '#type' => 'textarea',
++diff --git a/views/web_widgets.views.inc b/views/web_widgets.views.inc
++index 9ddc7d8..be939ab 100644
++--- a/views/web_widgets.views.inc
+++++ b/views/web_widgets.views.inc
++@@ -19,8 +19,8 @@ function web_widgets_views_plugins() {
++         'path' => drupal_get_path('module', 'web_widgets') . '/views',
++         'uses hook menu' => TRUE,
++         'theme' => 'views_view',
++-        'use ajax' => FALSE,
++-        'use pager' => FALSE,
+++        'use ajax' => variable_get('web_widgets_use_ajax', FALSE),
+++        'use pager' => variable_get('web_widgets_use_pager', FALSE),
++         'accept attachments' => FALSE,
++       ),
++     ),
++diff --git a/web_widgets.info b/web_widgets.info
++index 5d08071..1fe0692 100644
++--- a/web_widgets.info
+++++ b/web_widgets.info
++@@ -2,5 +2,6 @@ name =  Web Widgets
++ description = Create dynamic snippets of this site that users can copy and paste to their websites. Plays nice with Views module. See README.txt for more installation instructions.
++ core = 7.x
++ 
+++configure = admin/config/services/web_widgets
++ 
++ files[] = views/web_widgets_plugin_display_web_widgets.inc
++diff --git a/web_widgets.module b/web_widgets.module
++index e8d63aa..c62109e 100644
++--- a/web_widgets.module
+++++ b/web_widgets.module
++@@ -5,6 +5,22 @@
++  */
++ 
++ /**
+++ * Implements hook_menu().
+++ */
+++function web_widgets_menu() {
+++  $items['admin/config/services/web_widgets'] = array(
+++    'title' => 'Web Widgets',
+++    'description' => 'Configurations for Web Widgets.',
+++    'page callback' => 'drupal_get_form',
+++    'page arguments' => array('web_widgets_admin_settings_form'),
+++    'access arguments' => array('access administration pages'),
+++    'file' => 'includes/web_widgets.admin.inc',
+++  );
+++
+++  return $items;
+++}
+++
+++/**
++  * Implements hook_views_api().
++  */
++ function web_widgets_views_api() {
++@@ -191,7 +207,7 @@ function theme_web_widgets_embed_code($variables) {
++ 
++   $styles = web_widgets_get_styles();
++   $style_name = $styles[$style];
++-  
+++
++   static $num = 0;
++   $form = array(
++     '#type' => 'textarea',
+diff --git a/includes/web_widgets.admin.inc b/includes/web_widgets.admin.inc
+new file mode 100644
+index 0000000..df7bb37
+--- /dev/null
++++ b/includes/web_widgets.admin.inc
+@@ -0,0 +1,54 @@
++<?php
++
++/**
++ * Implements hook_form().
++ */
++function web_widgets_admin_settings_form($form, &$form_state) {
++
++  $form['web_widgets_use_ajax'] = array(
++    '#type' => 'checkbox',
++    '#title' => 'Use ajax',
++    '#description' => 'Use ajax in view.',
++    '#default_value' => variable_get('web_widgets_use_ajax', FALSE),
++  );
++
++  $form['web_widgets_use_pager'] = array(
++    '#type' => 'checkbox',
++    '#title' => 'Use pager',
++    '#description' => 'Use pager in view.',
++    '#default_value' => variable_get('web_widgets_use_pager', FALSE),
++  );
++
++  $form['web_widgets_iframe_autoheight'] = array(
++    '#type' => 'checkbox',
++    '#title' => 'IFrame autoheight',
++    '#description' => 'Use autoheight plugin for iframe widget',
++    '#default_value' => variable_get('web_widgets_iframe_autoheight', FALSE),
++  );
++
++  $methods = array(
++    'bodyScroll',
++    'documentElementOffset',
++    'documentElementScroll',
++    'max',
++    'min',
++    'grow',
++    'lowestElement',
++    'taggedElement',
++  );
++
++  $form['web_widgets_iframe_autoheight_method'] = array(
++    '#type' => 'select',
++    '#title' => 'IFrame autoheight method',
++    '#description' => 'Select method which works best for your site. See details on http://davidjbradshaw.github.io/iframe-resizer/#heightcalculationmethod',
++    '#default_value' => variable_get('web_widgets_iframe_autoheight_method', 'lowestElement'),
++    '#states' => array(
++        'visible' => array(
++            ':input[name="web_widgets_iframe_autoheight"]' => array('checked' => TRUE),
++        ),
++    ),
++    '#options' => drupal_map_assoc($methods),
++  );
++
++  return system_settings_form($form);
++}
+diff --git a/views/web_widgets.views.inc b/views/web_widgets.views.inc
+index 9ddc7d8..be939ab 100644
+--- a/views/web_widgets.views.inc
++++ b/views/web_widgets.views.inc
+@@ -19,8 +19,8 @@ function web_widgets_views_plugins() {
+         'path' => drupal_get_path('module', 'web_widgets') . '/views',
+         'uses hook menu' => TRUE,
+         'theme' => 'views_view',
+-        'use ajax' => FALSE,
+-        'use pager' => FALSE,
++        'use ajax' => variable_get('web_widgets_use_ajax', FALSE),
++        'use pager' => variable_get('web_widgets_use_pager', FALSE),
+         'accept attachments' => FALSE,
+       ),
+     ),
+diff --git a/web_widgets.info b/web_widgets.info
+index 5d08071..1fe0692 100644
+--- a/web_widgets.info
++++ b/web_widgets.info
+@@ -2,5 +2,6 @@ name =  Web Widgets
+ description = Create dynamic snippets of this site that users can copy and paste to their websites. Plays nice with Views module. See README.txt for more installation instructions.
+ core = 7.x
+ 
++configure = admin/config/services/web_widgets
+ 
+ files[] = views/web_widgets_plugin_display_web_widgets.inc
+diff --git a/web_widgets.install b/web_widgets.install
+new file mode 100644
+index 0000000..e9b9e72
+--- /dev/null
++++ b/web_widgets.install
+@@ -0,0 +1,11 @@
++<?php
++
++/**
++ * Implements hook_uninstall().
++ */
++function web_widgets_uninstall() {
++  variable_del('web_widgets_use_ajax');
++  variable_del('web_widgets_use_pager');
++  variable_del('web_widgets_iframe_autoheight');
++  variable_del('web_widgets_iframe_autoheight_method');
++}
+diff --git a/web_widgets.module b/web_widgets.module
+index e8d63aa..c62109e 100644
+--- a/web_widgets.module
++++ b/web_widgets.module
+@@ -5,6 +5,22 @@
+  */
+ 
+ /**
++ * Implements hook_menu().
++ */
++function web_widgets_menu() {
++  $items['admin/config/services/web_widgets'] = array(
++    'title' => 'Web Widgets',
++    'description' => 'Configurations for Web Widgets.',
++    'page callback' => 'drupal_get_form',
++    'page arguments' => array('web_widgets_admin_settings_form'),
++    'access arguments' => array('access administration pages'),
++    'file' => 'includes/web_widgets.admin.inc',
++  );
++
++  return $items;
++}
++
++/**
+  * Implements hook_views_api().
+  */
+ function web_widgets_views_api() {
+@@ -191,7 +207,7 @@ function theme_web_widgets_embed_code($variables) {
+ 
+   $styles = web_widgets_get_styles();
+   $style_name = $styles[$style];
+-  
++
+   static $num = 0;
+   $form = array(
+     '#type' => 'textarea',
