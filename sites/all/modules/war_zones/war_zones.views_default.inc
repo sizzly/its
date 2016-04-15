@@ -1430,6 +1430,69 @@ function war_zones_views_default_views() {
   $export['war_zone_all_management'] = $view;
 
   $view = new view();
+  $view->name = 'war_zone_all_messaging';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node_registration';
+  $view->human_name = 'War Zone: All: Messaging';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Node registration: E-mail */
+  $handler->display->display_options['fields']['email']['id'] = 'email';
+  $handler->display->display_options['fields']['email']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['email']['field'] = 'email';
+  $handler->display->display_options['fields']['email']['label'] = '';
+  $handler->display->display_options['fields']['email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['email']['link_to_node_registration'] = 0;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_edit'] = 0;
+  $handler->display->display_options['fields']['email']['link_to_node_registration_email'] = 0;
+  /* Contextual filter: Node registration: Node nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node_registration';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Rules */
+  $handler = $view->new_display('views_rules', 'Rules', 'views_rules_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['rules_parameter'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => 'Node registration: Node nid',
+      'name' => 'nid',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'email' => array(
+      'enabled' => 1,
+      'rendered' => 1,
+      'type' => 'text',
+      'label' => 'E-mail',
+      'name' => 'email',
+    ),
+  );
+  $export['war_zone_all_messaging'] = $view;
+
+  $view = new view();
   $view->name = 'war_zone_all_news';
   $view->description = 'Generates the Article views for a war zone.';
   $view->tag = 'War Zones 4.1';
@@ -4716,6 +4779,7 @@ function war_zones_views_default_views() {
 
   /* Display: Email on Article */
   $handler = $view->new_display('views_rules', 'Email on Article', 'views_rules_1');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['rules_parameter'] = array(
@@ -4733,13 +4797,6 @@ function war_zones_views_default_views() {
       'type' => 'text',
       'label' => 'E-mail',
       'name' => 'email',
-    ),
-    'field_register_real_name' => array(
-      'enabled' => 1,
-      'rendered' => 1,
-      'type' => 'text',
-      'label' => 'Real Name',
-      'name' => 'field_register_real_name',
     ),
   );
 

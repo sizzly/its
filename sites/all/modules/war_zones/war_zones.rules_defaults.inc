@@ -3110,7 +3110,7 @@ function war_zones_default_rules_configuration() {
       },
       "DO" : [
         { "VIEW LOOP" : {
-            "VIEW" : "war_zone_email_player_rules",
+            "VIEW" : "war_zone_all_messaging",
             "DISPLAY" : "views_rules_1",
             "USING" : { "nid" : [ "wzid:nid" ] },
             "ROW VARIABLES" : { "email" : { "email" : "E-mail" } },
