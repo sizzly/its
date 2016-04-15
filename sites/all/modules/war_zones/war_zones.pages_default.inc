@@ -4423,7 +4423,7 @@ Manage',
     'name' => 'navigation',
     'weight' => '-10',
     'parent' => array(
-      'type' => 'tab',
+      'type' => 'normal',
       'title' => 'Manage',
       'name' => 'navigation',
       'weight' => '0',
@@ -4465,6 +4465,8 @@ Manage',
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
+              'narrative_campaign_instance' => 'narrative_campaign_instance',
+              'special_event' => 'special_event',
               'war_zone_league' => 'war_zone_league',
               'war_zone_tournament' => 'war_zone_tournament',
             ),

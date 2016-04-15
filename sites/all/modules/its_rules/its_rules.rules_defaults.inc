@@ -194,7 +194,7 @@ function its_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "Comment", "Master" ],
-      "REQUIRES" : [ "userpoints_rules", "rules", "comment" ],
+      "REQUIRES" : [ "userpoints_rules", "rules", "rules_conditional", "comment" ],
       "ON" : { "comment_insert" : [] },
       "DO" : [
         { "userpoints_action_grant_points" : {
@@ -242,6 +242,44 @@ function its_rules_default_rules_configuration() {
             "data" : [ "entity-created:field-message-comment-reference" ],
             "value" : [ "comment" ]
           }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is" : { "data" : [ "comment:author" ], "value" : [ "comment:node:author" ] } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "data_is_empty" : { "data" : [ "comment:parent" ] } },
+                      "DO" : [
+                        { "mail" : {
+                            "to" : [ "comment:node:author:mail" ],
+                            "subject" : "[iToysoldiers] New Comment on [comment:node:title]",
+                            "message" : "                    \\u003Cp\\u003E\\u003Cimg alt=\\u0022\\u0022 src=\\u0022http:\\/\\/l.itoysoldiers.com\\/index.php\\/asset\\/5:new-comment-image\\u0022 style=\\u0022width: 600px; height: 200px;\\u0022 \\/\\u003E\\u003C\\/p\\u003E\\r\\n                    \\u003Ch2\\u003E[comment:author] commented on [comment:node:title]\\u003C\\/h2\\u003E\\r\\n\\r\\n                    \\u003Ctable border=\\u00220\\u0022 cellpadding=\\u00220\\u0022 cellspacing=\\u00220\\u0022 style=\\u0022background-color:#505050; border:1px solid #353535; border-radius:5px;\\u0022\\u003E\\r\\n                        \\u003Ctr\\u003E\\r\\n                            \\u003Ctd align=\\u0022center\\u0022 valign=\\u0022middle\\u0022 style=\\u0022color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;\\u0022\\u003E\\r\\n                                \\u003Ca href=\\u0022[comment:node:url]\\u0022 target=\\u0022_blank\\u0022 style=\\u0022color:#FFFFFF; text-decoration:none;\\u0022\\u003EView the Post\\u003C\\/a\\u003E\\r\\n                            \\u003C\\/td\\u003E\\r\\n                        \\u003C\\/tr\\u003E\\r\\n                    \\u003C\\/table\\u003E",
+                            "language" : [ "" ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is_empty" : { "data" : [ "comment:parent" ] } },
+              "DO" : [
+                { "mail" : {
+                    "to" : [ "comment:parent:author:mail" ],
+                    "subject" : "[iToysoldiers] New Reply on [comment:node:title]",
+                    "message" : "                    \\u003Cp\\u003E\\u003Cimg alt=\\u0022\\u0022 src=\\u0022http:\\/\\/l.itoysoldiers.com\\/index.php\\/asset\\/5:new-comment-image\\u0022 style=\\u0022width: 600px; height: 200px;\\u0022 \\/\\u003E\\u003C\\/p\\u003E\\r\\n                    \\u003Ch2\\u003E[comment:author] has replied to you on [comment:node:title]\\u003C\\/h2\\u003E\\r\\n\\r\\n                    \\u003Ctable border=\\u00220\\u0022 cellpadding=\\u00220\\u0022 cellspacing=\\u00220\\u0022 style=\\u0022background-color:#505050; border:1px solid #353535; border-radius:5px;\\u0022\\u003E\\r\\n                        \\u003Ctr\\u003E\\r\\n                            \\u003Ctd align=\\u0022center\\u0022 valign=\\u0022middle\\u0022 style=\\u0022color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;\\u0022\\u003E\\r\\n                                \\u003Ca href=\\u0022[comment:node:url]\\u0022 target=\\u0022_blank\\u0022 style=\\u0022color:#FFFFFF; text-decoration:none;\\u0022\\u003EView the Post\\u003C\\/a\\u003E\\r\\n                            \\u003C\\/td\\u003E\\r\\n                        \\u003C\\/tr\\u003E\\r\\n                    \\u003C\\/table\\u003E",
+                    "language" : [ "" ]
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -300,7 +338,14 @@ function its_rules_default_rules_configuration() {
             "value" : [ "assoc-nodes" ]
           }
         },
-        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
+        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
+        { "mail" : {
+            "to" : [ "flagged-node:author:mail" ],
+            "subject" : "[iToysoldiers] New Salute for [flagged-node:title]",
+            "message" : "                    \\u003Cp\\u003E\\u003Cimg alt=\\u0022\\u0022 src=\\u0022http:\\/\\/l.itoysoldiers.com\\/index.php\\/asset\\/6:new-salute-image\\u0022 style=\\u0022width: 600px; height: 200px;\\u0022 \\/\\u003E\\u003C\\/p\\u003E\\r\\n                    \\u003Ch2\\u003E[flagging-user:name] has saluted [flagged-node:title]\\u003C\\/h2\\u003E\\r\\n\\r\\n                    \\u003Ctable border=\\u00220\\u0022 cellpadding=\\u00220\\u0022 cellspacing=\\u00220\\u0022 style=\\u0022background-color:#505050; border:1px solid #353535; border-radius:5px;\\u0022\\u003E\\r\\n                        \\u003Ctr\\u003E\\r\\n                            \\u003Ctd align=\\u0022center\\u0022 valign=\\u0022middle\\u0022 style=\\u0022color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;\\u0022\\u003E\\r\\n                                \\u003Ca href=\\u0022[flagged-node:url]\\u0022 target=\\u0022_blank\\u0022 style=\\u0022color:#FFFFFF; text-decoration:none;\\u0022\\u003EView the Post\\u003C\\/a\\u003E\\r\\n                            \\u003C\\/td\\u003E\\r\\n                        \\u003C\\/tr\\u003E\\r\\n                    \\u003C\\/table\\u003E",
+            "language" : [ "" ]
+          }
+        }
       ]
     }
   }');
@@ -881,7 +926,7 @@ function its_rules_default_rules_configuration() {
       "LABEL" : "Stream: Photos: On Create",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "userpoints_rules", "entityform" ],
+      "REQUIRES" : [ "rules", "userpoints_rules", "rules_conditional", "entityform" ],
       "ON" : { "entityform_insert" : [] },
       "IF" : [
         { "entity_is_of_bundle" : {
@@ -931,6 +976,36 @@ function its_rules_default_rules_configuration() {
             "data" : [ "entity-created:field-update-reference" ],
             "value" : [ "entityform" ]
           }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_is_of_bundle" : {
+                  "entity" : [ "entityform:field-status-content-reference" ],
+                  "type" : "node",
+                  "bundle" : { "value" : { "models" : "models" } }
+                }
+              },
+              "DO" : [
+                { "LOOP" : {
+                    "USING" : { "list" : [ "entityform:field-field-status-upload-images" ] },
+                    "ITEM" : { "list_item" : "Current list item" },
+                    "DO" : [
+                      { "list_add" : {
+                          "list" : [ "entityform:field-status-content-reference:field-images" ],
+                          "item" : [ "list-item" ]
+                        }
+                      },
+                      { "entity_save" : {
+                          "data" : [ "entityform:field-status-content-reference" ],
+                          "immediate" : "1"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
