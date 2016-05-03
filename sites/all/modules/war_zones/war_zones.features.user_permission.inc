@@ -20,6 +20,42 @@ function war_zones_user_default_permissions() {
     'module' => 'rules_link',
   );
 
+  // Exported permission: 'access rules link war_zone_league_forfeit_match'.
+  $permissions['access rules link war_zone_league_forfeit_match'] = array(
+    'name' => 'access rules link war_zone_league_forfeit_match',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules_link',
+  );
+
+  // Exported permission: 'access rules link war_zone_league_i_won_button'.
+  $permissions['access rules link war_zone_league_i_won_button'] = array(
+    'name' => 'access rules link war_zone_league_i_won_button',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules_link',
+  );
+
+  // Exported permission: 'access rules link war_zone_league_next_round'.
+  $permissions['access rules link war_zone_league_next_round'] = array(
+    'name' => 'access rules link war_zone_league_next_round',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules_link',
+  );
+
+  // Exported permission: 'access rules link war_zone_tournament_next_round'.
+  $permissions['access rules link war_zone_tournament_next_round'] = array(
+    'name' => 'access rules link war_zone_tournament_next_round',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules_link',
+  );
+
   // Exported permission: 'access rules link wz_complete'.
   $permissions['access rules link wz_complete'] = array(
     'name' => 'access rules link wz_complete',
@@ -199,6 +235,34 @@ function war_zones_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'use Rules component rules_link_set_war_zone_all_open_registration'.
+  $permissions['use Rules component rules_link_set_war_zone_all_open_registration'] = array(
+    'name' => 'use Rules component rules_link_set_war_zone_all_open_registration',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_link_set_war_zone_league_forfeit_match'.
+  $permissions['use Rules component rules_link_set_war_zone_league_forfeit_match'] = array(
+    'name' => 'use Rules component rules_link_set_war_zone_league_forfeit_match',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_link_set_war_zone_league_next_round'.
+  $permissions['use Rules component rules_link_set_war_zone_league_next_round'] = array(
+    'name' => 'use Rules component rules_link_set_war_zone_league_next_round',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules',
   );
 
   return $permissions;

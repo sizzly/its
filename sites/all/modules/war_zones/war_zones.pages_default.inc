@@ -4423,7 +4423,7 @@ Manage',
     'name' => 'navigation',
     'weight' => '-10',
     'parent' => array(
-      'type' => 'normal',
+      'type' => 'tab',
       'title' => 'Manage',
       'name' => 'navigation',
       'weight' => '0',

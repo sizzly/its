@@ -467,6 +467,7 @@ aside .main-menu {
   height: 100%;
 }
 aside .main-menu > ul {
+  padding: 0;
   margin: 0;
   list-style: none;
 }
@@ -603,6 +604,7 @@ aside .main-menu > ul > li .dropdown-menu {
   }
 }
 aside .main-menu > ul > li .submenu {
+    padding: 0;
   display: none;
 }
 aside .main-menu > ul > li .submenu.third-level li a {
@@ -908,7 +910,7 @@ img {
   max-width: 100%;
 }
 ul {
-  padding: 0;
+  padding: 10;
 }
 .well {
   background-color: #e8e8e8;

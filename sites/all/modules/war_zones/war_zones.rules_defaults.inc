@@ -227,6 +227,42 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_link_condition_war_zone_league_i_won_button'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_league_i_won_button" : {
+      "LABEL" : "Rules link: War Zone: League: I Won Button condition",
+      "PLUGIN" : "and",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "entityform" : { "label" : "entityform", "type" : "entityform" },
+        "results" : { "label" : "Results", "type" : "integer" }
+      },
+      "AND" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "entityform" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "score_card" : "score_card" } }
+          }
+        },
+        { "entity_is_of_bundle" : {
+            "entity" : [ "entityform:field-event-link" ],
+            "type" : "node",
+            "bundle" : { "value" : { "war_zone_league" : "war_zone_league" } }
+          }
+        },
+        { "data_is" : {
+            "data" : [ "entityform:field-registration-sc:user" ],
+            "value" : [ "site:current-user" ]
+          }
+        },
+        { "data_is" : {
+            "data" : [ "entityform:field-state-sc" ],
+            "op" : "IN",
+            "value" : { "value" : { "5" : "5", "10" : "10" } }
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_link_condition_war_zone_league_next_round'] = entity_import('rules_config', '{ "rules_link_condition_war_zone_league_next_round" : {
       "LABEL" : "Rules link: War Zone: League: Next Round condition",
       "PLUGIN" : "and",
@@ -639,6 +675,133 @@ function war_zones_default_rules_configuration() {
               }
             ],
             "LABEL" : "War Zone: League: Perform Forfeit"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_link_set_war_zone_league_i_won_button'] = entity_import('rules_config', '{ "rules_link_set_war_zone_league_i_won_button" : {
+      "LABEL" : "Rules link: War Zone: League: I Won Button rules set",
+      "PLUGIN" : "rule set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional", "flag" ],
+      "USES VARIABLES" : {
+        "entityform" : { "label" : "entityform", "type" : "entityform" },
+        "results" : { "label" : "Results", "type" : "integer" }
+      },
+      "RULES" : [
+        { "RULE" : {
+            "IF" : [
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "entityform" ],
+                  "type" : "entityform",
+                  "bundle" : { "value" : { "score_card" : "score_card" } }
+                }
+              },
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "entityform:field-registration-sc" ],
+                  "type" : "node_registration",
+                  "bundle" : { "value" : { "war_zone_league" : "war_zone_league" } }
+                }
+              },
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "entityform:field-opponent-reg-sc" ],
+                  "type" : "node_registration",
+                  "bundle" : { "value" : { "war_zone_league" : "war_zone_league" } }
+                }
+              },
+              { "entity_is_of_bundle" : {
+                  "entity" : [ "entityform:field-opponent-scorecard" ],
+                  "type" : "entityform",
+                  "bundle" : { "value" : { "score_card" : "score_card" } }
+                }
+              }
+            ],
+            "DO" : [
+              { "data_set" : { "data" : [ "entityform:field-state-sc" ], "value" : "20" } },
+              { "data_set" : { "data" : [ "entityform:field-your-results" ], "value" : [ "results" ] } },
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "data_is" : { "data" : [ "entityform:field-display-sc" ], "value" : "1" } },
+                    "DO" : [
+                      { "component_rules_war_zone_all_generate_battle_report" : {
+                          "USING" : {
+                            "wzid" : [ "entityform:field-event-link" ],
+                            "p1id" : [ "entityform:field-registration-sc:user" ],
+                            "p1tid" : [ "entityform:field-registration-sc:field-register-army" ],
+                            "p2tid" : [ "entityform:field-opponent-reg-sc:field-register-army" ],
+                            "p1results" : "5",
+                            "title" : "[entityform:field-event-link:title]:[entityform:field-registration-sc:field-register-army] vs [entityform:field-opponent-reg-sc:field-register-army]"
+                          },
+                          "PROVIDE" : { "brid" : { "brid" : "Battle Report" } }
+                        }
+                      },
+                      { "data_set" : { "data" : [ "entityform:field-game-reference" ], "value" : [ "brid" ] } },
+                      { "CONDITIONAL" : [
+                          {
+                            "IF" : { "data_is" : {
+                                "data" : [ "entityform:field-opponent-scorecard:field-state-sc" ],
+                                "value" : "20"
+                              }
+                            },
+                            "DO" : [
+                              { "flag_flagnode" : {
+                                  "flag" : "acknowledge_battle",
+                                  "node" : [ "brid" ],
+                                  "flagging_user" : [ "entityform:field-opponent-reg-sc:user" ],
+                                  "permission_check" : "1"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      { "mail" : {
+                          "to" : [ "entityform:field-opponent-reg-sc:user:mail" ],
+                          "subject" : "[iToysoldiers] Report Your League Results",
+                          "message" : "\\u003Ch1\\u003EAhoy, Commander!\\u003C\\/h1\\u003E\\r\\n\\u003Cp\\u003EYour opponent has reported their league results.  You are required to do the same.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EPlease visit the \\u003Ca href=\\u0022http:\\/\\/itoysoldiers.com\\/node\\/[entityform:field-event-link:nid]\\/operations\\u0022\\u003EOperations Page\\u003C\\/a\\u003E for the league and report your results.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003EiToysoldiers\\u003C\\/p\\u003E",
+                          "language" : [ "" ]
+                        }
+                      }
+                    ]
+                  },
+                  { "ELSE" : [
+                      { "CONDITIONAL" : [
+                          {
+                            "IF" : { "data_is" : {
+                                "data" : [ "entityform:field-opponent-scorecard:field-state-sc" ],
+                                "value" : "20"
+                              }
+                            },
+                            "DO" : [
+                              { "flag_flagnode" : {
+                                  "flag" : "acknowledge_battle",
+                                  "node" : [ "entityform:field-opponent-scorecard:field-game-reference" ],
+                                  "flagging_user" : [ "entityform:field-registration-sc:user" ],
+                                  "permission_check" : "1"
+                                }
+                              }
+                            ]
+                          },
+                          { "ELSE" : [
+                              { "drupal_message" : { "message" : "\\u003Cdiv class=\\u0022lead\\u0022\\u003EYour League Match Results Have Been Recorded\\u003C\\/div\\u003E\\r\\nOnce your opponent has recorded their battle the report will be generated." } },
+                              { "mail" : {
+                                  "to" : [ "entityform:field-opponent-scorecard:field-registration-sc:user:mail" ],
+                                  "subject" : "[iToysoldiers] League Opponent has reported their results.",
+                                  "message" : "\\u003Ch1\\u003EAhoy, Commander!\\u003C\\/h1\\u003E\\r\\n\\u003Cp\\u003EYour opponent has reported their league results.  You are required to do the same.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EPlease visit the \\u003Ca href=\\u0022http:\\/\\/itoysoldiers.com\\/node\\/[entityform:field-event-link:nid]\\/operations\\u0022\\u003EOperations Page\\u003C\\/a\\u003E for the league and report your results.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003EiToysoldiers\\u003C\\/p\\u003E",
+                                  "language" : [ "" ]
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "LABEL" : "War Zone: League: I Won Process"
           }
         }
       ]
