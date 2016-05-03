@@ -552,6 +552,25 @@ function narrative_campaigns_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-b2a5458a-0671-4821-b79e-18c0e77f04c4';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_operations-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b2a5458a-0671-4821-b79e-18c0e77f04c4';
+    $display->content['new-b2a5458a-0671-4821-b79e-18c0e77f04c4'] = $pane;
+    $display->panels['contentmain'][0] = 'new-b2a5458a-0671-4821-b79e-18c0e77f04c4';
+    $pane = new stdClass();
     $pane->pid = 'new-e8a8c614-7e9c-4509-913a-82e84ee90d1c';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
@@ -576,11 +595,11 @@ function narrative_campaigns_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'e8a8c614-7e9c-4509-913a-82e84ee90d1c';
     $display->content['new-e8a8c614-7e9c-4509-913a-82e84ee90d1c'] = $pane;
-    $display->panels['contentmain'][0] = 'new-e8a8c614-7e9c-4509-913a-82e84ee90d1c';
+    $display->panels['contentmain'][1] = 'new-e8a8c614-7e9c-4509-913a-82e84ee90d1c';
     $pane = new stdClass();
     $pane->pid = 'new-388d1d1c-286e-49b0-ac5a-503e3bfa0164';
     $pane->panel = 'contentmain';
@@ -599,11 +618,11 @@ function narrative_campaigns_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '388d1d1c-286e-49b0-ac5a-503e3bfa0164';
     $display->content['new-388d1d1c-286e-49b0-ac5a-503e3bfa0164'] = $pane;
-    $display->panels['contentmain'][1] = 'new-388d1d1c-286e-49b0-ac5a-503e3bfa0164';
+    $display->panels['contentmain'][2] = 'new-388d1d1c-286e-49b0-ac5a-503e3bfa0164';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-388d1d1c-286e-49b0-ac5a-503e3bfa0164';
   $handler->conf['display'] = $display;

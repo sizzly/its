@@ -1,7 +1,7 @@
 name = Core
 core = 7.x
 package = _iTS
-version = 7.x-4.3-rc3
+version = 7.x-4.3-rc4
 project = core
 dependencies[] = advanced_forum
 dependencies[] = advanced_help

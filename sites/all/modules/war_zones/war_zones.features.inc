@@ -501,13 +501,27 @@ function war_zones_default_rules_link() {
       "text" : "Forfeit",
       "link_type" : "confirm",
       "bundles" : { "score_card" : "score_card" },
-      "entity_link" : 1,
+      "entity_link" : 0,
       "confirm_question" : "Are you sure?",
       "confirm_description" : "This will record a loss for you and cannot be undone."
     },
     "name" : "war_zone_league_forfeit_match",
     "label" : "War Zone: League: Forfeit Match",
     "path" : "war_zone_league_forfeit_match",
+    "entity_type" : "entityform"
+  }');
+  $items['war_zone_league_i_won_button'] = entity_import('rules_link', '{
+    "settings" : {
+      "text" : "I Won",
+      "link_type" : "confirm",
+      "bundles" : { "score_card" : "score_card" },
+      "entity_link" : false,
+      "confirm_question" : "Are you sure?",
+      "confirm_description" : "This will record your league match. It cannot be undone."
+    },
+    "name" : "war_zone_league_i_won_button",
+    "label" : "War Zone: League: Results Buttom",
+    "path" : "war_zone_league_results",
     "entity_type" : "entityform"
   }');
   $items['war_zone_league_next_round'] = entity_import('rules_link', '{
