@@ -64,26 +64,48 @@ function its_army_profiles_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__army_profile';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
-        ),
-        'xmlsitemap' => array(
           'weight' => '5',
         ),
-        'badges' => array(
+        'xmlsitemap' => array(
           'weight' => '6',
         ),
+        'badges' => array(
+          'weight' => '7',
+        ),
         'locations' => array(
-          'weight' => '30',
+          'weight' => '9',
         ),
       ),
       'display' => array(),

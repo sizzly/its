@@ -1,0 +1,94 @@
+diff --git a/paragraphs.js b/paragraphs.js
+index 33c0c33..a085025 100644
+--- a/paragraphs.js
++++ b/paragraphs.js
+@@ -22,4 +22,55 @@
+     }
+   };
+ 
++  /**
++   * Enable Expand/Collapse feature for paragraph bundles.
++   * Show the name & type of each bundle and hide contents inside those.
++   */
++  Drupal.behaviors.paragraphsCollapse = {
++    attach: function (context, settings) {
++      var collapsefuncs = {
++        expand : function(elements) {
++          elements.slideUp();
++        },
++        collapse : function(elements) {
++          elements.slideDown();
++        }
++      };
++
++      var showhideParagraphs = function(element, action) {
++        // Fetch all paragraph bundles.
++        var paragraph_bundles = $(element).closest('table').find('td.paragraph-bundle-content');
++        var paragraph_elements;
++        // Except the first div, show/hide others.
++        paragraph_bundles.each(function () {
++          if ($(this).find('div.ajax-new-content').length) {
++            paragraph_elements = $(this).find('div.ajax-new-content div:not(:first)');
++          }
++          else {
++            paragraph_elements = $(this).find('div:not(:first)');
++          }
++          // Invoke collapse action.
++          collapsefuncs[action](paragraph_elements);
++        });
++      };
++
++      $('span.paragraphs-collapsible a', context).once("paragraphs", function() {
++        $(this, context).click(function(event) {
++          // Prevent the default click event.
++          event.preventDefault();
++          if ($(this).hasClass('collapse')) {
++            showhideParagraphs(this, 'collapse');
++            $(this).removeClass('collapse').addClass('expand');
++            $(this).text(Drupal.t('Collapse All'));
++          }
++          else {
++            showhideParagraphs(this, 'expand');
++            $(this).removeClass('expand').addClass('collapse');
++            $(this).text(Drupal.t('Expand All'));
++          }
++        });
++      });
++    }
++  };
++
+ })(jQuery);
+diff --git a/paragraphs.module b/paragraphs.module
+index 973b785..9813a8e 100644
+--- a/paragraphs.module
++++ b/paragraphs.module
+@@ -1123,14 +1123,19 @@ function theme_paragraphs_field_multiple_value_form($variables) {
+   }
+ 
+   $add_mode = (isset($instance['settings']['add_mode']) ? $instance['settings']['add_mode'] : PARAGRAPHS_DEFAULT_ADD_MODE);
++  $default_edit_mode = isset($instance['settings']['default_edit_mode']) ? $instance['settings']['default_edit_mode'] : PARAGRAPHS_DEFAULT_EDIT_MODE;
+ 
+   $table_id = drupal_html_id($element['#field_name'] . '_values');
+   $order_class = $element['#field_name'] . '-delta-order';
+   $required = !empty($element['#required']) ? theme('form_required_marker', $variables) : '';
++  $expand_collapse = '';
++  if ($default_edit_mode == 'open') {
++    $expand_collapse = '<span style="float: right" class="paragraphs-collapsible collapse">' . l('Collapse All', '#', array('external' => TRUE)) . '</span>';
++  }
+ 
+   $header = array(
+     array(
+-      'data' => '<label>' . t('!title !required', array('!title' => $element['#title'], '!required' => $required)) . "</label>",
++      'data' => '<label>' . t('!title !required !collapsible', array('!collapsible' => $expand_collapse, '!title' => $element['#title'], '!required' => $required)) . "</label>",
+       'colspan' => 2,
+       'class' => array('field-label'),
+     ),
+@@ -1162,7 +1167,7 @@ function theme_paragraphs_field_multiple_value_form($variables) {
+     $delta_element = drupal_render($item['_weight']);
+     $cells = array(
+       array('data' => '', 'class' => array('field-multiple-drag')),
+-      drupal_render($item),
++      array('data' => drupal_render($item), 'class' => array('paragraph-bundle-content')),
+       array('data' => $delta_element, 'class' => array('delta-order')),
+     );
+     $rows[] = array(
