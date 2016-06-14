@@ -16,7 +16,7 @@ function core_filter_default_formats() {
     'name' => 'Filtered Block',
     'cache' => 1,
     'status' => 1,
-    'weight' => 0,
+    'weight' => -3,
     'filters' => array(
       'filter_html' => array(
         'weight' => -10,
@@ -47,10 +47,10 @@ function core_filter_default_formats() {
     ),
   );
 
-  // Exported format: Filtered HTML.
+  // Exported format: Basic.
   $formats['filtered_html'] = array(
     'format' => 'filtered_html',
-    'name' => 'Filtered HTML',
+    'name' => 'Basic',
     'cache' => 1,
     'status' => 1,
     'weight' => -10,
@@ -68,7 +68,7 @@ function core_filter_default_formats() {
         'settings' => array(
           'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <img> <h3> <h4> <div> <p>',
           'filter_html_help' => 0,
-          'filter_html_nofollow' => 0,
+          'filter_html_nofollow' => 1,
         ),
       ),
       'filter_autop' => array(
@@ -89,14 +89,23 @@ function core_filter_default_formats() {
     ),
   );
 
-  // Exported format: Full HTML.
+  // Exported format: Advanced.
   $formats['full_html'] = array(
     'format' => 'full_html',
-    'name' => 'Full HTML',
+    'name' => 'Advanced',
     'cache' => 1,
     'status' => 1,
-    'weight' => -7,
+    'weight' => -9,
     'filters' => array(
+      'filter_html' => array(
+        'weight' => -10,
+        'status' => 1,
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <img> <h3> <h4> <div> <p>',
+          'filter_html_help' => 0,
+          'filter_html_nofollow' => 1,
+        ),
+      ),
       'filter_url' => array(
         'weight' => 0,
         'status' => 1,
@@ -106,6 +115,11 @@ function core_filter_default_formats() {
       ),
       'filter_autop' => array(
         'weight' => 1,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'media_filter' => array(
+        'weight' => 2,
         'status' => 1,
         'settings' => array(),
       ),
@@ -123,7 +137,7 @@ function core_filter_default_formats() {
     'name' => 'MailChimp campaign',
     'cache' => 1,
     'status' => 1,
-    'weight' => -8,
+    'weight' => -7,
     'filters' => array(
       'mailchimp_campaign' => array(
         'weight' => 0,
@@ -188,7 +202,7 @@ function core_filter_default_formats() {
     'name' => 'Pure HTML',
     'cache' => 1,
     'status' => 1,
-    'weight' => -9,
+    'weight' => -8,
     'filters' => array(
       'filter_htmlcorrector' => array(
         'weight' => 10,

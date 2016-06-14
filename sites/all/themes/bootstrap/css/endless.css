@@ -888,7 +888,7 @@ aside .main-menu .alert {
 }
 body {
   padding-top: 0;
-  font-size: 12px;
+  font-size: 14px;
   color: #777777;
   background: #f9f9f9;
   font-family: 'Open Sans', sans-serif;
@@ -3222,7 +3222,7 @@ input,
 button,
 select,
 textarea.form-control {
-  font-size: 12px;
+  font-size: 16px;
 }
 input[type="text"],
 input[type="password"],
@@ -3239,7 +3239,7 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -3283,7 +3283,7 @@ input[type="text"].dial {
   padding: 5px;
   width: 40%;
   height: 200px !important;
-  font-size: 12px;
+  font-size: 16px;
 }
 .select-box-option {
   position: absolute;

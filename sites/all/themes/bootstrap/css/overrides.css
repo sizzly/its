@@ -737,9 +737,7 @@ height: auto;
    margin-bottom:0px;
 }
 .topbuffer { margin-top:20px; }
-.filter-wrapper {
-   display: none;
-}
+
 .submittedcomment {
   margin-bottom:0px;
   font-style: italic;
@@ -1598,4 +1596,7 @@ td.multi-day .calendar .contents a {
 }
 .modal-sm {
     width: 300px;
+}
+.tips {
+    display:none;
 }
