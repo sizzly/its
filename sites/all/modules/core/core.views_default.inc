@@ -117,6 +117,8 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['comments_link']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['comments_link']['alter']['preserve_tags'] = '<a>';
   $handler->display->display_options['fields']['comments_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['comments_link']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['comments_link']['element_wrapper_class'] = 'lead';
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
@@ -124,6 +126,8 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['ops']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['ops']['element_wrapper_class'] = 'lead';
   $handler->display->display_options['fields']['ops']['link_type'] = 'toggle';
   /* Field: Content: Radioactivity */
   $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';

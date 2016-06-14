@@ -10,14 +10,14 @@
 function core_wysiwyg_default_profiles() {
   $profiles = array();
 
-  // Exported profile: filtered_html
-  $profiles['filtered_html'] = array(
-    'format' => 'filtered_html',
+  // Exported profile: full_html
+  $profiles['full_html'] = array(
+    'format' => 'full_html',
     'editor' => 'tinymce',
     'settings' => array(
       'default' => 1,
       'user_choose' => 0,
-      'show_toggle' => 1,
+      'show_toggle' => 0,
       'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
@@ -28,6 +28,7 @@ function core_wysiwyg_default_profiles() {
           'bullist' => 1,
           'numlist' => 1,
           'link' => 1,
+          'image' => 1,
           'formatselect' => 1,
           'copy' => 1,
           'paste' => 1,
@@ -43,21 +44,14 @@ function core_wysiwyg_default_profiles() {
       'verify_html' => 1,
       'preformatted' => 0,
       'convert_fonts_to_spans' => 1,
-      'remove_linebreaks' => 1,
+      'remove_linebreaks' => 0,
       'apply_source_formatting' => 0,
       'paste_auto_cleanup_on_paste' => 0,
       'block_formats' => 'p,address,pre,h3,h4,h5,h6,div',
-      'css_setting' => 'none',
+      'css_setting' => 'theme',
       'css_path' => '',
       'css_classes' => '',
     ),
-  );
-
-  // Exported profile: full_html
-  $profiles['full_html'] = array(
-    'format' => 'full_html',
-    'editor' => 'tinymce',
-    'settings' => FALSE,
   );
 
   return $profiles;
