@@ -146,12 +146,6 @@ class views_handler_argument extends views_handler {
    */
   function uses_breadcrumb() {
     $info = $this->default_actions($this->options['default_action']);
-
-    // if the exception value is not supplied, can't generate a breadcrumb
-    if (empty($this->options['exception']['value'])) {
-        $info['breadcrumb'] = FALSE;
-    }
-
     return !empty($info['breadcrumb']);
   }
 
@@ -1081,9 +1075,6 @@ class views_handler_argument extends views_handler {
     $argument = clone $this;
     if (!isset($arg) && $argument->has_default_argument()) {
       $arg = $argument->get_default_argument();
-
-      // remember that this argument was computed, not passed on the URL.
-      $this->is_default = TRUE;
     }
     // Set the argument, which will also validate that the argument can be set.
     if ($argument->set_argument($arg)) {
