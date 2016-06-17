@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function battle_reports_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "custom_formatters" && $api == "custom_formatters") {
+    return array("version" => "2");
+  }
   if ($module == "dfp" && $api == "default_dfp_tags") {
     return array("version" => "1");
   }
