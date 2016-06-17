@@ -9,6 +9,37 @@
  */
 function battle_reports_default_rules_configuration() {
   $items = array();
+  $items['rules_battles_check_achievements'] = entity_import('rules_config', '{ "rules_battles_check_achievements" : {
+      "LABEL" : "Battles: Check Achievements",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "p1" : { "label" : "Player", "type" : "user" },
+        "bid" : { "label" : "Battle", "type" : "node" }
+      },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "bid" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "game_results" : "game_results",
+                "game_result_system_" : "game_result_system_"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "component_rules_utility_award_command_achievements" : { "uid" : [ "p1" ] } },
+        { "component_rules_utility_award_headhunter_achievements" : { "uid" : [ "p1" ] } },
+        { "component_rules_utility_award_magehunter_achievements" : { "uid" : [ "p1" ] } },
+        { "component_rules_achievement_face_to_face" : { "bid" : [ "bid" ] } },
+        { "component_rules_achievements_altar_of_war" : { "bid" : [ "bid" ] } },
+        { "component_rules_achievements_honoring_the_past" : { "battle_nid" : [ "bid" ] } }
+      ]
+    }
+  }');
   $items['rules_status_quick_battle_submission'] = entity_import('rules_config', '{ "rules_status_quick_battle_submission" : {
       "LABEL" : "Status: Quick Battle Submission",
       "PLUGIN" : "reaction rule",

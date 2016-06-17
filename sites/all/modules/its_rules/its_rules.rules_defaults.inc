@@ -42,7 +42,7 @@ function its_rules_default_rules_configuration() {
             "USING" : {
               "type" : "node",
               "param_type" : "game_result_system_",
-              "param_title" : "[bid:title]",
+              "param_title" : "( [bid:title] )",
               "param_author" : "20792"
             },
             "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
@@ -363,24 +363,14 @@ function its_rules_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "game_results" },
                   "DO" : [
-                    { "component_rules_utility_award_command_achievements" : { "uid" : [ "node:author" ] } },
-                    { "component_rules_utility_award_headhunter_achievements" : { "uid" : [ "node:author" ] } },
-                    { "component_rules_utility_award_magehunter_achievements" : { "uid" : [ "node:author" ] } },
-                    { "component_rules_achievement_face_to_face" : { "bid" : [ "node" ] } },
-                    { "component_rules_achievements_altar_of_war" : { "bid" : [ "node" ] } },
-                    { "component_rules_achievements_honoring_the_past" : { "battle_nid" : [ "node" ] } }
+                    { "component_rules_battles_check_achievements" : { "p1" : [ "node:author" ], "bid" : [ "node" ] } }
                   ]
                 }
               },
               { "CASE" : {
                   "USING" : { "value" : "game_result_system_" },
                   "DO" : [
-                    { "component_rules_utility_award_command_achievements" : { "uid" : [ "node:author" ] } },
-                    { "component_rules_utility_award_headhunter_achievements" : { "uid" : [ "node:author" ] } },
-                    { "component_rules_utility_award_magehunter_achievements" : { "uid" : [ "node:author" ] } },
-                    { "component_rules_achievement_face_to_face" : { "bid" : [ "node" ] } },
-                    { "component_rules_achievements_altar_of_war" : { "bid" : [ "node" ] } },
-                    { "component_rules_achievements_honoring_the_past" : { "battle_nid" : [ "node" ] } }
+                    { "component_rules_battles_check_achievements" : { "p1" : [ "node:author" ], "bid" : [ "node" ] } }
                   ]
                 }
               }
@@ -529,7 +519,8 @@ function its_rules_default_rules_configuration() {
                         "data" : [ "entity-created:field-associated-nodes-stream" ],
                         "value" : [ "assoc-nodes" ]
                       }
-                    }
+                    },
+                    { "component_rules_battles_check_achievements" : { "p1" : [ "node:author" ], "bid" : [ "node" ] } }
                   ]
                 }
               },
@@ -819,39 +810,6 @@ function its_rules_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_on_update_battle_results'] = entity_import('rules_config', '{ "rules_on_update_battle_results" : {
-      "LABEL" : "On Update Battle Results",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
-      "ON" : { "node_update" : [] },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "node" ],
-            "type" : "node",
-            "bundle" : { "value" : { "game_results" : "game_results" } }
-          }
-        }
-      ],
-      "DO" : [
-        { "entity_query" : {
-            "USING" : {
-              "type" : "node",
-              "property" : "field_game_reference",
-              "value" : [ "node" ],
-              "limit" : "1"
-            },
-            "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-          }
-        },
-        { "component_rules_update_game_result" : {
-            "battle_result_changed" : [ "node" ],
-            "game_container_modify" : [ "entity-fetched:0" ]
-          }
-        }
-      ]
-    }
-  }');
   $items['rules_status_updates_all_master'] = entity_import('rules_config', '{ "rules_status_updates_all_master" : {
       "LABEL" : "Status Updates: All: Master",
       "PLUGIN" : "reaction rule",
@@ -1006,94 +964,6 @@ function its_rules_default_rules_configuration() {
               ]
             }
           ]
-        }
-      ]
-    }
-  }');
-  $items['rules_update_game_result'] = entity_import('rules_config', '{ "rules_update_game_result" : {
-      "LABEL" : "Update Game Result",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
-      "ACCESS_EXPOSED" : "1",
-      "USES VARIABLES" : {
-        "battle_result_changed" : { "label" : "Battle Result", "type" : "entity" },
-        "game_container_modify" : { "label" : "Game Container", "type" : "entity" }
-      },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "battle-result-changed" ],
-            "type" : "node",
-            "bundle" : { "value" : { "game_results" : "game_results" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "game-container-modify" ],
-            "type" : "node",
-            "bundle" : { "value" : { "game_result_system_" : "game_result_system_" } }
-          }
-        }
-      ],
-      "DO" : [
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-mission" ],
-            "value" : [ "battle-result-changed:field-mission" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-game-date" ],
-            "value" : [ "battle-result-changed:field-game-date" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-your-army" ],
-            "value" : [ "battle-result-changed:field-opponent-s-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-opponent-s-army" ],
-            "value" : [ "battle-result-changed:field-your-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-location" ],
-            "value" : [ "battle-result-changed:field-location" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-event-link" ],
-            "value" : [ "battle-result-changed:field-event-link" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:created" ],
-            "value" : [ "battle-result-changed:created" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-points-per-army" ],
-            "value" : [ "battle-result-changed:field-points-per-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-your-commander-survival" ],
-            "value" : [ "battle-result-changed:field-enemy-commander-survival" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-enemy-commander-survival" ],
-            "value" : [ "battle-result-changed:field-your-commander-survival" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-battleresult-enemy-command" ],
-            "value" : [ "battle-result-changed:field-batteresult-commander" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "game-container-modify:field-batteresult-commander" ],
-            "value" : [ "battle-result-changed:field-battleresult-enemy-command" ]
-          }
         }
       ]
     }
