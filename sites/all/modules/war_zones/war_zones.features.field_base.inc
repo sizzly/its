@@ -138,23 +138,6 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_bye'.
-  $field_bases['field_bye'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_bye',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
   // Exported field_base: 'field_calculated_rounds'.
   $field_bases['field_calculated_rounds'] = array(
     'active' => 1,
@@ -562,6 +545,32 @@ function war_zones_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
+  // Exported field_base: 'field_list_played_sc'.
+  $field_bases['field_list_played_sc'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_list_played_sc',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'List 1',
+        2 => 'List 2',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_mission_name_tourney'.
   $field_bases['field_mission_name_tourney'] = array(
     'active' => 1,
@@ -588,6 +597,27 @@ function war_zones_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_mission_rule_set'.
+  $field_bases['field_mission_rule_set'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mission_rule_set',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_mission_text'.
@@ -638,44 +668,11 @@ function war_zones_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'war_zone_league' => 'war_zone_league',
+          'war_zone_tournament' => 'war_zone_tournament',
         ),
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_opponent_sc'.
-  $field_bases['field_opponent_sc'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_opponent_sc',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(),
-      ),
-      'profile2_private' => FALSE,
-      'target_type' => 'user',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
@@ -802,28 +799,6 @@ function war_zones_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_player_email_registration'.
-  $field_bases['field_player_email_registration'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_player_email_registration',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_points_custom_achievement'.
@@ -1055,6 +1030,32 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_scenario_selection_pp'.
+  $field_bases['field_scenario_selection_pp'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_scenario_selection_pp',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Randomize at Start',
+        1 => 'Manually Select',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_score_card_type'.
   $field_bases['field_score_card_type'] = array(
     'active' => 1,
@@ -1211,6 +1212,35 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_steamroller_scenarios'.
+  $field_bases['field_steamroller_scenarios'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_steamroller_scenarios',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'missions',
+          'parent' => 1930,
+          'depth' => 1,
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_strength_of_schedule_sc'.
   $field_bases['field_strength_of_schedule_sc'] = array(
     'active' => 1,
@@ -1251,6 +1281,35 @@ function war_zones_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_tournament_format'.
+  $field_bases['field_tournament_format'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tournament_format',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'event_type',
+          'parent' => 152,
+          'depth' => '',
+        ),
+      ),
+      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_tournament_missions'.
   $field_bases['field_tournament_missions'] = array(
     'active' => 1,
@@ -1266,37 +1325,12 @@ function war_zones_field_default_field_bases() {
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
-      'hide_blank_items' => 1,
+      'hide_blank_items' => 0,
       'path' => '',
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'field_collection',
-  );
-
-  // Exported field_base: 'field_tournament_type'.
-  $field_bases['field_tournament_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tournament_type',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 'Swiss Tournament',
-      ),
-      'allowed_values_function' => '',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_victor_narrative'.
@@ -1324,6 +1358,23 @@ function war_zones_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_victory_points_sc',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_warzone_rounds_pub'.
+  $field_bases['field_warzone_rounds_pub'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_warzone_rounds_pub',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',

@@ -571,12 +571,14 @@ function war_zones_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Meta',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-meta field-group-fieldset',
         'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-meta field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'collapsed',
     ),
   );
   $field_groups['group_meta|node|war_zone_tournament|form'] = $field_group;
@@ -609,6 +611,37 @@ function war_zones_field_group_info() {
     ),
   );
   $field_groups['group_mission_label_wrapper|field_collection_item|field_tournament_missions|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tournament_options|node|war_zone_tournament|form';
+  $field_group->group_name = 'group_tournament_options';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_tournament';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Options',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_tournament_missions',
+      1 => 'field_scenario_selection_pp',
+      2 => 'field_warzone_rounds_pub',
+      3 => 'field_steamroller_scenarios',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-tournament-options field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_tournament_options|node|war_zone_tournament|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

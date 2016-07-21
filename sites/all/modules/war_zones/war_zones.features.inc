@@ -95,35 +95,6 @@ function war_zones_default_entityform_type() {
     "weight" : "0",
     "paths" : []
   }');
-  $items['war_zone_all_register_anonymous_'] = entity_import('entityform_type', '{
-    "type" : "war_zone_all_register_anonymous_",
-    "label" : "War Zone: All: Register Anonymous Player",
-    "data" : {
-      "draftable" : 0,
-      "draft_redirect_path" : "",
-      "draft_button_text" : "",
-      "draft_save_text" : { "value" : "", "format" : "filtered_html" },
-      "submit_button_text" : "",
-      "submit_confirm_msg" : "",
-      "your_submissions" : "",
-      "disallow_resubmit_msg" : "",
-      "delete_confirm_msg" : "",
-      "page_title_view" : "",
-      "preview_page" : 0,
-      "submission_page_title" : "",
-      "submission_text" : { "value" : "", "format" : "filtered_html" },
-      "submission_show_submitted" : 0,
-      "submissions_view" : "default",
-      "user_submissions_view" : "default",
-      "form_status" : "ENTITYFORM_OPEN",
-      "roles" : { "2" : "2", "3" : "3", "7" : "7", "9" : "9", "8" : "8", "1" : 0 },
-      "resubmit_action" : "new",
-      "redirect_path" : "",
-      "instruction_pre" : { "value" : "", "format" : "filtered_html" }
-    },
-    "weight" : "0",
-    "paths" : []
-  }');
   $items['war_zone_grant_achievement'] = entity_import('entityform_type', '{
     "type" : "war_zone_grant_achievement",
     "label" : "War Zone: Grant Achievement",
@@ -520,7 +491,7 @@ function war_zones_default_rules_link() {
       "confirm_description" : "This will record your league match. It cannot be undone."
     },
     "name" : "war_zone_league_i_won_button",
-    "label" : "War Zone: League: Results Buttom",
+    "label" : "War Zone: League: Results Button",
     "path" : "war_zone_league_results",
     "entity_type" : "entityform"
   }');

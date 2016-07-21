@@ -28,6 +28,22 @@ function core_user_default_permissions() {
     'module' => 'faq',
   );
 
+  // Exported permission: 'administer hide submit'.
+  $permissions['administer hide submit'] = array(
+    'name' => 'administer hide submit',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'hide_submit',
+  );
+
+  // Exported permission: 'bypass hide submit'.
+  $permissions['bypass hide submit'] = array(
+    'name' => 'bypass hide submit',
+    'roles' => array(),
+    'module' => 'hide_submit',
+  );
+
   // Exported permission: 'delete any image files'.
   $permissions['delete any image files'] = array(
     'name' => 'delete any image files',
