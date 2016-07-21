@@ -853,23 +853,6 @@ function its_field_bases_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_bye_wzscore'.
-  $field_bases['field_bye_wzscore'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_bye_wzscore',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
   // Exported field_base: 'field_campaign_badge_status'.
   $field_bases['field_campaign_badge_status'] = array(
     'active' => 1,
@@ -1542,26 +1525,6 @@ if ($results == "3") {
     ),
     'translatable' => 0,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_its_dispatch'.
-  $field_bases['field_its_dispatch'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_its_dispatch',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'mailchimp_lists',
-    'settings' => array(
-      'double_opt_in' => 0,
-      'mc_list_id' => '5adf5a8f8c',
-      'profile2_private' => FALSE,
-      'send_welcome' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'mailchimp_lists_subscription',
   );
 
   // Exported field_base: 'field_location'.

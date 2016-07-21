@@ -76,6 +76,54 @@ function war_zones_user_default_permissions() {
     'module' => 'rules_link',
   );
 
+  // Exported permission: 'add war_zone_league node registration'.
+  $permissions['add war_zone_league node registration'] = array(
+    'name' => 'add war_zone_league node registration',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'add war_zone_tournament node registration'.
+  $permissions['add war_zone_tournament node registration'] = array(
+    'name' => 'add war_zone_tournament node registration',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'administer node registration'.
+  $permissions['administer node registration'] = array(
+    'name' => 'administer node registration',
+    'roles' => array(
+      'Ironmonger' => 'Ironmonger',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'cancel own war_zone_league node registration'.
+  $permissions['cancel own war_zone_league node registration'] = array(
+    'name' => 'cancel own war_zone_league node registration',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'cancel own war_zone_tournament node registration'.
+  $permissions['cancel own war_zone_tournament node registration'] = array(
+    'name' => 'cancel own war_zone_tournament node registration',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
   // Exported permission: 'create narrative_campaign content'.
   $permissions['create narrative_campaign content'] = array(
     'name' => 'create narrative_campaign content',
@@ -101,11 +149,21 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create war_zone_league content'.
+  $permissions['create war_zone_league content'] = array(
+    'name' => 'create war_zone_league content',
+    'roles' => array(
+      'Ironmonger' => 'Ironmonger',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create war_zone_tournament content'.
   $permissions['create war_zone_tournament content'] = array(
     'name' => 'create war_zone_tournament content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -127,6 +185,13 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'delete any special_event content'.
   $permissions['delete any special_event content'] = array(
     'name' => 'delete any special_event content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any war_zone_league content'.
+  $permissions['delete any war_zone_league content'] = array(
+    'name' => 'delete any war_zone_league content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -161,6 +226,20 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own war_zone_league content'.
+  $permissions['delete own war_zone_league content'] = array(
+    'name' => 'delete own war_zone_league content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own war_zone_league node registration'.
+  $permissions['delete own war_zone_league node registration'] = array(
+    'name' => 'delete own war_zone_league node registration',
+    'roles' => array(),
+    'module' => 'node_registration',
+  );
+
   // Exported permission: 'delete own war_zone_tournament content'.
   $permissions['delete own war_zone_tournament content'] = array(
     'name' => 'delete own war_zone_tournament content',
@@ -168,6 +247,13 @@ function war_zones_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'delete own war_zone_tournament node registration'.
+  $permissions['delete own war_zone_tournament node registration'] = array(
+    'name' => 'delete own war_zone_tournament node registration',
+    'roles' => array(),
+    'module' => 'node_registration',
   );
 
   // Exported permission: 'edit any narrative_campaign content'.
@@ -187,6 +273,13 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'edit any special_event content'.
   $permissions['edit any special_event content'] = array(
     'name' => 'edit any special_event content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any war_zone_league content'.
+  $permissions['edit any war_zone_league content'] = array(
+    'name' => 'edit any war_zone_league content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -227,6 +320,24 @@ function war_zones_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own war_zone_league content'.
+  $permissions['edit own war_zone_league content'] = array(
+    'name' => 'edit own war_zone_league content',
+    'roles' => array(
+      'Ironmonger' => 'Ironmonger',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own war_zone_league node registration'.
+  $permissions['edit own war_zone_league node registration'] = array(
+    'name' => 'edit own war_zone_league node registration',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
   // Exported permission: 'edit own war_zone_tournament content'.
   $permissions['edit own war_zone_tournament content'] = array(
     'name' => 'edit own war_zone_tournament content',
@@ -235,6 +346,27 @@ function war_zones_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit own war_zone_tournament node registration'.
+  $permissions['edit own war_zone_tournament node registration'] = array(
+    'name' => 'edit own war_zone_tournament node registration',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'other node registration'.
+  $permissions['other node registration'] = array(
+    'name' => 'other node registration',
+    'roles' => array(
+      'Ironmonger' => 'Ironmonger',
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
   );
 
   // Exported permission: 'use Rules component rules_link_set_war_zone_all_open_registration'.
@@ -263,6 +395,44 @@ function war_zones_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'rules',
+  );
+
+  // Exported permission: 'view own war_zone_league node registration'.
+  $permissions['view own war_zone_league node registration'] = array(
+    'name' => 'view own war_zone_league node registration',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'view own war_zone_tournament node registration'.
+  $permissions['view own war_zone_tournament node registration'] = array(
+    'name' => 'view own war_zone_tournament node registration',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'view war_zone_league node registration'.
+  $permissions['view war_zone_league node registration'] = array(
+    'name' => 'view war_zone_league node registration',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
+  );
+
+  // Exported permission: 'view war_zone_tournament node registration'.
+  $permissions['view war_zone_tournament node registration'] = array(
+    'name' => 'view war_zone_tournament node registration',
+    'roles' => array(
+      'Ironmonger' => 'Ironmonger',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node_registration',
   );
 
   return $permissions;

@@ -247,9 +247,35 @@ function core_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Node Stats Page';
   $page->admin_description = '';
-  $page->path = 'node/%node/stats';
-  $page->access = array();
-  $page->menu = array();
+  $page->path = 'node/%node/stats/main';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'war_zone_league' => 'war_zone_league',
+            'war_zone_tournament' => 'war_zone_tournament',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
+  $page->menu = array(
+    'type' => 'default tab',
+    'title' => 'Stats',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'tab',
+      'title' => 'Stats',
+      'name' => 'navigation',
+      'weight' => '150',
+    ),
+  );
   $page->arguments = array(
     'node' => array(
       'id' => 1,
@@ -271,7 +297,7 @@ function core_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Panel',
+    'title' => 'War Zone',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -281,6 +307,22 @@ function core_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'war_zone_league' => 'war_zone_league',
+              'war_zone_tournament' => 'war_zone_tournament',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_boxton';
@@ -292,23 +334,62 @@ function core_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title Stats - Coming Soon.';
+  $display->title = '%node:title Stats';
   $display->uuid = 'e08b4969-b2e6-45ce-92c1-01c41ab90c28';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-a662b306-76a1-41b2-b914-284269dd7e8f';
+    $pane->pid = 'new-82c6e2e8-bcf5-4ad2-9077-3eafa2d9f972';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
-    $pane->subtype = 'coming_soon';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
+      'admin_title' => 'Stat Summary',
       'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
+      'body' => '<div class="row">
+<div class="padding-md">
+    <div class="row">
+        <div class="col-md-4">
+           <a href="/node/%node:nid/battle-list">
+            <div class="panel-stat3 bg-danger">
+                <h2 class="m-top-none" id="userCount"><?php print views_embed_view("war_zone_all_stats" , "panel_pane_3"); ?></h2>
+                <h5>Battles</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-fire fa-3x"></i>
+                </div>
+            </div>
+           </a>
+        </div><!-- /.col -->
+        <div class="col-md-4">
+            <a href="/node/%node:nid/player-list">
+            <div class="panel-stat3 bg-info">
+                <h2 class="m-top-none"><?php print views_embed_view("war_zone_all_stats" , "panel_pane_4"); ?></h2>
+                <h5>Players</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-user fa-3x"></i>
+                </div>
+            </div>
+            </a>
+        </div><!-- /.col -->
+<!-- /.col -->
+        <div class="col-md-4">
+<a href="/node/%node:nid/faction-list">
+            <div class="panel-stat3 bg-success">
+                <h2 class="m-top-none"><?php print views_embed_view("war_zone_all_stats" , "panel_pane_5"); ?></h2>
+                <h5>Factions</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-bookmark fa-3x"></i>
+                </div>
+            </div>
+</a>
+        </div><!-- /.col -->
+     </div>
+</div>
+</div>',
+      'format' => 'php_code',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -318,11 +399,49 @@ function core_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a662b306-76a1-41b2-b914-284269dd7e8f';
-    $display->content['new-a662b306-76a1-41b2-b914-284269dd7e8f'] = $pane;
-    $display->panels['contentmain'][0] = 'new-a662b306-76a1-41b2-b914-284269dd7e8f';
+    $pane->uuid = '82c6e2e8-bcf5-4ad2-9077-3eafa2d9f972';
+    $display->content['new-82c6e2e8-bcf5-4ad2-9077-3eafa2d9f972'] = $pane;
+    $display->panels['contentmain'][0] = 'new-82c6e2e8-bcf5-4ad2-9077-3eafa2d9f972';
+    $pane = new stdClass();
+    $pane->pid = 'new-ce011952-caa3-4aec-b1be-daa0fa3dc305';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_stats-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'ce011952-caa3-4aec-b1be-daa0fa3dc305';
+    $display->content['new-ce011952-caa3-4aec-b1be-daa0fa3dc305'] = $pane;
+    $display->panels['contentmain'][1] = 'new-ce011952-caa3-4aec-b1be-daa0fa3dc305';
+    $pane = new stdClass();
+    $pane->pid = 'new-fbb3a1ae-e424-4258-89b8-21a09f6d105d';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_stats-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'fbb3a1ae-e424-4258-89b8-21a09f6d105d';
+    $display->content['new-fbb3a1ae-e424-4258-89b8-21a09f6d105d'] = $pane;
+    $display->panels['contentmain'][2] = 'new-fbb3a1ae-e424-4258-89b8-21a09f6d105d';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-a662b306-76a1-41b2-b914-284269dd7e8f';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['node_stats_page'] = $page;

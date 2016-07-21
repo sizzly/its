@@ -142,12 +142,12 @@ function its_achievements_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_calculate_monthly_champion'] = entity_import('rules_config', '{ "rules_calculate_monthly_champion" : {
+  $items['rules_calculate_monthly_champion_v2'] = entity_import('rules_config', '{ "rules_calculate_monthly_champion_v2" : {
       "LABEL" : "Calculate Monthly Champion",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "TAGS" : [ "Achievement" ],
-      "REQUIRES" : [ "rules", "views_rules", "rules_scheduler" ],
+      "REQUIRES" : [ "rules", "views_rules", "php", "rules_scheduler" ],
       "DO" : [
         { "variable_add" : {
             "USING" : { "type" : "user" },
@@ -161,17 +161,24 @@ function its_achievements_default_rules_configuration() {
             "DO" : [ { "data_set" : { "data" : [ "winner" ], "value" : [ "uid" ] } } ]
           }
         },
-        { "schedule" : {
-            "component" : "rules_calculate_monthly_champion",
-            "date" : "+1 month",
-            "identifier" : "Monthly"
+        { "variable_add" : {
+            "USING" : { "type" : "date", "value" : "-1 week" },
+            "PROVIDE" : { "variable_added" : { "last_month" : "Last Month" } }
+          }
+        },
+        { "variable_add" : {
+            "USING" : {
+              "type" : "text",
+              "value" : "\\u003C?php\\r\\n$format = \\u0022M, Y\\u0022; \\/\\/or something else that date() accepts as a format\\r\\n$date_formatted = gmdate($format, $last_month);\\r\\nprint $date_formatted;\\r\\n?\\u003E"
+            },
+            "PROVIDE" : { "variable_added" : { "formatted_date" : "Formatted Date" } }
           }
         },
         { "entity_create" : {
             "USING" : {
               "type" : "node",
               "param_type" : "achievement",
-              "param_title" : "Battle Champion",
+              "param_title" : "Battle Champion [formatted-date:value]",
               "param_author" : "1"
             },
             "PROVIDE" : { "entity_created" : { "new_achievement" : "New Achievement" } }
@@ -179,7 +186,7 @@ function its_achievements_default_rules_configuration() {
         },
         { "data_set" : {
             "data" : [ "new-achievement:field-achievement-category" ],
-            "value" : "548"
+            "value" : "1146"
           }
         },
         { "data_set" : { "data" : [ "new-achievement:field-achievement-unique" ], "value" : 1 } },
@@ -191,136 +198,28 @@ function its_achievements_default_rules_configuration() {
           }
         },
         { "entity_save" : { "data" : [ "new-achievement" ], "immediate" : 1 } },
-        { "component_rules_award_achievement" : { "aid" : [ "new-achievement" ], "uid" : [ "winner" ] } }
+        { "component_rules_award_achievement" : { "aid" : [ "new-achievement" ], "uid" : [ "winner" ] } },
+        { "schedule" : {
+            "component" : "rules_calculate_monthly_champion_v2",
+            "date" : "+1 month",
+            "identifier" : "monthly-champion"
+          }
+        }
       ]
     }
   }');
   $items['rules_master_renown_awarded_v2'] = entity_import('rules_config', '{ "rules_master_renown_awarded_v2" : {
       "LABEL" : "Master: Renown Awarded V2",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "TAGS" : [ "Master", "Renown" ],
-      "REQUIRES" : [
-        "rules_conditional",
-        "rules",
-        "views_rules",
-        "user_badges",
-        "userpoints_rules"
-      ],
+      "REQUIRES" : [ "rules_conditional", "userpoints_rules" ],
       "ON" : { "userpoints_event_points_awarded_after" : [] },
       "DO" : [
         { "SWITCH" : {
             "USING" : { "data" : [ "userpoints-transaction:tid" ] },
-            "DO" : [
-              { "CASE" : { "USING" : { "value" : "894" }, "DO" : [] } },
-              { "DEFAULT CASE" : [
-                  { "variable_add" : {
-                      "USING" : { "type" : "integer", "value" : "1" },
-                      "PROVIDE" : { "variable_added" : { "level" : "level" } }
-                    }
-                  },
-                  { "variable_add" : {
-                      "USING" : { "type" : "boolean", "value" : 1 },
-                      "PROVIDE" : { "variable_added" : { "act" : "Act" } }
-                    }
-                  },
-                  { "VIEW LOOP" : {
-                      "VIEW" : "user_points_rules",
-                      "DISPLAY" : "views_rules_1",
-                      "USING" : { "uid" : [ "userpoints-transaction:user:uid" ] },
-                      "ROW VARIABLES" : { "max_points" : { "max_points" : "Max renown in category" } },
-                      "DO" : [
-                        { "CONDITIONAL" : [
-                            {
-                              "IF" : { "data_is" : { "data" : [ "max-points" ], "op" : "\\u003E", "value" : "400" } },
-                              "DO" : [ { "data_set" : { "data" : [ "level" ], "value" : "2" } } ]
-                            },
-                            {
-                              "ELSE IF" : { "data_is" : { "data" : [ "max-points" ], "op" : "\\u003E", "value" : "1300" } },
-                              "DO" : [ { "data_set" : { "data" : [ "level" ], "value" : "3" } } ]
-                            },
-                            {
-                              "ELSE IF" : { "data_is" : { "data" : [ "max-points" ], "op" : "\\u003C", "value" : "1" } },
-                              "DO" : [ { "data_set" : { "data" : [ "level" ], "value" : "0" } } ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  },
-                  { "SWITCH" : {
-                      "USING" : { "data" : [ "level" ] },
-                      "DO" : [
-                        { "CASE" : {
-                            "USING" : { "value" : "1" },
-                            "DO" : [
-                              { "VIEW LOOP" : {
-                                  "VIEW" : "user_points_rules",
-                                  "DISPLAY" : "views_rules_2",
-                                  "USING" : { "uid" : [ "userpoints-transaction:user:uid" ] },
-                                  "ROW VARIABLES" : { "name_1" : { "name_1" : "Badge Name" } },
-                                  "DO" : [
-                                    { "CONDITIONAL" : [
-                                        {
-                                          "IF" : { "data_is" : { "data" : [ "name-1" ], "value" : "Level 1" } },
-                                          "DO" : [ { "data_set" : { "data" : [ "act" ], "value" : 0 } } ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              },
-                              { "CONDITIONAL" : [
-                                  {
-                                    "IF" : { "data_is" : { "data" : [ "act" ], "value" : 1 } },
-                                    "DO" : [
-                                      { "add_badge_by_name" : { "badge" : "5", "user" : [ "userpoints-transaction:user" ] } }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        },
-                        { "CASE" : {
-                            "USING" : { "value" : "2" },
-                            "DO" : [
-                              { "VIEW LOOP" : {
-                                  "VIEW" : "user_points_rules",
-                                  "DISPLAY" : "views_rules_2",
-                                  "USING" : { "uid" : [ "userpoints-transaction:user:uid" ] },
-                                  "ROW VARIABLES" : { "name_1" : { "name_1" : "Badge Name" } },
-                                  "DO" : [
-                                    { "CONDITIONAL" : [
-                                        {
-                                          "IF" : { "data_is" : { "data" : [ "name-1" ], "value" : "Level 2" } },
-                                          "DO" : [ { "data_set" : { "data" : [ "act" ], "value" : 0 } } ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              },
-                              { "CONDITIONAL" : [
-                                  {
-                                    "IF" : { "data_is" : { "data" : [ "act" ], "value" : 1 } },
-                                    "DO" : [
-                                      { "remove_badge_by_name" : { "badge" : "5", "user" : [ "userpoints-transaction:user" ] } },
-                                      { "add_badge_by_name" : { "badge" : "6", "user" : [ "userpoints-transaction:user" ] } }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        },
-                        { "CASE" : { "USING" : { "value" : "3" }, "DO" : [] } }
-                      ]
-                    }
-                  }
-                ]
-              }
-            ]
+            "DO" : [ { "CASE" : { "USING" : { "value" : "894" }, "DO" : [] } } ]
           }
         }
       ]
@@ -640,7 +539,15 @@ function its_achievements_default_rules_configuration() {
             "USING" : { "uid" : [ "uid:uid" ] },
             "ROW VARIABLES" : { "nid" : { "count" : "Count" } },
             "DO" : [
-              { "data_set" : { "data" : [ "variable-added" ], "value" : [ "count" ] } }
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "NOT data_is_empty" : { "data" : [ "count" ] } },
+                    "DO" : [
+                      { "data_set" : { "data" : [ "variable-added" ], "value" : [ "count" ] } }
+                    ]
+                  }
+                ]
+              }
             ]
           }
         },

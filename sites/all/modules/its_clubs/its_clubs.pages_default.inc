@@ -226,6 +226,8 @@ order-of-battle/gaming-clubs',
       'types' => array(
         'article' => 'article',
         'war_zone_league' => 'war_zone_league',
+        'war_zone_tournament' => 'war_zone_tournament',
+        'forum' => 'forum',
       ),
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',

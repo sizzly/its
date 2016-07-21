@@ -13,7 +13,7 @@ function events_taxonomy_default_vocabularies() {
       'name' => 'Event type',
       'machine_name' => 'event_type',
       'description' => 'For use in classifying events.',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

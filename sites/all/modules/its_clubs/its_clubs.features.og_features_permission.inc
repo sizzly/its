@@ -49,6 +49,25 @@ function its_clubs_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:gaming_club:create war_zone_league content'
+  $permissions['node:gaming_club:create war_zone_league content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:gaming_club:create war_zone_tournament content'
+  $permissions['node:gaming_club:create war_zone_tournament content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+      'Recruiter' => 'Recruiter',
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:gaming_club:delete any article content'
   $permissions['node:gaming_club:delete any article content'] = array(
     'roles' => array(),
@@ -59,6 +78,16 @@ function its_clubs_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:gaming_club:delete any war_zone_league content'
+  $permissions['node:gaming_club:delete any war_zone_league content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:gaming_club:delete any war_zone_tournament content'
+  $permissions['node:gaming_club:delete any war_zone_tournament content'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:gaming_club:delete own article content'
   $permissions['node:gaming_club:delete own article content'] = array(
     'roles' => array(),
@@ -66,6 +95,16 @@ function its_clubs_og_features_default_permissions() {
 
   // Exported og permission: 'node:gaming_club:delete own forum content'
   $permissions['node:gaming_club:delete own forum content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:gaming_club:delete own war_zone_league content'
+  $permissions['node:gaming_club:delete own war_zone_league content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:gaming_club:delete own war_zone_tournament content'
+  $permissions['node:gaming_club:delete own war_zone_tournament content'] = array(
     'roles' => array(),
   );
 
@@ -127,6 +166,19 @@ function its_clubs_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:gaming_club:update any war_zone_league content'
+  $permissions['node:gaming_club:update any war_zone_league content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+    ),
+  );
+
+  // Exported og permission: 'node:gaming_club:update any war_zone_tournament content'
+  $permissions['node:gaming_club:update any war_zone_tournament content'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:gaming_club:update group'
   $permissions['node:gaming_club:update group'] = array(
     'roles' => array(
@@ -145,6 +197,25 @@ function its_clubs_og_features_default_permissions() {
 
   // Exported og permission: 'node:gaming_club:update own forum content'
   $permissions['node:gaming_club:update own forum content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+      'Recruiter' => 'Recruiter',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:gaming_club:update own war_zone_league content'
+  $permissions['node:gaming_club:update own war_zone_league content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:gaming_club:update own war_zone_tournament content'
+  $permissions['node:gaming_club:update own war_zone_tournament content'] = array(
     'roles' => array(
       'HQ' => 'HQ',
       'Officer' => 'Officer',
