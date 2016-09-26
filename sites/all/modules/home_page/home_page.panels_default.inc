@@ -39,6 +39,47 @@ function home_page_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-83aa1228-39af-41f0-9fcf-eb46983faa1f';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => '<front>',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Revive Leaderboard',
+      'title' => '',
+      'body' => '<div class="ad text-center">
+<ins data-revive-zoneid="1" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
+<script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script>
+</div>
+<div class="seperator"></div>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '83aa1228-39af-41f0-9fcf-eb46983faa1f';
+    $display->content['new-83aa1228-39af-41f0-9fcf-eb46983faa1f'] = $pane;
+    $display->panels['contentmain'][0] = 'new-83aa1228-39af-41f0-9fcf-eb46983faa1f';
+    $pane = new stdClass();
     $pane->pid = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
@@ -48,84 +89,81 @@ function home_page_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => 'Menus',
       'title' => '',
-      'body' => '<!-- UserVoice JavaScript SDK (only needed once on a page) -->
-<script>(function(){var uv=document.createElement(\'script\');uv.type=\'text/javascript\';uv.async=true;uv.src=\'//widget.uservoice.com/btzCsfQb3IDIw5ApZEIYw.js\';var s=document.getElementsByTagName(\'script\')[0];s.parentNode.insertBefore(uv,s)})()</script>
+      'body' => '<div class="row">
+    <div class="col-sm-6">
+
+    </div>
+    <div class="col-sm-6">
+        <div class="pull-right">
+            <a href="https://facebook.com/itoysoldiers" class="social-connect tooltip-test facebook-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook fa-2x"></i></a>
+            <a href="https://twitter.com/itoysoldiers" class="social-connect tooltip-test twitter-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+            <a href="https://www.instagram.com/itoysoldiers/" class="social-connect tooltip-test twitter-hover pull-left m-right-xs" data-toggle="tooltip" data-original-title="Instagram"><i class="fa fa-instagram fa-2x"></i></a>
+        </div> 
+    </div>
+</div>
 <div class="row">
-<div class="col-md-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Site</h3>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">iToysoldiers</h3>
+            </div>
+            <div>
+                <ul class="menu nav">
+                    <li class="leaf">
+                        <a href="/about">About</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://blog.itoysoldiers.com">Blog</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="http://help.itoysoldiers.com">Need Help?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="panel-body">
-        <ul class="menu nav">
-            <li class="leaf">
-                <a href="/about">About</a>
-            </li>
-            <li class="leaf">
-                <a href="/site-news">News</a>
-            </li>
-            <li class="leaf">
-                <a href="/privacy">Privacy</a>
-            </li>
-            <li class="leaf">
-                <a href="/terms">Terms</a>
-            </li>
-            <li class="leaf">
-                <a href="/copyright">Copyright</a>
-            </li>
-            <li class="leaf">
-                <a href="javascript:void(0)" data-uv-lightbox="classic_widget" data-uv-mode="full" data-uv-primary-color="#cc6d00" data-uv-link-color="#007dbf" data-uv-default-mode="support" data-uv-forum-id="280893">Feedback &amp; Support</a>
-            </li>
-        </ul>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tools</h3>
+            </div>
+            <div>
+                <ul class="menu nav">
+                    <li class="leaf">
+                        <a href="/request-new-game-support">Request New Game</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="/syndicate-your-blog-itoysoldiers">Syndicate Your Blog</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="/widgets">Widgets</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Policies</h3>
+            </div>
+            <div>
+                <ul class="menu nav">
+                    <li class="leaf">
+                        <a href="/privacy">Privacy</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="/terms">Terms</a>
+                    </li>
+                    <li class="leaf">
+                        <a href="/copyright">Copyright</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="col-md-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Social</h3>
-    </div>
-    <div class="panel-body">
-        <ul class="menu nav">
-            <li class="leaf">
-                <a href="https://www.facebook.com/iToysoldiers">Facebook</a>
-            </li>
-            <li class="leaf">
-                <a href="https://twitter.com/iToysoldiers">Twitter</a>
-            </li>
-            <li class="leaf">
-                <a href="/newsletters">Newsletters</a>
-            </li>
-        </ul>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Extras</h3>
-    </div>
-    <div class="panel-body">
-        <ul class="menu nav">
-            <li class="leaf">
-                <a href="/invite">Invite a friend</a>
-            </li>
-            <li class="leaf">
-                <a href="/request-new-game-support">Request New Game</a>
-            </li>
-            <li class="leaf">
-                <a href="/syndicate-your-blog-itoysoldiers">Syndicate Your Blog</a>
-            </li>
-            <li class="leaf">
-                <a href="/widgets">Widgets</a>
-            </li>
-        </ul>
-    </div>
-  </div>
-</div>
-</div>',
+',
       'format' => 'pure_html',
       'substitute' => TRUE,
     );
@@ -136,14 +174,14 @@ function home_page_default_panels_mini() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'row',
+      'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '61d9b7cf-3eae-4411-ba39-efeb091663e2';
     $display->content['new-61d9b7cf-3eae-4411-ba39-efeb091663e2'] = $pane;
-    $display->panels['contentmain'][0] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
+    $display->panels['contentmain'][1] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;

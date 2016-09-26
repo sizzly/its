@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Theme the more link.
@@ -12,8 +11,11 @@
  */
 ?>
 
-<div class="more-link text-right">
-  <a href="<?php print $more_url ?>">
-    <?php print $link_text; ?> <span class="glyphicon glyphicon-circle-arrow-right"></span>
-  </a>
+<div class="clearfix"></div>
+<div class="col-md-12">
+    <span class="font-15">
+        <a href="<?php print $more_url ?>">
+            <strong><?php print $link_text; ?> <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
+        </a>
+    </span>
 </div>

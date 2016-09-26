@@ -177,11 +177,11 @@ function core_image_default_styles() {
   $styles['newsletter_square'] = array(
     'label' => 'Newsletter Image (280x144)',
     'effects' => array(
-      28 => array(
+      2 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 280,
-          'height' => 144,
+          'width' => 430,
+          'height' => 240,
         ),
         'weight' => 1,
       ),

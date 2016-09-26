@@ -134,7 +134,7 @@ function core_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'colorbox_node_style' => 'large_button',
+    'colorbox_node_style' => 'newsletter_square',
     'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'page',

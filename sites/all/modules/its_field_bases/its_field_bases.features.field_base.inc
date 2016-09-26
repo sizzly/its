@@ -226,21 +226,6 @@ function its_field_bases_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_actual_outcome'.
-  $field_bases['field_actual_outcome'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_actual_outcome',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
   // Exported field_base: 'field_address_battlefield'.
   $field_bases['field_address_battlefield'] = array(
     'active' => 1,
@@ -874,34 +859,6 @@ function its_field_bases_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_closing_date'.
-  $field_bases['field_closing_date'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_closing_date',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'date',
-    'settings' => array(
-      'granularity' => array(
-        'day' => 'day',
-        'hour' => 'hour',
-        'minute' => 'minute',
-        'month' => 'month',
-        'second' => 0,
-        'year' => 'year',
-      ),
-      'repeat' => 0,
-      'timezone_db' => 'UTC',
-      'todate' => '',
-      'tz_handling' => 'date',
-    ),
-    'translatable' => 0,
-    'type' => 'datestamp',
   );
 
   // Exported field_base: 'field_completed_date_models'.
@@ -1847,27 +1804,6 @@ if ($results == "3") {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_outcome'.
-  $field_bases['field_outcome'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_outcome',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_paragraph_text'.
   $field_bases['field_paragraph_text'] = array(
     'active' => 1,
@@ -2085,31 +2021,6 @@ if ($results == "3") {
     ),
     'translatable' => 0,
     'type' => 'location',
-  );
-
-  // Exported field_base: 'field_question_status'.
-  $field_bases['field_question_status'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_question_status',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 'closed',
-        1 => 'open',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_reply_body'.

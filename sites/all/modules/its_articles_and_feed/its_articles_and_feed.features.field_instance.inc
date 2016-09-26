@@ -146,7 +146,7 @@ function its_articles_and_feed_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'medium',
+          'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
         'weight' => 2,

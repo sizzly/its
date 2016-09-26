@@ -10,24 +10,6 @@
 function core_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'administer faq'.
-  $permissions['administer faq'] = array(
-    'name' => 'administer faq',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'faq',
-  );
-
-  // Exported permission: 'administer faq order'.
-  $permissions['administer faq order'] = array(
-    'name' => 'administer faq order',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'faq',
-  );
-
   // Exported permission: 'administer hide submit'.
   $permissions['administer hide submit'] = array(
     'name' => 'administer hide submit',
@@ -99,17 +81,6 @@ function core_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'view faq page'.
-  $permissions['view faq page'] = array(
-    'name' => 'view faq page',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'faq',
   );
 
   return $permissions;

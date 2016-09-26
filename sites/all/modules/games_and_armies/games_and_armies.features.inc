@@ -30,11 +30,11 @@ function games_and_armies_image_default_styles() {
   $styles['hero_image_page'] = array(
     'label' => 'Hero Image Page',
     'effects' => array(
-      23 => array(
+      1 => array(
         'name' => 'image_crop',
         'data' => array(
-          'width' => 750,
-          'height' => 240,
+          'width' => 898,
+          'height' => 500,
           'anchor' => 'center-center',
         ),
         'weight' => 2,
