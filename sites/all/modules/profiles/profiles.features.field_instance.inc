@@ -213,6 +213,37 @@ function profiles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'profile2-main-field_games_played_profile'.
+  $field_instances['profile2-main-field_games_played_profile'] = array(
+    'bundle' => 'main',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_games_played_profile',
+    'label' => 'Games Played',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'profile2-main-field_geolocation'.
   $field_instances['profile2-main-field_geolocation'] = array(
     'bundle' => 'main',
@@ -257,7 +288,58 @@ function profiles_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-main-field_instagram'.
+  $field_instances['profile2-main-field_instagram'] = array(
+    'bundle' => 'main',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_instagram',
+    'label' => 'Instagram',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => 'Instagram',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 5,
     ),
   );
 
@@ -339,7 +421,7 @@ function profiles_field_default_field_instances() {
       'module' => 'location_cck',
       'settings' => array(),
       'type' => 'location',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -449,7 +531,9 @@ function profiles_field_default_field_instances() {
   t('Banner');
   t('Bio');
   t('Facebook');
+  t('Games Played');
   t('Geolocation');
+  t('Instagram');
   t('Location');
   t('Organization Website');
   t('Pinterest');

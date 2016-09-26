@@ -2035,8 +2035,8 @@ function battle_reports_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'content',
+          'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
         'weight' => 41,

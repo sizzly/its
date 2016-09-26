@@ -358,9 +358,12 @@ function its_galleries_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'custom_formatters',
-        'settings' => array(),
-        'type' => 'custom_formatters_its_gallery_2',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 1,
       ),
       'ical' => array(

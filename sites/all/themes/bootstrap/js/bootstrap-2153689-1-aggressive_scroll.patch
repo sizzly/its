@@ -1,0 +1,13 @@
+diff --git a/js/bootstrap.js b/js/bootstrap.js
+index 86bccbd..d3c48e3 100644
+--- a/js/bootstrap.js
++++ b/js/bootstrap.js
+@@ -117,7 +117,7 @@ var Drupal = Drupal || {};
+         }
+       }
+       $scrollableElement.once('bootstrap-anchors', function () {
+-        $scrollableElement.on('click.bootstrap-anchors', 'a[href*="#"]:not([data-toggle],[data-target])', function(e) {
++        $scrollableElement.on('click.bootstrap-anchors', 'a[href*="#"]:not([data-toggle],[data-target],[data-slide])', function(e) {
+           this.scrollTo(e);
+         });
+       });

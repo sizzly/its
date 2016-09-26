@@ -4,36 +4,9 @@
  * and open the template in the editor.
  */
 ?>
-<!-- Overlay Div -->
-<a href="" id="theme-setting-icon"><i class="fa fa-cog fa-lg"></i></a>
-<div id="theme-setting">
-    <div class="title">
-        <strong class="no-margin">Skin Color</strong>
-    </div>
-    <div class="theme-box">
-        <a class="theme-color" style="background:#323447" id="default"></a>
-        <a class="theme-color" style="background:#efefef" id="skin-1"></a>
-        <a class="theme-color" style="background:#a93922" id="skin-2"></a>
-        <a class="theme-color" style="background:#3e6b96" id="skin-3"></a>
-        <a class="theme-color" style="background:#635247" id="skin-4"></a>
-        <a class="theme-color" style="background:#3a3a3a" id="skin-5"></a>
-        <a class="theme-color" style="background:#495B6C" id="skin-6"></a>
-    </div>
-    <div class="title">
-        <strong class="no-margin">Sidebar Menu</strong>
-    </div>
-    <div class="theme-box">
-        <label class="label-checkbox">
-            <input type="checkbox" checked id="fixedSidebar">
-            <span class="custom-checkbox"></span>
-            Fixed Sidebar
-        </label>
-    </div>
-</div><!-- /theme-setting -->
-
 <div id="wrapper" class="preload">
 
-    <div id="top-nav" class="skin-6 fixed">
+    <div id="top-nav" class="skin-5 fixed">
         <div class="brand">
             <span>
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -66,17 +39,9 @@
                     <i class="fa fa-power-off"></i>
                 </a>
             </div><!-- /size-toggle -->	
-            <div class="user-block clearfix">
-                <?php print $user_avatar; ?>
-                <div class="detail">
-                    <ul class="list-inline">
-                        <li><strong><?php print $user_name; ?></strong></li>
-                    </ul>
-                    <ul class="list-inline">
-                        <li><a href="/user">Profile</a></li>
-                    </ul>
-                </div>
-            </div><!-- /user-block -->
+
+            <?php print $user_block; ?>
+
             <div class="search-block">
                 <div class="input-group">
                     <?php print $side_search_box; ?>
@@ -199,7 +164,7 @@
                         </ul>
                     </li>
                 </ul>
-                
+
 
                 <div class="alert alert-info">
                     <ins data-revive-zoneid="5" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
@@ -212,52 +177,52 @@
     <div id="main-container">
         <div class="padding-md main-content">
 
-                <div class="row">	
-                    <div<?php print $content_column_class; ?>>
-                        <section>
-                            <?php if (!empty($page['highlighted'])): ?>
-                                <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-                            <?php endif; ?>
-                            <?php
-                            if (!empty($breadcrumb)): print $breadcrumb;
-                            endif;
-                            ?>
-                            <a id="main-content"></a>
-                            <?php print render($title_prefix); ?>
-                            <?php if (!empty($title)): ?>
-                                <h1 class="page-header"><?php print $title; ?></h1>
-                            <?php endif; ?>
-                            <?php print render($title_suffix); ?>
-                            <?php print $messages; ?>
-                            <?php if (!empty($tabs)): ?>
-                                <?php print render($tabs); ?>
-                            <?php endif; ?>
-                            <?php if (!empty($page['help'])): ?>
-                                <?php print render($page['help']); ?>
-                            <?php endif; ?>
-                            <?php if (!empty($action_links)): ?>
-                                <ul class="action-links"><?php print render($action_links); ?></ul>
-                            <?php endif; ?>
-                            <?php print render($page['content']); ?>
-                            <div class="seperator"></div>
-                            <div class="seperator"></div>
-                        </section>
+            <div class="row">	
+                <div<?php print $content_column_class; ?>>
+                    <section>
+                        <?php if (!empty($page['highlighted'])): ?>
+                            <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+                        <?php endif; ?>
+                        <?php
+                        if (!empty($breadcrumb)): print $breadcrumb;
+                        endif;
+                        ?>
+                        <a id="main-content"></a>
+                        <?php print render($title_prefix); ?>
+                        <?php if (!empty($title)): ?>
+                            <h1 class="page-header"><?php print $title; ?></h1>
+                        <?php endif; ?>
+                        <?php print render($title_suffix); ?>
+                        <?php print $messages; ?>
+                        <?php if (!empty($tabs)): ?>
+                            <?php print render($tabs); ?>
+                        <?php endif; ?>
+                        <?php if (!empty($page['help'])): ?>
+                            <?php print render($page['help']); ?>
+                        <?php endif; ?>
+                        <?php if (!empty($action_links)): ?>
+                            <ul class="action-links"><?php print render($action_links); ?></ul>
+                        <?php endif; ?>
+                        <?php print render($page['content']); ?>
+                        <div class="seperator"></div>
+                        <div class="seperator"></div>
+                    </section>
+                </div><!-- /.col -->
+                <?php if (!empty($page['sidebar_second'])): ?>
+                    <div class="col-md-4">
+                        <?php print render($page['sidebar_second']); ?>
+                        <div class="seperator"></div>
+                        <div class="seperator"></div>
                     </div><!-- /.col -->
-                    <?php if (!empty($page['sidebar_second'])): ?>
-                        <div class="col-md-4">
-                            <?php print render($page['sidebar_second']); ?>
-                            <div class="seperator"></div>
-                            <div class="seperator"></div>
-                        </div><!-- /.col -->
-                    <?php endif; ?>
-                </div><!-- /.row -->
-                <div class="row">
-                    <div class="col-xs-12 clearfix">
+                <?php endif; ?>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-xs-12 clearfix">
 
-                        <?php print render($page['footer']); ?>
+                    <?php print render($page['footer']); ?>
 
-                    </div>
                 </div>
+            </div>
 
         </div><!-- /.padding-md -->
     </div><!-- /main-container -->
@@ -270,4 +235,5 @@
 <?php drupal_add_js("sites/all/themes/bootstrap/js/jquery.popupoverlay.min.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
 <?php drupal_add_js("sites/all/themes/bootstrap/js/endless/endless_form.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
 <?php drupal_add_js("sites/all/themes/bootstrap/js/endless/endless.js", array('type' => 'file', 'scope' => 'footer', 'weight' => 5)); ?>
+
 

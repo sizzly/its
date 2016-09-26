@@ -8,6 +8,7 @@
 @import url("./font-awesome.min.css");
 @import url("./endless.css");
 @import url("./endless-skin.css");
+@import url("./endless-landing.css");
 
 html.overlay-open .navbar-fixed-top {
     z-index: 400

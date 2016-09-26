@@ -629,7 +629,7 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: Game */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_army_game']['id'] = 'field_army_game';
   $handler->display->display_options['fields']['field_army_game']['table'] = 'field_data_field_army_game';
   $handler->display->display_options['fields']['field_army_game']['field'] = 'field_army_game';
