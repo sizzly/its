@@ -691,10 +691,10 @@ function its_modelling_projects_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'medium',
+          'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',

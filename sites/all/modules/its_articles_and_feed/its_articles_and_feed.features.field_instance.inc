@@ -32,11 +32,21 @@ function its_articles_and_feed_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'smart_trim',
         'settings' => array(
-          'trim_length' => 300,
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 600,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+          ),
+          'trim_preserve_tags' => '<p><a>',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
         ),
-        'type' => 'text_summary_or_trimmed',
+        'type' => 'smart_trim_format',
         'weight' => 3,
       ),
     ),
@@ -149,7 +159,7 @@ function its_articles_and_feed_field_default_field_instances() {
           'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -387,50 +397,6 @@ function its_articles_and_feed_field_default_field_instances() {
       'settings' => array(),
       'type' => 'og_complex',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_source-body'.
-  $field_instances['node-news_source-body'] = array(
-    'bundle' => 'news_source',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
     ),
   );
 

@@ -125,11 +125,6 @@ function its_clubs_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:gaming_club:moderate'
-  $permissions['node:gaming_club:moderate'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:gaming_club:subscribe'
   $permissions['node:gaming_club:subscribe'] = array(
     'roles' => array(

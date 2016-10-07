@@ -80,7 +80,7 @@ function blogs_field_group_info() {
     'label' => 'Image Wrapper',
     'weight' => '7',
     'children' => array(
-      0 => 'field_image',
+      0 => 'group_spacer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -132,11 +132,13 @@ function blogs_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'blog';
   $field_group->mode = 'teaser';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_image_wrapper';
   $field_group->data = array(
     'label' => 'spacer',
     'weight' => '18',
-    'children' => array(),
+    'children' => array(
+      0 => 'field_image',
+    ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'spacer',

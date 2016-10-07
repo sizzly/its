@@ -381,7 +381,7 @@ function its_galleries_field_default_field_instances() {
           'single_image_delta' => '',
         ),
         'type' => 'single_image',
-        'weight' => 17,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',

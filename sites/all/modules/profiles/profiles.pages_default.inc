@@ -287,31 +287,13 @@ function profiles_default_page_manager_handlers() {
     $display->content['new-925394ee-2285-4064-a67d-e3e89af2316d'] = $pane;
     $display->panels['sidebar'][2] = 'new-925394ee-2285-4064-a67d-e3e89af2316d';
     $pane = new stdClass();
-    $pane->pid = 'new-2b4863f5-1d54-4fdc-9644-6b0f87f86052';
+    $pane->pid = 'new-f1e3d0eb-10c0-47e7-86fe-bbefc00b00cc';
     $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profiles_all_page_layout-panel_pane_18';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Content Count',
-      'title' => 'Content',
-      'body' => '<div class="panel panel-default">
-    <div class="panel-body no-padding collapse in" id="toDoListWidget">
-        <ul class="list-group task-list no-margin collapse in">
-            <?php print views_embed_view("profiles_all_page_layout", "panel_pane_17"); ?>
-            <?php print views_embed_view("profiles_all_page_layout", "panel_pane_6"); ?>
-            <?php print views_embed_view("profiles_all_page_layout", "panel_pane_3"); ?>
-            <?php print views_embed_view("profiles_all_page_layout", "panel_pane_4"); ?>
-            <?php print views_embed_view("profiles_all_page_layout", "panel_pane_5"); ?>
-            <?php print views_embed_view("profiles_all_images", "panel_pane_2"); ?>
-            <?php print views_embed_view("profiles_all_page_layout", "panel_pane_16"); ?>
-        </ul><!-- /list-group -->
-    </div>
-</div>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -320,9 +302,9 @@ function profiles_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '2b4863f5-1d54-4fdc-9644-6b0f87f86052';
-    $display->content['new-2b4863f5-1d54-4fdc-9644-6b0f87f86052'] = $pane;
-    $display->panels['sidebar'][3] = 'new-2b4863f5-1d54-4fdc-9644-6b0f87f86052';
+    $pane->uuid = 'f1e3d0eb-10c0-47e7-86fe-bbefc00b00cc';
+    $display->content['new-f1e3d0eb-10c0-47e7-86fe-bbefc00b00cc'] = $pane;
+    $display->panels['sidebar'][3] = 'new-f1e3d0eb-10c0-47e7-86fe-bbefc00b00cc';
     $pane = new stdClass();
     $pane->pid = 'new-3f50849f-ac18-46a8-855d-ac724a5203ce';
     $pane->panel = 'sidebar';
@@ -759,106 +741,13 @@ function profiles_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-d3f7745f-980a-4577-8bac-c48c06f637ae';
+    $pane->pid = 'new-bd1b031f-47d6-4a28-8a80-621d65a008c5';
     $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_battle-panel_pane_17';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Average Battle Score',
-      'body' => '<script src="/sites/all/libraries/highcharts/js/highcharts-more.js"></script>
-<script src="/sites/all/libraries/highcharts/js/modules/solid-gauge.js"></script>
-<script>
-jQuery(document).ready(function($) {
-    var gaugeOptions = {
-
-        chart: {
-            type: \'solidgauge\'
-        },
-        credits: {
-            enabled: false
-        },
-
-        title: null,
-
-        pane: {
-            center: [\'50%\', \'85%\'],
-            size: \'140%\',
-            startAngle: -90,
-            endAngle: 90,
-            background: {
-                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || \'#EEE\',
-                innerRadius: \'60%\',
-                outerRadius: \'100%\',
-                shape: \'arc\'
-            }
-        },
-
-        tooltip: {
-            enabled: false
-        },
-
-        // the value axis
-        yAxis: {
-            stops: [
-                [0.4, \'#DF5353\'], // red
-                [0.7, \'#DDDF0D\'], // yellow
-                [1.0, \'#55BF3B\'] // green
-            ],
-            lineWidth: 0,
-            minorTickInterval: null,
-            tickPixelInterval: 400,
-            tickWidth: 0,
-            title: {
-                y: -70
-            },
-            labels: {
-                y: 16
-            }
-        },
-
-        plotOptions: {
-            solidgauge: {
-                dataLabels: {
-                    y: 5,
-                    borderWidth: 0,
-                    useHTML: true
-                }
-            }
-        }
-    };
-
-    // The speed gauge
-    $(\'#container_avg\').highcharts(Highcharts.merge(gaugeOptions, {
-        yAxis: {
-            min: 0,
-            max: 5,
-            title: {
-                text: null
-            }
-        },
-
-        credits: {
-            enabled: false
-        },
-
-        series: [{
-            name: \'AVG Battle Score\',
-            data: [<?php print strip_tags(views_embed_view("profile_stats_battle" , "panel_pane_5")); ?>],
-            dataLabels: {
-                format: \'<div style="text-align:center"><span style="font-size:25px;color:\' +
-                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || \'black\') + \'">{y}</span>\'
-            },
-        }]
-    }));
-});
-</script>
-<div id="container_avg" style="width: 100%; height: 200px; margin: 0 auto"></div>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -867,9 +756,9 @@ jQuery(document).ready(function($) {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'd3f7745f-980a-4577-8bac-c48c06f637ae';
-    $display->content['new-d3f7745f-980a-4577-8bac-c48c06f637ae'] = $pane;
-    $display->panels['contentmain'][0] = 'new-d3f7745f-980a-4577-8bac-c48c06f637ae';
+    $pane->uuid = 'bd1b031f-47d6-4a28-8a80-621d65a008c5';
+    $display->content['new-bd1b031f-47d6-4a28-8a80-621d65a008c5'] = $pane;
+    $display->panels['contentmain'][0] = 'new-bd1b031f-47d6-4a28-8a80-621d65a008c5';
     $pane = new stdClass();
     $pane->pid = 'new-6723d539-1539-4f7a-ad14-41e6bc0c44d4';
     $pane->panel = 'contentmain';
@@ -983,29 +872,13 @@ jQuery(document).ready(function($) {
     $display->content['new-b4c6c9bb-aeca-4c9e-8a71-b80973ffa0cc'] = $pane;
     $display->panels['header'][0] = 'new-b4c6c9bb-aeca-4c9e-8a71-b80973ffa0cc';
     $pane = new stdClass();
-    $pane->pid = 'new-e08061f1-15bd-4cf4-b1db-25a9d8cdb714';
+    $pane->pid = 'new-c07f427d-f88b-4ff3-ae12-f5f82164e7f2';
     $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_battle-panel_pane_15';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Opponent Faction Panels',
-      'title' => 'Opponent Faction',
-      'body' => '<div class="row">
-<div class="col-md-4">
-<?php print views_embed_view("profile_stats_battle" , "panel_pane_11"); ?>
-</div>
-<div class="col-md-4">
-<?php print views_embed_view("profile_stats_battle" , "panel_pane_12"); ?>
-</div>
-<div class="col-md-4">
-<?php print views_embed_view("profile_stats_battle" , "panel_pane_13"); ?>
-</div>
-</div>',
-      'format' => 'php_code',
-      'substitute' => 1,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1014,98 +887,17 @@ jQuery(document).ready(function($) {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'e08061f1-15bd-4cf4-b1db-25a9d8cdb714';
-    $display->content['new-e08061f1-15bd-4cf4-b1db-25a9d8cdb714'] = $pane;
-    $display->panels['sidebar'][0] = 'new-e08061f1-15bd-4cf4-b1db-25a9d8cdb714';
+    $pane->uuid = 'c07f427d-f88b-4ff3-ae12-f5f82164e7f2';
+    $display->content['new-c07f427d-f88b-4ff3-ae12-f5f82164e7f2'] = $pane;
+    $display->panels['sidebar'][0] = 'new-c07f427d-f88b-4ff3-ae12-f5f82164e7f2';
     $pane = new stdClass();
-    $pane->pid = 'new-eb7c660b-2486-4a26-8c2a-132a215403c6';
+    $pane->pid = 'new-05b6d78d-c63d-4052-82fe-75adb5f59684';
     $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_battle-panel_pane_16';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Opponent\'s Army Impact',
-      'body' => '<script>
-jQuery(document).ready(function($) {
-    $(\'#container_oa\').highcharts({
-        chart: {
-            type: \'scatter\',
-            zoomType: \'xy\'
-        },
-        title: {
-            text: null
-        },
-        credits: {
-            enabled: false
-        },
-        xAxis: {
-            title: {
-                enabled: true,
-                text: \'Defeat %\'
-            },
-            startOnTick: true,
-            endOnTick: true,
-            showLastLabel: true,
-            max: 100,
-            min: 0
-        },
-        yAxis: {
-            max: 100,
-            min: 0,
-            startOnTick: true,
-            endOnTick: true,
-            showLastLabel: true,
-            
-            title: {
-                text: \'Victory %\'
-            }
-        },
-        legend: {
-            layout: \'horizontal\',
-            align: \'center\',
-            verticalAlign: \'bottom\',
-
-            floating: false,
-            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || \'#FFFFFF\',
-            borderWidth: 1
-        },
-        plotOptions: {
-            scatter: {
-                marker: {
-                    radius: 5,
-                    states: {
-                        hover: {
-                            enabled: true,
-                            lineColor: \'rgb(100,100,100)\'
-                        }
-                    }
-                },
-                states: {
-                    hover: {
-                        marker: {
-                            enabled: false
-                        }
-                    }
-                },
-                tooltip: {
-                    headerFormat: \'<b>{series.name}</b><br>\',
-                    pointFormat: \'{point.y} % Victory<br>{point.x} % Defeat\'
-                }
-            }
-        },
-        series: [
-            <?php print strip_tags(views_embed_view("profile_stats_battle" , "panel_pane_4")); ?> 
-        ]
-    });
-});
-</script>
-
-<div id="container_oa" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1114,9 +906,9 @@ jQuery(document).ready(function($) {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'eb7c660b-2486-4a26-8c2a-132a215403c6';
-    $display->content['new-eb7c660b-2486-4a26-8c2a-132a215403c6'] = $pane;
-    $display->panels['sidebar'][1] = 'new-eb7c660b-2486-4a26-8c2a-132a215403c6';
+    $pane->uuid = '05b6d78d-c63d-4052-82fe-75adb5f59684';
+    $display->content['new-05b6d78d-c63d-4052-82fe-75adb5f59684'] = $pane;
+    $display->panels['sidebar'][1] = 'new-05b6d78d-c63d-4052-82fe-75adb5f59684';
     $pane = new stdClass();
     $pane->pid = 'new-661eb401-252b-4d1c-93dc-f8d4aa3122cc';
     $pane->panel = 'sidebar';
@@ -1208,24 +1000,18 @@ jQuery(document).ready(function($) {
     ),
   );
   $display->cache = array();
-  $display->title = 'Battle Statistics: %user:name';
+  $display->title = 'Content Statistics: %user:name';
   $display->uuid = 'b1731d5f-7101-4868-bdd4-1b0bffe9e059';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-94525b27-0936-48c0-b563-3438337a7cf5';
+    $pane->pid = 'new-bdff9f34-5276-4fd8-bced-d369118cbace';
     $pane->panel = 'header';
-    $pane->type = 'custom';
-    $pane->subtype = 'coming_soon';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_content-panel_pane_5';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1234,9 +1020,47 @@ jQuery(document).ready(function($) {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '94525b27-0936-48c0-b563-3438337a7cf5';
-    $display->content['new-94525b27-0936-48c0-b563-3438337a7cf5'] = $pane;
-    $display->panels['header'][0] = 'new-94525b27-0936-48c0-b563-3438337a7cf5';
+    $pane->uuid = 'bdff9f34-5276-4fd8-bced-d369118cbace';
+    $display->content['new-bdff9f34-5276-4fd8-bced-d369118cbace'] = $pane;
+    $display->panels['header'][0] = 'new-bdff9f34-5276-4fd8-bced-d369118cbace';
+    $pane = new stdClass();
+    $pane->pid = 'new-a895e1f3-af39-4122-8f19-1a67e0417a28';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_content-panel_pane_10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a895e1f3-af39-4122-8f19-1a67e0417a28';
+    $display->content['new-a895e1f3-af39-4122-8f19-1a67e0417a28'] = $pane;
+    $display->panels['header'][1] = 'new-a895e1f3-af39-4122-8f19-1a67e0417a28';
+    $pane = new stdClass();
+    $pane->pid = 'new-98b18112-fb15-47f7-ab61-fd6ef23b255d';
+    $pane->panel = 'header';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_content-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '98b18112-fb15-47f7-ab61-fd6ef23b255d';
+    $display->content['new-98b18112-fb15-47f7-ab61-fd6ef23b255d'] = $pane;
+    $display->panels['header'][2] = 'new-98b18112-fb15-47f7-ab61-fd6ef23b255d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1309,7 +1133,7 @@ jQuery(document).ready(function($) {
     ),
   );
   $display->cache = array();
-  $display->title = 'Battle Statistics: %user:name';
+  $display->title = 'Modelling Statistics: %user:name';
   $display->uuid = 'b1731d5f-7101-4868-bdd4-1b0bffe9e059';
   $display->content = array();
   $display->panels = array();
@@ -1384,6 +1208,63 @@ jQuery(document).ready(function($) {
   );
   $page->default_handlers[$handler->name] = $handler;
   $pages['profiles_redirect_old_battles_page'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'redirect_to_edit';
+  $page->task = 'page';
+  $page->admin_title = 'Redirect to Edit';
+  $page->admin_description = '';
+  $page->path = 'user/edit';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page-redirect_to_edit__user';
+  $handler->task = 'page';
+  $handler->subtask = 'redirect_to_edit';
+  $handler->handler = 'http_response';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Redirect to user edit',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'code' => '301',
+    'destination' => 'user/%user:uid/edit',
+    'name' => 'user',
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['redirect_to_edit'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
@@ -1594,85 +1475,13 @@ jQuery(document).ready(function($) {
     $display->content['new-cb241f3f-6ad3-44b5-b758-388a60c257f7'] = $pane;
     $display->panels['header'][0] = 'new-cb241f3f-6ad3-44b5-b758-388a60c257f7';
     $pane = new stdClass();
-    $pane->pid = 'new-1d283835-76ba-4110-baf1-ca317cdaaa17';
+    $pane->pid = 'new-a549bd78-863c-49eb-be11-de45fdcd1478';
     $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_battle-panel_pane_14';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Battles over Time',
-      'body' => '<script>
-jQuery(document).ready(function($) {
-    $(\'#container_bot\').highcharts({
-        chart: {
-            zoomType: \'x\'
-        },
-        title: {
-            text: null
-        },
-        subtitle: {
-            text: document.ontouchstart === undefined ?
-                    \'Click and drag in the plot area to zoom in\' : \'Pinch the chart to zoom in\'
-        },
-        credits: {
-            enabled: false
-        },
-        xAxis: {
-            type: \'datetime\'
-        },
-        yAxis: {
-            title: {
-                text: \'# Battles\'
-            },
-       min: 0
-        },
-        legend: {
-            enabled: false
-        },
-        plotOptions: {
-            area: {
-                fillColor: {
-                    linearGradient: {
-                        x1: 0,
-                        y1: 0,
-                        x2: 0,
-                        y2: 1
-                    },
-                    stops: [
-                        [0, Highcharts.getOptions().colors[0]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get(\'rgba\')]
-                    ]
-                },
-                marker: {
-                    radius: 2
-                },
-                lineWidth: 1,
-                states: {
-                    hover: {
-                        lineWidth: 1
-                    }
-                },
-                threshold: null
-            }
-        },
-
-        series: [{
-            type: \'area\',
-            name: \'Battles\',
-            data: [
-                <?php print strip_tags(views_embed_view("profile_stats_battle" , "panel_pane_2")); ?>
-            ]
-        }]
-    });
-});
-</script>
-
-<div id="container_bot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1681,89 +1490,17 @@ jQuery(document).ready(function($) {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '1d283835-76ba-4110-baf1-ca317cdaaa17';
-    $display->content['new-1d283835-76ba-4110-baf1-ca317cdaaa17'] = $pane;
-    $display->panels['sidebar'][0] = 'new-1d283835-76ba-4110-baf1-ca317cdaaa17';
+    $pane->uuid = 'a549bd78-863c-49eb-be11-de45fdcd1478';
+    $display->content['new-a549bd78-863c-49eb-be11-de45fdcd1478'] = $pane;
+    $display->panels['sidebar'][0] = 'new-a549bd78-863c-49eb-be11-de45fdcd1478';
     $pane = new stdClass();
-    $pane->pid = 'new-ad7fc079-1077-4a62-a5b1-5b15104784e8';
+    $pane->pid = 'new-745f4b83-cc12-4fa4-abb4-a64fc7377844';
     $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_content-panel_pane_9';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Content over Time',
-      'body' => '<script>
-jQuery(document).ready(function($) {
-    $(\'#container_cot\').highcharts({
-        chart: {
-            zoomType: \'x\'
-        },
-        title: {
-            text: null
-        },
-        subtitle: {
-            text: document.ontouchstart === undefined ?
-                    \'Click and drag in the plot area to zoom in\' : \'Pinch the chart to zoom in\'
-        },
-        credits: {
-            enabled: false
-        },
-        xAxis: {
-            type: \'datetime\'
-        },
-        yAxis: {
-            title: {
-                text: \'Content\'
-            },
-       min: 0
-        },
-        legend: {
-            enabled: false
-        },
-        plotOptions: {
-            area: {
-                fillColor: {
-                    linearGradient: {
-                        x1: 0,
-                        y1: 0,
-                        x2: 0,
-                        y2: 1
-                    },
-                    stops: [
-                        [0, Highcharts.getOptions().colors[0]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get(\'rgba\')]
-                    ]
-                },
-                marker: {
-                    radius: 2
-                },
-                lineWidth: 1,
-                states: {
-                    hover: {
-                        lineWidth: 1
-                    }
-                },
-                threshold: null
-            }
-        },
-
-        series: [{
-            type: \'area\',
-            name: \'Content\',
-            data: [
-                <?php print strip_tags(views_embed_view("profile_stats_content" , "panel_pane_2")); ?>
-            ]
-        }]
-    });
-});
-</script>
-
-<div id="container_cot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1772,89 +1509,17 @@ jQuery(document).ready(function($) {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'ad7fc079-1077-4a62-a5b1-5b15104784e8';
-    $display->content['new-ad7fc079-1077-4a62-a5b1-5b15104784e8'] = $pane;
-    $display->panels['sidebar'][1] = 'new-ad7fc079-1077-4a62-a5b1-5b15104784e8';
+    $pane->uuid = '745f4b83-cc12-4fa4-abb4-a64fc7377844';
+    $display->content['new-745f4b83-cc12-4fa4-abb4-a64fc7377844'] = $pane;
+    $display->panels['sidebar'][1] = 'new-745f4b83-cc12-4fa4-abb4-a64fc7377844';
     $pane = new stdClass();
-    $pane->pid = 'new-438be5b9-65ae-44aa-8be2-50bb8f14375a';
+    $pane->pid = 'new-54bd52a3-dc69-42e3-82ec-831a1e5622a5';
     $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_modeling-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Models Aquired Over Time',
-      'body' => '<script>
-jQuery(document).ready(function($) {
-    $(\'#container_mot\').highcharts({
-        chart: {
-            zoomType: \'x\'
-        },
-        title: {
-            text: null
-        },
-        subtitle: {
-            text: document.ontouchstart === undefined ?
-                    \'Click and drag in the plot area to zoom in\' : \'Pinch the chart to zoom in\'
-        },
-        credits: {
-            enabled: false
-        },
-        xAxis: {
-            type: \'datetime\'
-        },
-        yAxis: {
-            title: {
-                text: \'# Models\'
-            },
-       min: 0
-        },
-        legend: {
-            enabled: false
-        },
-        plotOptions: {
-            area: {
-                fillColor: {
-                    linearGradient: {
-                        x1: 0,
-                        y1: 0,
-                        x2: 0,
-                        y2: 1
-                    },
-                    stops: [
-                        [0, Highcharts.getOptions().colors[0]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get(\'rgba\')]
-                    ]
-                },
-                marker: {
-                    radius: 2
-                },
-                lineWidth: 1,
-                states: {
-                    hover: {
-                        lineWidth: 1
-                    }
-                },
-                threshold: null
-            }
-        },
-
-        series: [{
-            type: \'area\',
-            name: \'Models\',
-            data: [
-                <?php print strip_tags(views_embed_view("profile_stats_modeling" , "panel_pane_2")); ?>
-            ]
-        }]
-    });
-});
-</script>
-
-<div id="container_mot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1863,9 +1528,9 @@ jQuery(document).ready(function($) {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '438be5b9-65ae-44aa-8be2-50bb8f14375a';
-    $display->content['new-438be5b9-65ae-44aa-8be2-50bb8f14375a'] = $pane;
-    $display->panels['sidebar'][2] = 'new-438be5b9-65ae-44aa-8be2-50bb8f14375a';
+    $pane->uuid = '54bd52a3-dc69-42e3-82ec-831a1e5622a5';
+    $display->content['new-54bd52a3-dc69-42e3-82ec-831a1e5622a5'] = $pane;
+    $display->panels['sidebar'][2] = 'new-54bd52a3-dc69-42e3-82ec-831a1e5622a5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

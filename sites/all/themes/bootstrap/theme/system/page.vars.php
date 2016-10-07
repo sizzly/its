@@ -20,7 +20,7 @@ function bootstrap_preprocess_page(&$variables) {
         $message_count = privatemsg_unread_count($user);
         $variables['user_name'] = '<a href="/user">'. $user->name .'</a>';
         $variables['nav_bar_option'] = '<ul class="nav-notification clearfix"><li><a href="/dashboard"><i class="fa fa-tachometer fa-lg"></i></a></li><li><a href="/node/add"><i class="fa fa-plus-square-o fa-lg"></i></a></li><li><a href="/messages"><i class="fa fa-envelope fa-lg"></i><span class="notification-label bounceIn animation-delay4">'. $message_count .'</span></a></li><li class="profile"><a href="/user"><strong>'. $user->name .'</strong></a></li></ul>';
-
+        $variables['logout_button'] = '<a class="btn btn-sm pull-right logoutConfirm_open" href="/user/logout"><i class="fa fa-power-off"></i></a>';
         if ($user->picture) {
             $user_avatar = theme_image_style(
                     array(
@@ -36,11 +36,12 @@ function bootstrap_preprocess_page(&$variables) {
         } else {
             $variables['user_avatar'] = '<a title="Profile" href=/user><img class="avatar" src="/sites/default/files/default_images/profile.png" /></a>';
             $variables['user_name'] = "Warmonger";
-        }
+                    }
         $variables['user_block'] = '<div class="user-block clearfix"><a title="Profile" href=/user>'. $user_avatar . '<div class="detail"><ul class="list-inline"><li><strong><a href="/user">'. $user->name .'</a></strong></li></ul></div></div><!-- /user-block -->';
     } else {
         $user_avatar = '<img class="avatar" src="/sites/default/files/default_images/profile.png" />';
         $variables['user_name'] = "Warmonger";
+        $variables['logout_button'] = '';
         $variables['nav_bar_option'] = '<ul class="nav-notification clearfix"><li><a href="/user"><strong>Login</strong></a></li><li><a href="/user/register"><strong>Register</strong></a></li>';
         $variables['user_block'] = '<div class="user-block clearfix">' . $user_avatar . '<div class="detail"><ul class="list-inline"><li><a href="/user/register">Register</a></ul><ul class="list-inline"><li><a href="/user">Login</a></li></ul></div></div><!-- /user-block -->';
     }

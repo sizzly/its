@@ -218,17 +218,17 @@ function battle_reports_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
-          'trim_length' => 600,
+          'trim_length' => 300,
           'trim_link' => 0,
           'trim_options' => array(
             'text' => 'text',
           ),
-          'trim_preserve_tags' => '<a>',
+          'trim_preserve_tags' => '<a><p>',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -830,10 +830,10 @@ function battle_reports_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'medium',
+          'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 29,
       ),
     ),
     'entity_type' => 'node',
@@ -1185,6 +1185,49 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-game_result_system_-field_verbose_teaser'.
+  $field_instances['node-game_result_system_-field_verbose_teaser'] = array(
+    'bundle' => 'game_result_system_',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed_field_plain',
+        'weight' => 33,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed_field_plain',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_verbose_teaser',
+    'label' => 'Verbose Teaser',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'computed_field',
+      'settings' => array(),
+      'type' => 'computed',
+      'weight' => 71,
+    ),
+  );
+
   // Exported field_instance: 'node-game_result_system_-field_victory'.
   $field_instances['node-game_result_system_-field_victory'] = array(
     'bundle' => 'game_result_system_',
@@ -1378,8 +1421,19 @@ function battle_reports_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'smart_trim',
+        'settings' => array(
+          'more_link' => FALSE,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 300,
+          'trim_link' => FALSE,
+          'trim_options' => array(),
+          'trim_preserve_tags' => '',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
         'weight' => 2,
       ),
     ),

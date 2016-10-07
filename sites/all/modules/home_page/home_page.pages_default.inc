@@ -1607,6 +1607,32 @@ Rob</p>
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Announcement Banner',
+      'title' => '',
+      'body' => '<ins data-revive-zoneid="27" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
+<script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'fe8099c2-5f90-4026-8d25-5e9754ec8f73';
+    $display->content['new-fe8099c2-5f90-4026-8d25-5e9754ec8f73'] = $pane;
+    $display->panels['contentmain'][0] = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
+    $pane = new stdClass();
     $pane->pid = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
@@ -1623,11 +1649,11 @@ Rob</p>
       'css_class' => 'hidden-xs',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'ff19d553-d9bc-4b62-8c62-6fae301b609f';
     $display->content['new-ff19d553-d9bc-4b62-8c62-6fae301b609f'] = $pane;
-    $display->panels['contentmain'][0] = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
+    $display->panels['contentmain'][1] = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
     $pane = new stdClass();
     $pane->pid = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
     $pane->panel = 'contentmain';
@@ -1691,11 +1717,11 @@ Rob</p>
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '7a8d6a70-688f-4376-a556-704f146e3143';
     $display->content['new-7a8d6a70-688f-4376-a556-704f146e3143'] = $pane;
-    $display->panels['contentmain'][1] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
+    $display->panels['contentmain'][2] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
     $pane = new stdClass();
     $pane->pid = 'new-70244192-bfd0-46cd-b527-a074a19aefee';
     $pane->panel = 'contentmain';
@@ -1710,11 +1736,11 @@ Rob</p>
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '70244192-bfd0-46cd-b527-a074a19aefee';
     $display->content['new-70244192-bfd0-46cd-b527-a074a19aefee'] = $pane;
-    $display->panels['contentmain'][2] = 'new-70244192-bfd0-46cd-b527-a074a19aefee';
+    $display->panels['contentmain'][3] = 'new-70244192-bfd0-46cd-b527-a074a19aefee';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2234,7 +2260,7 @@ Rob</p>
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'Newsletter Signup',

@@ -734,6 +734,9 @@ height: auto;
 .topboxhead {
    margin-top:0px;
 }
+.topboxhead div span h2 {
+   margin-top:0px;
+}
 .flatthumb {
    margin-bottom:0px;
 }

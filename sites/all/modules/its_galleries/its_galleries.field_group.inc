@@ -42,6 +42,38 @@ function its_galleries_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_image_thumb|node|gallery|teaser';
+  $field_group->group_name = 'group_image_thumb';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gallery';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->data = array(
+    'label' => 'Thumbnail',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_images',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Thumbnail',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+        'required_fields' => 1,
+      ),
+      'formatter' => '',
+    ),
+  );
+  $field_groups['group_image_thumb|node|gallery|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_image_wrapper|node|gallery|teaser';
   $field_group->group_name = 'group_image_wrapper';
   $field_group->entity_type = 'node';
@@ -52,7 +84,7 @@ function its_galleries_field_group_info() {
     'label' => 'Image Wrapper',
     'weight' => '12',
     'children' => array(
-      0 => 'field_images',
+      0 => 'group_image_thumb',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -102,6 +134,7 @@ function its_galleries_field_group_info() {
   // Included for use with string extractors like potx.
   t('Body Wrapper');
   t('Image Wrapper');
+  t('Thumbnail');
   t('Wrapper');
 
   return $field_groups;

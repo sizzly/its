@@ -24,6 +24,7 @@ function its_army_profiles_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
+      1 => 'field_army_profile',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -52,7 +53,7 @@ function its_army_profiles_field_group_info() {
     'label' => 'Image Wrapper',
     'weight' => '3',
     'children' => array(
-      0 => 'field_image',
+      0 => 'group_spacer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -376,6 +377,36 @@ function its_army_profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_spacer|node|army_profile|teaser';
+  $field_group->group_name = 'group_spacer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'army_profile';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->data = array(
+    'label' => 'Spacer',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Spacer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_spacer|node|army_profile|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_wrapper|node|army_profile|teaser';
   $field_group->group_name = 'group_wrapper';
   $field_group->entity_type = 'node';
@@ -408,6 +439,7 @@ function its_army_profiles_field_group_info() {
   t('Body Wrapper');
   t('Image Wrapper');
   t('Section Wrapper');
+  t('Spacer');
   t('Title Lead');
   t('Wrapper');
 
