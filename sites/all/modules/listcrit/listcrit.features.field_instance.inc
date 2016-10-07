@@ -35,7 +35,7 @@ function listcrit_field_default_field_instances() {
           'trim_options' => array(
             'text' => 'text',
           ),
-          'trim_preserve_tags' => '<a>',
+          'trim_preserve_tags' => '<a><p><br>',
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),
@@ -232,10 +232,10 @@ function listcrit_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'medium',
+          'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -503,9 +503,8 @@ function listcrit_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'vud_field',
         'settings' => array(),
-        'type' => 'default',
+        'type' => 'hidden',
         'weight' => 4,
       ),
     ),

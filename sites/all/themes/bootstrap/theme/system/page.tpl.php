@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 ?>
-<div id="wrapper" class="preload">
+<div id="wrapper">
 
     <div id="top-nav" class="skin-5 fixed">
         <div class="brand">
@@ -19,15 +19,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <button type="button" class="navbar-toggle pull-left hide-menu" id="menuToggle">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
         <?php print $nav_bar_option; ?>
     </div>
 
-    <aside class="fixed">			
+    <aside class="fixed skin-5">			
         <div class="sidebar-inner scrollable-sidebar">
             <div class="size-toggle">
                 <a class="btn btn-sm" id="sizeToggle">
@@ -35,9 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="btn btn-sm pull-right logoutConfirm_open"  href="/user/logout">
-                    <i class="fa fa-power-off"></i>
-                </a>
+                <?php print $logout_button; ?>
             </div><!-- /size-toggle -->	
 
             <?php print $user_block; ?>

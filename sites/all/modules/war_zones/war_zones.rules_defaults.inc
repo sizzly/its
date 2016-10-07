@@ -1207,6 +1207,83 @@ function war_zones_default_rules_configuration() {
       "PROVIDES VARIABLES" : [ "brid" ]
     }
   }');
+  $items['rules_war_zone_all_create_final_score_cards'] = entity_import('rules_config', '{ "rules_war_zone_all_create_final_score_cards" : {
+      "LABEL" : "War Zone: All: Create Final Score Cards",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "4.3", "War Zone" ],
+      "REQUIRES" : [ "views_rules", "rules" ],
+      "USES VARIABLES" : { "wzid" : { "label" : "War Zone", "type" : "node" } },
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "war_zone_all_scorecard_rules",
+            "DISPLAY" : "views_rules_1",
+            "USING" : { "nid" : [ "wzid:nid" ] },
+            "ROW VARIABLES" : {
+              "registration_id" : { "registration_id" : "(Node registration entity referenced from field_registration_sc) Reg ID" },
+              "field_your_results" : { "field_your_results" : "Battle Score" },
+              "field_victory_points_sc" : { "field_victory_points_sc" : "Victory Points" },
+              "field_army_points_sc" : { "field_army_points_sc" : "Army Points" },
+              "field_sportsmanship_sc" : { "field_sportsmanship_sc" : "Sportsmanship" },
+              "field_painting_sc" : { "field_painting_sc" : "Painting" },
+              "field_comp_sc" : { "field_comp_sc" : "Comp" },
+              "field_additional_points_sc" : { "field_additional_points_sc" : "Additional Points" },
+              "field_strength_of_schedule_sc" : { "field_strength_of_schedule_sc" : "Strength of schedule" },
+              "field_battle_points_sc" : { "field_battle_points_sc" : "Battle Points" },
+              "field_defeat" : { "field_defeat" : "Defeat" },
+              "field_draw" : { "field_draw" : "Draw" },
+              "field_victory" : { "field_victory" : "Victory" }
+            },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "node_registration", "id" : [ "registration-id" ] },
+                  "PROVIDE" : { "entity_fetched" : { "registration_fetched" : "Fetched Registration" } }
+                }
+              },
+              { "variable_add" : {
+                  "USING" : { "type" : "list\\u003Centity\\u003E", "value" : [ "" ] },
+                  "PROVIDE" : { "variable_added" : { "sc_endpoints" : "Scorecard Endpoints" } }
+                }
+              },
+              { "list_add" : {
+                  "list" : [ "sc-endpoints" ],
+                  "item" : [ "wzid" ],
+                  "unique" : "1",
+                  "pos" : "start"
+                }
+              },
+              { "list_add" : {
+                  "list" : [ "sc-endpoints" ],
+                  "item" : [ "registration-fetched" ],
+                  "unique" : "1"
+                }
+              },
+              { "entity_create" : {
+                  "USING" : {
+                    "type" : "relation",
+                    "param_relation_type" : "warzone_score",
+                    "param_endpoints" : [ "sc-endpoints" ]
+                  },
+                  "PROVIDE" : { "entity_created" : { "final_scorecard" : "Created Scorecard" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "final-scorecard:field-victory-wzscore" ],
+                  "value" : [ "field-victory" ]
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "final-scorecard:field-victory-wzscore" ],
+                  "value" : [ "field-victory" ]
+                }
+              },
+              { "entity_save" : { "data" : [ "final-scorecard" ], "immediate" : "1" } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_war_zone_all_edit_entityform'] = entity_import('rules_config', '{ "rules_war_zone_all_edit_entityform" : {
       "LABEL" : "War Zone: All: Edit Entityform",
       "PLUGIN" : "reaction rule",

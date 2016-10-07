@@ -249,10 +249,10 @@ function its_clubs_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'medium',
+          'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
-        'weight' => 7,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',

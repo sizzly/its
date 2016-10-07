@@ -653,7 +653,7 @@ function war_zones_strongarm() {
         'registration_link' => array(
           'teaser' => array(
             'weight' => '5',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
         'registration_form' => array(
@@ -664,7 +664,7 @@ function war_zones_strongarm() {
         ),
         'registration_slots_left' => array(
           'teaser' => array(
-            'weight' => '4',
+            'weight' => '3',
             'visible' => TRUE,
           ),
         ),

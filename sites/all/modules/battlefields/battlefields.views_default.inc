@@ -267,7 +267,7 @@ function battlefields_views_default_views() {
   $handler->display->display_options['fields']['field_games_played']['label'] = '';
   $handler->display->display_options['fields']['field_games_played']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_games_played']['element_label_colon'] = FALSE;
-  /* Field: Field: Game */
+  /* Field: Content: Game */
   $handler->display->display_options['fields']['field_game_warzone']['id'] = 'field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['table'] = 'field_data_field_game_warzone';
   $handler->display->display_options['fields']['field_game_warzone']['field'] = 'field_game_warzone';

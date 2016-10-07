@@ -24,7 +24,9 @@ function war_zones_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
-      1 => 'field_radioactivity',
+      1 => 'field_game_warzone',
+      2 => 'registration_link',
+      3 => 'registration_slots_left',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -54,7 +56,7 @@ function war_zones_field_group_info() {
     'weight' => '5',
     'children' => array(
       0 => 'body',
-      1 => 'field_radioactivity',
+      1 => 'field_game_warzone',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -84,8 +86,6 @@ function war_zones_field_group_info() {
     'weight' => '16',
     'children' => array(
       0 => 'body',
-      1 => 'field_warzone_game',
-      2 => 'field_radioactivity',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -203,7 +203,7 @@ function war_zones_field_group_info() {
     'label' => 'Image Wrapper',
     'weight' => '3',
     'children' => array(
-      0 => 'field_campaign_badge',
+      0 => 'group_spacer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -232,7 +232,7 @@ function war_zones_field_group_info() {
     'label' => 'Image Wrapper',
     'weight' => '4',
     'children' => array(
-      0 => 'field_image',
+      0 => 'group_spacer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -261,7 +261,7 @@ function war_zones_field_group_info() {
     'label' => 'Image Wrapper',
     'weight' => '15',
     'children' => array(
-      0 => 'field_campaign_badge',
+      0 => 'group_image_thumb',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -356,7 +356,8 @@ function war_zones_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'body',
-      1 => 'field_radioactivity',
+      1 => 'field_event_date',
+      2 => 'registration_slots_left',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -416,7 +417,7 @@ function war_zones_field_group_info() {
     'label' => 'Image Wrapper',
     'weight' => '5',
     'children' => array(
-      0 => 'field_campaign_badge',
+      0 => 'group_spacer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -445,7 +446,7 @@ function war_zones_field_group_info() {
     'label' => 'Media Left',
     'weight' => '5',
     'children' => array(
-      0 => 'field_campaign_badge',
+      0 => 'group_spacer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -611,6 +612,126 @@ function war_zones_field_group_info() {
     ),
   );
   $field_groups['group_mission_label_wrapper|field_collection_item|field_tournament_missions|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_spacer|node|narrative_campaign_instance|teaser';
+  $field_group->group_name = 'group_spacer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign_instance';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->data = array(
+    'label' => 'Spacer',
+    'weight' => '23',
+    'children' => array(
+      0 => 'field_campaign_badge',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Spacer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_spacer|node|narrative_campaign_instance|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_spacer|node|narrative_campaign|teaser';
+  $field_group->group_name = 'group_spacer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'narrative_campaign';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_image_wrapper';
+  $field_group->data = array(
+    'label' => 'Spacer',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_image',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Spacer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_spacer|node|narrative_campaign|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_spacer|node|special_event|teaser';
+  $field_group->group_name = 'group_spacer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'special_event';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_media_left';
+  $field_group->data = array(
+    'label' => 'Spacer',
+    'weight' => '22',
+    'children' => array(
+      0 => 'field_campaign_badge',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Spacer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_spacer|node|special_event|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_spacer|node|war_zone_tournament|teaser';
+  $field_group->group_name = 'group_spacer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'war_zone_tournament';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = 'group_media_left';
+  $field_group->data = array(
+    'label' => 'Spacer',
+    'weight' => '22',
+    'children' => array(
+      0 => 'field_campaign_badge',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Spacer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'thumbnail',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_spacer|node|war_zone_tournament|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -810,8 +931,8 @@ function war_zones_field_group_info() {
     'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_image_wrapper',
-      1 => 'group_body_wrapper',
+      0 => 'group_body_wrapper',
+      1 => 'group_image_wrapper',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -840,8 +961,8 @@ function war_zones_field_group_info() {
     'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_image_wrapper',
-      1 => 'group_body_wrapper',
+      0 => 'group_body_wrapper',
+      1 => 'group_image_wrapper',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -870,8 +991,8 @@ function war_zones_field_group_info() {
     'label' => 'Wrapper',
     'weight' => '0',
     'children' => array(
-      0 => 'group_image_wrapper',
-      1 => 'group_body_wrapper',
+      0 => 'group_body_wrapper',
+      1 => 'group_image_wrapper',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -901,6 +1022,7 @@ function war_zones_field_group_info() {
   t('Meta');
   t('Mission Label Wrapper');
   t('Options');
+  t('Spacer');
   t('Swiss Style');
   t('Thumbnail');
   t('Wrapper');
