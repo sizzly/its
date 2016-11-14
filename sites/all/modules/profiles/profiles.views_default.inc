@@ -2797,24 +2797,16 @@ jQuery(document).ready(function($) {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['relationship'] = 'uid';
-  /* Contextual filter: Content: Author uid */
-  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['table'] = 'node';
-  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['relationship'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
-  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Contextual filter: User: Uid */
+  $handler->display->display_options['arguments']['uid_1']['id'] = 'uid_1';
+  $handler->display->display_options['arguments']['uid_1']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid_1']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid_1']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid_1']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid_1']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -3065,6 +3057,300 @@ jQuery(document).ready(function($) {
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['pane_category']['name'] = 'Profiles';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Collection Size */
+  $handler = $view->new_display('panel_pane', 'Collection Size', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Collection';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'chart';
+  $handler->display->display_options['style_options']['library'] = '';
+  $handler->display->display_options['style_options']['label_field'] = 'field_army_models';
+  $handler->display->display_options['style_options']['data_fields'] = array(
+    'field_model_count' => 'field_model_count',
+    'field_army_models' => 0,
+  );
+  $handler->display->display_options['style_options']['field_colors'] = array(
+    'field_army_models' => '#2f7ed8',
+    'field_model_count' => '#0d233a',
+  );
+  $handler->display->display_options['style_options']['title_position'] = '';
+  $handler->display->display_options['style_options']['legend_position'] = 'bottom';
+  $handler->display->display_options['style_options']['width'] = '';
+  $handler->display->display_options['style_options']['height'] = '';
+  $handler->display->display_options['style_options']['xaxis_labels_rotation'] = '0';
+  $handler->display->display_options['style_options']['yaxis_labels_rotation'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Army */
+  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_army_models']['empty'] = 'Other';
+  $handler->display->display_options['fields']['field_army_models']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: SUM(Content: Model Count) */
+  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_model_count']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Profiles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Models by Faction */
+  $handler = $view->new_display('panel_pane', 'Models by Faction', 'panel_pane_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Models by Faction';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'chart';
+  $handler->display->display_options['style_options']['type'] = 'bar';
+  $handler->display->display_options['style_options']['library'] = '';
+  $handler->display->display_options['style_options']['label_field'] = 'field_army_models';
+  $handler->display->display_options['style_options']['data_fields'] = array(
+    'field_model_count' => 'field_model_count',
+    'field_army_models' => 0,
+  );
+  $handler->display->display_options['style_options']['field_colors'] = array(
+    'field_army_models' => '#2f7ed8',
+    'field_model_count' => '#0d233a',
+  );
+  $handler->display->display_options['style_options']['title_position'] = '';
+  $handler->display->display_options['style_options']['legend_position'] = 'bottom';
+  $handler->display->display_options['style_options']['width'] = '';
+  $handler->display->display_options['style_options']['height'] = '';
+  $handler->display->display_options['style_options']['xaxis_labels_rotation'] = '0';
+  $handler->display->display_options['style_options']['yaxis_labels_rotation'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Army */
+  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_army_models']['empty'] = 'Other';
+  $handler->display->display_options['fields']['field_army_models']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: SUM(Content: Model Count) */
+  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_model_count']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: SUM(Content: Model Count (field_model_count)) */
+  $handler->display->display_options['sorts']['field_model_count_value']['id'] = 'field_model_count_value';
+  $handler->display->display_options['sorts']['field_model_count_value']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['sorts']['field_model_count_value']['field'] = 'field_model_count_value';
+  $handler->display->display_options['sorts']['field_model_count_value']['relationship'] = 'uid';
+  $handler->display->display_options['sorts']['field_model_count_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_model_count_value']['order'] = 'DESC';
+  $handler->display->display_options['pane_category']['name'] = 'Profiles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Completed Count */
+  $handler = $view->new_display('panel_pane', 'Completed Count', 'panel_pane_7');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<span>0</span>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: SUM(Content: Model Count) */
+  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_model_count']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_model_count']['label'] = '';
+  $handler->display->display_options['fields']['field_model_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_model_count']['empty'] = '0';
+  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  /* Filter criterion: Content: Completed Date (field_completed_date_models) */
+  $handler->display->display_options['filters']['field_completed_date_models_value']['id'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['table'] = 'field_data_field_completed_date_models';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['field'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['operator'] = 'not empty';
+
+  /* Display: Inprogress Count */
+  $handler = $view->new_display('panel_pane', 'Inprogress Count', 'panel_pane_8');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<span>0</span>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: SUM(Content: Model Count) */
+  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_model_count']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_model_count']['label'] = '';
+  $handler->display->display_options['fields']['field_model_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_model_count']['empty'] = '0';
+  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  /* Filter criterion: Content: Completed Date (field_completed_date_models) */
+  $handler->display->display_options['filters']['field_completed_date_models_value']['id'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['table'] = 'field_data_field_completed_date_models';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['field'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['operator'] = 'empty';
+
+  /* Display: Count by Unit */
+  $handler = $view->new_display('panel_pane', 'Count by Unit', 'panel_pane_9');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Model Count by Unit';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'field_unit_models';
+  $handler->display->display_options['style_options']['body_field'] = 'field_model_count';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Content authored */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'users';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Content: Army (field_army_models) */
+  $handler->display->display_options['relationships']['field_army_models_tid']['id'] = 'field_army_models_tid';
+  $handler->display->display_options['relationships']['field_army_models_tid']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['relationships']['field_army_models_tid']['field'] = 'field_army_models_tid';
+  $handler->display->display_options['relationships']['field_army_models_tid']['relationship'] = 'uid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Unit */
+  $handler->display->display_options['fields']['field_unit_models']['id'] = 'field_unit_models';
+  $handler->display->display_options['fields']['field_unit_models']['table'] = 'field_data_field_unit_models';
+  $handler->display->display_options['fields']['field_unit_models']['field'] = 'field_unit_models';
+  $handler->display->display_options['fields']['field_unit_models']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_unit_models']['label'] = '';
+  $handler->display->display_options['fields']['field_unit_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_unit_models']['empty'] = 'Other';
+  /* Field: SUM(Content: Model Count) */
+  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_model_count']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_model_count']['label'] = '';
+  $handler->display->display_options['fields']['field_model_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_army_models_tid';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '<img src="https://s3.amazonaws.com/itoysoldiers/button_models.png">';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: SUM(Content: Model Count (field_model_count)) */
+  $handler->display->display_options['sorts']['field_model_count_value']['id'] = 'field_model_count_value';
+  $handler->display->display_options['sorts']['field_model_count_value']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['sorts']['field_model_count_value']['field'] = 'field_model_count_value';
+  $handler->display->display_options['sorts']['field_model_count_value']['relationship'] = 'uid';
+  $handler->display->display_options['sorts']['field_model_count_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_model_count_value']['order'] = 'DESC';
+  $handler->display->display_options['pane_category']['name'] = 'Profiles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Army Count */
+  $handler = $view->new_display('panel_pane', 'Army Count', 'panel_pane_10');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<span>0</span>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(DISTINCT Content: Army) */
+  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_army_models']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_army_models']['label'] = '';
+  $handler->display->display_options['fields']['field_army_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_army_models']['separator'] = ', ';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $export['profile_stats_modeling'] = $view;
 
   $view = new view();
@@ -4326,7 +4612,9 @@ jQuery(document).ready(function($) {
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
   $handler->display->display_options['fields']['uid']['label'] = '';
   $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['text'] = '<a href="/messages/new/[uid]?destination=user/[uid]><span class="fa fa-envelope"></span></a>';
+  $handler->display->display_options['fields']['uid']['alter']['text'] = '<span class="fa fa-envelope"></span>';
+  $handler->display->display_options['fields']['uid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['uid']['alter']['path'] = '/messages/new/[uid]?destination=user/[uid]';
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['uid']['element_wrapper_class'] = 'btn btn-default';

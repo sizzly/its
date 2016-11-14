@@ -15,7 +15,7 @@ function its_dashboard_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Dashboard';
   $page->admin_description = '';
-  $page->path = 'dashboard';
+  $page->path = 'dashboard/main';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -32,14 +32,14 @@ function its_dashboard_default_page_manager_pages() {
     'logic' => 'and',
   );
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'default tab',
     'title' => 'Dashboard',
     'name' => 'main-menu',
-    'weight' => '0',
+    'weight' => '-100',
     'parent' => array(
-      'type' => 'normal',
-      'title' => '',
-      'name' => 'main-menu',
+      'type' => 'none',
+      'title' => 'Dashboard',
+      'name' => 'navigation',
       'weight' => '0',
     ),
   );
@@ -55,7 +55,7 @@ function its_dashboard_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'dashboard';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Dashboard V3',
     'no_blocks' => 1,
@@ -381,66 +381,42 @@ function its_dashboard_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_dashboard_panel_context_2';
+  $handler->name = 'page_dashboard__panel_context_1e5823c0-f5ce-496d-b174-a9e20d5b091d';
   $handler->task = 'page';
   $handler->subtask = 'dashboard';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Dashboard V2',
-    'no_blocks' => 1,
+    'title' => 'Dashboard',
+    'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'User',
-        'keyword' => 'user',
-        'name' => 'user',
-        'type' => 'current',
-        'uid' => '',
-        'id' => 1,
-      ),
-    ),
+    'contexts' => array(),
     'relationships' => array(),
-    'access' => array(
-      'plugins' => array(),
-      'logic' => 'and',
-    ),
+    'name' => '',
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_moscone';
+  $display->layout = 'bootopoly_boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'three_25_50_25_top' => NULL,
-      'three_25_50_25_first' => NULL,
-      'three_25_50_25_second' => NULL,
-      'three_25_50_25_third' => NULL,
-      'three_25_50_25_bottom' => NULL,
-      'two_33_66_top' => NULL,
-      'two_33_66_first' => NULL,
-      'two_33_66_second' => NULL,
-      'two_33_66_bottom' => NULL,
-      'header' => NULL,
-      'sidebar' => NULL,
       'contentmain' => NULL,
-      'footer' => NULL,
     ),
   );
   $display->cache = array();
   $display->title = 'Dashboard';
-  $display->uuid = '41595ecd-0246-4dc7-abc4-a4c7b6fccb36';
+  $display->uuid = 'ef0fe0e7-b666-46f4-ab0a-235dc982594f';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-d14be0a4-59c1-4c84-8f07-35308acc6fcf';
+    $pane->pid = 'new-f190b5fc-4db0-4c9d-94ea-c9287b1884fa';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'master_v2_challenges-panel_pane_2';
+    $pane->subtype = 'dashboard_all_profile_complete-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -452,14 +428,14 @@ function its_dashboard_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'd14be0a4-59c1-4c84-8f07-35308acc6fcf';
-    $display->content['new-d14be0a4-59c1-4c84-8f07-35308acc6fcf'] = $pane;
-    $display->panels['contentmain'][0] = 'new-d14be0a4-59c1-4c84-8f07-35308acc6fcf';
+    $pane->uuid = 'f190b5fc-4db0-4c9d-94ea-c9287b1884fa';
+    $display->content['new-f190b5fc-4db0-4c9d-94ea-c9287b1884fa'] = $pane;
+    $display->panels['contentmain'][0] = 'new-f190b5fc-4db0-4c9d-94ea-c9287b1884fa';
     $pane = new stdClass();
-    $pane->pid = 'new-1e6a6762-9af4-407f-9189-d7326bddb546';
+    $pane->pid = 'new-8143f3e3-dd64-4de2-8ecb-39e088185c65';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'dashboard_armies-panel_pane_1';
+    $pane->subtype = 'war_zone_all_player_dashboard-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -471,30 +447,11 @@ function its_dashboard_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '1e6a6762-9af4-407f-9189-d7326bddb546';
-    $display->content['new-1e6a6762-9af4-407f-9189-d7326bddb546'] = $pane;
-    $display->panels['contentmain'][1] = 'new-1e6a6762-9af4-407f-9189-d7326bddb546';
+    $pane->uuid = '8143f3e3-dd64-4de2-8ecb-39e088185c65';
+    $display->content['new-8143f3e3-dd64-4de2-8ecb-39e088185c65'] = $pane;
+    $display->panels['contentmain'][1] = 'new-8143f3e3-dd64-4de2-8ecb-39e088185c65';
     $pane = new stdClass();
-    $pane->pid = 'new-9d1036ad-3416-4c52-b3a7-382e30a03562';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'missing_meta-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '9d1036ad-3416-4c52-b3a7-382e30a03562';
-    $display->content['new-9d1036ad-3416-4c52-b3a7-382e30a03562'] = $pane;
-    $display->panels['contentmain'][2] = 'new-9d1036ad-3416-4c52-b3a7-382e30a03562';
-    $pane = new stdClass();
-    $pane->pid = 'new-6ce150c0-bbbe-4b75-beca-ae99967bf172';
+    $pane->pid = 'new-74ac3d09-3b0c-48bd-9910-86aa893ea0ea';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'dashboard_managed_leagues-panel_pane_1';
@@ -507,16 +464,35 @@ function its_dashboard_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '6ce150c0-bbbe-4b75-beca-ae99967bf172';
-    $display->content['new-6ce150c0-bbbe-4b75-beca-ae99967bf172'] = $pane;
-    $display->panels['contentmain'][3] = 'new-6ce150c0-bbbe-4b75-beca-ae99967bf172';
+    $pane->uuid = '74ac3d09-3b0c-48bd-9910-86aa893ea0ea';
+    $display->content['new-74ac3d09-3b0c-48bd-9910-86aa893ea0ea'] = $pane;
+    $display->panels['contentmain'][2] = 'new-74ac3d09-3b0c-48bd-9910-86aa893ea0ea';
     $pane = new stdClass();
-    $pane->pid = 'new-f0f3a478-a5b3-455f-b9dd-769600769c11';
+    $pane->pid = 'new-24ac1027-a2e1-455f-acb7-8bdb3370d72b';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'message_feeds-panel_pane_3';
+    $pane->subtype = 'dashboard_group_content-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '24ac1027-a2e1-455f-acb7-8bdb3370d72b';
+    $display->content['new-24ac1027-a2e1-455f-acb7-8bdb3370d72b'] = $pane;
+    $display->panels['contentmain'][3] = 'new-24ac1027-a2e1-455f-acb7-8bdb3370d72b';
+    $pane = new stdClass();
+    $pane->pid = 'new-33e9a872-1af4-4eda-95a2-928f1f248289';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'missing_meta-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -528,175 +504,14 @@ function its_dashboard_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $pane->uuid = 'f0f3a478-a5b3-455f-b9dd-769600769c11';
-    $display->content['new-f0f3a478-a5b3-455f-b9dd-769600769c11'] = $pane;
-    $display->panels['contentmain'][4] = 'new-f0f3a478-a5b3-455f-b9dd-769600769c11';
+    $pane->uuid = '33e9a872-1af4-4eda-95a2-928f1f248289';
+    $display->content['new-33e9a872-1af4-4eda-95a2-928f1f248289'] = $pane;
+    $display->panels['contentmain'][4] = 'new-33e9a872-1af4-4eda-95a2-928f1f248289';
     $pane = new stdClass();
-    $pane->pid = 'new-3ab8be3d-b5a6-412e-a0a9-3808d78e0118';
-    $pane->panel = 'sidebar';
-    $pane->type = 'user_picture';
-    $pane->subtype = 'user_picture';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'context_user_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '3ab8be3d-b5a6-412e-a0a9-3808d78e0118';
-    $display->content['new-3ab8be3d-b5a6-412e-a0a9-3808d78e0118'] = $pane;
-    $display->panels['sidebar'][0] = 'new-3ab8be3d-b5a6-412e-a0a9-3808d78e0118';
-    $pane = new stdClass();
-    $pane->pid = 'new-e21e228a-59b9-4f55-b048-3eeb9ac55f5f';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-quick-actions';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'e21e228a-59b9-4f55-b048-3eeb9ac55f5f';
-    $display->content['new-e21e228a-59b9-4f55-b048-3eeb9ac55f5f'] = $pane;
-    $display->panels['sidebar'][1] = 'new-e21e228a-59b9-4f55-b048-3eeb9ac55f5f';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['dashboard'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'dashboard_all_content_stats';
-  $page->task = 'page';
-  $page->admin_title = 'Dashboard: All: Content Stats';
-  $page->admin_description = '';
-  $page->path = 'dashboard/content-stats';
-  $page->access = array();
-  $page->menu = array(
-    'type' => 'normal',
-    'title' => 'Content Stats',
-    'name' => 'user-menu',
-    'weight' => '0',
-    'parent' => array(
-      'type' => 'none',
-      'title' => '',
-      'name' => 'navigation',
-      'weight' => '0',
-    ),
-  );
-  $page->arguments = array();
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_dashboard_all_content_stats__panel_context_043e22ec-3827-4249-943c-82de6cb2e1d8';
-  $handler->task = 'page';
-  $handler->subtask = 'dashboard_all_content_stats';
-  $handler->handler = 'panel_context';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-  );
-  $display = new panels_display();
-  $display->layout = 'bootopoly_its';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'header' => NULL,
-      'sidebar' => NULL,
-      'contentmaintop' => NULL,
-      'contentmainbottom' => NULL,
-      'contentmainright' => NULL,
-      'contentmainleft' => NULL,
-      'footer' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = 'Content Statistics';
-  $display->uuid = '4e46b0bf-5017-450c-a44a-3601ad29564a';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-f603cc5e-158f-42eb-948b-8d97017926d7';
-    $pane->panel = 'contentmaintop';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Stat Tab Panel',
-      'title' => '',
-      'body' => '<div role="tabpanel">
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#today" aria-controls="today" role="tab" data-toggle="tab">Today</a></li>
-    <li role="presentation"><a href="#week" aria-controls="week" role="tab" data-toggle="tab">Week</a></li>
-    <li role="presentation"><a href="#month" aria-controls="month" role="tab" data-toggle="tab">Month</a></li>
-    <li role="presentation"><a href="#year" aria-controls="year" role="tab" data-toggle="tab">Year</a></li>
-    <li role="presentation"><a href="#alltime" aria-controls="alltime" role="tab" data-toggle="tab">All Time</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="today"><?php print views_embed_view("dashboard_all_content_stats" , "panel_pane_5"); ?></div>
-    <div role="tabpanel" class="tab-pane" id="week"><?php print views_embed_view("dashboard_all_content_stats" , "panel_pane_4"); ?></div>
-    <div role="tabpanel" class="tab-pane" id="month"><?php print views_embed_view("dashboard_all_content_stats" , "panel_pane_3"); ?></div>
-    <div role="tabpanel" class="tab-pane" id="year"><?php print views_embed_view("dashboard_all_content_stats" , "panel_pane_6"); ?></div>
-    <div role="tabpanel" class="tab-pane" id="alltime"><?php print views_embed_view("dashboard_all_content_stats" , "panel_pane_2"); ?></div>
-  </div>
-
- </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'f603cc5e-158f-42eb-948b-8d97017926d7';
-    $display->content['new-f603cc5e-158f-42eb-948b-8d97017926d7'] = $pane;
-    $display->panels['contentmaintop'][0] = 'new-f603cc5e-158f-42eb-948b-8d97017926d7';
-    $pane = new stdClass();
-    $pane->pid = 'new-f488af8f-9256-494c-a9a5-56e43113d74a';
-    $pane->panel = 'sidebar';
+    $pane->pid = 'new-7cdfeeef-221d-4a0e-9cc8-9facab6a8e79';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'dashboard_all_content_stats-panel_pane_1';
+    $pane->subtype = 'master_v2_challenges-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -706,16 +521,73 @@ function its_dashboard_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 5;
     $pane->locks = array();
-    $pane->uuid = 'f488af8f-9256-494c-a9a5-56e43113d74a';
-    $display->content['new-f488af8f-9256-494c-a9a5-56e43113d74a'] = $pane;
-    $display->panels['sidebar'][0] = 'new-f488af8f-9256-494c-a9a5-56e43113d74a';
+    $pane->uuid = '7cdfeeef-221d-4a0e-9cc8-9facab6a8e79';
+    $display->content['new-7cdfeeef-221d-4a0e-9cc8-9facab6a8e79'] = $pane;
+    $display->panels['contentmain'][5] = 'new-7cdfeeef-221d-4a0e-9cc8-9facab6a8e79';
+    $pane = new stdClass();
+    $pane->pid = 'new-9e3251fd-ca0d-468d-91df-e291feca00a1';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'dashboard_all_following_content-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '9e3251fd-ca0d-468d-91df-e291feca00a1';
+    $display->content['new-9e3251fd-ca0d-468d-91df-e291feca00a1'] = $pane;
+    $display->panels['contentmain'][6] = 'new-9e3251fd-ca0d-468d-91df-e291feca00a1';
+    $pane = new stdClass();
+    $pane->pid = 'new-5cd58f19-2821-4d28-86f2-260058019eef';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'unacknowledged-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = '5cd58f19-2821-4d28-86f2-260058019eef';
+    $display->content['new-5cd58f19-2821-4d28-86f2-260058019eef'] = $pane;
+    $display->panels['contentmain'][7] = 'new-5cd58f19-2821-4d28-86f2-260058019eef';
+    $pane = new stdClass();
+    $pane->pid = 'new-5362db0c-5bc3-42c9-902e-6d491059bd35';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'dashboard_all_modelling_projects-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = '5362db0c-5bc3-42c9-902e-6d491059bd35';
+    $display->content['new-5362db0c-5bc3-42c9-902e-6d491059bd35'] = $pane;
+    $display->panels['contentmain'][8] = 'new-5362db0c-5bc3-42c9-902e-6d491059bd35';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['dashboard_all_content_stats'] = $page;
+  $pages['dashboard'] = $page;
 
   return $pages;
 
