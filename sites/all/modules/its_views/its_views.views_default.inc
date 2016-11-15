@@ -11271,9 +11271,9 @@ Salute  Comment  Share
   $view = new view();
   $view->name = 'unacknowledged';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = '4.4-rc4';
   $view->base_table = 'node';
-  $view->human_name = 'Unacknowledged';
+  $view->human_name = 'Dashboard: All: Unacknowledged Battles';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -11426,85 +11426,11 @@ Salute  Comment  Share
     'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-    'field_game_date' => 'field_game_date',
-    'field_your_army' => 'field_your_army',
-    'field_opponent_s_army' => 'field_your_army',
-    'name' => 'name',
-    'field_location' => 'field_location',
-    'field_opponent_s_name' => 'field_opponent_s_name',
-    'field_opponent' => 'field_opponent_s_name',
-    'ops' => 'ops',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_game_date' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_your_army' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => ' vs ',
-      'empty_column' => 0,
-    ),
-    'field_opponent_s_army' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_location' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_opponent_s_name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => ' : ',
-      'empty_column' => 0,
-    ),
-    'field_opponent' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'ops' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['override'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'ops';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Flags: acknowledge_battle */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
@@ -11581,6 +11507,17 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['ops']['field'] = 'ops';
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = 'Acknowledge';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -11665,18 +11602,16 @@ Salute  Comment  Share
   );
   $handler->display->display_options['filters']['field_game_date_value']['year_range'] = '-5:+0';
 
-  /* Display: Main Page */
-  $handler = $view->new_display('page', 'Main Page', 'page_1');
-  $handler->display->display_options['path'] = 'battle-reports/unacknowledged-battles';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Unacknowledged';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Main Panel */
-  $handler = $view->new_display('panel_pane', 'Main Panel', 'panel_pane_1');
+  /* Display: Dashboard Panel */
+  $handler = $view->new_display('panel_pane', 'Dashboard Panel', 'panel_pane_1');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_2';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -11687,6 +11622,7 @@ Salute  Comment  Share
   $handler->display->display_options['arguments']['field_opponent_target_id']['table'] = 'field_data_field_opponent';
   $handler->display->display_options['arguments']['field_opponent_target_id']['field'] = 'field_opponent_target_id';
   $handler->display->display_options['arguments']['field_opponent_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_opponent_target_id']['default_argument_type'] = 'current_user';
   $handler->display->display_options['arguments']['field_opponent_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_opponent_target_id']['summary']['format'] = 'default_summary';
@@ -11713,57 +11649,39 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
-  /* Filter criterion: Content: Date (field_game_date) */
-  $handler->display->display_options['filters']['field_game_date_value']['id'] = 'field_game_date_value';
-  $handler->display->display_options['filters']['field_game_date_value']['table'] = 'field_data_field_game_date';
-  $handler->display->display_options['filters']['field_game_date_value']['field'] = 'field_game_date_value';
-  $handler->display->display_options['filters']['field_game_date_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_game_date_value']['expose']['operator_id'] = 'field_game_date_value_op';
-  $handler->display->display_options['filters']['field_game_date_value']['expose']['label'] = 'Game Date';
-  $handler->display->display_options['filters']['field_game_date_value']['expose']['description'] = 'The date the game was played';
-  $handler->display->display_options['filters']['field_game_date_value']['expose']['operator'] = 'field_game_date_value_op';
-  $handler->display->display_options['filters']['field_game_date_value']['expose']['identifier'] = 'field_game_date_value';
-  $handler->display->display_options['filters']['field_game_date_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    7 => 0,
-    9 => 0,
-    8 => 0,
-  );
-  $handler->display->display_options['filters']['field_game_date_value']['year_range'] = '-5:+0';
   $handler->display->display_options['pane_category']['name'] = 'Dashboard';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
-  /* Display: Club Panel */
-  $handler = $view->new_display('panel_pane', 'Club Panel', 'panel_pane_2');
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: acknowledge_battle */
-  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'acknowledge_battle';
-  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_opponent_target_id']['id'] = 'field_opponent_target_id';
-  $handler->display->display_options['relationships']['field_opponent_target_id']['table'] = 'field_data_field_opponent';
-  $handler->display->display_options['relationships']['field_opponent_target_id']['field'] = 'field_opponent_target_id';
-  /* Relationship: Flags: membership */
-  $handler->display->display_options['relationships']['flag_content_rel_1']['id'] = 'flag_content_rel_1';
-  $handler->display->display_options['relationships']['flag_content_rel_1']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_content_rel_1']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel_1']['label'] = 'Club';
-  $handler->display->display_options['relationships']['flag_content_rel_1']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_content_rel_1']['flag'] = 'membership';
-  $handler->display->display_options['relationships']['flag_content_rel_1']['user_scope'] = 'any';
+  /* Display: Main Page */
+  $handler = $view->new_display('page', 'Main Page', 'page_1');
+  $handler->display->display_options['path'] = 'battle-reports/unacknowledged-battles';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Unacknowledged';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Dashboard Page */
+  $handler = $view->new_display('page', 'Dashboard Page', 'page_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'Club';
-  $handler->display->display_options['pane_category']['weight'] = '0';
+  /* Contextual filter: Content: Opponent (field_opponent) */
+  $handler->display->display_options['arguments']['field_opponent_target_id']['id'] = 'field_opponent_target_id';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['table'] = 'field_data_field_opponent';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['field'] = 'field_opponent_target_id';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_opponent_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'dashboard/your-unacknowledged-battles';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Unacknowledged';
+  $handler->display->display_options['menu']['description'] = 'Battles that you have not yet acknowledged';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['unacknowledged'] = $view;
 
   $view = new view();
@@ -11827,6 +11745,315 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Miniature wargaming content',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
+  );
 
   /* Display: Battles */
   $handler = $view->new_display('page', 'Battles', 'page_1');
@@ -11886,6 +12113,315 @@ Salute  Comment  Share
     'game_results' => 'game_results',
     'game_result_system_' => 'game_result_system_',
   );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Miniature wargaming battle reports.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'user/%/content/battles';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Battles';
@@ -11925,6 +12461,315 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'gallery' => 'gallery',
+  );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title]: Miniature wargaming galleries.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
   );
   $handler->display->display_options['path'] = 'user/%/content/galleries';
   $handler->display->display_options['menu']['type'] = 'tab';
@@ -11966,6 +12811,315 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog' => 'blog',
   );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Miniature wargaming blog',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'user/%/content/blogs';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Blogs';
@@ -12006,6 +13160,315 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['type']['value'] = array(
     'listcrit' => 'listcrit',
   );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Miniature wargaming army lists.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'user/%/content/army-lists';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Lists';
@@ -12045,6 +13508,315 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'army_profile' => 'army_profile',
+  );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Miniature wargaming army collections.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
   );
   $handler->display->display_options['path'] = 'user/%/content/army-profiles';
   $handler->display->display_options['menu']['type'] = 'tab';
@@ -12124,6 +13896,315 @@ Salute  Comment  Share
     9 => 0,
     8 => 0,
   );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Miniature wargaming content.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'user/%/content/main';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Content';
@@ -12149,6 +14230,7 @@ Salute  Comment  Share
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -12170,6 +14252,315 @@ Salute  Comment  Share
     'gallery' => 'gallery',
     'listcrit' => 'listcrit',
     'models' => 'models',
+  );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Newest miniature wargaming content.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
   );
   $handler->display->display_options['pane_category']['name'] = 'Profiles';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -12206,6 +14597,315 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'models' => 'models',
+  );
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[current-page:title] | [site:name]',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[current-page:title] : Miniature wargaming modeling projects.',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+        'default' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rating' => array(
+        'value' => '',
+      ),
+      'referrer' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'author' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'prev' => array(
+        'value' => '',
+      ),
+      'next' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'geo.position' => array(
+        'value' => '',
+      ),
+      'geo.placename' => array(
+        'value' => '',
+      ),
+      'geo.region' => array(
+        'value' => '',
+      ),
+      'icbm' => array(
+        'value' => '',
+      ),
+      'refresh' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '198705713593582',
+        'default' => '198705713593582',
+      ),
+      'og:type' => array(
+        'value' => 'article',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:image:url' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:country_name' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+        'default' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+    ),
   );
   $handler->display->display_options['path'] = 'user/%/content/modeling-projects';
   $handler->display->display_options['menu']['type'] = 'tab';

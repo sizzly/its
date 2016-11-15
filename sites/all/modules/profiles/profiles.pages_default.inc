@@ -1110,7 +1110,7 @@ function profiles_default_page_manager_pages() {
   $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Panel',
-    'no_blocks' => 0,
+    'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
@@ -1138,18 +1138,78 @@ function profiles_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-a42fd03f-8737-40eb-af8a-a5773b9c7e16';
+    $pane->pid = 'new-37f8a85f-4acb-4a14-8983-295d8133a28c';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_modeling-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '37f8a85f-4acb-4a14-8983-295d8133a28c';
+    $display->content['new-37f8a85f-4acb-4a14-8983-295d8133a28c'] = $pane;
+    $display->panels['contentmain'][0] = 'new-37f8a85f-4acb-4a14-8983-295d8133a28c';
+    $pane = new stdClass();
+    $pane->pid = 'new-68215d10-21ce-4020-b6b1-b8a0f31d79dc';
     $pane->panel = 'header';
     $pane->type = 'custom';
-    $pane->subtype = 'coming_soon';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => '',
+      'admin_title' => 'Header Block',
       'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
+      'body' => '<div class="row">
+<div class="padding-md">
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-danger">
+                <h2 class="m-top-none" id="userCount"><?php print views_embed_view("profile_stats_modeling" , "panel_pane_7"); ?></h2>
+                <h5>Completed</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-check-square fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-info">
+                <h2 class="m-top-none"><?php print views_embed_view("profile_stats_modeling" , "panel_pane_1"); ?></h2>
+                <h5>Models</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-sort-amount-desc fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-warning">
+                <h2 class="m-top-none"><?php print views_embed_view("profile_stats_modeling" , "panel_pane_8"); ?></h2>
+                <h5>In Progress</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-paint-brush fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+        <div class="col-sm-6 col-md-3">
+            <div class="panel-stat3 bg-primary">
+                <h2 class="m-top-none"><?php print views_embed_view("profile_stats_modeling" , "panel_pane_10"); ?></h2>
+                <h5>Armies</h5>
+                <div class="stat-icon">
+                    <i class="fa fa-flag fa-3x"></i>
+                </div>
+            </div>
+        </div><!-- /.col -->
+     </div>
+</div>
+</div>',
+      'format' => 'php_code',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1159,9 +1219,28 @@ function profiles_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a42fd03f-8737-40eb-af8a-a5773b9c7e16';
-    $display->content['new-a42fd03f-8737-40eb-af8a-a5773b9c7e16'] = $pane;
-    $display->panels['header'][0] = 'new-a42fd03f-8737-40eb-af8a-a5773b9c7e16';
+    $pane->uuid = '68215d10-21ce-4020-b6b1-b8a0f31d79dc';
+    $display->content['new-68215d10-21ce-4020-b6b1-b8a0f31d79dc'] = $pane;
+    $display->panels['header'][0] = 'new-68215d10-21ce-4020-b6b1-b8a0f31d79dc';
+    $pane = new stdClass();
+    $pane->pid = 'new-b08805d4-c8af-42b4-8890-126acb1c9f60';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'profile_stats_modeling-panel_pane_9';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b08805d4-c8af-42b4-8890-126acb1c9f60';
+    $display->content['new-b08805d4-c8af-42b4-8890-126acb1c9f60'] = $pane;
+    $display->panels['sidebar'][0] = 'new-b08805d4-c8af-42b4-8890-126acb1c9f60';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

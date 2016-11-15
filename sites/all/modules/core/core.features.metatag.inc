@@ -243,6 +243,39 @@ function core_metatag_export_default() {
     ),
   );
 
+  // Exported Metatag config instance: node:gallery.
+  $config['node:gallery'] = array(
+    'instance' => 'node:gallery',
+    'config' => array(
+      'description' => array(
+        'value' => '[node:title], a photo gallery of [node:field-blog-army] miniature wargaming images. [node:body]',
+      ),
+      'abstract' => array(
+        'value' => 'A photo gallery of [node:field-blog-army] miniature wargaming images.',
+      ),
+      'keywords' => array(
+        'value' => '[node:field-blog-army]',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 'index',
+          'follow' => 'follow',
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+      ),
+      'og:image' => array(
+        'value' => '[node:field_images]',
+      ),
+    ),
+  );
+
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
@@ -292,13 +325,23 @@ function core_metatag_export_default() {
   // Exported Metatag config instance: view.
   $config['view'] = array(
     'instance' => 'view',
-    'disabled' => FALSE,
     'config' => array(
-      'title' => array(
-        'value' => '[view:title] | [site:name]',
-      ),
       'description' => array(
-        'value' => '[view:description]',
+        'value' => '[current-page:title]: [view:description]',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
       ),
       'canonical' => array(
         'value' => '[view:url]',

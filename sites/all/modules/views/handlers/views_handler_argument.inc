@@ -146,6 +146,12 @@ class views_handler_argument extends views_handler {
    */
   function uses_breadcrumb() {
     $info = $this->default_actions($this->options['default_action']);
+
+    // if the exception value is not supplied, can't generate a breadcrumb
+    if (empty($this->options['exception']['value'])) {
+        $info['breadcrumb'] = FALSE;
+    }
+
     return !empty($info['breadcrumb']);
   }
 

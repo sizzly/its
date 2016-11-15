@@ -132,7 +132,7 @@ function battle_reports_flag_default_flags() {
     'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => 'Completed',
-    'link_type' => 'toggle',
+    'link_type' => 'confirm',
     'roles' => array(
       'flag' => array(
         0 => 2,
@@ -146,6 +146,8 @@ function battle_reports_flag_default_flags() {
     'show_on_teaser' => 0,
     'show_contextual_link' => 0,
     'i18n' => 0,
+    'flag_confirmation' => 'Are you sure?',
+    'unflag_confirmation' => 'This battle will be removed from you Incomplete Meta list.',
     'module' => 'battle_reports',
     'locked' => array(
       0 => 'name',

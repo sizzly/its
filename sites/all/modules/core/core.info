@@ -1,7 +1,7 @@
 name = Core
 core = 7.x
 package = _iTS
-version = 7.x-4.4-rc3
+version = 7.x-4.4-rc4
 project = core
 dependencies[] = advanced_forum
 dependencies[] = advanced_help
@@ -252,6 +252,7 @@ features[metatag][] = global:403
 features[metatag][] = global:404
 features[metatag][] = global:frontpage
 features[metatag][] = node
+features[metatag][] = node:gallery
 features[metatag][] = taxonomy_term
 features[metatag][] = user
 features[metatag][] = view

@@ -36,66 +36,11 @@ function war_zones_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_campaign_badge' => 'field_campaign_badge',
-    'title' => 'title',
-    'field_status' => 'field_status',
-    'field_league_type' => 'field_league_type',
-    'field_warzone_game' => 'field_warzone_game',
-    'nid' => 'nid',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_campaign_badge' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_status' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_league_type' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_warzone_game' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['bootstrap_styles'] = array(
-    'striped' => 0,
-    'bordered' => 0,
-    'hover' => 0,
-    'condensed' => 0,
-  );
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_campaign_badge';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'nothing';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -128,6 +73,24 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'Manage';
   $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]/management';
+  /* Field: Content: Campaign Badge */
+  $handler->display->display_options['fields']['field_campaign_badge']['id'] = 'field_campaign_badge';
+  $handler->display->display_options['fields']['field_campaign_badge']['table'] = 'field_data_field_campaign_badge';
+  $handler->display->display_options['fields']['field_campaign_badge']['field'] = 'field_campaign_badge';
+  $handler->display->display_options['fields']['field_campaign_badge']['label'] = '';
+  $handler->display->display_options['fields']['field_campaign_badge']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_campaign_badge']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_campaign_badge']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_event_type] | [registration_used_slots] | [nid]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -138,6 +101,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
@@ -147,9 +111,9 @@ function war_zones_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'special_event' => 'special_event',
     'war_zone_league' => 'war_zone_league',
     'narrative_campaign_instance' => 'narrative_campaign_instance',
-    'special_event' => 'special_event',
     'war_zone_tournament' => 'war_zone_tournament',
   );
   /* Filter criterion: Content: Status (field_status) */
@@ -176,8 +140,9 @@ function war_zones_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'All Warzones You Manage';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -190,10 +155,9 @@ function war_zones_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'war_zone_league' => 'war_zone_league',
-    'league' => 'league',
-    'narrative_campaign_instance' => 'narrative_campaign_instance',
     'special_event' => 'special_event',
+    'war_zone_league' => 'war_zone_league',
+    'narrative_campaign_instance' => 'narrative_campaign_instance',
     'war_zone_tournament' => 'war_zone_tournament',
   );
   /* Filter criterion: Content: Status (field_status) */
@@ -3248,7 +3212,7 @@ function war_zones_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'My War Zones';
+  $handler->display->display_options['title'] = 'My War Zone Registrations';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -3259,46 +3223,11 @@ function war_zones_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-    'cancel_node_registration' => 'cancel_node_registration',
-    'edit_node_registration' => 'cancel_node_registration',
-    'field_event_type' => 'field_event_type',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'cancel_node_registration' => array(
-      'align' => '',
-      'separator' => ' | ',
-      'empty_column' => 0,
-    ),
-    'edit_node_registration' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_event_type' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['bootstrap_styles'] = array(
-    'striped' => 0,
-    'bordered' => 0,
-    'hover' => 0,
-    'condensed' => 0,
-  );
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_campaign_badge';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'nothing';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Node registration: Event node */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'node_registration';
@@ -3342,6 +3271,26 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['cancel_node_registration']['table'] = 'views_entity_node_registration';
   $handler->display->display_options['fields']['cancel_node_registration']['field'] = 'cancel_node_registration';
   $handler->display->display_options['fields']['cancel_node_registration']['label'] = 'Actions';
+  /* Field: Content: Campaign Badge */
+  $handler->display->display_options['fields']['field_campaign_badge']['id'] = 'field_campaign_badge';
+  $handler->display->display_options['fields']['field_campaign_badge']['table'] = 'field_data_field_campaign_badge';
+  $handler->display->display_options['fields']['field_campaign_badge']['field'] = 'field_campaign_badge';
+  $handler->display->display_options['fields']['field_campaign_badge']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['field_campaign_badge']['label'] = '';
+  $handler->display->display_options['fields']['field_campaign_badge']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_campaign_badge']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_campaign_badge']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_campaign_badge']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_event_type] | [field_status] | [field_event_date] | [cancel_node_registration]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
@@ -3353,6 +3302,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['arguments']['uid']['table'] = 'node_registration';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
@@ -3371,7 +3321,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'all War Zones';
+  $handler->display->display_options['use_more_text'] = 'all Registrations';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -3397,47 +3347,10 @@ function war_zones_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['title']['label'] = 'War Zone';
-  /* Field: Content: Event type */
-  $handler->display->display_options['fields']['field_event_type']['id'] = 'field_event_type';
-  $handler->display->display_options['fields']['field_event_type']['table'] = 'field_data_field_event_type';
-  $handler->display->display_options['fields']['field_event_type']['field'] = 'field_event_type';
-  $handler->display->display_options['fields']['field_event_type']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['field_event_type']['label'] = 'War Zone type';
-  $handler->display->display_options['fields']['field_event_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Status */
-  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
-  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-  $handler->display->display_options['fields']['field_status']['relationship'] = 'nid';
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['field_event_date']['label'] = 'Battle Commencement';
-  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'value',
-    'multiple_number' => '1',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 1,
-    'show_repeat_rule' => 'show',
-  );
-  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
   $handler->display->display_options['path'] = 'dashboard/warzones';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'War Zones';
-  $handler->display->display_options['menu']['description'] = 'The War Zones I\'ve registered for.';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Registrations';
   $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'user-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['war_zone_all_player_dashboard'] = $view;
