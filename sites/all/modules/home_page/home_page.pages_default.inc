@@ -1664,50 +1664,45 @@ Rob</p>
     $pane->configuration = array(
       'admin_title' => 'Add to Stream',
       'title' => '',
-      'body' => '<div class="panel panel-default">
-    <div class="panel-tab clearfix">
-        <ul class="tab-bar">
-            <li class="active"><a href="#stream" data-toggle="tab"><i class="fa fa-road"></i> Activity</a></li>
-            <li><a href="#home1" data-toggle="tab"><i class="fa fa-bullhorn"></i> Status</a></li>
-            <li><a href="#profile1" data-toggle="tab"><i class="fa fa-fire"></i> Battle</a></li>
-            <li><a href="#message1" data-toggle="tab"><i class="fa fa-image"></i> Image</a></li>
-        </ul>
+      'body' => '<ul class="nav nav-tabs">
+    <li class="active"><a href="#stream" data-toggle="tab"><i class="fa fa-road"></i> Activity</a></li>
+    <li><a href="#profile1" data-toggle="tab"><i class="fa fa-fire"></i> Battle</a></li>
+    <li><a href="/node/add/models"><i class="fa fa-paint-brush"></i> New Models</a></li>
+    <li><a href="/node/add/listcrit"><i class="fa fa-th-list"></i> New List</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="stream">
+        <?php print views_embed_view("core_all_node_timeline", "panel_pane_2"); ?>  
     </div>
-    <div class="panel-body">
-        <div class="tab-content">
-            <div class="tab-pane fade in active" id="stream"></div>
-            <div class="tab-pane fade" id="home1">
-                <?php
-  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
-  $entity_form_name = \'status\';
-  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
-  echo drupal_render($render_estimate_form);
-?>
-            </div>
-            <div class="tab-pane fade" id="profile1">
-<div class="well well-sm">
-                <?php
-  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
-  $entity_form_name = \'quick_battle\';
-  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
-  echo drupal_render($render_estimate_form);
-?>
-</div>
-            </div>
-            <div class="tab-pane fade" id="message1">
-<div class="well well-sm">
-               <?php
-  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
-  $entity_form_name = \'status_all_upload_image\';
-  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
-  echo drupal_render($render_estimate_form);
-?>
-</div>
-            </div>
+    <div class="tab-pane fade" id="home1">
+        <?php
+        module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+        $entity_form_name = \'status\';
+        $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+        echo drupal_render($render_estimate_form);
+        ?>
+    </div>
+    <div class="tab-pane fade" id="profile1">
+        <div class="well well-sm">
+            <?php
+            module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+            $entity_form_name = \'quick_battle\';
+            $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+            echo drupal_render($render_estimate_form);
+            ?>
         </div>
     </div>
-</div>
-',
+    <div class="tab-pane fade" id="message1">
+        <div class="well well-sm">
+            <?php
+            module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+            $entity_form_name = \'status_all_upload_image\';
+            $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+            echo drupal_render($render_estimate_form);
+            ?>
+        </div>
+    </div>
+</div>',
       'format' => 'php_code',
       'substitute' => 0,
     );
@@ -1727,7 +1722,7 @@ Rob</p>
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'core_all_node_timeline-panel_pane_2';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();

@@ -1631,23 +1631,39 @@ function core_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-sm-3';
+  $handler->display->display_options['style_options']['row_class'] = 'col-sm-4';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '26';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Campaign Badge */
   $handler->display->display_options['fields']['field_campaign_badge']['id'] = 'field_campaign_badge';
   $handler->display->display_options['fields']['field_campaign_badge']['table'] = 'field_data_field_campaign_badge';
   $handler->display->display_options['fields']['field_campaign_badge']['field'] = 'field_campaign_badge';
   $handler->display->display_options['fields']['field_campaign_badge']['label'] = '';
   $handler->display->display_options['fields']['field_campaign_badge']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_campaign_badge']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_campaign_badge']['alter']['text'] = '[field_campaign_badge]
+<div class="caption">
+<span class="lead">[title]</span>
+</div>';
   $handler->display->display_options['fields']['field_campaign_badge']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_campaign_badge']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_campaign_badge']['settings'] = array(
-    'image_style' => 'large_button',
+    'image_style' => 'newsletter_square',
     'image_link' => 'content',
   );
   /* Field: Field: Image */
@@ -1655,20 +1671,42 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['text'] = '[field_image]
+<div class="caption">
+<span class="lead">[title]</span>
+</div>';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['empty'] = '[field_campaign_badge]';
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'large_button',
+    'image_style' => 'newsletter_square',
     'image_link' => 'content',
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
+  $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['label'] = '';
+  $handler->display->display_options['fields']['field_images']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_images']['alter']['text'] = '[field_images]
+<div class="caption">
+<span class="lead">[title]</span>
+</div>';
+  $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_images']['element_wrapper_class'] = 'thumbnail';
+  $handler->display->display_options['fields']['field_images']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['empty'] = '[field_image]';
+  $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_images']['type'] = 'single_image';
+  $handler->display->display_options['fields']['field_images']['settings'] = array(
+    'image_style' => 'newsletter_square',
+    'image_link' => 'content',
+    'single_image_delta' => '',
+  );
+  $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   /* Sort criterion: Content: Radioactivity (field_radioactivity:radioactivity_energy) */
   $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['id'] = 'field_radioactivity_radioactivity_energy';
   $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['table'] = 'field_data_field_radioactivity';
