@@ -1,0 +1,178 @@
+diff --git a/registration.api.php b/registration.api.php
+index e8886e9..43d5c23 100644
+--- a/registration.api.php
++++ b/registration.api.php
+@@ -58,3 +58,115 @@ function hook_registration_entity_settings($settings) {
+ function hook_registration_even_count_alter($count, $context) {
+
+ }
++
++/**
++ * Allow modules to override event status.
++ *
++ * This can impact access control and the ability for users to register.
++ *
++ * @param boolean $status
++ *
++ * @param array $context
++ *   array(
++ *     'entity_type' => $entity_type,
++ *     'entity_id' => $entity_id,
++ *     'errors' => &$errors
++ *   );
++ */
++function hook_registration_status_alter($count, $context) {
++
++}
++
++/**
++ * Allow modules to alter default settings registration applied
++ * when an entity host is created.
++ *
++ * @param array $settings
++ *   array(
++ *   'status' =>
++ *   'capacity' =>
++ *   'send_reminder' =>
++ *   'settings' => the settings array serialized
++ *   'open' =>
++ *   'close' =>
++ *   'reminder_date' =>
++ *   'reminder_template' =>,
++ *   );
++ *
++ * @param array $context
++ *   array(
++ *     'entity_type' => $entity_type,
++ *     'entity_id' => $entity_id,
++ *     'registration_type' => $registration_type,
++ *     'instance' => $instance,
++ *     'host' => clone $entity
++ *   );
++ */
++function hook_registration_entity_set_default_settings_alter(&$settings, $context) {
++  // // Open registration now
++  // $settings['open'] = date('Y-m-d H:i:s');
++
++  // $wrapper = entity_metadata_wrapper($context['entity_type'], $context['host']);
++  // $date = $wrapper->YOUR_FIELD_DATE->value();
++
++  // // Active reminder
++  // $settings['send_reminder'] = 1;
++
++  // // Set registration date close
++  // $close = strtotime($date['value']);
++  // $settings['close'] = date('Y-m-d H:i:s', $close);
++
++  // // Set the reminder date one day before close date
++  // $timestamp = strtotime('-1 day', $close);
++  // $settings['reminder_date'] = date('Y-m-d H:i:s', $timestamp);
++
++  // return $settings;
++}
++
++
++/**
++ * Allow modules to alter settings registration
++ * when an entity host is updated.
++ *
++ * For altering settings data, you have to set $context['update_settings'] to TRUE
++ * Otherwise data altered will not be saved
++ *
++ *
++ * @param array $settings
++ *   array(
++ *   'status' =>
++ *   'capacity' =>
++ *   'send_reminder' =>
++ *   'settings' => the settings array unserialized
++ *   'open' =>
++ *   'close' =>
++ *   'reminder_date' =>
++ *   'reminder_template' =>,
++ *   );
++ *
++ * @param array $context
++ *   array(
++ *     'update_settings' => TRUE or FALSE (default),
++ *     'entity_type' => $entity_type,
++ *     'entity_id' => $entity_id,
++ *     'registration_type' => $registration_type,
++ *     'host' => clone $entity
++ *   );
++ */
++function hook_registration_entity_update_settings_alter(&$settings, $context) {
++  // // Do some stuff if registration_type is MY_REGISTRATION
++  // if ($context['registration_type'] == 'MY_REGISTRATION') {
++  //   $context['update_settings'] = TRUE;
++  // }
++
++  // // Active reminder reminder
++  // $settings['send_reminder'] = 1;
++
++  // $wrapper = entity_metadata_wrapper($context['entity_type'], $context['host']);
++  // $date = $wrapper->YOUR_FIELD_DATE->value();
++  // // Set the reminder date one day before close date
++  // $timestamp = strtotime('-1 day', strtotime($date['value']));
++  // $settings['reminder_date'] = date('Y-m-d H:i:s', $timestamp);
++
++  // return $settings;
++}
+diff --git a/registration.module b/registration.module
+index 6e8ae94..d112462 100644
+--- a/registration.module
++++ b/registration.module
+@@ -781,6 +781,27 @@ function registration_entity_update($entity, $entity_type) {
+   if ($registration_type !== FALSE) {
+     list($entity_id) = entity_extract_ids($entity_type, $entity);
+     $settings = registration_entity_settings($entity_type, $entity_id);
++
++    // Allow other modules to modify settings when entity is updated.
++    if ($settings) {
++
++      $update_settings = FALSE;
++      $context = array(
++        'update_settings' => &$update_settings,
++        'entity_type' => $entity_type,
++        'entity_id' => $entity_id,
++        'registration_type' => is_array($registration_type) ? reset($registration_type) : $registration_type,
++        'host' => clone $entity
++      );
++
++      drupal_alter('registration_entity_update_settings', $settings, $context);
++
++      if ($update_settings) {
++        $settings['settings'] = serialize($settings['settings']);
++        registration_update_entity_settings($entity_type, $entity_id, $settings);
++      }
++    }
++
+     // no settings yet, try to set defaults
+     if (!$settings) {
+       registration_entity_set_default_settings($entity_type, $entity);
+@@ -800,9 +821,25 @@ function registration_entity_set_default_settings($entity_type, $entity) {
+     'entity_type' => $entity_type,
+     'bundle' => $bundle
+   ));
++
++  $registration_type = registration_get_entity_registration_type($entity_type, $entity);
+   foreach ($registration_instances as $instance) {
+     if (isset($instance['settings']['default_registration_settings'])) {
+       $settings = registration_convert_form_settings($instance['settings']['default_registration_settings']);
++
++      // Allow other moduless to override default settings.
++      $settings['settings'] = unserialize($settings['settings']);
++      $context = array(
++        'entity_type' => $entity_type,
++        'entity_id' => $entity_id,
++        'registration_type' => is_array($registration_type) ? reset($registration_type) : $registration_type,
++        'instance' => $instance,
++        'host' => clone $entity
++      );
++
++      drupal_alter('registration_entity_set_default_settings', $settings, $context);
++
++      $settings['settings'] = serialize($settings['settings']);
+       registration_update_entity_settings($entity_type, $entity_id, $settings);
+     }
+   }

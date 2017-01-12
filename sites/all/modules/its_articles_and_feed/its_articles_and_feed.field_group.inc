@@ -59,10 +59,12 @@ function its_articles_and_feed_field_group_info() {
     'format_settings' => array(
       'label' => 'Image Wrapper',
       'instance_settings' => array(
-        'classes' => 'col-xs-3',
-        'element' => 'div',
-        'attributes' => '',
         'id' => 'node_article_teaser_group_image_wrapper',
+        'classes' => 'col-sm-3 text-center',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
       ),
     ),
   );
@@ -118,7 +120,7 @@ function its_articles_and_feed_field_group_info() {
     'format_settings' => array(
       'label' => 'Wrapper',
       'instance_settings' => array(
-        'id' => 'node_article_teaser_group_wrapper',
+        'id' => '',
         'classes' => 'row',
         'element' => 'div',
         'show_label' => '0',

@@ -1669,6 +1669,11 @@ Rob</p>
     <li><a href="#profile1" data-toggle="tab"><i class="fa fa-fire"></i> Battle</a></li>
     <li><a href="/node/add/models"><i class="fa fa-paint-brush"></i> New Models</a></li>
     <li><a href="/node/add/listcrit"><i class="fa fa-th-list"></i> New List</a></li>
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button""><i class="fa fa-ellipsis-h"></i> More</a>
+      <ul class="dropdown-menu">
+          <li><a href="/node/add/event"><i class="fa fa-calendar"></i> Event</a></li>
+      </ul>
 </ul>
 <div class="tab-content">
     <div class="tab-pane fade in active" id="stream">

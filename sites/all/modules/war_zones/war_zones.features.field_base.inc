@@ -310,7 +310,7 @@ function war_zones_field_default_field_bases() {
       'profile2_private' => FALSE,
       'repeat' => 0,
       'timezone_db' => 'UTC',
-      'todate' => 'optional',
+      'todate' => 'required',
       'tz_handling' => 'user',
     ),
     'translatable' => 0,
@@ -336,7 +336,7 @@ function war_zones_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'event_type',
           'parent' => 0,
-          'depth' => '',
+          'depth' => 1,
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
@@ -977,17 +977,18 @@ function war_zones_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 1,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'war_zone_all_registrations',
         ),
-        'target_bundles' => array(),
       ),
       'profile2_private' => FALSE,
       'target_type' => 'node_registration',
@@ -1103,35 +1104,6 @@ function war_zones_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_special_event_type'.
-  $field_bases['field_special_event_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_special_event_type',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'event_type',
-          'parent' => 158,
-          'depth' => '',
-        ),
-      ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_sportsmanship_sc'.
   $field_bases['field_sportsmanship_sc'] = array(
     'active' => 1,
@@ -1199,11 +1171,12 @@ function war_zones_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Setup',
+        1 => 'Setup',
         3 => 'Sign Up',
         5 => 'In Progress',
         10 => 'Complete',
-        15 => 'Archived',
+        15 => 'Cancelled',
+        0 => 'Non-Applicable',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
@@ -1401,7 +1374,7 @@ function war_zones_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Automatic - Recommended',
+        0 => 'Automatic',
         1 => 'Manual',
       ),
       'allowed_values_function' => '',

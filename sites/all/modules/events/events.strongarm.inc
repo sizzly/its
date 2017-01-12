@@ -93,25 +93,50 @@ function events_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '11',
-        ),
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
           'weight' => '10',
         ),
+        'title' => array(
+          'weight' => '1',
+        ),
+        'path' => array(
+          'weight' => '9',
+        ),
         'xmlsitemap' => array(
-          'weight' => '13',
+          'weight' => '12',
         ),
         'badges' => array(
-          'weight' => '12',
+          'weight' => '11',
         ),
         'locations' => array(
           'weight' => '13',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'registration_link' => array(
+          'teaser' => array(
+            'weight' => '14',
+            'visible' => TRUE,
+          ),
+        ),
+        'registration_form' => array(
+          'teaser' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_slots_left' => array(
+          'teaser' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+        'registration_unregistrable_reason' => array(
+          'teaser' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__event'] = $strongarm;
@@ -145,7 +170,7 @@ function events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_event';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_event'] = $strongarm;
 
   $strongarm = new stdClass();

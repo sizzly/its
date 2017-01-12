@@ -536,7 +536,6 @@ function war_zones_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_status',
-      1 => 'field_event_type',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

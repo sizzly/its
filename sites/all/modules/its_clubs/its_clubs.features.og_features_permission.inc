@@ -39,6 +39,15 @@ function its_clubs_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:gaming_club:create event content'
+  $permissions['node:gaming_club:create event content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+      'member' => 'member',
+    ),
+  );
+
   // Exported og permission: 'node:gaming_club:create forum content'
   $permissions['node:gaming_club:create forum content'] = array(
     'roles' => array(
@@ -73,6 +82,14 @@ function its_clubs_og_features_default_permissions() {
     'roles' => array(),
   );
 
+  // Exported og permission: 'node:gaming_club:delete any event content'
+  $permissions['node:gaming_club:delete any event content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+    ),
+  );
+
   // Exported og permission: 'node:gaming_club:delete any forum content'
   $permissions['node:gaming_club:delete any forum content'] = array(
     'roles' => array(),
@@ -91,6 +108,14 @@ function its_clubs_og_features_default_permissions() {
   // Exported og permission: 'node:gaming_club:delete own article content'
   $permissions['node:gaming_club:delete own article content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:gaming_club:delete own event content'
+  $permissions['node:gaming_club:delete own event content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+    ),
   );
 
   // Exported og permission: 'node:gaming_club:delete own forum content'
@@ -154,6 +179,14 @@ function its_clubs_og_features_default_permissions() {
     ),
   );
 
+  // Exported og permission: 'node:gaming_club:update any event content'
+  $permissions['node:gaming_club:update any event content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+    ),
+  );
+
   // Exported og permission: 'node:gaming_club:update any forum content'
   $permissions['node:gaming_club:update any forum content'] = array(
     'roles' => array(
@@ -187,6 +220,15 @@ function its_clubs_og_features_default_permissions() {
     'roles' => array(
       'HQ' => 'HQ',
       'Officer' => 'Officer',
+    ),
+  );
+
+  // Exported og permission: 'node:gaming_club:update own event content'
+  $permissions['node:gaming_club:update own event content'] = array(
+    'roles' => array(
+      'HQ' => 'HQ',
+      'Officer' => 'Officer',
+      'member' => 'member',
     ),
   );
 

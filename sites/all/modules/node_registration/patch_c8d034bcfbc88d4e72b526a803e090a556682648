@@ -1,0 +1,91 @@
+From c8d034bcfbc88d4e72b526a803e090a556682648 Mon Sep 17 00:00:00 2001
+From: Rudie Dirkx
+Date: Wed, 16 Dec 2015 20:09:07 +0100
+Subject: Issue #2636122: Edit Registration: I do as an author of the
+ registered node
+
+---
+ includes/node_registration.api.inc    | 8 ++++++--
+ includes/node_registration.forms.inc  | 6 ++++--
+ submodules/nr_owners/nr_owners.module | 2 +-
+ 3 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/includes/node_registration.api.inc b/includes/node_registration.api.inc
+index c426ad0..b564bb0 100644
+--- a/includes/node_registration.api.inc
++++ b/includes/node_registration.api.inc
+@@ -320,7 +320,7 @@ function _node_registration_send_email($recipient, $subject, $message, $token_da
+  * Ignores existing node access permissions and creates a few new.
+  */
+ function node_registration_node_access($node, $op, $account = NULL, &$reason = NULL) {
+-  if (!in_array($op, array('register', 'register others', 'registered', 'registration settings'))) {
++  if (!in_array($op, array('register', 'register others', 'administer', 'registered', 'registration settings'))) {
+     return;
+   }
+ 
+@@ -351,7 +351,11 @@ function node_registration_node_access($node, $op, $account = NULL, &$reason = N
+         break;
+ 
+       case 'register others':
+-        return user_access('other node registration', $account);
++        return user_access('other node registration', $account) || node_registration_node_access($node, 'administer');
++        break;
++
++      case 'administer':
++        return user_access('administer node registration', $account);
+         break;
+ 
+       case 'registered':
+diff --git a/includes/node_registration.forms.inc b/includes/node_registration.forms.inc
+index 7e9b199..24b4f1b 100644
+--- a/includes/node_registration.forms.inc
++++ b/includes/node_registration.forms.inc
+@@ -764,6 +764,7 @@ function node_registration_form($form, &$form_state, $registration, $user_to_reg
+   $form['#account'] = $account;
+ 
+   $admin = user_access('administer node registration');
++  $mail_admin = node_registration_node_access($node, 'administer');
+   $can_register_others = $admin || node_registration_node_access($node, 'register others');
+ 
+   $auth_type = $account->uid ? 'authenticated' : 'anonymous';
+@@ -834,7 +835,7 @@ function node_registration_form($form, &$form_state, $registration, $user_to_reg
+   $default_email = !empty($registration->email) ? $registration->email : $account_email;
+ 
+   // Show e-mail field.
+-  if (!$default_email || $settings->allow_email_change || $can_register_others) {
++  if (!$default_email || $settings->allow_email_change || $can_register_others || $mail_admin) {
+     $form['email'] = array(
+       '#type' => 'textfield',
+       '#title' => t('E-mail address'),
+@@ -931,6 +932,7 @@ function node_registration_form_validate($form, &$form_state) {
+   $settings = $node->registration;
+ 
+   $admin = user_access('administer node registration');
++  $mail_admin = node_registration_node_access($node, 'administer');
+   $can_register_others = node_registration_node_access($node, 'register others');
+ 
+   $values = &$form_state['values'];
+@@ -960,7 +962,7 @@ function node_registration_form_validate($form, &$form_state) {
+   }
+   else {
+     $existing_account = user_load_by_mail($values['email']);
+-    if ($existing_account && $existing_account->uid != $account->uid && !$admin) {
++    if ($existing_account && $existing_account->uid != $account->uid && !$mail_admin) {
+       return form_set_error('email', t('This e-mail address belongs to a registered user. If you are that user, please <a href="!url">log in</a> first.', array('!url' => url('user/login'))));
+     }
+   }
+diff --git a/submodules/nr_owners/nr_owners.module b/submodules/nr_owners/nr_owners.module
+index cc5cedc..2819339 100644
+--- a/submodules/nr_owners/nr_owners.module
++++ b/submodules/nr_owners/nr_owners.module
+@@ -42,7 +42,7 @@ function nr_owners_form_node_registration_type_settings_alter(&$form, &$form_sta
+  * Implements hook_node_registration_node_access().
+  */
+ function nr_owners_node_registration_node_access($node, $op, $account, $reason) {
+-  if ($op == 'registration settings') {
++  if (in_array($op, array('registration settings', 'administer'))) {
+     if (_node_registration_node_type_enabled($node->type) && $account->uid == $node->uid) {
+       return TRUE;
+     }
+-- 
+cgit v0.12

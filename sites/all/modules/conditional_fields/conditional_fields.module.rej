@@ -1,0 +1,47 @@
+--- conditional_fields.module
++++ conditional_fields.module
+@@ -541,7 +541,7 @@
+       }
+ 
+       // Add validation callback to element if the dependency can be evaluated.
+-      if (in_array($options['condition'], array('value', 'empty', '!empty'))) {
++      if (in_array($options['condition'], array('value', 'empty', '!empty', 'checked', '!checked'))) {
+         _conditional_fields_element_add_property($dependent_form_field, '#element_validate', 'conditional_fields_dependent_validate', 'append');
+       }
+ 
+@@ -1042,22 +1085,31 @@
+  * @param $dependent
+  *   The field form element in the current language.
+  */
+-function conditional_fields_evaluate_dependencies($dependent, $form, $form_state) {
++function conditional_fields_evaluate_dependencies($dependent, $form, $form_state, $grouping = TRUE) {
+   $dependencies = $form['#conditional_fields'][$dependent['#field_name']]['dependees'];
+   $evaluated_dependees = array();
+ 
+   foreach ($dependencies as $dependency_id => $dependency) {
+     // Skip dependencies that can't be evaluated.
+-    if (!in_array($dependency['options']['condition'], array('value', 'empty', '!empty'))) {
++    if (!in_array($dependency['options']['condition'], array('value', 'empty', '!empty', 'checked', '!checked'))) {
+       continue;
+     }
+ 
+     $values = conditional_fields_field_form_get_values($dependency['dependee'], $form, $form_state);
+ 
+-    $evaluated_dependees[$dependent['#field_name']][$dependency['options']['grouping']][] = conditional_fields_evaluate_dependency('edit', $values, $dependency['options']);
++    if ($grouping) {
++      $evaluated_dependees[$dependent['#field_name']][$dependency['options']['grouping']][] = conditional_fields_evaluate_dependency('edit', $values, $dependency['options']);
++    }
++    else {
++      $evaluated_dependees[$dependent['#field_name']][$dependency['options']['grouping']][$dependency['options']['state']] = conditional_fields_evaluate_dependency('edit', $values, $dependency['options']);
++    }
+   }
+ 
+-  return conditional_fields_evaluate_grouping($evaluated_dependees[$dependent['#field_name']]);
++  if ($grouping) {
++    return conditional_fields_evaluate_grouping($evaluated_dependees[$dependent['#field_name']]);
++  }
++
++  return $evaluated_dependees;
+ }
+ 
+ /**

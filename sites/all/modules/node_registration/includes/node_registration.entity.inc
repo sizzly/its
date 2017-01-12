@@ -543,6 +543,12 @@ function node_registration_entity_property_info_alter(&$info) {
     'type' => 'boolean',
     'schema field' => 'waitinglist',
   );
+    $properties['status'] = array(
+    'label' => t("Registration Enabled"),
+    'description' => t("Whether registration is enabled."),
+    'type' => 'boolean',
+    'schema field' => 'status',
+  );
 }
 
 /**
@@ -612,6 +618,10 @@ function node_registration_metadata_entity_get_properties($entity, array $option
         // Slots taken.
         case 'slots_taken':
           return node_registration_event_count($entity);
+            
+        case 'status':
+            $reg_status = $entity->registration->status();
+            return $reg_status;
 
         // Slots left.
         case 'slots_left':

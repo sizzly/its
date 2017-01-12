@@ -13,6 +13,65 @@ function its_clubs_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_classification|node|gaming_club|form';
+  $field_group->group_name = 'group_classification';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gaming_club';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Classification',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_supported_games',
+      1 => 'field_blog_army',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-classification field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_classification|node|gaming_club|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_details|node|gaming_club|form';
+  $field_group->group_name = 'group_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gaming_club';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Details',
+    'weight' => '4',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_location',
+      2 => 'field_website',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-details field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_details|node|gaming_club|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media_body|node|gaming_club|teaser';
   $field_group->group_name = 'group_media_body';
   $field_group->entity_type = 'node';
@@ -134,6 +193,8 @@ function its_clubs_field_group_info() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Classification');
+  t('Details');
   t('Media Body');
   t('Media Left');
   t('Media Wrapper');

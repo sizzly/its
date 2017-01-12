@@ -64,17 +64,100 @@ function events_default_entityform_type() {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function events_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Event: All: Going".
+  $flags['event_all_going'] = array(
+    'content_type' => 'node',
+    'title' => 'Event: All: Going',
+    'global' => 0,
+    'types' => array(
+      0 => 'event',
+    ),
+    'flag_short' => 'Going',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Recant',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'normal',
+    'roles' => array(
+      'flag' => array(
+        0 => 2,
+      ),
+      'unflag' => array(
+        0 => 2,
+      ),
+    ),
+    'weight' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_on_page' => 0,
+    'show_on_teaser' => 0,
+    'show_contextual_link' => 0,
+    'i18n' => 0,
+    'api_version' => 2,
+    'module' => 'events',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  // Exported flag: "Event: All: Interested".
+  $flags['event_all_interested'] = array(
+    'content_type' => 'node',
+    'title' => 'Event: All: Interested',
+    'global' => 0,
+    'types' => array(
+      0 => 'event',
+    ),
+    'flag_short' => 'Interested',
+    'flag_long' => '',
+    'flag_message' => 'Interested',
+    'unflag_short' => 'Unfollow',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'normal',
+    'roles' => array(
+      'flag' => array(
+        0 => 2,
+      ),
+      'unflag' => array(
+        0 => 2,
+      ),
+    ),
+    'weight' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_on_page' => 0,
+    'show_on_teaser' => 0,
+    'show_contextual_link' => 0,
+    'i18n' => 0,
+    'api_version' => 2,
+    'module' => 'events',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_node_info().
  */
 function events_node_info() {
   $items = array(
     'event' => array(
-      'name' => t('Calendar Only Event'),
+      'name' => t('Event'),
       'base' => 'node_content',
       'description' => t('Let the gaming world know about your miniature wargaming <em>Event</em>. This is a simple calendar entry and is perfect for open game days, regular events, and the like.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => t('Give your event a title and an optional description.'),
+      'title_label' => t('Event Name'),
+      'help' => '',
     ),
   );
   drupal_alter('node_info', $items);

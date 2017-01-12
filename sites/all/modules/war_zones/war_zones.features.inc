@@ -95,6 +95,35 @@ function war_zones_default_entityform_type() {
     "weight" : "0",
     "paths" : []
   }');
+  $items['war_zone_all_generate_scorecard'] = entity_import('entityform_type', '{
+    "type" : "war_zone_all_generate_scorecard",
+    "label" : "War Zone: All: Generate Scorecard",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "filtered_html" },
+      "submit_button_text" : "",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "filtered_html" },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
+      "resubmit_action" : "new",
+      "redirect_path" : "[current-page:url:relative]",
+      "instruction_pre" : { "value" : "", "format" : "filtered_html" }
+    },
+    "weight" : "0",
+    "paths" : []
+  }');
   $items['war_zone_grant_achievement'] = entity_import('entityform_type', '{
     "type" : "war_zone_grant_achievement",
     "label" : "War Zone: Grant Achievement",
@@ -377,9 +406,9 @@ function war_zones_node_info() {
       'help' => '',
     ),
     'special_event' => array(
-      'name' => t('Event'),
+      'name' => t('Special Event'),
       'base' => 'node_content',
-      'description' => t('Create an <em>Event</em> to use iToysoldiers features with an event that doesn\'t quite line up with the structured events offered on the site. Perfect for club days, meetings, seminars, and competitive play events that aren\'t being managed through iToysoldiers.'),
+      'description' => t('Create an <em>Special Event</em> to use iToysoldiers features with an event that doesn\'t quite line up with the structured events offered on the site. Perfect for club days, meetings, seminars, and competitive play events that aren\'t being managed through iToysoldiers.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -415,6 +444,7 @@ function war_zones_default_rules_link() {
       "text" : "Create Comp Scorecards",
       "link_type" : "confirm",
       "bundles" : {
+        "event" : "event",
         "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
@@ -434,7 +464,8 @@ function war_zones_default_rules_link() {
       "text" : "Create Painting Scorecards",
       "link_type" : "confirm",
       "bundles" : {
-        "league" : "league",
+        "event" : "event",
+        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
@@ -453,9 +484,10 @@ function war_zones_default_rules_link() {
       "text" : "Open War Zone",
       "link_type" : "confirm",
       "bundles" : {
+        "event" : "event",
+        "special_event" : "special_event",
         "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
-        "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
       },
       "entity_link" : 0,
@@ -528,6 +560,7 @@ function war_zones_default_rules_link() {
       "text" : "Complete War Zone",
       "link_type" : "confirm",
       "bundles" : {
+        "event" : "event",
         "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",
@@ -547,6 +580,7 @@ function war_zones_default_rules_link() {
       "text" : "Start War Zone",
       "link_type" : "confirm",
       "bundles" : {
+        "event" : "event",
         "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "special_event" : "special_event",

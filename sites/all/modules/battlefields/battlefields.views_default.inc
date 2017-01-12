@@ -102,23 +102,21 @@ function battlefields_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['label'] = '';
-  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'event_time',
+  /* Field: Content: Event Date */
+  $handler->display->display_options['fields']['field_event_date_warzone']['id'] = 'field_event_date_warzone';
+  $handler->display->display_options['fields']['field_event_date_warzone']['table'] = 'field_data_field_event_date_warzone';
+  $handler->display->display_options['fields']['field_event_date_warzone']['field'] = 'field_event_date_warzone';
+  $handler->display->display_options['fields']['field_event_date_warzone']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date_warzone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date_warzone']['settings'] = array(
+    'format_type' => 'long',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
-    'show_repeat_rule' => 'hide',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
   );
-  $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
   /* Sort criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
@@ -135,10 +133,11 @@ function battlefields_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'achievement' => 'achievement',
     'event' => 'event',
-    'war_zone_league' => 'war_zone_league',
     'special_event' => 'special_event',
+    'war_zone_league' => 'war_zone_league',
+    'narrative_campaign_instance' => 'narrative_campaign_instance',
+    'war_zone_tournament' => 'war_zone_tournament',
   );
   /* Filter criterion: Content: Has taxonomy terms (with depth) */
   $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -384,9 +383,9 @@ function battlefields_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['granularity_reset'] = 0;
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
+    'field_data_field_event_date_warzone.field_event_date_warzone_value' => 'field_data_field_event_date_warzone.field_event_date_warzone_value',
   );
   $handler->display->display_options['pane_category']['name'] = 'Battlefields';
   $handler->display->display_options['pane_category']['weight'] = '0';

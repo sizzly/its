@@ -241,7 +241,7 @@ function events_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Tell people more about the event',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -292,67 +292,284 @@ function events_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 11,
     ),
     'widget_type' => 'text_textarea_with_summary',
   );
 
-  // Exported field_instance: 'node-event-field_event_date'.
-  $field_instances['node-event-field_event_date'] = array(
+  // Exported field_instance: 'node-event-field_blog_army'.
+  $field_instances['node-event-field_blog_army'] = array(
     'bundle' => 'event',
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Type and select keywords from the list of results',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => 'now',
-          'multiple_number' => 2,
-          'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
-        ),
-        'type' => 'date_default',
-        'weight' => 5,
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 12,
       ),
       'ical' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_blog_army',
+    'label' => 'Keywords',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'moderate',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_campaign_badge'.
+  $field_instances['node-event-field_campaign_badge'] = array(
+    'bundle' => 'event',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 18,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_campaign_badge',
+    'label' => 'Campaign Badge',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_enable_its_features'.
+  $field_instances['node-event-field_enable_its_features'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_enable_its_features',
+    'label' => 'Enable iToysoldiers Event Features',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_entry_fee'.
+  $field_instances['node-event-field_entry_fee'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 14,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_entry_fee',
+    'label' => 'Entry Fee',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_event_date_warzone'.
+  $field_instances['node-event-field_event_date_warzone'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'medium',
+          'format_type' => 'long',
           'fromto' => 'both',
-          'multiple_from' => 'now',
-          'multiple_number' => 1,
+          'multiple_from' => '',
+          'multiple_number' => '',
           'multiple_to' => '',
           'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'hide',
+          'show_repeat_rule' => 'show',
+        ),
+        'type' => 'date_default',
+        'weight' => 13,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'value',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => 0,
+          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_event_date',
-    'label' => 'Date',
+    'field_name' => 'field_event_date_warzone',
+    'label' => 'Event Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'strtotime',
-      'default_value2' => 'strtotime',
-      'default_value_code' => '+14 days',
-      'default_value_code2' => '+14 days',
+      'default_value' => 'blank',
+      'default_value2' => 'blank',
+      'default_value_code' => '',
+      'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -364,28 +581,33 @@ function events_field_default_field_instances() {
         'input_format' => 'Y-m-d H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 1,
+        'no_fieldset' => 1,
+        'repeat_collapsed' => 0,
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-1:+4',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_link'.
-  $field_instances['node-event-field_event_link'] = array(
+  // Exported field_instance: 'node-event-field_event_organizer'.
+  $field_instances['node-event-field_event_organizer'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Indicate whether you are the event organizer or not. When not checked your profile info will not be present on the page. This is useful when you\'ve created an event where you\'re not a representative of the event.',
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
+        'type' => 'list_default',
+        'weight' => 16,
       ),
       'ical' => array(
         'label' => 'above',
@@ -401,31 +623,20 @@ function events_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_event_link',
-    'label' => 'War Zone',
+    'field_name' => 'field_event_organizer',
+    'label' => 'I am the organizer',
     'required' => 0,
     'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 0,
-        'references_dialog_edit' => 0,
-        'references_dialog_search' => 0,
-        'references_dialog_search_view' => '',
-        'size' => 60,
+        'display_label' => 1,
       ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'type' => 'options_onoff',
+      'weight' => 8,
     ),
   );
 
@@ -434,7 +645,7 @@ function events_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Help players find your event by assigning it an <em>Event Type</em>.',
+    'description' => 'Help players find your event by assigning it an Event Type.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -468,18 +679,20 @@ function events_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
   // Exported field_instance: 'node-event-field_image'.
   $field_instances['node-event-field_image'] = array(
     'bundle' => 'event',
+    'default_value' => array(),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'For best results, use a 1920 x 1080 pixel image (16:9 aspect ratio)',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -506,7 +719,7 @@ function events_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Image',
+    'label' => 'Teaser Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -514,42 +727,32 @@ function events_field_default_field_instances() {
       'file_directory' => 'user/u[current-user:uid]',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '1024x1024',
+      'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'dragdropfile_enabled' => 1,
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 'imce',
-            'reference' => 0,
-            'remote' => 0,
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'allowed_schemes' => array(
+          'public' => 'public',
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
       ),
-      'type' => 'image_image',
-      'weight' => 7,
+      'type' => 'media_generic',
+      'weight' => 0,
     ),
   );
 
@@ -583,7 +786,7 @@ function events_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_location',
     'label' => 'Location',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -600,7 +803,289 @@ function events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 3,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_open_registration'.
+  $field_instances['node-event-field_open_registration'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+          'show_repeat_rule' => 'show',
+        ),
+        'type' => 'date_default',
+        'weight' => 24,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_open_registration',
+    'label' => 'Open Registration',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 1,
+        'repeat_collapsed' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_points_per_army'.
+  $field_instances['node-event-field_points_per_army'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 23,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_points_per_army',
+    'label' => 'Points per army',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => 'points',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_registration_deadline'.
+  $field_instances['node-event-field_registration_deadline'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+          'show_repeat_rule' => 'show',
+        ),
+        'type' => 'date_default',
+        'weight' => 19,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_registration_deadline',
+    'label' => 'Registration Deadline',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 1,
+        'repeat_collapsed' => 0,
+        'text_parts' => array(),
+        'year_range' => '-0:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_slots_warzone'.
+  $field_instances['node-event-field_slots_warzone'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 20,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_slots_warzone',
+    'label' => 'Slots',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_status'.
+  $field_instances['node-event-field_status'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 22,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_status',
+    'label' => 'Status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 14,
     ),
   );
 
@@ -609,7 +1094,7 @@ function events_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Leave all the <em>Games</em> unchecked if this event is for an unlisted game.',
+    'description' => 'Leave this field blank if it\'s for an unlisted game.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -641,9 +1126,62 @@ function events_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'apply_chosen' => 1,
+        'content_taxonomy_opt_groups' => 0,
+      ),
+      'type' => 'options_select',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_warzone_scheduling'.
+  $field_instances['node-event-field_warzone_scheduling'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Determines if iToysoldiers will automatically start and stop your event.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 21,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_warzone_scheduling',
+    'label' => 'Scheduling',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 13,
     ),
   );
 
@@ -652,7 +1190,7 @@ function events_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Provide a link to more info about the <em>Event</em>.',
+    'description' => 'Provide a link to more info about the Event.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -693,7 +1231,7 @@ function events_field_default_field_instances() {
       ),
       'enable_tokens' => 0,
       'rel_remove' => 'default',
-      'title' => 'none',
+      'title' => 'optional',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
@@ -706,7 +1244,81 @@ function events_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-og_group_ref'.
+  $field_instances['node-event-og_group_ref'] = array(
+    'bundle' => 'event',
+    'default_value' => array(),
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 15,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 1,
+            'token_patterns' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
+          'token_patterns' => '',
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'og_complex',
+      'weight' => 12,
     ),
   );
 
@@ -779,20 +1391,36 @@ function events_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Battlefield');
   t('Campaign Badge');
-  t('Date');
   t('Date and Time');
   t('Description');
+  t('Determines if iToysoldiers will automatically start and stop your event.');
+  t('Enable iToysoldiers Event Features');
+  t('Entry Fee');
+  t('Event Date');
   t('Event Name');
   t('Event type');
-  t('Help players find your event by assigning it an <em>Event Type</em>.');
+  t('For best results, use a 1920 x 1080 pixel image (16:9 aspect ratio)');
+  t('Groups audience');
+  t('Help players find your event by assigning it an Event Type.');
+  t('I am the organizer');
   t('Image');
-  t('Leave all the <em>Games</em> unchecked if this event is for an unlisted game.');
+  t('Indicate whether you are the event organizer or not. When not checked your profile info will not be present on the page. This is useful when you\'ve created an event where you\'re not a representative of the event.');
+  t('Keywords');
+  t('Leave this field blank if it\'s for an unlisted game.');
   t('Location');
   t('More Info');
-  t('Provide a link to more info about the <em>Event</em>.');
+  t('Open Registration');
+  t('Points per army');
+  t('Provide a link to more info about the Event.');
+  t('Registration Deadline');
+  t('Scheduling');
+  t('Slots');
+  t('Status');
   t('Supported Games');
+  t('Teaser Image');
+  t('Tell people more about the event');
   t('The <em>Location</em> of the event equals the <em>Battlefield</em> where the event is taking place.  If you haven\'t created a <em>Battlefield</em> yet, click "Create Battlefield". You can start typing the name of your <em>Battlefield</em> in the Location field and it\'ll auto fill if it can find a matching <em>Battlefield</em>.');
-  t('War Zone');
+  t('Type and select keywords from the list of results');
 
   return $field_instances;
 }

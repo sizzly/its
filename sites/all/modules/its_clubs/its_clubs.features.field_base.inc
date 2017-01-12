@@ -124,7 +124,9 @@ function its_clubs_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(),
+        'target_bundles' => array(
+          'gaming_club' => 'gaming_club',
+        ),
       ),
       'handler_submit' => 'Change handler',
       'profile2_private' => FALSE,
