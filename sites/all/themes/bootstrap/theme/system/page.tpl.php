@@ -202,7 +202,7 @@
                     </section>
                 </div><!-- /.col -->
                 <?php if (!empty($page['sidebar_second'])): ?>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <?php print render($page['sidebar_second']); ?>
                         <div class="seperator"></div>
                         <div class="seperator"></div>

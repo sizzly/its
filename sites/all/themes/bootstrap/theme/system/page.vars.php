@@ -47,9 +47,9 @@ function bootstrap_preprocess_page(&$variables) {
     }
     // Add information about the number of sidebars.
     if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-        $variables['content_column_class'] = ' class="col-md-8"';
+        $variables['content_column_class'] = ' class="col-md-9"';
     } elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
-        $variables['content_column_class'] = ' class="col-md-8"';
+        $variables['content_column_class'] = ' class="col-md-9"';
     } else {
         $variables['content_column_class'] = ' class="col-md-12"';
     }

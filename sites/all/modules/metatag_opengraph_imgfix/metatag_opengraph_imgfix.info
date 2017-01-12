@@ -1,0 +1,5 @@
+name = Open Graph meta tags image fix
+description = Fix multiple image in open graph meta tags.
+package = Custom
+core = 7.x
+dependencies[] = metatag_opengraph

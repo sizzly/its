@@ -71,7 +71,7 @@ order-of-battle/gaming-clubs',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its2';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -94,38 +94,132 @@ order-of-battle/gaming-clubs',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-cdf4fbd6-4b88-410f-9554-71db6fec4329';
-    $pane->panel = 'contentmainbottom';
+    $pane->pid = 'new-cd77a373-26ff-4f72-9466-bf4be29c5a00';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'groups_all_page_layout-panel_pane_3';
+    $pane->subtype = 'groups_all_page_layout-panel_pane_7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'well well-sm',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'cdf4fbd6-4b88-410f-9554-71db6fec4329';
-    $display->content['new-cdf4fbd6-4b88-410f-9554-71db6fec4329'] = $pane;
-    $display->panels['contentmainbottom'][0] = 'new-cdf4fbd6-4b88-410f-9554-71db6fec4329';
+    $pane->uuid = 'cd77a373-26ff-4f72-9466-bf4be29c5a00';
+    $display->content['new-cd77a373-26ff-4f72-9466-bf4be29c5a00'] = $pane;
+    $display->panels['contentmain'][0] = 'new-cd77a373-26ff-4f72-9466-bf4be29c5a00';
     $pane = new stdClass();
-    $pane->pid = 'new-88bae05f-17fa-471c-9e5f-0d7759755a14';
-    $pane->panel = 'contentmainbottom';
-    $pane->type = 'node_body';
-    $pane->subtype = 'node_body';
+    $pane->pid = 'new-cf99224e-0ea8-451b-a8b9-80a3117ac63a';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'groups_all_page_layout-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'cf99224e-0ea8-451b-a8b9-80a3117ac63a';
+    $display->content['new-cf99224e-0ea8-451b-a8b9-80a3117ac63a'] = $pane;
+    $display->panels['contentmain'][1] = 'new-cf99224e-0ea8-451b-a8b9-80a3117ac63a';
+    $pane = new stdClass();
+    $pane->pid = 'new-1f7cbce6-1344-4e9b-a496-14a68ae71f03';
+    $pane->panel = 'contentmain';
+    $pane->type = 'sharethis';
+    $pane->subtype = 'sharethis';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'path' => 'current',
+      'path-external' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Share',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '1f7cbce6-1344-4e9b-a496-14a68ae71f03';
+    $display->content['new-1f7cbce6-1344-4e9b-a496-14a68ae71f03'] = $pane;
+    $display->panels['contentmain'][2] = 'new-1f7cbce6-1344-4e9b-a496-14a68ae71f03';
+    $pane = new stdClass();
+    $pane->pid = 'new-bd9b844b-73da-4421-a363-8c6241044802';
+    $pane->panel = 'footer';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'clubs_all_content_lists-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'bd9b844b-73da-4421-a363-8c6241044802';
+    $display->content['new-bd9b844b-73da-4421-a363-8c6241044802'] = $pane;
+    $display->panels['footer'][0] = 'new-bd9b844b-73da-4421-a363-8c6241044802';
+    $pane = new stdClass();
+    $pane->pid = 'new-3271e649-cb40-48a3-9461-46b516642c27';
+    $pane->panel = 'header';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_image';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'image_style' => 'hero_image_newsletter',
+        'image_link' => '',
+      ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Brief',
+      'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -134,71 +228,14 @@ order-of-battle/gaming-clubs',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '88bae05f-17fa-471c-9e5f-0d7759755a14';
-    $display->content['new-88bae05f-17fa-471c-9e5f-0d7759755a14'] = $pane;
-    $display->panels['contentmainbottom'][1] = 'new-88bae05f-17fa-471c-9e5f-0d7759755a14';
-    $pane = new stdClass();
-    $pane->pid = 'new-cf99224e-0ea8-451b-a8b9-80a3117ac63a';
-    $pane->panel = 'contentmainbottom';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'groups_all_page_layout-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'cf99224e-0ea8-451b-a8b9-80a3117ac63a';
-    $display->content['new-cf99224e-0ea8-451b-a8b9-80a3117ac63a'] = $pane;
-    $display->panels['contentmainbottom'][2] = 'new-cf99224e-0ea8-451b-a8b9-80a3117ac63a';
-    $pane = new stdClass();
-    $pane->pid = 'new-224ba628-5d74-43fc-9fb4-9f3163f93b4d';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'groups_all_page_layout-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '224ba628-5d74-43fc-9fb4-9f3163f93b4d';
-    $display->content['new-224ba628-5d74-43fc-9fb4-9f3163f93b4d'] = $pane;
-    $display->panels['contentmainleft'][0] = 'new-224ba628-5d74-43fc-9fb4-9f3163f93b4d';
-    $pane = new stdClass();
-    $pane->pid = 'new-cd77a373-26ff-4f72-9466-bf4be29c5a00';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'groups_all_page_layout-panel_pane_7';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'cd77a373-26ff-4f72-9466-bf4be29c5a00';
-    $display->content['new-cd77a373-26ff-4f72-9466-bf4be29c5a00'] = $pane;
-    $display->panels['contentmainright'][0] = 'new-cd77a373-26ff-4f72-9466-bf4be29c5a00';
+    $pane->uuid = '3271e649-cb40-48a3-9461-46b516642c27';
+    $display->content['new-3271e649-cb40-48a3-9461-46b516642c27'] = $pane;
+    $display->panels['header'][0] = 'new-3271e649-cb40-48a3-9461-46b516642c27';
     $pane = new stdClass();
     $pane->pid = 'new-78092f64-d922-48ca-9ce5-a254911d3150';
-    $pane->panel = 'contentmainright';
+    $pane->panel = 'header';
     $pane->type = 'views_panes';
     $pane->subtype = 'groups_all_page_layout-panel_pane_2';
     $pane->shown = TRUE;
@@ -214,16 +251,55 @@ order-of-battle/gaming-clubs',
     $pane->locks = array();
     $pane->uuid = '78092f64-d922-48ca-9ce5-a254911d3150';
     $display->content['new-78092f64-d922-48ca-9ce5-a254911d3150'] = $pane;
-    $display->panels['contentmainright'][1] = 'new-78092f64-d922-48ca-9ce5-a254911d3150';
+    $display->panels['header'][1] = 'new-78092f64-d922-48ca-9ce5-a254911d3150';
+    $pane = new stdClass();
+    $pane->pid = 'new-ab3b27c6-2a7c-407c-9ff6-cdd4cb867344';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'groups_all_page_layout-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ab3b27c6-2a7c-407c-9ff6-cdd4cb867344';
+    $display->content['new-ab3b27c6-2a7c-407c-9ff6-cdd4cb867344'] = $pane;
+    $display->panels['sidebar'][0] = 'new-ab3b27c6-2a7c-407c-9ff6-cdd4cb867344';
+    $pane = new stdClass();
+    $pane->pid = 'new-5706b190-111c-44cf-ae66-cfbf31ab6e5c';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'groups_all_page_layout-panel_pane_5';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '5706b190-111c-44cf-ae66-cfbf31ab6e5c';
+    $display->content['new-5706b190-111c-44cf-ae66-cfbf31ab6e5c'] = $pane;
+    $display->panels['sidebar'][1] = 'new-5706b190-111c-44cf-ae66-cfbf31ab6e5c';
     $pane = new stdClass();
     $pane->pid = 'new-a249de3b-2d1c-4dbd-8119-24e07e1bfae9';
-    $pane->panel = 'contentmainright';
+    $pane->panel = 'sidebar';
     $pane->type = 'node_create_links';
     $pane->subtype = 'node_create_links';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'types' => array(
+        'event' => 'event',
         'article' => 'article',
         'war_zone_league' => 'war_zone_league',
         'war_zone_tournament' => 'war_zone_tournament',
@@ -255,96 +331,19 @@ order-of-battle/gaming-clubs',
     $pane->locks = array();
     $pane->uuid = 'a249de3b-2d1c-4dbd-8119-24e07e1bfae9';
     $display->content['new-a249de3b-2d1c-4dbd-8119-24e07e1bfae9'] = $pane;
-    $display->panels['contentmainright'][2] = 'new-a249de3b-2d1c-4dbd-8119-24e07e1bfae9';
+    $display->panels['sidebar'][2] = 'new-a249de3b-2d1c-4dbd-8119-24e07e1bfae9';
     $pane = new stdClass();
-    $pane->pid = 'new-948e6aee-b4d8-4747-9057-a7ec0e4e2a07';
-    $pane->panel = 'footer';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'og_nodes-panel_pane_1';
+    $pane->pid = 'new-e3cabd1b-ff27-4cbe-b639-bef32c206606';
+    $pane->panel = 'sidebar';
+    $pane->type = 'node_body';
+    $pane->subtype = 'node_body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '948e6aee-b4d8-4747-9057-a7ec0e4e2a07';
-    $display->content['new-948e6aee-b4d8-4747-9057-a7ec0e4e2a07'] = $pane;
-    $display->panels['footer'][0] = 'new-948e6aee-b4d8-4747-9057-a7ec0e4e2a07';
-    $pane = new stdClass();
-    $pane->pid = 'new-c719b0e7-e158-467f-a140-fa827e3b1643';
-    $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'club_page_layout-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-primary',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c719b0e7-e158-467f-a140-fa827e3b1643';
-    $display->content['new-c719b0e7-e158-467f-a140-fa827e3b1643'] = $pane;
-    $display->panels['sidebar'][0] = 'new-c719b0e7-e158-467f-a140-fa827e3b1643';
-    $pane = new stdClass();
-    $pane->pid = 'new-14e15da5-1f15-42a3-9324-0fe9440191d6';
-    $pane->panel = 'sidebar';
-    $pane->type = 'sharethis';
-    $pane->subtype = 'sharethis';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'path' => 'current',
-      'path-external' => '',
+      'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'well well-sm',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '14e15da5-1f15-42a3-9324-0fe9440191d6';
-    $display->content['new-14e15da5-1f15-42a3-9324-0fe9440191d6'] = $pane;
-    $display->panels['sidebar'][1] = 'new-14e15da5-1f15-42a3-9324-0fe9440191d6';
-    $pane = new stdClass();
-    $pane->pid = 'new-254af14c-779d-4bc0-b4a6-97a48bff4ed4';
-    $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'og_members-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title_text' => 'Information',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -353,112 +352,17 @@ order-of-battle/gaming-clubs',
         'use_footer' => 0,
         'panel_body' => 1,
         'footer_content' => '',
-        'context_class' => 'panel-primary',
+        'context_class' => 'panel-default',
       ),
       'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '254af14c-779d-4bc0-b4a6-97a48bff4ed4';
-    $display->content['new-254af14c-779d-4bc0-b4a6-97a48bff4ed4'] = $pane;
-    $display->panels['sidebar'][2] = 'new-254af14c-779d-4bc0-b4a6-97a48bff4ed4';
-    $pane = new stdClass();
-    $pane->pid = 'new-5540a69e-bcd6-4122-9f20-a5ae59472605';
-    $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-      'name' => 'side_advert_1',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '5540a69e-bcd6-4122-9f20-a5ae59472605';
-    $display->content['new-5540a69e-bcd6-4122-9f20-a5ae59472605'] = $pane;
-    $display->panels['sidebar'][3] = 'new-5540a69e-bcd6-4122-9f20-a5ae59472605';
-    $pane = new stdClass();
-    $pane->pid = 'new-91f3139b-7974-4f39-8e2b-ebd3e65e57ff';
-    $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'og_members-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-primary',
-      ),
-      'style' => 'bootstrap_panel',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '91f3139b-7974-4f39-8e2b-ebd3e65e57ff';
-    $display->content['new-91f3139b-7974-4f39-8e2b-ebd3e65e57ff'] = $pane;
-    $display->panels['sidebar'][4] = 'new-91f3139b-7974-4f39-8e2b-ebd3e65e57ff';
-    $pane = new stdClass();
-    $pane->pid = 'new-a55a76b0-47d4-4782-b519-61dfa9b73af4';
-    $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Advert 2',
-      'title' => '',
-      'body' => '<!--/* Revive Adserver Javascript Tag v3.0.5 */-->
-
-<script type=\'text/javascript\'><!--//<![CDATA[
-   var m3_u = (location.protocol==\'https:\'?\'https://ads.robtacey.com/www/delivery/ajs.php\':\'http://ads.robtacey.com/www/delivery/ajs.php\');
-   var m3_r = Math.floor(Math.random()*99999999999);
-   if (!document.MAX_used) document.MAX_used = \',\';
-   document.write ("<scr"+"ipt type=\'text/javascript\' src=\'"+m3_u);
-   document.write ("?zoneid=23&amp;block=1");
-   document.write (\'&amp;cb=\' + m3_r);
-   if (document.MAX_used != \',\') document.write ("&amp;exclude=" + document.MAX_used);
-   document.write (document.charset ? \'&amp;charset=\'+document.charset : (document.characterSet ? \'&amp;charset=\'+document.characterSet : \'\'));
-   document.write ("&amp;loc=" + escape(window.location));
-   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-   if (document.context) document.write ("&context=" + escape(document.context));
-   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-   document.write ("\'><\\/scr"+"ipt>");
-//]]>--></script><noscript><a href=\'http://ads.robtacey.com/www/delivery/ck.php?n=ae28cdae&amp;cb=INSERT_RANDOM_NUMBER_HERE\' target=\'_blank\'><img src=\'http://ads.robtacey.com/www/delivery/avw.php?zoneid=23&amp;cb=6541832518565156514&amp;n=ae28cdae\' border=\'0\' alt=\'\' /></a></noscript>
-',
-      'format' => 'php_code',
-      'substitute' => 0,
-      'name' => 'side_advert_2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = 'a55a76b0-47d4-4782-b519-61dfa9b73af4';
-    $display->content['new-a55a76b0-47d4-4782-b519-61dfa9b73af4'] = $pane;
-    $display->panels['sidebar'][5] = 'new-a55a76b0-47d4-4782-b519-61dfa9b73af4';
+    $pane->uuid = 'e3cabd1b-ff27-4cbe-b639-bef32c206606';
+    $display->content['new-e3cabd1b-ff27-4cbe-b639-bef32c206606'] = $pane;
+    $display->panels['sidebar'][3] = 'new-e3cabd1b-ff27-4cbe-b639-bef32c206606';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

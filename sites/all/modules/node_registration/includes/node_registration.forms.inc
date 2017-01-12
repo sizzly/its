@@ -668,6 +668,7 @@ function node_registration_form($form, &$form_state, $registration, $user_to_reg
   $form['#account'] = $account;
 
   $admin = user_access('administer node registration');
+  $mail_admin = node_registration_node_access($node, 'administer');
   $can_register_others = $admin || node_registration_node_access($node, 'register others');
 
   $auth_type = $account->uid ? 'authenticated' : 'anonymous';
@@ -738,7 +739,7 @@ function node_registration_form($form, &$form_state, $registration, $user_to_reg
   $default_email = !empty($registration->email) ? $registration->email : $account_email;
 
   // Show e-mail field.
-  if (!$default_email || $settings->allow_email_change || $can_register_others) {
+  if (!$default_email || $settings->allow_email_change || $can_register_others || $mail_admin) {
     $form['email'] = array(
       '#type' => 'textfield',
       '#title' => t('E-mail address'),
@@ -835,6 +836,7 @@ function node_registration_form_validate($form, &$form_state) {
   $settings = $node->registration;
 
   $admin = user_access('administer node registration');
+  $mail_admin = node_registration_node_access($node, 'administer');
   $can_register_others = node_registration_node_access($node, 'register others');
 
   $values = &$form_state['values'];
@@ -864,7 +866,7 @@ function node_registration_form_validate($form, &$form_state) {
   }
   else {
     $existing_account = user_load_by_mail($values['email']);
-    if ($existing_account && $existing_account->uid != $account->uid && !$admin) {
+    if ($existing_account && $existing_account->uid != $account->uid && !$mail_admin) {
       return form_set_error('email', t('This e-mail address belongs to a registered user. If you are that user, please <a href="!url">log in</a> first.', array('!url' => url('user/login'))));
     }
   }

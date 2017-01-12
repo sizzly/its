@@ -1,0 +1,22 @@
+diff --git a/simplify.module b/simplify.module
+index 49652b6..6bad21f 100644
+--- a/simplify.module
++++ b/simplify.module
+@@ -683,8 +683,14 @@ function simplify_hide_text_format_elements(&$form) {
+  * Hide a given text_format element.
+  */
+ function simplify_hide_text_format_element($element) {
+-  if (!empty($element['format'])) {
+-    $element['format']['#access'] = FALSE;
++  if (!empty($element['format']['format'])) {
++     $element['format']['format']['#access'] = FALSE;
++   }
++  if (!empty($element['format']['guidelines'])) {
++    $element['format']['guidelines']['#access'] = FALSE;
++  }
++  if (!empty($element['format']['help'])) {
++    $element['format']['help']['#access'] = FALSE;
+   }
+ 
+   return $element;
+

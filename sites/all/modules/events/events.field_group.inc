@@ -13,6 +13,38 @@ function events_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_classification|node|event|form';
+  $field_group->group_name = 'group_classification';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Classification',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_event_type',
+      1 => 'field_supported_games',
+      2 => 'field_blog_army',
+      3 => 'field_event_organizer',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Classification',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-classification field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_classification|node|event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_content_wrapper|node|event|teaser';
   $field_group->group_name = 'group_content_wrapper';
   $field_group->entity_type = 'node';
@@ -24,9 +56,10 @@ function events_field_group_info() {
     'weight' => '9',
     'children' => array(
       0 => 'body',
-      1 => 'field_event_date',
-      2 => 'field_event_type',
-      3 => 'field_location',
+      1 => 'field_event_type',
+      2 => 'field_location',
+      3 => 'field_event_date_warzone',
+      4 => 'registration_link',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -41,6 +74,39 @@ function events_field_group_info() {
     ),
   );
   $field_groups['group_content_wrapper|node|event|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_details|node|event|form';
+  $field_group->group_name = 'group_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Details',
+    'weight' => '7',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_website',
+      2 => 'field_entry_fee',
+      3 => 'og_group_ref',
+      4 => 'field_points_per_army',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Details',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-details field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_details|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -104,6 +170,41 @@ function events_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_warzone_settings|node|event|form';
+  $field_group->group_name = 'group_warzone_settings';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'War Zone Settings',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_enable_its_features',
+      1 => 'field_campaign_badge',
+      2 => 'field_registration_deadline',
+      3 => 'field_slots_warzone',
+      4 => 'field_warzone_scheduling',
+      5 => 'field_status',
+      6 => 'field_open_registration',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'War Zone Settings',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'id' => '',
+        'classes' => 'group-warzone-settings field-group-fieldset',
+        'description' => 'War Zone Settings are enabled when you enable iToysoldiers Event Features.',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_warzone_settings|node|event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_wrapper|node|event|teaser';
   $field_group->group_name = 'group_wrapper';
   $field_group->entity_type = 'node';
@@ -133,9 +234,12 @@ function events_field_group_info() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Classification');
   t('Content Wrapper');
+  t('Details');
   t('Image Wrapper');
   t('Spacer');
+  t('War Zone Settings');
   t('Wrapper');
 
   return $field_groups;

@@ -145,13 +145,13 @@ function core_image_default_styles() {
 
   // Exported image style: hero_image_newsletter.
   $styles['hero_image_newsletter'] = array(
-    'label' => 'Hero Image Newsletter',
+    'label' => 'Hero Image Banner',
     'effects' => array(
-      22 => array(
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 580,
-          'height' => 300,
+          'width' => 898,
+          'height' => 250,
         ),
         'weight' => 1,
       ),

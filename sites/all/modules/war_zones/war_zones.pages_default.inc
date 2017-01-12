@@ -2114,6 +2114,7 @@ Tournament',
           'name' => 'node_type',
           'settings' => array(
             'type' => array(
+              'event' => 'event',
               'special_event' => 'special_event',
             ),
           ),
@@ -3255,10 +3256,11 @@ print views_embed_view("war_zone_all_page_layout" , "panel_pane_14", %node:nid, 
         'name' => 'node_type',
         'settings' => array(
           'type' => array(
+            'event' => 'event',
             'narrative_campaign_instance' => 'narrative_campaign_instance',
             'special_event' => 'special_event',
-            'war_zone_tournament' => 'war_zone_tournament',
             'war_zone_league' => 'war_zone_league',
+            'war_zone_tournament' => 'war_zone_tournament',
           ),
         ),
         'context' => 'argument_entity_id:node_1',
@@ -3275,6 +3277,23 @@ print views_embed_view("war_zone_all_page_layout" , "panel_pane_14", %node:nid, 
 }',
         ),
         'not' => FALSE,
+      ),
+      2 => array(
+        'name' => 'entity_field_value:node:event:field_enable_its_features',
+        'settings' => array(
+          'field_enable_its_features' => array(
+            'und' => array(
+              0 => array(
+                'value' => 0,
+              ),
+            ),
+          ),
+          'field_enable_its_features_value' => array(
+            0 => 0,
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => TRUE,
       ),
     ),
     'logic' => 'and',
@@ -3566,98 +3585,6 @@ print views_embed_view("war_zone_all_page_layout" , "panel_pane_14", %node:nid, 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'war_zone_all_player_list';
-  $page->task = 'page';
-  $page->admin_title = 'War Zone: All: Player List';
-  $page->admin_description = '';
-  $page->path = 'node/%node/player-list';
-  $page->access = array(
-    'logic' => 'and',
-  );
-  $page->menu = array();
-  $page->arguments = array(
-    'node' => array(
-      'id' => 1,
-      'identifier' => 'Content: ID',
-      'name' => 'entity_id:node',
-      'settings' => array(),
-    ),
-  );
-  $page->conf = array(
-    'admin_paths' => FALSE,
-  );
-  $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_war_zone_all_player_list_panel_context';
-  $handler->task = 'page';
-  $handler->subtask = 'war_zone_all_player_list';
-  $handler->handler = 'panel_context';
-  $handler->weight = 0;
-  $handler->conf = array(
-    'title' => 'Panel',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Warzone
-%node:title',
-    'panels_breadcrumbs_paths' => 'warzone
-%node:url',
-    'panels_breadcrumbs_home' => 1,
-  );
-  $display = new panels_display();
-  $display->layout = 'bootopoly_boxton';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'sidebar' => NULL,
-      'contentmain' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = '%node:title Players';
-  $display->uuid = 'f9849c8b-ae09-4462-886e-a1d10d807a68';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-01a4daac-955a-4275-85de-e86a62d852d8';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_platers-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '01a4daac-955a-4275-85de-e86a62d852d8';
-    $display->content['new-01a4daac-955a-4275-85de-e86a62d852d8'] = $pane;
-    $display->panels['contentmain'][0] = 'new-01a4daac-955a-4275-85de-e86a62d852d8';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-01a4daac-955a-4275-85de-e86a62d852d8';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $pages['war_zone_all_player_list'] = $page;
-
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
   $page->name = 'war_zone_all_score_card_management';
   $page->task = 'page';
   $page->admin_title = 'War Zone: All: Score Card Management';
@@ -3669,10 +3596,11 @@ print views_embed_view("war_zone_all_page_layout" , "panel_pane_14", %node:nid, 
         'name' => 'node_type',
         'settings' => array(
           'type' => array(
+            'event' => 'event',
             'narrative_campaign_instance' => 'narrative_campaign_instance',
             'special_event' => 'special_event',
-            'war_zone_tournament' => 'war_zone_tournament',
             'war_zone_league' => 'war_zone_league',
+            'war_zone_tournament' => 'war_zone_tournament',
           ),
         ),
         'context' => 'argument_entity_id:node_1',
@@ -3690,6 +3618,23 @@ print views_embed_view("war_zone_all_page_layout" , "panel_pane_14", %node:nid, 
 ',
         ),
         'not' => FALSE,
+      ),
+      2 => array(
+        'name' => 'entity_field_value:node:event:field_enable_its_features',
+        'settings' => array(
+          'field_enable_its_features' => array(
+            'und' => array(
+              0 => array(
+                'value' => 0,
+              ),
+            ),
+          ),
+          'field_enable_its_features_value' => array(
+            0 => 0,
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => TRUE,
       ),
     ),
     'logic' => 'and',
@@ -3758,6 +3703,43 @@ Manage',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-dd88e35e-eae4-451e-9d4c-2ed3ff1b20e2';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Add Scorecard form',
+      'title' => '',
+      'body' => '<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Add Score
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+<?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'war_zone_all_generate_scorecard\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>
+  </div>
+</div>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'dd88e35e-eae4-451e-9d4c-2ed3ff1b20e2';
+    $display->content['new-dd88e35e-eae4-451e-9d4c-2ed3ff1b20e2'] = $pane;
+    $display->panels['contentmain'][0] = 'new-dd88e35e-eae4-451e-9d4c-2ed3ff1b20e2';
+    $pane = new stdClass();
     $pane->pid = 'new-6d146f49-39b3-4172-99cb-651a1b28094c';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
@@ -3771,11 +3753,11 @@ Manage',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '6d146f49-39b3-4172-99cb-651a1b28094c';
     $display->content['new-6d146f49-39b3-4172-99cb-651a1b28094c'] = $pane;
-    $display->panels['contentmain'][0] = 'new-6d146f49-39b3-4172-99cb-651a1b28094c';
+    $display->panels['contentmain'][1] = 'new-6d146f49-39b3-4172-99cb-651a1b28094c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3796,14 +3778,32 @@ Manage',
         'name' => 'node_type',
         'settings' => array(
           'type' => array(
+            'event' => 'event',
             'narrative_campaign_instance' => 'narrative_campaign_instance',
             'special_event' => 'special_event',
-            'war_zone_tournament' => 'war_zone_tournament',
             'war_zone_league' => 'war_zone_league',
+            'war_zone_tournament' => 'war_zone_tournament',
           ),
         ),
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'entity_field_value:node:event:field_enable_its_features',
+        'settings' => array(
+          'field_enable_its_features' => array(
+            'und' => array(
+              0 => array(
+                'value' => 0,
+              ),
+            ),
+          ),
+          'field_enable_its_features_value' => array(
+            0 => 0,
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => TRUE,
       ),
     ),
     'logic' => 'and',
@@ -4472,10 +4472,11 @@ Manage',
         'name' => 'node_type',
         'settings' => array(
           'type' => array(
+            'event' => 'event',
             'narrative_campaign_instance' => 'narrative_campaign_instance',
             'special_event' => 'special_event',
-            'war_zone_tournament' => 'war_zone_tournament',
             'war_zone_league' => 'war_zone_league',
+            'war_zone_tournament' => 'war_zone_tournament',
           ),
         ),
         'context' => 'argument_entity_id:node_1',
@@ -4493,6 +4494,23 @@ Manage',
 ',
         ),
         'not' => FALSE,
+      ),
+      2 => array(
+        'name' => 'entity_field_value:node:event:field_enable_its_features',
+        'settings' => array(
+          'field_enable_its_features' => array(
+            'und' => array(
+              0 => array(
+                'value' => 0,
+              ),
+            ),
+          ),
+          'field_enable_its_features_value' => array(
+            0 => 0,
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => TRUE,
       ),
     ),
     'logic' => 'and',
@@ -5035,6 +5053,368 @@ Manage',
     $display->panels['sidebar'][5] = 'new-7540ac00-19dc-47b7-b3f6-46bcdc2846a4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-7509067c-2615-4992-b3ef-54332881baca';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_war_zone_manage__event-management';
+  $handler->task = 'page';
+  $handler->subtask = 'war_zone_manage';
+  $handler->handler = 'panel_context';
+  $handler->weight = 1;
+  $handler->conf = array(
+    'title' => 'Event Management',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'event' => 'event',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'entity_field_value:node:event:field_enable_its_features',
+          'settings' => array(
+            'field_enable_its_features' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 1,
+                ),
+              ),
+            ),
+            'field_enable_its_features_value' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'event-management',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
+      'header' => NULL,
+      'contentmaintop' => NULL,
+      'contentmainbottom' => NULL,
+      'contentmainright' => NULL,
+      'contentmainleft' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title Management';
+  $display->uuid = 'dc1c81e4-b84a-4a29-8cd3-273bd11e9e82';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-fe02e533-1612-4ade-9a69-0cc54b13861f';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'war_zone_tournament' => 'war_zone_tournament',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'entity_field_value:node:war_zone_tournament:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '3',
+                ),
+              ),
+            ),
+            'field_status_value' => array(
+              0 => '3',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Tournament: Signup Warning',
+      'title' => 'Notice',
+      'body' => 'Please mark attendance before clicking, "Start Warzone".',
+      'format' => 'filtered_html',
+      'substitute' => 0,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'alert alert-danger',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'fe02e533-1612-4ade-9a69-0cc54b13861f';
+    $display->content['new-fe02e533-1612-4ade-9a69-0cc54b13861f'] = $pane;
+    $display->panels['contentmain'][0] = 'new-fe02e533-1612-4ade-9a69-0cc54b13861f';
+    $pane = new stdClass();
+    $pane->pid = 'new-893eb12a-00d8-4c8d-beb2-1f89977639f1';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_management-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grey-container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '893eb12a-00d8-4c8d-beb2-1f89977639f1';
+    $display->content['new-893eb12a-00d8-4c8d-beb2-1f89977639f1'] = $pane;
+    $display->panels['contentmain'][1] = 'new-893eb12a-00d8-4c8d-beb2-1f89977639f1';
+    $pane = new stdClass();
+    $pane->pid = 'new-54253b68-46db-4bb3-882d-64d489c8928d';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_tournament_score_cards-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:war_zone_tournament:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '5',
+                ),
+              ),
+            ),
+            'field_status_value' => array(
+              0 => '5',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_round_sc_value' => 'Current Round Scorecards',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '54253b68-46db-4bb3-882d-64d489c8928d';
+    $display->content['new-54253b68-46db-4bb3-882d-64d489c8928d'] = $pane;
+    $display->panels['contentmain'][2] = 'new-54253b68-46db-4bb3-882d-64d489c8928d';
+    $pane = new stdClass();
+    $pane->pid = 'new-593de03a-46ed-43d0-a9a4-004c7c58a9ce';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_tournament_score_cards-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:war_zone_tournament:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '5',
+                ),
+              ),
+            ),
+            'field_status_value' => array(
+              0 => '5',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '593de03a-46ed-43d0-a9a4-004c7c58a9ce';
+    $display->content['new-593de03a-46ed-43d0-a9a4-004c7c58a9ce'] = $pane;
+    $display->panels['contentmain'][3] = 'new-593de03a-46ed-43d0-a9a4-004c7c58a9ce';
+    $pane = new stdClass();
+    $pane->pid = 'new-5563bb21-0511-4547-9c22-f26efde3570e';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_tournament_score_cards-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:war_zone_tournament:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '5',
+                ),
+              ),
+            ),
+            'field_status_value' => array(
+              0 => '5',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '5563bb21-0511-4547-9c22-f26efde3570e';
+    $display->content['new-5563bb21-0511-4547-9c22-f26efde3570e'] = $pane;
+    $display->panels['contentmain'][4] = 'new-5563bb21-0511-4547-9c22-f26efde3570e';
+    $pane = new stdClass();
+    $pane->pid = 'new-27e37e08-92cb-4942-a278-a7c288690e95';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_player_final_scores-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '27e37e08-92cb-4942-a278-a7c288690e95';
+    $display->content['new-27e37e08-92cb-4942-a278-a7c288690e95'] = $pane;
+    $display->panels['contentmain'][5] = 'new-27e37e08-92cb-4942-a278-a7c288690e95';
+    $pane = new stdClass();
+    $pane->pid = 'new-92656c67-60f4-453a-9caa-ba9c9307a351';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_campaign_phase_rules-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_bundle:node',
+          'settings' => array(
+            'type' => array(
+              'narrative_campaign_instance' => 'narrative_campaign_instance',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 0,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '92656c67-60f4-453a-9caa-ba9c9307a351';
+    $display->content['new-92656c67-60f4-453a-9caa-ba9c9307a351'] = $pane;
+    $display->panels['contentmain'][6] = 'new-92656c67-60f4-453a-9caa-ba9c9307a351';
+    $pane = new stdClass();
+    $pane->pid = 'new-10bf1327-3dc1-4b71-bbbb-b99cb4f1bcca';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_registration-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = '10bf1327-3dc1-4b71-bbbb-b99cb4f1bcca';
+    $display->content['new-10bf1327-3dc1-4b71-bbbb-b99cb4f1bcca'] = $pane;
+    $display->panels['contentmain'][7] = 'new-10bf1327-3dc1-4b71-bbbb-b99cb4f1bcca';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['war_zone_manage'] = $page;

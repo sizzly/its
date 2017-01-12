@@ -27,11 +27,11 @@ $template_url = url($template_path, array('absolute' => TRUE));
             </tr>
              <tr>
                 <td style="vertical-align: top; padding: 30px 50px; font-size: 12px; line-height: 1.5em;color: #ffffff; background-color: #888888;">
-                    <p style="text-align: center;"><a href="http://itoysoldiers.com/user" style="color: #F0F8FF; text-decoration: none;">My Account</a> | <a href="http://itoysoldiers.uservoice.com" style="color: #F0F8FF; text-decoration: none;">Help</a></p>
+                    <p style="text-align: center;"><a href="http://itoysoldiers.com/user" style="color: #F0F8FF; text-decoration: none;">My Account</a> | <a href="http://help.itoysoldiers.com" style="color: #F0F8FF; text-decoration: none;">Help</a></p>
 
                     <p style="text-align: center;"><a href="http://itoysoldiers.com" style="color: #F0F8FF; text-decoration: none;">iToysoldiers 24 Azar Avenue, Tilbury, Ontario, N0P 2L0, Canada</a></p>
                     
-                    <p><small>You are receiving this email because you signed up for <a href="http://itoysoldiers.com" style="color: #F0F8FF; text-decoration: none;">iToysoldiers.com</a>. This is an activity related email.<br>Review our <a href="http://itoysoldiers.com/privacy" style="color: #F0F8FF; text-decoration: none;">Privacy Policy</a> for more information about this type of email.</small></p>
+                    <p><small>You are receiving this email because you signed up for <a href="http://itoysoldiers.com" style="color: #F0F8FF; text-decoration: none;">iToysoldiers.com</a>.<br>Review our <a href="http://itoysoldiers.com/privacy" style="color: #F0F8FF; text-decoration: none;">Privacy Policy</a> for more information about our email practices.</small></p>
                 </td>
             </tr>
         </table>

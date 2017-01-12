@@ -315,7 +315,7 @@ function _node_registration_send_email($recipient, $subject, $message, $token_da
  * Ignores existing node access permissions and creates a few new.
  */
 function node_registration_node_access($node, $op, $account = NULL, &$reason = NULL) {
-  if (!in_array($op, array('register', 'register others', 'registered', 'registration settings'))) {
+  if (!in_array($op, array('register', 'register others', 'administer', 'registered', 'registration settings'))) {
     return;
   }
 
@@ -346,7 +346,11 @@ function node_registration_node_access($node, $op, $account = NULL, &$reason = N
         break;
 
       case 'register others':
-        return user_access('other node registration', $account);
+        return user_access('other node registration', $account) || node_registration_node_access($node, 'administer');
+        break;
+
+      case 'administer':
+        return user_access('administer node registration', $account);
         break;
 
       case 'registered':

@@ -677,8 +677,15 @@ function simplify_hide_text_format_elements(&$form) {
  * Hide a given text_format element.
  */
 function simplify_hide_text_format_element($element) {
-  $element['format']['#access'] = FALSE;
+  if (!empty($element['format']['format'])) {
+     $element['format']['format']['#access'] = FALSE;
+   }
+  if (!empty($element['format']['guidelines'])) {
+    $element['format']['guidelines']['#access'] = FALSE;
+  }
+  if (!empty($element['format']['help'])) {
+    $element['format']['help']['#access'] = FALSE;
+   }
 
   return $element;
 }
-

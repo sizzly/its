@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function metatag_opengraph_imgfix_theme() {
+  $info['metatag_opengraph_img'] = array(
+    'render element' => 'element',
+  );
+
+  return $info;
+}
+
+/**
+ * Theme callback for an OpenGraph image meta tag.
+ */
+function theme_metatag_opengraph_img($variables) {
+  $element = &$variables['element'];
+  $values = explode(',',$element['#value']);
+  $output = '';
+  foreach ($values as $value) {
+    $new_element = $element;
+    $new_element['#value'] = $value;
+    $new_element['#theme'] = 'metatag_opengraph';
+    $output .= theme('metatag_opengraph', array('element' => $new_element));
+  }
+  return ($output);
+}
+
+/**
+ * Implements hook_metatag_info_alter().
+ */
+function metatag_opengraph_imgfix_metatag_info_alter(&$info) {
+  $info['tags']['og:image']['element']['#theme'] = 'metatag_opengraph_img';
+}

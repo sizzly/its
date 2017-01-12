@@ -68,22 +68,22 @@ function its_clubs_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
-          'weight' => '7',
-        ),
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '10',
-        ),
-        'xmlsitemap' => array(
           'weight' => '8',
         ),
-        'badges' => array(
+        'title' => array(
+          'weight' => '1',
+        ),
+        'path' => array(
+          'weight' => '11',
+        ),
+        'xmlsitemap' => array(
           'weight' => '9',
         ),
+        'badges' => array(
+          'weight' => '10',
+        ),
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
       ),
       'display' => array(),

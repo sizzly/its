@@ -10,6 +10,24 @@
 function war_zones_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access rules link war_zone_all_generate_comp'.
+  $permissions['access rules link war_zone_all_generate_comp'] = array(
+    'name' => 'access rules link war_zone_all_generate_comp',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules_link',
+  );
+
+  // Exported permission: 'access rules link war_zone_all_generate_painting_s'.
+  $permissions['access rules link war_zone_all_generate_painting_s'] = array(
+    'name' => 'access rules link war_zone_all_generate_painting_s',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rules_link',
+  );
+
   // Exported permission: 'access rules link war_zone_all_open_registration'.
   $permissions['access rules link war_zone_all_open_registration'] = array(
     'name' => 'access rules link war_zone_all_open_registration',
@@ -143,9 +161,7 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'create special_event content'.
   $permissions['create special_event content'] = array(
     'name' => 'create special_event content',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -154,6 +170,7 @@ function war_zones_user_default_permissions() {
     'name' => 'create war_zone_league content',
     'roles' => array(
       'Ironmonger' => 'Ironmonger',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -325,6 +342,7 @@ function war_zones_user_default_permissions() {
     'name' => 'edit own war_zone_league content',
     'roles' => array(
       'Ironmonger' => 'Ironmonger',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );

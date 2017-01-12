@@ -104,6 +104,7 @@ function its_clubs_field_default_field_instances() {
     'widget' => array(
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -147,21 +148,63 @@ function its_clubs_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'label' => 'Information',
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-gaming_club-field_blog_army'.
+  $field_instances['node-gaming_club-field_blog_army'] = array(
+    'bundle' => 'gaming_club',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_blog_army',
+    'label' => 'Categories',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'moderate',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 8,
     ),
   );
 
@@ -224,7 +267,7 @@ function its_clubs_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -257,7 +300,7 @@ function its_clubs_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Image',
+    'label' => 'Teaser Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -299,7 +342,7 @@ function its_clubs_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -308,7 +351,7 @@ function its_clubs_field_default_field_instances() {
     'bundle' => 'gaming_club',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If your club plays or meets at a particular location enter it here.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -328,7 +371,7 @@ function its_clubs_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_location',
     'label' => 'Battlefield',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -345,7 +388,7 @@ function its_clubs_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -401,7 +444,7 @@ function its_clubs_field_default_field_instances() {
   // Exported field_instance: 'node-gaming_club-field_supported_games'.
   $field_instances['node-gaming_club-field_supported_games'] = array(
     'bundle' => 'gaming_club',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -430,9 +473,12 @@ function its_clubs_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 6,
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 9,
     ),
   );
 
@@ -489,7 +535,7 @@ function its_clubs_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -539,7 +585,7 @@ function its_clubs_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 13,
+      'weight' => 14,
     ),
     'widget_type' => 'options_select',
   );
@@ -598,7 +644,7 @@ function its_clubs_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -658,16 +704,18 @@ function its_clubs_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Battlefield');
-  t('Body');
+  t('Categories');
   t('Club Contact');
   t('Determine if this is an OG group.');
   t('Forums');
   t('Group');
   t('Group visibility');
   t('Groups audience');
-  t('Image');
+  t('If your club plays or meets at a particular location enter it here.');
+  t('Information');
   t('Radioactivity');
   t('Supported Games');
+  t('Teaser Image');
   t('Website');
 
   return $field_instances;

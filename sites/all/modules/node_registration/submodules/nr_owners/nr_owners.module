@@ -42,7 +42,7 @@ function nr_owners_form_node_registration_type_settings_alter(&$form, &$form_sta
  * Implements hook_node_registration_node_access().
  */
 function nr_owners_node_registration_node_access($node, $op, $account, $reason) {
-  if ($op == 'registration settings') {
+  if (in_array($op, array('registration settings', 'administer'))) {
     if (_node_registration_node_type_enabled($node->type) && $account->uid == $node->uid) {
       return TRUE;
     }

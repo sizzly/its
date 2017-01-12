@@ -147,6 +147,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
+                "event" : "event",
                 "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
@@ -170,6 +171,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
+                "event" : "event",
                 "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
@@ -193,6 +195,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
+                "event" : "event",
                 "special_event" : "special_event",
                 "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
@@ -201,7 +204,7 @@ function war_zones_default_rules_configuration() {
             }
           }
         },
-        { "data_is" : { "data" : [ "node:field-status" ], "value" : "0" } }
+        { "data_is" : { "data" : [ "node:field-status" ], "value" : "1" } }
       ]
     }
   }');
@@ -309,9 +312,10 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
-                "special_event" : "special_event",
+                "event" : "event",
                 "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
+                "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"
               }
             }
@@ -337,9 +341,10 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "node" ],
             "type" : "node",
             "bundle" : { "value" : {
-                "special_event" : "special_event",
+                "event" : "event",
                 "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
+                "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"
               }
             }
@@ -464,6 +469,7 @@ function war_zones_default_rules_configuration() {
                   "entity" : [ "node" ],
                   "type" : "node",
                   "bundle" : { "value" : {
+                      "event" : "event",
                       "special_event" : "special_event",
                       "war_zone_league" : "war_zone_league",
                       "narrative_campaign_instance" : "narrative_campaign_instance",
@@ -472,7 +478,7 @@ function war_zones_default_rules_configuration() {
                   }
                 }
               },
-              { "data_is" : { "data" : [ "node:field-status" ], "value" : "0" } }
+              { "data_is" : { "data" : [ "node:field-status" ], "value" : "1" } }
             ],
             "DO" : [
               { "data_set" : { "data" : [ "node:field-status" ], "value" : "3" } },
@@ -546,11 +552,6 @@ function war_zones_default_rules_configuration() {
                     { "CASE" : {
                         "USING" : { "value" : "special_event" },
                         "DO" : [
-                          { "data_set" : {
-                              "data" : [ "node:field-event-type" ],
-                              "value" : [ "node:field-special-event-type" ]
-                            }
-                          },
                           { "CONDITIONAL" : [
                               {
                                 "IF" : { "data_is" : { "data" : [ "node:field-warzone-scheduling" ], "value" : "0" } },
@@ -604,24 +605,38 @@ function war_zones_default_rules_configuration() {
                           { "data_set" : { "data" : [ "node:field-registration-open" ], "value" : "now" } }
                         ]
                       }
+                    },
+                    { "CASE" : {
+                        "USING" : { "value" : "event" },
+                        "DO" : [
+                          { "data_set" : { "data" : [ "node:field-open-registration" ], "value" : "now" } },
+                          { "CONDITIONAL" : [
+                              {
+                                "IF" : { "data_is" : { "data" : [ "node:field-warzone-scheduling" ], "value" : "0" } },
+                                "DO" : [
+                                  { "schedule" : {
+                                      "component" : "rules_link_set_wz_start",
+                                      "date" : [ "node:field-event-date-warzone:value" ],
+                                      "identifier" : "[node:nid]-Start",
+                                      "param_node" : [ "node" ]
+                                    }
+                                  },
+                                  { "schedule" : {
+                                      "component" : "rules_link_set_wz_complete",
+                                      "date" : [ "node:field-event-date-warzone:value2" ],
+                                      "identifier" : "[node:nid]-Complete",
+                                      "param_node" : [ "node" ]
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
                     }
                   ]
                 }
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "node:field-warzone-scheduling" ], "value" : "0" } },
-                    "DO" : [
-                      { "schedule" : {
-                          "component" : "rules_link_set_wz_start",
-                          "date" : [ "node:field-event-date:0:value" ],
-                          "identifier" : "[node:nid] - Start",
-                          "param_node" : [ "node" ]
-                        }
-                      }
-                    ]
-                  }
-                ]
               }
             ],
             "LABEL" : "War Zone: All: Open War Zone"
@@ -934,9 +949,10 @@ function war_zones_default_rules_configuration() {
                   "entity" : [ "node" ],
                   "type" : "node",
                   "bundle" : { "value" : {
-                      "special_event" : "special_event",
+                      "event" : "event",
                       "war_zone_league" : "war_zone_league",
                       "narrative_campaign_instance" : "narrative_campaign_instance",
+                      "special_event" : "special_event",
                       "war_zone_tournament" : "war_zone_tournament"
                     }
                   }
@@ -1039,7 +1055,7 @@ function war_zones_default_rules_configuration() {
       "LABEL" : "Rules link: War Zone: All: Start rules set",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "views_rules" ],
       "USES VARIABLES" : { "node" : { "type" : "node", "label" : "node" } },
       "RULES" : [
         { "RULE" : {
@@ -1052,9 +1068,10 @@ function war_zones_default_rules_configuration() {
                   "entity" : [ "node" ],
                   "type" : "node",
                   "bundle" : { "value" : {
-                      "special_event" : "special_event",
+                      "event" : "event",
                       "war_zone_league" : "war_zone_league",
                       "narrative_campaign_instance" : "narrative_campaign_instance",
+                      "special_event" : "special_event",
                       "war_zone_tournament" : "war_zone_tournament"
                     }
                   }
@@ -1168,6 +1185,28 @@ function war_zones_default_rules_configuration() {
                             }
                           },
                           { "data_set" : { "data" : [ "node:field-registration-deadline" ], "value" : "now" } }
+                        ]
+                      }
+                    },
+                    { "CASE" : {
+                        "USING" : { "value" : "event" },
+                        "DO" : [
+                          { "VIEW LOOP" : {
+                              "VIEW" : "war_zone_email_player_rules",
+                              "DISPLAY" : "views_rules_6",
+                              "USING" : { "nid" : [ "node:nid" ] },
+                              "ROW VARIABLES" : { "registration_id" : { "registration_id" : "Registration ID" } },
+                              "DO" : [
+                                { "entity_fetch" : {
+                                    "USING" : { "type" : "node_registration", "id" : [ "registration-id" ] },
+                                    "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                                  }
+                                },
+                                { "data_set" : { "data" : [ "entity-fetched:attended" ], "value" : "1" } },
+                                { "entity_save" : { "data" : [ "entity-fetched" ], "immediate" : "1" } }
+                              ]
+                            }
+                          }
                         ]
                       }
                     }
@@ -1300,6 +1339,128 @@ function war_zones_default_rules_configuration() {
       ],
       "DO" : [
         { "redirect" : { "url" : "\\/node\\/[entityform:field-event-link:nid]\\/management" } }
+      ]
+    }
+  }');
+  $items['rules_war_zone_all_generate_additional_scorecard'] = entity_import('rules_config', '{ "rules_war_zone_all_generate_additional_scorecard" : {
+      "LABEL" : "War Zone: All: Generate Additional Scorecard",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "USES VARIABLES" : { "efid" : { "label" : "Form", "type" : "entityform" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "efid" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "war_zone_all_generate_scorecard" : "war_zone_all_generate_scorecard" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "entityform",
+              "param_type" : "score_card",
+              "param_created" : "now",
+              "param_user" : [ "efid:field-event-link:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "SWITCH" : {
+            "USING" : { "data" : [ "efid:field-score-card-type" ] },
+            "DO" : [
+              { "CASE" : {
+                  "USING" : { "value" : "0" },
+                  "DO" : [
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-battle-points-sc" ],
+                        "value" : [ "efid:field-points-to-award" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "5" },
+                  "DO" : [
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-painting-sc" ],
+                        "value" : [ "efid:field-points-to-award" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "10" },
+                  "DO" : [
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-comp-sc" ],
+                        "value" : [ "efid:field-points-to-award" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "15" },
+                  "DO" : [
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-additional-points-sc" ],
+                        "value" : [ "efid:field-points-to-award" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "20" },
+                  "DO" : [
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-additional-points-sc" ],
+                        "value" : [ "efid:field-points-to-award" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "25" },
+                  "DO" : [
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-strength-of-schedule-sc" ],
+                        "value" : [ "efid:field-points-to-award" ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-registration-sc" ],
+            "value" : [ "efid:field-registration-sc" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-event-link" ],
+            "value" : [ "efid:field-event-link" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-score-card-type" ],
+            "value" : [ "efid:field-score-card-type" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-explanation-sc" ],
+            "value" : [ "efid:field-explanation-sc" ]
+          }
+        },
+        { "entity_save" : { "data" : [ "entity-created" ] } },
+        { "data_set" : { "data" : [ "entity-created:field-state-sc" ], "value" : "40" } }
       ]
     }
   }');
@@ -1605,6 +1766,7 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "efid:field-event-link" ],
             "type" : "node",
             "bundle" : { "value" : {
+                "event" : "event",
                 "war_zone_league" : "war_zone_league",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
                 "special_event" : "special_event",
@@ -1974,6 +2136,13 @@ function war_zones_default_rules_configuration() {
                   "USING" : { "value" : "war_zone_league_report_battle" },
                   "DO" : [
                     { "component_rules_war_zone_league_report_battle" : { "efid" : [ "entityform" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "war_zone_all_generate_scorecard" },
+                  "DO" : [
+                    { "component_rules_war_zone_all_generate_additional_scorecard" : { "efid" : [ "entityform" ] } }
                   ]
                 }
               }
