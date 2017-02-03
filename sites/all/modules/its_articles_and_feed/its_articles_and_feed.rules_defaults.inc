@@ -9,42 +9,40 @@
  */
 function its_articles_and_feed_default_rules_configuration() {
   $items = array();
-  $items['rules_articles_utility_replace_field_attach'] = entity_import('rules_config', '{ "rules_articles_utility_replace_field_attach" : {
-      "LABEL" : "Articles: Utility: Replace Field Attach",
-      "PLUGIN" : "rule",
+  $items['rules_articles_all_create_new_article'] = entity_import('rules_config', '{ "rules_articles_all_create_new_article" : {
+      "LABEL" : "Articles: All: Create New Article",
+      "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "views_rules", "rules", "rules_conditional" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--article" : { "bundle" : "article" } },
       "DO" : [
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_rules_replace_attached_to",
-            "DISPLAY" : "views_rules_1",
-            "ROW VARIABLES" : { "nid" : { "nid" : "Nid" } },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "node", "id" : [ "nid" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                }
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "entity_is_of_bundle" : {
-                        "entity" : [ "entity-fetched" ],
-                        "type" : "node",
-                        "bundle" : { "value" : { "article" : "article" } }
-                      }
-                    },
-                    "DO" : [
-                      { "data_set" : {
-                          "data" : [ "entity-fetched:field-event-link" ],
-                          "value" : [ "entity-fetched:field-attach-to" ]
-                        }
-                      },
-                      { "entity_save" : { "data" : [ "entity-fetched" ], "immediate" : 1 } }
-                    ]
-                  }
-                ]
-              }
-            ]
+        { "entity_create" : {
+            "USING" : {
+              "type" : "message",
+              "param_type" : "stream_player_posts_new_content",
+              "param_user" : [ "node:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-stream-node-ref" ],
+            "value" : [ "node" ]
+          }
+        },
+        { "component_rules_status_all_get_associated_nodes" : {
+            "USING" : { "srid" : [ "node" ] },
+            "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-associated-nodes-stream" ],
+            "value" : [ "assoc-nodes" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-timeline-icon" ],
+            "value" : "fa-newspaper-o"
           }
         }
       ]

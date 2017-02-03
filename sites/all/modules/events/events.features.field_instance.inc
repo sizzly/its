@@ -348,6 +348,62 @@ function events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_calculated_rounds'.
+  $field_instances['node-event-field_calculated_rounds'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 28,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_calculated_rounds',
+    'label' => 'calculated rounds',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_campaign_badge'.
   $field_instances['node-event-field_campaign_badge'] = array(
     'bundle' => 'event',
@@ -413,7 +469,7 @@ function events_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -463,6 +519,55 @@ function events_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_enable_its_league_mangemen'.
+  $field_instances['node-event-field_enable_its_league_mangemen'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Check if you wish iToysoldiers to manage your league.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 29,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_enable_its_league_mangemen',
+    'label' => 'Enable iTS League Mangement',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 10,
     ),
   );
 
@@ -546,7 +651,7 @@ function events_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -587,7 +692,57 @@ function events_field_default_field_instances() {
         'year_range' => '-1:+4',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_event_league_rules'.
+  $field_instances['node-event-field_event_league_rules'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Select the rule set for your league.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 26,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_league_rules',
+    'label' => 'League Rule Set',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 21,
     ),
   );
 
@@ -756,6 +911,55 @@ function events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_league_report_requirement'.
+  $field_instances['node-event-field_league_report_requirement'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 30,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_league_report_requirement',
+    'label' => 'Require Both Players to Report Their Battle',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 23,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_location'.
   $field_instances['node-event-field_location'] = array(
     'bundle' => 'event',
@@ -803,7 +1007,7 @@ function events_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -983,7 +1187,57 @@ function events_field_default_field_instances() {
         'year_range' => '-0:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 11,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_round_duration'.
+  $field_instances['node-event-field_round_duration'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 2,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'iToysoldiers recommends two weeks between rounds.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_round_duration',
+    'label' => 'Round Duration',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 22,
     ),
   );
 
@@ -1035,7 +1289,7 @@ function events_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1085,7 +1339,7 @@ function events_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 7,
     ),
   );
 
@@ -1135,6 +1389,62 @@ function events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_warzone_round'.
+  $field_instances['node-event-field_warzone_round'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 27,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_warzone_round',
+    'label' => 'Round',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_warzone_scheduling'.
   $field_instances['node-event-field_warzone_scheduling'] = array(
     'bundle' => 'event',
@@ -1181,7 +1491,7 @@ function events_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1391,9 +1701,11 @@ function events_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Battlefield');
   t('Campaign Badge');
+  t('Check if you wish iToysoldiers to manage your league.');
   t('Date and Time');
   t('Description');
   t('Determines if iToysoldiers will automatically start and stop your event.');
+  t('Enable iTS League Mangement');
   t('Enable iToysoldiers Event Features');
   t('Entry Fee');
   t('Event Date');
@@ -1406,6 +1718,7 @@ function events_field_default_field_instances() {
   t('Image');
   t('Indicate whether you are the event organizer or not. When not checked your profile info will not be present on the page. This is useful when you\'ve created an event where you\'re not a representative of the event.');
   t('Keywords');
+  t('League Rule Set');
   t('Leave this field blank if it\'s for an unlisted game.');
   t('Location');
   t('More Info');
@@ -1413,7 +1726,11 @@ function events_field_default_field_instances() {
   t('Points per army');
   t('Provide a link to more info about the Event.');
   t('Registration Deadline');
+  t('Require Both Players to Report Their Battle');
+  t('Round');
+  t('Round Duration');
   t('Scheduling');
+  t('Select the rule set for your league.');
   t('Slots');
   t('Status');
   t('Supported Games');
@@ -1421,6 +1738,8 @@ function events_field_default_field_instances() {
   t('Tell people more about the event');
   t('The <em>Location</em> of the event equals the <em>Battlefield</em> where the event is taking place.  If you haven\'t created a <em>Battlefield</em> yet, click "Create Battlefield". You can start typing the name of your <em>Battlefield</em> in the Location field and it\'ll auto fill if it can find a matching <em>Battlefield</em>.');
   t('Type and select keywords from the list of results');
+  t('calculated rounds');
+  t('iToysoldiers recommends two weeks between rounds.');
 
   return $field_instances;
 }

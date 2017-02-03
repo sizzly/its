@@ -99,11 +99,11 @@ function events_flag_default_flags() {
     'show_on_teaser' => 0,
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'events',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   // Exported flag: "Event: All: Interested".
   $flags['event_all_interested'] = array(
@@ -136,11 +136,11 @@ function events_flag_default_flags() {
     'show_on_teaser' => 0,
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'events',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   return $flags;
 
@@ -161,5 +161,27 @@ function events_node_info() {
     ),
   );
   drupal_alter('node_info', $items);
+  return $items;
+}
+
+/**
+ * Implements hook_default_rules_link().
+ */
+function events_default_rules_link() {
+  $items = array();
+  $items['war_zone_all_cancel_event'] = entity_import('rules_link', '{
+    "settings" : {
+      "text" : "Cancel",
+      "link_type" : "confirm",
+      "bundles" : { "event" : "event" },
+      "entity_link" : 0,
+      "confirm_question" : "Are you sure?",
+      "confirm_description" : "This will cancel the event. It cannot be undone"
+    },
+    "name" : "war_zone_all_cancel_event",
+    "label" : "War Zone: All: Cancel Event",
+    "path" : "war_zone_all_cancel_event",
+    "entity_type" : "node"
+  }');
   return $items;
 }

@@ -34,7 +34,7 @@ function bootstrap_preprocess_page(&$variables) {
                     )
             );
         } else {
-            $variables['user_avatar'] = '<a title="Profile" href=/user><img class="avatar" src="/sites/default/files/default_images/profile.png" /></a>';
+            $user_avatar = '<a title="Profile" href=/user><img class="avatar" src="/sites/default/files/default_images/profile.png" /></a>';
             $variables['user_name'] = "Warmonger";
                     }
         $variables['user_block'] = '<div class="user-block clearfix"><a title="Profile" href=/user>'. $user_avatar . '<div class="detail"><ul class="list-inline"><li><strong><a href="/user">'. $user->name .'</a></strong></li></ul></div></div><!-- /user-block -->';

@@ -17,7 +17,7 @@ function war_zones_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -19;
+  $handler->weight = -18;
   $handler->conf = array(
     'title' => 'League Edit Variant',
     'form_title' => '',
@@ -221,7 +221,7 @@ function war_zones_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -29;
+  $handler->weight = -26;
   $handler->conf = array(
     'title' => 'Narrative Instance Setup',
     'form_title' => '',
@@ -414,7 +414,7 @@ function war_zones_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -28;
+  $handler->weight = -24;
   $handler->conf = array(
     'title' => 'Narrative Instance Live',
     'form_title' => '',
@@ -3716,6 +3716,7 @@ Manage',
   Add Score
 </button>
 <div class="collapse" id="collapseExample">
+<div class="seperator"</div>
   <div class="well">
 <?php
   module_load_include(\'inc\', \'entityform\', \'entityform.admin\');

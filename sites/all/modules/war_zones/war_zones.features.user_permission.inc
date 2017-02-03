@@ -168,10 +168,7 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'create war_zone_league content'.
   $permissions['create war_zone_league content'] = array(
     'name' => 'create war_zone_league content',
-    'roles' => array(
-      'Ironmonger' => 'Ironmonger',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -340,10 +337,7 @@ function war_zones_user_default_permissions() {
   // Exported permission: 'edit own war_zone_league content'.
   $permissions['edit own war_zone_league content'] = array(
     'name' => 'edit own war_zone_league content',
-    'roles' => array(
-      'Ironmonger' => 'Ironmonger',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 

@@ -17,7 +17,7 @@ function blogs_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -24;
+  $handler->weight = -22;
   $handler->conf = array(
     'title' => 'Blog Entry',
     'form_title' => '',

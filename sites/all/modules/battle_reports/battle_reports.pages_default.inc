@@ -17,7 +17,7 @@ function battle_reports_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -29;
+  $handler->weight = -25;
   $handler->conf = array(
     'title' => 'Acknowledged Battle',
     'form_title' => '',
@@ -240,7 +240,7 @@ function battle_reports_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -26;
+  $handler->weight = -23;
   $handler->conf = array(
     'title' => 'Battle Results',
     'form_title' => '',

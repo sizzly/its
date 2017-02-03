@@ -13,11 +13,498 @@ function events_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_edit_form_mutator';
+  $handler->name = 'node_edit__events-in-progress';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -29;
+  $handler->conf = array(
+    'title' => 'Events: In progress',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Title',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 0,
+        'label' => 'Description',
+        'hidden_field' => 0,
+      ),
+      'field_event_type' => array(
+        'override' => 0,
+        'label' => 'Event type',
+        'hidden_field' => 0,
+      ),
+      'field_location' => array(
+        'override' => 0,
+        'label' => 'Location',
+        'hidden_field' => 0,
+      ),
+      'field_image' => array(
+        'override' => 0,
+        'label' => 'Image',
+        'hidden_field' => 0,
+      ),
+      'field_supported_games' => array(
+        'override' => 0,
+        'label' => 'Supported Games',
+        'hidden_field' => 0,
+      ),
+      'field_website' => array(
+        'override' => 0,
+        'label' => 'More Info',
+        'hidden_field' => 0,
+      ),
+      'field_blog_army' => array(
+        'override' => 0,
+        'label' => 'Keywords',
+        'hidden_field' => 0,
+      ),
+      'field_event_date_warzone' => array(
+        'override' => 1,
+        'label' => 'Event Date',
+        'hidden_field' => '3',
+      ),
+      'field_entry_fee' => array(
+        'override' => 0,
+        'label' => 'Entry Fee',
+        'hidden_field' => 0,
+      ),
+      'og_group_ref' => array(
+        'override' => 0,
+        'label' => 'Groups audience',
+        'hidden_field' => 0,
+      ),
+      'field_event_organizer' => array(
+        'override' => 1,
+        'label' => 'I am the organizer',
+        'hidden_field' => '3',
+      ),
+      'field_enable_its_features' => array(
+        'override' => 1,
+        'label' => 'Enable iToysoldiers Event Features',
+        'hidden_field' => '3',
+      ),
+      'field_campaign_badge' => array(
+        'override' => 0,
+        'label' => 'Campaign Badge',
+        'hidden_field' => 0,
+      ),
+      'field_registration_deadline' => array(
+        'override' => 1,
+        'label' => 'Registration Deadline',
+        'hidden_field' => '3',
+      ),
+      'field_slots_warzone' => array(
+        'override' => 1,
+        'label' => 'Slots',
+        'hidden_field' => '3',
+      ),
+      'field_warzone_scheduling' => array(
+        'override' => 1,
+        'label' => 'Scheduling',
+        'hidden_field' => '3',
+      ),
+      'field_status' => array(
+        'override' => 1,
+        'label' => 'Status',
+        'hidden_field' => '1',
+      ),
+      'field_points_per_army' => array(
+        'override' => 1,
+        'label' => 'Points per army',
+        'hidden_field' => '3',
+      ),
+      'field_open_registration' => array(
+        'override' => 1,
+        'label' => 'Open Registration',
+        'hidden_field' => '1',
+      ),
+      'field_round_duration' => array(
+        'override' => 1,
+        'label' => 'Round Duration',
+        'hidden_field' => '3',
+      ),
+      'field_event_league_rules' => array(
+        'override' => 1,
+        'label' => 'League Rule Set',
+        'hidden_field' => '3',
+      ),
+      'field_warzone_round' => array(
+        'override' => 1,
+        'label' => 'Round',
+        'hidden_field' => '1',
+      ),
+      'field_calculated_rounds' => array(
+        'override' => 1,
+        'label' => 'calculated rounds',
+        'hidden_field' => '1',
+      ),
+      'field_enable_its_league_mangemen' => array(
+        'override' => 1,
+        'label' => 'Enable iTS League Mangement',
+        'hidden_field' => '3',
+      ),
+      'field_league_report_requirement' => array(
+        'override' => 0,
+        'label' => 'Require Both Players to Report Their Battle',
+        'hidden_field' => 0,
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 0,
+        'label' => 'Revision information',
+        'hidden_field' => 0,
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':flag' => array(
+        'override' => 0,
+        'label' => 'Flags',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'event' => 'event',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+        2 => array(
+          'name' => 'entity_field_value:node:event:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '5',
+                ),
+              ),
+            ),
+            'field_status_value' => array(
+              0 => '5',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'events-in-progress',
+  );
+  $export['node_edit__events-in-progress'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_edit__events-registration-open';
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
   $handler->weight = -30;
+  $handler->conf = array(
+    'title' => 'Events : Registration Open',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Title',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 0,
+        'label' => 'Description',
+        'hidden_field' => 0,
+      ),
+      'field_event_type' => array(
+        'override' => 0,
+        'label' => 'Event type',
+        'hidden_field' => 0,
+      ),
+      'field_location' => array(
+        'override' => 0,
+        'label' => 'Location',
+        'hidden_field' => 0,
+      ),
+      'field_image' => array(
+        'override' => 0,
+        'label' => 'Image',
+        'hidden_field' => 0,
+      ),
+      'field_supported_games' => array(
+        'override' => 0,
+        'label' => 'Supported Games',
+        'hidden_field' => 0,
+      ),
+      'field_website' => array(
+        'override' => 0,
+        'label' => 'More Info',
+        'hidden_field' => 0,
+      ),
+      'field_blog_army' => array(
+        'override' => 0,
+        'label' => 'Keywords',
+        'hidden_field' => 0,
+      ),
+      'field_event_date_warzone' => array(
+        'override' => 1,
+        'label' => 'Event Date',
+        'hidden_field' => '3',
+      ),
+      'field_entry_fee' => array(
+        'override' => 0,
+        'label' => 'Entry Fee',
+        'hidden_field' => 0,
+      ),
+      'og_group_ref' => array(
+        'override' => 0,
+        'label' => 'Groups audience',
+        'hidden_field' => 0,
+      ),
+      'field_event_organizer' => array(
+        'override' => 0,
+        'label' => 'I am the organizer',
+        'hidden_field' => 0,
+      ),
+      'field_enable_its_features' => array(
+        'override' => 1,
+        'label' => 'Enable iToysoldiers Event Features',
+        'hidden_field' => '3',
+      ),
+      'field_campaign_badge' => array(
+        'override' => 0,
+        'label' => 'Campaign Badge',
+        'hidden_field' => 0,
+      ),
+      'field_registration_deadline' => array(
+        'override' => 0,
+        'label' => 'Registration Deadline',
+        'hidden_field' => 0,
+      ),
+      'field_slots_warzone' => array(
+        'override' => 0,
+        'label' => 'Slots',
+        'hidden_field' => 0,
+      ),
+      'field_warzone_scheduling' => array(
+        'override' => 0,
+        'label' => 'Scheduling',
+        'hidden_field' => 0,
+      ),
+      'field_status' => array(
+        'override' => 1,
+        'label' => 'Status',
+        'hidden_field' => '1',
+      ),
+      'field_points_per_army' => array(
+        'override' => 0,
+        'label' => 'Points per army',
+        'hidden_field' => 0,
+      ),
+      'field_open_registration' => array(
+        'override' => 1,
+        'label' => 'Open Registration',
+        'hidden_field' => '1',
+      ),
+      'field_round_duration' => array(
+        'override' => 1,
+        'label' => 'Round Duration',
+        'hidden_field' => '3',
+      ),
+      'field_event_league_rules' => array(
+        'override' => 1,
+        'label' => 'League Rule Set',
+        'hidden_field' => '3',
+      ),
+      'field_warzone_round' => array(
+        'override' => 1,
+        'label' => 'Round',
+        'hidden_field' => '1',
+      ),
+      'field_calculated_rounds' => array(
+        'override' => 1,
+        'label' => 'calculated rounds',
+        'hidden_field' => '1',
+      ),
+      'field_enable_its_league_mangemen' => array(
+        'override' => 1,
+        'label' => 'Enable iTS League Mangement',
+        'hidden_field' => '3',
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 0,
+        'label' => 'Revision information',
+        'hidden_field' => 0,
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':flag' => array(
+        'override' => 0,
+        'label' => 'Flags',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'event' => 'event',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+        2 => array(
+          'name' => 'entity_field_value:node:event:field_status',
+          'settings' => array(
+            'field_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '3',
+                ),
+              ),
+            ),
+            'field_status_value' => array(
+              0 => '3',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'events-registration-open',
+  );
+  $export['node_edit__events-registration-open'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_edit_form_mutator';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'Events',
     'form_title' => '',
@@ -122,6 +609,26 @@ function events_default_page_manager_handlers() {
       'field_open_registration' => array(
         'override' => 1,
         'label' => 'Open Registration',
+        'hidden_field' => '1',
+      ),
+      'field_round_duration' => array(
+        'override' => 0,
+        'label' => 'Round Duration',
+        'hidden_field' => 0,
+      ),
+      'field_event_league_rules' => array(
+        'override' => 0,
+        'label' => 'League Rule Set',
+        'hidden_field' => 0,
+      ),
+      'field_warzone_round' => array(
+        'override' => 1,
+        'label' => 'Round',
+        'hidden_field' => '1',
+      ),
+      'field_calculated_rounds' => array(
+        'override' => 1,
+        'label' => 'calculated rounds',
         'hidden_field' => '1',
       ),
       ':author' => array(
@@ -951,6 +1458,173 @@ theater/events',
  * Implements hook_default_page_manager_pages().
  */
 function events_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'events_all_event_player_operations';
+  $page->task = 'page';
+  $page->admin_title = 'Events: All: Event Player Operations';
+  $page->admin_description = '';
+  $page->path = 'node/%node/event-ops';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'event' => 'event',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'entity_field_value:node:event:field_enable_its_features',
+        'settings' => array(
+          'field_enable_its_features' => array(
+            'und' => array(
+              0 => array(
+                'value' => 1,
+              ),
+            ),
+          ),
+          'field_enable_its_features_value' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
+  $page->menu = array(
+    'type' => 'tab',
+    'title' => 'Operations',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Content: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_events_all_event_player_operations__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'events_all_event_player_operations';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Leagues',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:event:field_enable_its_league_mangemen',
+          'settings' => array(
+            'field_enable_its_league_mangemen' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 1,
+                ),
+              ),
+            ),
+            'field_enable_its_league_mangemen_value' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title Operations';
+  $display->uuid = '1b0a4d82-0453-4076-9a98-3ecb30dcc042';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-0938fb79-3db3-41cd-a59d-9667ff5a5e24';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_all_operations-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0938fb79-3db3-41cd-a59d-9667ff5a5e24';
+    $display->content['new-0938fb79-3db3-41cd-a59d-9667ff5a5e24'] = $pane;
+    $display->panels['contentmain'][0] = 'new-0938fb79-3db3-41cd-a59d-9667ff5a5e24';
+    $pane = new stdClass();
+    $pane->pid = 'new-2bee697d-571d-4023-b068-b27b3d2375f6';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'war_zone_league_operations_page-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_round_sc_value' => '%node:field_warzone_round',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '2bee697d-571d-4023-b068-b27b3d2375f6';
+    $display->content['new-2bee697d-571d-4023-b068-b27b3d2375f6'] = $pane;
+    $display->panels['contentmain'][1] = 'new-2bee697d-571d-4023-b068-b27b3d2375f6';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['events_all_event_player_operations'] = $page;
+
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
