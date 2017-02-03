@@ -17,7 +17,7 @@ function its_galleries_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -23;
+  $handler->weight = -21;
   $handler->conf = array(
     'title' => 'Gallery',
     'form_title' => '',

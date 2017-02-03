@@ -485,8 +485,6 @@ function war_zones_default_rules_link() {
       "link_type" : "confirm",
       "bundles" : {
         "event" : "event",
-        "special_event" : "special_event",
-        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
         "war_zone_tournament" : "war_zone_tournament"
       },
@@ -531,7 +529,7 @@ function war_zones_default_rules_link() {
     "settings" : {
       "text" : "Start Next Round",
       "link_type" : "confirm",
-      "bundles" : { "war_zone_league" : "war_zone_league" },
+      "bundles" : { "event" : "event" },
       "entity_link" : 0,
       "confirm_question" : "Are you sure?",
       "confirm_description" : "This will increment the round and process scoring for the current round.  It cannot be undone."
@@ -561,9 +559,7 @@ function war_zones_default_rules_link() {
       "link_type" : "confirm",
       "bundles" : {
         "event" : "event",
-        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
-        "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
       },
       "entity_link" : 0,
@@ -581,9 +577,7 @@ function war_zones_default_rules_link() {
       "link_type" : "confirm",
       "bundles" : {
         "event" : "event",
-        "war_zone_league" : "war_zone_league",
         "narrative_campaign_instance" : "narrative_campaign_instance",
-        "special_event" : "special_event",
         "war_zone_tournament" : "war_zone_tournament"
       },
       "entity_link" : 0,

@@ -93,29 +93,29 @@ function events_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'badges' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'locations' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
       ),
       'display' => array(
         'registration_link' => array(
           'teaser' => array(
             'weight' => '14',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
         'registration_form' => array(

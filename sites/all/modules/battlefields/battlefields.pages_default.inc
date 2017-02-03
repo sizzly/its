@@ -17,7 +17,7 @@ function battlefields_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -30;
+  $handler->weight = -27;
   $handler->conf = array(
     'title' => 'Battlefield',
     'form_title' => '',
@@ -160,7 +160,7 @@ function battlefields_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -22;
+  $handler->weight = -20;
   $handler->conf = array(
     'title' => 'Battlefield - not Iron Monger',
     'form_title' => '',

@@ -21,7 +21,7 @@ function events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Classification',
-    'weight' => '6',
+    'weight' => '4',
     'children' => array(
       0 => 'field_event_type',
       1 => 'field_supported_games',
@@ -59,7 +59,6 @@ function events_field_group_info() {
       1 => 'field_event_type',
       2 => 'field_location',
       3 => 'field_event_date_warzone',
-      4 => 'registration_link',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -86,7 +85,7 @@ function events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Details',
-    'weight' => '7',
+    'weight' => '5',
     'children' => array(
       0 => 'body',
       1 => 'field_website',
@@ -140,6 +139,36 @@ function events_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_leagueruleset|node|event|form';
+  $field_group->group_name = 'group_leagueruleset';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_warzone_settings';
+  $field_group->data = array(
+    'label' => 'League Ruleset',
+    'weight' => '16',
+    'children' => array(
+      0 => 'field_round_duration',
+      1 => 'field_event_league_rules',
+      2 => 'field_league_report_requirement',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-leagueruleset field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_leagueruleset|node|event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_spacer|node|event|teaser';
   $field_group->group_name = 'group_spacer';
   $field_group->entity_type = 'node';
@@ -178,15 +207,16 @@ function events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'War Zone Settings',
-    'weight' => '8',
+    'weight' => '6',
     'children' => array(
       0 => 'field_enable_its_features',
       1 => 'field_campaign_badge',
       2 => 'field_registration_deadline',
       3 => 'field_slots_warzone',
       4 => 'field_warzone_scheduling',
-      5 => 'field_status',
-      6 => 'field_open_registration',
+      5 => 'field_open_registration',
+      6 => 'field_enable_its_league_mangemen',
+      7 => 'group_leagueruleset',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -238,6 +268,7 @@ function events_field_group_info() {
   t('Content Wrapper');
   t('Details');
   t('Image Wrapper');
+  t('League Ruleset');
   t('Spacer');
   t('War Zone Settings');
   t('Wrapper');

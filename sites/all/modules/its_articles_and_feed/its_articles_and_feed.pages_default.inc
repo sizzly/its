@@ -17,7 +17,7 @@ function its_articles_and_feed_default_page_manager_handlers() {
   $handler->task = 'node_edit';
   $handler->subtask = '';
   $handler->handler = 'form_mutator';
-  $handler->weight = -20;
+  $handler->weight = -19;
   $handler->conf = array(
     'title' => 'Articles',
     'form_title' => '',

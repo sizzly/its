@@ -185,6 +185,7 @@ function battle_reports_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -696,6 +697,7 @@ function battle_reports_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -1132,6 +1134,7 @@ function battle_reports_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -1306,6 +1309,7 @@ function battle_reports_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
@@ -1393,6 +1397,7 @@ function battle_reports_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -2847,6 +2852,7 @@ You must select one of the available options.  If you do not see your army for s
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
