@@ -1666,7 +1666,7 @@ Rob</p>
       'title' => '',
       'body' => '<ul class="nav nav-tabs">
     <li class="active"><a href="#stream" data-toggle="tab"><i class="fa fa-road"></i> Activity</a></li>
-    <li><a href="#profile1" data-toggle="tab"><i class="fa fa-fire"></i> Battle</a></li>
+    <li><a href="/node/add/game-results"><i class="fa fa-fire"></i> Battle</a></li>
     <li><a href="/node/add/models"><i class="fa fa-paint-brush"></i> New Models</a></li>
     <li><a href="/node/add/listcrit"><i class="fa fa-th-list"></i> New List</a></li>
     <li role="presentation" class="dropdown">
@@ -1686,16 +1686,6 @@ Rob</p>
         $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
         echo drupal_render($render_estimate_form);
         ?>
-    </div>
-    <div class="tab-pane fade" id="profile1">
-        <div class="well well-sm">
-            <?php
-            module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
-            $entity_form_name = \'quick_battle\';
-            $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
-            echo drupal_render($render_estimate_form);
-            ?>
-        </div>
     </div>
     <div class="tab-pane fade" id="message1">
         <div class="well well-sm">
@@ -1722,25 +1712,6 @@ Rob</p>
     $pane->uuid = '7a8d6a70-688f-4376-a556-704f146e3143';
     $display->content['new-7a8d6a70-688f-4376-a556-704f146e3143'] = $pane;
     $display->panels['contentmain'][2] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
-    $pane = new stdClass();
-    $pane->pid = 'new-70244192-bfd0-46cd-b527-a074a19aefee';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'core_all_node_timeline-panel_pane_2';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '70244192-bfd0-46cd-b527-a074a19aefee';
-    $display->content['new-70244192-bfd0-46cd-b527-a074a19aefee'] = $pane;
-    $display->panels['contentmain'][3] = 'new-70244192-bfd0-46cd-b527-a074a19aefee';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

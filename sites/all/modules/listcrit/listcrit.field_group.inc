@@ -54,15 +54,17 @@ function listcrit_field_group_info() {
     'children' => array(
       0 => 'field_camp',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'bootstrap_grid_col',
     'format_settings' => array(
       'label' => 'First Row',
       'instance_settings' => array(
+        'panelize' => '0',
+        'bootstrap_grid_col_xs' => '12',
+        'bootstrap_grid_col_sm' => '12',
+        'bootstrap_grid_col_md' => '6',
+        'bootstrap_grid_col_lg' => '6',
         'required_fields' => 1,
-        'classes' => 'col-xs-12 col-sm-6',
-        'element' => 'div',
-        'attributes' => '',
-        'id' => 'node_listcrit_form_group_first_row',
+        'classes' => '',
       ),
     ),
   );
@@ -100,27 +102,110 @@ function listcrit_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_oob|node|listcrit|form';
-  $field_group->group_name = 'group_oob';
+  $field_group->identifier = 'group_list_list|node|listcrit|form';
+  $field_group->group_name = 'group_list_list';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listcrit';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_nav_core';
+  $field_group->data = array(
+    'label' => 'Core',
+    'weight' => '32',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_your_army',
+      2 => 'field_points_per_army',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'label' => 'Core',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-list-list field-group-bootstrap_fieldgroup_nav_item',
+      ),
+    ),
+  );
+  $field_groups['group_list_list|node|listcrit|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_nav_classification|node|listcrit|form';
+  $field_group->group_name = 'group_nav_classification';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listcrit';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_nav_core';
+  $field_group->data = array(
+    'label' => 'Classification',
+    'weight' => '34',
+    'children' => array(
+      0 => 'group_prop_wrapper',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-nav-classification field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_nav_classification|node|listcrit|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_nav_core|node|listcrit|form';
+  $field_group->group_name = 'group_nav_core';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'listcrit';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Order of Battle',
-    'weight' => '3',
+    'label' => 'Nav',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_your_army',
-      1 => 'field_points_per_army',
-      2 => 'field_batteresult_commander',
-      3 => 'field_listcrit_component_units',
+      0 => 'group_oob',
+      1 => 'group_list_list',
+      2 => 'group_nav_classification',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => '',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-oob field-group-fieldset',
+        'classes' => 'group-nav-core field-group-bootstrap_fieldgroup_nav',
+        'bootstrap_nav_type' => 'tabs',
+        'bootstrap_stacked' => 0,
+        'bootstrap_orientation' => 0,
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_nav_core|node|listcrit|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_oob|node|listcrit|form';
+  $field_group->group_name = 'group_oob';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listcrit';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_nav_core';
+  $field_group->data = array(
+    'label' => 'Order of Battle',
+    'weight' => '33',
+    'children' => array(
+      0 => 'field_batteresult_commander',
+      1 => 'field_listcrit_component_units',
+      2 => 'field_allied_detatchment',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
         'required_fields' => 1,
       ),
     ),
@@ -135,27 +220,33 @@ function listcrit_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'listcrit';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_nav_classification';
   $field_group->data = array(
     'label' => 'Classification',
-    'weight' => '4',
+    'weight' => '13',
     'children' => array(
-      0 => 'field_doctrine',
-      1 => 'field_primary_role',
-      2 => 'group_first_row',
-      3 => 'group_second_row',
-      4 => 'group_third_row',
-      5 => 'group_sixth_row',
+      0 => 'group_first_row',
+      1 => 'group_second_row',
+      2 => 'group_third_row',
+      3 => 'group_sixth_row',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_grid_row',
     'format_settings' => array(
       'label' => 'Classification',
       'instance_settings' => array(
+        'show_heading' => '0',
+        'heading_position' => '0',
+        'label_element' => 'h3',
+        'description_element' => 'p',
+        'panelize' => '0',
+        'bootstrap_grid_col_xs' => '12',
+        'bootstrap_grid_col_sm' => '12',
+        'bootstrap_grid_col_md' => '12',
+        'bootstrap_grid_col_lg' => '12',
         'required_fields' => 1,
         'classes' => '',
         'description' => '',
       ),
-      'formatter' => 'open',
     ),
   );
   $field_groups['group_prop_wrapper|node|listcrit|form'] = $field_group;
@@ -175,16 +266,19 @@ function listcrit_field_group_info() {
     'children' => array(
       0 => 'field_tactical_focus',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'bootstrap_grid_col',
     'format_settings' => array(
       'label' => 'Second Row',
       'instance_settings' => array(
+        'panelize' => '0',
+        'bootstrap_grid_col_xs' => '12',
+        'bootstrap_grid_col_sm' => '12',
+        'bootstrap_grid_col_md' => '6',
+        'bootstrap_grid_col_lg' => '6',
         'required_fields' => 1,
-        'classes' => 'col-xs-12 col-sm-6',
-        'element' => 'div',
-        'attributes' => '',
-        'id' => 'node_listcrit_form_group_second_row',
+        'classes' => '',
       ),
+      'formatter' => '',
     ),
   );
   $field_groups['group_second_row|node|listcrit|form'] = $field_group;
@@ -200,10 +294,8 @@ function listcrit_field_group_info() {
   $field_group->parent_name = 'group_prop_wrapper';
   $field_group->data = array(
     'label' => 'Sixth Row',
-    'weight' => '29',
-    'children' => array(
-      0 => 'field_aux',
-    ),
+    'weight' => '30',
+    'children' => array(),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Sixth Row',
@@ -259,20 +351,26 @@ function listcrit_field_group_info() {
   $field_group->parent_name = 'group_prop_wrapper';
   $field_group->data = array(
     'label' => 'Third Row',
-    'weight' => '30',
+    'weight' => '27',
     'children' => array(
       0 => 'field_opponent_s_army',
+      1 => 'field_doctrine',
+      2 => 'field_primary_role',
+      3 => 'field_aux',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'bootstrap_grid_col',
     'format_settings' => array(
       'label' => 'Third Row',
       'instance_settings' => array(
+        'panelize' => '0',
+        'bootstrap_grid_col_xs' => '12',
+        'bootstrap_grid_col_sm' => '12',
+        'bootstrap_grid_col_md' => '12',
+        'bootstrap_grid_col_lg' => '12',
         'required_fields' => 1,
-        'classes' => 'col-xs-12 col-sm-6',
-        'element' => 'div',
-        'attributes' => '',
-        'id' => 'node_listcrit_form_group_third_row',
+        'classes' => '',
       ),
+      'formatter' => '',
     ),
   );
   $field_groups['group_third_row|node|listcrit|form'] = $field_group;
@@ -311,8 +409,10 @@ function listcrit_field_group_info() {
   // Included for use with string extractors like potx.
   t('Body Wrapper');
   t('Classification');
+  t('Core');
   t('First Row');
   t('Image Wrapper');
+  t('Nav');
   t('Order of Battle');
   t('Second Row');
   t('Sixth Row');

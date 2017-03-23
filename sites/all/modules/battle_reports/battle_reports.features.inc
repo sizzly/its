@@ -33,43 +33,6 @@ function battle_reports_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_default_entityform_type().
- */
-function battle_reports_default_entityform_type() {
-  $items = array();
-  $items['quick_battle'] = entity_import('entityform_type', '{
-    "type" : "quick_battle",
-    "label" : "Quick Battle",
-    "data" : {
-      "draftable" : 0,
-      "draft_redirect_path" : "",
-      "draft_button_text" : "",
-      "draft_save_text" : { "value" : "", "format" : "filtered_html" },
-      "submit_button_text" : "",
-      "submit_confirm_msg" : "",
-      "your_submissions" : "",
-      "disallow_resubmit_msg" : "",
-      "delete_confirm_msg" : "",
-      "page_title_view" : "",
-      "preview_page" : 0,
-      "submission_page_title" : "",
-      "submission_text" : { "value" : "", "format" : "filtered_html" },
-      "submission_show_submitted" : 0,
-      "submissions_view" : "default",
-      "user_submissions_view" : "default",
-      "form_status" : "ENTITYFORM_OPEN",
-      "roles" : { "2" : "2", "1" : 0, "3" : 0, "7" : 0, "9" : 0, "8" : 0 },
-      "resubmit_action" : "new",
-      "redirect_path" : "[current-page:url:path]",
-      "instruction_pre" : { "value" : "", "format" : "filtered_html" }
-    },
-    "weight" : "0",
-    "paths" : []
-  }');
-  return $items;
-}
-
-/**
  * Implements hook_flag_default_flags().
  */
 function battle_reports_flag_default_flags() {

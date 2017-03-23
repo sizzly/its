@@ -93,17 +93,14 @@ function its_army_profiles_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'shs',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
-        'shs' => array(
-          'create_new_levels' => 0,
-          'create_new_terms' => 0,
-          'force_deepest' => 1,
-          'node_count' => 0,
-        ),
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
       ),
-      'type' => 'taxonomy_shs',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 1,
     ),
   );

@@ -13,6 +13,175 @@ function listcrit_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_edit__form_mutator_3e377b1c-3b52-4fb3-abad-80173cd19053';
+  $handler->task = 'node_edit';
+  $handler->subtask = '';
+  $handler->handler = 'form_mutator';
+  $handler->weight = -17;
+  $handler->conf = array(
+    'title' => 'List Crit - Hide Obsolete Stuff',
+    'form_title' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'modification' => array(
+      ':title' => array(
+        'override' => 0,
+        'label' => 'Title',
+        'hidden_field' => 0,
+      ),
+      'body' => array(
+        'override' => 0,
+        'label' => 'List and Commentary',
+        'hidden_field' => 0,
+      ),
+      'field_your_army' => array(
+        'override' => 0,
+        'label' => 'Army',
+        'hidden_field' => 0,
+      ),
+      'field_points_per_army' => array(
+        'override' => 0,
+        'label' => 'Points',
+        'hidden_field' => 0,
+      ),
+      'field_opponent_s_army' => array(
+        'override' => 1,
+        'label' => 'Designed to defeat',
+        'hidden_field' => '1',
+      ),
+      'field_batteresult_commander' => array(
+        'override' => 0,
+        'label' => 'Commander',
+        'hidden_field' => 0,
+      ),
+      'field_rate_content' => array(
+        'override' => 0,
+        'label' => 'Rate List',
+        'hidden_field' => 0,
+      ),
+      'field_camp' => array(
+        'override' => 0,
+        'label' => 'Camp',
+        'hidden_field' => 0,
+      ),
+      'field_tactical_focus' => array(
+        'override' => 0,
+        'label' => 'Tactical Focus',
+        'hidden_field' => 0,
+      ),
+      'field_doctrine' => array(
+        'override' => 1,
+        'label' => 'Doctrine',
+        'hidden_field' => '1',
+      ),
+      'field_primary_role' => array(
+        'override' => 1,
+        'label' => 'Primary Role',
+        'hidden_field' => '1',
+      ),
+      'field_aux' => array(
+        'override' => 1,
+        'label' => 'Auxillary',
+        'hidden_field' => '1',
+      ),
+      'field_image' => array(
+        'override' => 0,
+        'label' => 'Image',
+        'hidden_field' => 0,
+      ),
+      'field_listcrit_component_units' => array(
+        'override' => 0,
+        'label' => 'Component Units',
+        'hidden_field' => 0,
+      ),
+      'field_radioactivity' => array(
+        'override' => 0,
+        'label' => 'Radioactivity',
+        'hidden_field' => 0,
+      ),
+      'field_short_description' => array(
+        'override' => 1,
+        'label' => 'Short Description',
+        'hidden_field' => '1',
+      ),
+      ':author' => array(
+        'override' => 0,
+        'label' => 'Authoring information',
+        'hidden_field' => 0,
+      ),
+      ':menu' => array(
+        'override' => 0,
+        'label' => 'Menu settings',
+        'hidden_field' => 0,
+      ),
+      ':comment_settings' => array(
+        'override' => 0,
+        'label' => 'Comment settings',
+        'hidden_field' => 0,
+      ),
+      ':path' => array(
+        'override' => 0,
+        'label' => 'URL path settings',
+        'hidden_field' => 0,
+      ),
+      ':options' => array(
+        'override' => 0,
+        'label' => 'Publishing options',
+        'hidden_field' => 0,
+      ),
+      ':revision_information' => array(
+        'override' => 0,
+        'label' => 'Revision information',
+        'hidden_field' => 0,
+      ),
+      ':redirect' => array(
+        'override' => 0,
+        'label' => 'URL redirects',
+        'hidden_field' => 0,
+      ),
+      ':flag' => array(
+        'override' => 0,
+        'label' => 'Flags',
+        'hidden_field' => 0,
+      ),
+      ':actions:submit' => array(
+        'override' => 0,
+        'label' => 'Save',
+        'hidden_field' => 0,
+      ),
+      ':actions:preview' => array(
+        'override' => 0,
+        'label' => 'Preview',
+        'hidden_field' => 0,
+      ),
+      ':actions:delete' => array(
+        'override' => 0,
+        'label' => 'Delete',
+        'hidden_field' => 0,
+      ),
+    ),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'listcrit' => 'listcrit',
+            ),
+          ),
+          'context' => 'argument_node_edit_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $export['node_edit__form_mutator_3e377b1c-3b52-4fb3-abad-80173cd19053'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view__list_crit';
   $handler->task = 'node_view';
   $handler->subtask = '';
@@ -258,7 +427,23 @@ order-of-battle/listcrit',
     $pane->type = 'custom';
     $pane->subtype = 'posts_update_no_battle';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+              1 => 3,
+              2 => 9,
+              3 => 8,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
