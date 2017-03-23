@@ -205,22 +205,22 @@ function battle_reports_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '9',
         ),
         'metatags' => array(
-          'weight' => '15',
+          'weight' => '11',
         ),
         'xmlsitemap' => array(
-          'weight' => '14',
+          'weight' => '10',
         ),
         'badges' => array(
-          'weight' => '16',
+          'weight' => '12',
         ),
         'locations' => array(
-          'weight' => '17',
+          'weight' => '13',
         ),
       ),
       'display' => array(),
@@ -268,19 +268,19 @@ function battle_reports_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '13',
         ),
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '15',
         ),
         'xmlsitemap' => array(
-          'weight' => '11',
-        ),
-        'badges' => array(
           'weight' => '14',
         ),
+        'badges' => array(
+          'weight' => '16',
+        ),
         'locations' => array(
-          'weight' => '15',
+          'weight' => '17',
         ),
       ),
       'display' => array(),
@@ -351,7 +351,7 @@ function battle_reports_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_game_result_system_';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_game_result_system_'] = $strongarm;
 
   $strongarm = new stdClass();

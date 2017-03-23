@@ -3039,6 +3039,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_allied_detatchment']['label'] = '';
   $handler->display->display_options['fields']['field_allied_detatchment']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_allied_detatchment']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_allied_detatchment']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_allied_detatchment']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -3085,7 +3086,6 @@ Displaying @start - @end of @total
   $handler->display->display_options['filters']['field_allied_detatchment_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_allied_detatchment_tid']['value'] = '';
   $handler->display->display_options['filters']['field_allied_detatchment_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_allied_detatchment_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_allied_detatchment_tid']['vocabulary'] = 'armies';
   $export['battles_all_page_layout'] = $view;
 
@@ -3938,6 +3938,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_allied_detatchment']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_allied_detatchment']['empty'] = 'None';
   $handler->display->display_options['fields']['field_allied_detatchment']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_allied_detatchment']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_allied_detatchment']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_allied_detatchment']['separator'] = '|';
   /* Field: COUNT(DISTINCT Content: Nid) */

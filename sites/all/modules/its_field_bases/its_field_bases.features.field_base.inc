@@ -314,7 +314,7 @@ function its_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_allied_detatchment'.
   $field_bases['field_allied_detatchment'] = array(
     'active' => 1,
-    'cardinality' => 2,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_allied_detatchment',
@@ -330,7 +330,6 @@ function its_field_bases_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'armies',
           'parent' => 0,
-          'depth' => '',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
@@ -465,7 +464,6 @@ function its_field_bases_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'armies',
           'parent' => 0,
-          'depth' => '',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
@@ -836,6 +834,23 @@ function its_field_bases_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_bye_wzscore'.
+  $field_bases['field_bye_wzscore'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_bye_wzscore',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_campaign_badge_status'.
@@ -1485,6 +1500,32 @@ if ($results == "3") {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_is_game_system'.
+  $field_bases['field_is_game_system'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_is_game_system',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'No',
+        1 => 'Yes',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_location'.
   $field_bases['field_location'] = array(
     'active' => 1,
@@ -1692,7 +1733,7 @@ if ($results == "3") {
   // Exported field_base: 'field_opponent_s_allied_detachme'.
   $field_bases['field_opponent_s_allied_detachme'] = array(
     'active' => 1,
-    'cardinality' => 2,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_opponent_s_allied_detachme',
@@ -1708,7 +1749,6 @@ if ($results == "3") {
         0 => array(
           'vocabulary' => 'armies',
           'parent' => 0,
-          'depth' => '',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
@@ -1737,7 +1777,10 @@ if ($results == "3") {
         0 => array(
           'vocabulary' => 'armies',
           'parent' => 0,
-          'depth' => '',
+        ),
+        1 => array(
+          'parent' => 0,
+          'vocabulary' => 'armies',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',
@@ -2675,7 +2718,10 @@ if ($results == "5") {
         0 => array(
           'vocabulary' => 'armies',
           'parent' => 0,
-          'depth' => '',
+        ),
+        1 => array(
+          'parent' => 0,
+          'vocabulary' => 'armies',
         ),
       ),
       'options_list_callback' => 'content_taxonomy_allowed_values',

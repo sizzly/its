@@ -68,19 +68,22 @@ function listcrit_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '9',
-        ),
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '8',
-        ),
-        'xmlsitemap' => array(
           'weight' => '7',
         ),
+        'title' => array(
+          'weight' => '1',
+        ),
+        'path' => array(
+          'weight' => '6',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '5',
+        ),
         'badges' => array(
-          'weight' => '10',
+          'weight' => '8',
+        ),
+        'locations' => array(
+          'weight' => '9',
         ),
       ),
       'display' => array(),
@@ -118,7 +121,7 @@ function listcrit_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_listcrit';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_listcrit'] = $strongarm;
 
   $strongarm = new stdClass();

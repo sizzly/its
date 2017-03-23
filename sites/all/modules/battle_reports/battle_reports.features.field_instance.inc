@@ -235,20 +235,69 @@ function battle_reports_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-game_result_system_-field_allied_detatchment'.
+  $field_instances['node-game_result_system_-field_allied_detatchment'] = array(
+    'bundle' => 'game_result_system_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 35,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_allied_detatchment',
+    'label' => 'Your Allied Detatchment',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 64,
     ),
   );
 
@@ -295,7 +344,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 58,
+      'weight' => 61,
     ),
   );
 
@@ -436,7 +485,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 60,
+      'weight' => 63,
     ),
   );
 
@@ -531,7 +580,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 61,
+      'weight' => 65,
     ),
   );
 
@@ -656,14 +705,14 @@ function battle_reports_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 62,
+      'weight' => 66,
     ),
   );
 
   // Exported field_instance: 'node-game_result_system_-field_event_link'.
   $field_instances['node-game_result_system_-field_event_link'] = array(
     'bundle' => 'game_result_system_',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -695,13 +744,20 @@ function battle_reports_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 13,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 11,
     ),
   );
 
@@ -805,7 +861,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 16,
+      'weight' => 12,
     ),
   );
 
@@ -947,7 +1003,7 @@ function battle_reports_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1097,6 +1153,54 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-game_result_system_-field_opponent_s_allied_detachme'.
+  $field_instances['node-game_result_system_-field_opponent_s_allied_detachme'] = array(
+    'bundle' => 'game_result_system_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 34,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_opponent_s_allied_detachme',
+    'label' => 'Opponent\'s Allied Detachment',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 67,
+    ),
+  );
+
   // Exported field_instance: 'node-game_result_system_-field_opponent_s_army'.
   $field_instances['node-game_result_system_-field_opponent_s_army'] = array(
     'bundle' => 'game_result_system_',
@@ -1132,12 +1236,15 @@ function battle_reports_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => '',
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'content_taxonomy_opt_groups' => FALSE,
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 15,
     ),
   );
@@ -1227,7 +1334,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 71,
+      'weight' => 18,
     ),
   );
 
@@ -1275,7 +1382,7 @@ function battle_reports_field_default_field_instances() {
   // Exported field_instance: 'node-game_result_system_-field_your_army'.
   $field_instances['node-game_result_system_-field_your_army'] = array(
     'bundle' => 'game_result_system_',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1307,12 +1414,15 @@ function battle_reports_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => '',
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'content_taxonomy_opt_groups' => 0,
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 13,
     ),
   );
@@ -1356,7 +1466,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 69,
+      'weight' => 62,
     ),
   );
 
@@ -1445,20 +1555,21 @@ function battle_reports_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1496,18 +1607,15 @@ function battle_reports_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'shs',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
-        'shs' => array(
-          'create_new_levels' => 0,
-          'create_new_terms' => 0,
-          'force_deepest' => 1,
-          'node_count' => 0,
-        ),
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'moderate',
+        'size' => 60,
       ),
-      'type' => 'taxonomy_shs',
-      'weight' => 37,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 47,
     ),
   );
 
@@ -1553,7 +1661,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 34,
+      'weight' => 44,
     ),
   );
 
@@ -1692,7 +1800,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 36,
+      'weight' => 46,
     ),
   );
 
@@ -1787,7 +1895,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 38,
+      'weight' => 48,
     ),
   );
 
@@ -1828,7 +1936,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -1869,7 +1977,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 8,
+      'weight' => 4,
     ),
   );
 
@@ -1912,7 +2020,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 39,
+      'weight' => 49,
     ),
   );
 
@@ -1962,7 +2070,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 6,
     ),
   );
 
@@ -2067,7 +2175,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 7,
     ),
   );
 
@@ -2136,7 +2244,7 @@ function battle_reports_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -2201,7 +2309,7 @@ function battle_reports_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -2428,18 +2536,15 @@ function battle_reports_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'shs',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
-        'shs' => array(
-          'create_new_levels' => 0,
-          'create_new_terms' => 0,
-          'force_deepest' => 1,
-          'node_count' => 0,
-        ),
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
       ),
-      'type' => 'taxonomy_shs',
-      'weight' => 40,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 50,
     ),
   );
 
@@ -2477,17 +2582,14 @@ function battle_reports_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'shs',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
-        'shs' => array(
-          'create_new_levels' => 0,
-          'create_new_terms' => 0,
-          'force_deepest' => 1,
-          'node_count' => 0,
-        ),
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
       ),
-      'type' => 'taxonomy_shs',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 39,
     ),
   );
@@ -2634,7 +2736,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'radioactivity',
       'settings' => array(),
       'type' => 'radioactivity_basic_widget',
-      'weight' => 12,
+      'weight' => 8,
     ),
   );
 
@@ -2677,7 +2779,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 48,
+      'weight' => 14,
     ),
   );
 
@@ -2718,7 +2820,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'computed_field',
       'settings' => array(),
       'type' => 'computed',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -2727,9 +2829,7 @@ function battle_reports_field_default_field_instances() {
     'bundle' => 'game_results',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the army you played during this game.
-
-You must select one of the available options.  If you do not see your army for some reason please contact us.',
+    'description' => 'The primary army you played during this game.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -2758,17 +2858,14 @@ You must select one of the available options.  If you do not see your army for s
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'shs',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
-        'shs' => array(
-          'create_new_levels' => 0,
-          'create_new_terms' => 0,
-          'force_deepest' => 1,
-          'node_count' => 0,
-        ),
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
       ),
-      'type' => 'taxonomy_shs',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 37,
     ),
   );
@@ -2811,7 +2908,7 @@ You must select one of the available options.  If you do not see your army for s
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 35,
+      'weight' => 45,
     ),
   );
 
@@ -3224,9 +3321,6 @@ You must select one of the available options.  If you do not see your army for s
   t('Draw');
   t('Enemy Commander');
   t('Enemy Commander Survival');
-  t('Enter the army you played during this game.
-
-You must select one of the available options.  If you do not see your army for some reason please contact us.');
   t('Enter the army your opponent played during this game.  You must select one of the available options.  If you do not see your army for some reason please contact us.');
   t('Event');
   t('Game Reference');
@@ -3245,6 +3339,7 @@ You must select one of the available options.  If you do not see your army for s
   t('Points per army');
   t('Radioactivity');
   t('The battlefield represents the real life location of where the game was played.  You can start typing a likely name but if you don\'t find the location (many clubs and store locations are already there) then you can click the "Add Battlefield" button and you will be prompted to add a battlefield.');
+  t('The primary army you played during this game.');
   t('This is the unit or model that functions as the commander of your army.  It could represent your caster, your warlord, or captain.');
   t('Verbose Teaser');
   t('Victory');

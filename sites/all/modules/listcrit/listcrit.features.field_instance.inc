@@ -56,11 +56,52 @@ function listcrit_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 10,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-listcrit-field_allied_detatchment'.
+  $field_instances['node-listcrit-field_allied_detatchment'] = array(
+    'bundle' => 'listcrit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_allied_detatchment',
+    'label' => 'Allied Detatchments',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 9,
     ),
   );
 
@@ -96,7 +137,7 @@ function listcrit_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 28,
+      'weight' => 31,
     ),
   );
 
@@ -136,7 +177,7 @@ function listcrit_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -207,10 +248,11 @@ function listcrit_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 27,
+      'weight' => 28,
     ),
   );
 
@@ -240,7 +282,7 @@ function listcrit_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Image',
+    'label' => 'Teaser Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -273,7 +315,7 @@ function listcrit_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -314,7 +356,7 @@ function listcrit_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -357,7 +399,7 @@ function listcrit_field_default_field_instances() {
         ),
       ),
       'type' => 'taxonomy_shs',
-      'weight' => 29,
+      'weight' => 30,
     ),
   );
 
@@ -432,10 +474,11 @@ function listcrit_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'content_taxonomy_opt_groups' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 28,
+      'weight' => 29,
     ),
   );
 
@@ -479,7 +522,7 @@ function listcrit_field_default_field_instances() {
       'module' => 'radioactivity',
       'settings' => array(),
       'type' => 'radioactivity_basic_widget',
-      'weight' => 31,
+      'weight' => 10,
     ),
   );
 
@@ -522,7 +565,7 @@ function listcrit_field_default_field_instances() {
       'module' => 'vud_field',
       'settings' => array(),
       'type' => 'vud_field_default_widget',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -562,7 +605,7 @@ function listcrit_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -605,7 +648,7 @@ function listcrit_field_default_field_instances() {
   // Exported field_instance: 'node-listcrit-field_your_army'.
   $field_instances['node-listcrit-field_your_army'] = array(
     'bundle' => 'listcrit',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'The primary faction for this list.',
     'display' => array(
@@ -631,16 +674,19 @@ function listcrit_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'shs',
+      'module' => 'taxonomy',
       'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'shs' => array(
           'create_new_levels' => 0,
           'create_new_terms' => 0,
           'force_deepest' => 1,
           'node_count' => 0,
         ),
+        'size' => 60,
       ),
-      'type' => 'taxonomy_shs',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 3,
     ),
   );
@@ -751,6 +797,7 @@ function listcrit_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A brief description of this army list.  255 character limit.');
+  t('Allied Detatchments');
   t('Army');
   t('Auxillary');
   t('Camp');
@@ -768,6 +815,7 @@ function listcrit_field_default_field_instances() {
   t('Rate List');
   t('Short Description');
   t('Tactical Focus');
+  t('Teaser Image');
   t('The primary faction for this list.');
 
   return $field_instances;

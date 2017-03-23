@@ -858,7 +858,7 @@ function narrative_campaigns_views_default_views() {
   $handler->display->display_options['fields']['field_warzone_game']['label'] = '';
   $handler->display->display_options['fields']['field_warzone_game']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_warzone_game']['element_label_colon'] = FALSE;
-  /* Field: Content: Event Type */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_special_event_type']['id'] = 'field_special_event_type';
   $handler->display->display_options['fields']['field_special_event_type']['table'] = 'field_data_field_special_event_type';
   $handler->display->display_options['fields']['field_special_event_type']['field'] = 'field_special_event_type';
@@ -3420,7 +3420,7 @@ print $link;
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Field: Army */
+  /* Field: Node registration: Army */
   $handler->display->display_options['fields']['field_register_army']['id'] = 'field_register_army';
   $handler->display->display_options['fields']['field_register_army']['table'] = 'field_data_field_register_army';
   $handler->display->display_options['fields']['field_register_army']['field'] = 'field_register_army';

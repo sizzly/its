@@ -18,29 +18,80 @@ function battle_reports_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game_result_system_';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_nav_core';
   $field_group->data = array(
     'label' => 'Battle Meta',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_mission',
       1 => 'field_battle_deployment',
       2 => 'field_battle_mission_rules',
       3 => 'field_battle_my_vc',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Battle Meta',
+      'formatter' => '',
       'instance_settings' => array(
-        'required_fields' => 0,
-        'id' => '',
-        'classes' => 'group-additional-meta field-group-fieldset',
-        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'collapsible',
     ),
   );
   $field_groups['group_additional_meta|node|game_result_system_|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_battle_content|node|game_result_system_|form';
+  $field_group->group_name = 'group_battle_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_result_system_';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_nav_core';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '6',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_images',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_battle_content|node|game_result_system_|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_battle_content|node|game_results|form';
+  $field_group->group_name = 'group_battle_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_results';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_nav_core';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '6',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_images',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-battle-content field-group-bootstrap_fieldgroup_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_battle_content|node|game_results|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -50,29 +101,25 @@ function battle_reports_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game_results';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_nav_core';
   $field_group->data = array(
     'label' => 'Core',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_game_date',
       1 => 'field_your_army',
       2 => 'field_opponent_s_army',
       3 => 'field_your_results',
-      4 => 'field_opponent',
-      5 => 'field_location',
-      6 => 'field_opponent_s_name',
-      7 => 'field_points_per_army',
+      4 => 'field_location',
+      5 => 'field_points_per_army',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Core',
+      'formatter' => '',
       'instance_settings' => array(
+        'classes' => '',
         'required_fields' => 1,
-        'classes' => 'group-battle-core field-group-fieldset',
-        'description' => 'These are the most important elements of your battle.',
       ),
-      'formatter' => 'open',
     ),
   );
   $field_groups['group_battle_core|node|game_results|form'] = $field_group;
@@ -113,26 +160,23 @@ function battle_reports_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game_results';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_nav_core';
   $field_group->data = array(
     'label' => 'Battle Meta',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_mission',
       1 => 'field_battle_deployment',
       2 => 'field_battle_mission_rules',
       3 => 'field_battle_my_vc',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Battle Meta',
+      'formatter' => '',
       'instance_settings' => array(
-        'required_fields' => 0,
-        'id' => '',
         'classes' => '',
-        'description' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'open',
     ),
   );
   $field_groups['group_battle_events|node|game_results|form'] = $field_group;
@@ -297,10 +341,10 @@ function battle_reports_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game_result_system_';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_nav_core';
   $field_group->data = array(
     'label' => 'Core',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_game_date',
       1 => 'field_opponent',
@@ -310,14 +354,12 @@ function battle_reports_field_group_info() {
       5 => 'field_location',
       6 => 'field_points_per_army',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => '',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-core field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
-        'id' => '',
       ),
     ),
   );
@@ -504,32 +546,95 @@ function battle_reports_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_order_of_battle|node|game_result_system_|form';
-  $field_group->group_name = 'group_order_of_battle';
+  $field_group->identifier = 'group_nav_core|node|game_result_system_|form';
+  $field_group->group_name = 'group_nav_core';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game_result_system_';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
+    'label' => 'Nav',
+    'weight' => '2',
+    'children' => array(
+      0 => 'group_additional_meta',
+      1 => 'group_order_of_battle',
+      2 => 'group_core',
+      3 => 'group_battle_content',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav',
+    'format_settings' => array(
+      'label' => 'Nav',
+      'instance_settings' => array(
+        'bootstrap_nav_type' => 'tabs',
+        'bootstrap_stacked' => '0',
+        'bootstrap_orientation' => '0',
+        'required_fields' => 1,
+        'classes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_nav_core|node|game_result_system_|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_nav_core|node|game_results|form';
+  $field_group->group_name = 'group_nav_core';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_results';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Nav',
+    'weight' => '2',
+    'children' => array(
+      0 => 'group_battle_core',
+      1 => 'group_battle_events',
+      2 => 'group_order_of_battle',
+      3 => 'group_battle_content',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-nav-core field-group-bootstrap_fieldgroup_nav',
+        'bootstrap_nav_type' => 'tabs',
+        'bootstrap_stacked' => 0,
+        'bootstrap_orientation' => 0,
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_nav_core|node|game_results|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_order_of_battle|node|game_result_system_|form';
+  $field_group->group_name = 'group_order_of_battle';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_result_system_';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_nav_core';
+  $field_group->data = array(
     'label' => 'Order of Battle',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_batteresult_commander',
       1 => 'field_battle_most_valuable_unit',
       2 => 'field_your_commander_survival',
       3 => 'field_enemy_commander_survival',
       4 => 'field_battleresult_enemy_command',
+      5 => 'field_opponent_s_allied_detachme',
+      6 => 'field_allied_detatchment',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Order of Battle',
+      'formatter' => '',
       'instance_settings' => array(
-        'required_fields' => 0,
-        'id' => '',
-        'classes' => 'group-order-of-battle field-group-fieldset',
-        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'open',
     ),
   );
   $field_groups['group_order_of_battle|node|game_result_system_|form'] = $field_group;
@@ -542,29 +647,28 @@ function battle_reports_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game_results';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_nav_core';
   $field_group->data = array(
     'label' => 'Order of Battle',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_batteresult_commander',
-      1 => 'field_battle_most_valuable_unit',
-      2 => 'field_allied_detatchment',
-      3 => 'field_opponent_s_allied_detachme',
-      4 => 'field_your_commander_survival',
-      5 => 'field_enemy_commander_survival',
-      6 => 'field_battleresult_enemy_command',
+      0 => 'field_opponent',
+      1 => 'field_opponent_s_name',
+      2 => 'field_batteresult_commander',
+      3 => 'field_battle_most_valuable_unit',
+      4 => 'field_allied_detatchment',
+      5 => 'field_opponent_s_allied_detachme',
+      6 => 'field_your_commander_survival',
+      7 => 'field_enemy_commander_survival',
+      8 => 'field_battleresult_enemy_command',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'label' => 'Order of Battle',
+      'formatter' => '',
       'instance_settings' => array(
+        'classes' => '',
         'required_fields' => 1,
-        'id' => '',
-        'classes' => 'group-order-of-battle field-group-fieldset',
-        'description' => '',
       ),
-      'formatter' => 'open',
     ),
   );
   $field_groups['group_order_of_battle|node|game_results|form'] = $field_group;
@@ -697,9 +801,11 @@ function battle_reports_field_group_info() {
   t('Body Wrapper');
   t('Campaign');
   t('Commanders Slain');
+  t('Content');
   t('Content Wrapper');
   t('Core');
   t('Image Wrapper');
+  t('Nav');
   t('Order of Battle');
   t('Spacer');
   t('Theater of War');

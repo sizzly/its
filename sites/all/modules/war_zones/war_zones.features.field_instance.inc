@@ -6697,7 +6697,7 @@ function war_zones_field_default_field_instances() {
   // 'node_registration-war_zone_tournament-field_register_army'.
   $field_instances['node_registration-war_zone_tournament-field_register_army'] = array(
     'bundle' => 'war_zone_tournament',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -6718,16 +6718,19 @@ function war_zones_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'shs',
+      'module' => 'taxonomy',
       'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'shs' => array(
           'create_new_levels' => 0,
           'create_new_terms' => 0,
           'force_deepest' => 1,
           'node_count' => 0,
         ),
+        'size' => 60,
       ),
-      'type' => 'taxonomy_shs',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 2,
     ),
   );

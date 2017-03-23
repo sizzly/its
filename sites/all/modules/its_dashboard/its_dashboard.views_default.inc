@@ -1934,11 +1934,10 @@ You have no suitable battles to perform a mass update against.';
   );
   $handler->display->display_options['fields']['field_images']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
-  /* Field: Content: Opponent */
+  /* Field: Content: Opponent ID */
   $handler->display->display_options['fields']['field_opponent']['id'] = 'field_opponent';
   $handler->display->display_options['fields']['field_opponent']['table'] = 'field_data_field_opponent';
   $handler->display->display_options['fields']['field_opponent']['field'] = 'field_opponent';
-  $handler->display->display_options['fields']['field_opponent']['label'] = 'Opponent ID';
   $handler->display->display_options['fields']['field_opponent']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_opponent']['alter']['text'] = '<img src="http://itoysoldiers.com/accept.png">';
   $handler->display->display_options['fields']['field_opponent']['empty'] = '<img src="http://itoysoldiers.com/cancel.png">';
