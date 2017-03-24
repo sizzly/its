@@ -58,6 +58,71 @@ function its_rules_default_rules_configuration() {
             "value" : [ "bid" ]
           }
         },
+        { "data_set" : {
+            "data" : [ "entity-created:field-mission" ],
+            "value" : [ "bid:field-mission" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-game-date" ],
+            "value" : [ "bid:field-game-date" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-your-army" ],
+            "value" : [ "bid:field-opponent-s-army" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-opponent-s-army" ],
+            "value" : [ "bid:field-your-army" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-location" ],
+            "value" : [ "bid:field-location" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-event-link" ],
+            "value" : [ "bid:field-event-link" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-points-per-army" ],
+            "value" : [ "bid:field-points-per-army" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-batteresult-commander" ],
+            "value" : [ "bid:field-battleresult-enemy-command" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-battle-deployment" ],
+            "value" : [ "bid:field-battle-deployment" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-battle-mission-rules" ],
+            "value" : [ "bid:field-battle-mission-rules" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-your-commander-survival" ],
+            "value" : [ "bid:field-enemy-commander-survival" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-enemy-commander-survival" ],
+            "value" : [ "bid:field-your-commander-survival" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-battleresult-enemy-command" ],
+            "value" : [ "bid:field-batteresult-commander" ]
+          }
+        },
         { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
         { "data_set" : {
             "data" : [ "bid:field-game-reference" ],
@@ -194,7 +259,7 @@ function its_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "Comment", "Master" ],
-      "REQUIRES" : [ "userpoints_rules", "rules", "rules_conditional", "comment" ],
+      "REQUIRES" : [ "userpoints_rules", "rules", "rules_conditional", "flag", "comment" ],
       "ON" : { "comment_insert" : [] },
       "DO" : [
         { "userpoints_action_grant_points" : {
@@ -276,6 +341,62 @@ function its_rules_default_rules_configuration() {
                     "message" : "                    \\u003Cp\\u003E\\u003Cimg alt=\\u0022\\u0022 src=\\u0022http:\\/\\/l.itoysoldiers.com\\/index.php\\/asset\\/5:new-comment-image\\u0022 style=\\u0022width: 600px; height: 200px;\\u0022 \\/\\u003E\\u003C\\/p\\u003E\\r\\n                    \\u003Ch2\\u003E[comment:author] has replied to you on [comment:node:title]\\u003C\\/h2\\u003E\\r\\n\\r\\n                    \\u003Ctable border=\\u00220\\u0022 cellpadding=\\u00220\\u0022 cellspacing=\\u00220\\u0022 style=\\u0022background-color:#505050; border:1px solid #353535; border-radius:5px;\\u0022\\u003E\\r\\n                        \\u003Ctr\\u003E\\r\\n                            \\u003Ctd align=\\u0022center\\u0022 valign=\\u0022middle\\u0022 style=\\u0022color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;\\u0022\\u003E\\r\\n                                \\u003Ca href=\\u0022[comment:node:url]\\u0022 target=\\u0022_blank\\u0022 style=\\u0022color:#FFFFFF; text-decoration:none;\\u0022\\u003EView the Post\\u003C\\/a\\u003E\\r\\n                            \\u003C\\/td\\u003E\\r\\n                        \\u003C\\/tr\\u003E\\r\\n                    \\u003C\\/table\\u003E",
                     "language" : [ "" ]
                   }
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_is_of_bundle" : {
+                  "entity" : [ "comment:node" ],
+                  "type" : "node",
+                  "bundle" : { "value" : { "game_results" : "game_results" } }
+                }
+              },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "flag_flagged_node" : {
+                          "flag" : "acknowledge_battle",
+                          "node" : [ "comment:node" ],
+                          "flagging_user" : [ "comment:node:field-opponent" ]
+                        }
+                      },
+                      "DO" : [
+                        { "CONDITIONAL" : [
+                            {
+                              "IF" : { "NOT data_is" : {
+                                  "data" : [ "comment:author" ],
+                                  "value" : [ "comment:node:field-opponent" ]
+                                }
+                              },
+                              "DO" : [
+                                { "userpoints_action_grant_points" : {
+                                    "user" : [ "comment:node:field-opponent" ],
+                                    "points" : "1",
+                                    "tid" : "0",
+                                    "entity" : [ "comment:node" ],
+                                    "description" : "Player 2 renown on comment.",
+                                    "operation" : "Add",
+                                    "display" : "0",
+                                    "moderate" : "approved"
+                                  }
+                                },
+                                { "mail" : {
+                                    "to" : [ "comment:node:field-opponent:mail" ],
+                                    "subject" : "[iToysoldiers] New Comment on [comment:node:title]",
+                                    "message" : "\\u003Cp\\u003E\\u003Cimg alt=\\u0022\\u0022 src=\\u0022http:\\/\\/l.itoysoldiers.com\\/index.php\\/asset\\/5:new-comment-image\\u0022 style=\\u0022width: 600px; height: 200px;\\u0022 \\/\\u003E\\u003C\\/p\\u003E\\r\\n                    \\u003Ch2\\u003E[comment:author] commented on [comment:node:title]\\u003C\\/h2\\u003E\\r\\n\\r\\n                    \\u003Ctable border=\\u00220\\u0022 cellpadding=\\u00220\\u0022 cellspacing=\\u00220\\u0022 style=\\u0022background-color:#505050; border:1px solid #353535; border-radius:5px;\\u0022\\u003E\\r\\n                        \\u003Ctr\\u003E\\r\\n                            \\u003Ctd align=\\u0022center\\u0022 valign=\\u0022middle\\u0022 style=\\u0022color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;\\u0022\\u003E\\r\\n                                \\u003Ca href=\\u0022[comment:node:url]\\u0022 target=\\u0022_blank\\u0022 style=\\u0022color:#FFFFFF; text-decoration:none;\\u0022\\u003EView the Post\\u003C\\/a\\u003E\\r\\n                            \\u003C\\/td\\u003E\\r\\n                        \\u003C\\/tr\\u003E\\r\\n                    \\u003C\\/table\\u003E",
+                                    "language" : [ "" ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
