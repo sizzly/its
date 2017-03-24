@@ -2034,24 +2034,6 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_war_zone_all_on_save_new_content'] = entity_import('rules_config', '{ "rules_war_zone_all_on_save_new_content" : {
-      "LABEL" : "War Zone: All: On Save New Content",
-      "PLUGIN" : "reaction rule",
-      "ACTIVE" : false,
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional" ],
-      "ON" : { "node_insert" : [] },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "node" ],
-            "type" : "node",
-            "bundle" : { "value" : { "event" : "event" } }
-          }
-        }
-      ],
-      "DO" : [ { "SWITCH" : { "USING" : { "data" : [ "node:type" ] }, "DO" : [] } } ]
-    }
-  }');
   $items['rules_war_zone_all_player_has_registered_for_a_war_zone'] = entity_import('rules_config', '{ "rules_war_zone_all_player_has_registered_for_a_war_zone" : {
       "LABEL" : "War Zone: All: Player has registered for a War Zone",
       "PLUGIN" : "reaction rule",
