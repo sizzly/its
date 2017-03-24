@@ -626,6 +626,329 @@ function its_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_master_save_new_content'] = entity_import('rules_config', '{ "rules_master_save_new_content" : {
+      "LABEL" : "Master: Save New Content",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Master" ],
+      "REQUIRES" : [ "rules_conditional", "rules", "userpoints_rules", "php", "og" ],
+      "ON" : { "node_insert" : [] },
+      "DO" : [
+        { "SWITCH" : {
+            "USING" : { "data" : [ "node:type" ] },
+            "DO" : [
+              { "CASE" : {
+                  "USING" : { "value" : "gallery" },
+                  "DO" : [
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "message",
+                          "param_type" : "stream_player_posts_new_content",
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-stream-node-ref" ],
+                        "value" : [ "node" ]
+                      }
+                    },
+                    { "component_rules_utility_award_gallery_achievements" : { "uid" : [ "entity-created:user" ] } },
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "4",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "Gallery added.",
+                        "operation" : "Add",
+                        "display" : 1,
+                        "moderate" : "approved"
+                      }
+                    },
+                    { "component_rules_status_all_get_associated_nodes" : {
+                        "USING" : { "srid" : [ "node" ] },
+                        "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-associated-nodes-stream" ],
+                        "value" : [ "assoc-nodes" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "game_results" },
+                  "DO" : [
+                    { "component_rules_battle_results_create_container" : { "bid" : [ "node" ] } },
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "5",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "Battle submitted. ",
+                        "operation" : "Add",
+                        "display" : 1,
+                        "moderate" : "approved"
+                      }
+                    },
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "message",
+                          "param_type" : "stream_player_posts_a_battle",
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-stream-node-ref" ],
+                        "value" : [ "node" ]
+                      }
+                    },
+                    { "component_rules_status_all_get_associated_nodes" : {
+                        "USING" : { "srid" : [ "node" ] },
+                        "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-associated-nodes-stream" ],
+                        "value" : [ "assoc-nodes" ]
+                      }
+                    },
+                    { "component_rules_battles_check_achievements" : { "p1" : [ "node:author" ], "bid" : [ "node" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "event" },
+                  "DO" : [
+                    { "entity_fetch" : {
+                        "USING" : { "type" : "user", "id" : [ "node:author:uid" ] },
+                        "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                      }
+                    },
+                    { "php_eval" : { "code" : "$capture = array(\\u0027email\\u0027 =\\u003E \\u0027[entity-fetched:mail]\\u0027);\\r\\npushMauticForm($capture, 19);\\r\\nfunction pushMauticForm($data, $formId, $ip = null)\\r\\n{\\r\\n    if (!$ip) {\\r\\n        $ipHolders = array(\\r\\n            \\u0027HTTP_CLIENT_IP\\u0027,\\r\\n            \\u0027HTTP_X_FORWARDED_FOR\\u0027,\\r\\n            \\u0027HTTP_X_FORWARDED\\u0027,\\r\\n            \\u0027HTTP_X_CLUSTER_CLIENT_IP\\u0027,\\r\\n            \\u0027HTTP_FORWARDED_FOR\\u0027,\\r\\n            \\u0027HTTP_FORWARDED\\u0027,\\r\\n            \\u0027REMOTE_ADDR\\u0027\\r\\n        );\\r\\n        foreach ($ipHolders as $key) {\\r\\n            if (!empty($_SERVER[$key])) {\\r\\n                $ip = $_SERVER[$key];\\r\\n                if (strpos($ip, \\u0027,\\u0027) !== false) {\\r\\n                    \\/\\/ Multiple IPs are present so use the last IP which should be the most reliable IP that last connected to the proxy\\r\\n                    $ips = explode(\\u0027,\\u0027, $ip);\\r\\n                    array_walk($ips, create_function(\\u0027\\u0026$val\\u0027, \\u0027$val = trim($val);\\u0027));\\r\\n                    $ip = end($ips);\\r\\n                }\\r\\n                $ip = trim($ip);\\r\\n                break;\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n$data[\\u0027formId\\u0027] = $formId;\\r\\n    \\/\\/ return has to be part of the form data array\\r\\n    if (!isset($data[\\u0027return\\u0027])) {\\r\\n        $data[\\u0027return\\u0027] = \\u0027http:\\/\\/itoysoldiers.com\\/thanks\\u0027;\\r\\n    }\\r\\n    $data = array(\\u0027mauticform\\u0027 =\\u003E $data);\\r\\n    \\/\\/ Change [path-to-mautic] to URL where your Mautic is\\r\\n    $formUrl =  \\u0027http:\\/\\/l.itoysoldiers.com\\/index.php\\/form\\/submit?formId=\\u0027 . $formId;\\r\\n    $ch = curl_init();\\r\\n    curl_setopt($ch, CURLOPT_URL, $formUrl);\\r\\n    curl_setopt($ch, CURLOPT_POST, 1);\\r\\n    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));\\r\\n    curl_setopt($ch, CURLOPT_HTTPHEADER, array(\\u0022X-Forwarded-For: $ip\\u0022));\\r\\n    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\\r\\n    $response = curl_exec($ch);\\r\\n    curl_close($ch);\\r\\n    return $response;     \\r\\n}" } },
+                    { "component_rules_events_all_on_create_logic" : { "nid" : [ "node" ] } }
+                  ]
+                }
+              },
+              { "CASE" : { "USING" : { "value" : "location" }, "DO" : [] } },
+              { "CASE" : {
+                  "USING" : { "value" : "blog" },
+                  "DO" : [
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "message",
+                          "param_type" : "stream_player_posts_new_content",
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-stream-node-ref" ],
+                        "value" : [ "node" ]
+                      }
+                    },
+                    { "component_rules_utility_award_doctrine" : { "uid" : [ "node:author" ] } },
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "3",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "Blog post received!",
+                        "operation" : "Add",
+                        "display" : 1,
+                        "moderate" : "approved"
+                      }
+                    },
+                    { "component_rules_status_all_get_associated_nodes" : {
+                        "USING" : { "srid" : [ "node" ] },
+                        "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-associated-nodes-stream" ],
+                        "value" : [ "assoc-nodes" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "listcrit" },
+                  "DO" : [
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "message",
+                          "param_type" : "stream_player_posts_new_content",
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-stream-node-ref" ],
+                        "value" : [ "node" ]
+                      }
+                    },
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "3",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "New List",
+                        "operation" : "Add",
+                        "display" : 1,
+                        "moderate" : "approved"
+                      }
+                    },
+                    { "component_rules_status_all_get_associated_nodes" : {
+                        "USING" : { "srid" : [ "node" ] },
+                        "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                      }
+                    },
+                    { "data_set" : { "data" : [ "assoc-nodes" ], "value" : [ "assoc-nodes" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "army_profile" },
+                  "DO" : [
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "message",
+                          "param_type" : "stream_player_posts_new_content",
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-stream-node-ref" ],
+                        "value" : [ "node" ]
+                      }
+                    },
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "2",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "New Army Profile created.",
+                        "operation" : "Add",
+                        "display" : 0,
+                        "moderate" : "approved"
+                      }
+                    },
+                    { "component_rules_status_all_get_associated_nodes" : {
+                        "USING" : { "srid" : [ "node" ] },
+                        "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-associated-nodes-stream" ],
+                        "value" : [ "assoc-nodes" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "models" },
+                  "DO" : [
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "5",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "Awarded for creating a new modeling project.",
+                        "operation" : "Add",
+                        "reference" : "[node:nid]",
+                        "display" : "1",
+                        "moderate" : "approved"
+                      }
+                    },
+                    { "entity_create" : {
+                        "USING" : {
+                          "type" : "message",
+                          "param_type" : "stream_player_posts_new_content",
+                          "param_user" : [ "node:author" ]
+                        },
+                        "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-stream-node-ref" ],
+                        "value" : [ "node" ]
+                      }
+                    },
+                    { "component_rules_status_all_get_associated_nodes" : {
+                        "USING" : { "srid" : [ "node" ] },
+                        "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                      }
+                    },
+                    { "data_set" : {
+                        "data" : [ "entity-created:field-associated-nodes-stream" ],
+                        "value" : [ "assoc-nodes" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "forum" },
+                  "DO" : [
+                    { "component_rules_core_all_generate_message_for_new_content" : { "nid" : [ "node" ], "icon" : "fa-comments" } },
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "1",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "Added for forum post",
+                        "operation" : "Add",
+                        "display" : "0",
+                        "moderate" : "approved"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "og_entity_is_group_content" : { "entity" : [ "node" ] } },
+              "DO" : [
+                { "og_get_members" : {
+                    "USING" : { "group_content" : [ "node" ] },
+                    "PROVIDE" : { "group_members" : { "group_members" : "List of group members" } }
+                  }
+                },
+                { "LOOP" : {
+                    "USING" : { "list" : [ "group-members" ] },
+                    "ITEM" : { "list_item" : "Current list item" },
+                    "DO" : [
+                      { "mail" : {
+                          "to" : [ "list-item:mail" ],
+                          "subject" : "[iToysoldiers] Message for you, sir!",
+                          "message" : "\\u003Ch3\\u003EAhoy, [list-item:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EThere is a new [node:content-type], \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E associated with one of the groups you are subscribed to.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E",
+                          "language" : [ "" ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_message_on_referenced_battle_result'] = entity_import('rules_config', '{ "rules_message_on_referenced_battle_result" : {
       "LABEL" : "Message on Referenced Battle Result",
       "PLUGIN" : "rule",
