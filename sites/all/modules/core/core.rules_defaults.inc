@@ -9,6 +9,49 @@
  */
 function core_default_rules_configuration() {
   $items = array();
+  $items['rules_core_all_generate_message_for_new_content'] = entity_import('rules_config', '{ "rules_core_all_generate_message_for_new_content" : {
+      "LABEL" : "Core: All: Generate Message for New Content",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "nid" : { "label" : "Node", "type" : "node" },
+        "icon" : { "label" : "Icon", "type" : "text" }
+      },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "message",
+              "param_type" : "stream_player_posts_new_content",
+              "param_user" : [ "nid:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-stream-node-ref" ],
+            "value" : [ "nid" ]
+          }
+        },
+        { "component_rules_status_all_get_associated_nodes" : {
+            "USING" : { "srid" : [ "nid" ] },
+            "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-associated-nodes-stream" ],
+            "value" : [ "assoc-nodes" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-timeline-icon" ],
+            "value" : [ "icon" ]
+          }
+        },
+        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : "1" } }
+      ]
+    }
+  }');
   $items['rules_master_renown_awarded'] = entity_import('rules_config', '{ "rules_master_renown_awarded" : {
       "LABEL" : "Master: Renown Awarded",
       "PLUGIN" : "reaction rule",
