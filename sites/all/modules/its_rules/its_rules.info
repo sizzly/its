@@ -9,6 +9,7 @@ dependencies[] = entity
 dependencies[] = entityform
 dependencies[] = flag
 dependencies[] = node_registration
+dependencies[] = og
 dependencies[] = php
 dependencies[] = privatemsg_rules
 dependencies[] = rules
@@ -17,6 +18,10 @@ dependencies[] = userpoints_rules
 dependencies[] = voting_rules
 features[features_api][] = api:2
 features[rules_config][] = rules_battle_results_create_container
+<<<<<<< HEAD
+=======
+features[rules_config][] = rules_core_all_generate_message_for_new_content
+>>>>>>> release-4.5-rc4
 features[rules_config][] = rules_events_all_on_create_logic
 features[rules_config][] = rules_honor_in_defeat
 features[rules_config][] = rules_master_battle_result_game_result

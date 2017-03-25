@@ -132,6 +132,52 @@ function its_rules_default_rules_configuration() {
       ]
     }
   }');
+<<<<<<< HEAD
+=======
+  $items['rules_core_all_generate_message_for_new_content'] = entity_import('rules_config', '{ "rules_core_all_generate_message_for_new_content" : {
+      "LABEL" : "Core: All: Generate Message for New Content",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "nid" : { "label" : "Node", "type" : "node" },
+        "icon" : { "label" : "Icon", "type" : "text" }
+      },
+      "DO" : [
+        { "entity_create" : {
+            "USING" : {
+              "type" : "message",
+              "param_type" : "stream_player_posts_new_content",
+              "param_user" : [ "nid:author" ]
+            },
+            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-stream-node-ref" ],
+            "value" : [ "nid" ]
+          }
+        },
+        { "component_rules_status_all_get_associated_nodes" : {
+            "USING" : { "srid" : [ "nid" ] },
+            "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-associated-nodes-stream" ],
+            "value" : [ "assoc-nodes" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-timeline-icon" ],
+            "value" : [ "icon" ]
+          }
+        },
+        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : "1" } }
+      ]
+    }
+  }');
+>>>>>>> release-4.5-rc4
   $items['rules_events_all_on_create_logic'] = entity_import('rules_config', '{ "rules_events_all_on_create_logic" : {
       "LABEL" : "Events: All: On Create Logic",
       "PLUGIN" : "rule",
@@ -642,10 +688,9 @@ function its_rules_default_rules_configuration() {
   $items['rules_master_save_new_content'] = entity_import('rules_config', '{ "rules_master_save_new_content" : {
       "LABEL" : "Master: Save New Content",
       "PLUGIN" : "reaction rule",
-      "WEIGHT" : "-10",
       "OWNER" : "rules",
       "TAGS" : [ "Master" ],
-      "REQUIRES" : [ "rules_conditional", "rules", "userpoints_rules" ],
+      "REQUIRES" : [ "rules_conditional", "rules", "userpoints_rules", "php", "og" ],
       "ON" : { "node_insert" : [] },
       "DO" : [
         { "SWITCH" : {
@@ -736,7 +781,19 @@ function its_rules_default_rules_configuration() {
                   ]
                 }
               },
-              { "CASE" : { "USING" : { "value" : "event" }, "DO" : [] } },
+              { "CASE" : {
+                  "USING" : { "value" : "event" },
+                  "DO" : [
+                    { "entity_fetch" : {
+                        "USING" : { "type" : "user", "id" : [ "node:author:uid" ] },
+                        "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+                      }
+                    },
+                    { "php_eval" : { "code" : "$capture = array(\\u0027email\\u0027 =\\u003E \\u0027[entity-fetched:mail]\\u0027);\\r\\npushMauticForm($capture, 19);\\r\\nfunction pushMauticForm($data, $formId, $ip = null)\\r\\n{\\r\\n    if (!$ip) {\\r\\n        $ipHolders = array(\\r\\n            \\u0027HTTP_CLIENT_IP\\u0027,\\r\\n            \\u0027HTTP_X_FORWARDED_FOR\\u0027,\\r\\n            \\u0027HTTP_X_FORWARDED\\u0027,\\r\\n            \\u0027HTTP_X_CLUSTER_CLIENT_IP\\u0027,\\r\\n            \\u0027HTTP_FORWARDED_FOR\\u0027,\\r\\n            \\u0027HTTP_FORWARDED\\u0027,\\r\\n            \\u0027REMOTE_ADDR\\u0027\\r\\n        );\\r\\n        foreach ($ipHolders as $key) {\\r\\n            if (!empty($_SERVER[$key])) {\\r\\n                $ip = $_SERVER[$key];\\r\\n                if (strpos($ip, \\u0027,\\u0027) !== false) {\\r\\n                    \\/\\/ Multiple IPs are present so use the last IP which should be the most reliable IP that last connected to the proxy\\r\\n                    $ips = explode(\\u0027,\\u0027, $ip);\\r\\n                    array_walk($ips, create_function(\\u0027\\u0026$val\\u0027, \\u0027$val = trim($val);\\u0027));\\r\\n                    $ip = end($ips);\\r\\n                }\\r\\n                $ip = trim($ip);\\r\\n                break;\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n$data[\\u0027formId\\u0027] = $formId;\\r\\n    \\/\\/ return has to be part of the form data array\\r\\n    if (!isset($data[\\u0027return\\u0027])) {\\r\\n        $data[\\u0027return\\u0027] = \\u0027http:\\/\\/itoysoldiers.com\\/thanks\\u0027;\\r\\n    }\\r\\n    $data = array(\\u0027mauticform\\u0027 =\\u003E $data);\\r\\n    \\/\\/ Change [path-to-mautic] to URL where your Mautic is\\r\\n    $formUrl =  \\u0027http:\\/\\/l.itoysoldiers.com\\/index.php\\/form\\/submit?formId=\\u0027 . $formId;\\r\\n    $ch = curl_init();\\r\\n    curl_setopt($ch, CURLOPT_URL, $formUrl);\\r\\n    curl_setopt($ch, CURLOPT_POST, 1);\\r\\n    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));\\r\\n    curl_setopt($ch, CURLOPT_HTTPHEADER, array(\\u0022X-Forwarded-For: $ip\\u0022));\\r\\n    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\\r\\n    $response = curl_exec($ch);\\r\\n    curl_close($ch);\\r\\n    return $response;     \\r\\n}" } },
+                    { "component_rules_events_all_on_create_logic" : { "nid" : [ "node" ] } }
+                  ]
+                }
+              },
               { "CASE" : { "USING" : { "value" : "location" }, "DO" : [] } },
               { "CASE" : {
                   "USING" : { "value" : "blog" },
@@ -814,23 +871,6 @@ function its_rules_default_rules_configuration() {
                       }
                     },
                     { "data_set" : { "data" : [ "assoc-nodes" ], "value" : [ "assoc-nodes" ] } }
-                  ]
-                }
-              },
-              { "CASE" : {
-                  "USING" : { "value" : "war_zone_league" },
-                  "DO" : [
-                    { "userpoints_action_grant_points" : {
-                        "user" : [ "node:author" ],
-                        "points" : "5",
-                        "tid" : "894",
-                        "entity" : [ "node" ],
-                        "description" : "Running a league",
-                        "operation" : "Add",
-                        "display" : 0,
-                        "moderate" : "approved"
-                      }
-                    }
                   ]
                 }
               },
@@ -916,9 +956,54 @@ function its_rules_default_rules_configuration() {
                     }
                   ]
                 }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "forum" },
+                  "DO" : [
+                    { "component_rules_core_all_generate_message_for_new_content" : { "nid" : [ "node" ], "icon" : "fa-comments" } },
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "1",
+                        "tid" : "0",
+                        "entity" : [ "node" ],
+                        "description" : "Added for forum post",
+                        "operation" : "Add",
+                        "display" : "0",
+                        "moderate" : "approved"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "og_entity_is_group_content" : { "entity" : [ "node" ] } },
+              "DO" : [
+                { "og_get_members" : {
+                    "USING" : { "group_content" : [ "node" ] },
+                    "PROVIDE" : { "group_members" : { "group_members" : "List of group members" } }
+                  }
+                },
+                { "LOOP" : {
+                    "USING" : { "list" : [ "group-members" ] },
+                    "ITEM" : { "list_item" : "Current list item" },
+                    "DO" : [
+                      { "mail" : {
+                          "to" : [ "list-item:mail" ],
+                          "subject" : "[iToysoldiers] Message for you, sir!",
+                          "message" : "\\u003Ch3\\u003EAhoy, [list-item:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EThere is a new [node:content-type], \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E associated with one of the groups you are subscribed to.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E",
+                          "language" : [ "" ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
