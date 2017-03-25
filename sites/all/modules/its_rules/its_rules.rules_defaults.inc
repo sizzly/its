@@ -58,214 +58,12 @@ function its_rules_default_rules_configuration() {
             "value" : [ "bid" ]
           }
         },
-        { "data_set" : {
-            "data" : [ "entity-created:field-mission" ],
-            "value" : [ "bid:field-mission" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-game-date" ],
-            "value" : [ "bid:field-game-date" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-your-army" ],
-            "value" : [ "bid:field-opponent-s-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-opponent-s-army" ],
-            "value" : [ "bid:field-your-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-location" ],
-            "value" : [ "bid:field-location" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-event-link" ],
-            "value" : [ "bid:field-event-link" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-points-per-army" ],
-            "value" : [ "bid:field-points-per-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-batteresult-commander" ],
-            "value" : [ "bid:field-battleresult-enemy-command" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-battle-deployment" ],
-            "value" : [ "bid:field-battle-deployment" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-battle-mission-rules" ],
-            "value" : [ "bid:field-battle-mission-rules" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-your-commander-survival" ],
-            "value" : [ "bid:field-enemy-commander-survival" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-enemy-commander-survival" ],
-            "value" : [ "bid:field-your-commander-survival" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-battleresult-enemy-command" ],
-            "value" : [ "bid:field-batteresult-commander" ]
-          }
-        },
         { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
         { "data_set" : {
             "data" : [ "bid:field-game-reference" ],
             "value" : [ "entity-created" ]
           }
         }
-      ]
-    }
-  }');
-<<<<<<< HEAD
-=======
-  $items['rules_core_all_generate_message_for_new_content'] = entity_import('rules_config', '{ "rules_core_all_generate_message_for_new_content" : {
-      "LABEL" : "Core: All: Generate Message for New Content",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
-      "USES VARIABLES" : {
-        "nid" : { "label" : "Node", "type" : "node" },
-        "icon" : { "label" : "Icon", "type" : "text" }
-      },
-      "DO" : [
-        { "entity_create" : {
-            "USING" : {
-              "type" : "message",
-              "param_type" : "stream_player_posts_new_content",
-              "param_user" : [ "nid:author" ]
-            },
-            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-stream-node-ref" ],
-            "value" : [ "nid" ]
-          }
-        },
-        { "component_rules_status_all_get_associated_nodes" : {
-            "USING" : { "srid" : [ "nid" ] },
-            "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-associated-nodes-stream" ],
-            "value" : [ "assoc-nodes" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-timeline-icon" ],
-            "value" : [ "icon" ]
-          }
-        },
-        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : "1" } }
-      ]
-    }
-  }');
->>>>>>> release-4.5-rc4
-  $items['rules_events_all_on_create_logic'] = entity_import('rules_config', '{ "rules_events_all_on_create_logic" : {
-      "LABEL" : "Events: All: On Create Logic",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional", "userpoints_rules" ],
-      "USES VARIABLES" : { "nid" : { "label" : "Event", "type" : "node" } },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "nid" ],
-            "type" : "node",
-            "bundle" : { "value" : { "event" : "event" } }
-          }
-        }
-      ],
-      "DO" : [
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "data_is" : { "data" : [ "nid:field-enable-its-features" ], "value" : "0" } },
-              "DO" : [
-                { "data_set" : { "data" : [ "nid:field-registration-deadline" ], "value" : "now -1 day" } },
-                { "data_set" : { "data" : [ "nid:field-status" ], "value" : "0" } },
-                { "component_rules_core_all_generate_message_for_new_content" : { "nid" : [ "nid" ], "icon" : "calendar" } },
-                { "CONDITIONAL" : [
-                    {
-                      "IF" : { "data_is" : { "data" : [ "nid:field-event-organizer" ], "value" : "1" } },
-                      "DO" : [
-                        { "userpoints_action_grant_points" : {
-                            "user" : [ "nid:author" ],
-                            "points" : "2",
-                            "tid" : "0",
-                            "entity" : [ "nid" ],
-                            "description" : "Posting event they\\u0027re running.",
-                            "operation" : "Add",
-                            "display" : "1",
-                            "moderate" : "approved"
-                          }
-                        }
-                      ]
-                    },
-                    { "ELSE" : [
-                        { "userpoints_action_grant_points" : {
-                            "user" : [ "nid:author" ],
-                            "points" : "1",
-                            "tid" : "0",
-                            "entity" : [ "nid" ],
-                            "description" : "Posting event they know about",
-                            "operation" : "Add",
-                            "display" : "1",
-                            "moderate" : "approved"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            { "ELSE" : [
-                { "data_set" : { "data" : [ "nid:field-status" ], "value" : "1" } },
-                { "data_set" : {
-                    "data" : [ "nid:field-open-registration" ],
-                    "value" : [ "nid:field-event-date-warzone:value" ]
-                  }
-                },
-                { "data_set" : { "data" : [ "nid:field-event-organizer" ], "value" : "1" } },
-                { "userpoints_action_grant_points" : {
-                    "user" : [ "nid:author" ],
-                    "points" : "5",
-                    "tid" : "0",
-                    "entity" : [ "nid" ],
-                    "description" : "iTS powered event created.",
-                    "operation" : "Add",
-                    "display" : "1",
-                    "moderate" : "approved"
-                  }
-                },
-                { "mail" : {
-                    "to" : [ "nid:author:mail" ],
-                    "subject" : "[iToysoldiers] You\\u0027re Ready To Go To War",
-                    "message" : "\\u003Ch3\\u003EGreetings, [node:author:name]!\\u003C\\/h3\\u003E\\r\\n\\u003Cp\\u003EYour \\u003Cstrong\\u003E[node:field-event-type]\\u003C\\/strong\\u003E event is ready and can be viewed at [node:url] .\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EYour War Zone Management page is available at http:\\/\\/itoysoldiers.com\\/node\\/[node:nid]\\/management .\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EThis War Zone, as well as any others, can also be accessed from your Dashboard at http:\\/\\/itoysoldiers.com\\/dashboard.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ETo help you have a successful war zone, please take a moment to review these tips before promoting your campaign to players:\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EFirst, your war zone starts in \\u003Cstrong\\u003ESetup\\u003C\\/strong\\u003E mode.  In this mode, players cannot register for your event.  This gives you an opportunity to ensure that you are happy with all of the settings before making it live.  Once you\\u2019re happy with it, you can visit your WarZone Management page and click \\u201cOpen War Zone\\u201d.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ESecond, if you select \\u0022Automatic\\u0022 for scheduling, your war zone will automatically start on the date that you indicate on the Date field. There is no action required on your part. If you have selected \\u0022Manual\\u0022 then you will need to start and complete the war zone from the management page.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELastly, if you have any questions, comments, requests or anything do not hesitate to reach out.  The super friendly iToysoldiers team (that\\u2019d be me) is always ready to help you out.  The best way to reach us is here:  http:\\/\\/help.itoysoldiers.com\\/.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003E\\r\\nRob\\u003Cbr\\u003E\\r\\niToysoldiers.com\\u003C\\/p\\u003E",
-                    "language" : [ "" ]
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        { "entity_save" : { "data" : [ "nid" ], "immediate" : "1" } }
       ]
     }
   }');
@@ -396,7 +194,7 @@ function its_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "Comment", "Master" ],
-      "REQUIRES" : [ "userpoints_rules", "rules", "rules_conditional", "flag", "comment" ],
+      "REQUIRES" : [ "userpoints_rules", "rules", "rules_conditional", "comment" ],
       "ON" : { "comment_insert" : [] },
       "DO" : [
         { "userpoints_action_grant_points" : {
@@ -478,62 +276,6 @@ function its_rules_default_rules_configuration() {
                     "message" : "                    \\u003Cp\\u003E\\u003Cimg alt=\\u0022\\u0022 src=\\u0022http:\\/\\/l.itoysoldiers.com\\/index.php\\/asset\\/5:new-comment-image\\u0022 style=\\u0022width: 600px; height: 200px;\\u0022 \\/\\u003E\\u003C\\/p\\u003E\\r\\n                    \\u003Ch2\\u003E[comment:author] has replied to you on [comment:node:title]\\u003C\\/h2\\u003E\\r\\n\\r\\n                    \\u003Ctable border=\\u00220\\u0022 cellpadding=\\u00220\\u0022 cellspacing=\\u00220\\u0022 style=\\u0022background-color:#505050; border:1px solid #353535; border-radius:5px;\\u0022\\u003E\\r\\n                        \\u003Ctr\\u003E\\r\\n                            \\u003Ctd align=\\u0022center\\u0022 valign=\\u0022middle\\u0022 style=\\u0022color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;\\u0022\\u003E\\r\\n                                \\u003Ca href=\\u0022[comment:node:url]\\u0022 target=\\u0022_blank\\u0022 style=\\u0022color:#FFFFFF; text-decoration:none;\\u0022\\u003EView the Post\\u003C\\/a\\u003E\\r\\n                            \\u003C\\/td\\u003E\\r\\n                        \\u003C\\/tr\\u003E\\r\\n                    \\u003C\\/table\\u003E",
                     "language" : [ "" ]
                   }
-                }
-              ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "entity_is_of_bundle" : {
-                  "entity" : [ "comment:node" ],
-                  "type" : "node",
-                  "bundle" : { "value" : { "game_results" : "game_results" } }
-                }
-              },
-              "DO" : [
-                { "CONDITIONAL" : [
-                    {
-                      "IF" : { "flag_flagged_node" : {
-                          "flag" : "acknowledge_battle",
-                          "node" : [ "comment:node" ],
-                          "flagging_user" : [ "comment:node:field-opponent" ]
-                        }
-                      },
-                      "DO" : [
-                        { "CONDITIONAL" : [
-                            {
-                              "IF" : { "NOT data_is" : {
-                                  "data" : [ "comment:author" ],
-                                  "value" : [ "comment:node:field-opponent" ]
-                                }
-                              },
-                              "DO" : [
-                                { "userpoints_action_grant_points" : {
-                                    "user" : [ "comment:node:field-opponent" ],
-                                    "points" : "1",
-                                    "tid" : "0",
-                                    "entity" : [ "comment:node" ],
-                                    "description" : "Player 2 renown on comment.",
-                                    "operation" : "Add",
-                                    "display" : "0",
-                                    "moderate" : "approved"
-                                  }
-                                },
-                                { "mail" : {
-                                    "to" : [ "comment:node:field-opponent:mail" ],
-                                    "subject" : "[iToysoldiers] New Comment on [comment:node:title]",
-                                    "message" : "\\u003Cp\\u003E\\u003Cimg alt=\\u0022\\u0022 src=\\u0022http:\\/\\/l.itoysoldiers.com\\/index.php\\/asset\\/5:new-comment-image\\u0022 style=\\u0022width: 600px; height: 200px;\\u0022 \\/\\u003E\\u003C\\/p\\u003E\\r\\n                    \\u003Ch2\\u003E[comment:author] commented on [comment:node:title]\\u003C\\/h2\\u003E\\r\\n\\r\\n                    \\u003Ctable border=\\u00220\\u0022 cellpadding=\\u00220\\u0022 cellspacing=\\u00220\\u0022 style=\\u0022background-color:#505050; border:1px solid #353535; border-radius:5px;\\u0022\\u003E\\r\\n                        \\u003Ctr\\u003E\\r\\n                            \\u003Ctd align=\\u0022center\\u0022 valign=\\u0022middle\\u0022 style=\\u0022color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;\\u0022\\u003E\\r\\n                                \\u003Ca href=\\u0022[comment:node:url]\\u0022 target=\\u0022_blank\\u0022 style=\\u0022color:#FFFFFF; text-decoration:none;\\u0022\\u003EView the Post\\u003C\\/a\\u003E\\r\\n                            \\u003C\\/td\\u003E\\r\\n                        \\u003C\\/tr\\u003E\\r\\n                    \\u003C\\/table\\u003E",
-                                    "language" : [ "" ]
-                                  }
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             }
@@ -688,9 +430,10 @@ function its_rules_default_rules_configuration() {
   $items['rules_master_save_new_content'] = entity_import('rules_config', '{ "rules_master_save_new_content" : {
       "LABEL" : "Master: Save New Content",
       "PLUGIN" : "reaction rule",
+      "WEIGHT" : "-10",
       "OWNER" : "rules",
       "TAGS" : [ "Master" ],
-      "REQUIRES" : [ "rules_conditional", "rules", "userpoints_rules", "php", "og" ],
+      "REQUIRES" : [ "rules_conditional", "rules", "userpoints_rules" ],
       "ON" : { "node_insert" : [] },
       "DO" : [
         { "SWITCH" : {
@@ -781,19 +524,7 @@ function its_rules_default_rules_configuration() {
                   ]
                 }
               },
-              { "CASE" : {
-                  "USING" : { "value" : "event" },
-                  "DO" : [
-                    { "entity_fetch" : {
-                        "USING" : { "type" : "user", "id" : [ "node:author:uid" ] },
-                        "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                      }
-                    },
-                    { "php_eval" : { "code" : "$capture = array(\\u0027email\\u0027 =\\u003E \\u0027[entity-fetched:mail]\\u0027);\\r\\npushMauticForm($capture, 19);\\r\\nfunction pushMauticForm($data, $formId, $ip = null)\\r\\n{\\r\\n    if (!$ip) {\\r\\n        $ipHolders = array(\\r\\n            \\u0027HTTP_CLIENT_IP\\u0027,\\r\\n            \\u0027HTTP_X_FORWARDED_FOR\\u0027,\\r\\n            \\u0027HTTP_X_FORWARDED\\u0027,\\r\\n            \\u0027HTTP_X_CLUSTER_CLIENT_IP\\u0027,\\r\\n            \\u0027HTTP_FORWARDED_FOR\\u0027,\\r\\n            \\u0027HTTP_FORWARDED\\u0027,\\r\\n            \\u0027REMOTE_ADDR\\u0027\\r\\n        );\\r\\n        foreach ($ipHolders as $key) {\\r\\n            if (!empty($_SERVER[$key])) {\\r\\n                $ip = $_SERVER[$key];\\r\\n                if (strpos($ip, \\u0027,\\u0027) !== false) {\\r\\n                    \\/\\/ Multiple IPs are present so use the last IP which should be the most reliable IP that last connected to the proxy\\r\\n                    $ips = explode(\\u0027,\\u0027, $ip);\\r\\n                    array_walk($ips, create_function(\\u0027\\u0026$val\\u0027, \\u0027$val = trim($val);\\u0027));\\r\\n                    $ip = end($ips);\\r\\n                }\\r\\n                $ip = trim($ip);\\r\\n                break;\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n$data[\\u0027formId\\u0027] = $formId;\\r\\n    \\/\\/ return has to be part of the form data array\\r\\n    if (!isset($data[\\u0027return\\u0027])) {\\r\\n        $data[\\u0027return\\u0027] = \\u0027http:\\/\\/itoysoldiers.com\\/thanks\\u0027;\\r\\n    }\\r\\n    $data = array(\\u0027mauticform\\u0027 =\\u003E $data);\\r\\n    \\/\\/ Change [path-to-mautic] to URL where your Mautic is\\r\\n    $formUrl =  \\u0027http:\\/\\/l.itoysoldiers.com\\/index.php\\/form\\/submit?formId=\\u0027 . $formId;\\r\\n    $ch = curl_init();\\r\\n    curl_setopt($ch, CURLOPT_URL, $formUrl);\\r\\n    curl_setopt($ch, CURLOPT_POST, 1);\\r\\n    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));\\r\\n    curl_setopt($ch, CURLOPT_HTTPHEADER, array(\\u0022X-Forwarded-For: $ip\\u0022));\\r\\n    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\\r\\n    $response = curl_exec($ch);\\r\\n    curl_close($ch);\\r\\n    return $response;     \\r\\n}" } },
-                    { "component_rules_events_all_on_create_logic" : { "nid" : [ "node" ] } }
-                  ]
-                }
-              },
+              { "CASE" : { "USING" : { "value" : "event" }, "DO" : [] } },
               { "CASE" : { "USING" : { "value" : "location" }, "DO" : [] } },
               { "CASE" : {
                   "USING" : { "value" : "blog" },
@@ -871,6 +602,23 @@ function its_rules_default_rules_configuration() {
                       }
                     },
                     { "data_set" : { "data" : [ "assoc-nodes" ], "value" : [ "assoc-nodes" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "war_zone_league" },
+                  "DO" : [
+                    { "userpoints_action_grant_points" : {
+                        "user" : [ "node:author" ],
+                        "points" : "5",
+                        "tid" : "894",
+                        "entity" : [ "node" ],
+                        "description" : "Running a league",
+                        "operation" : "Add",
+                        "display" : 0,
+                        "moderate" : "approved"
+                      }
+                    }
                   ]
                 }
               },
@@ -956,54 +704,9 @@ function its_rules_default_rules_configuration() {
                     }
                   ]
                 }
-              },
-              { "CASE" : {
-                  "USING" : { "value" : "forum" },
-                  "DO" : [
-                    { "component_rules_core_all_generate_message_for_new_content" : { "nid" : [ "node" ], "icon" : "fa-comments" } },
-                    { "userpoints_action_grant_points" : {
-                        "user" : [ "node:author" ],
-                        "points" : "1",
-                        "tid" : "0",
-                        "entity" : [ "node" ],
-                        "description" : "Added for forum post",
-                        "operation" : "Add",
-                        "display" : "0",
-                        "moderate" : "approved"
-                      }
-                    }
-                  ]
-                }
               }
             ]
           }
-        },
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "og_entity_is_group_content" : { "entity" : [ "node" ] } },
-              "DO" : [
-                { "og_get_members" : {
-                    "USING" : { "group_content" : [ "node" ] },
-                    "PROVIDE" : { "group_members" : { "group_members" : "List of group members" } }
-                  }
-                },
-                { "LOOP" : {
-                    "USING" : { "list" : [ "group-members" ] },
-                    "ITEM" : { "list_item" : "Current list item" },
-                    "DO" : [
-                      { "mail" : {
-                          "to" : [ "list-item:mail" ],
-                          "subject" : "[iToysoldiers] Message for you, sir!",
-                          "message" : "\\u003Ch3\\u003EAhoy, [list-item:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EThere is a new [node:content-type], \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E associated with one of the groups you are subscribed to.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E",
-                          "language" : [ "" ]
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
         }
       ]
     }

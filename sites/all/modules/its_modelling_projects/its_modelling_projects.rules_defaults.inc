@@ -269,12 +269,6 @@ function its_modelling_projects_default_rules_configuration() {
                         "item" : [ "srid:field-location" ],
                         "unique" : "1"
                       }
-                    },
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-event-link" ],
-                        "unique" : "1"
-                      }
                     }
                   ]
                 }

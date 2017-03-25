@@ -2,14 +2,13 @@ name = iTS Rules
 description = A Generic Container to hold rules that aren't tied to specific bundles
 core = 7.x
 package = _iTS
-version = 7.x-4.5-rc4
+version = 7.x-4.3-rc6
 dependencies[] = comment
-dependencies[] = core
 dependencies[] = entity
 dependencies[] = entityform
 dependencies[] = flag
+dependencies[] = its_achievements
 dependencies[] = node_registration
-dependencies[] = og
 dependencies[] = php
 dependencies[] = privatemsg_rules
 dependencies[] = rules
@@ -18,11 +17,6 @@ dependencies[] = userpoints_rules
 dependencies[] = voting_rules
 features[features_api][] = api:2
 features[rules_config][] = rules_battle_results_create_container
-<<<<<<< HEAD
-=======
-features[rules_config][] = rules_core_all_generate_message_for_new_content
->>>>>>> release-4.5-rc4
-features[rules_config][] = rules_events_all_on_create_logic
 features[rules_config][] = rules_honor_in_defeat
 features[rules_config][] = rules_master_battle_result_game_result
 features[rules_config][] = rules_master_cancel_registration
@@ -38,6 +32,4 @@ features[rules_config][] = rules_stream_photos_on_create
 features[rules_config][] = rules_utility_update_associated_nodes
 features_exclude[dependencies][its_modelling_projects] = its_modelling_projects
 features_exclude[dependencies][war_zones] = war_zones
-features_exclude[dependencies][battle_reports] = battle_reports
-features_exclude[dependencies][its_achievements] = its_achievements
 features_exclude[rules_config][rules_battles_check_achievements] = rules_battles_check_achievements
