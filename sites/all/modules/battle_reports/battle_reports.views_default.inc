@@ -2314,7 +2314,6 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['comments_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comments_link']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['comments_link']['element_wrapper_class'] = 'btn btn-default';
-  $handler->display->display_options['fields']['comments_link']['teaser'] = TRUE;
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
