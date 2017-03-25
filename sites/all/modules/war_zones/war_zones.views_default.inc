@@ -3631,7 +3631,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['waitinglist_1']['not'] = 0;
   /* Field: Bulk operations: Node registration */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node_registration';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
@@ -4057,7 +4057,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['fields']['waitinglist_1']['not'] = 0;
   /* Field: Bulk operations: Node registration */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node_registration';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
@@ -5477,7 +5477,7 @@ function war_zones_views_default_views() {
   $handler->display->display_options['relationships']['field_register_faction_target_id']['field'] = 'field_register_faction_target_id';
   /* Field: Bulk operations: Node registration */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node_registration';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node_registration';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;

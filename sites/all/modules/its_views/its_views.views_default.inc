@@ -9776,7 +9776,7 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['field_state_challenge']['id'] = 'field_state_challenge';
   $handler->display->display_options['fields']['field_state_challenge']['table'] = 'field_data_field_state_challenge';
   $handler->display->display_options['fields']['field_state_challenge']['field'] = 'field_state_challenge';
-  /* Field: Content: Opponent ID */
+  /* Field: Content: Opponent */
   $handler->display->display_options['fields']['field_opponent']['id'] = 'field_opponent';
   $handler->display->display_options['fields']['field_opponent']['table'] = 'field_data_field_opponent';
   $handler->display->display_options['fields']['field_opponent']['field'] = 'field_opponent';
@@ -11493,7 +11493,7 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['field_opponent_s_name']['label'] = 'Is this you?';
   $handler->display->display_options['fields']['field_opponent_s_name']['alter']['text'] = '[field_opponent_s_name]<br>';
   $handler->display->display_options['fields']['field_opponent_s_name']['hide_empty'] = TRUE;
-  /* Field: Content: Opponent ID */
+  /* Field: Content: Opponent */
   $handler->display->display_options['fields']['field_opponent']['id'] = 'field_opponent';
   $handler->display->display_options['fields']['field_opponent']['table'] = 'field_data_field_opponent';
   $handler->display->display_options['fields']['field_opponent']['field'] = 'field_opponent';
@@ -11616,7 +11616,7 @@ Salute  Comment  Share
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Opponent ID (field_opponent) */
+  /* Contextual filter: Content: Opponent (field_opponent) */
   $handler->display->display_options['arguments']['field_opponent_target_id']['id'] = 'field_opponent_target_id';
   $handler->display->display_options['arguments']['field_opponent_target_id']['table'] = 'field_data_field_opponent';
   $handler->display->display_options['arguments']['field_opponent_target_id']['field'] = 'field_opponent_target_id';
@@ -11664,7 +11664,7 @@ Salute  Comment  Share
   /* Display: Dashboard Page */
   $handler = $view->new_display('page', 'Dashboard Page', 'page_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Opponent ID (field_opponent) */
+  /* Contextual filter: Content: Opponent (field_opponent) */
   $handler->display->display_options['arguments']['field_opponent_target_id']['id'] = 'field_opponent_target_id';
   $handler->display->display_options['arguments']['field_opponent_target_id']['table'] = 'field_data_field_opponent';
   $handler->display->display_options['arguments']['field_opponent_target_id']['field'] = 'field_opponent_target_id';
@@ -21218,7 +21218,7 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Update Points per army';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
