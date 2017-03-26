@@ -58,6 +58,86 @@ function its_rules_default_rules_configuration() {
             "value" : [ "bid" ]
           }
         },
+        { "data_set" : {
+            "data" : [ "entity-created:field-mission" ],
+            "value" : [ "bid:field-mission" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-game-date" ],
+            "value" : [ "bid:field-game-date" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-your-army" ],
+            "value" : [ "bid:field-opponent-s-army" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-opponent-s-army" ],
+            "value" : [ "bid:field-your-army" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-opponent" ],
+            "value" : [ "bid:author" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-location" ],
+            "value" : [ "bid:field-location" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-event-link" ],
+            "value" : [ "bid:field-event-link" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-points-per-army" ],
+            "value" : [ "bid:field-points-per-army" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-batteresult-commander" ],
+            "value" : [ "bid:field-battleresult-enemy-command" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-battle-deployment" ],
+            "value" : [ "bid:field-battle-deployment" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-battle-mission-rules" ],
+            "value" : [ "bid:field-battle-mission-rules" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-allied-detatchment" ],
+            "value" : [ "bid:field-opponent-s-allied-detachme" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-opponent-s-allied-detachme" ],
+            "value" : [ "bid:field-allied-detatchment" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-your-commander-survival" ],
+            "value" : [ "bid:field-enemy-commander-survival" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-enemy-commander-survival" ],
+            "value" : [ "bid:field-your-commander-survival" ]
+          }
+        },
+        { "data_set" : {
+            "data" : [ "entity-created:field-battleresult-enemy-command" ],
+            "value" : [ "entity-created:field-batteresult-commander" ]
+          }
+        },
         { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
         { "data_set" : {
             "data" : [ "bid:field-game-reference" ],
@@ -179,76 +259,6 @@ function its_rules_default_rules_configuration() {
       ],
       "DO" : [
         { "component_rules_award_achievement" : { "aid" : "3313", "uid" : [ "user-id" ] } }
-      ]
-    }
-  }');
-  $items['rules_master_battle_result_game_result'] = entity_import('rules_config', '{ "rules_master_battle_result_game_result" : {
-      "LABEL" : "Master: Battle Result -\\u003E Game Result",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "TAGS" : [ "Battles", "Master" ],
-      "REQUIRES" : [ "rules" ],
-      "USES VARIABLES" : {
-        "bid" : { "label" : "Battle", "type" : "node" },
-        "gid" : { "label" : "Game", "type" : "node" }
-      },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "bid" ],
-            "type" : "node",
-            "bundle" : { "value" : { "game_results" : "game_results" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "gid" ],
-            "type" : "node",
-            "bundle" : { "value" : { "game_result_system_" : "game_result_system_" } }
-          }
-        }
-      ],
-      "DO" : [
-        { "data_set" : {
-            "data" : [ "gid:field-opponent-s-army" ],
-            "value" : [ "bid:field-your-army" ]
-          }
-        },
-        { "data_set" : { "data" : [ "gid:field-location" ], "value" : [ "bid:field-location" ] } },
-        { "data_set" : {
-            "data" : [ "gid:field-your-army" ],
-            "value" : [ "bid:field-opponent-s-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "gid:field-points-per-army" ],
-            "value" : [ "bid:field-points-per-army" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "gid:field-event-link" ],
-            "value" : [ "bid:field-event-link" ]
-          }
-        },
-        { "data_set" : { "data" : [ "gid:field-mission" ], "value" : [ "bid:field-mission" ] } },
-        { "data_set" : {
-            "data" : [ "gid:field-game-date" ],
-            "value" : [ "bid:field-game-date" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "gid:field-battle-deployment" ],
-            "value" : [ "bid:field-battle-deployment" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "gid:field-battle-mission-rules" ],
-            "value" : [ "bid:field-battle-mission-rules" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "gid:field-your-commander-survival" ],
-            "value" : [ "bid:field-enemy-commander-survival" ]
-          }
-        }
       ]
     }
   }');
