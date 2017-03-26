@@ -2833,6 +2833,151 @@ Rob<br />
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'legendary_battles';
+  $page->task = 'page';
+  $page->admin_title = 'Legendary Battles';
+  $page->admin_description = 'Landing page for the "noble opponent" cards.';
+  $page->path = 'legendary-battles';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_legendary_battles__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'legendary_battles';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Legendary Battles';
+  $display->uuid = '273d4c92-5b21-4df5-a572-bd084a0b8b5b';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Top Row',
+      'title' => '',
+      'body' => '        <div class="row">
+            <div class="col-md-6">
+                <div class="lead">Ahoy, Commander and welcome to iToysoldiers.</div>
+                <p>Likely you’ve reached this page because one of your opponents at a miniature wargaming event or tournament and you’re looking to find the battles you participated in. That is absolutely stellar because you’re in the right place.  But first you need to register for an account on iToysoldiers and you can do that right now:</p>
+                <a href="http://itoysoldiers.com/user/register" class="btn btn-primary btn-lg">Register on iToysoldiers</a>
+                <div class="seperator"></div>
+                <p>Once you’ve registered all you need to do is enter the iToysoldiers ID of the person you played at the event.  It will filter the available battles to that player and when you find your battle just click, “Acknowledge Battle” and you’ll start gaining renown, glory, and stats on the site.</p>
+                <p>There’s lots of reasons to join iToysoldiers. It’s free. It’s totally focused on miniature war gaming. We support all sorts of games so you can chronicle the glory of all of your armies right here on iToysoldiers – no matter what game you play. Oh. Did I mention it’s free? Forever?</p>
+                <p>Oh, and as long as I have you here… Subscribe to the iTS Dispatch and stay up to date with what’s going on at iToysoldiers.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Subscribe to the Dispatch</h3>
+                    </div>
+                    <div class="panel-body">
+                        <script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=7"></script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="thumbnail"><img src="https://s3.amazonaws.com/itoysoldiers/legendarybattles.jpg"></div>
+            </div>
+        </div>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'af88cd60-990a-4def-bee0-7407057ce2b1';
+    $display->content['new-af88cd60-990a-4def-bee0-7407057ce2b1'] = $pane;
+    $display->panels['contentmain'][0] = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
+    $pane = new stdClass();
+    $pane->pid = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'home_page_battles_legendary_search-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+    $display->content['new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310'] = $pane;
+    $display->panels['contentmain'][1] = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+    $pane = new stdClass();
+    $pane->pid = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'landing page frame',
+      'title' => '',
+      'body' => '<iframe src="http://l.itoysoldiers.com/index.php/legendary-battles" width="0" height="0" frameBorder="0"></iframe>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '9a860902-217e-4bac-a3ca-4b094e44f539';
+    $display->content['new-9a860902-217e-4bac-a3ca-4b094e44f539'] = $pane;
+    $display->panels['contentmain'][2] = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['legendary_battles'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'privacy';
   $page->task = 'page';
   $page->admin_title = 'Privacy';

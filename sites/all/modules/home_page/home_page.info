@@ -35,6 +35,7 @@ features[page_manager_pages][] = gaming_page
 features[page_manager_pages][] = home_page
 features[page_manager_pages][] = ironmonger_landing_page
 features[page_manager_pages][] = itoysoldiers_for_narrative
+features[page_manager_pages][] = legendary_battles
 features[page_manager_pages][] = privacy
 features[page_manager_pages][] = terms
 features[panels_mini][] = footer
