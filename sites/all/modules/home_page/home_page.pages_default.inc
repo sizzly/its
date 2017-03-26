@@ -2508,20 +2508,22 @@ Rob<br />
     $display->content['new-8882395a-3623-4ed0-ab2a-989cceeaa090'] = $pane;
     $display->panels['header'][0] = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
     $pane = new stdClass();
-    $pane->pid = 'new-1bb24b85-1d05-47bf-b3dd-9db9df295082';
+    $pane->pid = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
     $pane->panel = 'sidebar';
-    $pane->type = 'entity_field_extra';
-    $pane->subtype = 'node:webform';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'full',
-      'context' => 'context_entity:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Let\'s Talk',
+      'admin_title' => 'Let\'s Talk Form',
+      'title' => 'Let\'s Talk',
+      'body' => '<script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=9"></script>',
+      'format' => 'php_code',
+      'substitute' => 0,
     );
     $pane->cache = array();
     $pane->style = array(
+      'style' => 'bootstrap_panel',
       'settings' => array(
         'use_title' => 1,
         'use_footer' => 0,
@@ -2529,15 +2531,14 @@ Rob<br />
         'footer_content' => '',
         'context_class' => 'panel-primary',
       ),
-      'style' => 'bootstrap_panel',
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '1bb24b85-1d05-47bf-b3dd-9db9df295082';
-    $display->content['new-1bb24b85-1d05-47bf-b3dd-9db9df295082'] = $pane;
-    $display->panels['sidebar'][0] = 'new-1bb24b85-1d05-47bf-b3dd-9db9df295082';
+    $pane->uuid = 'e0db5b84-d284-458c-ba08-0818ca123991';
+    $display->content['new-e0db5b84-d284-458c-ba08-0818ca123991'] = $pane;
+    $display->panels['sidebar'][0] = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
   $handler->conf['display'] = $display;
