@@ -699,7 +699,7 @@ function its_modelling_projects_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Modeling Project Stats';
   $page->admin_description = '';
-  $page->path = '/munitions/modeling-projects/stats';
+  $page->path = 'munitions/modeling-projects/stats';
   $page->access = array();
   $page->menu = array(
     'type' => 'tab',
