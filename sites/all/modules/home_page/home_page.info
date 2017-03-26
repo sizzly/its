@@ -28,6 +28,7 @@ features[menu_custom][] = menu-itoysoldiers-elsewhere
 features[menu_custom][] = menu-legal
 features[page_manager_pages][] = about
 features[page_manager_pages][] = access_denied
+features[page_manager_pages][] = advertise_with_itoysoldiers
 features[page_manager_pages][] = bc_landing_page
 features[page_manager_pages][] = copyright
 features[page_manager_pages][] = feedback_thanks
