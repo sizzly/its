@@ -23,6 +23,13 @@ function its_achievements_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function its_achievements_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_default_message_type().
  */
 function its_achievements_default_message_type() {

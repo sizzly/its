@@ -2491,6 +2491,18 @@ Rob</p>
 
 <p>Intrigued? You should be. &nbsp;Here are a few of the benefits you\'ll receive for joining the Ironmonger program.</p>
 
+<h3>What you get right now</h3>
+
+<ul>
+	<li>As a partner with iToysoldiers you’ll get all of these features right out of the gate and you’ll never lose this premium access.</li>
+	<li>A really slick <a href="http://itoysoldiers.com/battlefield/brimstone-games">profile page</a> for your store that includes game stats, upcoming events, local meta for each game you support and more.&nbsp;</li>
+	<li>Influence in what tools and features iToysoldiers builds to support the unsung heroes of the table top war gaming hobby.&nbsp; That’d be you!</li>
+	<li>Priority iToysoldiers support&nbsp;&nbsp;– which is really handy if you or your players are having issues.</li>
+	<li>The ability to earn prestige points for your store.&nbsp; What’s prestige?&nbsp; It measures how active (and thus cool) a gaming store is.</li>
+	<li>Access to the League Manager.</li>
+	<li>Co-branding on a number of pages on iToysoldiers.</li>
+</ul>
+
 <h3>Free For Life</h3>
 
 <p>If you’re selected as one of the first Ironmongers your Ironmonger status lasts forever.&nbsp; You’ll always have premium access to exclusive tools.&nbsp; It’s my way of saying thank you for your help.&nbsp; Ultimately, I intend to charge a subscription for the Ironmonger features so jumping on board now is a great way to lock yourself in as part of the iToysoldiers community.</p>
@@ -2512,18 +2524,6 @@ Rob</p>
 
 <p>Still on the fence?&nbsp; Read on:</p>
 
-<h3>What you get right now</h3>
-
-<ul>
-	<li>As a partner with iToysoldiers you’ll get all of these features right out of the gate and you’ll never lose this premium access.</li>
-	<li>A really slick <a href="http://itoysoldiers.com/battlefield/brimstone-games">profile page</a> for your store that includes game stats, upcoming events, local meta for each game you support and more.&nbsp;</li>
-	<li>Influence in what tools and features iToysoldiers builds to support the unsung heroes of the table top war gaming hobby.&nbsp; That’d be you!</li>
-	<li>Priority iToysoldiers support&nbsp;&nbsp;– which is really handy if you or your players are having issues.</li>
-	<li>The ability to earn prestige points for your store.&nbsp; What’s prestige?&nbsp; It measures how active (and thus cool) a gaming store is.</li>
-	<li>Access to the League Manager.</li>
-	<li>Co-branding on a number of pages on iToysoldiers.</li>
-</ul>
-
 <h3>What’s on the Horizon?</h3>
 
 <p>Right now I’ve got some additional features in the pipeline.&nbsp; As these get released you’ll also get them as part of this partnership.&nbsp; Cool, eh?</p>
@@ -2544,7 +2544,7 @@ Rob<br />
 <a href="http://itoysoldiers.com/">itoysoldiers.com</a></p>
 ',
       'format' => 'filtered_html',
-      'substitute' => 0,
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(

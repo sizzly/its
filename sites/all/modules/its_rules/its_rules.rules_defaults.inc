@@ -474,6 +474,13 @@ function its_rules_default_rules_configuration() {
                     { "component_rules_battles_check_achievements" : { "p1" : [ "node:author" ], "bid" : [ "node" ] } }
                   ]
                 }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "models" },
+                  "DO" : [
+                    { "component_rules_achievements_modelling_achievements" : { "nid" : [ "node" ] } }
+                  ]
+                }
               }
             ]
           }
@@ -796,7 +803,8 @@ function its_rules_default_rules_configuration() {
                         "data" : [ "entity-created:field-associated-nodes-stream" ],
                         "value" : [ "assoc-nodes" ]
                       }
-                    }
+                    },
+                    { "component_rules_achievements_modelling_achievements" : { "nid" : [ "node" ] } }
                   ]
                 }
               },

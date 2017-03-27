@@ -36,3 +36,6 @@ features_exclude[dependencies][war_zones] = war_zones
 features_exclude[dependencies][battle_reports] = battle_reports
 features_exclude[dependencies][its_achievements] = its_achievements
 features_exclude[rules_config][rules_battles_check_achievements] = rules_battles_check_achievements
+features_exclude[rules_config][rules_achievements_modelling_achievements] = rules_achievements_modelling_achievements
+features_exclude[rules_config][rules_achievements_modelling_requisition] = rules_achievements_modelling_requisition
+features_exclude[rules_config][rules_achievements_modelling_uniform_regulation] = rules_achievements_modelling_uniform_regulation
