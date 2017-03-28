@@ -1638,84 +1638,6 @@ function war_zones_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-war_zone_league_report_battle-field_league_match_scorecard'.
-  $field_instances['entityform-war_zone_league_report_battle-field_league_match_scorecard'] = array(
-    'bundle' => 'war_zone_league_report_battle',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_league_match_scorecard',
-    'label' => 'Opponent',
-    'required' => 1,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'entityform-war_zone_league_report_battle-field_your_results'.
-  $field_instances['entityform-war_zone_league_report_battle-field_your_results'] = array(
-    'bundle' => 'war_zone_league_report_battle',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_your_results',
-    'label' => 'Your Results',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance:
   // 'field_collection_item-field_tournament_missions-field_mission_name_tourney'.
   $field_instances['field_collection_item-field_tournament_missions-field_mission_name_tourney'] = array(
     'bundle' => 'field_tournament_missions',
@@ -7075,7 +6997,6 @@ function war_zones_field_default_field_instances() {
   t('Website');
   t('Where will this campaign take place?  Your home? Local gaming store? Convention?  Enter it here.');
   t('Whilst iToysoldiers doesn\'t collect the entry fee for events managed or listed on the site, it\'s important to let players know how much it costs to participate in your event.  If you leave this field blank the data sheet will show the event as free to enter.  ');
-  t('Your Results');
   t('calculated rounds');
 
   return $field_instances;

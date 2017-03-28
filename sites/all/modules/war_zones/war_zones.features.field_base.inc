@@ -450,41 +450,6 @@ function war_zones_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_league_match_scorecard'.
-  $field_bases['field_league_match_scorecard'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_league_match_scorecard',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'views',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 1,
-          ),
-        ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'war_zone_league_scorecard_filter',
-        ),
-      ),
-      'profile2_private' => FALSE,
-      'target_type' => 'entityform',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
   // Exported field_base: 'field_league_rule_set'.
   $field_bases['field_league_rule_set'] = array(
     'active' => 1,
