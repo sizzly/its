@@ -825,6 +825,52 @@ function its_rules_default_rules_configuration() {
                     }
                   ]
                 }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "article" },
+                  "DO" : [
+                    { "component_rules_core_all_generate_message_for_new_content" : { "nid" : [ "node" ], "icon" : "fa-newspaper-o" } },
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "data_is_empty" : { "data" : [ "node:field-event-link" ] } },
+                          "DO" : [
+                            { "CONDITIONAL" : [
+                                {
+                                  "IF" : { "og_entity_is_group_content" : { "entity" : [ "node" ] } },
+                                  "DO" : [
+                                    { "og_get_members" : {
+                                        "USING" : { "group_content" : [ "node" ] },
+                                        "PROVIDE" : { "group_members" : { "group_members" : "List of group members" } }
+                                      }
+                                    },
+                                    { "LOOP" : {
+                                        "USING" : { "list" : [ "group-members" ] },
+                                        "ITEM" : { "list_item" : "Current list item" },
+                                        "DO" : [
+                                          { "mail" : {
+                                              "to" : [ "list-item:mail" ],
+                                              "subject" : "[iToysoldiers] Message for you, sir!",
+                                              "message" : "\\u003Ch3\\u003EAhoy, [list-item:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EThere is a new [node:content-type], \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E associated with one of the groups you are subscribed to.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E",
+                                              "language" : [ "" ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        { "ELSE" : [
+                            { "component_rules_warzone_message_on_new_article" : { "nid" : [ "node" ] } }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
               }
             ]
           }
@@ -833,24 +879,37 @@ function its_rules_default_rules_configuration() {
             {
               "IF" : { "og_entity_is_group_content" : { "entity" : [ "node" ] } },
               "DO" : [
-                { "og_get_members" : {
-                    "USING" : { "group_content" : [ "node" ] },
-                    "PROVIDE" : { "group_members" : { "group_members" : "List of group members" } }
-                  }
-                },
-                { "LOOP" : {
-                    "USING" : { "list" : [ "group-members" ] },
-                    "ITEM" : { "list_item" : "Current list item" },
-                    "DO" : [
-                      { "mail" : {
-                          "to" : [ "list-item:mail" ],
-                          "subject" : "[iToysoldiers] Message for you, sir!",
-                          "message" : "\\u003Ch3\\u003EAhoy, [list-item:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EThere is a new [node:content-type], \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E associated with one of the groups you are subscribed to.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E",
-                          "language" : [ "" ]
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT entity_is_of_bundle" : {
+                          "entity" : [ "node" ],
+                          "type" : "node",
+                          "bundle" : { "value" : { "article" : "article" } }
                         }
-                      }
-                    ]
-                  }
+                      },
+                      "DO" : [
+                        { "og_get_members" : {
+                            "USING" : { "group_content" : [ "node" ] },
+                            "PROVIDE" : { "group_members" : { "group_members" : "List of group members" } }
+                          }
+                        },
+                        { "LOOP" : {
+                            "USING" : { "list" : [ "group-members" ] },
+                            "ITEM" : { "list_item" : "Current list item" },
+                            "DO" : [
+                              { "mail" : {
+                                  "to" : [ "list-item:mail" ],
+                                  "subject" : "[iToysoldiers] Message for you, sir!",
+                                  "message" : "\\u003Ch3\\u003EAhoy, [list-item:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EThere is a new [node:content-type], \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E associated with one of the groups you are subscribed to.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E",
+                                  "language" : [ "" ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
