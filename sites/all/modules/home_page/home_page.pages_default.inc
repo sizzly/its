@@ -540,11 +540,11 @@ function home_page_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_bc_landing_page_panel_context';
+  $handler->name = 'page_bc_landing_page__panel_context_a96bea19-b7ec-4ba3-93b1-5210c0554ffc';
   $handler->task = 'page';
   $handler->subtask = 'bc_landing_page';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = 1;
   $handler->conf = array(
     'title' => 'Panel',
     'no_blocks' => 1,
@@ -599,6 +599,7 @@ function home_page_default_page_manager_pages() {
         ),
       ),
     ),
+    'name' => '',
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_boxton';
@@ -890,31 +891,6 @@ print_r($user->name);
     $display->content['new-d7214049-9242-4765-bb0b-9f590ccdb29c'] = $pane;
     $display->panels['contentmain'][2] = 'new-d7214049-9242-4765-bb0b-9f590ccdb29c';
     $pane = new stdClass();
-    $pane->pid = 'new-49efbd0f-1056-444b-bad5-62cda492c08c';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'home_page_register_now';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '49efbd0f-1056-444b-bad5-62cda492c08c';
-    $display->content['new-49efbd0f-1056-444b-bad5-62cda492c08c'] = $pane;
-    $display->panels['contentmain'][3] = 'new-49efbd0f-1056-444b-bad5-62cda492c08c';
-    $pane = new stdClass();
     $pane->pid = 'new-094a1982-1042-4a09-b065-583177738f91';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
@@ -971,11 +947,11 @@ print_r($user->name);
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '094a1982-1042-4a09-b065-583177738f91';
     $display->content['new-094a1982-1042-4a09-b065-583177738f91'] = $pane;
-    $display->panels['contentmain'][4] = 'new-094a1982-1042-4a09-b065-583177738f91';
+    $display->panels['contentmain'][3] = 'new-094a1982-1042-4a09-b065-583177738f91';
     $pane = new stdClass();
     $pane->pid = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
     $pane->panel = 'contentmain';
@@ -1007,11 +983,11 @@ print_r($user->name);
       'css_class' => 'well well-sm',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'ca63930a-bb54-4229-8cba-b79fd857de57';
     $display->content['new-ca63930a-bb54-4229-8cba-b79fd857de57'] = $pane;
-    $display->panels['contentmain'][5] = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
+    $display->panels['contentmain'][4] = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
