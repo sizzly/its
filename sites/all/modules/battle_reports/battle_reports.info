@@ -22,6 +22,7 @@ dependencies[] = metatag
 dependencies[] = node
 dependencies[] = node_reference
 dependencies[] = number
+dependencies[] = og
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = php
