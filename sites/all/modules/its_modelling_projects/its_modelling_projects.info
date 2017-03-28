@@ -17,6 +17,7 @@ dependencies[] = message
 dependencies[] = metatag
 dependencies[] = node
 dependencies[] = number
+dependencies[] = og
 dependencies[] = page_manager
 dependencies[] = radioactivity
 dependencies[] = reply

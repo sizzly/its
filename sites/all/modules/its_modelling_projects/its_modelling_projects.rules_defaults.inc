@@ -199,7 +199,7 @@ function its_modelling_projects_default_rules_configuration() {
       "LABEL" : "Status: All: Get Associated Nodes",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "og" ],
       "USES VARIABLES" : {
         "srid" : { "label" : "Stream Reference", "type" : "node" },
         "assoc_nodes" : {
@@ -216,11 +216,19 @@ function its_modelling_projects_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "achievement" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-event-link" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-event-link" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-event-link" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -228,17 +236,33 @@ function its_modelling_projects_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "article" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-event-link" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-event-link" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-event-link" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     },
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:og-group-ref:0" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "og_entity_is_group_content" : { "entity" : [ "srid" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:og-group-ref:0" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -246,17 +270,33 @@ function its_modelling_projects_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "game_results" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-location" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-event-link" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-event-link" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     },
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-event-link" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-location" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-location" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -264,11 +304,33 @@ function its_modelling_projects_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "event" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-location" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-location" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-location" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "og_entity_is_group_content" : { "entity" : [ "srid" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:og-group-ref:0" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -276,17 +338,33 @@ function its_modelling_projects_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "gallery" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-location" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-location" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-location" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     },
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-event-link" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-event-link" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-event-link" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -294,62 +372,68 @@ function its_modelling_projects_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "gaming_club" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-location" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-location" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-location" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
               },
-              { "CASE" : {
-                  "USING" : { "value" : "war_zone_league" },
-                  "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-location" ],
-                        "unique" : "1"
-                      }
-                    }
-                  ]
-                }
-              },
-              { "CASE" : { "USING" : { "value" : "listcrit" }, "DO" : [] } },
               { "CASE" : {
                   "USING" : { "value" : "models" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-army-profile-models" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-army-profile-models" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-army-profile-models" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
               },
-              { "CASE" : { "USING" : { "value" : "narrative_campaign" }, "DO" : [] } },
               { "CASE" : {
                   "USING" : { "value" : "narrative_campaign_instance" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-location" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-location" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:field-location" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     },
-                    { "list_add" : { "list" : [ "assoc-nodes" ], "item" : [ "srid:field-event-link" ] } }
-                  ]
-                }
-              },
-              { "CASE" : {
-                  "USING" : { "value" : "special_event" },
-                  "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:field-location" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "NOT data_is_empty" : { "data" : [ "srid:field-event-link" ] } },
+                          "DO" : [
+                            { "list_add" : { "list" : [ "assoc-nodes" ], "item" : [ "srid:field-event-link" ] } }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -369,11 +453,19 @@ function its_modelling_projects_default_rules_configuration() {
               { "CASE" : {
                   "USING" : { "value" : "forum" },
                   "DO" : [
-                    { "list_add" : {
-                        "list" : [ "assoc-nodes" ],
-                        "item" : [ "srid:og-group-ref:0" ],
-                        "unique" : "1"
-                      }
+                    { "CONDITIONAL" : [
+                        {
+                          "IF" : { "og_entity_is_group_content" : { "entity" : [ "srid" ] } },
+                          "DO" : [
+                            { "list_add" : {
+                                "list" : [ "assoc-nodes" ],
+                                "item" : [ "srid:og-group-ref:0" ],
+                                "unique" : "1"
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
