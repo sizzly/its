@@ -2983,7 +2983,7 @@ function war_zones_default_rules_configuration() {
         { "component_rules_warzone_email_players" : {
             "wzid" : [ "wzid" ],
             "message_title" : "[iToysoldiers] [wzid:title] Round [new-round:value] has begun",
-            "message_body" : "\\u003Cp\\u003ERound [new-round:value] for the league, [wzid:title] has begun!\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EYour mission is to view the \\u003Ca href=\\u0022http:\\/\\/itoysoldiers.com\\/node\\/[wzid:nid]\\/operations\\u0022\\u003E\\u003Cstrong\\u003EOperations Page\\u003C\\/strong\\u003E\\u003C\\/a\\u003E for the league to determine what your obstacle to league domination is\\u003Cp\\u003E\\r\\n\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003EThe iToysoldiers Team\\u003C\\/p\\u003E"
+            "message_body" : "\\u003Cp\\u003ERound [new-round:value] for the league, [wzid:title] has begun!\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EYour mission is to view the \\u003Ca href=\\u0022http:\\/\\/itoysoldiers.com\\/node\\/[wzid:nid]\\/event-ops\\u0022\\u003E\\u003Cstrong\\u003EOperations Page\\u003C\\/strong\\u003E\\u003C\\/a\\u003E for the league to determine what your obstacle to league domination is.\\u003Cp\\u003E\\r\\n\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003EThe iToysoldiers Team\\u003C\\/p\\u003E"
           }
         }
       ]
