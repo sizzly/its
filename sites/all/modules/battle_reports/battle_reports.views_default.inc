@@ -750,6 +750,14 @@ Displaying @start - @end of @total
   $handler->display->display_options['access']['role'] = array(
     2 => '2',
   );
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<h3>You have not reported any battles</h3>
+<p><a href="/node/add/game-results">Submit your battle results now</a>.</p>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -2314,7 +2322,6 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['comments_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comments_link']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['comments_link']['element_wrapper_class'] = 'btn btn-default';
-  $handler->display->display_options['fields']['comments_link']['teaser'] = TRUE;
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flag_content';

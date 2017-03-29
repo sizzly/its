@@ -14,7 +14,7 @@ function its_dashboard_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'statistics_counter_timestamp';
-  $strongarm->value = 1490273046;
+  $strongarm->value = 1490797847;
   $export['statistics_counter_timestamp'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -35,7 +35,7 @@ function its_dashboard_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'statistics_day_timestamp';
-  $strongarm->value = 1490273046;
+  $strongarm->value = 1490713432;
   $export['statistics_day_timestamp'] = $strongarm;
 
   $strongarm = new stdClass();

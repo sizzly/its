@@ -445,6 +445,86 @@ function home_page_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'advertise_with_itoysoldiers';
+  $page->task = 'page';
+  $page->admin_title = 'Advertise with iToysoldiers';
+  $page->admin_description = 'The Advert lead page.';
+  $page->path = 'advertise-with-itoysoldiers';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_advertise_with_itoysoldiers__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'advertise_with_itoysoldiers';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Default',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Advertise with iToysoldiers';
+  $display->uuid = '8c826c0d-2183-461a-be61-b752893337c2';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-d815b9d5-7818-44a4-ad9f-a503284f6fe7';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'coming_soon';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd815b9d5-7818-44a4-ad9f-a503284f6fe7';
+    $display->content['new-d815b9d5-7818-44a4-ad9f-a503284f6fe7'] = $pane;
+    $display->panels['contentmain'][0] = 'new-d815b9d5-7818-44a4-ad9f-a503284f6fe7';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['advertise_with_itoysoldiers'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'bc_landing_page';
   $page->task = 'page';
   $page->admin_title = 'BC landing page';
@@ -460,11 +540,11 @@ function home_page_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_bc_landing_page_panel_context';
+  $handler->name = 'page_bc_landing_page__panel_context_a96bea19-b7ec-4ba3-93b1-5210c0554ffc';
   $handler->task = 'page';
   $handler->subtask = 'bc_landing_page';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = 1;
   $handler->conf = array(
     'title' => 'Panel',
     'no_blocks' => 1,
@@ -519,6 +599,7 @@ function home_page_default_page_manager_pages() {
         ),
       ),
     ),
+    'name' => '',
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_boxton';
@@ -810,31 +891,6 @@ print_r($user->name);
     $display->content['new-d7214049-9242-4765-bb0b-9f590ccdb29c'] = $pane;
     $display->panels['contentmain'][2] = 'new-d7214049-9242-4765-bb0b-9f590ccdb29c';
     $pane = new stdClass();
-    $pane->pid = 'new-49efbd0f-1056-444b-bad5-62cda492c08c';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'home_page_register_now';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '49efbd0f-1056-444b-bad5-62cda492c08c';
-    $display->content['new-49efbd0f-1056-444b-bad5-62cda492c08c'] = $pane;
-    $display->panels['contentmain'][3] = 'new-49efbd0f-1056-444b-bad5-62cda492c08c';
-    $pane = new stdClass();
     $pane->pid = 'new-094a1982-1042-4a09-b065-583177738f91';
     $pane->panel = 'contentmain';
     $pane->type = 'custom';
@@ -891,11 +947,11 @@ print_r($user->name);
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '094a1982-1042-4a09-b065-583177738f91';
     $display->content['new-094a1982-1042-4a09-b065-583177738f91'] = $pane;
-    $display->panels['contentmain'][4] = 'new-094a1982-1042-4a09-b065-583177738f91';
+    $display->panels['contentmain'][3] = 'new-094a1982-1042-4a09-b065-583177738f91';
     $pane = new stdClass();
     $pane->pid = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
     $pane->panel = 'contentmain';
@@ -927,11 +983,11 @@ print_r($user->name);
       'css_class' => 'well well-sm',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'ca63930a-bb54-4229-8cba-b79fd857de57';
     $display->content['new-ca63930a-bb54-4229-8cba-b79fd857de57'] = $pane;
-    $display->panels['contentmain'][5] = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
+    $display->panels['contentmain'][4] = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2411,6 +2467,18 @@ Rob</p>
 
 <p>Intrigued? You should be. &nbsp;Here are a few of the benefits you\'ll receive for joining the Ironmonger program.</p>
 
+<h3>What you get right now</h3>
+
+<ul>
+	<li>As a partner with iToysoldiers you’ll get all of these features right out of the gate and you’ll never lose this premium access.</li>
+	<li>A really slick <a href="http://itoysoldiers.com/battlefield/brimstone-games">profile page</a> for your store that includes game stats, upcoming events, local meta for each game you support and more.&nbsp;</li>
+	<li>Influence in what tools and features iToysoldiers builds to support the unsung heroes of the table top war gaming hobby.&nbsp; That’d be you!</li>
+	<li>Priority iToysoldiers support&nbsp;&nbsp;– which is really handy if you or your players are having issues.</li>
+	<li>The ability to earn prestige points for your store.&nbsp; What’s prestige?&nbsp; It measures how active (and thus cool) a gaming store is.</li>
+	<li>Access to the League Manager.</li>
+	<li>Co-branding on a number of pages on iToysoldiers.</li>
+</ul>
+
 <h3>Free For Life</h3>
 
 <p>If you’re selected as one of the first Ironmongers your Ironmonger status lasts forever.&nbsp; You’ll always have premium access to exclusive tools.&nbsp; It’s my way of saying thank you for your help.&nbsp; Ultimately, I intend to charge a subscription for the Ironmonger features so jumping on board now is a great way to lock yourself in as part of the iToysoldiers community.</p>
@@ -2432,18 +2500,6 @@ Rob</p>
 
 <p>Still on the fence?&nbsp; Read on:</p>
 
-<h3>What you get right now</h3>
-
-<ul>
-	<li>As a partner with iToysoldiers you’ll get all of these features right out of the gate and you’ll never lose this premium access.</li>
-	<li>A really slick <a href="http://itoysoldiers.com/battlefield/brimstone-games">profile page</a> for your store that includes game stats, upcoming events, local meta for each game you support and more.&nbsp;</li>
-	<li>Influence in what tools and features iToysoldiers builds to support the unsung heroes of the table top war gaming hobby.&nbsp; That’d be you!</li>
-	<li>Priority iToysoldiers support&nbsp;&nbsp;– which is really handy if you or your players are having issues.</li>
-	<li>The ability to earn prestige points for your store.&nbsp; What’s prestige?&nbsp; It measures how active (and thus cool) a gaming store is.</li>
-	<li>Access to the League Manager.</li>
-	<li>Co-branding on a number of pages on iToysoldiers.</li>
-</ul>
-
 <h3>What’s on the Horizon?</h3>
 
 <p>Right now I’ve got some additional features in the pipeline.&nbsp; As these get released you’ll also get them as part of this partnership.&nbsp; Cool, eh?</p>
@@ -2464,7 +2520,7 @@ Rob<br />
 <a href="http://itoysoldiers.com/">itoysoldiers.com</a></p>
 ',
       'format' => 'filtered_html',
-      'substitute' => 0,
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -2508,20 +2564,22 @@ Rob<br />
     $display->content['new-8882395a-3623-4ed0-ab2a-989cceeaa090'] = $pane;
     $display->panels['header'][0] = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
     $pane = new stdClass();
-    $pane->pid = 'new-1bb24b85-1d05-47bf-b3dd-9db9df295082';
+    $pane->pid = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
     $pane->panel = 'sidebar';
-    $pane->type = 'entity_field_extra';
-    $pane->subtype = 'node:webform';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'full',
-      'context' => 'context_entity:node_1',
-      'override_title' => 1,
-      'override_title_text' => 'Let\'s Talk',
+      'admin_title' => 'Let\'s Talk Form',
+      'title' => 'Let\'s Talk',
+      'body' => '<script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=9"></script>',
+      'format' => 'php_code',
+      'substitute' => 0,
     );
     $pane->cache = array();
     $pane->style = array(
+      'style' => 'bootstrap_panel',
       'settings' => array(
         'use_title' => 1,
         'use_footer' => 0,
@@ -2529,15 +2587,14 @@ Rob<br />
         'footer_content' => '',
         'context_class' => 'panel-primary',
       ),
-      'style' => 'bootstrap_panel',
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '1bb24b85-1d05-47bf-b3dd-9db9df295082';
-    $display->content['new-1bb24b85-1d05-47bf-b3dd-9db9df295082'] = $pane;
-    $display->panels['sidebar'][0] = 'new-1bb24b85-1d05-47bf-b3dd-9db9df295082';
+    $pane->uuid = 'e0db5b84-d284-458c-ba08-0818ca123991';
+    $display->content['new-e0db5b84-d284-458c-ba08-0818ca123991'] = $pane;
+    $display->panels['sidebar'][0] = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
   $handler->conf['display'] = $display;
@@ -2828,6 +2885,151 @@ Rob<br />
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['itoysoldiers_for_narrative'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'legendary_battles';
+  $page->task = 'page';
+  $page->admin_title = 'Legendary Battles';
+  $page->admin_description = 'Landing page for the "noble opponent" cards.';
+  $page->path = 'legendary-battles';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_legendary_battles__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'legendary_battles';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Legendary Battles';
+  $display->uuid = '273d4c92-5b21-4df5-a572-bd084a0b8b5b';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Top Row',
+      'title' => '',
+      'body' => '        <div class="row">
+            <div class="col-md-6">
+                <div class="lead">Ahoy, Commander and welcome to iToysoldiers.</div>
+                <p>Likely you’ve reached this page because one of your opponents at a miniature wargaming event or tournament and you’re looking to find the battles you participated in. That is absolutely stellar because you’re in the right place.  But first you need to register for an account on iToysoldiers and you can do that right now:</p>
+                <a href="http://itoysoldiers.com/user/register" class="btn btn-primary btn-lg">Register on iToysoldiers</a>
+                <div class="seperator"></div>
+                <p>Once you’ve registered all you need to do is enter the iToysoldiers ID of the person you played at the event.  It will filter the available battles to that player and when you find your battle just click, “Acknowledge Battle” and you’ll start gaining renown, glory, and stats on the site.</p>
+                <p>There’s lots of reasons to join iToysoldiers. It’s free. It’s totally focused on miniature war gaming. We support all sorts of games so you can chronicle the glory of all of your armies right here on iToysoldiers – no matter what game you play. Oh. Did I mention it’s free? Forever?</p>
+                <p>Oh, and as long as I have you here… Subscribe to the iTS Dispatch and stay up to date with what’s going on at iToysoldiers.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Subscribe to the Dispatch</h3>
+                    </div>
+                    <div class="panel-body">
+                        <script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=7"></script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="thumbnail"><img src="https://s3.amazonaws.com/itoysoldiers/legendarybattles.jpg"></div>
+            </div>
+        </div>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'af88cd60-990a-4def-bee0-7407057ce2b1';
+    $display->content['new-af88cd60-990a-4def-bee0-7407057ce2b1'] = $pane;
+    $display->panels['contentmain'][0] = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
+    $pane = new stdClass();
+    $pane->pid = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'home_page_battles_legendary_search-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+    $display->content['new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310'] = $pane;
+    $display->panels['contentmain'][1] = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+    $pane = new stdClass();
+    $pane->pid = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+    $pane->panel = 'contentmain';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'landing page frame',
+      'title' => '',
+      'body' => '<iframe src="http://l.itoysoldiers.com/index.php/legendary-battles" width="0" height="0" frameBorder="0"></iframe>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '9a860902-217e-4bac-a3ca-4b094e44f539';
+    $display->content['new-9a860902-217e-4bac-a3ca-4b094e44f539'] = $pane;
+    $display->panels['contentmain'][2] = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['legendary_battles'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */

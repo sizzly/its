@@ -14,13 +14,7 @@ function war_zones_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "TAGS" : [ "Achievement", "Utility" ],
-      "REQUIRES" : [
-        "rules",
-        "views_rules",
-        "rules_conditional",
-        "userpoints_rules",
-        "privatemsg_rules"
-      ],
+      "REQUIRES" : [ "rules", "views_rules", "rules_conditional", "userpoints_rules" ],
       "USES VARIABLES" : {
         "aid" : { "label" : "Achievement", "type" : "node" },
         "uid" : { "label" : "User", "type" : "user" }
@@ -97,18 +91,15 @@ function war_zones_default_rules_configuration() {
                     {
                       "IF" : { "data_is" : { "data" : [ "uid" ], "value" : [ "site:current-user" ] } },
                       "DO" : [
-                        { "drupal_message" : { "message" : "You have received the \\u003Cstrong\\u003E[aid:link]\\u003C\\/strong\\u003E Achievement." } }
+                        { "drupal_message" : { "message" : "You have received the \\u003Cstrong\\u003E\\u003Ca href=\\u0022[aid:url]\\u0022\\u003E[aid:title]\\u003C\\/a\\u003E\\u003C\\/strong\\u003E Achievement." } }
                       ]
                     },
                     { "ELSE" : [
-                        { "privatemsg_rules_new" : {
-                            "USING" : {
-                              "recipient" : [ "uid" ],
-                              "author" : "1",
-                              "subject" : "Achievement Awarded",
-                              "body" : "You have been awarded the [aid:link] Achievement."
-                            },
-                            "PROVIDE" : { "thread_id" : { "thread_id" : "ID of new thread" } }
+                        { "mail" : {
+                            "to" : [ "uid:mail" ],
+                            "subject" : "[iToysoldiers] Achievement Awarded",
+                            "message" : "\\u003Ch3\\u003EAhoy, [uid:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EYou have received the \\u003Cstrong\\u003E\\u003Ca href=\\u0022[aid:url]\\u0022\\u003E[aid:title]\\u003C\\/a\\u003E\\u003C\\/strong\\u003E Achievement.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EGood show!\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EiToysoldiers\\u003C\\/p\\u003E",
+                            "language" : [ "" ]
                           }
                         }
                       ]
@@ -127,6 +118,16 @@ function war_zones_default_rules_configuration() {
                 { "data_set" : {
                     "data" : [ "entity-created-message:field-stream-node-ref" ],
                     "value" : [ "aid" ]
+                  }
+                },
+                { "component_rules_status_all_get_associated_nodes" : {
+                    "USING" : { "srid" : [ "aid" ] },
+                    "PROVIDE" : { "assoc_nodes" : { "assoc_nodes" : "Associated Nodes" } }
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "entity-created-message:field-associated-nodes-stream" ],
+                    "value" : [ "assoc-nodes" ]
                   }
                 }
               ]
@@ -2034,24 +2035,6 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_war_zone_all_on_save_new_content'] = entity_import('rules_config', '{ "rules_war_zone_all_on_save_new_content" : {
-      "LABEL" : "War Zone: All: On Save New Content",
-      "PLUGIN" : "reaction rule",
-      "ACTIVE" : false,
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional" ],
-      "ON" : { "node_insert" : [] },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "node" ],
-            "type" : "node",
-            "bundle" : { "value" : { "event" : "event" } }
-          }
-        }
-      ],
-      "DO" : [ { "SWITCH" : { "USING" : { "data" : [ "node:type" ] }, "DO" : [] } } ]
-    }
-  }');
   $items['rules_war_zone_all_player_has_registered_for_a_war_zone'] = entity_import('rules_config', '{ "rules_war_zone_all_player_has_registered_for_a_war_zone" : {
       "LABEL" : "War Zone: All: Player has registered for a War Zone",
       "PLUGIN" : "reaction rule",
@@ -2193,13 +2176,6 @@ function war_zones_default_rules_configuration() {
                   "USING" : { "value" : "warzone_campaign_report_battle_p" },
                   "DO" : [
                     { "component_rules_war_zone_campaign_report_battle" : { "efid" : [ "entityform" ] } }
-                  ]
-                }
-              },
-              { "CASE" : {
-                  "USING" : { "value" : "war_zone_league_report_battle" },
-                  "DO" : [
-                    { "component_rules_war_zone_league_report_battle" : { "efid" : [ "entityform" ] } }
                   ]
                 }
               },
@@ -2755,143 +2731,6 @@ function war_zones_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_war_zone_league_report_battle'] = entity_import('rules_config', '{ "rules_war_zone_league_report_battle" : {
-      "LABEL" : "War Zone: League: Report Battle",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "TAGS" : [ "4.3", "War Zone" ],
-      "REQUIRES" : [ "rules", "rules_conditional", "flag" ],
-      "USES VARIABLES" : { "efid" : { "label" : "Battle", "type" : "entityform" } },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "efid" ],
-            "type" : "entityform",
-            "bundle" : { "value" : { "war_zone_league_report_battle" : "war_zone_league_report_battle" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "efid:field-league-match-scorecard" ],
-            "type" : "entityform",
-            "bundle" : { "value" : { "score_card" : "score_card" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "efid:field-league-match-scorecard:field-opponent-scorecard" ],
-            "type" : "entityform",
-            "bundle" : { "value" : { "score_card" : "score_card" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "efid:field-league-match-scorecard:field-registration-sc" ],
-            "type" : "node_registration",
-            "bundle" : { "value" : { "war_zone_league" : "war_zone_league" } }
-          }
-        },
-        { "entity_is_of_bundle" : {
-            "entity" : [ "efid:field-league-match-scorecard:field-opponent-reg-sc" ],
-            "type" : "node_registration",
-            "bundle" : { "value" : { "war_zone_league" : "war_zone_league" } }
-          }
-        }
-      ],
-      "DO" : [
-        { "data_set" : {
-            "data" : [ "efid:field-league-match-scorecard:field-state-sc" ],
-            "value" : "20"
-          }
-        },
-        { "data_set" : {
-            "data" : [ "efid:field-league-match-scorecard:field-your-results" ],
-            "value" : [ "efid:field-your-results" ]
-          }
-        },
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "data_is" : {
-                  "data" : [ "efid:field-league-match-scorecard:field-display-sc" ],
-                  "value" : "1"
-                }
-              },
-              "DO" : [
-                { "component_rules_war_zone_all_generate_battle_report" : {
-                    "USING" : {
-                      "wzid" : [ "efid:field-league-match-scorecard:field-registration-sc:node" ],
-                      "p1id" : [ "efid:field-league-match-scorecard:field-registration-sc:user" ],
-                      "p1tid" : [
-                        "efid:field-league-match-scorecard:field-registration-sc:field-register-army"
-                      ],
-                      "p2tid" : [
-                        "efid:field-league-match-scorecard:field-opponent-reg-sc:field-register-army"
-                      ],
-                      "p1results" : [ "efid:field-your-results" ],
-                      "title" : "[site:current-date] [efid:field-league-match-scorecard:field-opponent-reg-sc:field-register-army] vs [efid:field-league-match-scorecard:field-registration-sc:field-register-army]"
-                    },
-                    "PROVIDE" : { "brid" : { "brid" : "Battle Report" } }
-                  }
-                },
-                { "data_set" : {
-                    "data" : [ "efid:field-league-match-scorecard:field-game-reference" ],
-                    "value" : [ "brid" ]
-                  }
-                },
-                { "CONDITIONAL" : [
-                    {
-                      "IF" : { "data_is" : {
-                          "data" : [
-                            "efid:field-league-match-scorecard:field-opponent-scorecard:field-state-sc"
-                          ],
-                          "value" : "20"
-                        }
-                      },
-                      "DO" : [
-                        { "flag_flagnode" : {
-                            "flag" : "acknowledge_battle",
-                            "node" : [ "brid" ],
-                            "flagging_user" : [
-                              "efid:field-league-match-scorecard:field-opponent-scorecard:field-registration-sc:user"
-                            ],
-                            "permission_check" : "1"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            { "ELSE" : [
-                { "CONDITIONAL" : [
-                    {
-                      "IF" : { "data_is" : {
-                          "data" : [ "efid:field-league-match-scorecard:field-state-sc" ],
-                          "value" : "20"
-                        }
-                      },
-                      "DO" : [
-                        { "flag_flagnode" : {
-                            "flag" : "acknowledge_battle",
-                            "node" : [
-                              "efid:field-league-match-scorecard:field-opponent-scorecard:field-game-reference"
-                            ],
-                            "flagging_user" : [ "efid:user" ],
-                            "permission_check" : "1"
-                          }
-                        }
-                      ]
-                    },
-                    { "ELSE" : [
-                        { "drupal_message" : { "message" : "\\u003Cdiv class=\\u0022lead\\u0022\\u003EYour League Match Results Have Been Recorded\\u003C\\/div\\u003E\\r\\nOnce your opponent has recorded their battle the report will be generated." } }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  }');
   $items['rules_war_zone_league_start_league_messaging'] = entity_import('rules_config', '{ "rules_war_zone_league_start_league_messaging" : {
       "LABEL" : "War Zone: League: Start League Messaging",
       "PLUGIN" : "rule",
@@ -3144,7 +2983,7 @@ function war_zones_default_rules_configuration() {
         { "component_rules_warzone_email_players" : {
             "wzid" : [ "wzid" ],
             "message_title" : "[iToysoldiers] [wzid:title] Round [new-round:value] has begun",
-            "message_body" : "\\u003Cp\\u003ERound [new-round:value] for the league, [wzid:title] has begun!\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EYour mission is to view the \\u003Ca href=\\u0022http:\\/\\/itoysoldiers.com\\/node\\/[wzid:nid]\\/operations\\u0022\\u003E\\u003Cstrong\\u003EOperations Page\\u003C\\/strong\\u003E\\u003C\\/a\\u003E for the league to determine what your obstacle to league domination is\\u003Cp\\u003E\\r\\n\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003EThe iToysoldiers Team\\u003C\\/p\\u003E"
+            "message_body" : "\\u003Cp\\u003ERound [new-round:value] for the league, [wzid:title] has begun!\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EYour mission is to view the \\u003Ca href=\\u0022http:\\/\\/itoysoldiers.com\\/node\\/[wzid:nid]\\/event-ops\\u0022\\u003E\\u003Cstrong\\u003EOperations Page\\u003C\\/strong\\u003E\\u003C\\/a\\u003E for the league to determine what your obstacle to league domination is.\\u003Cp\\u003E\\r\\n\\r\\n\\u003Cp\\u003ECarpe Acies!\\u003Cbr\\u003EThe iToysoldiers Team\\u003C\\/p\\u003E"
           }
         }
       ]

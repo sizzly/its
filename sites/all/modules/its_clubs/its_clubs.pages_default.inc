@@ -301,7 +301,6 @@ order-of-battle/gaming-clubs',
       'types' => array(
         'event' => 'event',
         'article' => 'article',
-        'war_zone_league' => 'war_zone_league',
         'war_zone_tournament' => 'war_zone_tournament',
         'forum' => 'forum',
       ),
