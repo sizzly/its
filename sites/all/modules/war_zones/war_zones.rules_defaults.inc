@@ -14,13 +14,7 @@ function war_zones_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "TAGS" : [ "Achievement", "Utility" ],
-      "REQUIRES" : [
-        "rules",
-        "views_rules",
-        "rules_conditional",
-        "userpoints_rules",
-        "privatemsg_rules"
-      ],
+      "REQUIRES" : [ "rules", "views_rules", "rules_conditional", "userpoints_rules" ],
       "USES VARIABLES" : {
         "aid" : { "label" : "Achievement", "type" : "node" },
         "uid" : { "label" : "User", "type" : "user" }
@@ -97,18 +91,15 @@ function war_zones_default_rules_configuration() {
                     {
                       "IF" : { "data_is" : { "data" : [ "uid" ], "value" : [ "site:current-user" ] } },
                       "DO" : [
-                        { "drupal_message" : { "message" : "You have received the \\u003Cstrong\\u003E[aid:link]\\u003C\\/strong\\u003E Achievement." } }
+                        { "drupal_message" : { "message" : "You have received the \\u003Cstrong\\u003E\\u003Ca href=\\u0022[aid:url]\\u0022\\u003E[aid:title]\\u003C\\/a\\u003E\\u003C\\/strong\\u003E Achievement." } }
                       ]
                     },
                     { "ELSE" : [
-                        { "privatemsg_rules_new" : {
-                            "USING" : {
-                              "recipient" : [ "uid" ],
-                              "author" : "1",
-                              "subject" : "Achievement Awarded",
-                              "body" : "You have been awarded the [aid:link] Achievement."
-                            },
-                            "PROVIDE" : { "thread_id" : { "thread_id" : "ID of new thread" } }
+                        { "mail" : {
+                            "to" : [ "uid:mail" ],
+                            "subject" : "[iToysoldiers] Achievement Awarded",
+                            "message" : "\\u003Ch3\\u003EAhoy, [uid:name]!\\u003C\\/h3\\u003E\\r\\n\\r\\n\\u003Cp\\u003EYou have received the \\u003Cstrong\\u003E\\u003Ca href=\\u0022[aid:url]\\u0022\\u003E[aid:title]\\u003C\\/a\\u003E\\u003C\\/strong\\u003E Achievement.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EGood show!\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EiToysoldiers\\u003C\\/p\\u003E",
+                            "language" : [ "" ]
                           }
                         }
                       ]
