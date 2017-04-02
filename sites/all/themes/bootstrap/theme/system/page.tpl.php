@@ -54,55 +54,47 @@
                         </a>
                     </li>
                     <li class="openable open">
-                        <a href="/wargaming-decorations">
-                            <span class="menu-icon">
-                                <i class="fa fa-certificate fa-lg"></i> 
-                            </span>
-                            <span class="text">
-                                Decorations
-                            </span>
-                            <span class="menu-hover"></span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="/wargaming-decorations"><span class="submenu-label">Decorations</span></a></li>
-                            <li><a href="/wargaming-decorations/renown"><span class="submenu-label">Renown</span></a></li>
-                            <li><a href="/wargaming-decorations/achievements"><span class="submenu-label">Achievements</span></a></li>
-                            <li><a href="/wargaming-decorations/medals"><span class="submenu-label">Medals</span></a></li>
-                            <li><a href="/wargaming-decorations/leaderboards"><span class="submenu-label">Leaderboards</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="openable open">
-                        <a href="/battle-reports">
+                        <a href="/gaming-on-itoysoldiers">
                             <span class="menu-icon">
                                 <i class="fa fa-fire fa-lg"></i> 
                             </span>
                             <span class="text">
-                                Battles
+                                Gaming
                             </span>
                             <span class="menu-hover"></span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="/battle-reports"><span class="submenu-label">Battles</span></a></li>
-                            <li><a href="/battle-reports/stats"><span class="submenu-label">Stats</span></a></li>
-                            <li><a href="/battle-reports/battle-meta"><span class="submenu-label">Meta</span></a></li>
+                            <li><a href="/battle-reports"><span class="submenu-label">Battle Reports</span></a></li>
+                            <li><a href="/order-of-battle/listcrit"><span class="submenu-label">List Crit</span></a></li>
                         </ul>
                     </li>
                     <li class="openable open">
-                        <a href="/order-of-battle">
+                        <a href="/modelling-on-itoysoldiers">
                             <span class="menu-icon">
-                                <i class="fa fa-arrows-alt fa-lg"></i> 
+                                <i class="fa fa-paint-brush fa-lg"></i> 
                             </span>
                             <span class="text">
-                                Order of Battle
+                                Modelling
                             </span>
                             <span class="menu-hover"></span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="/order-of-battle"><span class="submenu-label">Order of Battle</span></a></li>
-                            <li><a href="/order-of-battle/player-armies"><span class="submenu-label">Armies</span></a></li>
-                            <li><a href="/order-of-battle/players"><span class="submenu-label">Players</span></a></li>
-                            <li><a href="/order-of-battle/listcrit"><span class="submenu-label">List Crit</span></a></li>
-                            <li><a href="/order-of-battle/gaming-clubs"><span class="submenu-label">Gaming Clubs</span></a></li>
+                            <li><a href="/munitions/modeling-projects"><span class="submenu-label">Modeling Projects</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="openable open">
+                        <a href="/narrative-on-itoysoldiers">
+                            <span class="menu-icon">
+                                <i class="fa fa-book fa-lg"></i> 
+                            </span>
+                            <span class="text">
+                                Narrative
+                            </span>
+                            <span class="menu-hover"></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/order-of-battle/player-armies"><span class="submenu-label">Army Profiles</span></a></li>
+                            <li><a href="/theater/narrative-campaigns"><span class="submenu-label">Campaigns</span></a></li>
                         </ul>
                     </li>
                     <li class="openable open">
@@ -119,46 +111,29 @@
                             <li><a href="/theater"><span class="submenu-label">Theaters</span></a></li>
                             <li><a href="/theater/battlefield"><span class="submenu-label">Battlefields</span></a></li>
                             <li><a href="/theater/events"><span class="submenu-label">Events</span></a></li>
-                            <li><a href="/theater/narrative-campaigns"><span class="submenu-label">Campaigns</span></a></li>
                             <li><a href="/theater/warzone"><span class="submenu-label">War Zones</span></a></li>
+                            <li><a href="/order-of-battle/gaming-clubs"><span class="submenu-label">Gaming Clubs</span></a></li>
+                            
                         </ul>
                     </li>
                     <li class="openable open">
-                        <a href="/munitions">
+                        <a href="/community-on-itoysoldiers">
                             <span class="menu-icon">
-                                <i class="fa fa-bomb fa-lg"></i> 
+                                <i class="fa fa-users fa-lg"></i> 
                             </span>
                             <span class="text">
-                                Munitions
+                                Community
                             </span>
                             <span class="menu-hover"></span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="/munitions"><span class="submenu-label">Munitions</span></a></li>
-                            <li><a href="/munitions/modeling-projects"><span class="submenu-label">Modeling Projects</span></a></li>
-                            <li><a href="/munitions/gaming-stores"><span class="submenu-label">Gaming Stores</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="openable open">
-                        <a href="/gazetteer">
-                            <span class="menu-icon">
-                                <i class="fa fa-database fa-lg"></i> 
-                            </span>
-                            <span class="text">
-                                Gazetteer
-                            </span>
-                            <span class="menu-hover"></span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="/gazetteer"><span class="submenu-label">Gazetteer</span></a></li>
+                            <li><a href="/wargaming-decorations/leaderboards"><span class="submenu-label">Leaderboards</span></a></li>
                             <li><a href="/blog"><span class="submenu-label">Blogs</span></a></li>
                             <li><a href="/galleries"><span class="submenu-label">Galleries</span></a></li>
                             <li><a href="/forum"><span class="submenu-label">Discussions</span></a></li>
                         </ul>
                     </li>
                 </ul>
-
-
                 <div class="alert alert-info">
                     <ins data-revive-zoneid="5" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
                     <script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script> 
