@@ -81,7 +81,6 @@ features[views_view][] = user_recent_campaigns
 features[views_view][] = user_record
 features[views_view][] = user_stats
 features[views_view][] = user_summary_views
-features[views_view][] = utility_achievement_anniversary
 features[views_view][] = utility_achievement_counts
 features[views_view][] = utility_achievements_fix
 features[views_view][] = utility_army_profile_node_filter

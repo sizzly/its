@@ -4134,6 +4134,42 @@ going';
   );
   $handler->display->display_options['pane_category']['name'] = 'Events';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Points per Army */
+  $handler = $view->new_display('panel_pane', 'Points per Army', 'panel_pane_16');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Points per army */
+  $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['table'] = 'field_data_field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['field'] = 'field_points_per_army';
+  $handler->display->display_options['fields']['field_points_per_army']['label'] = '';
+  $handler->display->display_options['fields']['field_points_per_army']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_points_per_army']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <span class="fa fa-dot-circle-o fa-lg grey fa-fw"></span>
+    </div>
+    <div class="media-body">
+        <strong>[field_points_per_army]</strong><br>
+        <small>Points per Army</small>
+    </div>
+</div>
+<div class="seperator"></div>';
+  $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_points_per_army']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Events';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['events_all_page_layout'] = $view;
 
   return $export;
