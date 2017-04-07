@@ -146,12 +146,7 @@ function its_achievements_default_rules_configuration() {
         { "VIEW LOOP" : {
             "VIEW" : "utility_achievement_anniversary",
             "DISPLAY" : "views_rules_2",
-            "USING" : {
-              "term_node_tid_depth" : [ "bid:field-your-army:tid" ],
-              "term_node_tid_depth_1" : [ "bid:field-opponent-s-army:tid" ],
-              "term_node_tid_depth_2" : [ "bid:field-mission:tid" ]
-            },
-            "ROW VARIABLES" : { "nid" : { "nid" : "Content: Nid" } },
+            "ROW VARIABLES" : [],
             "DO" : [
               { "entity_fetch" : {
                   "USING" : { "type" : "node", "id" : [ "nid" ] },
@@ -201,8 +196,7 @@ function its_achievements_default_rules_configuration() {
         { "VIEW LOOP" : {
             "VIEW" : "utility_achievement_anniversary",
             "DISPLAY" : "views_rules_1",
-            "USING" : { "date_argument" : [ "variable-added" ] },
-            "ROW VARIABLES" : { "nid" : { "nid" : "Content: Nid" } },
+            "ROW VARIABLES" : [],
             "DO" : [
               { "entity_fetch" : {
                   "USING" : { "type" : "node", "id" : [ "nid" ] },
@@ -742,178 +736,6 @@ function its_achievements_default_rules_configuration() {
               ]
             }
           ]
-        }
-      ]
-    }
-  }');
-  $items['rules_utility_award_existing_modelling_achievements'] = entity_import('rules_config', '{ "rules_utility_award_existing_modelling_achievements" : {
-      "LABEL" : "Utility: Award Existing Modelling Achievements",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "views_rules", "rules", "rules_conditional" ],
-      "DO" : [
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_award_existing_modelling_achievements",
-            "DISPLAY" : "views_rules_3",
-            "ROW VARIABLES" : { "name" : { "name" : "Author uid" } },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "user", "id" : [ "name" ] },
-                  "PROVIDE" : { "entity_fetched" : { "user_fetched" : "Fetched user" } }
-                }
-              },
-              { "component_rules_award_achievement" : { "aid" : "9301", "uid" : [ "user-fetched" ] } }
-            ]
-          }
-        },
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_award_existing_modelling_achievements",
-            "DISPLAY" : "views_rules_1",
-            "ROW VARIABLES" : {
-              "field_model_count" : { "field_model_count" : "Model Count" },
-              "user" : { "user" : "Author uid" }
-            },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "user", "id" : [ "user" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                }
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "0" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9302", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "9" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9303", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "19" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9304", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "29" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9305", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "49" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9306", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "74" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9307", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "99" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9308", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "124" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9309", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "149" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9310", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "199" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9311", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_award_existing_modelling_achievements",
-            "DISPLAY" : "views_rules_2",
-            "ROW VARIABLES" : {
-              "field_model_count" : { "field_model_count" : "Model Count" },
-              "user" : { "user" : "Author uid" }
-            },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "user", "id" : [ "user" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                }
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "0" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9325", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "9" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9326", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "19" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9327", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
         }
       ]
     }
