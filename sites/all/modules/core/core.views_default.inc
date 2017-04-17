@@ -928,13 +928,6 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['field_timeline_icon']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_timeline_icon']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_timeline_icon']['empty'] = '<i class="fa fa-plus-square"></i>';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_reply_form']['id'] = 'field_reply_form';
-  $handler->display->display_options['fields']['field_reply_form']['table'] = 'field_data_field_reply_form';
-  $handler->display->display_options['fields']['field_reply_form']['field'] = 'field_reply_form';
-  $handler->display->display_options['fields']['field_reply_form']['label'] = '';
-  $handler->display->display_options['fields']['field_reply_form']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_reply_form']['element_label_colon'] = FALSE;
   /* Field: Message: Message ID */
   $handler->display->display_options['fields']['mid']['id'] = 'mid';
   $handler->display->display_options['fields']['mid']['table'] = 'message';

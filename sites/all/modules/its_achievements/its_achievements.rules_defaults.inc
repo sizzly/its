@@ -160,6 +160,148 @@ function its_achievements_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_achievements_grind_of_war'] = entity_import('rules_config', '{ "rules_achievements_grind_of_war" : {
+      "LABEL" : "Achievements: Grind of War",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "views_rules", "rules_conditional", "rules" ],
+      "USES VARIABLES" : { "uid" : { "label" : "User", "type" : "user" } },
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "achievements_message_counts",
+            "DISPLAY" : "views_rules_1",
+            "USING" : { "user" : [ "uid:uid" ] },
+            "ROW VARIABLES" : { "mid" : { "mid" : "COUNT(DISTINCT Message: Message ID)" } },
+            "DO" : [
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "99999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9478", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "89999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9477", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "79999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9476", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "69999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9475", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "59999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9474", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "49999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9473", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "39999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9472", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "34999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9471", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "29999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9470", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "24999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9469", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "19999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9468", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "14999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9467", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "12499" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9466", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "9999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9465", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "7499" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9464", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "4999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9463", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "2999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9462", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "1999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9461", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9460", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "99" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9459", "uid" : [ "uid" ] } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_achievements_honoring_the_past'] = entity_import('rules_config', '{ "rules_achievements_honoring_the_past" : {
       "LABEL" : "Achievements: Honoring the Past",
       "PLUGIN" : "rule",

@@ -108,10 +108,8 @@
                             <span class="menu-hover"></span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="/theater"><span class="submenu-label">Theaters</span></a></li>
                             <li><a href="/theater/battlefield"><span class="submenu-label">Battlefields</span></a></li>
                             <li><a href="/theater/events"><span class="submenu-label">Events</span></a></li>
-                            <li><a href="/theater/warzone"><span class="submenu-label">War Zones</span></a></li>
                             <li><a href="/order-of-battle/gaming-clubs"><span class="submenu-label">Gaming Clubs</span></a></li>
                             
                         </ul>

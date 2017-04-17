@@ -253,6 +253,69 @@ function its_achievements_views_default_views() {
   $export['achievements_all_player_lists'] = $view;
 
   $view = new view();
+  $view->name = 'achievements_message_counts';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'message';
+  $view->human_name = 'Achievements: Message Counts';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: COUNT(DISTINCT Message: Message ID) */
+  $handler->display->display_options['fields']['mid']['id'] = 'mid';
+  $handler->display->display_options['fields']['mid']['table'] = 'message';
+  $handler->display->display_options['fields']['mid']['field'] = 'mid';
+  $handler->display->display_options['fields']['mid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['mid']['label'] = '';
+  $handler->display->display_options['fields']['mid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mid']['separator'] = '';
+  /* Contextual filter: Message: User uid */
+  $handler->display->display_options['arguments']['user']['id'] = 'user';
+  $handler->display->display_options['arguments']['user']['table'] = 'message';
+  $handler->display->display_options['arguments']['user']['field'] = 'user';
+  $handler->display->display_options['arguments']['user']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['user']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['user']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['user']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['user']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Rules */
+  $handler = $view->new_display('views_rules', 'Rules', 'views_rules_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['rules_parameter'] = array(
+    'user' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => 'Message: User uid',
+      'name' => 'user',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'mid' => array(
+      'enabled' => 1,
+      'rendered' => 1,
+      'type' => 'integer',
+      'label' => 'COUNT(DISTINCT Message: Message ID)',
+      'name' => 'mid',
+    ),
+  );
+  $export['achievements_message_counts'] = $view;
+
+  $view = new view();
   $view->name = 'achievements_modelling_rules';
   $view->description = '';
   $view->tag = 'default';
