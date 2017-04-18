@@ -123,43 +123,6 @@ function its_achievements_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_achievements_altar_of_war'] = entity_import('rules_config', '{ "rules_achievements_altar_of_war" : {
-      "LABEL" : "Achievements: Altar of War",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "TAGS" : [ "Achievements" ],
-      "REQUIRES" : [ "rules", "views_rules" ],
-      "USES VARIABLES" : { "bid" : { "label" : "Battle", "type" : "node" } },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "bid" ],
-            "type" : "node",
-            "bundle" : { "value" : {
-                "game_results" : "game_results",
-                "game_result_system_" : "game_result_system_"
-              }
-            }
-          }
-        }
-      ],
-      "DO" : [
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_achievement_anniversary",
-            "DISPLAY" : "views_rules_2",
-            "ROW VARIABLES" : [],
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "node", "id" : [ "nid" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                }
-              },
-              { "component_rules_award_achievement" : { "aid" : [ "entity-fetched" ], "uid" : [ "bid:author" ] } }
-            ]
-          }
-        }
-      ]
-    }
-  }');
   $items['rules_achievements_grind_of_war'] = entity_import('rules_config', '{ "rules_achievements_grind_of_war" : {
       "LABEL" : "Achievements: Grind of War",
       "PLUGIN" : "rule",
@@ -302,16 +265,15 @@ function its_achievements_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_achievements_honoring_the_past'] = entity_import('rules_config', '{ "rules_achievements_honoring_the_past" : {
-      "LABEL" : "Achievements: Honoring the Past",
+  $items['rules_achievements_honoring_the_past_check'] = entity_import('rules_config', '{ "rules_achievements_honoring_the_past_check" : {
+      "LABEL" : "Achievements: Honoring the Past: Check",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "TAGS" : [ "Achievement" ],
-      "REQUIRES" : [ "rules", "php", "views_rules" ],
-      "USES VARIABLES" : { "battle_nid" : { "label" : "Battle", "type" : "node" } },
+      "REQUIRES" : [ "rules", "php", "rules_conditional" ],
+      "USES VARIABLES" : { "bid" : { "label" : "Battle", "type" : "node" } },
       "IF" : [
         { "entity_is_of_bundle" : {
-            "entity" : [ "battle-nid" ],
+            "entity" : [ "bid" ],
             "type" : "node",
             "bundle" : { "value" : {
                 "game_results" : "game_results",
@@ -323,29 +285,155 @@ function its_achievements_default_rules_configuration() {
       ],
       "DO" : [
         { "data_convert" : {
-            "USING" : { "type" : "text", "value" : [ "battle-nid:field-game-date" ] },
+            "USING" : { "type" : "text", "value" : [ "bid:field-game-date" ] },
             "PROVIDE" : { "conversion_result" : { "conversion_result" : "Conversion result" } }
           }
         },
         { "variable_add" : {
             "USING" : {
               "type" : "text",
-              "value" : "\\u003C?php\\r\\necho date(\\u0027Y-m-d\\u0027, $conversion_result);\\r\\n?\\u003E"
+              "value" : "\\u003C?php\\r\\necho date(\\u0027d-M\\u0027, $conversion_result);\\r\\n?\\u003E"
             },
             "PROVIDE" : { "variable_added" : { "variable_added" : "Added variable" } }
           }
         },
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_achievement_anniversary",
-            "DISPLAY" : "views_rules_1",
-            "ROW VARIABLES" : [],
+        { "SWITCH" : {
+            "USING" : { "data" : [ "variable-added" ] },
             "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "node", "id" : [ "nid" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+              { "CASE" : {
+                  "USING" : { "value" : "14-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5461", "uid" : [ "bid:author" ] } }
+                  ]
                 }
               },
-              { "component_rules_award_achievement" : { "aid" : [ "entity-fetched" ], "uid" : [ "battle-nid:author" ] } }
+              { "CASE" : {
+                  "USING" : { "value" : "15-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5462", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "16-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5463", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "17-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5464", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "21-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5497", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "22-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5498", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "28-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5499", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : { "USING" : { "value" : "17-Apr" }, "DO" : [] } },
+              { "CASE" : {
+                  "USING" : { "value" : "17-May" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4168", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "01-Jun" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4166", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "11-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4889", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "25-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4890", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "26-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4891", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "28-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4888", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "01-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4892", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "02-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4893", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "08-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4895", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "09-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4901", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "15-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4902", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "29-Apr" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "9484", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              }
             ]
           }
         }
