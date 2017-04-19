@@ -9254,7 +9254,6 @@ Salute  Comment  Share
     9 => 0,
     8 => 0,
   );
-  $handler->display->display_options['filters']['field_opponent_s_army_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['vocabulary'] = 'armies';
   /* Filter criterion: Field: Points per army (field_points_per_army) */
   $handler->display->display_options['filters']['field_points_per_army_value']['id'] = 'field_points_per_army_value';

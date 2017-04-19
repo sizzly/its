@@ -412,7 +412,7 @@ blog/%node:author:uid
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
+  $handler->weight = -24;
   $handler->conf = array(
     'title' => 'Default',
     'no_blocks' => 0,
@@ -463,7 +463,7 @@ blog/%node:author:uid
     ),
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_boxton';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(

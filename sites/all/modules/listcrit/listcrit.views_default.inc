@@ -1059,7 +1059,6 @@ function listcrit_views_default_views() {
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['value'] = '';
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_opponent_s_army_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['vocabulary'] = 'armies';
   /* Filter criterion: Content: Primary Role (field_primary_role) */
   $handler->display->display_options['filters']['field_primary_role_tid']['id'] = 'field_primary_role_tid';

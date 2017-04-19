@@ -52,6 +52,31 @@ wargaming-decorations/achievements
 %node:field-achievement-category:url',
     'panels_breadcrumbs_home' => 1,
     'name' => '',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => '[current-page:title] : [node:field-short-description]',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+        'og:type' => array(
+          'value' => 'website',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_moscone';

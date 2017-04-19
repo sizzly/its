@@ -389,8 +389,10 @@ function listcrit_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'shs',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
+        'content_taxonomy_opt_groups' => FALSE,
         'shs' => array(
           'create_new_levels' => 0,
           'create_new_terms' => 0,
@@ -398,7 +400,7 @@ function listcrit_field_default_field_instances() {
           'node_count' => 0,
         ),
       ),
-      'type' => 'taxonomy_shs',
+      'type' => 'options_select',
       'weight' => 30,
     ),
   );
