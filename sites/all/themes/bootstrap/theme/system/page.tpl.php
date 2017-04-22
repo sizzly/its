@@ -54,7 +54,7 @@
                         </a>
                     </li>
                     <li class="openable open">
-                        <a href="/gaming-on-itoysoldiers">
+                        <a href="/gaming">
                             <span class="menu-icon">
                                 <i class="fa fa-fire fa-lg"></i> 
                             </span>
@@ -65,11 +65,11 @@
                         </a>
                         <ul class="submenu">
                             <li><a href="/battle-reports"><span class="submenu-label">Battle Reports</span></a></li>
-                            <li><a href="/order-of-battle/listcrit"><span class="submenu-label">List Crit</span></a></li>
+                            <li><a href="/listcrit"><span class="submenu-label">List Crit</span></a></li>
                         </ul>
                     </li>
                     <li class="openable open">
-                        <a href="/modelling-on-itoysoldiers">
+                        <a href="/modelling">
                             <span class="menu-icon">
                                 <i class="fa fa-paint-brush fa-lg"></i> 
                             </span>
@@ -83,7 +83,7 @@
                         </ul>
                     </li>
                     <li class="openable open">
-                        <a href="/narrative-on-itoysoldiers">
+                        <a href="/narrative">
                             <span class="menu-icon">
                                 <i class="fa fa-book fa-lg"></i> 
                             </span>
@@ -115,7 +115,7 @@
                         </ul>
                     </li>
                     <li class="openable open">
-                        <a href="/community-on-itoysoldiers">
+                        <a href="/community">
                             <span class="menu-icon">
                                 <i class="fa fa-users fa-lg"></i> 
                             </span>

@@ -31,7 +31,6 @@ features[views_view][] = battle_stat_views
 features[views_view][] = battlefields_pages_layout_etc
 features[views_view][] = blogs_all_lists
 features[views_view][] = blogs_all_messages
-features[views_view][] = community_page_views
 features[views_view][] = decorations_medals_lists_of_medals
 features[views_view][] = decorations_renown_player_lists
 features[views_view][] = files_test_modal

@@ -599,6 +599,245 @@ function blogs_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'community_main_page';
+  $page->task = 'page';
+  $page->admin_title = 'Community Main Page';
+  $page->admin_description = '';
+  $page->path = 'community';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_community_main_page__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'community_main_page';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => 'Community | [site:name]',
+        ),
+        'description' => array(
+          'value' => 'Miniature wargamers, their blogs, galleries and discussions. Oh! And site wide leaderboards for all sorts of wargaming stats and achievements.',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+      ),
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => '',
+    'panels_breadcrumbs_paths' => '',
+    'panels_breadcrumbs_home' => 0,
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_moscone';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'b932ffed-e46a-4626-bde4-a12d83fc291c';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-20cff199-115d-4b64-ba49-ff38ae9f69bc';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'leaderboards_all_tables-panel_pane_7';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '20cff199-115d-4b64-ba49-ff38ae9f69bc';
+    $display->content['new-20cff199-115d-4b64-ba49-ff38ae9f69bc'] = $pane;
+    $display->panels['contentmain'][0] = 'new-20cff199-115d-4b64-ba49-ff38ae9f69bc';
+    $pane = new stdClass();
+    $pane->pid = 'new-5d263c0c-4a14-48d3-8eec-21a509d619f9';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Jumbotron',
+      'title' => '',
+      'body' => '<div class="jumbotron">
+  <h1>Community on iToysoldiers</h1>
+  <h2>ranking wargamers and their blogs, galleries and discussions</h2>
+</div>',
+      'format' => 'pure_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '5d263c0c-4a14-48d3-8eec-21a509d619f9';
+    $display->content['new-5d263c0c-4a14-48d3-8eec-21a509d619f9'] = $pane;
+    $display->panels['header'][0] = 'new-5d263c0c-4a14-48d3-8eec-21a509d619f9';
+    $pane = new stdClass();
+    $pane->pid = 'new-f7440895-104b-4c5a-b15c-9f116864418b';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Nav Bar',
+      'title' => '',
+      'body' => '<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Community</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/blog">Blogs</a></li>
+        <li><a href="/galleries">Galleries</a></li>
+        <li><a href="/forum">Discussions</a></li>
+        <li><a href="/wargaming-decorations/leaderboards">Leaderboards</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>',
+      'format' => 'pure_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'f7440895-104b-4c5a-b15c-9f116864418b';
+    $display->content['new-f7440895-104b-4c5a-b15c-9f116864418b'] = $pane;
+    $display->panels['header'][1] = 'new-f7440895-104b-4c5a-b15c-9f116864418b';
+    $pane = new stdClass();
+    $pane->pid = 'new-c24a6d90-0c0a-47bf-9c70-edb19aa564ea';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'blogs_all_lists-panel_pane_4';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c24a6d90-0c0a-47bf-9c70-edb19aa564ea';
+    $display->content['new-c24a6d90-0c0a-47bf-9c70-edb19aa564ea'] = $pane;
+    $display->panels['sidebar'][0] = 'new-c24a6d90-0c0a-47bf-9c70-edb19aa564ea';
+    $pane = new stdClass();
+    $pane->pid = 'new-1846e006-09b1-4ffd-9d57-8950701e3757';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'galleries_all_lists-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '1846e006-09b1-4ffd-9d57-8950701e3757';
+    $display->content['new-1846e006-09b1-4ffd-9d57-8950701e3757'] = $pane;
+    $display->panels['sidebar'][1] = 'new-1846e006-09b1-4ffd-9d57-8950701e3757';
+    $pane = new stdClass();
+    $pane->pid = 'new-45adc5f6-001f-4808-8144-e388bd840079';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'forum_all_lists-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '45adc5f6-001f-4808-8144-e388bd840079';
+    $display->content['new-45adc5f6-001f-4808-8144-e388bd840079'] = $pane;
+    $display->panels['sidebar'][2] = 'new-45adc5f6-001f-4808-8144-e388bd840079';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['community_main_page'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'gazetteer_landing_page';
   $page->task = 'page';
   $page->admin_title = 'Gazetteer Landing Page';

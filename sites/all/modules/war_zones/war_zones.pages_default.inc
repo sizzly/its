@@ -2740,7 +2740,7 @@ Manage',
   $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Panel',
-    'no_blocks' => 1,
+    'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
@@ -2752,7 +2752,10 @@ Manage',
       'enabled' => 1,
       'metatags' => array(
         'title' => array(
-          'value' => 'War Zones',
+          'value' => 'Theaters | iToysoldiers',
+        ),
+        'description' => array(
+          'value' => 'Theaters on iToysoldiers is all about who, where, and when to field your miniature wargaming armies.',
         ),
         'robots' => array(
           'value' => array(
@@ -2776,7 +2779,7 @@ Manage',
     'panels_breadcrumbs_home' => 0,
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its2';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -2797,39 +2800,10 @@ Manage',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-a638f55d-281b-4f2f-9a0f-8057843edab0';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Calendar Block',
-      'title' => 'This Month',
-      'body' => '<div class="seperator"></div>
-<?php
-  $block = module_invoke(\'views\', \'block_view\', \'event_calendar-block_1\');
-  print render($block[\'content\']);
-?>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'a638f55d-281b-4f2f-9a0f-8057843edab0';
-    $display->content['new-a638f55d-281b-4f2f-9a0f-8057843edab0'] = $pane;
-    $display->panels['contentmainleft'][0] = 'new-a638f55d-281b-4f2f-9a0f-8057843edab0';
-    $pane = new stdClass();
-    $pane->pid = 'new-9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac';
-    $pane->panel = 'contentmainright';
+    $pane->pid = 'new-89df883b-079c-4cf3-8395-244cbc1f393e';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'war_zone_all_lists-panel_pane_1';
+    $pane->subtype = 'battlefields_all_lists-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -2841,9 +2815,28 @@ Manage',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac';
-    $display->content['new-9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac'] = $pane;
-    $display->panels['contentmainright'][0] = 'new-9d4ac9b8-7bfd-42fe-82ba-b74ec818e1ac';
+    $pane->uuid = '89df883b-079c-4cf3-8395-244cbc1f393e';
+    $display->content['new-89df883b-079c-4cf3-8395-244cbc1f393e'] = $pane;
+    $display->panels['contentmain'][0] = 'new-89df883b-079c-4cf3-8395-244cbc1f393e';
+    $pane = new stdClass();
+    $pane->pid = 'new-4e517965-fe6d-419d-9df7-41778861485d';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'groups_all_lists-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '4e517965-fe6d-419d-9df7-41778861485d';
+    $display->content['new-4e517965-fe6d-419d-9df7-41778861485d'] = $pane;
+    $display->panels['contentmain'][1] = 'new-4e517965-fe6d-419d-9df7-41778861485d';
     $pane = new stdClass();
     $pane->pid = 'new-595564dd-216b-46ce-a90a-ee5fd51b010d';
     $pane->panel = 'header';
@@ -2900,9 +2893,9 @@ Manage',
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/theater/battlefield">Battlefields</a></li>
-        <li><a href="/theater/events">Calendar</a></li>
-        <li><a href="/theater/narrative-campaigns">Campaigns</a></li>
-        <li><a href="/theater/warzone">War Zones</a></li>
+        <li><a href="/theater/events">Events</a></li>
+        <li><a href="/order-of-battle/gaming-clubs">Clubs</a></li>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -2921,6 +2914,54 @@ Manage',
     $pane->uuid = 'c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
     $display->content['new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5'] = $pane;
     $display->panels['header'][1] = 'new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
+    $pane = new stdClass();
+    $pane->pid = 'new-a638f55d-281b-4f2f-9a0f-8057843edab0';
+    $pane->panel = 'sidebar';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Calendar Block',
+      'title' => 'This Month',
+      'body' => '<div class="seperator"></div>
+<?php
+  $block = module_invoke(\'views\', \'block_view\', \'event_calendar-block_1\');
+  print render($block[\'content\']);
+?>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a638f55d-281b-4f2f-9a0f-8057843edab0';
+    $display->content['new-a638f55d-281b-4f2f-9a0f-8057843edab0'] = $pane;
+    $display->panels['sidebar'][0] = 'new-a638f55d-281b-4f2f-9a0f-8057843edab0';
+    $pane = new stdClass();
+    $pane->pid = 'new-d03ae139-8dcb-449b-9747-533fc374f560';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'events_all_lists-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'd03ae139-8dcb-449b-9747-533fc374f560';
+    $display->content['new-d03ae139-8dcb-449b-9747-533fc374f560'] = $pane;
+    $display->panels['sidebar'][1] = 'new-d03ae139-8dcb-449b-9747-533fc374f560';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
