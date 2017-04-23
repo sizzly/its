@@ -371,14 +371,6 @@ function core_views_default_views() {
     'view_mode' => 'teaser',
     'links' => 1,
   );
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'field_stream_node_ref_target_id';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Global: Math expression */
   $handler->display->display_options['fields']['expression']['id'] = 'expression';
   $handler->display->display_options['fields']['expression']['table'] = 'views';
@@ -393,32 +385,6 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['expression']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['expression'] = '!1 - [nid]';
-  /* Field: Comment: Rendered Comment */
-  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_comment';
-  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'field_message_comment_reference_target_id';
-  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
-  $handler->display->display_options['fields']['rendered_entity']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['rendered_entity']['empty'] = '[expression]';
-  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Field: Entityform Submission: Rendered Entityform Submission */
-  $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
-  $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_entityform';
-  $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity_1']['relationship'] = 'field_update_reference_target_id';
-  $handler->display->display_options['fields']['rendered_entity_1']['label'] = '';
-  $handler->display->display_options['fields']['rendered_entity_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['rendered_entity_1']['empty'] = '[rendered_entity]';
-  $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
   /* Field: Message: Timeline Icon */
   $handler->display->display_options['fields']['field_timeline_icon']['id'] = 'field_timeline_icon';
   $handler->display->display_options['fields']['field_timeline_icon']['table'] = 'field_data_field_timeline_icon';
@@ -571,27 +537,6 @@ function core_views_default_views() {
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['id'] = 'field_stream_node_ref_target_id';
-  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['table'] = 'field_data_field_stream_node_ref';
-  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['field'] = 'field_stream_node_ref_target_id';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_update_reference_target_id']['id'] = 'field_update_reference_target_id';
-  $handler->display->display_options['relationships']['field_update_reference_target_id']['table'] = 'field_data_field_update_reference';
-  $handler->display->display_options['relationships']['field_update_reference_target_id']['field'] = 'field_update_reference_target_id';
-  $handler->display->display_options['relationships']['field_update_reference_target_id']['label'] = 'status_update';
-  /* Relationship: Flags: messages_all_salute */
-  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'message';
-  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'messages_all_salute';
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['id'] = 'field_message_comment_reference_target_id';
-  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['table'] = 'field_data_field_message_comment_reference';
-  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['field'] = 'field_message_comment_reference_target_id';
-  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['label'] = 'comment';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -751,7 +696,7 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['timestamp_2']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['timestamp_2']['element_wrapper_class'] = 'timeline-date';
   $handler->display->display_options['fields']['timestamp_2']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['timestamp_2']['date_format'] = 'uc_store';
+  $handler->display->display_options['fields']['timestamp_2']['date_format'] = 'json';
   $handler->display->display_options['fields']['timestamp_2']['second_date_format'] = 'privatemsg_current_day';
   $handler->display->display_options['fields']['timestamp_2']['format_date_sql'] = 1;
   /* Field: Global: Custom text */
@@ -1044,28 +989,6 @@ function core_views_default_views() {
             </div>
         </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-
-  /* Display: Page 2 */
-  $handler = $view->new_display('page', 'Page 2', 'page_2');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'timestamp_2',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['row_class'] = 'timeline-item';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['path'] = 'TestMessages';
 
   /* Display: Term Page */
   $handler = $view->new_display('panel_pane', 'Term Page', 'panel_pane_4');
