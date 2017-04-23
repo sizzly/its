@@ -812,7 +812,7 @@ function its_achievements_default_rules_configuration() {
       "USES VARIABLES" : { "uid" : { "label" : "User", "type" : "user" } },
       "DO" : [
         { "variable_add" : {
-            "USING" : { "type" : "integer" },
+            "USING" : { "type" : "integer", "value" : "0" },
             "PROVIDE" : { "variable_added" : { "variable_added" : "Added variable" } }
           }
         },
@@ -828,90 +828,130 @@ function its_achievements_default_rules_configuration() {
         },
         { "CONDITIONAL" : [
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "value" : "1" } },
+              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "299" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3297", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9497", "uid" : [ "uid" ] } }
               ]
             }
           ]
         },
         { "CONDITIONAL" : [
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "9" } },
+              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "3499" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3298", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9506", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "19" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "2999" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3299", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9505", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "29" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "2499" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3300", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9504", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "39" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "1999" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3301", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9503", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "49" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "1499" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3335", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9502", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "74" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "999" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3336", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9501", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "99" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "749" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3337", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9500", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "124" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "599" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "9499", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "449" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "9498", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "299" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "9497", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "149" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3339", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "124" } },
               "DO" : [
                 { "component_rules_award_achievement" : { "aid" : "3338", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "149" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "99" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3339", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "3337", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "74" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3336", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "49" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3335", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "39" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3301", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "29" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3300", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "19" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3299", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "9" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3298", "uid" : [ "uid" ] } }
+              ]
+            },
+            { "ELSE" : [
+                { "component_rules_award_achievement" : { "aid" : "3297", "uid" : [ "uid" ] } }
               ]
             }
           ]
