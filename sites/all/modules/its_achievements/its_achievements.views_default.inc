@@ -237,6 +237,26 @@ function its_achievements_views_default_views() {
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['content'] = '<div class="well well-sm"><strong>@total Players</strong> have earned this achievement.</div>';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="well well-sm">
+<strong>No Players</strong> have earned this achievement yet.
+</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'pure_html';
+  $handler->display->display_options['empty']['area']['roles_fieldset'] = array(
+    'roles' => array(
+      'anonymous user' => 0,
+      'authenticated user' => 0,
+      'administrator' => 0,
+      'verified' => 0,
+      'Ironmonger' => 0,
+      'System' => 0,
+    ),
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
