@@ -9,6 +9,18 @@
  */
 function core_default_rules_configuration() {
   $items = array();
+  $items['rules_core_after_saving_new_message'] = entity_import('rules_config', '{ "rules_core_after_saving_new_message" : {
+      "LABEL" : "Core: After Saving New Message",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "4.6", "Core" ],
+      "REQUIRES" : [ "rules", "message" ],
+      "ON" : { "message_insert" : [] },
+      "DO" : [
+        { "component_rules_achievements_grind_of_war" : { "uid" : [ "message:user" ] } }
+      ]
+    }
+  }');
   $items['rules_core_all_generate_message_for_new_content'] = entity_import('rules_config', '{ "rules_core_all_generate_message_for_new_content" : {
       "LABEL" : "Core: All: Generate Message for New Content",
       "PLUGIN" : "rule",

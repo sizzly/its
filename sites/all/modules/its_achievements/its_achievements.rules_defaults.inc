@@ -123,12 +123,153 @@ function its_achievements_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_achievements_altar_of_war'] = entity_import('rules_config', '{ "rules_achievements_altar_of_war" : {
-      "LABEL" : "Achievements: Altar of War",
+  $items['rules_achievements_grind_of_war'] = entity_import('rules_config', '{ "rules_achievements_grind_of_war" : {
+      "LABEL" : "Achievements: Grind of War",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "TAGS" : [ "Achievements" ],
-      "REQUIRES" : [ "rules", "views_rules" ],
+      "REQUIRES" : [ "views_rules", "rules_conditional", "rules" ],
+      "USES VARIABLES" : { "uid" : { "label" : "User", "type" : "user" } },
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "achievements_message_counts",
+            "DISPLAY" : "views_rules_1",
+            "USING" : { "user" : [ "uid:uid" ] },
+            "ROW VARIABLES" : { "mid" : { "mid" : "COUNT(DISTINCT Message: Message ID)" } },
+            "DO" : [
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "99999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9478", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "89999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9477", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "79999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9476", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "69999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9475", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "59999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9474", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "49999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9473", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "39999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9472", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "34999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9471", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "29999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9470", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "24999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9469", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "19999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9468", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "14999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9467", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "12499" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9466", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "9999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9465", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "7499" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9464", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "4999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9463", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "2999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9462", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "1999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9461", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "999" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9460", "uid" : [ "uid" ] } }
+                    ]
+                  },
+                  {
+                    "ELSE IF" : { "data_is" : { "data" : [ "mid" ], "op" : "\\u003E", "value" : "99" } },
+                    "DO" : [
+                      { "component_rules_award_achievement" : { "aid" : "9459", "uid" : [ "uid" ] } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_achievements_honoring_the_past_check'] = entity_import('rules_config', '{ "rules_achievements_honoring_the_past_check" : {
+      "LABEL" : "Achievements: Honoring the Past: Check",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "php", "rules_conditional" ],
       "USES VARIABLES" : { "bid" : { "label" : "Battle", "type" : "node" } },
       "IF" : [
         { "entity_is_of_bundle" : {
@@ -143,73 +284,156 @@ function its_achievements_default_rules_configuration() {
         }
       ],
       "DO" : [
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_achievement_anniversary",
-            "DISPLAY" : "views_rules_2",
-            "USING" : {
-              "term_node_tid_depth" : [ "bid:field-your-army:tid" ],
-              "term_node_tid_depth_1" : [ "bid:field-opponent-s-army:tid" ],
-              "term_node_tid_depth_2" : [ "bid:field-mission:tid" ]
-            },
-            "ROW VARIABLES" : { "nid" : { "nid" : "Content: Nid" } },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "node", "id" : [ "nid" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                }
-              },
-              { "component_rules_award_achievement" : { "aid" : [ "entity-fetched" ], "uid" : [ "bid:author" ] } }
-            ]
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_achievements_honoring_the_past'] = entity_import('rules_config', '{ "rules_achievements_honoring_the_past" : {
-      "LABEL" : "Achievements: Honoring the Past",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "TAGS" : [ "Achievement" ],
-      "REQUIRES" : [ "rules", "php", "views_rules" ],
-      "USES VARIABLES" : { "battle_nid" : { "label" : "Battle", "type" : "node" } },
-      "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "battle-nid" ],
-            "type" : "node",
-            "bundle" : { "value" : {
-                "game_results" : "game_results",
-                "game_result_system_" : "game_result_system_"
-              }
-            }
-          }
-        }
-      ],
-      "DO" : [
         { "data_convert" : {
-            "USING" : { "type" : "text", "value" : [ "battle-nid:field-game-date" ] },
+            "USING" : { "type" : "text", "value" : [ "bid:field-game-date" ] },
             "PROVIDE" : { "conversion_result" : { "conversion_result" : "Conversion result" } }
           }
         },
         { "variable_add" : {
             "USING" : {
               "type" : "text",
-              "value" : "\\u003C?php\\r\\necho date(\\u0027Y-m-d\\u0027, $conversion_result);\\r\\n?\\u003E"
+              "value" : "\\u003C?php\\r\\necho date(\\u0027d-M\\u0027, $conversion_result);\\r\\n?\\u003E"
             },
             "PROVIDE" : { "variable_added" : { "variable_added" : "Added variable" } }
           }
         },
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_achievement_anniversary",
-            "DISPLAY" : "views_rules_1",
-            "USING" : { "date_argument" : [ "variable-added" ] },
-            "ROW VARIABLES" : { "nid" : { "nid" : "Content: Nid" } },
+        { "SWITCH" : {
+            "USING" : { "data" : [ "variable-added" ] },
             "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "node", "id" : [ "nid" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
+              { "CASE" : {
+                  "USING" : { "value" : "14-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5461", "uid" : [ "bid:author" ] } }
+                  ]
                 }
               },
-              { "component_rules_award_achievement" : { "aid" : [ "entity-fetched" ], "uid" : [ "battle-nid:author" ] } }
+              { "CASE" : {
+                  "USING" : { "value" : "15-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5462", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "16-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5463", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "17-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5464", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "21-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5497", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "22-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5498", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "28-Mar" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "5499", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : { "USING" : { "value" : "17-Apr" }, "DO" : [] } },
+              { "CASE" : {
+                  "USING" : { "value" : "17-May" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4168", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "01-Jun" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4166", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "11-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4889", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "25-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4890", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "26-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4891", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "28-Oct" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4888", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "01-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4892", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "02-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4893", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "08-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4895", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "09-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4901", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "15-Nov" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "4902", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "29-Apr" },
+                  "DO" : [
+                    { "component_rules_award_achievement" : { "aid" : "9484", "uid" : [ "bid:author" ] } }
+                  ]
+                }
+              }
             ]
           }
         }
@@ -588,7 +812,7 @@ function its_achievements_default_rules_configuration() {
       "USES VARIABLES" : { "uid" : { "label" : "User", "type" : "user" } },
       "DO" : [
         { "variable_add" : {
-            "USING" : { "type" : "integer" },
+            "USING" : { "type" : "integer", "value" : "0" },
             "PROVIDE" : { "variable_added" : { "variable_added" : "Added variable" } }
           }
         },
@@ -604,90 +828,130 @@ function its_achievements_default_rules_configuration() {
         },
         { "CONDITIONAL" : [
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "value" : "1" } },
+              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "299" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3297", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9497", "uid" : [ "uid" ] } }
               ]
             }
           ]
         },
         { "CONDITIONAL" : [
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "9" } },
+              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "3499" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3298", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9506", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "19" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "2999" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3299", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9505", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "29" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "2499" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3300", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9504", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "39" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "1999" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3301", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9503", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "49" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "1499" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3335", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9502", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "74" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "999" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3336", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9501", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "99" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "749" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3337", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "9500", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "124" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "599" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "9499", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "449" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "9498", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "299" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "9497", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "149" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3339", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "124" } },
               "DO" : [
                 { "component_rules_award_achievement" : { "aid" : "3338", "uid" : [ "uid" ] } }
               ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
+            },
             {
-              "IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "149" } },
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "99" } },
               "DO" : [
-                { "component_rules_award_achievement" : { "aid" : "3339", "uid" : [ "uid" ] } }
+                { "component_rules_award_achievement" : { "aid" : "3337", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "74" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3336", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "49" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3335", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "39" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3301", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "29" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3300", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "19" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3299", "uid" : [ "uid" ] } }
+              ]
+            },
+            {
+              "ELSE IF" : { "data_is" : { "data" : [ "variable-added" ], "op" : "\\u003E", "value" : "9" } },
+              "DO" : [
+                { "component_rules_award_achievement" : { "aid" : "3298", "uid" : [ "uid" ] } }
+              ]
+            },
+            { "ELSE" : [
+                { "component_rules_award_achievement" : { "aid" : "3297", "uid" : [ "uid" ] } }
               ]
             }
           ]
@@ -742,178 +1006,6 @@ function its_achievements_default_rules_configuration() {
               ]
             }
           ]
-        }
-      ]
-    }
-  }');
-  $items['rules_utility_award_existing_modelling_achievements'] = entity_import('rules_config', '{ "rules_utility_award_existing_modelling_achievements" : {
-      "LABEL" : "Utility: Award Existing Modelling Achievements",
-      "PLUGIN" : "rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "views_rules", "rules", "rules_conditional" ],
-      "DO" : [
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_award_existing_modelling_achievements",
-            "DISPLAY" : "views_rules_3",
-            "ROW VARIABLES" : { "name" : { "name" : "Author uid" } },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "user", "id" : [ "name" ] },
-                  "PROVIDE" : { "entity_fetched" : { "user_fetched" : "Fetched user" } }
-                }
-              },
-              { "component_rules_award_achievement" : { "aid" : "9301", "uid" : [ "user-fetched" ] } }
-            ]
-          }
-        },
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_award_existing_modelling_achievements",
-            "DISPLAY" : "views_rules_1",
-            "ROW VARIABLES" : {
-              "field_model_count" : { "field_model_count" : "Model Count" },
-              "user" : { "user" : "Author uid" }
-            },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "user", "id" : [ "user" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                }
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "0" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9302", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "9" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9303", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "19" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9304", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "29" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9305", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "49" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9306", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "74" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9307", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "99" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9308", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "124" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9309", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "149" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9310", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "199" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9311", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        { "VIEW LOOP" : {
-            "VIEW" : "utility_award_existing_modelling_achievements",
-            "DISPLAY" : "views_rules_2",
-            "ROW VARIABLES" : {
-              "field_model_count" : { "field_model_count" : "Model Count" },
-              "user" : { "user" : "Author uid" }
-            },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "user", "id" : [ "user" ] },
-                  "PROVIDE" : { "entity_fetched" : { "entity_fetched" : "Fetched entity" } }
-                }
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "0" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9325", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "9" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9326", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              },
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "data_is" : { "data" : [ "field-model-count" ], "op" : "\\u003E", "value" : "19" } },
-                    "DO" : [
-                      { "component_rules_award_achievement" : { "aid" : "9327", "uid" : [ "entity-fetched" ] } }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
         }
       ]
     }

@@ -157,5 +157,15 @@ function its_army_profiles_strongarm() {
   $strongarm->value = 'player/armies/[node:title]';
   $export['pathauto_node_army_profile_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_army_profile';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_army_profile'] = $strongarm;
+
   return $export;
 }

@@ -35,7 +35,7 @@ function battle_reports_default_rules_configuration() {
         { "component_rules_utility_award_headhunter_achievements" : { "uid" : [ "p1" ] } },
         { "component_rules_utility_award_magehunter_achievements" : { "uid" : [ "p1" ] } },
         { "component_rules_achievement_face_to_face" : { "bid" : [ "bid" ] } },
-        { "component_rules_achievements_honoring_the_past" : { "battle_nid" : [ "bid" ] } }
+        { "component_rules_achievements_honoring_the_past_check" : { "bid" : [ "bid" ] } }
       ]
     }
   }');

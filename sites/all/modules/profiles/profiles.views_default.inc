@@ -612,6 +612,221 @@ function profiles_views_default_views() {
   );
   $handler->display->display_options['pane_category']['name'] = 'Leaderboards';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Top Gaming Players */
+  $handler = $view->new_display('panel_pane', 'Top Gaming Players', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Top Players';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_2';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Relation: Achievement (user → node) */
+  $handler->display->display_options['relationships']['relation_achievement_node']['id'] = 'relation_achievement_node';
+  $handler->display->display_options['relationships']['relation_achievement_node']['table'] = 'users';
+  $handler->display->display_options['relationships']['relation_achievement_node']['field'] = 'relation_achievement_node';
+  $handler->display->display_options['relationships']['relation_achievement_node']['required'] = TRUE;
+  $handler->display->display_options['relationships']['relation_achievement_node']['r_index'] = '-1';
+  $handler->display->display_options['relationships']['relation_achievement_node']['entity_deduplication_left'] = 0;
+  $handler->display->display_options['relationships']['relation_achievement_node']['entity_deduplication_right'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Player';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: SUM(Content: Achievement Points (field_achievement_points)) */
+  $handler->display->display_options['sorts']['field_achievement_points_value']['id'] = 'field_achievement_points_value';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['table'] = 'field_data_field_achievement_points';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['field'] = 'field_achievement_points_value';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['relationship'] = 'relation_achievement_node';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Category (field_achievement_category) */
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['id'] = 'field_achievement_category_target_id';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['table'] = 'field_data_field_achievement_category';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['field'] = 'field_achievement_category_target_id';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['relationship'] = 'relation_achievement_node';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['value']['value'] = '549';
+  $handler->display->display_options['pane_category']['name'] = 'Gaming';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Top Modelling Players */
+  $handler = $view->new_display('panel_pane', 'Top Modelling Players', 'panel_pane_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Top Players';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_2';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Relation: Achievement (user → node) */
+  $handler->display->display_options['relationships']['relation_achievement_node']['id'] = 'relation_achievement_node';
+  $handler->display->display_options['relationships']['relation_achievement_node']['table'] = 'users';
+  $handler->display->display_options['relationships']['relation_achievement_node']['field'] = 'relation_achievement_node';
+  $handler->display->display_options['relationships']['relation_achievement_node']['required'] = TRUE;
+  $handler->display->display_options['relationships']['relation_achievement_node']['r_index'] = '-1';
+  $handler->display->display_options['relationships']['relation_achievement_node']['entity_deduplication_left'] = 0;
+  $handler->display->display_options['relationships']['relation_achievement_node']['entity_deduplication_right'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Player';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: SUM(Content: Achievement Points (field_achievement_points)) */
+  $handler->display->display_options['sorts']['field_achievement_points_value']['id'] = 'field_achievement_points_value';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['table'] = 'field_data_field_achievement_points';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['field'] = 'field_achievement_points_value';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['relationship'] = 'relation_achievement_node';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Category (field_achievement_category) */
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['id'] = 'field_achievement_category_target_id';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['table'] = 'field_data_field_achievement_category';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['field'] = 'field_achievement_category_target_id';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['relationship'] = 'relation_achievement_node';
+  $handler->display->display_options['filters']['field_achievement_category_target_id']['value']['value'] = '2134';
+  $handler->display->display_options['pane_category']['name'] = 'Modelling';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Renown Panel */
+  $handler = $view->new_display('panel_pane', 'Renown Panel', 'panel_pane_7');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Top Players';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = 'points';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Player';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Userpoints: Current renown in category */
+  $handler->display->display_options['fields']['points']['id'] = 'points';
+  $handler->display->display_options['fields']['points']['table'] = 'userpoints';
+  $handler->display->display_options['fields']['points']['field'] = 'points';
+  $handler->display->display_options['fields']['points']['label'] = '';
+  $handler->display->display_options['fields']['points']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['points']['suffix'] = ' Renown';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Userpoints: Current renown in category */
+  $handler->display->display_options['sorts']['points']['id'] = 'points';
+  $handler->display->display_options['sorts']['points']['table'] = 'userpoints';
+  $handler->display->display_options['sorts']['points']['field'] = 'points';
+  $handler->display->display_options['sorts']['points']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Userpoints: Points category */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'userpoints';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    894 => '894',
+    1261 => '1261',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Community';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['leaderboards_all_tables'] = $view;
 
   $view = new view();

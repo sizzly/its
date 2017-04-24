@@ -117,19 +117,21 @@ function home_page_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'About iToysoldiers';
   $display->uuid = 'b7ddf18d-5d56-4a9f-887d-ab91e5f9a099';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_about_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-69a8c9e1-be54-4e43-ba2e-f23bcb3d006d';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'About',
-      'title' => '',
-      'body' => '<h3>iToysoldiers is <em>the</em> place to chronicle the glory of your miniature war gaming armies.&nbsp;&nbsp;</h3>
+  $pane = new stdClass();
+  $pane->pid = 'new-69a8c9e1-be54-4e43-ba2e-f23bcb3d006d';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'About',
+    'title' => '',
+    'body' => '<h3>iToysoldiers is <em>the</em> place to chronicle the glory of your miniature war gaming armies.&nbsp;&nbsp;</h3>
 
 <h3>Product</h3>
 
@@ -153,37 +155,37 @@ function home_page_default_page_manager_pages() {
 
 <p>iToysoldiers believes that miniature war games can be better by bringing the gaming, narrative, and modelling elements of the hobby together to tell the story of your army.&nbsp;&nbsp;</p>
 ',
-      'format' => 'full_html',
-      'substitute' => 0,
-    );
-    $pane->cache = array(
-      'method' => 'simple',
-      'settings' => array(
-        'lifetime' => '43200',
-        'granularity' => 'none',
-      ),
-    );
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '69a8c9e1-be54-4e43-ba2e-f23bcb3d006d';
-    $display->content['new-69a8c9e1-be54-4e43-ba2e-f23bcb3d006d'] = $pane;
-    $display->panels['contentmain'][0] = 'new-69a8c9e1-be54-4e43-ba2e-f23bcb3d006d';
-    $pane = new stdClass();
-    $pane->pid = 'new-dc3a4b64-e637-4b25-8534-ef0038ec6e72';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Order of Battle',
-      'title' => '',
-      'body' => '<h3>Order of Battle</h3>
+    'format' => 'full_html',
+    'substitute' => 0,
+  );
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '43200',
+      'granularity' => 'none',
+    ),
+  );
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '69a8c9e1-be54-4e43-ba2e-f23bcb3d006d';
+  $display->content['new-69a8c9e1-be54-4e43-ba2e-f23bcb3d006d'] = $pane;
+  $display->panels['contentmain'][0] = 'new-69a8c9e1-be54-4e43-ba2e-f23bcb3d006d';
+  $pane = new stdClass();
+  $pane->pid = 'new-dc3a4b64-e637-4b25-8534-ef0038ec6e72';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Order of Battle',
+    'title' => '',
+    'body' => '<h3>Order of Battle</h3>
 <p>iToysoldiers was founded in 2012 by Rob Tacey  and launched on 2013/06/01.  It’s a work of love by a lone miniature war game enthusiast.</p>
 <div class="media">
   <div class="media-left pull-left">
@@ -196,37 +198,37 @@ function home_page_default_page_manager_pages() {
     Dark Eldar snob...  Oh, and I made this site!
   </div>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array(
-      'method' => 'simple',
-      'settings' => array(
-        'lifetime' => '43200',
-        'granularity' => 'none',
-      ),
-    );
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'dc3a4b64-e637-4b25-8534-ef0038ec6e72';
-    $display->content['new-dc3a4b64-e637-4b25-8534-ef0038ec6e72'] = $pane;
-    $display->panels['contentmain'][1] = 'new-dc3a4b64-e637-4b25-8534-ef0038ec6e72';
-    $pane = new stdClass();
-    $pane->pid = 'new-f110f741-f02f-49f5-be5c-cdce6aa4c500';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'What People are Saying',
-      'title' => '',
-      'body' => '<h3>What People are Saying</h3>
+    'format' => 'pure_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '43200',
+      'granularity' => 'none',
+    ),
+  );
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'dc3a4b64-e637-4b25-8534-ef0038ec6e72';
+  $display->content['new-dc3a4b64-e637-4b25-8534-ef0038ec6e72'] = $pane;
+  $display->panels['contentmain'][1] = 'new-dc3a4b64-e637-4b25-8534-ef0038ec6e72';
+  $pane = new stdClass();
+  $pane->pid = 'new-f110f741-f02f-49f5-be5c-cdce6aa4c500';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'What People are Saying',
+    'title' => '',
+    'body' => '<h3>What People are Saying</h3>
 
 <blockquote>
 <p>“It’s fun to broadcast your fights”</p>
@@ -240,95 +242,95 @@ function home_page_default_page_manager_pages() {
 
 <p><em>Thade</em> (Windsor, ON)</p>
 ',
-      'format' => 'full_html',
-      'substitute' => 0,
-    );
-    $pane->cache = array(
-      'method' => 'simple',
-      'settings' => array(
-        'lifetime' => '43200',
-        'granularity' => 'none',
-      ),
-    );
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'f110f741-f02f-49f5-be5c-cdce6aa4c500';
-    $display->content['new-f110f741-f02f-49f5-be5c-cdce6aa4c500'] = $pane;
-    $display->panels['contentmain'][2] = 'new-f110f741-f02f-49f5-be5c-cdce6aa4c500';
-    $pane = new stdClass();
-    $pane->pid = 'new-d6445211-4876-4ca4-b00d-de22c81f3e4b';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-about-itoysoldiers';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd6445211-4876-4ca4-b00d-de22c81f3e4b';
-    $display->content['new-d6445211-4876-4ca4-b00d-de22c81f3e4b'] = $pane;
-    $display->panels['sidebar'][0] = 'new-d6445211-4876-4ca4-b00d-de22c81f3e4b';
-    $pane = new stdClass();
-    $pane->pid = 'new-1aead36b-f581-4907-b18c-4195de28116c';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '1aead36b-f581-4907-b18c-4195de28116c';
-    $display->content['new-1aead36b-f581-4907-b18c-4195de28116c'] = $pane;
-    $display->panels['sidebar'][1] = 'new-1aead36b-f581-4907-b18c-4195de28116c';
-    $pane = new stdClass();
-    $pane->pid = 'new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-contact-us';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
-    $display->content['new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a'] = $pane;
-    $display->panels['sidebar'][2] = 'new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
+    'format' => 'full_html',
+    'substitute' => 0,
+  );
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '43200',
+      'granularity' => 'none',
+    ),
+  );
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'f110f741-f02f-49f5-be5c-cdce6aa4c500';
+  $display->content['new-f110f741-f02f-49f5-be5c-cdce6aa4c500'] = $pane;
+  $display->panels['contentmain'][2] = 'new-f110f741-f02f-49f5-be5c-cdce6aa4c500';
+  $pane = new stdClass();
+  $pane->pid = 'new-d6445211-4876-4ca4-b00d-de22c81f3e4b';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-about-itoysoldiers';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd6445211-4876-4ca4-b00d-de22c81f3e4b';
+  $display->content['new-d6445211-4876-4ca4-b00d-de22c81f3e4b'] = $pane;
+  $display->panels['sidebar'][0] = 'new-d6445211-4876-4ca4-b00d-de22c81f3e4b';
+  $pane = new stdClass();
+  $pane->pid = 'new-1aead36b-f581-4907-b18c-4195de28116c';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '1aead36b-f581-4907-b18c-4195de28116c';
+  $display->content['new-1aead36b-f581-4907-b18c-4195de28116c'] = $pane;
+  $display->panels['sidebar'][1] = 'new-1aead36b-f581-4907-b18c-4195de28116c';
+  $pane = new stdClass();
+  $pane->pid = 'new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-contact-us';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
+  $display->content['new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a'] = $pane;
+  $display->panels['sidebar'][2] = 'new-836df7bd-4c3a-4ce8-90cc-9d6b0d7b372a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -382,60 +384,62 @@ function home_page_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'Access Denied';
   $display->uuid = 'eab098b5-3540-4b87-9943-d556e01c1c05';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_access_denied_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-ba152eb9-1c3d-424b-9e3f-57a37402a4e3';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3>You are not authorized to access this page.</h3>
+  $pane = new stdClass();
+  $pane->pid = 'new-ba152eb9-1c3d-424b-9e3f-57a37402a4e3';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '<h3>You are not authorized to access this page.</h3>
 
 <p>The likely reason is that you need to log in.</p>
 
 <p>If you feel you\'ve been restricted in error please <a href="http://itoysoldiers.com/contact">contact iToysoldiers</a>.</p>
 ',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'ba152eb9-1c3d-424b-9e3f-57a37402a4e3';
-    $display->content['new-ba152eb9-1c3d-424b-9e3f-57a37402a4e3'] = $pane;
-    $display->panels['contentmain'][0] = 'new-ba152eb9-1c3d-424b-9e3f-57a37402a4e3';
-    $pane = new stdClass();
-    $pane->pid = 'new-b2b574a2-66a2-4299-a7c3-5dea9aa7c916';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'user-login';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b2b574a2-66a2-4299-a7c3-5dea9aa7c916';
-    $display->content['new-b2b574a2-66a2-4299-a7c3-5dea9aa7c916'] = $pane;
-    $display->panels['sidebar'][0] = 'new-b2b574a2-66a2-4299-a7c3-5dea9aa7c916';
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'ba152eb9-1c3d-424b-9e3f-57a37402a4e3';
+  $display->content['new-ba152eb9-1c3d-424b-9e3f-57a37402a4e3'] = $pane;
+  $display->panels['contentmain'][0] = 'new-ba152eb9-1c3d-424b-9e3f-57a37402a4e3';
+  $pane = new stdClass();
+  $pane->pid = 'new-b2b574a2-66a2-4299-a7c3-5dea9aa7c916';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'user-login';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b2b574a2-66a2-4299-a7c3-5dea9aa7c916';
+  $display->content['new-b2b574a2-66a2-4299-a7c3-5dea9aa7c916'] = $pane;
+  $display->panels['sidebar'][0] = 'new-b2b574a2-66a2-4299-a7c3-5dea9aa7c916';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-b2b574a2-66a2-4299-a7c3-5dea9aa7c916';
   $handler->conf['display'] = $display;
@@ -489,33 +493,35 @@ function home_page_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'Advertise with iToysoldiers';
   $display->uuid = '8c826c0d-2183-461a-be61-b752893337c2';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_advertise_with_itoysoldiers__panel';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-d815b9d5-7818-44a4-ad9f-a503284f6fe7';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'coming_soon';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd815b9d5-7818-44a4-ad9f-a503284f6fe7';
-    $display->content['new-d815b9d5-7818-44a4-ad9f-a503284f6fe7'] = $pane;
-    $display->panels['contentmain'][0] = 'new-d815b9d5-7818-44a4-ad9f-a503284f6fe7';
+  $pane = new stdClass();
+  $pane->pid = 'new-d815b9d5-7818-44a4-ad9f-a503284f6fe7';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'coming_soon';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '',
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd815b9d5-7818-44a4-ad9f-a503284f6fe7';
+  $display->content['new-d815b9d5-7818-44a4-ad9f-a503284f6fe7'] = $pane;
+  $display->panels['contentmain'][0] = 'new-d815b9d5-7818-44a4-ad9f-a503284f6fe7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -620,60 +626,62 @@ function home_page_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'Join Now';
   $display->uuid = 'e4bd4069-0d2f-4177-8c18-96d21643e729';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_bc_landing_page__panel_context_a96bea19-b7ec-4ba3-93b1-5210c0554ffc';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-950c2b6f-e007-4203-a1d5-6e2503e5cd5e';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Headline',
-      'title' => '',
-      'body' => '<div class="text-center">
+  $pane = new stdClass();
+  $pane->pid = 'new-950c2b6f-e007-4203-a1d5-6e2503e5cd5e';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Headline',
+    'title' => '',
+    'body' => '<div class="text-center">
   <h1>Chronicle the Glory of Your Armies</h1>
   <h2>Join iToysoldiers and show off your miniature wargaming exploits</h2>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '950c2b6f-e007-4203-a1d5-6e2503e5cd5e';
-    $display->content['new-950c2b6f-e007-4203-a1d5-6e2503e5cd5e'] = $pane;
-    $display->panels['contentmain'][0] = 'new-950c2b6f-e007-4203-a1d5-6e2503e5cd5e';
-    $pane = new stdClass();
-    $pane->pid = 'new-493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 1,
-            ),
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '950c2b6f-e007-4203-a1d5-6e2503e5cd5e';
+  $display->content['new-950c2b6f-e007-4203-a1d5-6e2503e5cd5e'] = $pane;
+  $display->panels['contentmain'][0] = 'new-950c2b6f-e007-4203-a1d5-6e2503e5cd5e';
+  $pane = new stdClass();
+  $pane->pid = 'new-493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
       ),
-    );
-    $pane->configuration = array(
-      'admin_title' => 'Hero Image and Registration form',
-      'title' => '',
-      'body' => '<div class="row">
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Hero Image and Registration form',
+    'title' => '',
+    'body' => '<div class="row">
   <div class="col-xs-12 col-sm-8">
 <div class="thumbnail">
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -738,44 +746,44 @@ print render(drupal_get_form(\'user_register_form\'));
 </div>
   </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d';
-    $display->content['new-493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d'] = $pane;
-    $display->panels['contentmain'][1] = 'new-493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d';
-    $pane = new stdClass();
-    $pane->pid = 'new-d7214049-9242-4765-bb0b-9f590ccdb29c';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 1,
-            ),
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d';
+  $display->content['new-493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d'] = $pane;
+  $display->panels['contentmain'][1] = 'new-493a12a7-b5eb-46bd-8ecb-c3ef3b774c1d';
+  $pane = new stdClass();
+  $pane->pid = 'new-d7214049-9242-4765-bb0b-9f590ccdb29c';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
           ),
-          'context' => 'logged-in-user',
-          'not' => TRUE,
         ),
+        'context' => 'logged-in-user',
+        'not' => TRUE,
       ),
-    );
-    $pane->configuration = array(
-      'admin_title' => 'Authenticated User: Hero and Comment',
-      'title' => '',
-      'body' => '<div class="row">
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Authenticated User: Hero and Comment',
+    'title' => '',
+    'body' => '<div class="row">
   <div class="col-xs-12 col-sm-8">
 <div class="thumbnail">
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -876,31 +884,31 @@ print_r($user->name);
 </div>
   </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'd7214049-9242-4765-bb0b-9f590ccdb29c';
-    $display->content['new-d7214049-9242-4765-bb0b-9f590ccdb29c'] = $pane;
-    $display->panels['contentmain'][2] = 'new-d7214049-9242-4765-bb0b-9f590ccdb29c';
-    $pane = new stdClass();
-    $pane->pid = 'new-094a1982-1042-4a09-b065-583177738f91';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Detailed Features and Benefits',
-      'title' => '',
-      'body' => '<div><hr></div>
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'd7214049-9242-4765-bb0b-9f590ccdb29c';
+  $display->content['new-d7214049-9242-4765-bb0b-9f590ccdb29c'] = $pane;
+  $display->panels['contentmain'][2] = 'new-d7214049-9242-4765-bb0b-9f590ccdb29c';
+  $pane = new stdClass();
+  $pane->pid = 'new-094a1982-1042-4a09-b065-583177738f91';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Detailed Features and Benefits',
+    'title' => '',
+    'body' => '<div><hr></div>
 <div class="row">
 <div class="col-xs-12 col-sm-4">
 <img class="center-block img-circle" src="http://itoysoldiers.com/sites/default/files/user/u1/statistics2.png" height=100px width=100px>
@@ -938,31 +946,31 @@ print_r($user->name);
 </div>
 </div>
 <div class="seperator"></div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '094a1982-1042-4a09-b065-583177738f91';
-    $display->content['new-094a1982-1042-4a09-b065-583177738f91'] = $pane;
-    $display->panels['contentmain'][3] = 'new-094a1982-1042-4a09-b065-583177738f91';
-    $pane = new stdClass();
-    $pane->pid = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Final Call to Action',
-      'title' => '',
-      'body' => '<div class="center-block">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '094a1982-1042-4a09-b065-583177738f91';
+  $display->content['new-094a1982-1042-4a09-b065-583177738f91'] = $pane;
+  $display->panels['contentmain'][3] = 'new-094a1982-1042-4a09-b065-583177738f91';
+  $pane = new stdClass();
+  $pane->pid = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Final Call to Action',
+    'title' => '',
+    'body' => '<div class="center-block">
 <h2 class="text-center">There\'s the Pitch.  Join iToysoldiers.</h2>
 <p>So there’s my pitch. I made iToysoldiers ‘cause I thought the idea is cool. The whole idea is to make our social hobby even more social by adding all the neat gamification bits that we love about computer games and applying it to table top war games. If you have an idea to make the site better please let me know. If you want more games on the site let me know. iToysoldiers is an ongoing labour of love. A love of games, miniatures, and mashing the two together. Thanks for dropping by and I can’t wait to see you post some battles.</p>
 
@@ -971,23 +979,23 @@ print_r($user->name);
 <p>Carpe Acies!<br> Rob</p>
 </div>
 ',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'well well-sm',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = 'ca63930a-bb54-4229-8cba-b79fd857de57';
-    $display->content['new-ca63930a-bb54-4229-8cba-b79fd857de57'] = $pane;
-    $display->panels['contentmain'][4] = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'ca63930a-bb54-4229-8cba-b79fd857de57';
+  $display->content['new-ca63930a-bb54-4229-8cba-b79fd857de57'] = $pane;
+  $display->panels['contentmain'][4] = 'new-ca63930a-bb54-4229-8cba-b79fd857de57';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1084,19 +1092,21 @@ print_r($user->name);
   $display->cache = array();
   $display->title = 'Copyright ';
   $display->uuid = '75df8005-99d3-4399-a1e1-aefb6ca37e48';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_copyright_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Copyright Statement',
-      'title' => '',
-      'body' => '<p><strong>Last Revised: 2015-07-20</strong></p>
+  $pane = new stdClass();
+  $pane->pid = 'new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Copyright Statement',
+    'title' => '',
+    'body' => '<p><strong>Last Revised: 2015-07-20</strong></p>
 
 <p>An awful lot of the content of the iToysoldiers website is derived from the intellectual property of the various game companies that produce the games we love and play. Miniature war gaming is, by its nature, an extremely social activity and folks love to share photos of their models, fiction that they’ve written around their armies, and discuss rule sets.&nbsp; As a result models, factions, armies, locations, iconography, and terms owned as Intellectual Property of various game companies are all present on the iToysoldiers site. We strive to use player created content whenever possible but sometimes we rely upon the images and/or text provided by the game manufacturers to supply context or frameworks for players to structure their content on the site. Allow me to assure you that iToysoldiers does not attempt to claim these trademarks or copyrights as our own. No infringement is intended. This website is unofficial and not endorsed by any of the game manufacturers that produce the fabulous games included on iToysoldiers. We wish they\'d endorse us. We\'d happily accept an endorsement or at least some kudos for creating a nifty resource for players but there it is. In any case, thanks to all the great game makers who cater to us basement generals.</p>
 
@@ -1119,89 +1129,89 @@ print_r($user->name);
 
 <p>iToysoldiers\'s Designated Copyright Agent to receive notifications and counter-notifications of claimed infringement can be reached as follows: Attention: Robert Tacey, 24 Azar Avenue, Tilbury, Ontario, N0P 2L0, Canada, or by electronic mail at&nbsp;<a href="mailto:admin@iToysoldiers.com">admin@iToysoldiers.com</a>. For clarity, only DMCA notices should go to the Designated Copyright Agent. Any other feedback, comments, requests for technical support or other communications should be directed to iToysoldiers customer service through&nbsp;<a href="mailto:support@iToysoldiers.uservoice.com">support@iToysoldiers.uservoice.com</a>. You acknowledge that if you fail to comply with all of the requirements of this section, your DMCA notice may not be valid. Please note that under Section 512(f) of the DMCA, any person who knowingly materially misrepresents that material or activity is infringing may be subject to liability.</p>
 ',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
-    $display->content['new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a'] = $pane;
-    $display->panels['contentmain'][0] = 'new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
-    $pane = new stdClass();
-    $pane->pid = 'new-c3ab7f4e-eda5-4862-851c-a66ac60bd38a';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-legal';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c3ab7f4e-eda5-4862-851c-a66ac60bd38a';
-    $display->content['new-c3ab7f4e-eda5-4862-851c-a66ac60bd38a'] = $pane;
-    $display->panels['sidebar'][0] = 'new-c3ab7f4e-eda5-4862-851c-a66ac60bd38a';
-    $pane = new stdClass();
-    $pane->pid = 'new-00092d84-b563-4efe-8b62-67742aafeea2';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '00092d84-b563-4efe-8b62-67742aafeea2';
-    $display->content['new-00092d84-b563-4efe-8b62-67742aafeea2'] = $pane;
-    $display->panels['sidebar'][1] = 'new-00092d84-b563-4efe-8b62-67742aafeea2';
-    $pane = new stdClass();
-    $pane->pid = 'new-05d00efc-4ff5-437c-9520-d2bfdd2305ca';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-contact-us';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '05d00efc-4ff5-437c-9520-d2bfdd2305ca';
-    $display->content['new-05d00efc-4ff5-437c-9520-d2bfdd2305ca'] = $pane;
-    $display->panels['sidebar'][2] = 'new-05d00efc-4ff5-437c-9520-d2bfdd2305ca';
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
+  $display->content['new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a'] = $pane;
+  $display->panels['contentmain'][0] = 'new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
+  $pane = new stdClass();
+  $pane->pid = 'new-c3ab7f4e-eda5-4862-851c-a66ac60bd38a';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-legal';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c3ab7f4e-eda5-4862-851c-a66ac60bd38a';
+  $display->content['new-c3ab7f4e-eda5-4862-851c-a66ac60bd38a'] = $pane;
+  $display->panels['sidebar'][0] = 'new-c3ab7f4e-eda5-4862-851c-a66ac60bd38a';
+  $pane = new stdClass();
+  $pane->pid = 'new-00092d84-b563-4efe-8b62-67742aafeea2';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '00092d84-b563-4efe-8b62-67742aafeea2';
+  $display->content['new-00092d84-b563-4efe-8b62-67742aafeea2'] = $pane;
+  $display->panels['sidebar'][1] = 'new-00092d84-b563-4efe-8b62-67742aafeea2';
+  $pane = new stdClass();
+  $pane->pid = 'new-05d00efc-4ff5-437c-9520-d2bfdd2305ca';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-contact-us';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '05d00efc-4ff5-437c-9520-d2bfdd2305ca';
+  $display->content['new-05d00efc-4ff5-437c-9520-d2bfdd2305ca'] = $pane;
+  $display->panels['sidebar'][2] = 'new-05d00efc-4ff5-437c-9520-d2bfdd2305ca';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2c4f28f4-ce76-4381-b5ca-fb5e13a8a49a';
   $handler->conf['display'] = $display;
@@ -1254,39 +1264,41 @@ print_r($user->name);
   $display->cache = array();
   $display->title = 'Thanks for the Feedback!';
   $display->uuid = '28b881c3-0b4d-4a36-a10b-e6852b2d09f3';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_feedback_thanks__panel_context_896fdd8d-bca7-4f9b-abb8-8c342047114c';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-01bccb44-bc23-4336-80fb-0e9f60f56cc0';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<p>Thanks for the feedback!</p>
+  $pane = new stdClass();
+  $pane->pid = 'new-01bccb44-bc23-4336-80fb-0e9f60f56cc0';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '<p>Thanks for the feedback!</p>
 
 <p>I really appreciate it. iToysoldiers thrives on your feedback and I use it to make the site better. &nbsp;Never hesitate to reach out to me at admin@itoysoldiers.com.</p>
 
 <p>Carpe Acies!<br />
 Rob</p>
 ',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '01bccb44-bc23-4336-80fb-0e9f60f56cc0';
-    $display->content['new-01bccb44-bc23-4336-80fb-0e9f60f56cc0'] = $pane;
-    $display->panels['contentmain'][0] = 'new-01bccb44-bc23-4336-80fb-0e9f60f56cc0';
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '01bccb44-bc23-4336-80fb-0e9f60f56cc0';
+  $display->content['new-01bccb44-bc23-4336-80fb-0e9f60f56cc0'] = $pane;
+  $display->panels['contentmain'][0] = 'new-01bccb44-bc23-4336-80fb-0e9f60f56cc0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-01bccb44-bc23-4336-80fb-0e9f60f56cc0';
   $handler->conf['display'] = $display;
@@ -1377,19 +1389,21 @@ Rob</p>
   $display->cache = array();
   $display->title = 'We have stats.  Stats are cool.';
   $display->uuid = 'a50ae75c-08ed-4e36-af73-83e75a1dc1df';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_gaming_page_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-0984b595-4ece-485d-8681-f2442943d7c3';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Hero Image',
-      'title' => '',
-      'body' => '<div class="row">
+  $pane = new stdClass();
+  $pane->pid = 'new-0984b595-4ece-485d-8681-f2442943d7c3';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Hero Image',
+    'title' => '',
+    'body' => '<div class="row">
 <div class="col-xs-12 col-sm-9 clearfix">
   <h1>Tools for Gamers</h1>
   <h2>Show off your table top war gaming prowess</h2>
@@ -1412,34 +1426,34 @@ Rob</p>
 </div>
 </div>
 ',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'jumbotron',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '0984b595-4ece-485d-8681-f2442943d7c3';
-    $display->content['new-0984b595-4ece-485d-8681-f2442943d7c3'] = $pane;
-    $display->panels['contentmain'][0] = 'new-0984b595-4ece-485d-8681-f2442943d7c3';
-    $pane = new stdClass();
-    $pane->pid = 'new-01355c50-dac7-416e-af17-6fa75b75f83a';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Tryptich',
-      'title' => '',
-      'body' => '<div class="col-sm-4">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'jumbotron',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '0984b595-4ece-485d-8681-f2442943d7c3';
+  $display->content['new-0984b595-4ece-485d-8681-f2442943d7c3'] = $pane;
+  $display->panels['contentmain'][0] = 'new-0984b595-4ece-485d-8681-f2442943d7c3';
+  $pane = new stdClass();
+  $pane->pid = 'new-01355c50-dac7-416e-af17-6fa75b75f83a';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Tryptich',
+    'title' => '',
+    'body' => '<div class="col-sm-4">
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">What is it?</h3>
@@ -1469,34 +1483,34 @@ Rob</p>
   </div>
 </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'row',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '01355c50-dac7-416e-af17-6fa75b75f83a';
-    $display->content['new-01355c50-dac7-416e-af17-6fa75b75f83a'] = $pane;
-    $display->panels['contentmain'][1] = 'new-01355c50-dac7-416e-af17-6fa75b75f83a';
-    $pane = new stdClass();
-    $pane->pid = 'new-377a9246-6931-4ddc-98f3-c936b0cdebc5';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Features',
-      'title' => '',
-      'body' => '<div class="col-sm-3">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'row',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '01355c50-dac7-416e-af17-6fa75b75f83a';
+  $display->content['new-01355c50-dac7-416e-af17-6fa75b75f83a'] = $pane;
+  $display->panels['contentmain'][1] = 'new-01355c50-dac7-416e-af17-6fa75b75f83a';
+  $pane = new stdClass();
+  $pane->pid = 'new-377a9246-6931-4ddc-98f3-c936b0cdebc5';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Features',
+    'title' => '',
+    'body' => '<div class="col-sm-3">
    <div class="thumbnail">
       <img src="/sites/default/files/default_images/league.png" alt="iToysoldiers Achievements">
       <div class="caption">
@@ -1537,52 +1551,52 @@ Rob</p>
       </div>
    </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'clearfix',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '377a9246-6931-4ddc-98f3-c936b0cdebc5';
-    $display->content['new-377a9246-6931-4ddc-98f3-c936b0cdebc5'] = $pane;
-    $display->panels['contentmain'][2] = 'new-377a9246-6931-4ddc-98f3-c936b0cdebc5';
-    $pane = new stdClass();
-    $pane->pid = 'new-69307c50-e513-4233-948a-27060824c556';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Get Started',
-      'title' => '',
-      'body' => '<div align="center" class="well">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'clearfix',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '377a9246-6931-4ddc-98f3-c936b0cdebc5';
+  $display->content['new-377a9246-6931-4ddc-98f3-c936b0cdebc5'] = $pane;
+  $display->panels['contentmain'][2] = 'new-377a9246-6931-4ddc-98f3-c936b0cdebc5';
+  $pane = new stdClass();
+  $pane->pid = 'new-69307c50-e513-4233-948a-27060824c556';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Get Started',
+    'title' => '',
+    'body' => '<div align="center" class="well">
 <a href="http://itoysoldiers.com/user/register" class="btn btn-primary btn-lg" style="white-space: normal;">Start your free iToysoldiers profile</a>
 <h4>You\'ll be gaining renown and glory in minutes.</h4>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-      'name' => 'home_page_register_now',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '69307c50-e513-4233-948a-27060824c556';
-    $display->content['new-69307c50-e513-4233-948a-27060824c556'] = $pane;
-    $display->panels['contentmain'][3] = 'new-69307c50-e513-4233-948a-27060824c556';
+    'format' => 'php_code',
+    'substitute' => TRUE,
+    'name' => 'home_page_register_now',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '69307c50-e513-4233-948a-27060824c556';
+  $display->content['new-69307c50-e513-4233-948a-27060824c556'] = $pane;
+  $display->panels['contentmain'][3] = 'new-69307c50-e513-4233-948a-27060824c556';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1660,67 +1674,69 @@ Rob</p>
   $display->cache = array();
   $display->title = '';
   $display->uuid = '7077fdbc-6db4-43f9-8de0-d0d18be8e8ba';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_home_page__panel_context_edd206fc-0014-4a68-ac49-c82d97525db9';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Announcement Banner',
-      'title' => '',
-      'body' => '<ins data-revive-zoneid="27" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
+  $pane = new stdClass();
+  $pane->pid = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Announcement Banner',
+    'title' => '',
+    'body' => '<ins data-revive-zoneid="27" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
 <script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script>',
-      'format' => 'php_code',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'fe8099c2-5f90-4026-8d25-5e9754ec8f73';
-    $display->content['new-fe8099c2-5f90-4026-8d25-5e9754ec8f73'] = $pane;
-    $display->panels['contentmain'][0] = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
-    $pane = new stdClass();
-    $pane->pid = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'core_node_trending_content-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'hidden-xs',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'ff19d553-d9bc-4b62-8c62-6fae301b609f';
-    $display->content['new-ff19d553-d9bc-4b62-8c62-6fae301b609f'] = $pane;
-    $display->panels['contentmain'][1] = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
-    $pane = new stdClass();
-    $pane->pid = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Add to Stream',
-      'title' => '',
-      'body' => '<ul class="nav nav-tabs">
+    'format' => 'php_code',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'fe8099c2-5f90-4026-8d25-5e9754ec8f73';
+  $display->content['new-fe8099c2-5f90-4026-8d25-5e9754ec8f73'] = $pane;
+  $display->panels['contentmain'][0] = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
+  $pane = new stdClass();
+  $pane->pid = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_node_trending_content-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'hidden-xs',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'ff19d553-d9bc-4b62-8c62-6fae301b609f';
+  $display->content['new-ff19d553-d9bc-4b62-8c62-6fae301b609f'] = $pane;
+  $display->panels['contentmain'][1] = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
+  $pane = new stdClass();
+  $pane->pid = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Add to Stream',
+    'title' => '',
+    'body' => '<ul class="nav nav-tabs">
     <li class="active"><a href="#stream" data-toggle="tab"><i class="fa fa-road"></i> Activity</a></li>
     <li><a href="/node/add/game-results"><i class="fa fa-fire"></i> Battle</a></li>
     <li><a href="/node/add/models"><i class="fa fa-paint-brush"></i> New Models</a></li>
@@ -1754,20 +1770,20 @@ Rob</p>
         </div>
     </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '7a8d6a70-688f-4376-a556-704f146e3143';
-    $display->content['new-7a8d6a70-688f-4376-a556-704f146e3143'] = $pane;
-    $display->panels['contentmain'][2] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
+    'format' => 'php_code',
+    'substitute' => 0,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '7a8d6a70-688f-4376-a556-704f146e3143';
+  $display->content['new-7a8d6a70-688f-4376-a556-704f146e3143'] = $pane;
+  $display->panels['contentmain'][2] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1847,45 +1863,47 @@ Rob</p>
   $display->cache = array();
   $display->title = '';
   $display->uuid = 'de5eb265-ceae-4d51-ae3e-b63d89501252';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_home_page_panel_context_2';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-d70e6cf7-a006-41a9-a4bc-85720c2d5df3';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Announcement Banner',
-      'title' => '',
-      'body' => '<ins data-revive-zoneid="27" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
+  $pane = new stdClass();
+  $pane->pid = 'new-d70e6cf7-a006-41a9-a4bc-85720c2d5df3';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Announcement Banner',
+    'title' => '',
+    'body' => '<ins data-revive-zoneid="27" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
 <script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd70e6cf7-a006-41a9-a4bc-85720c2d5df3';
-    $display->content['new-d70e6cf7-a006-41a9-a4bc-85720c2d5df3'] = $pane;
-    $display->panels['contentmain'][0] = 'new-d70e6cf7-a006-41a9-a4bc-85720c2d5df3';
-    $pane = new stdClass();
-    $pane->pid = 'new-2a6a4d6e-df03-4e75-b4fe-ae903d28c127';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Page Slider',
-      'title' => '',
-      'body' => '<div id="main-slider" class="carousel slide bg-dark" data-ride="carousel">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd70e6cf7-a006-41a9-a4bc-85720c2d5df3';
+  $display->content['new-d70e6cf7-a006-41a9-a4bc-85720c2d5df3'] = $pane;
+  $display->panels['contentmain'][0] = 'new-d70e6cf7-a006-41a9-a4bc-85720c2d5df3';
+  $pane = new stdClass();
+  $pane->pid = 'new-2a6a4d6e-df03-4e75-b4fe-ae903d28c127';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Page Slider',
+    'title' => '',
+    'body' => '<div id="main-slider" class="carousel slide bg-dark" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#main-slider" data-slide-to="0" class="active"></li>
         <li data-target="#main-slider" data-slide-to="1"></li>
@@ -1962,31 +1980,31 @@ Rob</p>
     </div>
 </div>
 ',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '2a6a4d6e-df03-4e75-b4fe-ae903d28c127';
-    $display->content['new-2a6a4d6e-df03-4e75-b4fe-ae903d28c127'] = $pane;
-    $display->panels['contentmain'][1] = 'new-2a6a4d6e-df03-4e75-b4fe-ae903d28c127';
-    $pane = new stdClass();
-    $pane->pid = 'new-366668ef-b583-45ae-acb4-3536c8e4d65b';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Feature List',
-      'title' => '',
-      'body' => '<div class="bg-light padding-md" id="feature">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '2a6a4d6e-df03-4e75-b4fe-ae903d28c127';
+  $display->content['new-2a6a4d6e-df03-4e75-b4fe-ae903d28c127'] = $pane;
+  $display->panels['contentmain'][1] = 'new-2a6a4d6e-df03-4e75-b4fe-ae903d28c127';
+  $pane = new stdClass();
+  $pane->pid = 'new-366668ef-b583-45ae-acb4-3536c8e4d65b';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Feature List',
+    'title' => '',
+    'body' => '<div class="bg-light padding-md" id="feature">
     <div class="row">
         <div class="col-sm-4 content-padding">
             <div class="feature-icon text-center ">
@@ -2047,31 +2065,31 @@ Rob</p>
     </div><!-- /.row -->
 </div>
 ',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '366668ef-b583-45ae-acb4-3536c8e4d65b';
-    $display->content['new-366668ef-b583-45ae-acb4-3536c8e4d65b'] = $pane;
-    $display->panels['contentmain'][2] = 'new-366668ef-b583-45ae-acb4-3536c8e4d65b';
-    $pane = new stdClass();
-    $pane->pid = 'new-67043c41-a5e0-4858-a600-e4a3eb592bd2';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Social Proof',
-      'title' => '',
-      'body' => '<div class="section-header">
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '366668ef-b583-45ae-acb4-3536c8e4d65b';
+  $display->content['new-366668ef-b583-45ae-acb4-3536c8e4d65b'] = $pane;
+  $display->panels['contentmain'][2] = 'new-366668ef-b583-45ae-acb4-3536c8e4d65b';
+  $pane = new stdClass();
+  $pane->pid = 'new-67043c41-a5e0-4858-a600-e4a3eb592bd2';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Social Proof',
+    'title' => '',
+    'body' => '<div class="section-header">
     <hr class="left visible-lg">
     <span>
         A page for every army, player, game and much more game meta
@@ -2109,31 +2127,31 @@ Rob</p>
         </div>
     </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '67043c41-a5e0-4858-a600-e4a3eb592bd2';
-    $display->content['new-67043c41-a5e0-4858-a600-e4a3eb592bd2'] = $pane;
-    $display->panels['contentmain'][3] = 'new-67043c41-a5e0-4858-a600-e4a3eb592bd2';
-    $pane = new stdClass();
-    $pane->pid = 'new-11a4a34f-938d-4873-9562-07884eb224cb';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Benefits',
-      'title' => '',
-      'body' => '<div class="bg-white text-center content-padding">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '67043c41-a5e0-4858-a600-e4a3eb592bd2';
+  $display->content['new-67043c41-a5e0-4858-a600-e4a3eb592bd2'] = $pane;
+  $display->panels['contentmain'][3] = 'new-67043c41-a5e0-4858-a600-e4a3eb592bd2';
+  $pane = new stdClass();
+  $pane->pid = 'new-11a4a34f-938d-4873-9562-07884eb224cb';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Benefits',
+    'title' => '',
+    'body' => '<div class="bg-white text-center content-padding">
     <h3>Chronicle the Glory of Your Armies</h3>
     <h5 class="text-muted">Super Powerful & Easy to Use Theme</h5>
     <div class="seperator"></div>
@@ -2143,31 +2161,31 @@ Rob</p>
     </p>
     <a href="/user/register" class="btn btn-lg btn-success">JOIN NOW</a>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '11a4a34f-938d-4873-9562-07884eb224cb';
-    $display->content['new-11a4a34f-938d-4873-9562-07884eb224cb'] = $pane;
-    $display->panels['contentmain'][4] = 'new-11a4a34f-938d-4873-9562-07884eb224cb';
-    $pane = new stdClass();
-    $pane->pid = 'new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Recent Highlights',
-      'title' => '',
-      'body' => '<div id="portfolio">
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '11a4a34f-938d-4873-9562-07884eb224cb';
+  $display->content['new-11a4a34f-938d-4873-9562-07884eb224cb'] = $pane;
+  $display->panels['contentmain'][4] = 'new-11a4a34f-938d-4873-9562-07884eb224cb';
+  $pane = new stdClass();
+  $pane->pid = 'new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Recent Highlights',
+    'title' => '',
+    'body' => '<div id="portfolio">
     <div class="section-header">
         <hr class="left visible-lg">
         <span>
@@ -2177,62 +2195,62 @@ Rob</p>
     </div>
     <?php print views_embed_view("home_page_latest_highlights" , "panel_pane_3"); ?>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = '1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
-    $display->content['new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210'] = $pane;
-    $display->panels['contentmain'][5] = 'new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
-    $pane = new stdClass();
-    $pane->pid = 'new-ee19956f-d9c6-4a8e-be9f-03716ca708bf';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Call to action',
-      'title' => '',
-      'body' => '<div class="bg-white content-padding text-center font-lg">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
+  $display->content['new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210'] = $pane;
+  $display->panels['contentmain'][5] = 'new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
+  $pane = new stdClass();
+  $pane->pid = 'new-ee19956f-d9c6-4a8e-be9f-03716ca708bf';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Call to action',
+    'title' => '',
+    'body' => '<div class="bg-white content-padding text-center font-lg">
         
         <div class="inline-block m-top-sm">
             <a href="/user/register" class="btn btn-info btn-lg m-bottom-sm"><i class="fa fa-sign-in"></i> Start your free profile</a>
             <div class="m-right-sm">You\'ll be gaining renown and glory in minutes</div>
         </div>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = 'ee19956f-d9c6-4a8e-be9f-03716ca708bf';
-    $display->content['new-ee19956f-d9c6-4a8e-be9f-03716ca708bf'] = $pane;
-    $display->panels['contentmain'][6] = 'new-ee19956f-d9c6-4a8e-be9f-03716ca708bf';
-    $pane = new stdClass();
-    $pane->pid = 'new-5ae99014-2458-450a-8e4e-1cab82a588cd';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Explore content',
-      'title' => '',
-      'body' => '<div class="clearfix well">
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = 'ee19956f-d9c6-4a8e-be9f-03716ca708bf';
+  $display->content['new-ee19956f-d9c6-4a8e-be9f-03716ca708bf'] = $pane;
+  $display->panels['contentmain'][6] = 'new-ee19956f-d9c6-4a8e-be9f-03716ca708bf';
+  $pane = new stdClass();
+  $pane->pid = 'new-5ae99014-2458-450a-8e4e-1cab82a588cd';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Explore content',
+    'title' => '',
+    'body' => '<div class="clearfix well">
 <div align="center">
 <h2>Explore the exploits of other commanders</h2>
 <h4>With iToysoldiers.com you can view blogs, battle reports, galleries, and stats of your favorite army</h4>
@@ -2243,87 +2261,87 @@ Rob</p>
 ?>
 </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'clearfix',
-    );
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $pane->uuid = '5ae99014-2458-450a-8e4e-1cab82a588cd';
-    $display->content['new-5ae99014-2458-450a-8e4e-1cab82a588cd'] = $pane;
-    $display->panels['contentmain'][7] = 'new-5ae99014-2458-450a-8e4e-1cab82a588cd';
-    $pane = new stdClass();
-    $pane->pid = 'new-a1f76a7f-623f-4877-8240-230c9793fcbe';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'home_page_game_list-panel_pane_1';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'bg-light padding-md',
-    );
-    $pane->extras = array();
-    $pane->position = 8;
-    $pane->locks = array();
-    $pane->uuid = 'a1f76a7f-623f-4877-8240-230c9793fcbe';
-    $display->content['new-a1f76a7f-623f-4877-8240-230c9793fcbe'] = $pane;
-    $display->panels['contentmain'][8] = 'new-a1f76a7f-623f-4877-8240-230c9793fcbe';
-    $pane = new stdClass();
-    $pane->pid = 'new-824d81c9-f53c-450d-b610-73d0cd3311f2';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Newsletter Signup',
-      'title' => '',
-      'body' => '<div class="bg-white">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'clearfix',
+  );
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = '5ae99014-2458-450a-8e4e-1cab82a588cd';
+  $display->content['new-5ae99014-2458-450a-8e4e-1cab82a588cd'] = $pane;
+  $display->panels['contentmain'][7] = 'new-5ae99014-2458-450a-8e4e-1cab82a588cd';
+  $pane = new stdClass();
+  $pane->pid = 'new-a1f76a7f-623f-4877-8240-230c9793fcbe';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'home_page_game_list-panel_pane_1';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'bg-light padding-md',
+  );
+  $pane->extras = array();
+  $pane->position = 8;
+  $pane->locks = array();
+  $pane->uuid = 'a1f76a7f-623f-4877-8240-230c9793fcbe';
+  $display->content['new-a1f76a7f-623f-4877-8240-230c9793fcbe'] = $pane;
+  $display->panels['contentmain'][8] = 'new-a1f76a7f-623f-4877-8240-230c9793fcbe';
+  $pane = new stdClass();
+  $pane->pid = 'new-824d81c9-f53c-450d-b610-73d0cd3311f2';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Newsletter Signup',
+    'title' => '',
+    'body' => '<div class="bg-white">
   <div class="text-center content-padding" id="contact">
       <h3>NEWSLETTER SIGNUP</h3>
       <p class="m-bottom-md">Subscribing to our newsletter you will always be update with the latest news from us.</p>
       <script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=7"></script>
   </div>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 9;
-    $pane->locks = array();
-    $pane->uuid = '824d81c9-f53c-450d-b610-73d0cd3311f2';
-    $display->content['new-824d81c9-f53c-450d-b610-73d0cd3311f2'] = $pane;
-    $display->panels['contentmain'][9] = 'new-824d81c9-f53c-450d-b610-73d0cd3311f2';
-    $pane = new stdClass();
-    $pane->pid = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Final Call to Action',
-      'title' => '',
-      'body' => '<div class="content-padding bg-light">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 9;
+  $pane->locks = array();
+  $pane->uuid = '824d81c9-f53c-450d-b610-73d0cd3311f2';
+  $display->content['new-824d81c9-f53c-450d-b610-73d0cd3311f2'] = $pane;
+  $display->panels['contentmain'][9] = 'new-824d81c9-f53c-450d-b610-73d0cd3311f2';
+  $pane = new stdClass();
+  $pane->pid = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Final Call to Action',
+    'title' => '',
+    'body' => '<div class="content-padding bg-light">
     <div class="panel">
         <div class="panel-body content-padding">
             <div class="pull-left">
@@ -2334,20 +2352,20 @@ Rob</p>
         </div>
     </div>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 10;
-    $pane->locks = array();
-    $pane->uuid = 'bf3391f0-a8c5-44fd-8647-89c994a5350e';
-    $display->content['new-bf3391f0-a8c5-44fd-8647-89c994a5350e'] = $pane;
-    $display->panels['contentmain'][10] = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 10;
+  $pane->locks = array();
+  $pane->uuid = 'bf3391f0-a8c5-44fd-8647-89c994a5350e';
+  $display->content['new-bf3391f0-a8c5-44fd-8647-89c994a5350e'] = $pane;
+  $display->panels['contentmain'][10] = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2449,19 +2467,21 @@ Rob</p>
   $display->cache = array();
   $display->title = '';
   $display->uuid = '1a5861fc-0473-4263-9e2e-7f9974d6e645';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_ironmonger_landing_page_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-faf92acf-cc32-464d-baac-bafef45daa8b';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Invitation',
-      'title' => '',
-      'body' => '<h3>Greetings, Honoured Game Store Owner.</h3>
+  $pane = new stdClass();
+  $pane->pid = 'new-faf92acf-cc32-464d-baac-bafef45daa8b';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Invitation',
+    'title' => '',
+    'body' => '<h3>Greetings, Honoured Game Store Owner.</h3>
 
 <p><strong>I’d like to invite you to become a life-long “premium” member of iToysoldiers as part of our Ironmonger program. &nbsp;I’m looking for a handful of game store owners to help me develop tools and features that’ll help you in the tabletop war gaming portion of your business. You can help me prioritize what I’m working on, suggest new features, and get access to these features before anyone else.&nbsp; It’s your input that’ll help shape how iToysoldiers supports the local game store.</strong></p>
 
@@ -2519,82 +2539,82 @@ Rob</p>
 Rob<br />
 <a href="http://itoysoldiers.com/">itoysoldiers.com</a></p>
 ',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'faf92acf-cc32-464d-baac-bafef45daa8b';
-    $display->content['new-faf92acf-cc32-464d-baac-bafef45daa8b'] = $pane;
-    $display->panels['contentmain'][0] = 'new-faf92acf-cc32-464d-baac-bafef45daa8b';
-    $pane = new stdClass();
-    $pane->pid = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
-    $pane->panel = 'header';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h1>Become an iToysoldiers Ironmonger</h1>
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'faf92acf-cc32-464d-baac-bafef45daa8b';
+  $display->content['new-faf92acf-cc32-464d-baac-bafef45daa8b'] = $pane;
+  $display->panels['contentmain'][0] = 'new-faf92acf-cc32-464d-baac-bafef45daa8b';
+  $pane = new stdClass();
+  $pane->pid = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
+  $pane->panel = 'header';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '<h1>Become an iToysoldiers Ironmonger</h1>
 
 <h2>An Invitation for Game Store Owners</h2>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'jumbotron',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '8882395a-3623-4ed0-ab2a-989cceeaa090';
-    $display->content['new-8882395a-3623-4ed0-ab2a-989cceeaa090'] = $pane;
-    $display->panels['header'][0] = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
-    $pane = new stdClass();
-    $pane->pid = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
-    $pane->panel = 'sidebar';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Let\'s Talk Form',
-      'title' => 'Let\'s Talk',
-      'body' => '<script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=9"></script>',
-      'format' => 'php_code',
-      'substitute' => 0,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'style' => 'bootstrap_panel',
-      'settings' => array(
-        'use_title' => 1,
-        'use_footer' => 0,
-        'panel_body' => 1,
-        'footer_content' => '',
-        'context_class' => 'panel-primary',
-      ),
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'e0db5b84-d284-458c-ba08-0818ca123991';
-    $display->content['new-e0db5b84-d284-458c-ba08-0818ca123991'] = $pane;
-    $display->panels['sidebar'][0] = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'jumbotron',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '8882395a-3623-4ed0-ab2a-989cceeaa090';
+  $display->content['new-8882395a-3623-4ed0-ab2a-989cceeaa090'] = $pane;
+  $display->panels['header'][0] = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
+  $pane = new stdClass();
+  $pane->pid = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
+  $pane->panel = 'sidebar';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Let\'s Talk Form',
+    'title' => 'Let\'s Talk',
+    'body' => '<script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=9"></script>',
+    'format' => 'php_code',
+    'substitute' => 0,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'style' => 'bootstrap_panel',
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-primary',
+    ),
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e0db5b84-d284-458c-ba08-0818ca123991';
+  $display->content['new-e0db5b84-d284-458c-ba08-0818ca123991'] = $pane;
+  $display->panels['sidebar'][0] = 'new-e0db5b84-d284-458c-ba08-0818ca123991';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-8882395a-3623-4ed0-ab2a-989cceeaa090';
   $handler->conf['display'] = $display;
@@ -2676,75 +2696,77 @@ Rob<br />
   $display->cache = array();
   $display->title = '';
   $display->uuid = '57275256-bd92-4192-afed-3bcfb0c5161e';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_itoysoldiers_for_narrative__panel_context_111a8371-d0d1-4034-8c97-9c44fd55d95d';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-42d92332-2f59-4859-be30-cd3093e09f3a';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Jumbotron',
-      'title' => '',
-      'body' => '<h1>Your Army is Epic</h1>
+  $pane = new stdClass();
+  $pane->pid = 'new-42d92332-2f59-4859-be30-cd3093e09f3a';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Jumbotron',
+    'title' => '',
+    'body' => '<h1>Your Army is Epic</h1>
 <h2>Tell the story on iToysoldiers</h2>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'jumbotron',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '42d92332-2f59-4859-be30-cd3093e09f3a';
-    $display->content['new-42d92332-2f59-4859-be30-cd3093e09f3a'] = $pane;
-    $display->panels['contentmain'][0] = 'new-42d92332-2f59-4859-be30-cd3093e09f3a';
-    $pane = new stdClass();
-    $pane->pid = 'new-8dc39e9c-fe9c-4206-8514-dcda635e4045';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'First Call to Action',
-      'title' => '',
-      'body' => '<h4 class="text-center">iToysoldiers is a website to share the glory of your miniature war gaming armies <a href="/user/register" class="btn btn-primary">REGISTER NOW</a></h4>
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'jumbotron',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '42d92332-2f59-4859-be30-cd3093e09f3a';
+  $display->content['new-42d92332-2f59-4859-be30-cd3093e09f3a'] = $pane;
+  $display->panels['contentmain'][0] = 'new-42d92332-2f59-4859-be30-cd3093e09f3a';
+  $pane = new stdClass();
+  $pane->pid = 'new-8dc39e9c-fe9c-4206-8514-dcda635e4045';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'First Call to Action',
+    'title' => '',
+    'body' => '<h4 class="text-center">iToysoldiers is a website to share the glory of your miniature war gaming armies <a href="/user/register" class="btn btn-primary">REGISTER NOW</a></h4>
 <div class="seperator"></div>
 <div class="seperator"></div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '8dc39e9c-fe9c-4206-8514-dcda635e4045';
-    $display->content['new-8dc39e9c-fe9c-4206-8514-dcda635e4045'] = $pane;
-    $display->panels['contentmain'][1] = 'new-8dc39e9c-fe9c-4206-8514-dcda635e4045';
-    $pane = new stdClass();
-    $pane->pid = 'new-dbf4e4c1-3457-428c-b3af-3fb11a483bbd';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Triptych',
-      'title' => '',
-      'body' => '<div class="row">
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '8dc39e9c-fe9c-4206-8514-dcda635e4045';
+  $display->content['new-8dc39e9c-fe9c-4206-8514-dcda635e4045'] = $pane;
+  $display->panels['contentmain'][1] = 'new-8dc39e9c-fe9c-4206-8514-dcda635e4045';
+  $pane = new stdClass();
+  $pane->pid = 'new-dbf4e4c1-3457-428c-b3af-3fb11a483bbd';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Triptych',
+    'title' => '',
+    'body' => '<div class="row">
 <div class="col-sm-4">
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -2776,31 +2798,31 @@ Rob<br />
 </div>
 </div>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'dbf4e4c1-3457-428c-b3af-3fb11a483bbd';
-    $display->content['new-dbf4e4c1-3457-428c-b3af-3fb11a483bbd'] = $pane;
-    $display->panels['contentmain'][2] = 'new-dbf4e4c1-3457-428c-b3af-3fb11a483bbd';
-    $pane = new stdClass();
-    $pane->pid = 'new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Narrative Features',
-      'title' => '',
-      'body' => '<h3 class="text-center">Narrative Features</h3>
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'dbf4e4c1-3457-428c-b3af-3fb11a483bbd';
+  $display->content['new-dbf4e4c1-3457-428c-b3af-3fb11a483bbd'] = $pane;
+  $display->panels['contentmain'][2] = 'new-dbf4e4c1-3457-428c-b3af-3fb11a483bbd';
+  $pane = new stdClass();
+  $pane->pid = 'new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Narrative Features',
+    'title' => '',
+    'body' => '<h3 class="text-center">Narrative Features</h3>
 <div class="row">
     <div class="col-xs-12 col-sm-2">
         <a href="/warzone/narrative-campaigns"><img class="center-block" src="/sites/default/files/default_images/league.png" width=220 height=220></a>
@@ -2840,46 +2862,46 @@ Rob<br />
 </div>
 <div class="seperator"></div>
 <div class="seperator"></div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'ef2977fb-e466-434c-bd3b-8d0a5b7ad68f';
-    $display->content['new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f'] = $pane;
-    $display->panels['contentmain'][3] = 'new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f';
-    $pane = new stdClass();
-    $pane->pid = 'new-324372b2-309a-46a2-afc8-5d49653d2406';
-    $pane->panel = 'contentmain';
-    $pane->type = 'block';
-    $pane->subtype = 'mailchimp_signup-landing_page_signup_block';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Newsletter Signup',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'form-group ranking75 center-block text-center',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '324372b2-309a-46a2-afc8-5d49653d2406';
-    $display->content['new-324372b2-309a-46a2-afc8-5d49653d2406'] = $pane;
-    $display->panels['contentmain'][4] = 'new-324372b2-309a-46a2-afc8-5d49653d2406';
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'ef2977fb-e466-434c-bd3b-8d0a5b7ad68f';
+  $display->content['new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f'] = $pane;
+  $display->panels['contentmain'][3] = 'new-ef2977fb-e466-434c-bd3b-8d0a5b7ad68f';
+  $pane = new stdClass();
+  $pane->pid = 'new-324372b2-309a-46a2-afc8-5d49653d2406';
+  $pane->panel = 'contentmain';
+  $pane->type = 'block';
+  $pane->subtype = 'mailchimp_signup-landing_page_signup_block';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Newsletter Signup',
+    'override_title_heading' => 'h3',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'form-group ranking75 center-block text-center',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '324372b2-309a-46a2-afc8-5d49653d2406';
+  $display->content['new-324372b2-309a-46a2-afc8-5d49653d2406'] = $pane;
+  $display->panels['contentmain'][4] = 'new-324372b2-309a-46a2-afc8-5d49653d2406';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-42d92332-2f59-4859-be30-cd3093e09f3a';
   $handler->conf['display'] = $display;
@@ -2933,19 +2955,21 @@ Rob<br />
   $display->cache = array();
   $display->title = 'Legendary Battles';
   $display->uuid = '273d4c92-5b21-4df5-a572-bd084a0b8b5b';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_legendary_battles__panel';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Top Row',
-      'title' => '',
-      'body' => '        <div class="row">
+  $pane = new stdClass();
+  $pane->pid = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Top Row',
+    'title' => '',
+    'body' => '        <div class="row">
             <div class="col-md-6">
                 <div class="lead">Ahoy, Commander and welcome to iToysoldiers.</div>
                 <p>Likely you’ve reached this page because one of your opponents at a miniature wargaming event or tournament and you’re looking to find the battles you participated in. That is absolutely stellar because you’re in the right place.  But first you need to register for an account on iToysoldiers and you can do that right now:</p>
@@ -2967,64 +2991,64 @@ Rob<br />
                 <div class="thumbnail"><img src="https://s3.amazonaws.com/itoysoldiers/legendarybattles.jpg"></div>
             </div>
         </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'af88cd60-990a-4def-bee0-7407057ce2b1';
-    $display->content['new-af88cd60-990a-4def-bee0-7407057ce2b1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
-    $pane = new stdClass();
-    $pane->pid = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'home_page_battles_legendary_search-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
-    $display->content['new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310'] = $pane;
-    $display->panels['contentmain'][1] = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
-    $pane = new stdClass();
-    $pane->pid = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'landing page frame',
-      'title' => '',
-      'body' => '<iframe src="http://l.itoysoldiers.com/index.php/legendary-battles" width="0" height="0" frameBorder="0"></iframe>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '9a860902-217e-4bac-a3ca-4b094e44f539';
-    $display->content['new-9a860902-217e-4bac-a3ca-4b094e44f539'] = $pane;
-    $display->panels['contentmain'][2] = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'af88cd60-990a-4def-bee0-7407057ce2b1';
+  $display->content['new-af88cd60-990a-4def-bee0-7407057ce2b1'] = $pane;
+  $display->panels['contentmain'][0] = 'new-af88cd60-990a-4def-bee0-7407057ce2b1';
+  $pane = new stdClass();
+  $pane->pid = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'home_page_battles_legendary_search-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+  $display->content['new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310'] = $pane;
+  $display->panels['contentmain'][1] = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
+  $pane = new stdClass();
+  $pane->pid = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'landing page frame',
+    'title' => '',
+    'body' => '<iframe src="http://l.itoysoldiers.com/index.php/legendary-battles" width="0" height="0" frameBorder="0"></iframe>',
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '9a860902-217e-4bac-a3ca-4b094e44f539';
+  $display->content['new-9a860902-217e-4bac-a3ca-4b094e44f539'] = $pane;
+  $display->panels['contentmain'][2] = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
   $handler->conf['display'] = $display;
@@ -3125,19 +3149,21 @@ Rob<br />
   $display->cache = array();
   $display->title = 'Privacy Policy';
   $display->uuid = 'cb75c140-b42f-4faa-8872-1b273a386f38';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_privacy_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Privacy Policy',
-      'title' => '',
-      'body' => '<p><strong>Last Updated: 2015-07-20 10:02 EST</strong></p>
+  $pane = new stdClass();
+  $pane->pid = 'new-e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Privacy Policy',
+    'title' => '',
+    'body' => '<p><strong>Last Updated: 2015-07-20 10:02 EST</strong></p>
 
 <p><strong>Preface</strong>: I cribbed this privacy policy from a number of sites and it covers just about all eventualities. Let me be clear. I use Google Analytics, Google Adsense (for advertisement), Double Click for Publishers, and drupal. All of these things generate cookies and capture data. Most of it isn’t able to be tracked directly to an individual except the activity you perform on the site, like comments, battle results, participation in leagues and the like. The data I capture, as described below in further detail, is used to a) provide the functionality of the site, and b) to fulfill my addiction to statistics. Stats are cool. iToysoldiers is an act of love by a guy who loves miniature war gaming as much as you. I’m not doing this to make money by stealing your personal data. Good gaming!</p>
 
@@ -3201,89 +3227,89 @@ Rob<br />
 
 <p><u><strong>iToysoldiers Contact Information.</strong></u> Please contact iToysoldiers with any questions or comments about this Privacy Policy, to obtain access to your personal information, and our third-party disclosure practices or your consent choices at 24 Azar Ave, Tilbury, Ontario, n0p2l0, Canada, or by email at admin@iToysoldiers.com. We will respond to your inquiry within 30 days of its receipt.</p>
 ',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d';
-    $display->content['new-e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d'] = $pane;
-    $display->panels['contentmain'][0] = 'new-e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d';
-    $pane = new stdClass();
-    $pane->pid = 'new-3a94308c-9f0b-49b3-b37b-070e7c8fdc8a';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-legal';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '3a94308c-9f0b-49b3-b37b-070e7c8fdc8a';
-    $display->content['new-3a94308c-9f0b-49b3-b37b-070e7c8fdc8a'] = $pane;
-    $display->panels['sidebar'][0] = 'new-3a94308c-9f0b-49b3-b37b-070e7c8fdc8a';
-    $pane = new stdClass();
-    $pane->pid = 'new-a4295001-61ef-40e8-8ede-f6412de68c35';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'a4295001-61ef-40e8-8ede-f6412de68c35';
-    $display->content['new-a4295001-61ef-40e8-8ede-f6412de68c35'] = $pane;
-    $display->panels['sidebar'][1] = 'new-a4295001-61ef-40e8-8ede-f6412de68c35';
-    $pane = new stdClass();
-    $pane->pid = 'new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-contact-us';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
-    $display->content['new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9'] = $pane;
-    $display->panels['sidebar'][2] = 'new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d';
+  $display->content['new-e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d'] = $pane;
+  $display->panels['contentmain'][0] = 'new-e23b7d1f-ea5d-45ef-bc2c-11d32fb7749d';
+  $pane = new stdClass();
+  $pane->pid = 'new-3a94308c-9f0b-49b3-b37b-070e7c8fdc8a';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-legal';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '3a94308c-9f0b-49b3-b37b-070e7c8fdc8a';
+  $display->content['new-3a94308c-9f0b-49b3-b37b-070e7c8fdc8a'] = $pane;
+  $display->panels['sidebar'][0] = 'new-3a94308c-9f0b-49b3-b37b-070e7c8fdc8a';
+  $pane = new stdClass();
+  $pane->pid = 'new-a4295001-61ef-40e8-8ede-f6412de68c35';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'a4295001-61ef-40e8-8ede-f6412de68c35';
+  $display->content['new-a4295001-61ef-40e8-8ede-f6412de68c35'] = $pane;
+  $display->panels['sidebar'][1] = 'new-a4295001-61ef-40e8-8ede-f6412de68c35';
+  $pane = new stdClass();
+  $pane->pid = 'new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-contact-us';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
+  $display->content['new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9'] = $pane;
+  $display->panels['sidebar'][2] = 'new-20ee5021-f32c-4d1a-bedb-7dcbdc7193e9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3387,19 +3413,21 @@ Rob<br />
   $display->cache = array();
   $display->title = 'Terms of Service';
   $display->uuid = '21e2d9cb-831a-429d-8be6-9940506b1310';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_terms_panel_context';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-28b3c918-514b-48ba-b196-517a75d6a3a2';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Terms of Service',
-      'title' => '',
-      'body' => '<p>Last Updated: 2015-07-20</p>
+  $pane = new stdClass();
+  $pane->pid = 'new-28b3c918-514b-48ba-b196-517a75d6a3a2';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Terms of Service',
+    'title' => '',
+    'body' => '<p>Last Updated: 2015-07-20</p>
 
 <p>Welcome to the iToysoldiers, Inc. ("<strong>iToysoldiers</strong>") website —&nbsp;<a href="http://8tracks.com/" target="_blank">http://iToysoldiers.com</a>&nbsp;— and any and all products, services, applications, platforms, websites, or other affiliated ventures offered, controlled, owned or operated by iToysoldiers (the "<strong>iToysoldiers Platform</strong>"). The following Terms of Use for the iToysoldiers Platform creates a legal contract between you, either an individual customer, member or user, or a single entity, and iToysoldiers regarding your use of the iToysoldiers Platform. Throughout these Terms of Use, "<strong>iToysoldiers</strong>" and "<strong>We</strong>" refers to iToysoldiers, Inc. and its affiliates. "<strong>You</strong>" or "<strong>Users</strong>" refers to you, our users — everyone who uses, subscribes to, publishes through, joins, or visits iToysoldiers.</p>
 
@@ -3661,95 +3689,95 @@ Rob<br />
 
 <p>25.10&nbsp;Disclosures. The services hereunder are offered by Robert Tacey, 24 Azar Avenue, Tilbury, Ontario, N0P 2L0, or by electronic mail at&nbsp;<a href="mailto:support@iToysoldiers.uservoice.com">support@iToysoldiers.uservoice.com</a>. If you are a California resident, you may have this same information electronic mailed to you by sending a letter to the foregoing address with your electronic mail address and a request for this information.</p>
 ',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array(
-      'method' => 'simple',
-      'settings' => array(
-        'lifetime' => '43200',
-        'granularity' => 'none',
-      ),
-    );
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '28b3c918-514b-48ba-b196-517a75d6a3a2';
-    $display->content['new-28b3c918-514b-48ba-b196-517a75d6a3a2'] = $pane;
-    $display->panels['contentmain'][0] = 'new-28b3c918-514b-48ba-b196-517a75d6a3a2';
-    $pane = new stdClass();
-    $pane->pid = 'new-4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-legal';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54';
-    $display->content['new-4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54'] = $pane;
-    $display->panels['sidebar'][0] = 'new-4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54';
-    $pane = new stdClass();
-    $pane->pid = 'new-915dfbf8-22ef-452d-97d3-d89bdc514a70';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '915dfbf8-22ef-452d-97d3-d89bdc514a70';
-    $display->content['new-915dfbf8-22ef-452d-97d3-d89bdc514a70'] = $pane;
-    $display->panels['sidebar'][1] = 'new-915dfbf8-22ef-452d-97d3-d89bdc514a70';
-    $pane = new stdClass();
-    $pane->pid = 'new-870c6138-de40-44f6-8234-743d9776a608';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-contact-us';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '870c6138-de40-44f6-8234-743d9776a608';
-    $display->content['new-870c6138-de40-44f6-8234-743d9776a608'] = $pane;
-    $display->panels['sidebar'][2] = 'new-870c6138-de40-44f6-8234-743d9776a608';
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '43200',
+      'granularity' => 'none',
+    ),
+  );
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '28b3c918-514b-48ba-b196-517a75d6a3a2';
+  $display->content['new-28b3c918-514b-48ba-b196-517a75d6a3a2'] = $pane;
+  $display->panels['contentmain'][0] = 'new-28b3c918-514b-48ba-b196-517a75d6a3a2';
+  $pane = new stdClass();
+  $pane->pid = 'new-4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-legal';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54';
+  $display->content['new-4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54'] = $pane;
+  $display->panels['sidebar'][0] = 'new-4d9e1b9a-e5f4-4a84-9926-fdc5b4d42e54';
+  $pane = new stdClass();
+  $pane->pid = 'new-915dfbf8-22ef-452d-97d3-d89bdc514a70';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-itoysoldiers-elsewhere';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '915dfbf8-22ef-452d-97d3-d89bdc514a70';
+  $display->content['new-915dfbf8-22ef-452d-97d3-d89bdc514a70'] = $pane;
+  $display->panels['sidebar'][1] = 'new-915dfbf8-22ef-452d-97d3-d89bdc514a70';
+  $pane = new stdClass();
+  $pane->pid = 'new-870c6138-de40-44f6-8234-743d9776a608';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-contact-us';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '870c6138-de40-44f6-8234-743d9776a608';
+  $display->content['new-870c6138-de40-44f6-8234-743d9776a608'] = $pane;
+  $display->panels['sidebar'][2] = 'new-870c6138-de40-44f6-8234-743d9776a608';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

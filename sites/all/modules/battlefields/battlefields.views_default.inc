@@ -3193,26 +3193,6 @@ function battlefields_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'glory';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['text'] = '[field_address-locality]  [field_address-administrative_area]  [field_address-country]';
-  $handler->display->display_options['fields']['field_address']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  /* Field: Content: Location type */
-  $handler->display->display_options['fields']['field_location_type']['id'] = 'field_location_type';
-  $handler->display->display_options['fields']['field_location_type']['table'] = 'field_data_field_location_type';
-  $handler->display->display_options['fields']['field_location_type']['field'] = 'field_location_type';
-  $handler->display->display_options['fields']['field_location_type']['label'] = '';
-  $handler->display->display_options['fields']['field_location_type']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_location_type']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['field_location_type']['element_class'] = 'label label-default';
-  $handler->display->display_options['fields']['field_location_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_location_type']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Supported Games */
   $handler->display->display_options['fields']['field_supported_games']['id'] = 'field_supported_games';
   $handler->display->display_options['fields']['field_supported_games']['table'] = 'field_data_field_supported_games';
@@ -3564,6 +3544,123 @@ function battlefields_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Theater Panel */
+  $handler = $view->new_display('panel_pane', 'Theater Panel', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Featured Battlefields';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'country';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Battlefield (field_location) - reverse (to Content) */
+  $handler->display->display_options['relationships']['reverse_field_location_node']['id'] = 'reverse_field_location_node';
+  $handler->display->display_options['relationships']['reverse_field_location_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_location_node']['field'] = 'reverse_field_location_node';
+  /* Relationship: Flags: battlefield_closed */
+  $handler->display->display_options['relationships']['flag_content_rel_1']['id'] = 'flag_content_rel_1';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel_1']['flag'] = 'battlefield_closed';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  /* Field: Location: Province */
+  $handler->display->display_options['fields']['province']['id'] = 'province';
+  $handler->display->display_options['fields']['province']['table'] = 'location';
+  $handler->display->display_options['fields']['province']['field'] = 'province';
+  $handler->display->display_options['fields']['province']['label'] = '';
+  $handler->display->display_options['fields']['province']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['province']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['province']['style'] = 'code';
+  /* Field: Location: Country */
+  $handler->display->display_options['fields']['country']['id'] = 'country';
+  $handler->display->display_options['fields']['country']['table'] = 'location';
+  $handler->display->display_options['fields']['country']['field'] = 'country';
+  $handler->display->display_options['fields']['country']['label'] = '';
+  $handler->display->display_options['fields']['country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['country']['alter']['text'] = '<strong>[city] [province] <img src="/sites/default/files/default/iso/[country].png"></strong>';
+  $handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['country']['style'] = 'code';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['relationship'] = 'reverse_field_location_node';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'location' => 'location',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Location type (field_location_type) */
+  $handler->display->display_options['filters']['field_location_type_tid']['id'] = 'field_location_type_tid';
+  $handler->display->display_options['filters']['field_location_type_tid']['table'] = 'field_data_field_location_type';
+  $handler->display->display_options['filters']['field_location_type_tid']['field'] = 'field_location_type_tid';
+  $handler->display->display_options['filters']['field_location_type_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_location_type_tid']['value'] = array(
+    0 => '135',
+  );
+  $handler->display->display_options['filters']['field_location_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_location_type_tid']['vocabulary'] = 'location_type';
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flag_content';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel_1';
+  $handler->display->display_options['filters']['flagged']['value'] = '0';
+  $handler->display->display_options['pane_category']['name'] = 'Theater';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['battlefields_all_lists'] = $view;
 
   $view = new view();

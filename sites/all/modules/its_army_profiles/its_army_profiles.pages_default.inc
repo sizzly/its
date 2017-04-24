@@ -70,201 +70,203 @@ order-of-battle/player-armies',
   $display->cache = array();
   $display->title = '';
   $display->uuid = 'ff95339b-b6d4-4eb1-9dd2-8a2f628f098c';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view__panel_context_1491016e-94ad-4d05-a866-7e0a06c37b66';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
-    $pane->panel = 'contentmain';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_image';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'image',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'image_style' => '',
-        'image_link' => '',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'text-center thumbnail',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '76cba8d6-0287-43e4-93ce-97a029f2bb48';
-    $display->content['new-76cba8d6-0287-43e4-93ce-97a029f2bb48'] = $pane;
-    $display->panels['contentmain'][0] = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
-    $pane = new stdClass();
-    $pane->pid = 'new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
-    $pane->panel = 'contentmain';
-    $pane->type = 'node_body';
-    $pane->subtype = 'node_body';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
-    $display->content['new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6'] = $pane;
-    $display->panels['contentmain'][1] = 'new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
-    $pane = new stdClass();
-    $pane->pid = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'army_profile_all_page_layout-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
-    $display->content['new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd'] = $pane;
-    $display->panels['contentmain'][2] = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
-    $pane = new stdClass();
-    $pane->pid = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'core_all_node_layout-panel_pane_3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
-    $display->content['new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf'] = $pane;
-    $display->panels['contentmain'][3] = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
-    $pane = new stdClass();
-    $pane->pid = 'new-1c212b6b-4598-4082-adf6-9ee207feea2b';
-    $pane->panel = 'contentmain';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_army_profile_elements';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'paragraphs_view',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'view_mode' => 'full',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '1c212b6b-4598-4082-adf6-9ee207feea2b';
-    $display->content['new-1c212b6b-4598-4082-adf6-9ee207feea2b'] = $pane;
-    $display->panels['contentmain'][4] = 'new-1c212b6b-4598-4082-adf6-9ee207feea2b';
-    $pane = new stdClass();
-    $pane->pid = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'core_all_node_layout-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = 'e9ad6263-7ee4-49cf-9281-748c95ce4416';
-    $display->content['new-e9ad6263-7ee4-49cf-9281-748c95ce4416'] = $pane;
-    $display->panels['contentmain'][5] = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
-    $pane = new stdClass();
-    $pane->pid = 'new-3e6d9368-caca-4f21-91e1-167a7f259f19';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'posts_update_no_battle';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = '3e6d9368-caca-4f21-91e1-167a7f259f19';
-    $display->content['new-3e6d9368-caca-4f21-91e1-167a7f259f19'] = $pane;
-    $display->panels['contentmain'][6] = 'new-3e6d9368-caca-4f21-91e1-167a7f259f19';
-    $pane = new stdClass();
-    $pane->pid = 'new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'core_all_node_timeline-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $pane->uuid = '8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
-    $display->content['new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859'] = $pane;
-    $display->panels['contentmain'][7] = 'new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
+  $pane = new stdClass();
+  $pane->pid = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
+  $pane->panel = 'contentmain';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_image';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'image_style' => '',
+      'image_link' => '',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'text-center thumbnail',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '76cba8d6-0287-43e4-93ce-97a029f2bb48';
+  $display->content['new-76cba8d6-0287-43e4-93ce-97a029f2bb48'] = $pane;
+  $display->panels['contentmain'][0] = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
+  $pane = new stdClass();
+  $pane->pid = 'new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
+  $pane->panel = 'contentmain';
+  $pane->type = 'node_body';
+  $pane->subtype = 'node_body';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
+  $display->content['new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6'] = $pane;
+  $display->panels['contentmain'][1] = 'new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
+  $pane = new stdClass();
+  $pane->pid = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'army_profile_all_page_layout-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
+  $display->content['new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd'] = $pane;
+  $display->panels['contentmain'][2] = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
+  $pane = new stdClass();
+  $pane->pid = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_layout-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
+  $display->content['new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf'] = $pane;
+  $display->panels['contentmain'][3] = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
+  $pane = new stdClass();
+  $pane->pid = 'new-1c212b6b-4598-4082-adf6-9ee207feea2b';
+  $pane->panel = 'contentmain';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_army_profile_elements';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'paragraphs_view',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'view_mode' => 'full',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '1c212b6b-4598-4082-adf6-9ee207feea2b';
+  $display->content['new-1c212b6b-4598-4082-adf6-9ee207feea2b'] = $pane;
+  $display->panels['contentmain'][4] = 'new-1c212b6b-4598-4082-adf6-9ee207feea2b';
+  $pane = new stdClass();
+  $pane->pid = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_layout-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = 'e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $display->content['new-e9ad6263-7ee4-49cf-9281-748c95ce4416'] = $pane;
+  $display->panels['contentmain'][5] = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $pane = new stdClass();
+  $pane->pid = 'new-3e6d9368-caca-4f21-91e1-167a7f259f19';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'posts_update_no_battle';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '',
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = '3e6d9368-caca-4f21-91e1-167a7f259f19';
+  $display->content['new-3e6d9368-caca-4f21-91e1-167a7f259f19'] = $pane;
+  $display->panels['contentmain'][6] = 'new-3e6d9368-caca-4f21-91e1-167a7f259f19';
+  $pane = new stdClass();
+  $pane->pid = 'new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_timeline-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = '8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
+  $display->content['new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859'] = $pane;
+  $display->panels['contentmain'][7] = 'new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -335,33 +337,35 @@ function its_army_profiles_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'Army Profile Stats';
   $display->uuid = '5b0a0815-03a0-4e5d-85e4-d15fde182cd2';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_army_profile_stats__panel';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-25c52ffc-10ee-4bf3-89ae-45bd020eb699';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'coming_soon';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '25c52ffc-10ee-4bf3-89ae-45bd020eb699';
-    $display->content['new-25c52ffc-10ee-4bf3-89ae-45bd020eb699'] = $pane;
-    $display->panels['contentmain'][0] = 'new-25c52ffc-10ee-4bf3-89ae-45bd020eb699';
+  $pane = new stdClass();
+  $pane->pid = 'new-25c52ffc-10ee-4bf3-89ae-45bd020eb699';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'coming_soon';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '',
+    'format' => 'filtered_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '25c52ffc-10ee-4bf3-89ae-45bd020eb699';
+  $display->content['new-25c52ffc-10ee-4bf3-89ae-45bd020eb699'] = $pane;
+  $display->panels['contentmain'][0] = 'new-25c52ffc-10ee-4bf3-89ae-45bd020eb699';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-25c52ffc-10ee-4bf3-89ae-45bd020eb699';
   $handler->conf['display'] = $display;
@@ -432,55 +436,57 @@ function its_army_profiles_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'Army Profiles';
   $display->uuid = '14d2610f-3116-4319-b083-a325e67da0fb';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_army_profiles_all_landing_page__panel_context_ad9c5832-26a7-4fe2-bb44-90055e8d0ed2';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-6abe916f-0bd6-4011-b582-a6870b8133e9';
-    $pane->panel = 'contentmainbottom';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'core_all_node_timeline-panel_pane_5';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'type' => 'army_profile',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '6abe916f-0bd6-4011-b582-a6870b8133e9';
-    $display->content['new-6abe916f-0bd6-4011-b582-a6870b8133e9'] = $pane;
-    $display->panels['contentmainbottom'][0] = 'new-6abe916f-0bd6-4011-b582-a6870b8133e9';
-    $pane = new stdClass();
-    $pane->pid = 'new-a53fe8f6-da73-4d02-b4d8-e9efe5b734b9';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 2,
-            ),
+  $pane = new stdClass();
+  $pane->pid = 'new-6abe916f-0bd6-4011-b582-a6870b8133e9';
+  $pane->panel = 'contentmainbottom';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_timeline-panel_pane_5';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'arguments' => array(
+      'type' => 'army_profile',
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '6abe916f-0bd6-4011-b582-a6870b8133e9';
+  $display->content['new-6abe916f-0bd6-4011-b582-a6870b8133e9'] = $pane;
+  $display->panels['contentmainbottom'][0] = 'new-6abe916f-0bd6-4011-b582-a6870b8133e9';
+  $pane = new stdClass();
+  $pane->pid = 'new-a53fe8f6-da73-4d02-b4d8-e9efe5b734b9';
+  $pane->panel = 'contentmainleft';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
       ),
-    );
-    $pane->configuration = array(
-      'admin_title' => 'Copy : Authenticated',
-      'title' => 'Show off your Armies',
-      'body' => '<p>Army Profiles at iToysoldiers help you bring your miniature wargaming armies to life. Linking your modeling projects, army write ups, pictures, and battles together to really show off the work you’ve done on all aspects of the hobby.</p>
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Copy : Authenticated',
+    'title' => 'Show off your Armies',
+    'body' => '<p>Army Profiles at iToysoldiers help you bring your miniature wargaming armies to life. Linking your modeling projects, army write ups, pictures, and battles together to really show off the work you’ve done on all aspects of the hobby.</p>
 <ul>
 <li>Tell the world what armies you play</li>
 <li>Link your modeling projects to the army</li>
@@ -489,44 +495,44 @@ function its_army_profiles_default_page_manager_pages() {
 </ul>
 <p class="text-center"><a href="/node/add/army-profile" class="btn btn-primary">Get Started with Army Profiles Now</a></p>
 ',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'a53fe8f6-da73-4d02-b4d8-e9efe5b734b9';
-    $display->content['new-a53fe8f6-da73-4d02-b4d8-e9efe5b734b9'] = $pane;
-    $display->panels['contentmainleft'][0] = 'new-a53fe8f6-da73-4d02-b4d8-e9efe5b734b9';
-    $pane = new stdClass();
-    $pane->pid = 'new-ddec87c7-c2bf-4256-a9f2-127d6c944a40';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 1,
-            ),
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'a53fe8f6-da73-4d02-b4d8-e9efe5b734b9';
+  $display->content['new-a53fe8f6-da73-4d02-b4d8-e9efe5b734b9'] = $pane;
+  $display->panels['contentmainleft'][0] = 'new-a53fe8f6-da73-4d02-b4d8-e9efe5b734b9';
+  $pane = new stdClass();
+  $pane->pid = 'new-ddec87c7-c2bf-4256-a9f2-127d6c944a40';
+  $pane->panel = 'contentmainleft';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
       ),
-    );
-    $pane->configuration = array(
-      'admin_title' => 'Army Profile Copy: Anonymous',
-      'title' => 'Show off your armies',
-      'body' => '<p>Army Profiles at iToysoldiers help you bring your miniature wargaming armies to life. Linking your modeling projects, army write ups, pictures, and battles together to really show off the work you’ve done on all aspects of the hobby.</p>
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Army Profile Copy: Anonymous',
+    'title' => 'Show off your armies',
+    'body' => '<p>Army Profiles at iToysoldiers help you bring your miniature wargaming armies to life. Linking your modeling projects, army write ups, pictures, and battles together to really show off the work you’ve done on all aspects of the hobby.</p>
 <ul>
 <li>Tell the world what armies you play</li>
 <li>Link your modeling projects to the army</li>
@@ -535,31 +541,31 @@ function its_army_profiles_default_page_manager_pages() {
 </ul>
 <p class="text-center"><a href="/user/register" class="btn btn-primary">Get Started with Army Profiles Now</a></p>
 ',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'ddec87c7-c2bf-4256-a9f2-127d6c944a40';
-    $display->content['new-ddec87c7-c2bf-4256-a9f2-127d6c944a40'] = $pane;
-    $display->panels['contentmainleft'][1] = 'new-ddec87c7-c2bf-4256-a9f2-127d6c944a40';
-    $pane = new stdClass();
-    $pane->pid = 'new-c6312386-ffe8-4ad5-bd78-8f0ddd50bb90';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Profile Stats',
-      'title' => 'Stat Summary',
-      'body' => '<div class="list-group">
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'ddec87c7-c2bf-4256-a9f2-127d6c944a40';
+  $display->content['new-ddec87c7-c2bf-4256-a9f2-127d6c944a40'] = $pane;
+  $display->panels['contentmainleft'][1] = 'new-ddec87c7-c2bf-4256-a9f2-127d6c944a40';
+  $pane = new stdClass();
+  $pane->pid = 'new-c6312386-ffe8-4ad5-bd78-8f0ddd50bb90';
+  $pane->panel = 'contentmainleft';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Profile Stats',
+    'title' => 'Stat Summary',
+    'body' => '<div class="list-group">
     <div class="list-group-item">
         <div class="media">
             <div class="media-left pull-left">
@@ -577,85 +583,85 @@ function its_army_profiles_default_page_manager_pages() {
 <div class="text-center">
     <a href="/order-of-battle/player-armies/stats" class="btn btn-default" data-dismiss="modal">All Stats</a>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'c6312386-ffe8-4ad5-bd78-8f0ddd50bb90';
-    $display->content['new-c6312386-ffe8-4ad5-bd78-8f0ddd50bb90'] = $pane;
-    $display->panels['contentmainleft'][2] = 'new-c6312386-ffe8-4ad5-bd78-8f0ddd50bb90';
-    $pane = new stdClass();
-    $pane->pid = 'new-00d0b607-028c-43c9-aa20-1345b2fcd949';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'army_profiles_all_lists_2-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '00d0b607-028c-43c9-aa20-1345b2fcd949';
-    $display->content['new-00d0b607-028c-43c9-aa20-1345b2fcd949'] = $pane;
-    $display->panels['contentmainright'][0] = 'new-00d0b607-028c-43c9-aa20-1345b2fcd949';
-    $pane = new stdClass();
-    $pane->pid = 'new-3e505d06-1715-47a6-8381-b3daf4f2350b';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'army_profiles_all_lists_2-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '3e505d06-1715-47a6-8381-b3daf4f2350b';
-    $display->content['new-3e505d06-1715-47a6-8381-b3daf4f2350b'] = $pane;
-    $display->panels['contentmainright'][1] = 'new-3e505d06-1715-47a6-8381-b3daf4f2350b';
-    $pane = new stdClass();
-    $pane->pid = 'new-a77d2bb8-7974-4ba4-9115-3cb07d8089c1';
-    $pane->panel = 'header';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Jumbotron',
-      'title' => '',
-      'body' => '<div class="jumbotron">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'c6312386-ffe8-4ad5-bd78-8f0ddd50bb90';
+  $display->content['new-c6312386-ffe8-4ad5-bd78-8f0ddd50bb90'] = $pane;
+  $display->panels['contentmainleft'][2] = 'new-c6312386-ffe8-4ad5-bd78-8f0ddd50bb90';
+  $pane = new stdClass();
+  $pane->pid = 'new-00d0b607-028c-43c9-aa20-1345b2fcd949';
+  $pane->panel = 'contentmainright';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'army_profiles_all_lists_2-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '00d0b607-028c-43c9-aa20-1345b2fcd949';
+  $display->content['new-00d0b607-028c-43c9-aa20-1345b2fcd949'] = $pane;
+  $display->panels['contentmainright'][0] = 'new-00d0b607-028c-43c9-aa20-1345b2fcd949';
+  $pane = new stdClass();
+  $pane->pid = 'new-3e505d06-1715-47a6-8381-b3daf4f2350b';
+  $pane->panel = 'contentmainright';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'army_profiles_all_lists_2-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '3e505d06-1715-47a6-8381-b3daf4f2350b';
+  $display->content['new-3e505d06-1715-47a6-8381-b3daf4f2350b'] = $pane;
+  $display->panels['contentmainright'][1] = 'new-3e505d06-1715-47a6-8381-b3daf4f2350b';
+  $pane = new stdClass();
+  $pane->pid = 'new-a77d2bb8-7974-4ba4-9115-3cb07d8089c1';
+  $pane->panel = 'header';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Jumbotron',
+    'title' => '',
+    'body' => '<div class="jumbotron">
 <h2>your foes are amassing their forces against you</h2>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'a77d2bb8-7974-4ba4-9115-3cb07d8089c1';
-    $display->content['new-a77d2bb8-7974-4ba4-9115-3cb07d8089c1'] = $pane;
-    $display->panels['header'][0] = 'new-a77d2bb8-7974-4ba4-9115-3cb07d8089c1';
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'a77d2bb8-7974-4ba4-9115-3cb07d8089c1';
+  $display->content['new-a77d2bb8-7974-4ba4-9115-3cb07d8089c1'] = $pane;
+  $display->panels['header'][0] = 'new-a77d2bb8-7974-4ba4-9115-3cb07d8089c1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-a77d2bb8-7974-4ba4-9115-3cb07d8089c1';
   $handler->conf['display'] = $display;
@@ -752,95 +758,97 @@ function its_army_profiles_default_page_manager_pages() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '76f77e24-0b0d-4eeb-b3dd-c5a86812ceac';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_order_of_battle_landing_page__panel_context_79123b1b-d8f1-45bc-a61d-35dc19d0b952';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-eb2b9394-a7a9-4d0d-9876-8a1db728994b';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'army_profile_all_lists-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'eb2b9394-a7a9-4d0d-9876-8a1db728994b';
-    $display->content['new-eb2b9394-a7a9-4d0d-9876-8a1db728994b'] = $pane;
-    $display->panels['contentmainleft'][0] = 'new-eb2b9394-a7a9-4d0d-9876-8a1db728994b';
-    $pane = new stdClass();
-    $pane->pid = 'new-4171b17c-e74f-4202-97d5-9fbc4d2d0cb7';
-    $pane->panel = 'contentmainleft';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'groups_all_lists-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '4171b17c-e74f-4202-97d5-9fbc4d2d0cb7';
-    $display->content['new-4171b17c-e74f-4202-97d5-9fbc4d2d0cb7'] = $pane;
-    $display->panels['contentmainleft'][1] = 'new-4171b17c-e74f-4202-97d5-9fbc4d2d0cb7';
-    $pane = new stdClass();
-    $pane->pid = 'new-d00555be-c671-4e3e-bd95-3e40cfee3d83';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'players_all_lists-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd00555be-c671-4e3e-bd95-3e40cfee3d83';
-    $display->content['new-d00555be-c671-4e3e-bd95-3e40cfee3d83'] = $pane;
-    $display->panels['contentmainright'][0] = 'new-d00555be-c671-4e3e-bd95-3e40cfee3d83';
-    $pane = new stdClass();
-    $pane->pid = 'new-52d1222a-500e-43f3-957c-56b732c0dbb6';
-    $pane->panel = 'contentmainright';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'listcrit_all_lists-panel_pane_2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '52d1222a-500e-43f3-957c-56b732c0dbb6';
-    $display->content['new-52d1222a-500e-43f3-957c-56b732c0dbb6'] = $pane;
-    $display->panels['contentmainright'][1] = 'new-52d1222a-500e-43f3-957c-56b732c0dbb6';
-    $pane = new stdClass();
-    $pane->pid = 'new-c4bea39c-4517-4da7-a483-1e62efd20f19';
-    $pane->panel = 'contentmaintop';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Nav Bar',
-      'title' => '',
-      'body' => '<nav class="navbar navbar-default">
+  $pane = new stdClass();
+  $pane->pid = 'new-eb2b9394-a7a9-4d0d-9876-8a1db728994b';
+  $pane->panel = 'contentmainleft';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'army_profile_all_lists-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'eb2b9394-a7a9-4d0d-9876-8a1db728994b';
+  $display->content['new-eb2b9394-a7a9-4d0d-9876-8a1db728994b'] = $pane;
+  $display->panels['contentmainleft'][0] = 'new-eb2b9394-a7a9-4d0d-9876-8a1db728994b';
+  $pane = new stdClass();
+  $pane->pid = 'new-4171b17c-e74f-4202-97d5-9fbc4d2d0cb7';
+  $pane->panel = 'contentmainleft';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'groups_all_lists-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '4171b17c-e74f-4202-97d5-9fbc4d2d0cb7';
+  $display->content['new-4171b17c-e74f-4202-97d5-9fbc4d2d0cb7'] = $pane;
+  $display->panels['contentmainleft'][1] = 'new-4171b17c-e74f-4202-97d5-9fbc4d2d0cb7';
+  $pane = new stdClass();
+  $pane->pid = 'new-d00555be-c671-4e3e-bd95-3e40cfee3d83';
+  $pane->panel = 'contentmainright';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'players_all_lists-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd00555be-c671-4e3e-bd95-3e40cfee3d83';
+  $display->content['new-d00555be-c671-4e3e-bd95-3e40cfee3d83'] = $pane;
+  $display->panels['contentmainright'][0] = 'new-d00555be-c671-4e3e-bd95-3e40cfee3d83';
+  $pane = new stdClass();
+  $pane->pid = 'new-52d1222a-500e-43f3-957c-56b732c0dbb6';
+  $pane->panel = 'contentmainright';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'listcrit_all_lists-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '52d1222a-500e-43f3-957c-56b732c0dbb6';
+  $display->content['new-52d1222a-500e-43f3-957c-56b732c0dbb6'] = $pane;
+  $display->panels['contentmainright'][1] = 'new-52d1222a-500e-43f3-957c-56b732c0dbb6';
+  $pane = new stdClass();
+  $pane->pid = 'new-c4bea39c-4517-4da7-a483-1e62efd20f19';
+  $pane->panel = 'contentmaintop';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Nav Bar',
+    'title' => '',
+    'body' => '<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -865,48 +873,48 @@ function its_army_profiles_default_page_manager_pages() {
   </div><!-- /.container-fluid -->
 </nav>
 ',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c4bea39c-4517-4da7-a483-1e62efd20f19';
-    $display->content['new-c4bea39c-4517-4da7-a483-1e62efd20f19'] = $pane;
-    $display->panels['contentmaintop'][0] = 'new-c4bea39c-4517-4da7-a483-1e62efd20f19';
-    $pane = new stdClass();
-    $pane->pid = 'new-fa08129a-33d0-42ba-9d11-f330c1aa6eb4';
-    $pane->panel = 'header';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Jumbotron',
-      'title' => '',
-      'body' => '<div class="jumbotron">
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c4bea39c-4517-4da7-a483-1e62efd20f19';
+  $display->content['new-c4bea39c-4517-4da7-a483-1e62efd20f19'] = $pane;
+  $display->panels['contentmaintop'][0] = 'new-c4bea39c-4517-4da7-a483-1e62efd20f19';
+  $pane = new stdClass();
+  $pane->pid = 'new-fa08129a-33d0-42ba-9d11-f330c1aa6eb4';
+  $pane->panel = 'header';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Jumbotron',
+    'title' => '',
+    'body' => '<div class="jumbotron">
 <h1>Order of Battle</h1>
 <h2>wargaming is a social hobby</h2>
 </div>',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'fa08129a-33d0-42ba-9d11-f330c1aa6eb4';
-    $display->content['new-fa08129a-33d0-42ba-9d11-f330c1aa6eb4'] = $pane;
-    $display->panels['header'][0] = 'new-fa08129a-33d0-42ba-9d11-f330c1aa6eb4';
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'fa08129a-33d0-42ba-9d11-f330c1aa6eb4';
+  $display->content['new-fa08129a-33d0-42ba-9d11-f330c1aa6eb4'] = $pane;
+  $display->panels['header'][0] = 'new-fa08129a-33d0-42ba-9d11-f330c1aa6eb4';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-fa08129a-33d0-42ba-9d11-f330c1aa6eb4';
   $handler->conf['display'] = $display;
@@ -1001,55 +1009,57 @@ function its_army_profiles_default_page_manager_pages() {
   $display->cache = array();
   $display->title = 'Players';
   $display->uuid = '2ac2bc1f-a60b-4189-99b4-7f39b766aa04';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_player_landing_page__panel_context_023553ca-3563-4989-8a80-121de38a811d';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-29a16c76-b66e-4807-9e19-919e34767362';
-    $pane->panel = 'contentmaintop';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Page Header',
-      'title' => '',
-      'body' => '<div class="jumbotron">
+  $pane = new stdClass();
+  $pane->pid = 'new-29a16c76-b66e-4807-9e19-919e34767362';
+  $pane->panel = 'contentmaintop';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Page Header',
+    'title' => '',
+    'body' => '<div class="jumbotron">
 <blockquote>If you know the enemy and know yourself, you need not fear the result of a hundred battles.<br>
 - Sun Tzu</blockquote>
 </div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '29a16c76-b66e-4807-9e19-919e34767362';
-    $display->content['new-29a16c76-b66e-4807-9e19-919e34767362'] = $pane;
-    $display->panels['contentmaintop'][0] = 'new-29a16c76-b66e-4807-9e19-919e34767362';
-    $pane = new stdClass();
-    $pane->pid = 'new-0695f81f-6954-4b48-aff3-8158b3f8bd56';
-    $pane->panel = 'contentmaintop';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'players_all_lists-panel_pane_3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '0695f81f-6954-4b48-aff3-8158b3f8bd56';
-    $display->content['new-0695f81f-6954-4b48-aff3-8158b3f8bd56'] = $pane;
-    $display->panels['contentmaintop'][1] = 'new-0695f81f-6954-4b48-aff3-8158b3f8bd56';
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '29a16c76-b66e-4807-9e19-919e34767362';
+  $display->content['new-29a16c76-b66e-4807-9e19-919e34767362'] = $pane;
+  $display->panels['contentmaintop'][0] = 'new-29a16c76-b66e-4807-9e19-919e34767362';
+  $pane = new stdClass();
+  $pane->pid = 'new-0695f81f-6954-4b48-aff3-8158b3f8bd56';
+  $pane->panel = 'contentmaintop';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'players_all_lists-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '0695f81f-6954-4b48-aff3-8158b3f8bd56';
+  $display->content['new-0695f81f-6954-4b48-aff3-8158b3f8bd56'] = $pane;
+  $display->panels['contentmaintop'][1] = 'new-0695f81f-6954-4b48-aff3-8158b3f8bd56';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

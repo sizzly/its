@@ -87,23 +87,14 @@ function its_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
-  $handler->display->display_options['style_options']['image_field'] = 'field_image';
-  $handler->display->display_options['style_options']['heading_field'] = 'name';
-  $handler->display->display_options['style_options']['body_field'] = 'description';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_thumbnail_plugin_style';
+  $handler->display->display_options['style_options']['alignment'] = 'vertical';
+  $handler->display->display_options['style_options']['columns'] = '1';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -112,25 +103,9 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'large_button',
+    'image_style' => 'newsletter_square',
     'image_link' => 'content',
   );
-  /* Field: Taxonomy term: Term description */
-  $handler->display->display_options['fields']['description']['id'] = 'description';
-  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['description']['field'] = 'description';
-  $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['alter']['text'] = '<div class="row">
-<div class="col-sm-3 text-center">
-[field_image]
-</div>
-<div class="col-sm-9">
-[description]
-</div>
-</div>';
-  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['description']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['description']['element_wrapper_class'] = 'col-sm-9';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Achievements';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -139,7 +114,7 @@ function its_views_views_default_views() {
   $view = new view();
   $view->name = 'achievements_all_lists';
   $view->description = 'Various Lists of achievements';
-  $view->tag = 'Achievements 3.0, Consolidate';
+  $view->tag = 'Achievements, 4.6, active, feature';
   $view->base_table = 'node';
   $view->human_name = 'Achievements: All: Lists';
   $view->core = 7;
@@ -356,12 +331,81 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['path'] = '/wargaming-decorations/achievements';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+
+  /* Display: Achievement Category List */
+  $handler = $view->new_display('panel_pane', 'Achievement Category List', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Available Achievements';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'field_short_description';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image']['group_column'] = 'entity_id';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field: Short Description */
+  $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
+  $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
+  $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';
+  $handler->display->display_options['fields']['field_short_description']['label'] = '';
+  $handler->display->display_options['fields']['field_short_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Achievement Points (field_achievement_points) */
+  $handler->display->display_options['sorts']['field_achievement_points_value']['id'] = 'field_achievement_points_value';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['table'] = 'field_data_field_achievement_points';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['field'] = 'field_achievement_points_value';
+  $handler->display->display_options['sorts']['field_achievement_points_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Nid */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Category (field_achievement_category) */
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['id'] = 'field_achievement_category_target_id';
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['table'] = 'field_data_field_achievement_category';
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['field'] = 'field_achievement_category_target_id';
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_achievement_category_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_category']['name'] = 'Term';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['achievements_all_lists'] = $view;
 
   $view = new view();
   $view->name = 'achievements_all_page_layout';
   $view->description = 'Page Layout elements for Achievement node pages.';
-  $view->tag = 'Achievements 3.0';
+  $view->tag = 'Achievements, 4.6, active, feature';
   $view->base_table = 'node';
   $view->human_name = 'Achievements: All: Page Layout';
   $view->core = 7;
@@ -415,157 +459,6 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'achievement' => 'achievement',
   );
-
-  /* Display: Details */
-  $handler = $view->new_display('panel_pane', 'Details', 'panel_pane_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Details';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'achievement' => 'achievement',
-  );
-  /* Filter criterion: Content: Body (body) */
-  $handler->display->display_options['filters']['body_value']['id'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['table'] = 'field_data_body';
-  $handler->display->display_options['filters']['body_value']['field'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['operator'] = 'not empty';
-  $handler->display->display_options['pane_category']['name'] = 'Achievements';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-  $handler->display->display_options['argument_input'] = array(
-    'nid' => array(
-      'type' => 'user',
-      'context' => 'entity:uc_cart_item.cart-id',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Nid',
-    ),
-  );
-
-  /* Display: Meta */
-  $handler = $view->new_display('panel_pane', 'Meta', 'panel_pane_2');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Category */
-  $handler->display->display_options['fields']['field_achievement_category']['id'] = 'field_achievement_category';
-  $handler->display->display_options['fields']['field_achievement_category']['table'] = 'field_data_field_achievement_category';
-  $handler->display->display_options['fields']['field_achievement_category']['field'] = 'field_achievement_category';
-  $handler->display->display_options['fields']['field_achievement_category']['label'] = '';
-  $handler->display->display_options['fields']['field_achievement_category']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_category']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <div class="activity-icon small">
-        <i class="fa fa-tag"></i>
-        </div>
-    </div>
-    <div class="media-body">
-        <strong class="font-14">[field_achievement_category]</strong>
-    </div>
-</div>';
-  $handler->display->display_options['fields']['field_achievement_category']['alter']['path'] = 'taxonomy/term/[field_achievement_category-target_id]';
-  $handler->display->display_options['fields']['field_achievement_category']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_achievement_category']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_achievement_category']['element_wrapper_class'] = 'list-group-item';
-  $handler->display->display_options['fields']['field_achievement_category']['settings'] = array(
-    'link' => 1,
-  );
-  /* Field: Content: Achievement Points */
-  $handler->display->display_options['fields']['field_achievement_points']['id'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['table'] = 'field_data_field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['field'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['label'] = '';
-  $handler->display->display_options['fields']['field_achievement_points']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_points']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <div class="activity-icon small">
-        <i class="fa fa-arrow-circle-up"></i>
-        </div>
-    </div>
-    <div class="media-body">
-        <strong class="font-14">[field_achievement_points]</strong>
-    </div>
-</div>';
-  $handler->display->display_options['fields']['field_achievement_points']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_achievement_points']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_achievement_points']['element_wrapper_class'] = 'list-group-item';
-  $handler->display->display_options['fields']['field_achievement_points']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: Achievement Unique */
-  $handler->display->display_options['fields']['field_achievement_unique']['id'] = 'field_achievement_unique';
-  $handler->display->display_options['fields']['field_achievement_unique']['table'] = 'field_data_field_achievement_unique';
-  $handler->display->display_options['fields']['field_achievement_unique']['field'] = 'field_achievement_unique';
-  $handler->display->display_options['fields']['field_achievement_unique']['label'] = '';
-  $handler->display->display_options['fields']['field_achievement_unique']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_unique']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <div class="activity-icon small">
-        <i class="fa fa-bolt"></i>
-        </div>
-    </div>
-    <div class="media-body">
-        <strong class="font-14">Unique</strong>
-        <div class="text-muted">This achievement can only be awarded to a single player.</div>
-    </div>
-</div>';
-  $handler->display->display_options['fields']['field_achievement_unique']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_achievement_unique']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_achievement_unique']['element_wrapper_class'] = 'list-group-item';
-  $handler->display->display_options['fields']['field_achievement_unique']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_unique']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_unique']['type'] = 'list_key';
-  /* Field: Field: Event */
-  $handler->display->display_options['fields']['field_event_link']['id'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['table'] = 'field_data_field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['field'] = 'field_event_link';
-  $handler->display->display_options['fields']['field_event_link']['label'] = '';
-  $handler->display->display_options['fields']['field_event_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_event_link']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <div class="activity-icon small">
-        <i class="fa fa-crosshairs"></i>
-        </div>
-    </div>
-    <div class="media-body">
-        <strong class="font-14">[field_event_link]</strong>
-        <div class="text-muted">War Zone</div>
-    </div>
-</div>';
-  $handler->display->display_options['fields']['field_event_link']['alter']['path'] = 'node/[field_event_link-target_id]';
-  $handler->display->display_options['fields']['field_event_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_link']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_event_link']['element_wrapper_class'] = 'list-group-item';
-  $handler->display->display_options['fields']['field_event_link']['settings'] = array(
-    'link' => 1,
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Achievements';
-  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: First Achievers */
   $handler = $view->new_display('panel_pane', 'First Achievers', 'panel_pane_3');
@@ -711,11 +604,13 @@ function its_views_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Achievements';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
-  /* Display: Page Image and Short Description */
-  $handler = $view->new_display('panel_pane', 'Page Image and Short Description', 'panel_pane_5');
+  /* Display: Page Header */
+  $handler = $view->new_display('panel_pane', 'Page Header', 'panel_pane_8');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'thumbnail';
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -727,12 +622,25 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_image']['element_class'] = 'text-center';
+  $handler->display->display_options['fields']['field_image']['element_class'] = 'thumbnail';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_image']['element_wrapper_class'] = 'col-xs-12 col-sm-3';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => '',
     'image_link' => '',
+  );
+  /* Field: Content: Category */
+  $handler->display->display_options['fields']['field_achievement_category']['id'] = 'field_achievement_category';
+  $handler->display->display_options['fields']['field_achievement_category']['table'] = 'field_data_field_achievement_category';
+  $handler->display->display_options['fields']['field_achievement_category']['field'] = 'field_achievement_category';
+  $handler->display->display_options['fields']['field_achievement_category']['label'] = '';
+  $handler->display->display_options['fields']['field_achievement_category']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_achievement_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_achievement_category']['settings'] = array(
+    'link' => 1,
   );
   /* Field: Field: Short Description */
   $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
@@ -740,93 +648,24 @@ function its_views_views_default_views() {
   $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';
   $handler->display->display_options['fields']['field_short_description']['label'] = '';
   $handler->display->display_options['fields']['field_short_description']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_short_description']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_short_description']['alter']['text'] = '<div class="grey-container shortcut-wrapper">
-<span class="lead">[field_short_description]</span>
-</div>';
   $handler->display->display_options['fields']['field_short_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'Achievements';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: All Recipients */
-  $handler = $view->new_display('panel_pane', 'All Recipients', 'panel_pane_6');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['class'] = 'photo-stream-lg';
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Relation: Achievement (node → relation) */
-  $handler->display->display_options['relationships']['relation_base_left_achievement']['id'] = 'relation_base_left_achievement';
-  $handler->display->display_options['relationships']['relation_base_left_achievement']['table'] = 'node';
-  $handler->display->display_options['relationships']['relation_base_left_achievement']['field'] = 'relation_base_left_achievement';
-  $handler->display->display_options['relationships']['relation_base_left_achievement']['required'] = TRUE;
-  $handler->display->display_options['relationships']['relation_base_left_achievement']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_base_left_achievement']['entity_deduplication_left'] = 0;
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_achievement_player_target_id']['id'] = 'field_achievement_player_target_id';
-  $handler->display->display_options['relationships']['field_achievement_player_target_id']['table'] = 'field_data_field_achievement_player';
-  $handler->display->display_options['relationships']['field_achievement_player_target_id']['field'] = 'field_achievement_player_target_id';
-  $handler->display->display_options['relationships']['field_achievement_player_target_id']['relationship'] = 'relation_base_left_achievement';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Relation: Achievement Player */
-  $handler->display->display_options['fields']['field_achievement_player']['id'] = 'field_achievement_player';
-  $handler->display->display_options['fields']['field_achievement_player']['table'] = 'field_data_field_achievement_player';
-  $handler->display->display_options['fields']['field_achievement_player']['field'] = 'field_achievement_player';
-  $handler->display->display_options['fields']['field_achievement_player']['relationship'] = 'relation_base_left_achievement';
-  $handler->display->display_options['fields']['field_achievement_player']['label'] = '';
-  $handler->display->display_options['fields']['field_achievement_player']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_player']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_achievement_player']['settings'] = array(
-    'link' => 0,
+  /* Field: Content: Achievement Points */
+  $handler->display->display_options['fields']['field_achievement_points']['id'] = 'field_achievement_points';
+  $handler->display->display_options['fields']['field_achievement_points']['table'] = 'field_data_field_achievement_points';
+  $handler->display->display_options['fields']['field_achievement_points']['field'] = 'field_achievement_points';
+  $handler->display->display_options['fields']['field_achievement_points']['label'] = '';
+  $handler->display->display_options['fields']['field_achievement_points']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_achievement_points']['alter']['text'] = '<span class="lead">[field_achievement_category]</span>
+<p>[field_short_description]</p>
+<p>[field_achievement_points]</p>';
+  $handler->display->display_options['fields']['field_achievement_points']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_achievement_points']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_achievement_points']['element_wrapper_class'] = 'col-xs-12 col-sm-9';
+  $handler->display->display_options['fields']['field_achievement_points']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_achievement_points']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
   );
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'field_achievement_player_target_id';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['picture']['alter']['text'] = '<span data-toggle="tooltip" data-placement="bottom" title="[field_achievement_player]">[picture]</span>';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'large_button';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Relation: Create Date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'relation';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['relationship'] = 'relation_base_left_achievement';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['pane_category']['name'] = 'Achievements';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Page Image and Short Description */
-  $handler = $view->new_display('panel_pane', 'Page Image and Short Description', 'panel_pane_7');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Short Description */
-  $handler->display->display_options['fields']['field_short_description']['id'] = 'field_short_description';
-  $handler->display->display_options['fields']['field_short_description']['table'] = 'field_data_field_short_description';
-  $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';
-  $handler->display->display_options['fields']['field_short_description']['label'] = '';
-  $handler->display->display_options['fields']['field_short_description']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_short_description']['alter']['text'] = '<div class="grey-container shortcut-wrapper">
-<span class="lead">[field_short_description]</span>
-</div>';
-  $handler->display->display_options['fields']['field_short_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Achievements';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['achievements_all_page_layout'] = $view;
@@ -2494,6 +2333,67 @@ function its_views_views_default_views() {
   $handler->display->display_options['filters']['field_blog_army_tid']['vocabulary'] = 'armies';
   $handler->display->display_options['pane_category']['name'] = 'Blogs';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Recent Blogs */
+  $handler = $view->new_display('panel_pane', 'Recent Blogs', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Recent Blogs';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'blog';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'name';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_image']['element_wrapper_class'] = 'thumbnail';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'by [name]';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Community';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['blogs_all_lists'] = $view;
 
   $view = new view();
@@ -2579,562 +2479,6 @@ function its_views_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Blogs';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['blogs_all_messages'] = $view;
-
-  $view = new view();
-  $view->name = 'community_page_views';
-  $view->description = 'Generates lists of players for various things.';
-  $view->tag = 'default';
-  $view->base_table = 'users';
-  $view->human_name = 'Player layout, pages, etc';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Players';
-  $handler->display->display_options['css_class'] = 'clearfix';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access user profiles';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-xs-6 pull-left';
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'city' => 'city',
-    'province' => 'province',
-    'country' => 'country',
-  );
-  $handler->display->display_options['row_options']['separator'] = ' ';
-  /* Relationship: User: Relation: Achievement (user → node) */
-  $handler->display->display_options['relationships']['relation_achievement_node']['id'] = 'relation_achievement_node';
-  $handler->display->display_options['relationships']['relation_achievement_node']['table'] = 'users';
-  $handler->display->display_options['relationships']['relation_achievement_node']['field'] = 'relation_achievement_node';
-  $handler->display->display_options['relationships']['relation_achievement_node']['r_index'] = '-1';
-  $handler->display->display_options['relationships']['relation_achievement_node']['entity_deduplication_left'] = 0;
-  $handler->display->display_options['relationships']['relation_achievement_node']['entity_deduplication_right'] = 0;
-  /* Relationship: User: Profile */
-  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
-  $handler->display->display_options['relationships']['profile']['table'] = 'users';
-  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
-  $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
-    'main' => 'main',
-  );
-  /* Relationship: Profile: Location (field_profile_location) */
-  $handler->display->display_options['relationships']['field_profile_location_lid']['id'] = 'field_profile_location_lid';
-  $handler->display->display_options['relationships']['field_profile_location_lid']['table'] = 'field_data_field_profile_location';
-  $handler->display->display_options['relationships']['field_profile_location_lid']['field'] = 'field_profile_location_lid';
-  $handler->display->display_options['relationships']['field_profile_location_lid']['relationship'] = 'profile';
-  /* Field: Path */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['ui_name'] = 'Path';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['text'] = 'user/[uid]';
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_type'] = 'span';
-  $handler->display->display_options['fields']['picture']['element_class'] = 'thumbnail';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'pull-left col-xs-4';
-  $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = '[uid]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Userpoints total: Current total renown */
-  $handler->display->display_options['fields']['points']['id'] = 'points';
-  $handler->display->display_options['fields']['points']['table'] = 'userpoints_total';
-  $handler->display->display_options['fields']['points']['field'] = 'points';
-  $handler->display->display_options['fields']['points']['label'] = '';
-  $handler->display->display_options['fields']['points']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['text'] = '<i class="icon glyphicon glyphicon-star" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="reknown"></i> <span class="badge">[points]</span>';
-  $handler->display->display_options['fields']['points']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['path'] = '[uid]';
-  $handler->display->display_options['fields']['points']['alter']['link_class'] = 'btn btn-default';
-  $handler->display->display_options['fields']['points']['element_label_colon'] = FALSE;
-  /* Field: SUM(Content: Achievement Points) */
-  $handler->display->display_options['fields']['field_achievement_points']['id'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['table'] = 'field_data_field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['field'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['relationship'] = 'relation_achievement_node';
-  $handler->display->display_options['fields']['field_achievement_points']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_achievement_points']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_points']['settings'] = array(
-    'thousand_separator' => ',',
-    'prefix_suffix' => 0,
-  );
-  /* Field: Location: City */
-  $handler->display->display_options['fields']['city']['id'] = 'city';
-  $handler->display->display_options['fields']['city']['table'] = 'location';
-  $handler->display->display_options['fields']['city']['field'] = 'city';
-  $handler->display->display_options['fields']['city']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['city']['label'] = '';
-  $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['city']['alter']['text'] = '[city], ';
-  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['city']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['city']['empty_zero'] = TRUE;
-  /* Field: Location: Province */
-  $handler->display->display_options['fields']['province']['id'] = 'province';
-  $handler->display->display_options['fields']['province']['table'] = 'location';
-  $handler->display->display_options['fields']['province']['field'] = 'province';
-  $handler->display->display_options['fields']['province']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['province']['label'] = '';
-  $handler->display->display_options['fields']['province']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['province']['alter']['text'] = '[province], ';
-  $handler->display->display_options['fields']['province']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['province']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['province']['empty_zero'] = TRUE;
-  /* Field: Location: Country */
-  $handler->display->display_options['fields']['country']['id'] = 'country';
-  $handler->display->display_options['fields']['country']['table'] = 'location';
-  $handler->display->display_options['fields']['country']['field'] = 'country';
-  $handler->display->display_options['fields']['country']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['country']['label'] = '';
-  $handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['country']['empty'] = '[ Classified ]';
-  $handler->display->display_options['fields']['country']['style'] = 'code';
-  /* Sort criterion: SUM(Content: Achievement Points (field_achievement_points)) */
-  $handler->display->display_options['sorts']['field_achievement_points_value']['id'] = 'field_achievement_points_value';
-  $handler->display->display_options['sorts']['field_achievement_points_value']['table'] = 'field_data_field_achievement_points';
-  $handler->display->display_options['sorts']['field_achievement_points_value']['field'] = 'field_achievement_points_value';
-  $handler->display->display_options['sorts']['field_achievement_points_value']['relationship'] = 'relation_achievement_node';
-  $handler->display->display_options['sorts']['field_achievement_points_value']['group_type'] = 'sum';
-  $handler->display->display_options['sorts']['field_achievement_points_value']['order'] = 'DESC';
-  /* Sort criterion: Userpoints total: Current total renown */
-  $handler->display->display_options['sorts']['points']['id'] = 'points';
-  $handler->display->display_options['sorts']['points']['table'] = 'userpoints_total';
-  $handler->display->display_options['sorts']['points']['field'] = 'points';
-  $handler->display->display_options['sorts']['points']['order'] = 'DESC';
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Roles */
-  $handler->display->display_options['filters']['rid']['id'] = 'rid';
-  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
-  $handler->display->display_options['filters']['rid']['field'] = 'rid';
-  $handler->display->display_options['filters']['rid']['operator'] = 'not';
-  $handler->display->display_options['filters']['rid']['value'] = array(
-    8 => '8',
-  );
-  /* Filter criterion: User: Name */
-  $handler->display->display_options['filters']['uid']['id'] = 'uid';
-  $handler->display->display_options['filters']['uid']['table'] = 'users';
-  $handler->display->display_options['filters']['uid']['field'] = 'uid';
-  $handler->display->display_options['filters']['uid']['value'] = '';
-  $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Name';
-  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
-  $handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    7 => 0,
-    9 => 0,
-    8 => 0,
-  );
-
-  /* Display: Top Players */
-  $handler = $view->new_display('panel_pane', 'Top Players', 'panel_pane_1');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'name_1',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['row_class'] = 'col-xs-6 pull-left';
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'city' => 'city',
-    'province' => 'province',
-    'country' => 'country',
-  );
-  $handler->display->display_options['row_options']['separator'] = ' ';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Path */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['ui_name'] = 'Path';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['text'] = 'user/[uid]';
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_type'] = 'span';
-  $handler->display->display_options['fields']['picture']['element_class'] = 'thumbnail';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'pull-left col-xs-4';
-  $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = '[uid]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Userpoints total: Current total renown */
-  $handler->display->display_options['fields']['points']['id'] = 'points';
-  $handler->display->display_options['fields']['points']['table'] = 'userpoints_total';
-  $handler->display->display_options['fields']['points']['field'] = 'points';
-  $handler->display->display_options['fields']['points']['label'] = '';
-  $handler->display->display_options['fields']['points']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['text'] = '<i class="icon glyphicon glyphicon-star" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="reknown"></i> <span class="badge">[points]</span>';
-  $handler->display->display_options['fields']['points']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['path'] = '[uid]';
-  $handler->display->display_options['fields']['points']['alter']['link_class'] = 'btn btn-default';
-  $handler->display->display_options['fields']['points']['element_label_colon'] = FALSE;
-  /* Field: SUM(Content: Achievement Points) */
-  $handler->display->display_options['fields']['field_achievement_points']['id'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['table'] = 'field_data_field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['field'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['relationship'] = 'relation_achievement_node';
-  $handler->display->display_options['fields']['field_achievement_points']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_achievement_points']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_achievement_points']['settings'] = array(
-    'thousand_separator' => ',',
-    'prefix_suffix' => 0,
-  );
-  /* Field: Location: City */
-  $handler->display->display_options['fields']['city']['id'] = 'city';
-  $handler->display->display_options['fields']['city']['table'] = 'location';
-  $handler->display->display_options['fields']['city']['field'] = 'city';
-  $handler->display->display_options['fields']['city']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['city']['label'] = '';
-  $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['city']['alter']['text'] = '[city], ';
-  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['city']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['city']['empty_zero'] = TRUE;
-  /* Field: Location: Province */
-  $handler->display->display_options['fields']['province']['id'] = 'province';
-  $handler->display->display_options['fields']['province']['table'] = 'location';
-  $handler->display->display_options['fields']['province']['field'] = 'province';
-  $handler->display->display_options['fields']['province']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['province']['label'] = '';
-  $handler->display->display_options['fields']['province']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['province']['alter']['text'] = '[province], ';
-  $handler->display->display_options['fields']['province']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['province']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['province']['empty_zero'] = TRUE;
-  /* Field: Location: Country */
-  $handler->display->display_options['fields']['country']['id'] = 'country';
-  $handler->display->display_options['fields']['country']['table'] = 'location';
-  $handler->display->display_options['fields']['country']['field'] = 'country';
-  $handler->display->display_options['fields']['country']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['country']['label'] = '';
-  $handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['country']['empty'] = '[ Classified ]';
-  $handler->display->display_options['fields']['country']['style'] = 'code';
-  /* Field: User Badges: Badge Name */
-  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['fields']['name_1']['table'] = 'user_badges_badges';
-  $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['label'] = '';
-  $handler->display->display_options['fields']['name_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Roles */
-  $handler->display->display_options['filters']['rid']['id'] = 'rid';
-  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
-  $handler->display->display_options['filters']['rid']['field'] = 'rid';
-  $handler->display->display_options['filters']['rid']['operator'] = 'not';
-  $handler->display->display_options['filters']['rid']['value'] = array(
-    8 => '8',
-  );
-  /* Filter criterion: User: Name */
-  $handler->display->display_options['filters']['uid']['id'] = 'uid';
-  $handler->display->display_options['filters']['uid']['table'] = 'users';
-  $handler->display->display_options['filters']['uid']['field'] = 'uid';
-  $handler->display->display_options['filters']['uid']['value'] = '';
-  $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Name';
-  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
-  $handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    7 => 0,
-    9 => 0,
-    8 => 0,
-  );
-  /* Filter criterion: User Badges: Badge Name */
-  $handler->display->display_options['filters']['name']['id'] = 'name';
-  $handler->display->display_options['filters']['name']['table'] = 'user_badges_badges';
-  $handler->display->display_options['filters']['name']['field'] = 'name';
-  $handler->display->display_options['filters']['name']['operator'] = 'contains';
-  $handler->display->display_options['filters']['name']['value'] = 'Level';
-  $handler->display->display_options['pane_category']['name'] = 'Community';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-  $handler->display->display_options['inherit_panels_path'] = '0';
-
-  /* Display: Roster */
-  $handler = $view->new_display('page', 'Roster', 'page_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'All Players';
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Realname: Real name */
-  $handler->display->display_options['sorts']['realname']['id'] = 'realname';
-  $handler->display->display_options['sorts']['realname']['table'] = 'realname';
-  $handler->display->display_options['sorts']['realname']['field'] = 'realname';
-  $handler->display->display_options['path'] = 'community/players/all-players';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'All Players';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Roster Table */
-  $handler = $view->new_display('page', 'Roster Table', 'page_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'All Players';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'uid' => 'uid',
-    'picture' => 'picture',
-    'name' => 'name',
-    'points' => 'points',
-    'field_achievement_points' => 'field_achievement_points',
-    'city' => 'city',
-    'province' => 'city',
-    'country' => 'city',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'uid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'picture' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'points' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_achievement_points' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'city' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => ' ',
-      'empty_column' => 0,
-    ),
-    'province' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'country' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Path */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['ui_name'] = 'Path';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['text'] = 'user/[uid]';
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['picture']['element_wrapper_class'] = 'pull-left col-xs-2 col-sm-2 col-md-2';
-  $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = '[uid]';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Field: Userpoints total: Current total renown */
-  $handler->display->display_options['fields']['points']['id'] = 'points';
-  $handler->display->display_options['fields']['points']['table'] = 'userpoints_total';
-  $handler->display->display_options['fields']['points']['field'] = 'points';
-  $handler->display->display_options['fields']['points']['label'] = 'Renown';
-  $handler->display->display_options['fields']['points']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['text'] = '<i class="icon glyphicon glyphicon-star" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="reknown"></i> <span class="badge">[points]</span>';
-  $handler->display->display_options['fields']['points']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['points']['alter']['path'] = '[uid]';
-  $handler->display->display_options['fields']['points']['alter']['link_class'] = 'btn btn-default';
-  $handler->display->display_options['fields']['points']['element_label_colon'] = FALSE;
-  /* Field: SUM(Content: Achievement Points) */
-  $handler->display->display_options['fields']['field_achievement_points']['id'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['table'] = 'field_data_field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['field'] = 'field_achievement_points';
-  $handler->display->display_options['fields']['field_achievement_points']['relationship'] = 'relation_achievement_node';
-  $handler->display->display_options['fields']['field_achievement_points']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['field_achievement_points']['empty'] = '0';
-  $handler->display->display_options['fields']['field_achievement_points']['settings'] = array(
-    'thousand_separator' => ',',
-    'prefix_suffix' => 0,
-  );
-  /* Field: Location: City */
-  $handler->display->display_options['fields']['city']['id'] = 'city';
-  $handler->display->display_options['fields']['city']['table'] = 'location';
-  $handler->display->display_options['fields']['city']['field'] = 'city';
-  $handler->display->display_options['fields']['city']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['city']['label'] = 'Theater';
-  $handler->display->display_options['fields']['city']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['city']['alter']['text'] = '[city], ';
-  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['city']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['city']['empty_zero'] = TRUE;
-  /* Field: Location: Province */
-  $handler->display->display_options['fields']['province']['id'] = 'province';
-  $handler->display->display_options['fields']['province']['table'] = 'location';
-  $handler->display->display_options['fields']['province']['field'] = 'province';
-  $handler->display->display_options['fields']['province']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['province']['label'] = '';
-  $handler->display->display_options['fields']['province']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['province']['alter']['text'] = '[province], ';
-  $handler->display->display_options['fields']['province']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['province']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['province']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['province']['style'] = 'code';
-  /* Field: Location: Country */
-  $handler->display->display_options['fields']['country']['id'] = 'country';
-  $handler->display->display_options['fields']['country']['table'] = 'location';
-  $handler->display->display_options['fields']['country']['field'] = 'country';
-  $handler->display->display_options['fields']['country']['relationship'] = 'field_profile_location_lid';
-  $handler->display->display_options['fields']['country']['label'] = '';
-  $handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['country']['empty'] = '[ Classified ]';
-  $handler->display->display_options['fields']['country']['style'] = 'code';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Realname: Real name */
-  $handler->display->display_options['sorts']['realname']['id'] = 'realname';
-  $handler->display->display_options['sorts']['realname']['table'] = 'realname';
-  $handler->display->display_options['sorts']['realname']['field'] = 'realname';
-  $handler->display->display_options['path'] = 'community/players/all-players';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'All Players';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $export['community_page_views'] = $view;
 
   $view = new view();
   $view->name = 'decorations_medals_lists_of_medals';
@@ -6753,6 +6097,156 @@ Salute  Comment  Share
   );
   $handler->display->display_options['pane_category']['name'] = 'Model Projects';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Modelling Newest Panel */
+  $handler = $view->new_display('panel_pane', 'Modelling Newest Panel', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Newest Projects';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_1';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'field_army_models';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Army */
+  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['label'] = '';
+  $handler->display->display_options['fields']['field_army_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_army_models']['empty'] = 'Other';
+  $handler->display->display_options['fields']['field_army_models']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Modelling';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Completed Projects */
+  $handler = $view->new_display('panel_pane', 'Completed Projects', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Completed Projects';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_1';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'field_army_models';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Army */
+  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['label'] = '';
+  $handler->display->display_options['fields']['field_army_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_army_models']['empty'] = 'Other';
+  $handler->display->display_options['fields']['field_army_models']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Completed Date (field_completed_date_models) */
+  $handler->display->display_options['sorts']['field_completed_date_models_value']['id'] = 'field_completed_date_models_value';
+  $handler->display->display_options['sorts']['field_completed_date_models_value']['table'] = 'field_data_field_completed_date_models';
+  $handler->display->display_options['sorts']['field_completed_date_models_value']['field'] = 'field_completed_date_models_value';
+  $handler->display->display_options['sorts']['field_completed_date_models_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  /* Filter criterion: Content: Completed Date (field_completed_date_models) */
+  $handler->display->display_options['filters']['field_completed_date_models_value']['id'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['table'] = 'field_data_field_completed_date_models';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['field'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['operator'] = 'not empty';
+  $handler->display->display_options['pane_category']['name'] = 'Modelling';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['models_all_lists'] = $view;
 
   $view = new view();
@@ -9415,7 +8909,6 @@ Salute  Comment  Share
     9 => 0,
     8 => 0,
   );
-  $handler->display->display_options['filters']['field_opponent_s_army_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_opponent_s_army_tid']['vocabulary'] = 'armies';
   /* Filter criterion: Field: Points per army (field_points_per_army) */
   $handler->display->display_options['filters']['field_points_per_army_value']['id'] = 'field_points_per_army_value';
@@ -18581,8 +18074,6 @@ Salute  Comment  Share
     'any_label' => NULL,
     'filter_rewrite_values' => NULL,
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'filtered_html';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_aggregator';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -19951,231 +19442,6 @@ Salute  Comment  Share
   $export['user_summary_views'] = $view;
 
   $view = new view();
-  $view->name = 'utility_achievement_anniversary';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Utility: Achievement: Anniversary';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-    'field_event_date' => 'field_event_date',
-    'nid' => 'nid',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_event_date' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
-  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'hide',
-  );
-  $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Contextual filter: Date: Date (node) */
-  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
-  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
-  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
-  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
-    'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
-    'field_data_field_event_date.field_event_date_value2' => 'field_data_field_event_date.field_event_date_value2',
-  );
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'achievement' => 'achievement',
-  );
-
-  /* Display: Rules */
-  $handler = $view->new_display('views_rules', 'Rules', 'views_rules_1');
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['rules_parameter'] = array(
-    'date_argument' => array(
-      'enabled' => 1,
-      'type' => 'text',
-      'label' => 'Date: Date (node)',
-      'name' => 'date_argument',
-    ),
-  );
-  $handler->display->display_options['rules_variables'] = array(
-    'title' => array(
-      'enabled' => 0,
-      'rendered' => 0,
-      'type' => '',
-      'label' => 'Content: Title',
-      'name' => 'title',
-    ),
-    'field_event_date' => array(
-      'enabled' => 0,
-      'rendered' => 0,
-      'type' => '',
-      'label' => 'Date',
-      'name' => 'field_event_date',
-    ),
-    'nid' => array(
-      'enabled' => 1,
-      'rendered' => 0,
-      'type' => 'integer',
-      'label' => 'Content: Nid',
-      'name' => 'nid',
-    ),
-  );
-
-  /* Display: Rules 2 */
-  $handler = $view->new_display('views_rules', 'Rules 2', 'views_rules_2');
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '-10';
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth_1']['depth'] = '-10';
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['id'] = 'term_node_tid_depth_2';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth_2']['depth'] = '-10';
-  $handler->display->display_options['rules_parameter'] = array(
-    'term_node_tid_depth' => array(
-      'enabled' => 1,
-      'type' => 'integer',
-      'label' => 'Content: Has taxonomy term ID (with depth)',
-      'name' => 'term_node_tid_depth',
-    ),
-    'term_node_tid_depth_1' => array(
-      'enabled' => 1,
-      'type' => 'integer',
-      'label' => 'Content: Has taxonomy term ID (with depth)',
-      'name' => 'term_node_tid_depth_1',
-    ),
-    'term_node_tid_depth_2' => array(
-      'enabled' => 1,
-      'type' => 'integer',
-      'label' => 'Content: Has taxonomy term ID (with depth)',
-      'name' => 'term_node_tid_depth_2',
-    ),
-  );
-  $handler->display->display_options['rules_variables'] = array(
-    'title' => array(
-      'enabled' => 0,
-      'rendered' => 0,
-      'type' => '',
-      'label' => 'Content: Title',
-      'name' => 'title',
-    ),
-    'nid' => array(
-      'enabled' => 1,
-      'rendered' => 0,
-      'type' => 'integer',
-      'label' => 'Content: Nid',
-      'name' => 'nid',
-    ),
-  );
-  $export['utility_achievement_anniversary'] = $view;
-
-  $view = new view();
   $view->name = 'utility_achievement_counts';
   $view->description = '';
   $view->tag = 'default';
@@ -20690,158 +19956,6 @@ Salute  Comment  Share
     ),
   );
   $export['utility_achievement_counts'] = $view;
-
-  $view = new view();
-  $view->name = 'utility_achievements_fix';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'users';
-  $view->human_name = 'Utility: Achievements Fix';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access user profiles';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'name' => 'name',
-    'achievement_id' => 'achievement_id',
-    'timestamp' => 'timestamp',
-    'uid' => 'uid',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'achievement_id' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'timestamp' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'uid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'achievement_unlocks';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['label'] = 'Individual achievement user';
-  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['achievement_id']['id'] = 'achievement_id';
-  $handler->display->display_options['fields']['achievement_id']['table'] = 'achievement_unlocks';
-  $handler->display->display_options['fields']['achievement_id']['field'] = 'achievement_id';
-  $handler->display->display_options['fields']['achievement_id']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['achievement_id']['label'] = 'Achievement ID';
-  $handler->display->display_options['fields']['achievement_id']['element_default_classes'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
-  $handler->display->display_options['fields']['timestamp']['table'] = 'achievement_unlocks';
-  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
-  $handler->display->display_options['fields']['timestamp']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['timestamp']['label'] = 'Timestamp';
-  /* Field: User: Uid */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Roles */
-  $handler->display->display_options['filters']['rid']['id'] = 'rid';
-  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
-  $handler->display->display_options['filters']['rid']['field'] = 'rid';
-  $handler->display->display_options['filters']['rid']['operator'] = 'not';
-  $handler->display->display_options['filters']['rid']['value'] = array(
-    8 => '8',
-  );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['achievement_id']['id'] = 'achievement_id';
-  $handler->display->display_options['filters']['achievement_id']['table'] = 'achievement_storage';
-  $handler->display->display_options['filters']['achievement_id']['field'] = 'achievement_id';
-  $handler->display->display_options['filters']['achievement_id']['operator'] = 'contains';
-  $handler->display->display_options['filters']['achievement_id']['value'] = 'champion';
-
-  /* Display: Rules */
-  $handler = $view->new_display('views_rules', 'Rules', 'views_rules_1');
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['rules_variables'] = array(
-    'name' => array(
-      'enabled' => 0,
-      'rendered' => 0,
-      'type' => 'user',
-      'label' => 'User: Name',
-      'name' => 'name',
-    ),
-    'achievement_id' => array(
-      'enabled' => 1,
-      'rendered' => 1,
-      'type' => 'text',
-      'label' => '(Individual achievement user) Achievement ID',
-      'name' => 'achievement_id',
-    ),
-    'timestamp' => array(
-      'enabled' => 1,
-      'rendered' => 0,
-      'type' => 'date',
-      'label' => '(Individual achievement user) Timestamp',
-      'name' => 'timestamp',
-    ),
-    'uid' => array(
-      'enabled' => 1,
-      'rendered' => 0,
-      'type' => 'user',
-      'label' => 'User: Uid',
-      'name' => 'uid',
-    ),
-  );
-  $export['utility_achievements_fix'] = $view;
 
   $view = new view();
   $view->name = 'utility_army_profile_node_filter';

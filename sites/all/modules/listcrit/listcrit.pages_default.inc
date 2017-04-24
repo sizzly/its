@@ -214,10 +214,8 @@ function listcrit_default_page_manager_handlers() {
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Order of Battle
-ListCrit',
-    'panels_breadcrumbs_paths' => 'order-of-battle
-order-of-battle/listcrit',
+    'panels_breadcrumbs_titles' => 'ListCrit',
+    'panels_breadcrumbs_paths' => 'listcrit',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -547,11 +545,9 @@ order-of-battle/listcrit',
       ),
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Order of Battle
-ListCrit
+    'panels_breadcrumbs_titles' => 'ListCrit
 ',
-    'panels_breadcrumbs_paths' => 'order-of-battle
-order-of-battle/listcrit
+    'panels_breadcrumbs_paths' => 'listcrit
 ',
     'panels_breadcrumbs_home' => 1,
   );
@@ -581,7 +577,10 @@ order-of-battle/listcrit
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -669,7 +668,7 @@ function listcrit_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'List Crit Main Page';
   $page->admin_description = '';
-  $page->path = 'order-of-battle/listcrit';
+  $page->path = 'listcrit';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
@@ -698,7 +697,7 @@ function listcrit_default_page_manager_pages() {
   $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Panel',
-    'no_blocks' => 1,
+    'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
@@ -706,7 +705,7 @@ function listcrit_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => '',
     'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_home' => 0,

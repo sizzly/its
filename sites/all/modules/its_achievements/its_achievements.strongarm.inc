@@ -127,19 +127,22 @@ function its_achievements_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '15',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '13',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '12',
         ),
         'badges' => array(
-          'weight' => '30',
+          'weight' => '11',
+        ),
+        'locations' => array(
+          'weight' => '14',
         ),
       ),
       'display' => array(),

@@ -10,6 +10,27 @@
 function narrative_campaigns_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'endpoints'.
+  $field_bases['endpoints'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'endpoints',
+    'indexes' => array(
+      'relation' => array(
+        0 => 'entity_type',
+        1 => 'entity_id',
+        2 => 'r_index',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'relation_endpoint',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'relation_endpoint',
+  );
+
   // Exported field_base: 'field_associated_nodes_stream'.
   $field_bases['field_associated_nodes_stream'] = array(
     'active' => 1,

@@ -52,9 +52,34 @@ wargaming-decorations/achievements
 %node:field-achievement-category:url',
     'panels_breadcrumbs_home' => 1,
     'name' => '',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => '[current-page:title] : [node:field-short-description]',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+        'og:type' => array(
+          'value' => 'website',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_boxton';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -75,49 +100,18 @@ wargaming-decorations/achievements
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-e63bf7a6-a3d9-4727-8b74-d5bd9751d29c';
+    $pane->pid = 'new-81c74431-a0ec-4e42-b4f9-fdc5fab37199';
     $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'sharethis';
+    $pane->subtype = 'sharethis';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Page Header',
-      'title' => '',
-      'body' => '<div class="row">
-<div class="col-xs-12 col-sm-6">
-<?php print views_embed_view("achievements_all_page_layout" , "panel_pane_5"); ?>
-</div>
-<div class="col-xs-12 col-sm-6">
-<?php print views_embed_view("achievements_all_page_layout" , "panel_pane_7"); ?>
-<?php print views_embed_view("achievements_all_page_layout" , "panel_pane_2"); ?>
-</div>
-</div>',
-      'format' => 'php_code',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'e63bf7a6-a3d9-4727-8b74-d5bd9751d29c';
-    $display->content['new-e63bf7a6-a3d9-4727-8b74-d5bd9751d29c'] = $pane;
-    $display->panels['contentmain'][0] = 'new-e63bf7a6-a3d9-4727-8b74-d5bd9751d29c';
-    $pane = new stdClass();
-    $pane->pid = 'new-88917c43-7eed-4a92-a699-6b8812dcd9fc';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'achievements_all_page_layout-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'nid' => '%node:nid',
-      ),
+      'path' => 'current',
+      'path-external' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Share',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -132,16 +126,16 @@ wargaming-decorations/achievements
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '88917c43-7eed-4a92-a699-6b8812dcd9fc';
-    $display->content['new-88917c43-7eed-4a92-a699-6b8812dcd9fc'] = $pane;
-    $display->panels['contentmain'][1] = 'new-88917c43-7eed-4a92-a699-6b8812dcd9fc';
+    $pane->uuid = '81c74431-a0ec-4e42-b4f9-fdc5fab37199';
+    $display->content['new-81c74431-a0ec-4e42-b4f9-fdc5fab37199'] = $pane;
+    $display->panels['contentmain'][0] = 'new-81c74431-a0ec-4e42-b4f9-fdc5fab37199';
     $pane = new stdClass();
-    $pane->pid = 'new-933afce9-307c-44aa-b635-d3e7e9ec3c37';
-    $pane->panel = 'contentmain';
+    $pane->pid = 'new-d2ebe96a-e1d0-4427-84a4-287094e14aea';
+    $pane->panel = 'header';
     $pane->type = 'views_panes';
-    $pane->subtype = 'core_all_node_timeline-panel_pane_1';
+    $pane->subtype = 'achievements_all_page_layout-panel_pane_8';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -151,15 +145,249 @@ wargaming-decorations/achievements
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '933afce9-307c-44aa-b635-d3e7e9ec3c37';
-    $display->content['new-933afce9-307c-44aa-b635-d3e7e9ec3c37'] = $pane;
-    $display->panels['contentmain'][2] = 'new-933afce9-307c-44aa-b635-d3e7e9ec3c37';
+    $pane->uuid = 'd2ebe96a-e1d0-4427-84a4-287094e14aea';
+    $display->content['new-d2ebe96a-e1d0-4427-84a4-287094e14aea'] = $pane;
+    $display->panels['header'][0] = 'new-d2ebe96a-e1d0-4427-84a4-287094e14aea';
+    $pane = new stdClass();
+    $pane->pid = 'new-e8b583a3-5c1a-45ab-a13f-3aa9434b2ba8';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'achievements_all_player_lists-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(
+        'use_title' => 1,
+        'use_footer' => 0,
+        'panel_body' => 1,
+        'footer_content' => '',
+        'context_class' => 'panel-default',
+      ),
+      'style' => 'bootstrap_panel',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e8b583a3-5c1a-45ab-a13f-3aa9434b2ba8';
+    $display->content['new-e8b583a3-5c1a-45ab-a13f-3aa9434b2ba8'] = $pane;
+    $display->panels['sidebar'][0] = 'new-e8b583a3-5c1a-45ab-a13f-3aa9434b2ba8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_f9cac5d6-9718-4410-a26b-0713d9045879'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'term_view__achievement-categories';
+  $handler->task = 'term_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -25;
+  $handler->conf = array(
+    'title' => 'Achievement Categories',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_bundle:taxonomy_term',
+          'settings' => array(
+            'type' => array(
+              'achievement_category' => 'achievement_category',
+            ),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'The main [term:name] overview page on iToysoldiers with stats, battles, and content summaries.',
+        ),
+        'abstract' => array(
+          'value' => 'The main [term:name] overview page on iToysoldiers with stats, battles, and content summaries.',
+        ),
+        'keywords' => array(
+          'value' => '[term:name] battles, [term:field-army-game:name] battles',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+        'og:description' => array(
+          'value' => 'The main [term:name] overview page on iToysoldiers with stats, battles, and content summaries.',
+        ),
+        'og:type' => array(
+          'value' => 'website',
+        ),
+      ),
+    ),
+    'name' => 'achievement-categories',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootopoly_moscone';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+      'header' => NULL,
+      'sidebar' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%term:name';
+  $display->uuid = 'a5173420-e4f8-436e-9644-c681e4248859';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-bb7c8dd0-1a21-407a-bb6b-b11640088d01';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'achievements_all_player_lists-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'bb7c8dd0-1a21-407a-bb6b-b11640088d01';
+    $display->content['new-bb7c8dd0-1a21-407a-bb6b-b11640088d01'] = $pane;
+    $display->panels['contentmain'][0] = 'new-bb7c8dd0-1a21-407a-bb6b-b11640088d01';
+    $pane = new stdClass();
+    $pane->pid = 'new-cd3dbe3e-0ad8-45a8-96e3-3f88d8a34881';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'achievements_all_player_lists-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'cd3dbe3e-0ad8-45a8-96e3-3f88d8a34881';
+    $display->content['new-cd3dbe3e-0ad8-45a8-96e3-3f88d8a34881'] = $pane;
+    $display->panels['contentmain'][1] = 'new-cd3dbe3e-0ad8-45a8-96e3-3f88d8a34881';
+    $pane = new stdClass();
+    $pane->pid = 'new-638f6dc1-29aa-473e-9dbc-66fd8d8f60c9';
+    $pane->panel = 'header';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'taxonomy_term:field_image';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'image_style' => '',
+        'image_link' => '',
+      ),
+      'context' => 'argument_term_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'span',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'thumbnail text-center',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '638f6dc1-29aa-473e-9dbc-66fd8d8f60c9';
+    $display->content['new-638f6dc1-29aa-473e-9dbc-66fd8d8f60c9'] = $pane;
+    $display->panels['header'][0] = 'new-638f6dc1-29aa-473e-9dbc-66fd8d8f60c9';
+    $pane = new stdClass();
+    $pane->pid = 'new-4d5a187c-945c-4bff-99d5-0e8bd4477b21';
+    $pane->panel = 'header';
+    $pane->type = 'term_description';
+    $pane->subtype = 'term_description';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_term_1',
+      'override_title' => 1,
+      'override_title_text' => 'Brief',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '4d5a187c-945c-4bff-99d5-0e8bd4477b21';
+    $display->content['new-4d5a187c-945c-4bff-99d5-0e8bd4477b21'] = $pane;
+    $display->panels['header'][1] = 'new-4d5a187c-945c-4bff-99d5-0e8bd4477b21';
+    $pane = new stdClass();
+    $pane->pid = 'new-b458e261-51d8-4e48-a971-e4ff5cc58844';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'achievements_all_lists-panel_pane_3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b458e261-51d8-4e48-a971-e4ff5cc58844';
+    $display->content['new-b458e261-51d8-4e48-a971-e4ff5cc58844'] = $pane;
+    $display->panels['sidebar'][0] = 'new-b458e261-51d8-4e48-a971-e4ff5cc58844';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['term_view__achievement-categories'] = $handler;
 
   return $export;
 }
