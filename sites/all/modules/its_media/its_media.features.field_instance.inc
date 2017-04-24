@@ -118,7 +118,6 @@ function its_media_field_default_field_instances() {
       'display' => -1,
       'form' => -1,
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 0,

@@ -36,60 +36,62 @@ function home_page_default_panels_mini() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '8413aab9-1d0b-42b3-b6ac-83a4826d0a92';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'footer';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-83aa1228-39af-41f0-9fcf-eb46983faa1f';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '0',
-            'paths' => '<front>',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
+  $pane = new stdClass();
+  $pane->pid = 'new-83aa1228-39af-41f0-9fcf-eb46983faa1f';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '0',
+          'paths' => '<front>',
         ),
+        'context' => 'empty',
+        'not' => FALSE,
       ),
-    );
-    $pane->configuration = array(
-      'admin_title' => 'Revive Leaderboard',
-      'title' => '',
-      'body' => '<div class="ad text-center">
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Revive Leaderboard',
+    'title' => '',
+    'body' => '<div class="ad text-center">
 <ins data-revive-zoneid="1" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
 <script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script>
 </div>
 <div class="seperator"></div>',
-      'format' => 'php_code',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '83aa1228-39af-41f0-9fcf-eb46983faa1f';
-    $display->content['new-83aa1228-39af-41f0-9fcf-eb46983faa1f'] = $pane;
-    $display->panels['contentmain'][0] = 'new-83aa1228-39af-41f0-9fcf-eb46983faa1f';
-    $pane = new stdClass();
-    $pane->pid = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
-    $pane->panel = 'contentmain';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Menus',
-      'title' => '',
-      'body' => '<div class="row">
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '83aa1228-39af-41f0-9fcf-eb46983faa1f';
+  $display->content['new-83aa1228-39af-41f0-9fcf-eb46983faa1f'] = $pane;
+  $display->panels['contentmain'][0] = 'new-83aa1228-39af-41f0-9fcf-eb46983faa1f';
+  $pane = new stdClass();
+  $pane->pid = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Menus',
+    'title' => '',
+    'body' => '<div class="row">
     <div class="col-sm-6">
 
     </div>
@@ -164,24 +166,24 @@ function home_page_default_panels_mini() {
     </div>
 </div>
 ',
-      'format' => 'pure_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'style' => 'default',
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '61d9b7cf-3eae-4411-ba39-efeb091663e2';
-    $display->content['new-61d9b7cf-3eae-4411-ba39-efeb091663e2'] = $pane;
-    $display->panels['contentmain'][1] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'style' => 'default',
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '61d9b7cf-3eae-4411-ba39-efeb091663e2';
+  $display->content['new-61d9b7cf-3eae-4411-ba39-efeb091663e2'] = $pane;
+  $display->panels['contentmain'][1] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;

@@ -107,9 +107,6 @@ function core_metatag_export_default() {
       'og:fax_number' => array(
         'value' => '',
       ),
-      'og:video' => array(
-        'value' => '',
-      ),
       'og:video:secure_url' => array(
         'value' => '',
       ),
@@ -132,6 +129,9 @@ function core_metatag_export_default() {
         'value' => '',
       ),
       'rights' => array(
+        'value' => '',
+      ),
+      'og:video:url' => array(
         'value' => '',
       ),
       'og:street_address' => array(
@@ -198,7 +198,7 @@ function core_metatag_export_default() {
     'disabled' => FALSE,
     'config' => array(
       'title' => array(
-        'value' => '[site:name] | [site:slogan]',
+        'value' => '[site:name] | [current-page:pager][site:slogan]',
       ),
       'canonical' => array(
         'value' => '[site:url]',
@@ -282,7 +282,7 @@ function core_metatag_export_default() {
     'disabled' => FALSE,
     'config' => array(
       'title' => array(
-        'value' => '[term:name] | [site:name]',
+        'value' => '[term:name] | [current-page:pager][site:name]',
       ),
       'description' => array(
         'value' => '[term:description]',
@@ -304,7 +304,7 @@ function core_metatag_export_default() {
       'title' => array(
         'value' => '[user:name] | [site:name]',
       ),
-      'image' => array(
+      'image_src' => array(
         'value' => '[user:picture:url]',
       ),
       'og:title' => array(

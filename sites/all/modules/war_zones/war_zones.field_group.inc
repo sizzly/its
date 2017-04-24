@@ -102,7 +102,7 @@ function war_zones_field_group_info() {
   $field_groups['group_body_wrapper|node|war_zone_league|teaser'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_clearfix|node|war_zone_league|teaser';
   $field_group->group_name = 'group_clearfix';
@@ -133,7 +133,7 @@ function war_zones_field_group_info() {
   $field_groups['group_clearfix|node|war_zone_league|teaser'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_data_wrapper|node|war_zone_league|teaser';
   $field_group->group_name = 'group_data_wrapper';
