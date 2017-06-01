@@ -951,108 +951,6 @@ function war_zones_conditional_fields_default_fields() {
   $items["entityform:score_card:9"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
-    'dependent' => 'field_opponent_reg_sc',
-    'dependee' => 'field_score_card_type',
-    'options' => array(
-      'state' => '!visible',
-      'condition' => '!empty',
-      'grouping' => 'XOR',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => 1,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        2 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        3 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        9 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        8 => array(
-          1 => 1,
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => 1,
-      'value' => array(),
-      'values' => array(),
-      'value_form' => array(),
-    ),
-  );
-
-  $items["entityform:score_card:10"] = array(
-    'entity' => 'entityform',
-    'bundle' => 'score_card',
     'dependent' => 'field_opponent_scorecard',
     'dependee' => 'field_score_card_type',
     'options' => array(
@@ -1152,7 +1050,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:11"] = array(
+  $items["entityform:score_card:10"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_painting_sc',
@@ -1258,7 +1156,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:12"] = array(
+  $items["entityform:score_card:11"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_registration_sc',
@@ -1360,7 +1258,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:13"] = array(
+  $items["entityform:score_card:12"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_round_sc',
@@ -1462,7 +1360,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:14"] = array(
+  $items["entityform:score_card:13"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_score_card_type',
@@ -1564,7 +1462,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:15"] = array(
+  $items["entityform:score_card:14"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_score_card_type',
@@ -1666,7 +1564,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:16"] = array(
+  $items["entityform:score_card:15"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_sportsmanship_sc',
@@ -1772,7 +1670,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:17"] = array(
+  $items["entityform:score_card:16"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_state_sc',
@@ -1874,7 +1772,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:18"] = array(
+  $items["entityform:score_card:17"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_strength_of_schedule_sc',
@@ -1980,7 +1878,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:19"] = array(
+  $items["entityform:score_card:18"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_victory_points_sc',
@@ -2086,7 +1984,7 @@ function war_zones_conditional_fields_default_fields() {
     ),
   );
 
-  $items["entityform:score_card:20"] = array(
+  $items["entityform:score_card:19"] = array(
     'entity' => 'entityform',
     'bundle' => 'score_card',
     'dependent' => 'field_your_results',

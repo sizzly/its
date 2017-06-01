@@ -632,7 +632,7 @@ function war_zones_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'war_zone_league' => 'war_zone_league',
+          'event' => 'event',
           'war_zone_tournament' => 'war_zone_tournament',
         ),
       ),

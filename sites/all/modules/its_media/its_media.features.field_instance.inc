@@ -55,7 +55,7 @@ function its_media_field_default_field_instances() {
     'label' => 'Description',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
       'wysiwyg_override' => 0,
     ),

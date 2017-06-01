@@ -84,14 +84,15 @@ function core_views_default_views() {
 
   /* Display: Tools */
   $handler = $view->new_display('panel_pane', 'Tools', 'panel_pane_3');
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'panel panel-default';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'panel-body';
+  $handler->display->display_options['style_options']['row_class'] = 'btn-group';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Flags: glory */
@@ -101,14 +102,6 @@ function core_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'glory';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: ShareThis Link */
-  $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['table'] = 'node';
-  $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['label'] = '';
-  $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['sharethis']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['sharethis']['element_wrapper_class'] = 'pull-right';
   /* Field: Content: Add comment link */
   $handler->display->display_options['fields']['comments_link']['id'] = 'comments_link';
   $handler->display->display_options['fields']['comments_link']['table'] = 'node';
@@ -116,18 +109,18 @@ function core_views_default_views() {
   $handler->display->display_options['fields']['comments_link']['label'] = '';
   $handler->display->display_options['fields']['comments_link']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['comments_link']['alter']['preserve_tags'] = '<a>';
+  $handler->display->display_options['fields']['comments_link']['element_type'] = 'div';
+  $handler->display->display_options['fields']['comments_link']['element_class'] = 'btn btn-default';
   $handler->display->display_options['fields']['comments_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['comments_link']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['comments_link']['element_wrapper_class'] = 'lead';
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
   $handler->display->display_options['fields']['ops']['field'] = 'ops';
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_type'] = 'div';
+  $handler->display->display_options['fields']['ops']['element_class'] = 'btn btn-default';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['ops']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['ops']['element_wrapper_class'] = 'lead';
   $handler->display->display_options['fields']['ops']['link_type'] = 'toggle';
   /* Field: Content: Radioactivity */
   $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
@@ -291,6 +284,47 @@ function core_views_default_views() {
   $handler->display->display_options['filters']['name']['value'] = 'Level';
   $handler->display->display_options['pane_category']['name'] = 'Node';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Base Toolblock */
+  $handler = $view->new_display('panel_pane', 'Base Toolblock', 'panel_pane_5');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'core_all_node_layout';
+  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_3';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="grey-container">
+<div class="row">
+<div class="col-sm-6">
+</div>
+<div class="col-sm-6">
+<div class="seperator"></div>
+[view]
+</div>
+</div>
+</div>
+';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Node';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['core_all_node_layout'] = $view;
 
   $view = new view();
@@ -371,20 +405,6 @@ function core_views_default_views() {
     'view_mode' => 'teaser',
     'links' => 1,
   );
-  /* Field: Global: Math expression */
-  $handler->display->display_options['fields']['expression']['id'] = 'expression';
-  $handler->display->display_options['fields']['expression']['table'] = 'views';
-  $handler->display->display_options['fields']['expression']['field'] = 'expression';
-  $handler->display->display_options['fields']['expression']['label'] = '';
-  $handler->display->display_options['fields']['expression']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['expression']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['expression']['alter']['text'] = '[field_stream_node_ref]
-';
-  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['expression']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['expression']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['expression']['precision'] = '0';
-  $handler->display->display_options['fields']['expression']['expression'] = '!1 - [nid]';
   /* Field: Message: Timeline Icon */
   $handler->display->display_options['fields']['field_timeline_icon']['id'] = 'field_timeline_icon';
   $handler->display->display_options['fields']['field_timeline_icon']['table'] = 'field_data_field_timeline_icon';
@@ -520,11 +540,265 @@ function core_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Rendered Content */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['relationship'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Field: Message: Stream Node */
+  $handler->display->display_options['fields']['field_stream_node_ref']['id'] = 'field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['table'] = 'field_data_field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['field'] = 'field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_stream_node_ref']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['alter']['text'] = '<small class="text-muted">in reply to [field_stream_node_ref]</small>';
+  $handler->display->display_options['fields']['field_stream_node_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_stream_node_ref']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 1,
+  );
+  /* Field: Message: Timeline Icon */
+  $handler->display->display_options['fields']['field_timeline_icon']['id'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['table'] = 'field_data_field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['field'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_timeline_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_timeline_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_timeline_icon']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_timeline_icon']['empty'] = 'fa-plus-square';
+  /* Field: Message: Message ID */
+  $handler->display->display_options['fields']['mid']['id'] = 'mid';
+  $handler->display->display_options['fields']['mid']['table'] = 'message';
+  $handler->display->display_options['fields']['mid']['field'] = 'mid';
+  $handler->display->display_options['fields']['mid']['label'] = '';
+  $handler->display->display_options['fields']['mid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mid']['separator'] = '';
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp']['format_date_sql'] = 0;
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp_1']['id'] = 'timestamp_1';
+  $handler->display->display_options['fields']['timestamp_1']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp_1']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp_1']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_1']['alter']['text'] = '<div class="timeline-icon bg-grey">
+<i class="fa fa-file-text-o"></i>
+</div>
+<div class="time">[timestamp_1]</div>';
+  $handler->display->display_options['fields']['timestamp_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['timestamp_1']['element_wrapper_class'] = 'timeline-info';
+  $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'event_time';
+  $handler->display->display_options['fields']['timestamp_1']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp_1']['format_date_sql'] = 0;
+  /* Field: Message: Render message (Get text) */
+  $handler->display->display_options['fields']['message_render']['id'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['table'] = 'message';
+  $handler->display->display_options['fields']['message_render']['field'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['label'] = '';
+  $handler->display->display_options['fields']['message_render']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['message_render']['alter']['text'] = '<div class="panel panel-default timeline-panel">
+  <div class="panel-heading">
+     [message_render]
+     <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> [timestamp]</small>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['message_render']['partials'] = 0;
+  $handler->display->display_options['fields']['message_render']['partials_delta'] = '1';
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp_2']['id'] = 'timestamp_2';
+  $handler->display->display_options['fields']['timestamp_2']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp_2']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp_2']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_2']['alter']['text'] = '<div class="timeline-date">
+[timestamp_2]
+</div>';
+  $handler->display->display_options['fields']['timestamp_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_2']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['timestamp_2']['element_wrapper_class'] = 'timeline-date';
+  $handler->display->display_options['fields']['timestamp_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_2']['date_format'] = 'uc_store';
+  $handler->display->display_options['fields']['timestamp_2']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp_2']['format_date_sql'] = 1;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '        <div class="timeline-info">
+            <div class="timeline-icon bg-grey">
+                <i class="fa [field_timeline_icon]"></i>
+            </div>
+            <div class="time">[timestamp_1]</div>
+        </div>
+        <div class="panel panel-default timeline-panel">
+            <div class="panel-heading">
+                [message_render]
+                <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> [timestamp]</small>
+            </div>
+            <div class="panel-body">
+            [rendered_entity]
+            </div>
+        </div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Node';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Timeline';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Message: Stream Node */
+  $handler->display->display_options['fields']['field_stream_node_ref']['id'] = 'field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['table'] = 'field_data_field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['field'] = 'field_stream_node_ref';
+  $handler->display->display_options['fields']['field_stream_node_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_stream_node_ref']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['alter']['text'] = '<small class="text-muted">in reply to [field_stream_node_ref]</small>';
+  $handler->display->display_options['fields']['field_stream_node_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_stream_node_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_stream_node_ref']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 1,
+  );
+  /* Field: Message: Timeline Icon */
+  $handler->display->display_options['fields']['field_timeline_icon']['id'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['table'] = 'field_data_field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['field'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_timeline_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_timeline_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_timeline_icon']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_timeline_icon']['empty'] = 'fa-plus-square';
+  /* Field: Message: Message ID */
+  $handler->display->display_options['fields']['mid']['id'] = 'mid';
+  $handler->display->display_options['fields']['mid']['table'] = 'message';
+  $handler->display->display_options['fields']['mid']['field'] = 'mid';
+  $handler->display->display_options['fields']['mid']['label'] = '';
+  $handler->display->display_options['fields']['mid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mid']['separator'] = '';
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp']['format_date_sql'] = 0;
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp_1']['id'] = 'timestamp_1';
+  $handler->display->display_options['fields']['timestamp_1']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp_1']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp_1']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_1']['alter']['text'] = '<div class="timeline-icon bg-grey">
+<i class="fa fa-file-text-o"></i>
+</div>
+<div class="time">[timestamp_1]</div>';
+  $handler->display->display_options['fields']['timestamp_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['timestamp_1']['element_wrapper_class'] = 'timeline-info';
+  $handler->display->display_options['fields']['timestamp_1']['date_format'] = 'event_time';
+  $handler->display->display_options['fields']['timestamp_1']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp_1']['format_date_sql'] = 0;
+  /* Field: Message: Render message (Get text) */
+  $handler->display->display_options['fields']['message_render']['id'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['table'] = 'message';
+  $handler->display->display_options['fields']['message_render']['field'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['label'] = '';
+  $handler->display->display_options['fields']['message_render']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['message_render']['alter']['text'] = '<div class="panel panel-default timeline-panel">
+  <div class="panel-heading">
+     [message_render]
+     <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> [timestamp]</small>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['message_render']['partials'] = 0;
+  $handler->display->display_options['fields']['message_render']['partials_delta'] = '1';
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp_2']['id'] = 'timestamp_2';
+  $handler->display->display_options['fields']['timestamp_2']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp_2']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp_2']['label'] = '';
+  $handler->display->display_options['fields']['timestamp_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['timestamp_2']['alter']['text'] = '<div class="timeline-date">
+[timestamp_2]
+</div>';
+  $handler->display->display_options['fields']['timestamp_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_2']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['timestamp_2']['element_wrapper_class'] = 'timeline-date';
+  $handler->display->display_options['fields']['timestamp_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['timestamp_2']['date_format'] = 'uc_store';
+  $handler->display->display_options['fields']['timestamp_2']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['timestamp_2']['format_date_sql'] = 1;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '        <div class="timeline-info">
+            <div class="timeline-icon bg-grey">
+                <i class="fa [field_timeline_icon]"></i>
+            </div>
+            <div class="time">[timestamp_1]</div>
+        </div>
+        <div class="panel panel-default timeline-panel">
+            <div class="panel-heading">
+                [message_render]
+                <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> [timestamp]</small>
+            </div>
+        </div>
+<div class="seperator"></div>
+<div class="seperator"></div>
+<div class="seperator"></div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_associated_nodes_stream_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['nid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['title'] = '%1 Timeline';
+  $handler->display->display_options['arguments']['nid']['breadcrumb_enable'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['breadcrumb'] = 'Timeline';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['fail'] = 'empty';
   $handler->display->display_options['path'] = 'node/%/timeline';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Timeline';
@@ -537,6 +811,31 @@ function core_views_default_views() {
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['id'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['table'] = 'field_data_field_stream_node_ref';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['field'] = 'field_stream_node_ref_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['id'] = 'field_update_reference_target_id';
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['table'] = 'field_data_field_update_reference';
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['field'] = 'field_update_reference_target_id';
+  $handler->display->display_options['relationships']['field_update_reference_target_id']['label'] = 'status_update';
+  /* Relationship: Flags: messages_all_salute */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'message';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'messages_all_salute';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['id'] = 'field_message_comment_reference_target_id';
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['table'] = 'field_data_field_message_comment_reference';
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['field'] = 'field_message_comment_reference_target_id';
+  $handler->display->display_options['relationships']['field_message_comment_reference_target_id']['label'] = 'comment';
+  /* Relationship: Message: User uid */
+  $handler->display->display_options['relationships']['user']['id'] = 'user';
+  $handler->display->display_options['relationships']['user']['table'] = 'message';
+  $handler->display->display_options['relationships']['user']['field'] = 'user';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1537,6 +1836,188 @@ function core_views_default_views() {
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
   $export['core_all_recommend_follows'] = $view;
+
+  $view = new view();
+  $view->name = 'core_node_media_display';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Core: Node: Media Display';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Images';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_thumbnail_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Images (field_images:fid) */
+  $handler->display->display_options['relationships']['field_images_fid']['id'] = 'field_images_fid';
+  $handler->display->display_options['relationships']['field_images_fid']['table'] = 'field_data_field_images';
+  $handler->display->display_options['relationships']['field_images_fid']['field'] = 'field_images_fid';
+  $handler->display->display_options['relationships']['field_images_fid']['required'] = TRUE;
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
+  $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['label'] = '';
+  $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_images']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_images']['settings'] = array(
+    'file_view_mode' => 'preview',
+  );
+  $handler->display->display_options['fields']['field_images']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
+  /* Field: File: Name */
+  $handler->display->display_options['fields']['filename']['id'] = 'filename';
+  $handler->display->display_options['fields']['filename']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['filename']['field'] = 'filename';
+  $handler->display->display_options['fields']['filename']['relationship'] = 'field_images_fid';
+  $handler->display->display_options['fields']['filename']['label'] = '';
+  $handler->display->display_options['fields']['filename']['element_type'] = 'span';
+  $handler->display->display_options['fields']['filename']['element_class'] = 'lead';
+  $handler->display->display_options['fields']['filename']['element_label_colon'] = FALSE;
+  /* Field: File: Description */
+  $handler->display->display_options['fields']['field_description_image']['id'] = 'field_description_image';
+  $handler->display->display_options['fields']['field_description_image']['table'] = 'field_data_field_description_image';
+  $handler->display->display_options['fields']['field_description_image']['field'] = 'field_description_image';
+  $handler->display->display_options['fields']['field_description_image']['relationship'] = 'field_images_fid';
+  $handler->display->display_options['fields']['field_description_image']['label'] = '';
+  $handler->display->display_options['fields']['field_description_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description_image']['type'] = 'smart_trim_format';
+  $handler->display->display_options['fields']['field_description_image']['settings'] = array(
+    'trim_link' => '1',
+    'trim_length' => '150',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '1',
+    'more_text' => '',
+    'trim_options' => array(
+      'text' => 'text',
+    ),
+    'trim_preserve_tags' => '',
+  );
+  /* Sort criterion: File: Upload date */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'file_managed';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'field_images_fid';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['pane_category']['name'] = 'Node';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['core_node_media_display'] = $view;
+
+  $view = new view();
+  $view->name = 'core_node_similar_by_term';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Core: Node: Similar by Term';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Suggested Content';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = '';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'avatar_small',
+    'image_link' => 'content',
+  );
+  /* Sort criterion: Similar By Terms: Similarity */
+  $handler->display->display_options['sorts']['similarterms']['id'] = 'similarterms';
+  $handler->display->display_options['sorts']['similarterms']['table'] = 'node';
+  $handler->display->display_options['sorts']['similarterms']['field'] = 'similarterms';
+  /* Contextual filter: Similar By Terms: Nid */
+  $handler->display->display_options['arguments']['similar_nid']['id'] = 'similar_nid';
+  $handler->display->display_options['arguments']['similar_nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['similar_nid']['field'] = 'similar_nid';
+  $handler->display->display_options['arguments']['similar_nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['similar_nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['similar_nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['similar_nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['similar_nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'army_profile' => 'army_profile',
+    'blog' => 'blog',
+    'forum' => 'forum',
+    'gallery' => 'gallery',
+    'listcrit' => 'listcrit',
+    'models' => 'models',
+    'narrative_campaign' => 'narrative_campaign',
+  );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['pane_category']['name'] = 'Node';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['core_node_similar_by_term'] = $view;
 
   $view = new view();
   $view->name = 'core_node_trending_content';

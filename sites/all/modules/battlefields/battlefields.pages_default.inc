@@ -330,10 +330,10 @@ function battlefields_default_page_manager_handlers() {
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'War Zones
+    'panels_breadcrumbs_titles' => 'Theater
 Battlefields',
-    'panels_breadcrumbs_paths' => 'warzone
-warzone/battlefield',
+    'panels_breadcrumbs_paths' => 'theater
+theater/battlefield',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -807,7 +807,7 @@ warzone/battlefield',
  */
 function battlefields_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'battlefield';
   $page->task = 'page';

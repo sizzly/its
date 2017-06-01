@@ -383,7 +383,7 @@ function its_clubs_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Gaming clubs landing page';
   $page->admin_description = '';
-  $page->path = 'order-of-battle/gaming-clubs';
+  $page->path = 'gaming-clubs';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',
@@ -442,10 +442,10 @@ function its_clubs_default_page_manager_pages() {
         ),
       ),
     ),
-    'panels_breadcrumbs_state' => 0,
-    'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Theater',
+    'panels_breadcrumbs_paths' => 'theater',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_its2';
@@ -568,7 +568,7 @@ So with that in mind, I thought it was important to represent gaming clubs on iT
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/community/gaming-clubs/list">All Clubs</a></li>
+        <li><a href="/gaming-clubs/list">All Clubs</a></li>
         <li><a href="/node/add/gaming-club">Register Club</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -576,6 +576,7 @@ So with that in mind, I thought it was important to represent gaming clubs on iT
 </nav>',
     'format' => 'php_code',
     'substitute' => TRUE,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

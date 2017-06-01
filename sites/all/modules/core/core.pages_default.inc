@@ -282,6 +282,31 @@ function core_default_page_manager_pages() {
     'panels_breadcrumbs_titles' => '',
     'panels_breadcrumbs_paths' => '',
     'panels_breadcrumbs_home' => 0,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => 'Gaming | [site:name]',
+        ),
+        'description' => array(
+          'value' => 'Gaming with your miniature armies: Battle reports and army lists.',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 0,
+            'follow' => 0,
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noodp' => 0,
+            'noydir' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_moscone';

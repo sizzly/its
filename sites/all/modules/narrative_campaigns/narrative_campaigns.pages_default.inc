@@ -318,7 +318,7 @@ function narrative_campaigns_default_page_manager_pages() {
   $pages['war_zone_campaign_instance_chronicle'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'war_zone_campaign_instance_operations';
   $page->task = 'page';
@@ -332,7 +332,6 @@ function narrative_campaigns_default_page_manager_pages() {
         'settings' => array(
           'type' => array(
             'narrative_campaign_instance' => 'narrative_campaign_instance',
-            'war_zone_league' => 'war_zone_league',
           ),
         ),
         'context' => 'argument_entity_id:node_1',
