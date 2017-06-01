@@ -1,7 +1,7 @@
 name = Core
 core = 7.x
 package = _iTS
-version = 7.x-4.6-rc1
+version = 7.x-4.6-rc2
 project = core
 dependencies[] = advanced_forum
 dependencies[] = advanced_help
@@ -285,6 +285,8 @@ features[variable][] = redirect_purge_inactive
 features[views_view][] = core_all_node_layout
 features[views_view][] = core_all_node_timeline
 features[views_view][] = core_all_recommend_follows
+features[views_view][] = core_node_media_display
+features[views_view][] = core_node_similar_by_term
 features[views_view][] = core_node_trending_content
 features[views_view][] = core_taxonomy_content_count
 features_exclude[dependencies][faq] = faq

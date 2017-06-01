@@ -180,6 +180,13 @@ function listcrit_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '<div class="well well-sm">
+Displaying @start - @end of @total
+</div>';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -306,6 +313,12 @@ function listcrit_views_default_views() {
   $handler = $view->new_display('page', 'All Lists', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'All Lists';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['metatags'] = array(
     'description' => array(
       'value' => 'The best peer reviewed army lists for your favorite miniature war games.',
@@ -332,7 +345,7 @@ function listcrit_views_default_views() {
     ),
   );
   $handler->display->display_options['path'] = 'listcrit/all-army-lists';
-  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'All Lists';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -445,10 +458,10 @@ function listcrit_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'media';
-  $handler->display->display_options['style_options']['class'] = 'media-list';
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'field_your_army';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -459,6 +472,7 @@ function listcrit_views_default_views() {
   );
   $handler->display->display_options['row_options']['separator'] = ' ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Field: Your Army (field_your_army) */
   $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
@@ -472,9 +486,8 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['relationship'] = 'field_your_army_tid';
   $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_image']['element_class'] = 'pull-left iconbuffer';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'button',
@@ -488,8 +501,6 @@ function listcrit_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title] ([field_points_per_army])';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'span';
-  $handler->display->display_options['fields']['title']['element_class'] = 'lead';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Field: Your Army */
@@ -569,6 +580,7 @@ function listcrit_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Your Army */
   $handler->display->display_options['fields']['field_your_army']['id'] = 'field_your_army';
@@ -615,6 +627,216 @@ function listcrit_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Gaming';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['inherit_panels_path'] = '0';
+
+  /* Display: Trending */
+  $handler = $view->new_display('page', 'Trending', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Trending Army Lists';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Radioactivity (field_radioactivity:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['id'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['field'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['order'] = 'DESC';
+  $handler->display->display_options['metatags'] = array(
+    'description' => array(
+      'value' => 'The best peer reviewed army lists for your favorite miniature war games.',
+    ),
+    'abstract' => array(
+      'value' => 'Peer reviewed army lists',
+    ),
+    'keywords' => array(
+      'value' => 'netlist, army list, best list, war games, miniature war game list',
+    ),
+    'robots' => array(
+      'value' => array(
+        'index' => 0,
+        'follow' => 0,
+        'noindex' => 0,
+        'nofollow' => 0,
+        'noarchive' => 0,
+        'nosnippet' => 0,
+        'noodp' => 0,
+        'noydir' => 0,
+        'noimageindex' => 0,
+        'notranslate' => 0,
+      ),
+    ),
+  );
+  $handler->display->display_options['path'] = 'listcrit/trending';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Trending';
+  $handler->display->display_options['menu']['description'] = 'Popular Army Lists';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'List Crit';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Player Lists */
+  $handler = $view->new_display('page', 'Player Lists', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'My Army Lists';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Radioactivity (field_radioactivity:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['id'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['field'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['metatags'] = array(
+    'description' => array(
+      'value' => 'The best peer reviewed army lists for your favorite miniature war games.',
+    ),
+    'abstract' => array(
+      'value' => 'Peer reviewed army lists',
+    ),
+    'keywords' => array(
+      'value' => 'netlist, army list, best list, war games, miniature war game list',
+    ),
+    'robots' => array(
+      'value' => array(
+        'index' => 0,
+        'follow' => 0,
+        'noindex' => 0,
+        'nofollow' => 0,
+        'noarchive' => 0,
+        'nosnippet' => 0,
+        'noodp' => 0,
+        'noydir' => 0,
+        'noimageindex' => 0,
+        'notranslate' => 0,
+      ),
+    ),
+  );
+  $handler->display->display_options['path'] = 'listcrit/my-army-lists';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'My Lists';
+  $handler->display->display_options['menu']['description'] = 'Your Army Lists';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'List Crit';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Following */
+  $handler = $view->new_display('page', 'Following', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'My Army Lists';
+  $handler->display->display_options['display_description'] = 'Army Lists by players you follow.';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Vote results */
+  $handler->display->display_options['relationships']['votingapi_cache']['id'] = 'votingapi_cache';
+  $handler->display->display_options['relationships']['votingapi_cache']['table'] = 'node';
+  $handler->display->display_options['relationships']['votingapi_cache']['field'] = 'votingapi_cache';
+  $handler->display->display_options['relationships']['votingapi_cache']['label'] = 'Positive';
+  $handler->display->display_options['relationships']['votingapi_cache']['votingapi'] = array(
+    'value_type' => '',
+    'tag' => '',
+    'function' => 'positives',
+  );
+  /* Relationship: Content: Vote results */
+  $handler->display->display_options['relationships']['votingapi_cache_1']['id'] = 'votingapi_cache_1';
+  $handler->display->display_options['relationships']['votingapi_cache_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['votingapi_cache_1']['field'] = 'votingapi_cache';
+  $handler->display->display_options['relationships']['votingapi_cache_1']['label'] = 'Negative';
+  $handler->display->display_options['relationships']['votingapi_cache_1']['votingapi'] = array(
+    'value_type' => '',
+    'tag' => '',
+    'function' => 'negatives',
+  );
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Field: Your Army (field_your_army) */
+  $handler->display->display_options['relationships']['field_your_army_tid']['id'] = 'field_your_army_tid';
+  $handler->display->display_options['relationships']['field_your_army_tid']['table'] = 'field_data_field_your_army';
+  $handler->display->display_options['relationships']['field_your_army_tid']['field'] = 'field_your_army_tid';
+  $handler->display->display_options['relationships']['field_your_army_tid']['required'] = TRUE;
+  /* Relationship: Content: Vote results */
+  $handler->display->display_options['relationships']['votingapi_cache_2']['id'] = 'votingapi_cache_2';
+  $handler->display->display_options['relationships']['votingapi_cache_2']['table'] = 'node';
+  $handler->display->display_options['relationships']['votingapi_cache_2']['field'] = 'votingapi_cache';
+  $handler->display->display_options['relationships']['votingapi_cache_2']['label'] = 'Total';
+  $handler->display->display_options['relationships']['votingapi_cache_2']['votingapi'] = array(
+    'value_type' => '',
+    'tag' => '',
+    'function' => 'sum',
+  );
+  /* Relationship: Flags: follow */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'users';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['relationship'] = 'uid';
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'follow';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['metatags'] = array(
+    'description' => array(
+      'value' => 'The best peer reviewed army lists for your favorite miniature war games.',
+    ),
+    'abstract' => array(
+      'value' => 'Peer reviewed army lists',
+    ),
+    'keywords' => array(
+      'value' => 'netlist, army list, best list, war games, miniature war game list',
+    ),
+    'robots' => array(
+      'value' => array(
+        'index' => 0,
+        'follow' => 0,
+        'noindex' => 0,
+        'nofollow' => 0,
+        'noarchive' => 0,
+        'nosnippet' => 0,
+        'noodp' => 0,
+        'noydir' => 0,
+        'noimageindex' => 0,
+        'notranslate' => 0,
+      ),
+    ),
+  );
+  $handler->display->display_options['path'] = 'listcrit/followed-army-lists';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Following';
+  $handler->display->display_options['menu']['description'] = 'Army lists by players you follow';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['type'] = 'tab';
+  $handler->display->display_options['tab_options']['title'] = 'List Crit';
+  $handler->display->display_options['tab_options']['weight'] = '0';
   $export['listcrit_all_lists'] = $view;
 
   $view = new view();

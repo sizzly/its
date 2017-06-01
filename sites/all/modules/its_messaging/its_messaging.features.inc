@@ -109,7 +109,7 @@ function its_messaging_flag_default_flags() {
       ),
     ),
     'weight' => 0,
-    'show_on_entity' => 1,
+    'show_on_entity' => 0,
     'show_on_form' => 0,
     'access_author' => '',
     'module' => 'its_messaging',

@@ -616,7 +616,6 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -626,13 +625,13 @@ function its_galleries_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Categories */
   $handler->display->display_options['fields']['field_blog_army']['id'] = 'field_blog_army';
   $handler->display->display_options['fields']['field_blog_army']['table'] = 'field_data_field_blog_army';
   $handler->display->display_options['fields']['field_blog_army']['field'] = 'field_blog_army';
   $handler->display->display_options['fields']['field_blog_army']['label'] = '';
-  $handler->display->display_options['fields']['field_blog_army']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_blog_army']['alter']['text'] = '<div class="media">
     <div class="media-left pull-left">
         <div class="activity-icon small">
@@ -644,12 +643,24 @@ function its_galleries_views_default_views() {
     </div>
 </div>';
   $handler->display->display_options['fields']['field_blog_army']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_blog_army']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_blog_army']['element_wrapper_class'] = 'list-group-item';
   $handler->display->display_options['fields']['field_blog_army']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_blog_army']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_blog_army']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_blog_army']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'gallery' => 'gallery',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Blogs';
   $handler->display->display_options['pane_category']['weight'] = '0';
 

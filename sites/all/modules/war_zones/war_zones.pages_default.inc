@@ -856,7 +856,7 @@ theater/warzone/%node:content-type',
   $pane->access = array();
   $pane->configuration = array(
     'mode' => '1',
-    'comments_per_page' => '50',
+    'comments_per_page' => '10',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 0,
     'override_title_text' => '',
@@ -2914,7 +2914,7 @@ Manage',
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/theater/battlefield">Battlefields</a></li>
         <li><a href="/theater/events">Events</a></li>
-        <li><a href="/order-of-battle/gaming-clubs">Clubs</a></li>
+        <li><a href="/gaming-clubs">Clubs</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -2922,6 +2922,7 @@ Manage',
 </nav>',
     'format' => 'pure_html',
     'substitute' => TRUE,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(

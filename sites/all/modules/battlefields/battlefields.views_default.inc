@@ -3661,6 +3661,16 @@ function battlefields_views_default_views() {
   $handler->display->display_options['filters']['flagged']['value'] = '0';
   $handler->display->display_options['pane_category']['name'] = 'Theater';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Main battlefield page */
+  $handler = $view->new_display('page', 'Main battlefield page', 'page_3');
+  $handler->display->display_options['path'] = 'theater/battlefield';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Battlefields';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['battlefields_all_lists'] = $view;
 
   $view = new view();

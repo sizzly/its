@@ -2122,9 +2122,9 @@ function battle_reports_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '',
-    'panels_breadcrumbs_paths' => '',
-    'panels_breadcrumbs_home' => 0,
+    'panels_breadcrumbs_titles' => 'Gaming',
+    'panels_breadcrumbs_paths' => 'gaming',
+    'panels_breadcrumbs_home' => 1,
     'metatag_panels' => array(
       'enabled' => 1,
       'metatags' => array(

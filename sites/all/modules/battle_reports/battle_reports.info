@@ -2,13 +2,11 @@ name = Battle Reports
 description = Feature that controls how battles are implemented on iToysoldiers
 core = 7.x
 package = _iTS
-version = 7.x-4.6-rc1
+version = 7.x-4.6-rc2
 project = battle_reports
-dependencies[] = charts
 dependencies[] = custom_formatters
 dependencies[] = field_group
-dependencies[] = views
-dependencies[] = views_content
+dependencies[] = views_bootstrap
 <<<<<<< HEAD
 features_exclude[dependencies][its_modelling_projects] = its_modelling_projects
 >>>>>>> release-4.5-rc4
@@ -207,6 +205,9 @@ features_exclude[dependencies][its_modelling_projects] = its_modelling_projects
 features_exclude[dependencies][list] = list
 features_exclude[dependencies][war_zones] = war_zones
 features_exclude[dependencies][shs] = shs
+features_exclude[dependencies][charts] = charts
+features_exclude[dependencies][views] = views
+features_exclude[dependencies][views_content] = views_content
 features_exclude[field_base][body] = body
 features_exclude[field_base][field_image] = field_image
 features_exclude[field_base][field_images] = field_images

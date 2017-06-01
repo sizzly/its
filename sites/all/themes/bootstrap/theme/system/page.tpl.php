@@ -110,7 +110,7 @@
                         <ul class="submenu">
                             <li><a href="/theater/battlefield"><span class="submenu-label">Battlefields</span></a></li>
                             <li><a href="/theater/events"><span class="submenu-label">Events</span></a></li>
-                            <li><a href="/order-of-battle/gaming-clubs"><span class="submenu-label">Gaming Clubs</span></a></li>
+                            <li><a href="/gaming-clubs"><span class="submenu-label">Gaming Clubs</span></a></li>
                             
                         </ul>
                     </li>
