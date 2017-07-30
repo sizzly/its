@@ -19,10 +19,17 @@ function its_articles_and_feed_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => '',
+          'expandPrefix' => '...',
+          'expandText' => 'Expand »',
+          'slicePoint' => 350,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => 'Collapse',
+        ),
+        'type' => 'jquery_expander',
+        'weight' => 5,
       ),
       'ical' => array(
         'label' => 'above',
@@ -79,13 +86,13 @@ function its_articles_and_feed_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'ical' => array(
         'label' => 'above',
@@ -139,8 +146,8 @@ function its_articles_and_feed_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'content',
+          'image_style' => 'newsletter_square',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -222,7 +229,7 @@ function its_articles_and_feed_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 8,
       ),
       'ical' => array(
         'label' => 'above',
@@ -265,10 +272,9 @@ function its_articles_and_feed_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'ical' => array(
         'label' => 'above',
@@ -328,11 +334,13 @@ function its_articles_and_feed_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 8,
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
       ),
       'ical' => array(
         'label' => 'above',

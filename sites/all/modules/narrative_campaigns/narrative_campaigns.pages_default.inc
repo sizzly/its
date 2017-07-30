@@ -9,7 +9,7 @@
  */
 function narrative_campaigns_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'narrative_campaign_main_page';
   $page->task = 'page';
@@ -18,7 +18,7 @@ function narrative_campaigns_default_page_manager_pages() {
   $page->path = 'theater/narrative-campaigns';
   $page->access = array();
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'none',
     'title' => 'Narrative Campaigns',
     'name' => 'main-menu',
     'weight' => '0',

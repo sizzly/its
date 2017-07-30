@@ -1,0 +1,13 @@
+diff --git a/views/web_widgets_plugin_display_web_widgets.inc b/views/web_widgets_plugin_display_web_widgets.inc
+index 261f9f9..07d8709 100644
+--- a/views/web_widgets_plugin_display_web_widgets.inc
++++ b/views/web_widgets_plugin_display_web_widgets.inc
+@@ -151,7 +151,7 @@ class web_widgets_plugin_display_web_widgets extends views_plugin_display_page {
+    * Perform any necessary changes to the form values prior to storage.
+    * There is no need for this function to actually store the data.
+    */
+-  function options_submit($form, &$form_state) {
++  function options_submit(&$form, &$form_state) {
+     // It is very important to call the parent function here:
+     parent::options_submit($form, $form_state);
+     switch ($form_state['section']) {

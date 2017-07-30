@@ -1,0 +1,71 @@
+diff --git a/user_badges.admin.inc b/user_badges.admin.inc
+index 045b6a9..e9a49b5 100644
+--- a/user_badges.admin.inc
++++ b/user_badges.admin.inc
+@@ -56,7 +56,7 @@ function user_badges_badgelist_form($form, &$form_state) {
+ 
+   // Build a table listing the appropriate badges.
+   foreach ($result as $badge) {
+-    $badge->class = 'badge badge-' . $badge->bid . ' ' . drupal_html_class($badge->name);
++    $badge->class = 'user-badges user-badges-' . $badge->bid . ' ' . drupal_html_class($badge->name);
+ 
+     $form['name'][$badge->bid] = array('#value' => check_plain($badge->name));
+ 
+diff --git a/user_badges.module b/user_badges.module
+index 9c46f0b..3a28031 100644
+--- a/user_badges.module
++++ b/user_badges.module
+@@ -269,7 +269,7 @@ function user_badges_user_view($account, $view_mode) {
+   $account->content['user_badges'] = array(
+     '#title' => t('Badges'),
+     '#type' => 'user_profile_category',
+-    '#attributes' => array('class' => array('badges')),
++    '#attributes' => array('class' => array('user-badges')),
+   );
+ 
+   if (isset($account->badges) && count($account->badges)) {
+@@ -282,7 +282,7 @@ function user_badges_user_view($account, $view_mode) {
+       '#type' => 'user_profile_item',
+       '#title' => '',
+       '#markup' => theme('user_badge_group', array('badgeimages' => $badgeimgs)),
+-      '#attributes' => array('class' => array('badges')),
++      '#attributes' => array('class' => array('user-badges')),
+     );
+   }
+   else {
+@@ -291,7 +291,7 @@ function user_badges_user_view($account, $view_mode) {
+       '#type' => 'user_profile_item',
+       '#title' => '',
+       '#markup' => variable_get('user_badges_nobadges', ''),
+-      '#attributes' => array('class' => array('badges')),
++      '#attributes' => array('class' => array('user-badges')),
+     );
+   }
+ }
+@@ -991,7 +991,7 @@ function user_badges_get_badges($uid, $options = array()) {
+         }
+         else {
+           $badges[$uid][$stringified_options][$badge->bid] = $badge;
+-          $badges[$uid][$stringified_options][$badge->bid]->class = "badge badge-" . $badge->bid . " " . drupal_html_class($badge->name);
++          $badges[$uid][$stringified_options][$badge->bid]->class = "user-badges user-badges-" . $badge->bid . " " . drupal_html_class($badge->name);
+         }
+         //Count down our limit, unless the badge doesn't count towards it
+         if (!$badge->doesnotcounttolimit) {
+@@ -1272,7 +1272,7 @@ function _user_badges_build_image($badge) {
+   $alt = check_plain($badge->name);
+ 
+   if (!isset($badge->class)) {
+-    $badge->class = "badge badge-" . $badge->bid . "badge-" . drupal_html_class($badge->name);
++    $badge->class = "user-badges user-badges-" . $badge->bid . "user-badges-" . drupal_html_class($badge->name);
+   }
+ 
+   $variables = array(
+@@ -1417,7 +1417,7 @@ function user_badges_block_view($delta = 0) {
+       $items = array();
+       foreach ($result as $badge) {
+         $items[] = theme('user_badge', array('badge' => $badge))
+-          . ' <span class="all-badges-name">'
++          . ' <span class="all-user-badges-name">'
+           . check_plain($badge->name)
+           . '</span>';
+       }

@@ -841,7 +841,7 @@ function reply_preprocess_reply(&$vars) {
     $vars['author'] = theme('username', array('account' => $reply_user));
     $vars['reply_avatar'] = theme_image_style(
                     array(
-                        'style_name' => 'thumbnail',
+                        'style_name' => 'button',
                         'path' => $reply_user->picture->uri,
                         'attributes' => array(
                             'class' => 'avatar'
@@ -864,21 +864,22 @@ function reply_preprocess_reply(&$vars) {
   $settings = _reply_get_settings($reply);
 
   if (isset($vars['elements']['#access']) && $vars['elements']['#access'] == REPLY_ACCESS_FULL) {
+    if (reply_access('update', $reply)) {
+      $vars['links']['edit']['#markup'] = l(t('edit'), 'reply/' . $reply->id . '/edit', array('query' => drupal_get_destination()));
+    }
+    if (reply_access('delete', $reply)) {
+      $vars['links']['delete']['#markup'] = l(t('delete'), 'reply/' . $reply->id . '/delete', array('query' => drupal_get_destination()));
+    }
     if (reply_access('reply', $reply)) {
       if ($settings['form'] == REPLY_FORM_PAGE_SAME) {
-        $vars['links']['reply']['#markup'] = l(t('Reply'), 'reply/add/' . $reply->entity_id . '/' . $reply->instance_id . '/' . $reply->id, array('query' => array('destination' => $_GET['q'])));
+        $vars['links']['reply']['#markup'] = l(t('reply'), 'reply/add/' . $reply->entity_id . '/' . $reply->instance_id . '/' . $reply->id, array('query' => array('destination' => $_GET['q'])));
       }
       else {
-        $vars['links']['reply']['#markup'] = l(t('Reply'), 'reply/add/' . $reply->entity_id . '/' . $reply->instance_id . '/' . $reply->id);
+        $vars['links']['reply']['#markup'] = l(t('reply'), 'reply/add/' . $reply->entity_id . '/' . $reply->instance_id . '/' . $reply->id);
       }
     }
 
-    if (reply_access('update', $reply)) {
-      $vars['links']['edit']['#markup'] = l(t('Edit'), 'reply/' . $reply->id . '/edit', array('query' => drupal_get_destination()));
-    }
-    if (reply_access('delete', $reply)) {
-      $vars['links']['delete']['#markup'] = l(t('Delete'), 'reply/' . $reply->id . '/delete', array('query' => drupal_get_destination()));
-    }
+
   }
 
   $uri = reply_uri($reply);

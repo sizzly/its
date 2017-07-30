@@ -3373,8 +3373,10 @@ function events_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'About the Organizer';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group clearfix';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = 'nothing';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -3397,6 +3399,14 @@ function events_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['relationship'] = 'uid';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'follow';
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['relationship'] = 'uid';
+  $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
+    'main' => 'main',
+  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
@@ -3417,13 +3427,6 @@ function events_views_default_views() {
   $handler->display->display_options['fields']['name']['element_type'] = 'span';
   $handler->display->display_options['fields']['name']['element_class'] = 'lead';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: User Badges: Badge Name */
-  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['fields']['name_1']['table'] = 'user_badges_badges';
-  $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name_1']['label'] = '';
-  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
@@ -3431,15 +3434,46 @@ function events_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
-  /* Field: Privatemsg: Send Privatemsg link */
-  $handler->display->display_options['fields']['privatemsg_link']['id'] = 'privatemsg_link';
-  $handler->display->display_options['fields']['privatemsg_link']['table'] = 'users';
-  $handler->display->display_options['fields']['privatemsg_link']['field'] = 'privatemsg_link';
-  $handler->display->display_options['fields']['privatemsg_link']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['privatemsg_link']['label'] = '';
-  $handler->display->display_options['fields']['privatemsg_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['privatemsg_link']['text'] = 'Message';
-  $handler->display->display_options['fields']['privatemsg_link']['return'] = 1;
+  /* Field: Profile: Bio */
+  $handler->display->display_options['fields']['field_bio']['id'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['table'] = 'field_data_field_bio';
+  $handler->display->display_options['fields']['field_bio']['field'] = 'field_bio';
+  $handler->display->display_options['fields']['field_bio']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio']['type'] = 'smart_trim_format';
+  $handler->display->display_options['fields']['field_bio']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '125',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'summary_handler' => 'full',
+    'trim_options' => array(
+      'text' => 'text',
+    ),
+    'trim_preserve_tags' => '<a>',
+  );
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_bio]
+<ul class="links list-inline">
+<li><a href="/messages/new/[uid]?destination=node/!1">Message</a></li><li>[ops]</li>
+</ul>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -3449,13 +3483,6 @@ function events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: User Badges: Badge Name */
-  $handler->display->display_options['filters']['name']['id'] = 'name';
-  $handler->display->display_options['filters']['name']['table'] = 'user_badges_badges';
-  $handler->display->display_options['filters']['name']['field'] = 'name';
-  $handler->display->display_options['filters']['name']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['name']['operator'] = 'contains';
-  $handler->display->display_options['filters']['name']['value'] = 'Level';
   /* Filter criterion: Content: I am the organizer (field_event_organizer) */
   $handler->display->display_options['filters']['field_event_organizer_value']['id'] = 'field_event_organizer_value';
   $handler->display->display_options['filters']['field_event_organizer_value']['table'] = 'field_data_field_event_organizer';

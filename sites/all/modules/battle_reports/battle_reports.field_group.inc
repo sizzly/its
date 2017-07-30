@@ -155,6 +155,60 @@ function battle_reports_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_battle_events|node|game_result_system_|default';
+  $field_group->group_name = 'group_battle_events';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_result_system_';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_battle_stats';
+  $field_group->data = array(
+    'label' => 'Battlefield Events',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_enemy_commander',
+      1 => 'field_your_commander',
+    ),
+    'format_type' => 'hidden',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => ' group-battle-events field-group-fieldset',
+      ),
+    ),
+  );
+  $field_groups['group_battle_events|node|game_result_system_|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_battle_events|node|game_results|default';
+  $field_group->group_name = 'group_battle_events';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game_results';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_battle_stats';
+  $field_group->data = array(
+    'label' => 'Battlefield Events',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_enemy_commander',
+      1 => 'field_your_commander',
+    ),
+    'format_type' => 'hidden',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => ' group-battle-events field-group-fieldset',
+      ),
+    ),
+  );
+  $field_groups['group_battle_events|node|game_results|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_battle_events|node|game_results|form';
   $field_group->group_name = 'group_battle_events';
   $field_group->entity_type = 'node';
@@ -565,7 +619,7 @@ function battle_reports_field_group_info() {
     'format_settings' => array(
       'label' => 'Nav',
       'instance_settings' => array(
-        'bootstrap_nav_type' => 'tabs',
+        'bootstrap_nav_type' => 'pills',
         'bootstrap_stacked' => '0',
         'bootstrap_orientation' => '0',
         'required_fields' => 1,
@@ -595,13 +649,13 @@ function battle_reports_field_group_info() {
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Nav',
       'instance_settings' => array(
-        'classes' => 'group-nav-core field-group-bootstrap_fieldgroup_nav',
-        'bootstrap_nav_type' => 'tabs',
-        'bootstrap_stacked' => 0,
-        'bootstrap_orientation' => 0,
+        'bootstrap_nav_type' => 'pills',
+        'bootstrap_stacked' => '0',
+        'bootstrap_orientation' => '0',
         'required_fields' => 1,
+        'classes' => 'group-nav-core field-group-bootstrap_fieldgroup_nav',
       ),
     ),
   );
@@ -627,6 +681,7 @@ function battle_reports_field_group_info() {
       4 => 'field_battleresult_enemy_command',
       5 => 'field_opponent_s_allied_detachme',
       6 => 'field_allied_detatchment',
+      7 => 'field_army_composition',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -661,6 +716,7 @@ function battle_reports_field_group_info() {
       6 => 'field_your_commander_survival',
       7 => 'field_enemy_commander_survival',
       8 => 'field_battleresult_enemy_command',
+      9 => 'field_army_composition',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
@@ -798,6 +854,7 @@ function battle_reports_field_group_info() {
   // Included for use with string extractors like potx.
   t('Battle Meta');
   t('Battle Stats');
+  t('Battlefield Events');
   t('Body Wrapper');
   t('Campaign');
   t('Commanders Slain');

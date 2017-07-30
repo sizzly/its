@@ -13,6 +13,134 @@ function core_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
+  $mini->name = 'advert_announcement_block';
+  $mini->category = 'Advert';
+  $mini->admin_title = 'Advert: Announcement Block';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '293cfd20-880a-4477-bec6-d9305f328c99';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'advert_announcement_block';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-c00fb1be-a20c-4a49-b489-4ba2b31f1cdc';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '        <!-- /254567099/its_announcement -->
+        <div id=\'div-gpt-ad-1500913228612-1\'>
+            <script>
+                googletag.cmd.push(function () {
+                    googletag.display(\'div-gpt-ad-1500913228612-1\');
+                });
+            </script>
+        </div>',
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c00fb1be-a20c-4a49-b489-4ba2b31f1cdc';
+  $display->content['new-c00fb1be-a20c-4a49-b489-4ba2b31f1cdc'] = $pane;
+  $display->panels['contentmain'][0] = 'new-c00fb1be-a20c-4a49-b489-4ba2b31f1cdc';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-c00fb1be-a20c-4a49-b489-4ba2b31f1cdc';
+  $mini->display = $display;
+  $export['advert_announcement_block'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'advert_right_sidebar_slot_1';
+  $mini->category = 'Advert';
+  $mini->admin_title = 'Advert: Right Sidebar Slot 1';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '3027bcb9-07af-4bc6-b815-5f9d440f4d16';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'advert_right_sidebar_slot_1';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-f8753415-3713-4dda-b173-5c522c50ede9';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '        <!-- /254567099/sidebar_top -->
+        <div id=\'div-gpt-ad-1500913228612-3\' class="text-center">
+            <script>
+                googletag.cmd.push(function () {
+                    googletag.display(\'div-gpt-ad-1500913228612-3\');
+                });
+            </script>
+        </div>',
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'f8753415-3713-4dda-b173-5c522c50ede9';
+  $display->content['new-f8753415-3713-4dda-b173-5c522c50ede9'] = $pane;
+  $display->panels['contentmain'][0] = 'new-f8753415-3713-4dda-b173-5c522c50ede9';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-f8753415-3713-4dda-b173-5c522c50ede9';
+  $mini->display = $display;
+  $export['advert_right_sidebar_slot_1'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
   $mini->name = 'login_and_new_user_block';
   $mini->category = '';
   $mini->admin_title = 'Login and New User Block';
@@ -120,6 +248,70 @@ function core_default_panels_mini() {
   $display->title_pane = 'new-03b70c5c-aa84-4ff8-83d1-d4df566a6ab2';
   $mini->display = $display;
   $export['login_and_new_user_block'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'right_sidebar_slot_2';
+  $mini->category = 'Advert';
+  $mini->admin_title = 'Advert: Right Sidebar Slot 2';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'b6fe6fae-d08b-41ad-b9f2-d909425aac64';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'right_sidebar_slot_2';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-2a2b17e9-3ab7-4a39-aabe-8fda1507fadc';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Advert Code',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '        <!-- /254567099/sidebar_slot_2 -->
+        <div id=\'div-gpt-ad-1500913228612-2\' class="text-center">
+            <script>
+                googletag.cmd.push(function () {
+                    googletag.display(\'div-gpt-ad-1500913228612-2\');
+                });
+            </script>
+        </div>',
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '2a2b17e9-3ab7-4a39-aabe-8fda1507fadc';
+  $display->content['new-2a2b17e9-3ab7-4a39-aabe-8fda1507fadc'] = $pane;
+  $display->panels['contentmain'][0] = 'new-2a2b17e9-3ab7-4a39-aabe-8fda1507fadc';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-2a2b17e9-3ab7-4a39-aabe-8fda1507fadc';
+  $mini->display = $display;
+  $export['right_sidebar_slot_2'] = $mini;
 
   return $export;
 }

@@ -1,0 +1,14 @@
+--- mailsystem.theme.inc
++++ mailsystem.theme.inc
+@@ -42,10 +38,10 @@
+ 
+         // Include template files to let _theme_load_registry add preprocess
+         // functions.
++        include_once(drupal_get_path('theme', $theme->name) . '/template.php');
+         foreach ($base_theme as $base) {
+           include_once(drupal_get_path('theme', $base->name) . '/template.php');
+         }
+-        include_once(drupal_get_path('theme', $theme->name) . '/template.php');
+ 
+         // Get the theme_registry cache.
+         $cache = _theme_load_registry($theme, $base_theme, $theme_engine);

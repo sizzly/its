@@ -9,7 +9,7 @@
  */
 function core_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'decorations_all_renown_landing_page';
   $page->task = 'page';
@@ -125,7 +125,7 @@ function core_default_page_manager_pages() {
   $pages['decorations_all_renown_landing_page'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'decorations_medals_landing_page';
   $page->task = 'page';
@@ -134,7 +134,7 @@ function core_default_page_manager_pages() {
   $page->path = 'wargaming-decorations/medals';
   $page->access = array();
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'none',
     'title' => 'Medals',
     'name' => 'main-menu',
     'weight' => '0',
@@ -251,9 +251,20 @@ function core_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Main Gaming Page';
   $page->admin_description = 'This page serves as the main category page for gaming.';
-  $page->path = 'gaming';
+  $page->path = 'gaming/main';
   $page->access = array();
-  $page->menu = array();
+  $page->menu = array(
+    'type' => 'default tab',
+    'title' => 'Gaming',
+    'name' => 'main-menu',
+    'weight' => '-50',
+    'parent' => array(
+      'type' => 'normal',
+      'title' => 'Gaming',
+      'name' => 'main-menu',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
@@ -341,7 +352,14 @@ function core_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -383,7 +401,7 @@ function core_default_page_manager_pages() {
   $pane->panel = 'header';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Nav Bar',
@@ -434,7 +452,14 @@ function core_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -453,7 +478,14 @@ function core_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -477,7 +509,18 @@ function core_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'modelling';
   $page->access = array();
-  $page->menu = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Modelling',
+    'name' => 'main-menu',
+    'weight' => '-20',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
@@ -599,51 +642,6 @@ function core_default_page_manager_pages() {
   $display->content['new-68e89326-1fd1-484b-b531-94c54b040164'] = $pane;
   $display->panels['header'][0] = 'new-68e89326-1fd1-484b-b531-94c54b040164';
   $pane = new stdClass();
-  $pane->pid = 'new-42b115b6-dd66-4554-a488-b201184b2b9d';
-  $pane->panel = 'header';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'body' => '<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Modelling</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/munitions/modeling-projects">Modelling Projects</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>',
-    'format' => 'pure_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '42b115b6-dd66-4554-a488-b201184b2b9d';
-  $display->content['new-42b115b6-dd66-4554-a488-b201184b2b9d'] = $pane;
-  $display->panels['header'][1] = 'new-42b115b6-dd66-4554-a488-b201184b2b9d';
-  $pane = new stdClass();
   $pane->pid = 'new-d4710a37-a348-4446-ba0b-8a3024788b94';
   $pane->panel = 'sidebar';
   $pane->type = 'views_panes';
@@ -696,7 +694,18 @@ function core_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'narrative';
   $page->access = array();
-  $page->menu = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Narrative',
+    'name' => 'main-menu',
+    'weight' => '-10',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
@@ -1097,7 +1106,7 @@ function core_default_page_manager_pages() {
   $pages['node_stats_page'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'renown_all_main_page';
   $page->task = 'page';
@@ -1106,7 +1115,7 @@ function core_default_page_manager_pages() {
   $page->path = 'wargaming-decorations/main';
   $page->access = array();
   $page->menu = array(
-    'type' => 'default tab',
+    'type' => 'none',
     'title' => 'Main',
     'name' => 'navigation',
     'weight' => '-50',

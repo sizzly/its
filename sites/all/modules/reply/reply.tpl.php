@@ -4,17 +4,25 @@
  * Default theme implementation for a reply.
  */
 ?>
-<li id="reply-<?php print $id ?>" class="media replyblock">
-    <div class="media-left">
-    <?php print render($reply_avatar); ?>
-</div>
-<div class="media-body mediabuffer">
-    <div class="media-heading">
-        <?php print render($author); ?>
-        <small class="text-muted">
-            <?php print render($created); ?> / <?php print render($links); ?> 
-        </small>
+<div id="reply-<?php print $id ?>" class="panel panel-default">
+    <div class="panel-heading">
+        <span class="text-muted">
+            <span class="hidden-sm hidden-md hidden-lg">by <?php print render($author); ?> on <?php print render($created); ?></span>
+            <span class="hidden-xs"><?php print render($created); ?></span>
+        </span>
     </div>
-    <p><?php print render($content); ?></p>
+    <div class="panel-body">
+        <div class="media">
+            <div class="pull-left hidden-xs">
+                <?php print render($author); ?>
+                <?php print render($reply_avatar); ?>
+            </div>
+            <div class="media-body">
+                <?php print render($content); ?>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer text-right">
+        <span class="reply-menu"><?php print render($links); ?></span>
+    </div>
 </div>
-</li>

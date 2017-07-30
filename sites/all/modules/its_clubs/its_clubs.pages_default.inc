@@ -63,12 +63,12 @@ function its_clubs_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
-    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_state' => 0,
     'panels_breadcrumbs_titles' => 'Order of Battle
 Gaming Clubs',
     'panels_breadcrumbs_paths' => 'order-of-battle
 order-of-battle/gaming-clubs',
-    'panels_breadcrumbs_home' => 1,
+    'panels_breadcrumbs_home' => 0,
   );
   $display = new panels_display();
   $display->layout = 'bootopoly_moscone';
@@ -193,7 +193,14 @@ order-of-battle/gaming-clubs',
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -247,7 +254,10 @@ order-of-battle/gaming-clubs',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -383,7 +393,7 @@ function its_clubs_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Gaming clubs landing page';
   $page->admin_description = '';
-  $page->path = 'gaming-clubs';
+  $page->path = 'theater/gaming-clubs';
   $page->access = array();
   $page->menu = array(
     'type' => 'normal',

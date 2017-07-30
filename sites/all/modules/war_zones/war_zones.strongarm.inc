@@ -1429,35 +1429,35 @@ Event start: [node:event-start].',
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_narrative_campaign_instance_pattern';
-  $strongarm->value = 'warzone/[node:title]';
+  $strongarm->value = 'event/[node:title]';
   $export['pathauto_node_narrative_campaign_instance_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_narrative_campaign_pattern';
-  $strongarm->value = 'warzone/[node:title]';
+  $strongarm->value = 'campaign/[node:title]';
   $export['pathauto_node_narrative_campaign_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_special_event_pattern';
-  $strongarm->value = 'warzone/[node:title]';
+  $strongarm->value = 'event/[node:title]';
   $export['pathauto_node_special_event_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_war_zone_league_pattern';
-  $strongarm->value = 'leagues/[node:title]';
+  $strongarm->value = 'event/[node:title]';
   $export['pathauto_node_war_zone_league_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_war_zone_tournament_pattern';
-  $strongarm->value = 'warzone/[node:title]';
+  $strongarm->value = 'event/[node:title]';
   $export['pathauto_node_war_zone_tournament_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -1,0 +1,16 @@
+name = "Views Add After Nth Rows"
+description = "Add text or html row in views after certain number of rows."
+package = "Views"
+core = 7.x
+
+dependencies[] = views
+
+; Views Handlers
+files[] = includes/views/views_add_after_nth_rows.inc
+
+; Information added by Drupal.org packaging script on 2017-03-05
+version = "7.x-1.0"
+core = "7.x"
+project = "views_add_after_nth_rows"
+datestamp = "1488705784"
+

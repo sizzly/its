@@ -401,7 +401,7 @@ function its_army_profiles_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'order-of-battle/player-armies/list';
+  $handler->display->display_options['path'] = 'narrative/player-armies/list';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'All';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -746,7 +746,7 @@ function its_army_profiles_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'order-of-battle/player-armies/my-armies';
+  $handler->display->display_options['path'] = 'narrative/player-armies/my-armies';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'My Armies';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -1072,7 +1072,7 @@ function its_army_profiles_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'order-of-battle/player-armies/trending';
+  $handler->display->display_options['path'] = 'narrative/player-armies/trending';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Trending';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -1422,7 +1422,7 @@ function its_army_profiles_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'order-of-battle/player-armies/following-list';
+  $handler->display->display_options['path'] = 'narrative/player-armies/following-list';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Following';
   $handler->display->display_options['menu']['weight'] = '0';

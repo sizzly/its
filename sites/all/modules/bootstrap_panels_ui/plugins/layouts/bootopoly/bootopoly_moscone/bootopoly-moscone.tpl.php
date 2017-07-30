@@ -24,11 +24,13 @@
     <div class="col-md-8 sidebar panel-panel">
       <div class="panel-panel-inner">
         <?php print $content['sidebar']; ?>
+<div class="seperator"></div>
       </div>
     </div>
     <div class="col-md-4 content panel-panel">
       <div class="panel-panel-inner">
         <?php print $content['contentmain']; ?>
+<div class="seperator"></div>
       </div>
     </div>
   </div>
@@ -37,6 +39,7 @@
       <div class="col-md-12 bottom panel-panel">
         <div class="panel-panel-inner">
           <?php print $content['footer']; ?>
+<div class="seperator"></div>
         </div>
       </div>
     </div>

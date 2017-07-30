@@ -154,7 +154,7 @@ function its_army_profiles_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_army_profile_pattern';
-  $strongarm->value = 'player/armies/[node:title]';
+  $strongarm->value = 'army-profile/[node:title]';
   $export['pathauto_node_army_profile_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -201,5 +201,25 @@ function its_achievements_strongarm() {
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_achievement_category_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_achievement';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.3',
+  );
+  $export['xmlsitemap_settings_node_achievement'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_achievement_category';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_achievement_category'] = $strongarm;
+
   return $export;
 }

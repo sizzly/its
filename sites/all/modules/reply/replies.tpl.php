@@ -4,30 +4,32 @@
  * Default theme implementation for replies.
  */
 ?>
-<div class="replies-wrapper">
+<div>
     <div class="panel panel-default">
+        <div class="panel-heading">
+            <?php if (!empty($header)) : ?>
+                <div class="replies-header">
+                    <h3 class="panel-title">Add Comment</h3>
+                </div>
+            <?php endif; ?>
+        </div>
+
         <div class="panel-body">
-    <?php if (!empty($header)) : ?>
-        <div class="replies-header">
-            <h3><?php print $header ?></h3>
-        </div>
-    <?php endif; ?>
-    <?php if ($reply_form): ?>
-        <div class="replies-form">
-            <?php print render($reply_form) ?>
-        </div>
-    <?php endif; ?>
-    <?php if ($replies = render($replies)): ?>
-    <h4>Replies</h4>
-        <ul class="media-list comment-list">
-            <?php print $replies; ?>
-        </ul>
-    <?php endif; ?>
-    <?php if ($links): ?>
-        <div class="replies-links">
-            <?php print render($links) ?>
-        </div>
-    <?php endif; ?>
+            <div>
+                <?php if ($reply_form): ?>
+                    <?php print render($reply_form) ?>
+                <?php endif; ?>
+
+                <?php if ($links): ?>
+                    <?php print render($links) ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
+
+    <?php if ($replies = render($replies)): ?>
+        <h2 class="pane-title">Comments</h2>
+        <?php print $replies; ?>
+    <?php endif; ?>
+
 </div>

@@ -230,7 +230,7 @@ function its_modelling_projects_views_default_views() {
   $handler->display->display_options['sorts']['field_model_count_value']['field'] = 'field_model_count_value';
   $handler->display->display_options['sorts']['field_model_count_value']['group_type'] = 'sum';
   $handler->display->display_options['sorts']['field_model_count_value']['order'] = 'DESC';
-  $handler->display->display_options['path'] = 'wargaming-decorations/leaderboards/model-count';
+  $handler->display->display_options['path'] = 'community/leaderboards/model-count';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Model Count';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -459,7 +459,7 @@ function its_modelling_projects_views_default_views() {
   $handler->display->display_options['filters']['field_completed_date_models_value']['table'] = 'field_data_field_completed_date_models';
   $handler->display->display_options['filters']['field_completed_date_models_value']['field'] = 'field_completed_date_models_value';
   $handler->display->display_options['filters']['field_completed_date_models_value']['operator'] = 'not empty';
-  $handler->display->display_options['path'] = 'wargaming-decorations/leaderboards/completed-models';
+  $handler->display->display_options['path'] = 'community/leaderboards/completed-models';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Completed Models';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -531,6 +531,93 @@ function its_modelling_projects_views_default_views() {
   $handler->display->display_options['filters']['field_completed_date_models_value']['field'] = 'field_completed_date_models_value';
   $handler->display->display_options['filters']['field_completed_date_models_value']['operator'] = 'not empty';
   $handler->display->display_options['pane_category']['name'] = '';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Top Modellers Panel */
+  $handler = $view->new_display('panel_pane', 'Top Modellers Panel', 'panel_pane_9');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Top Modellers';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'leaderboard';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_2';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = 'field_model_count';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: SUM(Content: Model Count) */
+  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_model_count']['label'] = '';
+  $handler->display->display_options['fields']['field_model_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: SUM(Content: Model Count (field_model_count)) */
+  $handler->display->display_options['sorts']['field_model_count_value']['id'] = 'field_model_count_value';
+  $handler->display->display_options['sorts']['field_model_count_value']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['sorts']['field_model_count_value']['field'] = 'field_model_count_value';
+  $handler->display->display_options['sorts']['field_model_count_value']['group_type'] = 'sum';
+  $handler->display->display_options['sorts']['field_model_count_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  /* Filter criterion: Content: Completed Date (field_completed_date_models) */
+  $handler->display->display_options['filters']['field_completed_date_models_value']['id'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['table'] = 'field_data_field_completed_date_models';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['field'] = 'field_completed_date_models_value';
+  $handler->display->display_options['filters']['field_completed_date_models_value']['operator'] = 'not empty';
+  $handler->display->display_options['pane_category']['name'] = 'Modelling';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['modeling_all_stats'] = $view;
 
