@@ -56,7 +56,7 @@ function user_badges_badgelist_form($form, &$form_state) {
 
   // Build a table listing the appropriate badges.
   foreach ($result as $badge) {
-    $badge->class = 'badge badge-' . $badge->bid . ' ' . drupal_html_class($badge->name);
+    $badge->class = 'user-badges user-badges-' . $badge->bid . ' ' . drupal_html_class($badge->name);
 
     $form['name'][$badge->bid] = array('#value' => check_plain($badge->name));
 

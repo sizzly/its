@@ -648,6 +648,34 @@ function its_modelling_projects_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-models-field_completed_count'.
+  $field_instances['node-models-field_completed_count'] = array(
+    'bundle' => 'models',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_completed_count',
+    'label' => 'Completed_Count',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'computed_field',
+      'settings' => array(),
+      'type' => 'computed',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-models-field_completed_date_models'.
   $field_instances['node-models-field_completed_date_models'] = array(
     'bundle' => 'models',
@@ -711,7 +739,7 @@ function its_modelling_projects_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
@@ -1049,6 +1077,7 @@ function its_modelling_projects_field_default_field_instances() {
   t('Associated Nodes');
   t('Body');
   t('Completed Date');
+  t('Completed_Count');
   t('Gallery');
   t('Image');
   t('Model Count');

@@ -1735,6 +1735,7 @@ dateFormat: "dd-mm-yy"
           // Move from the main form to the secondary options fieldset.
           $children = element_children($form[$identifier]);
           $secondary[$identifier] = $form[$identifier];
+          $secondary[$identifier]['value']['#title'] = $form['#info'][$filter_key]['label'];
           unset($form[$identifier]);
 
           if (1 < count($children)) {
@@ -1758,8 +1759,8 @@ dateFormat: "dd-mm-yy"
           }
 
           // Move exposed operators with exposed filters
-          if (!empty($filters[$label]->options['expose']['use_operator'])) {
-            $op_id = $filters[$label]->options['expose']['operator_id'];
+          if (!empty($this->display->display_options['filters'][$identifier]['expose']['use_operator'])) {
+            $op_id = $this->display->display_options['filters'][$identifier]['expose']['operator_id'];
             $secondary[$op_id] = $form[$op_id];
             unset($form[$op_id]);
 

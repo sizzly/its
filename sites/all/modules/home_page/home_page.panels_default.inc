@@ -45,7 +45,7 @@ function home_page_default_panels_mini() {
   $pane->panel = 'contentmain';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
@@ -81,6 +81,39 @@ function home_page_default_panels_mini() {
   $pane->uuid = '83aa1228-39af-41f0-9fcf-eb46983faa1f';
   $display->content['new-83aa1228-39af-41f0-9fcf-eb46983faa1f'] = $pane;
   $display->panels['contentmain'][0] = 'new-83aa1228-39af-41f0-9fcf-eb46983faa1f';
+  $pane = new stdClass();
+  $pane->pid = 'new-a20395dd-4f08-4d5d-a733-295cd1a9b3c1';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Footer Advert',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '        <!-- /254567099/footer_advert -->
+        <div id=\'div-gpt-ad-1500913228612-0\' class="text-center">
+            <script>
+                googletag.cmd.push(function () {
+                    googletag.display(\'div-gpt-ad-1500913228612-0\');
+                });
+            </script>
+        </div>',
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'a20395dd-4f08-4d5d-a733-295cd1a9b3c1';
+  $display->content['new-a20395dd-4f08-4d5d-a733-295cd1a9b3c1'] = $pane;
+  $display->panels['contentmain'][1] = 'new-a20395dd-4f08-4d5d-a733-295cd1a9b3c1';
   $pane = new stdClass();
   $pane->pid = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
   $pane->panel = 'contentmain';
@@ -179,11 +212,11 @@ function home_page_default_panels_mini() {
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '61d9b7cf-3eae-4411-ba39-efeb091663e2';
   $display->content['new-61d9b7cf-3eae-4411-ba39-efeb091663e2'] = $pane;
-  $display->panels['contentmain'][1] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
+  $display->panels['contentmain'][2] = 'new-61d9b7cf-3eae-4411-ba39-efeb091663e2';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;

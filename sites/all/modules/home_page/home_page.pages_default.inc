@@ -1903,85 +1903,77 @@ Rob</p>
   $pane->configuration = array(
     'admin_title' => 'Page Slider',
     'title' => '',
-    'body' => '<div id="main-slider" class="carousel slide bg-dark" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-        <li data-target="#main-slider" data-slide-to="1"></li>
-        <li data-target="#main-slider" data-slide-to="2"></li>
-        <li data-target="#main-slider" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner">
+    'body' => '<div id="main-slider" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="https://s3.amazonaws.com/itoysoldiers/slider0.png" alt="" class="img-background">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2 class="m-top-lg text-warning">Pulling the hobby together</h2>
-                    <p class="text-white hidden-xs">
-                        No matter what aspect of the hobby is your thing,<br>
-                        iToysoldiers has you covered.                        
-                    </p>
-                    <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
-                </div>
+            <img src="https://s3.amazonaws.com/itoysoldiers/slider0.png" alt="..." class="img-background">
+            <div class="carousel-caption">
+                <h2 class="m-top-lg text-warning">Pulling the hobby together</h2>
+                <p class="text-white hidden-xs">
+                    No matter what aspect of the hobby is your thing,<br>
+                    iToysoldiers has you covered.                        
+                </p>
+                <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
             </div>
         </div>
         <div class="item">
-            <img src="https://s3.amazonaws.com/itoysoldiers/slider1.png" alt="" class="img-background">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2 class="m-top-lg text-warning">Gaming</h2>
-                    <p class="text-white hidden-xs">
+            <img src="https://s3.amazonaws.com/itoysoldiers/slider1.png" alt="..." class="img-background">
+            <div class="carousel-caption">
+                <h2 class="m-top-lg text-warning">Gaming</h2>
+                <p class="text-white hidden-xs">
 
-                        Record the results of your battles.<br>
-                        Earn achievements and renown for your battle field prowess.
+                    Record the results of your battles.<br>
+                    Earn achievements and renown for your battle field prowess.
 
-                    </p>
-                    <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
-                </div>
-
+                </p>
+                <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
             </div>
         </div>
         <div class="item">
-            <img src="https://s3.amazonaws.com/itoysoldiers/slider2.png" alt="" class="img-background">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2 class="m-top-lg text-warning">Modelling</h2>
-                    <p class="text-white hidden-xs">
-                        Show off your armies and modelling projects.                        
-                    </p>
-                    <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
-                </div>
+            <img src="https://s3.amazonaws.com/itoysoldiers/slider2.png" alt="..." class="img-background">
+            <div class="carousel-caption">
+                <h2 class="m-top-lg text-warning">Modelling</h2>
+                <p class="text-white hidden-xs">
+                    Show off your armies and modelling projects.                        
+                </p>
+                <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
             </div>
         </div>
         <div class="item">
-            <img src="https://s3.amazonaws.com/itoysoldiers/slider3.png" alt="" class="img-background">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h2 class="m-top-lg text-warning">Narrative</h2>
-                    <p class="text-white hidden-xs">
-                        Tell the story of your army.                        
-                    </p>
-                    <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
-                </div>
+            <img src="https://s3.amazonaws.com/itoysoldiers/slider3.png" alt="..." class="img-background">
+            <div class="carousel-caption">
+                <h2 class="m-top-lg text-warning">Narrative</h2>
+                <p class="text-white hidden-xs">
+                    Tell the story of your army.                        
+                </p>
+                <a href="/user/register" class="btn btn-danger btn-lg">Sign Up</a>
             </div>
+        </div>
+        <div class="text-center">
+            <span class="lead">Chronicle the Glory of your Miniature Wargaming Armies</span>
+            <span class="inline-block m-top-sm">
+                <a href="/user/register" class="btn btn-info btn-lg m-bottom-sm"><i class="fa fa-sign-in"></i> Join Now</a>
+            </span>
         </div>
     </div>
-    <a class="left carousel-control" href="#main-slider" data-slide="prev">
-        <span class="fa fa-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#main-slider" data-slide="next">
-        <span class="fa fa-chevron-right"></span>
-    </a>
-</div>
 
-<div class="bg-white content-padding text-center font-lg">
-    <span class="m-right-sm">Chronicle the Glory of your Miniature Wargaming Armies</span>
-    <div class="inline-block m-top-sm">
-        <a href="/user/register" class="btn btn-info btn-lg m-bottom-sm"><i class="fa fa-sign-in"></i> Join Now</a>
-    </div>
-</div>
-',
+    <!-- Controls -->
+    <a class="left carousel-control" href="#main-slider" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#main-slider" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>',
     'format' => 'php_code',
     'substitute' => TRUE,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2080,6 +2072,60 @@ Rob</p>
   $display->content['new-366668ef-b583-45ae-acb4-3536c8e4d65b'] = $pane;
   $display->panels['contentmain'][2] = 'new-366668ef-b583-45ae-acb4-3536c8e4d65b';
   $pane = new stdClass();
+  $pane->pid = 'new-b34922b3-83a3-4108-9cc8-1133a6f4ead7';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'home_page_latest_highlights-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'b34922b3-83a3-4108-9cc8-1133a6f4ead7';
+  $display->content['new-b34922b3-83a3-4108-9cc8-1133a6f4ead7'] = $pane;
+  $display->panels['contentmain'][3] = 'new-b34922b3-83a3-4108-9cc8-1133a6f4ead7';
+  $pane = new stdClass();
+  $pane->pid = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Final Call to Action',
+    'title' => '',
+    'body' => '    <div class="panel">
+        <div class="panel-body">
+            <div class="pull-left">
+                <span class="lead">iToysoldiers is a website all about showing off your miniature wargaming exploits.</span>
+                <p>Tell the story of your army for the world to see.</p>
+            </div>
+            <a href="/user/register" class="btn btn-lg btn-danger pull-right m-top-xs">SIGN UP NOW</a>
+        </div>
+    </div>
+',
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'bf3391f0-a8c5-44fd-8647-89c994a5350e';
+  $display->content['new-bf3391f0-a8c5-44fd-8647-89c994a5350e'] = $pane;
+  $display->panels['contentmain'][4] = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
+  $pane = new stdClass();
   $pane->pid = 'new-67043c41-a5e0-4858-a600-e4a3eb592bd2';
   $pane->panel = 'contentmain';
   $pane->type = 'custom';
@@ -2136,11 +2182,11 @@ Rob</p>
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '67043c41-a5e0-4858-a600-e4a3eb592bd2';
   $display->content['new-67043c41-a5e0-4858-a600-e4a3eb592bd2'] = $pane;
-  $display->panels['contentmain'][3] = 'new-67043c41-a5e0-4858-a600-e4a3eb592bd2';
+  $display->panels['contentmain'][5] = 'new-67043c41-a5e0-4858-a600-e4a3eb592bd2';
   $pane = new stdClass();
   $pane->pid = 'new-11a4a34f-938d-4873-9562-07884eb224cb';
   $pane->panel = 'contentmain';
@@ -2170,51 +2216,17 @@ Rob</p>
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = '11a4a34f-938d-4873-9562-07884eb224cb';
   $display->content['new-11a4a34f-938d-4873-9562-07884eb224cb'] = $pane;
-  $display->panels['contentmain'][4] = 'new-11a4a34f-938d-4873-9562-07884eb224cb';
-  $pane = new stdClass();
-  $pane->pid = 'new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
-  $pane->panel = 'contentmain';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Recent Highlights',
-    'title' => '',
-    'body' => '<div id="portfolio">
-    <div class="section-header">
-        <hr class="left visible-lg">
-        <span>
-            RECENT HIGHLIGHTS
-        </span>
-        <hr class="right visible-lg">
-    </div>
-    <?php print views_embed_view("home_page_latest_highlights" , "panel_pane_3"); ?>
-</div>',
-    'format' => 'php_code',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 5;
-  $pane->locks = array();
-  $pane->uuid = '1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
-  $display->content['new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210'] = $pane;
-  $display->panels['contentmain'][5] = 'new-1b1872fc-d3c5-4f6f-a975-af4e49c0c210';
+  $display->panels['contentmain'][6] = 'new-11a4a34f-938d-4873-9562-07884eb224cb';
   $pane = new stdClass();
   $pane->pid = 'new-ee19956f-d9c6-4a8e-be9f-03716ca708bf';
   $pane->panel = 'contentmain';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Call to action',
@@ -2235,11 +2247,11 @@ Rob</p>
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = 'ee19956f-d9c6-4a8e-be9f-03716ca708bf';
   $display->content['new-ee19956f-d9c6-4a8e-be9f-03716ca708bf'] = $pane;
-  $display->panels['contentmain'][6] = 'new-ee19956f-d9c6-4a8e-be9f-03716ca708bf';
+  $display->panels['contentmain'][7] = 'new-ee19956f-d9c6-4a8e-be9f-03716ca708bf';
   $pane = new stdClass();
   $pane->pid = 'new-5ae99014-2458-450a-8e4e-1cab82a588cd';
   $pane->panel = 'contentmain';
@@ -2273,11 +2285,11 @@ Rob</p>
     'css_class' => 'clearfix',
   );
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '5ae99014-2458-450a-8e4e-1cab82a588cd';
   $display->content['new-5ae99014-2458-450a-8e4e-1cab82a588cd'] = $pane;
-  $display->panels['contentmain'][7] = 'new-5ae99014-2458-450a-8e4e-1cab82a588cd';
+  $display->panels['contentmain'][8] = 'new-5ae99014-2458-450a-8e4e-1cab82a588cd';
   $pane = new stdClass();
   $pane->pid = 'new-a1f76a7f-623f-4877-8240-230c9793fcbe';
   $pane->panel = 'contentmain';
@@ -2295,77 +2307,11 @@ Rob</p>
     'css_class' => 'bg-light padding-md',
   );
   $pane->extras = array();
-  $pane->position = 8;
+  $pane->position = 9;
   $pane->locks = array();
   $pane->uuid = 'a1f76a7f-623f-4877-8240-230c9793fcbe';
   $display->content['new-a1f76a7f-623f-4877-8240-230c9793fcbe'] = $pane;
-  $display->panels['contentmain'][8] = 'new-a1f76a7f-623f-4877-8240-230c9793fcbe';
-  $pane = new stdClass();
-  $pane->pid = 'new-824d81c9-f53c-450d-b610-73d0cd3311f2';
-  $pane->panel = 'contentmain';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Newsletter Signup',
-    'title' => '',
-    'body' => '<div class="bg-white">
-  <div class="text-center content-padding" id="contact">
-      <h3>NEWSLETTER SIGNUP</h3>
-      <p class="m-bottom-md">Subscribing to our newsletter you will always be update with the latest news from us.</p>
-      <script type="text/javascript" src="http://l.itoysoldiers.com/index.php/form/generate.js?id=7"></script>
-  </div>
-</div>',
-    'format' => 'php_code',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 9;
-  $pane->locks = array();
-  $pane->uuid = '824d81c9-f53c-450d-b610-73d0cd3311f2';
-  $display->content['new-824d81c9-f53c-450d-b610-73d0cd3311f2'] = $pane;
-  $display->panels['contentmain'][9] = 'new-824d81c9-f53c-450d-b610-73d0cd3311f2';
-  $pane = new stdClass();
-  $pane->pid = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
-  $pane->panel = 'contentmain';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Final Call to Action',
-    'title' => '',
-    'body' => '<div class="content-padding bg-light">
-    <div class="panel">
-        <div class="panel-body content-padding">
-            <div class="pull-left">
-                <p class="font-lg">iToysoldiers is a website all about showing off your miniature wargaming exploits.</p>
-                <p class="text-muted">Tell the story of your army for the world to see.</p>
-            </div>
-            <a href="/user/register" class="btn btn-lg btn-danger pull-right m-top-xs">SIGN UP NOW</a>
-        </div>
-    </div>
-</div>',
-    'format' => 'pure_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 10;
-  $pane->locks = array();
-  $pane->uuid = 'bf3391f0-a8c5-44fd-8647-89c994a5350e';
-  $display->content['new-bf3391f0-a8c5-44fd-8647-89c994a5350e'] = $pane;
-  $display->panels['contentmain'][10] = 'new-bf3391f0-a8c5-44fd-8647-89c994a5350e';
+  $display->panels['contentmain'][9] = 'new-a1f76a7f-623f-4877-8240-230c9793fcbe';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

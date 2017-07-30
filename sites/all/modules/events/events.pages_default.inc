@@ -995,6 +995,36 @@ theater/events',
   $display->content['new-a5c09156-6476-46fc-99d5-dabe670e459a'] = $pane;
   $display->panels['contentmain'][5] = 'new-a5c09156-6476-46fc-99d5-dabe670e459a';
   $pane = new stdClass();
+  $pane->pid = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
+  $pane->panel = 'footer';
+  $pane->type = 'node_body';
+  $pane->subtype = 'node_body';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Details',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7369f905-2ee7-46b1-84de-d3bde7bb58d2';
+  $display->content['new-7369f905-2ee7-46b1-84de-d3bde7bb58d2'] = $pane;
+  $display->panels['footer'][0] = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
+  $pane = new stdClass();
   $pane->pid = 'new-fdbc0602-61bd-426b-bd94-66548d5b9361';
   $pane->panel = 'footer';
   $pane->type = 'views_panes';
@@ -1004,15 +1034,54 @@ theater/events',
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'fdbc0602-61bd-426b-bd94-66548d5b9361';
   $display->content['new-fdbc0602-61bd-426b-bd94-66548d5b9361'] = $pane;
-  $display->panels['footer'][0] = 'new-fdbc0602-61bd-426b-bd94-66548d5b9361';
+  $display->panels['footer'][1] = 'new-fdbc0602-61bd-426b-bd94-66548d5b9361';
+  $pane = new stdClass();
+  $pane->pid = 'new-78c18cdd-5c5e-4f65-9525-552cbe798805';
+  $pane->panel = 'footer';
+  $pane->type = 'node_comment_form';
+  $pane->subtype = 'node_comment_form';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'anon_links' => 0,
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '78c18cdd-5c5e-4f65-9525-552cbe798805';
+  $display->content['new-78c18cdd-5c5e-4f65-9525-552cbe798805'] = $pane;
+  $display->panels['footer'][2] = 'new-78c18cdd-5c5e-4f65-9525-552cbe798805';
   $pane = new stdClass();
   $pane->pid = 'new-0488a145-f331-4ced-b94b-7fcb61b59192';
   $pane->panel = 'footer';
@@ -1034,11 +1103,11 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '0488a145-f331-4ced-b94b-7fcb61b59192';
   $display->content['new-0488a145-f331-4ced-b94b-7fcb61b59192'] = $pane;
-  $display->panels['footer'][1] = 'new-0488a145-f331-4ced-b94b-7fcb61b59192';
+  $display->panels['footer'][3] = 'new-0488a145-f331-4ced-b94b-7fcb61b59192';
   $pane = new stdClass();
   $pane->pid = 'new-610b3760-d84c-4d02-aa5b-18e0737d11f3';
   $pane->panel = 'header';
@@ -1104,7 +1173,10 @@ theater/events',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -1143,7 +1215,10 @@ theater/events',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
@@ -1323,74 +1398,19 @@ theater/events',
   $pane->uuid = '58772607-eb9f-4aed-b594-9927105c5f99';
   $display->content['new-58772607-eb9f-4aed-b594-9927105c5f99'] = $pane;
   $display->panels['sidebar'][6] = 'new-58772607-eb9f-4aed-b594-9927105c5f99';
-  $pane = new stdClass();
-  $pane->pid = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
-  $pane->panel = 'sidebar';
-  $pane->type = 'node_body';
-  $pane->subtype = 'node_body';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => 'Details',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'use_title' => 1,
-      'use_footer' => 0,
-      'panel_body' => 1,
-      'footer_content' => '',
-      'context_class' => 'panel-default',
-    ),
-    'style' => 'bootstrap_panel',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 7;
-  $pane->locks = array();
-  $pane->uuid = '7369f905-2ee7-46b1-84de-d3bde7bb58d2';
-  $display->content['new-7369f905-2ee7-46b1-84de-d3bde7bb58d2'] = $pane;
-  $display->panels['sidebar'][7] = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
-  $pane = new stdClass();
-  $pane->pid = 'new-78c18cdd-5c5e-4f65-9525-552cbe798805';
-  $pane->panel = 'sidebar';
-  $pane->type = 'node_comment_form';
-  $pane->subtype = 'node_comment_form';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'anon_links' => 0,
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 8;
-  $pane->locks = array();
-  $pane->uuid = '78c18cdd-5c5e-4f65-9525-552cbe798805';
-  $display->content['new-78c18cdd-5c5e-4f65-9525-552cbe798805'] = $pane;
-  $display->panels['sidebar'][8] = 'new-78c18cdd-5c5e-4f65-9525-552cbe798805';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_9'] = $handler;
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'term_view_panel_context_5';
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -4;
   $handler->conf = array(
     'title' => 'Event Type',
     'no_blocks' => 0,

@@ -344,7 +344,7 @@ Displaying @start - @end of @total
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'listcrit/all-army-lists';
+  $handler->display->display_options['path'] = 'gaming/listcrit/all-army-lists';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'All Lists';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -663,7 +663,7 @@ Displaying @start - @end of @total
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'listcrit/trending';
+  $handler->display->display_options['path'] = 'gaming/listcrit/trending';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Trending';
   $handler->display->display_options['menu']['description'] = 'Popular Army Lists';
@@ -726,7 +726,7 @@ Displaying @start - @end of @total
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'listcrit/my-army-lists';
+  $handler->display->display_options['path'] = 'gaming/listcrit/my-army-lists';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'My Lists';
   $handler->display->display_options['menu']['description'] = 'Your Army Lists';
@@ -826,7 +826,7 @@ Displaying @start - @end of @total
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'listcrit/followed-army-lists';
+  $handler->display->display_options['path'] = 'gaming/listcrit/followed-army-lists';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Following';
   $handler->display->display_options['menu']['description'] = 'Army lists by players you follow';
@@ -894,9 +894,10 @@ Displaying @start - @end of @total
 
   /* Display: Primary Meta */
   $handler = $view->new_display('panel_pane', 'Primary Meta', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'List Meta';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'list-group';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -925,7 +926,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_your_army']['alter']['path'] = 'taxonomy/term/[field_your_army-tid]';
   $handler->display->display_options['fields']['field_your_army']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_your_army']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_your_army']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_your_army']['element_wrapper_class'] = 'meta-item';
   $handler->display->display_options['fields']['field_your_army']['element_default_classes'] = FALSE;
   /* Field: Field: Points per army */
   $handler->display->display_options['fields']['field_points_per_army']['id'] = 'field_points_per_army';
@@ -946,7 +947,7 @@ Displaying @start - @end of @total
 </div>';
   $handler->display->display_options['fields']['field_points_per_army']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_points_per_army']['element_wrapper_class'] = 'meta-item';
   $handler->display->display_options['fields']['field_points_per_army']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_points_per_army']['empty'] = '<div class="hidden-xs hidden-sm col-md-6">
 <div class="panel-stat3 bg-grey">
@@ -982,7 +983,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_batteresult_commander']['alter']['path'] = 'taxonomy/term/[field_batteresult_commander-tid]';
   $handler->display->display_options['fields']['field_batteresult_commander']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_batteresult_commander']['element_wrapper_class'] = 'meta-item';
   $handler->display->display_options['fields']['field_batteresult_commander']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_batteresult_commander']['hide_empty'] = TRUE;
   /* Field: Content: Tactical Focus */
@@ -1005,7 +1006,7 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['field_tactical_focus']['alter']['path'] = 'taxonomy/term/[field_tactical_focus-tid] ';
   $handler->display->display_options['fields']['field_tactical_focus']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tactical_focus']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_tactical_focus']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_tactical_focus']['element_wrapper_class'] = 'meta-item';
   $handler->display->display_options['fields']['field_tactical_focus']['element_default_classes'] = FALSE;
   /* Field: Content: Doctrine */
   $handler->display->display_options['fields']['field_doctrine']['id'] = 'field_doctrine';
@@ -1026,7 +1027,7 @@ Displaying @start - @end of @total
 </div>';
   $handler->display->display_options['fields']['field_doctrine']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_doctrine']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_doctrine']['element_wrapper_class'] = 'list-group-item';
+  $handler->display->display_options['fields']['field_doctrine']['element_wrapper_class'] = 'meta-item';
   $handler->display->display_options['fields']['field_doctrine']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_doctrine']['hide_empty'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'ListCrit';
@@ -1365,6 +1366,173 @@ Displaying @start - @end of @total
   $export['listcrit_all_page_layout'] = $view;
 
   $view = new view();
+  $view->name = 'listcrit_main_page_timeline';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'message';
+  $view->human_name = 'ListCrit: Main Page: Timeline';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'ListCrit Actions';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_timeline_icon';
+  $handler->display->display_options['style_options']['heading_field'] = 'message_render';
+  $handler->display->display_options['style_options']['body_field'] = '';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['id'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['table'] = 'field_data_field_stream_node_ref';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['field'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['required'] = TRUE;
+  /* Field: Message: Message ID */
+  $handler->display->display_options['fields']['mid']['id'] = 'mid';
+  $handler->display->display_options['fields']['mid']['table'] = 'message';
+  $handler->display->display_options['fields']['mid']['field'] = 'mid';
+  /* Field: Message: Timeline Icon */
+  $handler->display->display_options['fields']['field_timeline_icon']['id'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['table'] = 'field_data_field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['field'] = 'field_timeline_icon';
+  $handler->display->display_options['fields']['field_timeline_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_timeline_icon']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_timeline_icon']['alter']['text'] = '<span class="fa fw [field_timeline_icon-value]"></span>';
+  $handler->display->display_options['fields']['field_timeline_icon']['element_label_colon'] = FALSE;
+  /* Field: Message: Render message (Get text) */
+  $handler->display->display_options['fields']['message_render']['id'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['table'] = 'message';
+  $handler->display->display_options['fields']['message_render']['field'] = 'message_render';
+  $handler->display->display_options['fields']['message_render']['label'] = '';
+  $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['message_render']['partials'] = 0;
+  $handler->display->display_options['fields']['message_render']['partials_delta'] = '0';
+  /* Sort criterion: Message: Timestamp */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'message';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listcrit' => 'listcrit',
+  );
+
+  /* Display: Recent Activity */
+  $handler = $view->new_display('panel_pane', 'Recent Activity', 'panel_pane_1');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'All Actions';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pane_category']['name'] = 'Gaming';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['path'] = 'gaming/listcrit/timeline';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Timeline';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Top Players */
+  $handler = $view->new_display('panel_pane', 'Top Players', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Top Players';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'picture';
+  $handler->display->display_options['style_options']['heading_field'] = 'name';
+  $handler->display->display_options['style_options']['body_field'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['id'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['table'] = 'field_data_field_stream_node_ref';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['field'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['relationships']['field_stream_node_ref_target_id']['required'] = TRUE;
+  /* Relationship: Message: User uid */
+  $handler->display->display_options['relationships']['user']['id'] = 'user';
+  $handler->display->display_options['relationships']['user']['table'] = 'message';
+  $handler->display->display_options['relationships']['user']['field'] = 'user';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'user';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'user';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'button';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Message: Message ID */
+  $handler->display->display_options['sorts']['mid']['id'] = 'mid';
+  $handler->display->display_options['sorts']['mid']['table'] = 'message';
+  $handler->display->display_options['sorts']['mid']['field'] = 'mid';
+  $handler->display->display_options['sorts']['mid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['sorts']['mid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_stream_node_ref_target_id';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listcrit' => 'listcrit',
+  );
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'user';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['pane_category']['name'] = 'Gaming';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['listcrit_main_page_timeline'] = $view;
+
+  $view = new view();
   $view->name = 'listcrit_meta_page_layout';
   $view->description = 'Generates panels for the list crit landing pages.';
   $view->tag = 'ListCrit 2.0';
@@ -1587,7 +1755,7 @@ Displaying @start - @end of @total
   /* Display: Categories */
   $handler = $view->new_display('panel_pane', 'Categories', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'ListCrit Categorization';
+  $handler->display->display_options['title'] = 'ListCrit Meta';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';

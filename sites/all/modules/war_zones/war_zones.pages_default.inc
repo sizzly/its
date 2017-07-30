@@ -2390,7 +2390,7 @@ Manage',
   $pages['war_zone_all_update_management'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'war_zone_landing_page';
   $page->task = 'page';
@@ -2399,7 +2399,7 @@ Manage',
   $page->path = 'theater/warzone';
   $page->access = array();
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'none',
     'title' => 'War Zones',
     'name' => 'main-menu',
     'weight' => '0',
@@ -2829,7 +2829,14 @@ Manage',
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -2848,7 +2855,14 @@ Manage',
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -2887,55 +2901,6 @@ Manage',
   $display->content['new-595564dd-216b-46ce-a90a-ee5fd51b010d'] = $pane;
   $display->panels['header'][0] = 'new-595564dd-216b-46ce-a90a-ee5fd51b010d';
   $pane = new stdClass();
-  $pane->pid = 'new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
-  $pane->panel = 'header';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Nav',
-    'title' => '',
-    'body' => '<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Theaters</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/theater/battlefield">Battlefields</a></li>
-        <li><a href="/theater/events">Events</a></li>
-        <li><a href="/gaming-clubs">Clubs</a></li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>',
-    'format' => 'pure_html',
-    'substitute' => TRUE,
-    'title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
-  $display->content['new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5'] = $pane;
-  $display->panels['header'][1] = 'new-c2b6aed7-555c-4b61-86f2-4e89c91dfdd5';
-  $pane = new stdClass();
   $pane->pid = 'new-a638f55d-281b-4f2f-9a0f-8057843edab0';
   $pane->panel = 'sidebar';
   $pane->type = 'custom';
@@ -2955,7 +2920,14 @@ Manage',
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -2974,7 +2946,14 @@ Manage',
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();

@@ -45,8 +45,10 @@ function its_modelling_projects_default_page_manager_handlers() {
       ),
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Modeling Projects',
-    'panels_breadcrumbs_paths' => 'munitions/modeling-projects',
+    'panels_breadcrumbs_titles' => 'Modelling
+Projects',
+    'panels_breadcrumbs_paths' => 'modelling
+modelling/projects',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
@@ -85,7 +87,7 @@ function its_modelling_projects_default_page_manager_handlers() {
     'settings' => array(
       'use_title' => 1,
       'use_footer' => 0,
-      'panel_body' => 0,
+      'panel_body' => 1,
       'footer_content' => '',
       'context_class' => 'panel-default',
     ),
@@ -166,7 +168,14 @@ function its_modelling_projects_default_page_manager_handlers() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -185,7 +194,14 @@ function its_modelling_projects_default_page_manager_handlers() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -210,7 +226,14 @@ function its_modelling_projects_default_page_manager_handlers() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -236,6 +259,7 @@ function its_modelling_projects_default_page_manager_handlers() {
   );
   $pane->cache = array();
   $pane->style = array(
+    'style' => 'default',
     'settings' => NULL,
   );
   $pane->css = array();
@@ -279,10 +303,10 @@ function its_modelling_projects_default_page_manager_handlers() {
   $display->content['new-ebb53366-08a9-402f-8d0d-2e965c44ca09'] = $pane;
   $display->panels['header'][0] = 'new-ebb53366-08a9-402f-8d0d-2e965c44ca09';
   $pane = new stdClass();
-  $pane->pid = 'new-a739e5a7-7249-44b6-b294-08526262489c';
+  $pane->pid = 'new-9f7093e8-9f54-4ee0-8179-1c5dce8b72fd';
   $pane->panel = 'header';
   $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_page_layout-panel_pane_4';
+  $pane->subtype = 'models_all_page_layout-panel_pane_3';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array();
@@ -290,108 +314,42 @@ function its_modelling_projects_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'a739e5a7-7249-44b6-b294-08526262489c';
-  $display->content['new-a739e5a7-7249-44b6-b294-08526262489c'] = $pane;
-  $display->panels['header'][1] = 'new-a739e5a7-7249-44b6-b294-08526262489c';
+  $pane->uuid = '9f7093e8-9f54-4ee0-8179-1c5dce8b72fd';
+  $display->content['new-9f7093e8-9f54-4ee0-8179-1c5dce8b72fd'] = $pane;
+  $display->panels['header'][1] = 'new-9f7093e8-9f54-4ee0-8179-1c5dce8b72fd';
   $pane = new stdClass();
-  $pane->pid = 'new-57443598-2352-4fee-bc86-3804e8dc5dae';
+  $pane->pid = 'new-cf18e827-23f0-45b6-9f89-c941663a85be';
   $pane->panel = 'sidebar';
   $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_page_layout-panel_pane_5';
+  $pane->subtype = 'models_all_page_layout-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '57443598-2352-4fee-bc86-3804e8dc5dae';
-  $display->content['new-57443598-2352-4fee-bc86-3804e8dc5dae'] = $pane;
-  $display->panels['sidebar'][0] = 'new-57443598-2352-4fee-bc86-3804e8dc5dae';
-  $pane = new stdClass();
-  $pane->pid = 'new-98828f1d-3878-4221-a6c1-0fcf126a8809';
-  $pane->panel = 'sidebar';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_page_layout-panel_pane_6';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '98828f1d-3878-4221-a6c1-0fcf126a8809';
-  $display->content['new-98828f1d-3878-4221-a6c1-0fcf126a8809'] = $pane;
-  $display->panels['sidebar'][1] = 'new-98828f1d-3878-4221-a6c1-0fcf126a8809';
-  $pane = new stdClass();
-  $pane->pid = 'new-23651111-9b47-4802-a622-04305d559b20';
-  $pane->panel = 'sidebar';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_page_layout-panel_pane_7';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '23651111-9b47-4802-a622-04305d559b20';
-  $display->content['new-23651111-9b47-4802-a622-04305d559b20'] = $pane;
-  $display->panels['sidebar'][2] = 'new-23651111-9b47-4802-a622-04305d559b20';
-  $pane = new stdClass();
-  $pane->pid = 'new-6678267a-fdee-44c8-9edf-3e544d09e40d';
-  $pane->panel = 'sidebar';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_page_layout-panel_pane_8';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '6678267a-fdee-44c8-9edf-3e544d09e40d';
-  $display->content['new-6678267a-fdee-44c8-9edf-3e544d09e40d'] = $pane;
-  $display->panels['sidebar'][3] = 'new-6678267a-fdee-44c8-9edf-3e544d09e40d';
-  $pane = new stdClass();
-  $pane->pid = 'new-986f3ddc-8e88-4881-bb2e-d9c7f72a2a2f';
-  $pane->panel = 'sidebar';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_page_layout-panel_pane_9';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = '986f3ddc-8e88-4881-bb2e-d9c7f72a2a2f';
-  $display->content['new-986f3ddc-8e88-4881-bb2e-d9c7f72a2a2f'] = $pane;
-  $display->panels['sidebar'][4] = 'new-986f3ddc-8e88-4881-bb2e-d9c7f72a2a2f';
+  $pane->uuid = 'cf18e827-23f0-45b6-9f89-c941663a85be';
+  $display->content['new-cf18e827-23f0-45b6-9f89-c941663a85be'] = $pane;
+  $display->panels['sidebar'][0] = 'new-cf18e827-23f0-45b6-9f89-c941663a85be';
   $pane = new stdClass();
   $pane->pid = 'new-44bc328d-be02-441e-a39f-286c2e836be5';
   $pane->panel = 'sidebar';
@@ -418,11 +376,11 @@ function its_modelling_projects_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '44bc328d-be02-441e-a39f-286c2e836be5';
   $display->content['new-44bc328d-be02-441e-a39f-286c2e836be5'] = $pane;
-  $display->panels['sidebar'][5] = 'new-44bc328d-be02-441e-a39f-286c2e836be5';
+  $display->panels['sidebar'][1] = 'new-44bc328d-be02-441e-a39f-286c2e836be5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -442,7 +400,7 @@ function its_modelling_projects_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Modeling Landing Page';
   $page->admin_description = '';
-  $page->path = 'munitions/modeling-projects/main';
+  $page->path = 'modelling/projects/main';
   $page->access = array();
   $page->menu = array(
     'type' => 'default tab',
@@ -451,7 +409,7 @@ function its_modelling_projects_default_page_manager_pages() {
     'weight' => '-50',
     'parent' => array(
       'type' => 'normal',
-      'title' => 'Modeling Projects',
+      'title' => 'Projects',
       'name' => 'main-menu',
       'weight' => '0',
     ),
@@ -507,7 +465,7 @@ function its_modelling_projects_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its2';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -519,6 +477,7 @@ function its_modelling_projects_default_page_manager_pages() {
       'contentmainright' => NULL,
       'contentmainleft' => NULL,
       'footer' => NULL,
+      'contentmain' => NULL,
     ),
   );
   $display->cache = array();
@@ -529,8 +488,86 @@ function its_modelling_projects_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-c98a5239-4a43-48cc-9168-569766b76439';
-  $pane->panel = 'contentmainbottom';
+  $pane->pid = 'new-e08c7d88-b8b4-45ea-8337-ab99dcf139d0';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'models_all_lists-panel_pane_5';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e08c7d88-b8b4-45ea-8337-ab99dcf139d0';
+  $display->content['new-e08c7d88-b8b4-45ea-8337-ab99dcf139d0'] = $pane;
+  $display->panels['contentmain'][0] = 'new-e08c7d88-b8b4-45ea-8337-ab99dcf139d0';
+  $pane = new stdClass();
+  $pane->pid = 'new-eedc46ba-9e94-426b-9198-73359790748e';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'models_all_lists-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'eedc46ba-9e94-426b-9198-73359790748e';
+  $display->content['new-eedc46ba-9e94-426b-9198-73359790748e'] = $pane;
+  $display->panels['contentmain'][1] = 'new-eedc46ba-9e94-426b-9198-73359790748e';
+  $pane = new stdClass();
+  $pane->pid = 'new-796056c9-8cb0-40fc-be14-86cd43f93ef8';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'models_all_lists-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '796056c9-8cb0-40fc-be14-86cd43f93ef8';
+  $display->content['new-796056c9-8cb0-40fc-be14-86cd43f93ef8'] = $pane;
+  $display->panels['contentmain'][2] = 'new-796056c9-8cb0-40fc-be14-86cd43f93ef8';
+  $pane = new stdClass();
+  $pane->pid = 'new-5e34cecc-03ca-4c1d-8943-45231924c243';
+  $pane->panel = 'footer';
   $pane->type = 'views_panes';
   $pane->subtype = 'core_all_node_timeline-panel_pane_5';
   $pane->shown = TRUE;
@@ -548,291 +585,9 @@ function its_modelling_projects_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'c98a5239-4a43-48cc-9168-569766b76439';
-  $display->content['new-c98a5239-4a43-48cc-9168-569766b76439'] = $pane;
-  $display->panels['contentmainbottom'][0] = 'new-c98a5239-4a43-48cc-9168-569766b76439';
-  $pane = new stdClass();
-  $pane->pid = 'new-7ed3acb8-1780-42e9-a00b-fe51663fee4c';
-  $pane->panel = 'contentmainleft';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 1,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'admin_title' => 'Copy: Anonymous',
-    'title' => 'Track Your Hobby Progress',
-    'body' => '<p>Modeling Projects at iToysoldiers let you keep track of and share your hobby progress and model collections. &nbsp;How it works:</p>
-<p>* Submit a collection of models</p>
-<p>* Mark the collection started</p>
-<p>* Post updates and photos as you go</p>
-<p>* Mark the collection completed</p>
-<p>* Bask in the glory of your army</p>
-<p class="text-center"><a href="/user/register" class="btn btn-primary">Get Started with Modeling Projects Now</a></p>
-<div class="well well-sm">
-<p>Oh! And we also have a <a href="/widgets">“current project” widget</a> for your blog.&nbsp;</p>
-<p>Here’s an example with my information for you to envy.</p>
-        <div class="text-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Example Widget
-            </button>
-        </div>
-</div>
-         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Example</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!--insert Widget Code Here -->
-                        <script type="text/javascript">
-                            widgetContext = {"url": "\\/widget\\/current-project\\/16?width=100%\\u0026height=450", "width": "100%", "height": "450", "widgetid": "web_widget_iframe_3975b96452893d309931aec92087cae8", "scrolling": "auto"};
-                        </script>
-                        <script id="web_widget_iframe_3975b96452893d309931aec92087cae8" src="/sites/all/modules/web_widgets/iframe/web_widgets_iframe.js"></script>
-
-                    </div>
-                    <div class="modal-footer">
-                      <a href="/widgets" class="btn btn-primary">All Widgets</a>
-                    </div>
-                </div>
-            </div>
-        </div>',
-    'format' => 'pure_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '7ed3acb8-1780-42e9-a00b-fe51663fee4c';
-  $display->content['new-7ed3acb8-1780-42e9-a00b-fe51663fee4c'] = $pane;
-  $display->panels['contentmainleft'][0] = 'new-7ed3acb8-1780-42e9-a00b-fe51663fee4c';
-  $pane = new stdClass();
-  $pane->pid = 'new-d69e3e9f-1b0d-43ea-9d73-e7cee87722e2';
-  $pane->panel = 'contentmainleft';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 2,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'admin_title' => 'Copy : Authenticated',
-    'title' => 'Track Your Hobby Progress',
-    'body' => '<p>Modeling Projects at iToysoldiers let you keep track of and share your hobby progress and model collections. &nbsp;How it works:</p>
-<p>* Submit a collection of models</p>
-<p>* Mark the collection started</p>
-<p>* Post updates and photos as you go</p>
-<p>* Mark the collection completed</p>
-<p>* Bask in the glory of your army</p>
-<p class="text-center"><a href="/node/add/models" class="btn btn-primary">Get Started with Modeling Projects Now</a></p>
-<div class="well well-sm">
-<p>Oh! And we also have a <a href="/widgets">“current project” widget</a> for your blog.&nbsp;</p>
-<p>Here’s an example with my information for you to envy.</p>
-        <div class="text-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Example Widget
-            </button>
-        </div>
-</div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Example</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!--insert Widget Code Here -->
-                        <script type="text/javascript">
-                            widgetContext = {"url": "\\/widget\\/current-project\\/16?width=100%\\u0026height=450", "width": "100%", "height": "450", "widgetid": "web_widget_iframe_3975b96452893d309931aec92087cae8", "scrolling": "auto"};
-                        </script>
-                        <script id="web_widget_iframe_3975b96452893d309931aec92087cae8" src="/sites/all/modules/web_widgets/iframe/web_widgets_iframe.js"></script>
-
-                    </div>
-                    <div class="modal-footer">
-                      <a href="/widgets" class="btn btn-primary">All Widgets</a>
-                    </div>
-                </div>
-            </div>
-        </div>',
-    'format' => 'pure_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'd69e3e9f-1b0d-43ea-9d73-e7cee87722e2';
-  $display->content['new-d69e3e9f-1b0d-43ea-9d73-e7cee87722e2'] = $pane;
-  $display->panels['contentmainleft'][1] = 'new-d69e3e9f-1b0d-43ea-9d73-e7cee87722e2';
-  $pane = new stdClass();
-  $pane->pid = 'new-58de779b-4364-43e8-b8ec-13eafaeb6c17';
-  $pane->panel = 'contentmainleft';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Stats Summary',
-    'title' => 'Stat Summary',
-    'body' => '<div class="list-group">
-    <div class="list-group-item">
-        <div class="media">
-            <div class="media-left pull-left">
-                <div class="activity-icon small">
-                    <i class="fa fa-cogs"></i>
-                </div>
-            </div>
-            <div class="media-body">
-                <strong class="font-14">Modeling Projects</strong>
-                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_1"); ?></span></div>
-            </div>
-        </div>
-    </div>
-    <div class="list-group-item">
-        <div class="media">
-            <div class="media-left pull-left">
-                <div class="activity-icon small">
-                    <i class="fa fa-plus-square"></i>
-                </div>
-            </div>
-            <div class="media-body">
-                <strong class="font-14">Aquired Models</strong>
-                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_2"); ?></span></div>
-            </div>
-        </div>
-    </div>
-    <div class="list-group-item">
-        <div class="media">
-            <div class="media-left pull-left">
-                <div class="activity-icon small">
-                    <i class="fa fa-paint-brush"></i>
-                </div>
-            </div>
-            <div class="media-body">
-                <strong class="font-14">Models Completed</strong>
-                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_3"); ?></span></div>
-            </div>
-        </div>
-    </div>
-    <div class="list-group-item">
-        <div class="media">
-            <div class="media-left pull-left">
-                <div class="activity-icon small">
-                    <i class="fa fa-bookmark"></i>
-                </div>
-            </div>
-            <div class="media-body">
-                <strong class="font-14">Factions</strong>
-                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_4"); ?></span></div>
-            </div>
-        </div>
-    </div>
-    <div class="list-group-item">
-        <div class="media">
-            <div class="media-left pull-left">
-                <div class="activity-icon small">
-                    <i class="fa fa-trophy"></i>
-                </div>
-            </div>
-            <div class="media-body">
-                <strong class="font-14"><?php print views_embed_view("modeling_all_stats", "panel_pane_8"); ?></strong>
-                <div class="text-muted">Most Completed Models</div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="text-center">
-    <a href="/munitions/modeling-projects/stats" class="btn btn-default" data-dismiss="modal">All Stats</a>
-</div>',
-    'format' => 'php_code',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '58de779b-4364-43e8-b8ec-13eafaeb6c17';
-  $display->content['new-58de779b-4364-43e8-b8ec-13eafaeb6c17'] = $pane;
-  $display->panels['contentmainleft'][2] = 'new-58de779b-4364-43e8-b8ec-13eafaeb6c17';
-  $pane = new stdClass();
-  $pane->pid = 'new-796056c9-8cb0-40fc-be14-86cd43f93ef8';
-  $pane->panel = 'contentmainright';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_lists-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '796056c9-8cb0-40fc-be14-86cd43f93ef8';
-  $display->content['new-796056c9-8cb0-40fc-be14-86cd43f93ef8'] = $pane;
-  $display->panels['contentmainright'][0] = 'new-796056c9-8cb0-40fc-be14-86cd43f93ef8';
-  $pane = new stdClass();
-  $pane->pid = 'new-eedc46ba-9e94-426b-9198-73359790748e';
-  $pane->panel = 'contentmainright';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'models_all_lists-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'eedc46ba-9e94-426b-9198-73359790748e';
-  $display->content['new-eedc46ba-9e94-426b-9198-73359790748e'] = $pane;
-  $display->panels['contentmainright'][1] = 'new-eedc46ba-9e94-426b-9198-73359790748e';
+  $pane->uuid = '5e34cecc-03ca-4c1d-8943-45231924c243';
+  $display->content['new-5e34cecc-03ca-4c1d-8943-45231924c243'] = $pane;
+  $display->panels['footer'][0] = 'new-5e34cecc-03ca-4c1d-8943-45231924c243';
   $pane = new stdClass();
   $pane->pid = 'new-c1ce1a88-e34c-4f55-9a09-e46489b73381';
   $pane->panel = 'header';
@@ -860,6 +615,214 @@ function its_modelling_projects_default_page_manager_pages() {
   $pane->uuid = 'c1ce1a88-e34c-4f55-9a09-e46489b73381';
   $display->content['new-c1ce1a88-e34c-4f55-9a09-e46489b73381'] = $pane;
   $display->panels['header'][0] = 'new-c1ce1a88-e34c-4f55-9a09-e46489b73381';
+  $pane = new stdClass();
+  $pane->pid = 'new-d69e3e9f-1b0d-43ea-9d73-e7cee87722e2';
+  $pane->panel = 'sidebar';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Copy : Authenticated',
+    'title' => 'Track Your Hobby Progress',
+    'body' => '<p>Modeling Projects at iToysoldiers let you keep track of and share your hobby progress and model collections. &nbsp;How it works:</p>
+<p>* Submit a collection of models</p>
+<p>* Mark the collection started</p>
+<p>* Post updates and photos as you go</p>
+<p>* Mark the collection completed</p>
+<p>* Bask in the glory of your army</p>
+<p class="text-center"><a href="/node/add/models" class="btn btn-primary">Get Started with Modeling Projects Now</a></p>
+',
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd69e3e9f-1b0d-43ea-9d73-e7cee87722e2';
+  $display->content['new-d69e3e9f-1b0d-43ea-9d73-e7cee87722e2'] = $pane;
+  $display->panels['sidebar'][0] = 'new-d69e3e9f-1b0d-43ea-9d73-e7cee87722e2';
+  $pane = new stdClass();
+  $pane->pid = 'new-7ed3acb8-1780-42e9-a00b-fe51663fee4c';
+  $pane->panel = 'sidebar';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'admin_title' => 'Copy: Anonymous',
+    'title' => 'Track Your Hobby Progress',
+    'body' => '<p>Modeling Projects at iToysoldiers let you keep track of and share your hobby progress and model collections. &nbsp;How it works:</p>
+<p>* Submit a collection of models</p>
+<p>* Mark the collection started</p>
+<p>* Post updates and photos as you go</p>
+<p>* Mark the collection completed</p>
+<p>* Bask in the glory of your army</p>
+<p class="text-center"><a href="/user/register" class="btn btn-primary">Get Started with Modeling Projects Now</a></p>
+',
+    'format' => 'pure_html',
+    'substitute' => TRUE,
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '7ed3acb8-1780-42e9-a00b-fe51663fee4c';
+  $display->content['new-7ed3acb8-1780-42e9-a00b-fe51663fee4c'] = $pane;
+  $display->panels['sidebar'][1] = 'new-7ed3acb8-1780-42e9-a00b-fe51663fee4c';
+  $pane = new stdClass();
+  $pane->pid = 'new-58de779b-4364-43e8-b8ec-13eafaeb6c17';
+  $pane->panel = 'sidebar';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Stats Summary',
+    'title' => 'Stat Summary',
+    'body' => '<div>
+    <div class="meta-item">
+        <div class="media">
+            <div class="media-left pull-left">
+                <div class="activity-icon small">
+                    <i class="fa fa-cogs"></i>
+                </div>
+            </div>
+            <div class="media-body">
+                <strong class="font-14">Modeling Projects</strong>
+                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_1"); ?></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="meta-item">
+        <div class="media">
+            <div class="media-left pull-left">
+                <div class="activity-icon small">
+                    <i class="fa fa-plus-square"></i>
+                </div>
+            </div>
+            <div class="media-body">
+                <strong class="font-14">Aquired Models</strong>
+                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_2"); ?></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="meta-item">
+        <div class="media">
+            <div class="media-left pull-left">
+                <div class="activity-icon small">
+                    <i class="fa fa-paint-brush"></i>
+                </div>
+            </div>
+            <div class="media-body">
+                <strong class="font-14">Models Completed</strong>
+                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_3"); ?></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="meta-item">
+        <div class="media">
+            <div class="media-left pull-left">
+                <div class="activity-icon small">
+                    <i class="fa fa-bookmark"></i>
+                </div>
+            </div>
+            <div class="media-body">
+                <strong class="font-14">Factions</strong>
+                <div class="text-muted"><span class="badge"><?php print views_embed_view("modeling_all_stats", "panel_pane_4"); ?></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="meta-item">
+        <div class="media">
+            <div class="media-left pull-left">
+                <div class="activity-icon small">
+                    <i class="fa fa-trophy"></i>
+                </div>
+            </div>
+            <div class="media-body">
+                <strong class="font-14"><?php print views_embed_view("modeling_all_stats", "panel_pane_8"); ?></strong>
+                <div class="text-muted">Most Completed Models</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <a href="/modelling/projects/stats" class="btn btn-default">All Stats</a>
+</div>',
+    'format' => 'php_code',
+    'substitute' => TRUE,
+    'title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '58de779b-4364-43e8-b8ec-13eafaeb6c17';
+  $display->content['new-58de779b-4364-43e8-b8ec-13eafaeb6c17'] = $pane;
+  $display->panels['sidebar'][2] = 'new-58de779b-4364-43e8-b8ec-13eafaeb6c17';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-c1ce1a88-e34c-4f55-9a09-e46489b73381';
   $handler->conf['display'] = $display;
@@ -873,12 +836,12 @@ function its_modelling_projects_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Modeling Project Stats';
   $page->admin_description = '';
-  $page->path = 'munitions/modeling-projects/stats';
+  $page->path = 'modelling/projects/stats';
   $page->access = array();
   $page->menu = array(
     'type' => 'tab',
     'title' => 'Stats',
-    'name' => 'navigation',
+    'name' => 'main-menu',
     'weight' => '50',
     'parent' => array(
       'type' => 'none',
@@ -941,7 +904,14 @@ function its_modelling_projects_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -960,7 +930,14 @@ function its_modelling_projects_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -979,8 +956,7 @@ function its_modelling_projects_default_page_manager_pages() {
   $pane->configuration = array(
     'admin_title' => 'Top Row',
     'title' => '',
-    'body' => '<div class="row">
-    <div class="padding-md">
+    'body' => '    <div class="padding-md">
         <div class="row">
             <div class="col-sm-6 col-md-3">
                 <a href="/munitions/modeling-projects/list">
@@ -1026,13 +1002,14 @@ function its_modelling_projects_default_page_manager_pages() {
                 </div>
             </div><!-- /.col -->
         </div>
-    </div>
-</div>',
+    </div>',
     'format' => 'php_code',
     'substitute' => TRUE,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
+    'style' => 'default',
     'settings' => NULL,
   );
   $pane->css = array();
@@ -1052,7 +1029,14 @@ function its_modelling_projects_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -1068,7 +1052,7 @@ function its_modelling_projects_default_page_manager_pages() {
   $pages['modeling_project_stats'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'munitions_landing_page';
   $page->task = 'page';
@@ -1077,7 +1061,7 @@ function its_modelling_projects_default_page_manager_pages() {
   $page->path = 'munitions';
   $page->access = array();
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'none',
     'title' => 'Munitions',
     'name' => 'main-menu',
     'weight' => '0',

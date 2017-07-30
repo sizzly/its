@@ -271,7 +271,14 @@ galleries',
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -290,7 +297,14 @@ galleries',
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -315,7 +329,14 @@ galleries',
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -387,10 +408,10 @@ galleries',
   $display->content['new-5acf59ac-3d3f-416d-9fa2-c1f0a978440b'] = $pane;
   $display->panels['header'][0] = 'new-5acf59ac-3d3f-416d-9fa2-c1f0a978440b';
   $pane = new stdClass();
-  $pane->pid = 'new-01085437-22f4-4acd-9306-c449678efbb3';
+  $pane->pid = 'new-124b33ea-2b07-4807-b620-68d68cbe75ce';
   $pane->panel = 'header';
   $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_5';
+  $pane->subtype = 'core_all_node_layout-panel_pane_3';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array();
@@ -398,13 +419,16 @@ galleries',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '01085437-22f4-4acd-9306-c449678efbb3';
-  $display->content['new-01085437-22f4-4acd-9306-c449678efbb3'] = $pane;
-  $display->panels['header'][1] = 'new-01085437-22f4-4acd-9306-c449678efbb3';
+  $pane->uuid = '124b33ea-2b07-4807-b620-68d68cbe75ce';
+  $display->content['new-124b33ea-2b07-4807-b620-68d68cbe75ce'] = $pane;
+  $display->panels['header'][1] = 'new-124b33ea-2b07-4807-b620-68d68cbe75ce';
   $pane = new stdClass();
   $pane->pid = 'new-f8b80232-d77e-4dd2-aef0-a87d90dd2bd3';
   $pane->panel = 'sidebar';

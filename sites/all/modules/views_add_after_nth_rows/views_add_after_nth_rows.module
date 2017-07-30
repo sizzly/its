@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Add html textarea in views list after certain number of rows.
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function views_add_after_nth_rows_views_api() {
+  return array(
+    'api' => '3.0',
+    'path' => drupal_get_path('module', 'views_add_after_nth_rows') . '/includes/views',
+  );
+}
+
+/**
+ * Implements hook_views_data().
+ */
+function views_add_after_nth_rows_views_data() {
+
+  $data['views']['nthrow'] = array(
+    'title' => t('Add Custom text for nth rows'),
+    'help' => t('Display custom text/html after certain number of rows.'),
+    'field' => array(
+      'handler' => 'views_add_after_nth_rows_handler_field',
+    ),
+  );
+  return $data;
+}

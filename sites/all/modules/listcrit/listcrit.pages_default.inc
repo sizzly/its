@@ -214,12 +214,14 @@ function listcrit_default_page_manager_handlers() {
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'ListCrit',
-    'panels_breadcrumbs_paths' => 'listcrit',
+    'panels_breadcrumbs_titles' => 'Gaming
+ListCrit',
+    'panels_breadcrumbs_paths' => 'gaming
+gaming/listcrit',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its2';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -231,6 +233,7 @@ function listcrit_default_page_manager_handlers() {
       'contentmainright' => NULL,
       'contentmainleft' => NULL,
       'footer' => NULL,
+      'contentmain' => NULL,
     ),
   );
   $display->cache = array();
@@ -241,89 +244,8 @@ function listcrit_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-2283d6be-adb9-46c2-9ce6-5b022937b90b';
-  $pane->panel = 'contentmainbottom';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_3';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '2283d6be-adb9-46c2-9ce6-5b022937b90b';
-  $display->content['new-2283d6be-adb9-46c2-9ce6-5b022937b90b'] = $pane;
-  $display->panels['contentmainbottom'][0] = 'new-2283d6be-adb9-46c2-9ce6-5b022937b90b';
-  $pane = new stdClass();
-  $pane->pid = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
-  $pane->panel = 'contentmainbottom';
-  $pane->type = 'node_body';
-  $pane->subtype = 'node_body';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '760550aa-4af8-4acc-8f45-b3f05a0e4828';
-  $display->content['new-760550aa-4af8-4acc-8f45-b3f05a0e4828'] = $pane;
-  $display->panels['contentmainbottom'][1] = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
-  $pane = new stdClass();
-  $pane->pid = 'new-043cb46c-4687-4ddb-8c91-c810103190d5';
-  $pane->panel = 'contentmainleft';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '043cb46c-4687-4ddb-8c91-c810103190d5';
-  $display->content['new-043cb46c-4687-4ddb-8c91-c810103190d5'] = $pane;
-  $display->panels['contentmainleft'][0] = 'new-043cb46c-4687-4ddb-8c91-c810103190d5';
-  $pane = new stdClass();
-  $pane->pid = 'new-db26f124-e580-4ac1-82b8-d0db64392945';
-  $pane->panel = 'contentmainright';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'listcrit_all_page_layout-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'db26f124-e580-4ac1-82b8-d0db64392945';
-  $display->content['new-db26f124-e580-4ac1-82b8-d0db64392945'] = $pane;
-  $display->panels['contentmainright'][0] = 'new-db26f124-e580-4ac1-82b8-d0db64392945';
-  $pane = new stdClass();
-  $pane->pid = 'new-e1565f82-59d8-42ec-b23a-83dd0d742d76';
-  $pane->panel = 'contentmainright';
+  $pane->pid = 'new-6c53d282-8151-4705-919c-0378d093dc6e';
+  $pane->panel = 'contentmain';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_rate_content';
   $pane->shown = TRUE;
@@ -342,34 +264,111 @@ function listcrit_default_page_manager_handlers() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'e1565f82-59d8-42ec-b23a-83dd0d742d76';
-  $display->content['new-e1565f82-59d8-42ec-b23a-83dd0d742d76'] = $pane;
-  $display->panels['contentmainright'][1] = 'new-e1565f82-59d8-42ec-b23a-83dd0d742d76';
-  $pane = new stdClass();
-  $pane->pid = 'new-abb1884a-ae8e-4088-a616-e9c25929e0bf';
-  $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'listcrit_all_page_layout-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'abb1884a-ae8e-4088-a616-e9c25929e0bf';
-  $display->content['new-abb1884a-ae8e-4088-a616-e9c25929e0bf'] = $pane;
-  $display->panels['footer'][0] = 'new-abb1884a-ae8e-4088-a616-e9c25929e0bf';
+  $pane->uuid = '6c53d282-8151-4705-919c-0378d093dc6e';
+  $display->content['new-6c53d282-8151-4705-919c-0378d093dc6e'] = $pane;
+  $display->panels['contentmain'][0] = 'new-6c53d282-8151-4705-919c-0378d093dc6e';
+  $pane = new stdClass();
+  $pane->pid = 'new-a927d6bd-d062-4c15-bf2f-c7d804f38260';
+  $pane->panel = 'contentmain';
+  $pane->type = 'sharethis';
+  $pane->subtype = 'sharethis';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'path' => 'current',
+    'path-external' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Share',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'a927d6bd-d062-4c15-bf2f-c7d804f38260';
+  $display->content['new-a927d6bd-d062-4c15-bf2f-c7d804f38260'] = $pane;
+  $display->panels['contentmain'][1] = 'new-a927d6bd-d062-4c15-bf2f-c7d804f38260';
+  $pane = new stdClass();
+  $pane->pid = 'new-8c78aed6-c271-4dc8-b0f7-9336ec884d12';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_node_similar_by_term-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '8c78aed6-c271-4dc8-b0f7-9336ec884d12';
+  $display->content['new-8c78aed6-c271-4dc8-b0f7-9336ec884d12'] = $pane;
+  $display->panels['contentmain'][2] = 'new-8c78aed6-c271-4dc8-b0f7-9336ec884d12';
+  $pane = new stdClass();
+  $pane->pid = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
+  $pane->panel = 'footer';
+  $pane->type = 'node_body';
+  $pane->subtype = 'node_body';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'List and Tactics',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '760550aa-4af8-4acc-8f45-b3f05a0e4828';
+  $display->content['new-760550aa-4af8-4acc-8f45-b3f05a0e4828'] = $pane;
+  $display->panels['footer'][0] = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
   $pane = new stdClass();
   $pane->pid = 'new-7a41320a-488f-4905-98ef-eadc9f8f9641';
   $pane->panel = 'footer';
@@ -380,7 +379,14 @@ function listcrit_default_page_manager_handlers() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -390,78 +396,37 @@ function listcrit_default_page_manager_handlers() {
   $display->content['new-7a41320a-488f-4905-98ef-eadc9f8f9641'] = $pane;
   $display->panels['footer'][1] = 'new-7a41320a-488f-4905-98ef-eadc9f8f9641';
   $pane = new stdClass();
-  $pane->pid = 'new-93e963a5-5f04-4ee4-b967-09363968f701';
+  $pane->pid = 'new-75f89721-038f-428e-ace3-e3801f87cdc5';
   $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_node_trending_content-panel_pane_1';
+  $pane->type = 'node_comment_form';
+  $pane->subtype = 'node_comment_form';
   $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 1,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => TRUE,
-      ),
-    ),
+  $pane->access = array();
+  $pane->configuration = array(
+    'anon_links' => 0,
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
-  $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = '93e963a5-5f04-4ee4-b967-09363968f701';
-  $display->content['new-93e963a5-5f04-4ee4-b967-09363968f701'] = $pane;
-  $display->panels['footer'][2] = 'new-93e963a5-5f04-4ee4-b967-09363968f701';
-  $pane = new stdClass();
-  $pane->pid = 'new-5373d93c-0175-440a-a125-4e7471029cc9';
-  $pane->panel = 'footer';
-  $pane->type = 'custom';
-  $pane->subtype = 'posts_update_no_battle';
-  $pane->shown = TRUE;
-  $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 2,
-            1 => 3,
-            2 => 9,
-            3 => 8,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
-  );
-  $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'body' => '',
-    'format' => 'filtered_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '5373d93c-0175-440a-a125-4e7471029cc9';
-  $display->content['new-5373d93c-0175-440a-a125-4e7471029cc9'] = $pane;
-  $display->panels['footer'][3] = 'new-5373d93c-0175-440a-a125-4e7471029cc9';
+  $pane->uuid = '75f89721-038f-428e-ace3-e3801f87cdc5';
+  $display->content['new-75f89721-038f-428e-ace3-e3801f87cdc5'] = $pane;
+  $display->panels['footer'][2] = 'new-75f89721-038f-428e-ace3-e3801f87cdc5';
   $pane = new stdClass();
   $pane->pid = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
   $pane->panel = 'footer';
@@ -483,24 +448,105 @@ function listcrit_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
   $display->content['new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4'] = $pane;
-  $display->panels['footer'][4] = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
+  $display->panels['footer'][3] = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
+  $pane = new stdClass();
+  $pane->pid = 'new-58da19c2-93cc-4f03-a688-b09c28b12f43';
+  $pane->panel = 'header';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_image';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'title',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'image_style' => 'hero_image_newsletter',
+      'image_link' => '',
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '58da19c2-93cc-4f03-a688-b09c28b12f43';
+  $display->content['new-58da19c2-93cc-4f03-a688-b09c28b12f43'] = $pane;
+  $display->panels['header'][0] = 'new-58da19c2-93cc-4f03-a688-b09c28b12f43';
+  $pane = new stdClass();
+  $pane->pid = 'new-2283d6be-adb9-46c2-9ce6-5b022937b90b';
+  $pane->panel = 'header';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_layout-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '2283d6be-adb9-46c2-9ce6-5b022937b90b';
+  $display->content['new-2283d6be-adb9-46c2-9ce6-5b022937b90b'] = $pane;
+  $display->panels['header'][1] = 'new-2283d6be-adb9-46c2-9ce6-5b022937b90b';
+  $pane = new stdClass();
+  $pane->pid = 'new-db26f124-e580-4ac1-82b8-d0db64392945';
+  $pane->panel = 'sidebar';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'listcrit_all_page_layout-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'db26f124-e580-4ac1-82b8-d0db64392945';
+  $display->content['new-db26f124-e580-4ac1-82b8-d0db64392945'] = $pane;
+  $display->panels['sidebar'][0] = 'new-db26f124-e580-4ac1-82b8-d0db64392945';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__list_crit'] = $handler;
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'term_view__listcrit_meta';
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
+  $handler->weight = -4;
   $handler->conf = array(
     'title' => 'ListCrit Meta',
     'no_blocks' => 0,
@@ -672,7 +718,7 @@ function listcrit_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'List Crit Main Page';
   $page->admin_description = '';
-  $page->path = 'listcrit/main';
+  $page->path = 'gaming/listcrit/main';
   $page->access = array();
   $page->menu = array(
     'type' => 'default tab',
@@ -681,7 +727,7 @@ function listcrit_default_page_manager_pages() {
     'weight' => '-100',
     'parent' => array(
       'type' => 'normal',
-      'title' => 'ListCrit',
+      'title' => 'Army Lists',
       'name' => 'main-menu',
       'weight' => '0',
     ),
@@ -710,14 +756,22 @@ function listcrit_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Gaming',
-    'panels_breadcrumbs_paths' => 'gaming',
+    'panels_breadcrumbs_titles' => 'Gaming
+',
+    'panels_breadcrumbs_paths' => 'gaming
+',
     'panels_breadcrumbs_home' => 1,
     'metatag_panels' => array(
       'enabled' => 1,
       'metatags' => array(
         'title' => array(
           'value' => 'ListCrit - Peer reviewed army lists',
+        ),
+        'description' => array(
+          'value' => 'ListCrit on iToysoldiers is the perfect place to find peer reviewed and assessed army lists for all of your favorite miniature wargames. Conveniently categorized by meta data and army, you can find great lists to use with your army or review what opposing commanders are using with their armies.',
+        ),
+        'keywords' => array(
+          'value' => 'army lists, netlists, rate army lists',
         ),
         'robots' => array(
           'value' => array(
@@ -737,7 +791,7 @@ function listcrit_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_its2';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -749,6 +803,7 @@ function listcrit_default_page_manager_pages() {
       'contentmainright' => NULL,
       'contentmainleft' => NULL,
       'footer' => NULL,
+      'contentmain' => NULL,
     ),
   );
   $display->cache = array();
@@ -759,8 +814,60 @@ function listcrit_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-aa7869fc-d01d-4ff2-a99b-789064dcb865';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'listcrit_meta_page_layout-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'style' => 'bootstrap_panel',
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'aa7869fc-d01d-4ff2-a99b-789064dcb865';
+  $display->content['new-aa7869fc-d01d-4ff2-a99b-789064dcb865'] = $pane;
+  $display->panels['contentmain'][0] = 'new-aa7869fc-d01d-4ff2-a99b-789064dcb865';
+  $pane = new stdClass();
+  $pane->pid = 'new-72cac0a3-e12a-400d-b1fe-2bff9c411950';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'listcrit_main_page_timeline-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '72cac0a3-e12a-400d-b1fe-2bff9c411950';
+  $display->content['new-72cac0a3-e12a-400d-b1fe-2bff9c411950'] = $pane;
+  $display->panels['contentmain'][1] = 'new-72cac0a3-e12a-400d-b1fe-2bff9c411950';
+  $pane = new stdClass();
   $pane->pid = 'new-7cf8d596-b12e-4045-b97d-85c9342434c4';
-  $pane->panel = 'contentmainbottom';
+  $pane->panel = 'footer';
   $pane->type = 'views_panes';
   $pane->subtype = 'listcrit_all_lists-panel_pane_2';
   $pane->shown = TRUE;
@@ -776,72 +883,7 @@ function listcrit_default_page_manager_pages() {
   $pane->locks = array();
   $pane->uuid = '7cf8d596-b12e-4045-b97d-85c9342434c4';
   $display->content['new-7cf8d596-b12e-4045-b97d-85c9342434c4'] = $pane;
-  $display->panels['contentmainbottom'][0] = 'new-7cf8d596-b12e-4045-b97d-85c9342434c4';
-  $pane = new stdClass();
-  $pane->pid = 'new-71102378-3ebf-41e0-b6c5-820409bccda3';
-  $pane->panel = 'contentmainleft';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'listcrit_all_lists-panel_pane_3';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'style' => 'default',
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '71102378-3ebf-41e0-b6c5-820409bccda3';
-  $display->content['new-71102378-3ebf-41e0-b6c5-820409bccda3'] = $pane;
-  $display->panels['contentmainleft'][0] = 'new-71102378-3ebf-41e0-b6c5-820409bccda3';
-  $pane = new stdClass();
-  $pane->pid = 'new-aa7869fc-d01d-4ff2-a99b-789064dcb865';
-  $pane->panel = 'contentmainright';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'listcrit_meta_page_layout-panel_pane_3';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'style' => 'default',
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'aa7869fc-d01d-4ff2-a99b-789064dcb865';
-  $display->content['new-aa7869fc-d01d-4ff2-a99b-789064dcb865'] = $pane;
-  $display->panels['contentmainright'][0] = 'new-aa7869fc-d01d-4ff2-a99b-789064dcb865';
-  $pane = new stdClass();
-  $pane->pid = 'new-03951300-c2a8-4920-a1c5-244055830127';
-  $pane->panel = 'contentmaintop';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Write Up',
-    'title' => 'Are You Hard Enough?',
-    'body' => 'ListCrit on iToysoldiers is the perfect place to find peer reviewed and assessed army lists for all of your favorite miniature wargames. Conveniently categorized by meta data and army, you can find great lists to use with your army or review what opposing commanders are using with their armies.',
-    'format' => 'filtered_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '03951300-c2a8-4920-a1c5-244055830127';
-  $display->content['new-03951300-c2a8-4920-a1c5-244055830127'] = $pane;
-  $display->panels['contentmaintop'][0] = 'new-03951300-c2a8-4920-a1c5-244055830127';
+  $display->panels['footer'][0] = 'new-7cf8d596-b12e-4045-b97d-85c9342434c4';
   $pane = new stdClass();
   $pane->pid = 'new-fdedd176-bf73-415d-8fb4-3082d9cbdba9';
   $pane->panel = 'header';
@@ -872,54 +914,63 @@ function listcrit_default_page_manager_pages() {
   $display->content['new-fdedd176-bf73-415d-8fb4-3082d9cbdba9'] = $pane;
   $display->panels['header'][0] = 'new-fdedd176-bf73-415d-8fb4-3082d9cbdba9';
   $pane = new stdClass();
-  $pane->pid = 'new-a0cb04cb-da21-4841-b0e1-92cdac3f11c4';
+  $pane->pid = 'new-03951300-c2a8-4920-a1c5-244055830127';
   $pane->panel = 'sidebar';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => '',
-    'title' => 'ListCrit = Netlists',
-    'body' => '<p>ListCrit on iToysoldiers is the perfect place to find peer reviewed and assessed army lists for all of your favorite miniature wargames. Conveniently categorized by meta data and army, you can find great lists to use with your army or review what opposing commanders are using with their armies.</p>
-',
+    'admin_title' => 'Write Up',
+    'title' => 'Are You Hard Enough?',
+    'body' => 'ListCrit on iToysoldiers is the perfect place to find peer reviewed and assessed army lists for all of your favorite miniature wargames. Conveniently categorized by meta data and army, you can find great lists to use with your army or review what opposing commanders are using with their armies.',
     'format' => 'filtered_html',
     'substitute' => TRUE,
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'a0cb04cb-da21-4841-b0e1-92cdac3f11c4';
-  $display->content['new-a0cb04cb-da21-4841-b0e1-92cdac3f11c4'] = $pane;
-  $display->panels['sidebar'][0] = 'new-a0cb04cb-da21-4841-b0e1-92cdac3f11c4';
+  $pane->uuid = '03951300-c2a8-4920-a1c5-244055830127';
+  $display->content['new-03951300-c2a8-4920-a1c5-244055830127'] = $pane;
+  $display->panels['sidebar'][0] = 'new-03951300-c2a8-4920-a1c5-244055830127';
   $pane = new stdClass();
-  $pane->pid = 'new-3bcb7be3-4248-4eef-af09-4b08bc778a12';
+  $pane->pid = 'new-c09efee2-c6d7-4819-9fea-691b76f940e9';
   $pane->panel = 'sidebar';
-  $pane->type = 'block';
-  $pane->subtype = 'dfp-its1_left_sidebar';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'listcrit_main_page_timeline-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
+  $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '3bcb7be3-4248-4eef-af09-4b08bc778a12';
-  $display->content['new-3bcb7be3-4248-4eef-af09-4b08bc778a12'] = $pane;
-  $display->panels['sidebar'][1] = 'new-3bcb7be3-4248-4eef-af09-4b08bc778a12';
+  $pane->uuid = 'c09efee2-c6d7-4819-9fea-691b76f940e9';
+  $display->content['new-c09efee2-c6d7-4819-9fea-691b76f940e9'] = $pane;
+  $display->panels['sidebar'][1] = 'new-c09efee2-c6d7-4819-9fea-691b76f940e9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

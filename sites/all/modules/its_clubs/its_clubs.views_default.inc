@@ -1380,7 +1380,7 @@ function its_clubs_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['path'] = 'gaming-clubs/list';
+  $handler->display->display_options['path'] = 'theater/gaming-clubs/list';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All Clubs';
   $handler->display->display_options['menu']['description'] = 'List of all Gaming Clubs on iToysoldiers';

@@ -63,7 +63,7 @@ function its_articles_and_feed_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_article';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_form_location_article'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -115,10 +115,10 @@ function its_articles_and_feed_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'ical' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -290,6 +290,16 @@ function its_articles_and_feed_strongarm() {
   $strongarm->name = 'pathauto_node_article_pattern';
   $strongarm->value = '';
   $export['pathauto_node_article_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_article';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.4',
+  );
+  $export['xmlsitemap_settings_node_article'] = $strongarm;
 
   return $export;
 }

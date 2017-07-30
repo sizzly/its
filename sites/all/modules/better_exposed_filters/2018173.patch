@@ -1,0 +1,12 @@
+diff --git a/sites/all/modules/better_exposed_filters/better_exposed_filters_exposed_form_plugin.inc b/sites/all/modules/better_exposed_filters/better_exposed_filters_exposed_form_plugin.inc
+index 4cdc074..2eef8da 100644
+--- a/sites/all/modules/better_exposed_filters/better_exposed_filters_exposed_form_plugin.inc
++++ b/sites/all/modules/better_exposed_filters/better_exposed_filters_exposed_form_plugin.inc
+@@ -1735,6 +1735,7 @@ dateFormat: "dd-mm-yy"
+           // Move from the main form to the secondary options fieldset.
+           $children = element_children($form[$identifier]);
+           $secondary[$identifier] = $form[$identifier];
++          $secondary[$identifier]['value']['#title'] = $form['#info'][$filter_key]['label'];
+           unset($form[$identifier]);
+ 
+           if (1 < count($children)) {

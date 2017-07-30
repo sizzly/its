@@ -292,6 +292,7 @@ function its_views_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'All Achivements';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'wargaming-decorations/achievements/list';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All Achievements';
@@ -1671,15 +1672,6 @@ function its_views_views_default_views() {
     'image_style' => '',
     'image_link' => 'content',
   );
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['text'] = '[field_address-locality]  [field_address-administrative_area]  [field_address-country]';
-  $handler->display->display_options['fields']['field_address']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
   /* Field: Content: Location type */
   $handler->display->display_options['fields']['field_location_type']['id'] = 'field_location_type';
   $handler->display->display_options['fields']['field_location_type']['table'] = 'field_data_field_location_type';
@@ -1839,6 +1831,7 @@ function its_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'warzone/battlefield/list';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'List';
@@ -3793,209 +3786,6 @@ Salute  Comment  Share
   $export['join_now_all_content_displays'] = $view;
 
   $view = new view();
-  $view->name = 'location_map_data';
-  $view->description = 'Location data layer for a map';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Location map data';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Location map data';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'openlayers_data';
-  $handler->display->display_options['style_options']['data_source'] = array(
-    'value' => 'wkt',
-    'other_lat' => 'field_geolocation',
-    'other_lon' => 'field_geolocation',
-    'wkt' => 'field_geolocation',
-    'other_top' => 'title',
-    'other_right' => 'title',
-    'other_bottom' => 'title',
-    'other_left' => 'title',
-    'name_field' => 'title',
-    'description_field' => '',
-    'view_mode' => 'full',
-    'style_field' => '',
-  );
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Location type (field_location_type) */
-  $handler->display->display_options['relationships']['field_location_type_tid']['id'] = 'field_location_type_tid';
-  $handler->display->display_options['relationships']['field_location_type_tid']['table'] = 'field_data_field_location_type';
-  $handler->display->display_options['relationships']['field_location_type_tid']['field'] = 'field_location_type_tid';
-  $handler->display->display_options['relationships']['field_location_type_tid']['label'] = 'Location type term';
-  /* Relationship: File Usage: File */
-  $handler->display->display_options['relationships']['taxonomy_term_to_file']['id'] = 'taxonomy_term_to_file';
-  $handler->display->display_options['relationships']['taxonomy_term_to_file']['table'] = 'file_usage';
-  $handler->display->display_options['relationships']['taxonomy_term_to_file']['field'] = 'taxonomy_term_to_file';
-  $handler->display->display_options['relationships']['taxonomy_term_to_file']['relationship'] = 'field_location_type_tid';
-  $handler->display->display_options['relationships']['taxonomy_term_to_file']['label'] = 'Location icon file';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Geolocation */
-  $handler->display->display_options['fields']['field_geolocation']['id'] = 'field_geolocation';
-  $handler->display->display_options['fields']['field_geolocation']['table'] = 'field_data_field_geolocation';
-  $handler->display->display_options['fields']['field_geolocation']['field'] = 'field_geolocation';
-  $handler->display->display_options['fields']['field_geolocation']['label'] = '';
-  $handler->display->display_options['fields']['field_geolocation']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_geolocation']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_geolocation']['click_sort_column'] = 'geom';
-  $handler->display->display_options['fields']['field_geolocation']['settings'] = array(
-    'data' => 'full',
-  );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: File: Path */
-  $handler->display->display_options['fields']['uri']['id'] = 'uri';
-  $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
-  $handler->display->display_options['fields']['uri']['field'] = 'uri';
-  $handler->display->display_options['fields']['uri']['relationship'] = 'taxonomy_term_to_file';
-  $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'location' => 'location',
-  );
-  /* Filter criterion: Content: Has taxonomy terms (with depth) */
-  $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['label'] = 'Has taxonomy terms (with depth)';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
-  $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'location_type';
-  $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
-  $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '1';
-  /* Filter criterion: Field: Geolocation (field_geolocation:lat) */
-  $handler->display->display_options['filters']['field_geolocation_lat']['id'] = 'field_geolocation_lat';
-  $handler->display->display_options['filters']['field_geolocation_lat']['table'] = 'field_data_field_geolocation';
-  $handler->display->display_options['filters']['field_geolocation_lat']['field'] = 'field_geolocation_lat';
-  $handler->display->display_options['filters']['field_geolocation_lat']['operator'] = 'not empty';
-
-  /* Display: OpenLayers Data Overlay */
-  $handler = $view->new_display('openlayers', 'OpenLayers Data Overlay', 'openlayers_1');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Geolocation */
-  $handler->display->display_options['fields']['field_geolocation']['id'] = 'field_geolocation';
-  $handler->display->display_options['fields']['field_geolocation']['table'] = 'field_data_field_geolocation';
-  $handler->display->display_options['fields']['field_geolocation']['field'] = 'field_geolocation';
-  $handler->display->display_options['fields']['field_geolocation']['label'] = '';
-  $handler->display->display_options['fields']['field_geolocation']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_geolocation']['click_sort_column'] = 'geom';
-  $handler->display->display_options['fields']['field_geolocation']['settings'] = array(
-    'data' => 'full',
-  );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: File: Path */
-  $handler->display->display_options['fields']['uri']['id'] = 'uri';
-  $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
-  $handler->display->display_options['fields']['uri']['field'] = 'uri';
-  $handler->display->display_options['fields']['uri']['relationship'] = 'taxonomy_term_to_file';
-  $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'location' => 'location',
-  );
-  /* Filter criterion: Content: Has taxonomy terms (with depth) */
-  $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['value'] = array(
-    137 => '137',
-    320 => '320',
-    136 => '136',
-  );
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['label'] = 'Has taxonomy terms (with depth)';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'term_node_tid_depth';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
-  $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'location_type';
-  $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
-  $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '1';
-  /* Filter criterion: Field: Geolocation (field_geolocation:lat) */
-  $handler->display->display_options['filters']['field_geolocation_lat']['id'] = 'field_geolocation_lat';
-  $handler->display->display_options['filters']['field_geolocation_lat']['table'] = 'field_data_field_geolocation';
-  $handler->display->display_options['filters']['field_geolocation_lat']['field'] = 'field_geolocation_lat';
-  $handler->display->display_options['filters']['field_geolocation_lat']['operator'] = 'not empty';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'location_map';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['path'] = 'test-2';
-  $export['location_map_data'] = $view;
-
-  $view = new view();
   $view->name = 'messages_all_lists_of_messages';
   $view->description = '';
   $view->tag = 'default';
@@ -4924,10 +4714,11 @@ Salute  Comment  Share
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'munitions/modeling-projects/list';
+  $handler->display->display_options['path'] = 'modelling/projects/list';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'All';
   $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
@@ -5269,7 +5060,7 @@ Salute  Comment  Share
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'munitions/modeling-projects/my-projects';
+  $handler->display->display_options['path'] = 'modelling/projects/my-projects';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'My Projects';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -5595,7 +5386,7 @@ Salute  Comment  Share
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'munitions/modeling-projects/trending';
+  $handler->display->display_options['path'] = 'modelling/projects/trending';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Trending';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -5945,7 +5736,7 @@ Salute  Comment  Share
       ),
     ),
   );
-  $handler->display->display_options['path'] = 'munitions/modeling-projects/following-list';
+  $handler->display->display_options['path'] = 'modelling/projects/following-list';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Following';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -5966,7 +5757,7 @@ Salute  Comment  Share
   $handler->display->display_options['link_display'] = 'page_1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
@@ -6036,7 +5827,7 @@ Salute  Comment  Share
   $handler->display->display_options['link_display'] = 'page_3';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
@@ -6112,7 +5903,7 @@ Salute  Comment  Share
   $handler->display->display_options['link_display'] = 'page_1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
@@ -6247,6 +6038,134 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['field_completed_date_models_value']['operator'] = 'not empty';
   $handler->display->display_options['pane_category']['name'] = 'Modelling';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Player Projects */
+  $handler = $view->new_display('panel_pane', 'Player Projects', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Your Projects';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_2';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_media_plugin_style';
+  $handler->display->display_options['style_options']['image_field'] = 'field_image';
+  $handler->display->display_options['style_options']['heading_field'] = 'title';
+  $handler->display->display_options['style_options']['body_field'] = 'field_army_models';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'Anonymous CTA';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="lead">Join Now</div>
+<p>Your models could be here!</p>
+<a href="/user/register" class="btn btn-default">Register</a>
+<p><div class="small"><a href="/joinnow">Learn more</a></div></p>';
+  $handler->display->display_options['empty']['area']['format'] = 'pure_html';
+  $handler->display->display_options['empty']['area']['roles_fieldset'] = array(
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 0,
+      'administrator' => 0,
+      'verified' => 0,
+      'Ironmonger' => 0,
+      'System' => 0,
+    ),
+  );
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['empty']['area_1']['table'] = 'views';
+  $handler->display->display_options['empty']['area_1']['field'] = 'area';
+  $handler->display->display_options['empty']['area_1']['label'] = 'Authenticated CTA';
+  $handler->display->display_options['empty']['area_1']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_1']['content'] = '<div class="lead">No Projects</div>
+
+<a href="/node/add/models" class="btn btn-default">Create One Now</a>';
+  $handler->display->display_options['empty']['area_1']['format'] = 'pure_html';
+  $handler->display->display_options['empty']['area_1']['roles_fieldset'] = array(
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+      'anonymous user' => 0,
+      'administrator' => 0,
+      'verified' => 0,
+      'Ironmonger' => 0,
+      'System' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Army */
+  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['label'] = '';
+  $handler->display->display_options['fields']['field_army_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_army_models']['empty'] = 'Other';
+  $handler->display->display_options['fields']['field_army_models']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'button',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Radioactivity (field_radioactivity:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['id'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['table'] = 'field_data_field_radioactivity';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['field'] = 'field_radioactivity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_radioactivity_radioactivity_energy']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  $handler->display->display_options['pane_category']['name'] = 'Model Projects';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['models_all_lists'] = $view;
 
   $view = new view();
@@ -6378,37 +6297,6 @@ Salute  Comment  Share
     'rules_link_parameters' => '',
     'rules_link_rewrite' => '',
   );
-  $handler->display->display_options['pane_category']['name'] = 'Model Projects';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Tools and Status */
-  $handler = $view->new_display('panel_pane', 'Tools and Status', 'panel_pane_4');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Global: View */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'models_all_page_layout';
-  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_3';
   /* Field: Content: Radioactivity */
   $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
   $handler->display->display_options['fields']['field_radioactivity']['table'] = 'field_data_field_radioactivity';
@@ -6417,295 +6305,9 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['field_radioactivity']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_radioactivity']['click_sort_column'] = 'radioactivity_energy';
   $handler->display->display_options['fields']['field_radioactivity']['settings'] = array(
-    'energy' => '10',
+    'energy' => '1',
     'type' => 'none',
     'accuracy' => '100',
-  );
-  /* Field: Content: Aquired Date */
-  $handler->display->display_options['fields']['field_aquired_date_models']['id'] = 'field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models']['table'] = 'field_data_field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models']['field'] = 'field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models']['label'] = '';
-  $handler->display->display_options['fields']['field_aquired_date_models']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_aquired_date_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_aquired_date_models']['alter']['text'] = 'Aquired';
-  $handler->display->display_options['fields']['field_aquired_date_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_aquired_date_models']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Content: Started Date */
-  $handler->display->display_options['fields']['field_started_date_models']['id'] = 'field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models']['table'] = 'field_data_field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models']['field'] = 'field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models']['label'] = '';
-  $handler->display->display_options['fields']['field_started_date_models']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_started_date_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_started_date_models']['alter']['text'] = 'Started';
-  $handler->display->display_options['fields']['field_started_date_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_started_date_models']['empty'] = '[field_aquired_date_models]';
-  $handler->display->display_options['fields']['field_started_date_models']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Content: Completed Date */
-  $handler->display->display_options['fields']['field_completed_date_models']['id'] = 'field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models']['table'] = 'field_data_field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models']['field'] = 'field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models']['label'] = '';
-  $handler->display->display_options['fields']['field_completed_date_models']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_completed_date_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_completed_date_models']['alter']['text'] = 'Completed';
-  $handler->display->display_options['fields']['field_completed_date_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_completed_date_models']['empty'] = '[field_started_date_models]';
-  $handler->display->display_options['fields']['field_completed_date_models']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="grey-container">
-<div class="row">
-<div class="col-sm-6">
-<div class="media">
-    <div class="media-left pull-left">
-        <span class="fa fa-cogs fa-lg grey fa-fw"></span>
-    </div>
-    <div class="media-body">
-        <strong>[field_completed_date_models]</strong>
-    </div>
-</div>
-</div>
-<div class="col-sm-6">
-<div class="seperator"></div>
-[view]
-</div>
-</div>
-</div>
-';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'Modelling';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Army */
-  $handler = $view->new_display('panel_pane', 'Army', 'panel_pane_5');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Army */
-  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
-  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
-  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
-  $handler->display->display_options['fields']['field_army_models']['label'] = '';
-  $handler->display->display_options['fields']['field_army_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_army_models']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <span class="fa fa-bookmark fa-lg grey fa-fw"></span>
-    </div>
-    <div class="media-body">
-       [field_army_models]
-    </div>
-</div>
-<div class="seperator"></div>';
-  $handler->display->display_options['fields']['field_army_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'Modelling';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Unit */
-  $handler = $view->new_display('panel_pane', 'Unit', 'panel_pane_6');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Model Count */
-  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
-  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
-  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
-  $handler->display->display_options['fields']['field_model_count']['label'] = '';
-  $handler->display->display_options['fields']['field_model_count']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_model_count']['alter']['text'] = 'Model Count <span class="badge">[field_model_count]</span>';
-  $handler->display->display_options['fields']['field_model_count']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_model_count']['empty'] = 'n/a';
-  $handler->display->display_options['fields']['field_model_count']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: Unit */
-  $handler->display->display_options['fields']['field_unit_models']['id'] = 'field_unit_models';
-  $handler->display->display_options['fields']['field_unit_models']['table'] = 'field_data_field_unit_models';
-  $handler->display->display_options['fields']['field_unit_models']['field'] = 'field_unit_models';
-  $handler->display->display_options['fields']['field_unit_models']['label'] = '';
-  $handler->display->display_options['fields']['field_unit_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_unit_models']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <span class="fa fa-arrows-alt fa-lg grey fa-fw"></span>
-    </div>
-    <div class="media-body">
-       [field_unit_models]
-       <div class="small">Model Count <span class="badge">[field_model_count]</span></div>
-    </div>
-</div>
-<div class="seperator"></div>';
-  $handler->display->display_options['fields']['field_unit_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'Modelling';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Aquired */
-  $handler = $view->new_display('panel_pane', 'Aquired', 'panel_pane_7');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Aquired Date */
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['id'] = 'field_aquired_date_models_1';
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['table'] = 'field_data_field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['field'] = 'field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['label'] = '';
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['type'] = 'format_interval';
-  $handler->display->display_options['fields']['field_aquired_date_models_1']['settings'] = array(
-    'interval' => '2',
-    'interval_display' => 'time ago',
-  );
-  /* Field: Content: Aquired Date */
-  $handler->display->display_options['fields']['field_aquired_date_models']['id'] = 'field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models']['table'] = 'field_data_field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models']['field'] = 'field_aquired_date_models';
-  $handler->display->display_options['fields']['field_aquired_date_models']['label'] = '';
-  $handler->display->display_options['fields']['field_aquired_date_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_aquired_date_models']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <span class="fa fa-calendar fa-lg grey fa-fw"></span>
-    </div>
-    <div class="media-body">
-        Aquired [field_aquired_date_models]
-        <div class=small">[field_aquired_date_models_1]</div>
-    </div>
-</div>
-<div class="seperator"></div>';
-  $handler->display->display_options['fields']['field_aquired_date_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_aquired_date_models']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_aquired_date_models']['settings'] = array(
-    'format_type' => 'json',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Modelling';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Started */
-  $handler = $view->new_display('panel_pane', 'Started', 'panel_pane_8');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Started Date */
-  $handler->display->display_options['fields']['field_started_date_models_1']['id'] = 'field_started_date_models_1';
-  $handler->display->display_options['fields']['field_started_date_models_1']['table'] = 'field_data_field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models_1']['field'] = 'field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models_1']['label'] = '';
-  $handler->display->display_options['fields']['field_started_date_models_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_started_date_models_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_started_date_models_1']['type'] = 'format_interval';
-  $handler->display->display_options['fields']['field_started_date_models_1']['settings'] = array(
-    'interval' => '2',
-    'interval_display' => 'time ago',
-  );
-  /* Field: Content: Started Date */
-  $handler->display->display_options['fields']['field_started_date_models']['id'] = 'field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models']['table'] = 'field_data_field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models']['field'] = 'field_started_date_models';
-  $handler->display->display_options['fields']['field_started_date_models']['label'] = '';
-  $handler->display->display_options['fields']['field_started_date_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_started_date_models']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <span class="fa fa-paint-brush fa-lg grey fa-fw"></span>
-    </div>
-    <div class="media-body">
-        Started [field_started_date_models]
-        <div class=small">[field_started_date_models_1]</div>
-    </div>
-</div>
-<div class="seperator"></div>';
-  $handler->display->display_options['fields']['field_started_date_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_started_date_models']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  $handler->display->display_options['pane_category']['name'] = 'Modelling';
-  $handler->display->display_options['pane_category']['weight'] = '0';
-
-  /* Display: Completed */
-  $handler = $view->new_display('panel_pane', 'Completed', 'panel_pane_9');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Completed Date */
-  $handler->display->display_options['fields']['field_completed_date_models_1']['id'] = 'field_completed_date_models_1';
-  $handler->display->display_options['fields']['field_completed_date_models_1']['table'] = 'field_data_field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models_1']['field'] = 'field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models_1']['label'] = '';
-  $handler->display->display_options['fields']['field_completed_date_models_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_completed_date_models_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_completed_date_models_1']['type'] = 'format_interval';
-  $handler->display->display_options['fields']['field_completed_date_models_1']['settings'] = array(
-    'interval' => '2',
-    'interval_display' => 'time ago',
-  );
-  /* Field: Content: Completed Date */
-  $handler->display->display_options['fields']['field_completed_date_models']['id'] = 'field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models']['table'] = 'field_data_field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models']['field'] = 'field_completed_date_models';
-  $handler->display->display_options['fields']['field_completed_date_models']['label'] = '';
-  $handler->display->display_options['fields']['field_completed_date_models']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_completed_date_models']['alter']['text'] = '<div class="media">
-    <div class="media-left pull-left">
-        <span class="fa fa-check-circle fa-lg grey fa-fw"></span>
-    </div>
-    <div class="media-body">
-        Completed [field_completed_date_models]
-        <div class="small">[field_completed_date_models_1]</div>
-    </div>
-</div>
-<div class="seperator"></div>';
-  $handler->display->display_options['fields']['field_completed_date_models']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_completed_date_models']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_completed_date_models']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_completed_date_models']['settings'] = array(
-    'format_type' => 'json',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['pane_category']['name'] = 'Modelling';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -6750,6 +6352,165 @@ Salute  Comment  Share
   $handler->display->display_options['fields']['title']['element_type'] = 'span';
   $handler->display->display_options['fields']['title']['element_class'] = 'lead';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Modelling';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Meta Data */
+  $handler = $view->new_display('panel_pane', 'Meta Data', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Meta';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Army */
+  $handler->display->display_options['fields']['field_army_models']['id'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['table'] = 'field_data_field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['field'] = 'field_army_models';
+  $handler->display->display_options['fields']['field_army_models']['label'] = '';
+  $handler->display->display_options['fields']['field_army_models']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_army_models']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <span class="fa fa-bookmark fa-lg grey fa-fw"></span>
+    </div>
+    <div class="media-body">
+       [field_army_models]
+       <div class="small">Army</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_army_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_army_models']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_army_models']['element_wrapper_class'] = 'meta-item';
+  $handler->display->display_options['fields']['field_army_models']['hide_empty'] = TRUE;
+  /* Field: Content: Unit */
+  $handler->display->display_options['fields']['field_unit_models']['id'] = 'field_unit_models';
+  $handler->display->display_options['fields']['field_unit_models']['table'] = 'field_data_field_unit_models';
+  $handler->display->display_options['fields']['field_unit_models']['field'] = 'field_unit_models';
+  $handler->display->display_options['fields']['field_unit_models']['label'] = '';
+  $handler->display->display_options['fields']['field_unit_models']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_unit_models']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <span class="fa fa-arrows-alt fa-lg grey fa-fw"></span>
+    </div>
+    <div class="media-body">
+       [field_unit_models]
+       <div class="small">Unit</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_unit_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_unit_models']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_unit_models']['element_wrapper_class'] = 'meta-item';
+  $handler->display->display_options['fields']['field_unit_models']['hide_empty'] = TRUE;
+  /* Field: Content: Model Count */
+  $handler->display->display_options['fields']['field_model_count']['id'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['field'] = 'field_model_count';
+  $handler->display->display_options['fields']['field_model_count']['label'] = '';
+  $handler->display->display_options['fields']['field_model_count']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_model_count']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <span class="fa fa-hashtag fa-lg grey fa-fw"></span>
+    </div>
+    <div class="media-body">
+        <span class="badge">[field_model_count]</span>
+       <div class="small">Model Count</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_model_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_model_count']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_model_count']['element_wrapper_class'] = 'meta-item';
+  $handler->display->display_options['fields']['field_model_count']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_model_count']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Aquired Date */
+  $handler->display->display_options['fields']['field_aquired_date_models']['id'] = 'field_aquired_date_models';
+  $handler->display->display_options['fields']['field_aquired_date_models']['table'] = 'field_data_field_aquired_date_models';
+  $handler->display->display_options['fields']['field_aquired_date_models']['field'] = 'field_aquired_date_models';
+  $handler->display->display_options['fields']['field_aquired_date_models']['label'] = '';
+  $handler->display->display_options['fields']['field_aquired_date_models']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_aquired_date_models']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <span class="fa fa-plus-circle fa-lg grey fa-fw"></span>
+    </div>
+    <div class="media-body">
+        [field_aquired_date_models]
+       <div class="small">Aquired</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_aquired_date_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_aquired_date_models']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_aquired_date_models']['element_wrapper_class'] = 'meta-item';
+  $handler->display->display_options['fields']['field_aquired_date_models']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_aquired_date_models']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Started Date */
+  $handler->display->display_options['fields']['field_started_date_models']['id'] = 'field_started_date_models';
+  $handler->display->display_options['fields']['field_started_date_models']['table'] = 'field_data_field_started_date_models';
+  $handler->display->display_options['fields']['field_started_date_models']['field'] = 'field_started_date_models';
+  $handler->display->display_options['fields']['field_started_date_models']['label'] = '';
+  $handler->display->display_options['fields']['field_started_date_models']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_started_date_models']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <span class="fa fa-paint-brush fa-lg grey fa-fw"></span>
+    </div>
+    <div class="media-body">
+        [field_started_date_models]
+       <div class="small">Started</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_started_date_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_started_date_models']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_started_date_models']['element_wrapper_class'] = 'meta-item';
+  $handler->display->display_options['fields']['field_started_date_models']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_started_date_models']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Completed Date */
+  $handler->display->display_options['fields']['field_completed_date_models']['id'] = 'field_completed_date_models';
+  $handler->display->display_options['fields']['field_completed_date_models']['table'] = 'field_data_field_completed_date_models';
+  $handler->display->display_options['fields']['field_completed_date_models']['field'] = 'field_completed_date_models';
+  $handler->display->display_options['fields']['field_completed_date_models']['label'] = '';
+  $handler->display->display_options['fields']['field_completed_date_models']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_completed_date_models']['alter']['text'] = '<div class="media">
+    <div class="media-left pull-left">
+        <span class="fa fa-check-circle fa-lg grey fa-fw"></span>
+    </div>
+    <div class="media-body">
+        [field_completed_date_models]
+       <div class="small">Completed</div>
+    </div>
+</div>';
+  $handler->display->display_options['fields']['field_completed_date_models']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_completed_date_models']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_completed_date_models']['element_wrapper_class'] = 'meta-item';
+  $handler->display->display_options['fields']['field_completed_date_models']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_completed_date_models']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Modelling';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['models_all_page_layout'] = $view;
@@ -10211,7 +9972,6 @@ Salute  Comment  Share
     8 => 0,
   );
   $handler->display->display_options['path'] = 'battle-reports/battle-meta/missions';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Missions';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -10277,7 +10037,6 @@ Salute  Comment  Share
     8 => 0,
   );
   $handler->display->display_options['path'] = 'battle-reports/battle-meta/victory-conditions';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Victory Conditions';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -10343,7 +10102,6 @@ Salute  Comment  Share
     8 => 0,
   );
   $handler->display->display_options['path'] = 'battle-reports/battle-meta/deployment';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Deployment';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -10409,7 +10167,6 @@ Salute  Comment  Share
     8 => 0,
   );
   $handler->display->display_options['path'] = 'battle-reports/battle-meta/scenario-rules-effect';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Scenario Rules';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -10475,7 +10232,6 @@ Salute  Comment  Share
     8 => 0,
   );
   $handler->display->display_options['path'] = 'battle-reports/battle-meta/units-and-commanders';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Units';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -10551,7 +10307,6 @@ Salute  Comment  Share
   $handler->display->display_options['filters']['field_game_system_armies_tid']['value'] = '';
   $handler->display->display_options['filters']['field_game_system_armies_tid']['vocabulary'] = 'armies';
   $handler->display->display_options['path'] = 'battle-reports/battle-meta/factions';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Factions';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -11328,7 +11083,7 @@ Salute  Comment  Share
 
   /* Display: Main Page */
   $handler = $view->new_display('page', 'Main Page', 'page_1');
-  $handler->display->display_options['path'] = 'battle-reports/unacknowledged-battles';
+  $handler->display->display_options['path'] = 'gaming/battle-reports/unacknowledged-battles';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Unacknowledged';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -13501,6 +13256,7 @@ Salute  Comment  Share
 
   /* Display: All User Content */
   $handler = $view->new_display('page', 'All User Content', 'page_6');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -16785,6 +16541,7 @@ Salute  Comment  Share
 
   /* Display: By Opponent Army Page */
   $handler = $view->new_display('page', 'By Opponent Army Page', 'page_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -17535,6 +17292,7 @@ Salute  Comment  Share
 
   /* Display: By Player Army Page */
   $handler = $view->new_display('page', 'By Player Army Page', 'page_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
@@ -19013,6 +18771,7 @@ Salute  Comment  Share
 
   /* Display: Competitive Stats */
   $handler = $view->new_display('page', 'Competitive Stats', 'page_3');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_game_reference_node']['id'] = 'reverse_field_game_reference_node';

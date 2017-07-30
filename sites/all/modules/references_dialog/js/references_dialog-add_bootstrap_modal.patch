@@ -1,0 +1,157 @@
+diff --git a/js/references-dialog.js b/js/references-dialog.js
+index 8791183..b7f9dd0 100644
+--- a/js/references-dialog.js
++++ b/js/references-dialog.js
+@@ -1,4 +1,5 @@
+ (function ($) {
++  'use strict';
+ 
+   var $window = $(window);
+ 
+@@ -10,6 +11,10 @@
+         $.each(settings.ReferencesDialog.fields, function (key, widget_settings) {
+           $('.' + key + ' a.references-dialog-activate', context).click(function (e) {
+             e.preventDefault();
++
++            // Store the item that was clicked on so focus can return to it afterwards.
++            Drupal.ReferencesDialog.link_clicked = $(this);
++
+             Drupal.ReferencesDialog.open($(this).attr('href'), $(this).html());
+             Drupal.ReferencesDialog.entityIdReceived = function (entity_type, entity_id, label) {
+               if (typeof widget_settings.format !== 'undefined') {
+@@ -53,6 +58,7 @@
+    */
+   Drupal.ReferencesDialog = {
+     dialog_open: false,
++    link_clicked: null,
+     open_dialog: null
+   }
+ 
+@@ -82,30 +88,71 @@
+       // @todo Add settings for this so that users can configure this by themselves.
+       var window_width = $window.width() / 100*75;
+       var window_height = $window.height() / 100*75;
+-      this.open_dialog = $('<iframe class="references-dialog-iframe" src="' + href + '"></iframe>').dialog({
+-        width: window_width,
+-        height: window_height,
+-        modal: true,
+-        resizable: false,
+-        position: ['center', 50],
+-        title: title,
+-        close: function () { Drupal.ReferencesDialog.dialog_open = false; $('body').removeClass('references-dialog-no-scroll'); }
+-      }).width(window_width-10).height(window_height);
+-      $window.bind('resize scroll', function () {
+-        // Move the dialog the main window moves.
+-        if (typeof Drupal.ReferencesDialog == 'object' && Drupal.ReferencesDialog.open_dialog != null) {
+-          Drupal.ReferencesDialog.open_dialog.
+-            dialog('option', 'position', ['center', 10]);
+-          Drupal.ReferencesDialog.setDimensions();
+-        }
+-      });
+-      this.dialog_open = true;
+-      $('body').addClass('references-dialog-no-scroll');
++
++      // Create a bootstrap modal if Bootstrap functionality exists, otherwise use default.
++      if (typeof($.fn.modal) !== 'undefined') {
++        var $modal = $('<div class="modal references-dialog-modal" role="dialog" aria-labelledby="modal-title" tabindex="-1"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 id="modal-title" class="modal-title">' + title + '</h4></div><div class="modal-body"><iframe class="references-dialog-iframe" src="' + href + '"></iframe></div></div></div></div>');
++
++
++        // Append the modal to the page, hidden.
++        $('body').append($modal);
++
++        // Dynamically adjust height of the modal body so the iFrame isn't hidden.
++        $modal.find('.modal-body').css({
++          height: $( window ).height() * 0.8,
++          width: '100%'
++        });
++
++        // CSS that styles the iFrame a bit better than default.
++        $modal.find('iframe').css({
++          border: 'none',
++          height: '100%',
++          width: '100%'
++        });
++
++        // Accessibility: Focus back on the link that was used to trigger the modal.
++        $modal.on('hidden.bs.modal', function (e) {
++          if (Drupal.ReferencesDialog.link_clicked !== null) {
++            Drupal.ReferencesDialog.link_clicked.focus();
++          }
++        });
++
++        // Open dynamic modal using Twitter Bootstrap.
++        $modal.modal();
++      }
++      else {
++        this.open_dialog = $('<iframe class="references-dialog-iframe" src="' + href + '"></iframe>').dialog({
++          width: window_width,
++          height: window_height,
++          modal: true,
++          resizable: false,
++          position: ['center', 50],
++          title: title,
++          close: function (event, ui) {
++            $('body').removeClass('references-dialog-no-scroll');
++            if (Drupal.ReferencesDialog.dialog_open) {
++              Drupal.ReferencesDialog.dialog_open = false;
++              Drupal.ReferencesDialog.close();
++            }
++          }
++        }).width(window_width-10).height(window_height);
++
++        $window.bind('resize scroll', function () {
++          // Move the dialog the main window moves.
++          if (typeof Drupal.ReferencesDialog == 'object' && Drupal.ReferencesDialog.open_dialog != null) {
++            Drupal.ReferencesDialog.open_dialog.
++              dialog('option', 'position', ['center', 10]);
++            Drupal.ReferencesDialog.setDimensions();
++          }
++        });
++        this.dialog_open = true;
++        $('body').addClass('references-dialog-no-scroll');
++      }
+     }
+   }
+ 
+   /**
+-   * Set dimensions of the dialog dependning on the current winow size
++   * Set dimensions of the dialog depending on the current window size
+    * and scroll position.
+    */
+   Drupal.ReferencesDialog.setDimensions = function () {
+@@ -124,14 +171,27 @@
+    * that we can use in various ways.
+    */
+   Drupal.ReferencesDialog.close = function (entity_type, entity_id, title) {
+-    this.open_dialog.dialog('close');
+-    this.open_dialog.dialog('destroy');
+-    this.open_dialog = null;
+-    this.dialog_open = false;
+-    // Call our entityIdReceived function if we have one.
+-    // this is used as an event.
+-    if (typeof this.entityIdReceived == 'function') {
+-      this.entityIdReceived(entity_type, entity_id, title);
++
++    // Check for bootstrap modal if Bootstrap functionality exists, otherwise use default.
++    if (typeof($.fn.modal) !== 'undefined') {
++      this.dialog_open = false;
++      if (typeof this.entityIdReceived == 'function') {
++        this.entityIdReceived(entity_type, entity_id, title);
++        $('.references-dialog-modal').modal('hide');
++      }
++    }
++    else {
++      if (this.dialog_open) {
++        this.dialog_open = false;
++        this.open_dialog.dialog('close');
++        // Call our entityIdReceived function if we have one.
++        // this is used as an event.
++        if (typeof this.entityIdReceived == 'function') {
++          this.entityIdReceived(entity_type, entity_id, title);
++        }
++      }
++      this.open_dialog.dialog('destroy');
++      this.open_dialog = null;
+     }
+   }
+ 

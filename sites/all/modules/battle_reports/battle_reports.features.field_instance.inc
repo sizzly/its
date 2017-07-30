@@ -301,7 +301,76 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 64,
+      'weight' => 65,
+    ),
+  );
+
+  // Exported field_instance: 'node-game_result_system_-field_army_composition'.
+  $field_instances['node-game_result_system_-field_army_composition'] = array(
+    'bundle' => 'game_result_system_',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 36,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'entityconnect' => array(
+      'button' => array(
+        'unload_add_button' => 0,
+        'unload_edit_button' => 1,
+      ),
+      'icon' => array(
+        'show_add_icon' => 1,
+        'show_edit_icon' => 1,
+      ),
+    ),
+    'field_name' => 'field_army_composition',
+    'label' => 'Army Composition',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 63,
     ),
   );
 
@@ -489,7 +558,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 63,
+      'weight' => 64,
     ),
   );
 
@@ -584,7 +653,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 65,
+      'weight' => 66,
     ),
   );
 
@@ -709,7 +778,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 66,
+      'weight' => 67,
     ),
   );
 
@@ -1201,7 +1270,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 67,
+      'weight' => 68,
     ),
   );
 
@@ -1623,6 +1692,75 @@ function battle_reports_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-game_results-field_army_composition'.
+  $field_instances['node-game_results-field_army_composition'] = array(
+    'bundle' => 'game_results',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 35,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'entityconnect' => array(
+      'button' => array(
+        'unload_add_button' => 0,
+        'unload_edit_button' => 1,
+      ),
+      'icon' => array(
+        'show_add_icon' => 1,
+        'show_edit_icon' => 1,
+      ),
+    ),
+    'field_name' => 'field_army_composition',
+    'label' => 'Army Composition',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 46,
+    ),
+  );
+
   // Exported field_instance: 'node-game_results-field_batteresult_commander'.
   $field_instances['node-game_results-field_batteresult_commander'] = array(
     'bundle' => 'game_results',
@@ -1665,7 +1803,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 44,
+      'weight' => 43,
     ),
   );
 
@@ -1804,7 +1942,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 46,
+      'weight' => 45,
     ),
   );
 
@@ -2501,7 +2639,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 42,
+      'weight' => 51,
     ),
   );
 
@@ -2639,7 +2777,7 @@ function battle_reports_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 43,
+      'weight' => 52,
     ),
   );
 
@@ -2912,7 +3050,7 @@ function battle_reports_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 45,
+      'weight' => 44,
     ),
   );
 
@@ -3314,6 +3452,7 @@ function battle_reports_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A single image to "define" the battle.  Don\'t worry.  We\'ll put one in if you don\'t have one.  If you have a series of images make sure to put them in as well.');
+  t('Army Composition');
   t('Battlefield');
   t('Body');
   t('Chart Color');

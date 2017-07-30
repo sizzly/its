@@ -134,10 +134,10 @@ function its_modelling_projects_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -174,6 +174,9 @@ function its_modelling_projects_strongarm() {
         ),
         'badges' => array(
           'weight' => '10',
+        ),
+        'redirect' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(),
@@ -225,7 +228,7 @@ function its_modelling_projects_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_models_pattern';
-  $strongarm->value = 'munitions/modeling-projects/[node:title]';
+  $strongarm->value = 'modeling-project/[node:title]';
   $export['pathauto_node_models_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

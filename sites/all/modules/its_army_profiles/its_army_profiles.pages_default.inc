@@ -52,7 +52,7 @@ order-of-battle/player-armies',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
-  $display->layout = 'bootopoly_boxton';
+  $display->layout = 'bootopoly_moscone';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -75,8 +75,151 @@ order-of-battle/player-armies',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
+  $pane->pid = 'new-f90de474-47ca-47c4-8726-f286569453b3';
   $pane->panel = 'contentmain';
+  $pane->type = 'sharethis';
+  $pane->subtype = 'sharethis';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'path' => 'current',
+    'path-external' => '',
+    'override_title' => 1,
+    'override_title_text' => 'Share',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'f90de474-47ca-47c4-8726-f286569453b3';
+  $display->content['new-f90de474-47ca-47c4-8726-f286569453b3'] = $pane;
+  $display->panels['contentmain'][0] = 'new-f90de474-47ca-47c4-8726-f286569453b3';
+  $pane = new stdClass();
+  $pane->pid = 'new-e42467f1-9ac0-459b-bea2-6da2ff228d71';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_node_similar_by_term-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'e42467f1-9ac0-459b-bea2-6da2ff228d71';
+  $display->content['new-e42467f1-9ac0-459b-bea2-6da2ff228d71'] = $pane;
+  $display->panels['contentmain'][1] = 'new-e42467f1-9ac0-459b-bea2-6da2ff228d71';
+  $pane = new stdClass();
+  $pane->pid = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $pane->panel = 'footer';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_layout-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $display->content['new-e9ad6263-7ee4-49cf-9281-748c95ce4416'] = $pane;
+  $display->panels['footer'][0] = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $pane = new stdClass();
+  $pane->pid = 'new-fc65d787-5e0a-42fc-b7a2-22d48e3750bc';
+  $pane->panel = 'footer';
+  $pane->type = 'node_comment_form';
+  $pane->subtype = 'node_comment_form';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'anon_links' => 1,
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Comment',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'fc65d787-5e0a-42fc-b7a2-22d48e3750bc';
+  $display->content['new-fc65d787-5e0a-42fc-b7a2-22d48e3750bc'] = $pane;
+  $display->panels['footer'][1] = 'new-fc65d787-5e0a-42fc-b7a2-22d48e3750bc';
+  $pane = new stdClass();
+  $pane->pid = 'new-92b11f52-7d25-499e-a342-9041c44a388d';
+  $pane->panel = 'footer';
+  $pane->type = 'node_comments';
+  $pane->subtype = 'node_comments';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'mode' => '1',
+    'comments_per_page' => '300',
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Comments',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'style' => 'default',
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '92b11f52-7d25-499e-a342-9041c44a388d';
+  $display->content['new-92b11f52-7d25-499e-a342-9041c44a388d'] = $pane;
+  $display->panels['footer'][2] = 'new-92b11f52-7d25-499e-a342-9041c44a388d';
+  $pane = new stdClass();
+  $pane->pid = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
+  $pane->panel = 'header';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_image';
   $pane->shown = TRUE;
@@ -88,7 +231,7 @@ order-of-battle/player-armies',
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
     'formatter_settings' => array(
-      'image_style' => '',
+      'image_style' => 'hero_image_newsletter',
       'image_link' => '',
     ),
     'context' => 'argument_entity_id:node_1',
@@ -102,17 +245,58 @@ order-of-battle/player-armies',
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => 'text-center thumbnail',
+    'css_class' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '76cba8d6-0287-43e4-93ce-97a029f2bb48';
   $display->content['new-76cba8d6-0287-43e4-93ce-97a029f2bb48'] = $pane;
-  $display->panels['contentmain'][0] = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
+  $display->panels['header'][0] = 'new-76cba8d6-0287-43e4-93ce-97a029f2bb48';
+  $pane = new stdClass();
+  $pane->pid = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
+  $pane->panel = 'header';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_layout-panel_pane_3';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'well well-sm',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
+  $display->content['new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf'] = $pane;
+  $display->panels['header'][1] = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
+  $pane = new stdClass();
+  $pane->pid = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
+  $pane->panel = 'sidebar';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'army_profile_all_page_layout-panel_pane_1';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
+  $display->content['new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd'] = $pane;
+  $display->panels['sidebar'][0] = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
   $pane = new stdClass();
   $pane->pid = 'new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
-  $pane->panel = 'contentmain';
+  $pane->panel = 'sidebar';
   $pane->type = 'node_body';
   $pane->subtype = 'node_body';
   $pane->shown = TRUE;
@@ -133,48 +317,10 @@ order-of-battle/player-armies',
   $pane->locks = array();
   $pane->uuid = '45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
   $display->content['new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6'] = $pane;
-  $display->panels['contentmain'][1] = 'new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
-  $pane = new stdClass();
-  $pane->pid = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
-  $pane->panel = 'contentmain';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'army_profile_all_page_layout-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
-  $display->content['new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd'] = $pane;
-  $display->panels['contentmain'][2] = 'new-fbec5258-b172-455f-9fc8-1a3ec1c5c6bd';
-  $pane = new stdClass();
-  $pane->pid = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
-  $pane->panel = 'contentmain';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_3';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
-  $display->content['new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf'] = $pane;
-  $display->panels['contentmain'][3] = 'new-54d2946f-cd0e-4eb5-84c9-3bbcef38fcdf';
+  $display->panels['sidebar'][1] = 'new-45cbf04f-4fea-486b-b3fc-4fbffa752cd6';
   $pane = new stdClass();
   $pane->pid = 'new-1c212b6b-4598-4082-adf6-9ee207feea2b';
-  $pane->panel = 'contentmain';
+  $pane->panel = 'sidebar';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_army_profile_elements';
   $pane->shown = TRUE;
@@ -199,74 +345,11 @@ order-of-battle/player-armies',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '1c212b6b-4598-4082-adf6-9ee207feea2b';
   $display->content['new-1c212b6b-4598-4082-adf6-9ee207feea2b'] = $pane;
-  $display->panels['contentmain'][4] = 'new-1c212b6b-4598-4082-adf6-9ee207feea2b';
-  $pane = new stdClass();
-  $pane->pid = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
-  $pane->panel = 'contentmain';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 5;
-  $pane->locks = array();
-  $pane->uuid = 'e9ad6263-7ee4-49cf-9281-748c95ce4416';
-  $display->content['new-e9ad6263-7ee4-49cf-9281-748c95ce4416'] = $pane;
-  $display->panels['contentmain'][5] = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
-  $pane = new stdClass();
-  $pane->pid = 'new-3e6d9368-caca-4f21-91e1-167a7f259f19';
-  $pane->panel = 'contentmain';
-  $pane->type = 'custom';
-  $pane->subtype = 'posts_update_no_battle';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'body' => '',
-    'format' => 'filtered_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 6;
-  $pane->locks = array();
-  $pane->uuid = '3e6d9368-caca-4f21-91e1-167a7f259f19';
-  $display->content['new-3e6d9368-caca-4f21-91e1-167a7f259f19'] = $pane;
-  $display->panels['contentmain'][6] = 'new-3e6d9368-caca-4f21-91e1-167a7f259f19';
-  $pane = new stdClass();
-  $pane->pid = 'new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
-  $pane->panel = 'contentmain';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_timeline-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 7;
-  $pane->locks = array();
-  $pane->uuid = '8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
-  $display->content['new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859'] = $pane;
-  $display->panels['contentmain'][7] = 'new-8c7048aa-6f67-4c46-a9b5-d6b3aae4c859';
+  $display->panels['sidebar'][2] = 'new-1c212b6b-4598-4082-adf6-9ee207feea2b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -280,7 +363,7 @@ order-of-battle/player-armies',
  */
 function its_army_profiles_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'army_profile_stats';
   $page->task = 'page';
@@ -379,7 +462,7 @@ function its_army_profiles_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Army Profiles: All: Landing Page';
   $page->admin_description = '';
-  $page->path = 'order-of-battle/player-armies/main';
+  $page->path = 'narrative/player-armies/main';
   $page->access = array();
   $page->menu = array(
     'type' => 'default tab',
@@ -669,7 +752,7 @@ function its_army_profiles_default_page_manager_pages() {
   $pages['army_profiles_all_landing_page'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'order_of_battle_landing_page';
   $page->task = 'page';
@@ -678,7 +761,7 @@ function its_army_profiles_default_page_manager_pages() {
   $page->path = 'order-of-battle/main';
   $page->access = array();
   $page->menu = array(
-    'type' => 'default tab',
+    'type' => 'none',
     'title' => 'Order of Battle',
     'name' => 'main-menu',
     'weight' => '0',
@@ -922,7 +1005,7 @@ function its_army_profiles_default_page_manager_pages() {
   $pages['order_of_battle_landing_page'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'player_landing_page';
   $page->task = 'page';
@@ -931,7 +1014,7 @@ function its_army_profiles_default_page_manager_pages() {
   $page->path = 'order-of-battle/players';
   $page->access = array();
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'none',
     'title' => 'Players',
     'name' => 'main-menu',
     'weight' => '0',
