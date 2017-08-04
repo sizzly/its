@@ -10,117 +10,6 @@
 function core_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_all-clubs:theater/gaming-clubs/list.
-  $menu_links['main-menu_all-clubs:theater/gaming-clubs/list'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'theater/gaming-clubs/list',
-    'router_path' => 'theater/gaming-clubs/list',
-    'link_title' => 'All Clubs',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'List of all Gaming Clubs on iToysoldiers',
-      ),
-      'identifier' => 'main-menu_all-clubs:theater/gaming-clubs/list',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_gaming-clubs:theater/gaming-clubs',
-  );
-  // Exported menu link: main-menu_army-lists:gaming/listcrit.
-  $menu_links['main-menu_army-lists:gaming/listcrit'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'gaming/listcrit',
-    'router_path' => 'gaming/listcrit',
-    'link_title' => 'Army Lists',
-    'options' => array(
-      'identifier' => 'main-menu_army-lists:gaming/listcrit',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_gaming:gaming',
-  );
-  // Exported menu link: main-menu_army-profiles:narrative/player-armies.
-  $menu_links['main-menu_army-profiles:narrative/player-armies'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'narrative/player-armies',
-    'router_path' => 'narrative/player-armies',
-    'link_title' => 'Army Profiles',
-    'options' => array(
-      'identifier' => 'main-menu_army-profiles:narrative/player-armies',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_narrative:narrative',
-  );
-  // Exported menu link: main-menu_battle-reports:gaming/battle-reports.
-  $menu_links['main-menu_battle-reports:gaming/battle-reports'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'gaming/battle-reports',
-    'router_path' => 'gaming/battle-reports',
-    'link_title' => 'Battle Reports',
-    'options' => array(
-      'identifier' => 'main-menu_battle-reports:gaming/battle-reports',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_gaming:gaming',
-  );
-  // Exported menu link: main-menu_battlefields:theater/battlefield.
-  $menu_links['main-menu_battlefields:theater/battlefield'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'theater/battlefield',
-    'router_path' => 'theater/battlefield',
-    'link_title' => 'Battlefields',
-    'options' => array(
-      'identifier' => 'main-menu_battlefields:theater/battlefield',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_theater:theater',
-  );
-  // Exported menu link: main-menu_campaigns:narrative/campaigns.
-  $menu_links['main-menu_campaigns:narrative/campaigns'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'narrative/campaigns',
-    'router_path' => 'narrative/campaigns',
-    'link_title' => 'Campaigns',
-    'options' => array(
-      'identifier' => 'main-menu_campaigns:narrative/campaigns',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_narrative:narrative',
-  );
   // Exported menu link: main-menu_community:community.
   $menu_links['main-menu_community:community'] = array(
     'menu_name' => 'main-menu',
@@ -149,60 +38,6 @@ function core_menu_default_menu_links() {
     'weight' => 50,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_events:theater/events.
-  $menu_links['main-menu_events:theater/events'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'theater/events',
-    'router_path' => 'theater/events',
-    'link_title' => 'Events',
-    'options' => array(
-      'identifier' => 'main-menu_events:theater/events',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_theater:theater',
-  );
-  // Exported menu link: main-menu_galleries:community/galleries.
-  $menu_links['main-menu_galleries:community/galleries'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'community/galleries',
-    'router_path' => 'community/galleries',
-    'link_title' => 'Galleries',
-    'options' => array(
-      'identifier' => 'main-menu_galleries:community/galleries',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_community:community',
-  );
-  // Exported menu link: main-menu_gaming-clubs:theater/gaming-clubs.
-  $menu_links['main-menu_gaming-clubs:theater/gaming-clubs'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'theater/gaming-clubs',
-    'router_path' => 'theater/gaming-clubs',
-    'link_title' => 'Gaming Clubs',
-    'options' => array(
-      'identifier' => 'main-menu_gaming-clubs:theater/gaming-clubs',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_theater:theater',
-  );
   // Exported menu link: main-menu_gaming:gaming.
   $menu_links['main-menu_gaming:gaming'] = array(
     'menu_name' => 'main-menu',
@@ -230,24 +65,6 @@ function core_menu_default_menu_links() {
     'expanded' => 1,
     'weight' => -50,
     'customized' => 1,
-  );
-  // Exported menu link: main-menu_leaderboards:community/leaderboards.
-  $menu_links['main-menu_leaderboards:community/leaderboards'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'community/leaderboards',
-    'router_path' => 'community/leaderboards',
-    'link_title' => 'Leaderboards',
-    'options' => array(
-      'identifier' => 'main-menu_leaderboards:community/leaderboards',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_community:community',
   );
   // Exported menu link: main-menu_modelling:modelling.
   $menu_links['main-menu_modelling:modelling'] = array(
@@ -305,24 +122,6 @@ function core_menu_default_menu_links() {
     'weight' => -10,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_projects:modelling/projects.
-  $menu_links['main-menu_projects:modelling/projects'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'modelling/projects',
-    'router_path' => 'modelling/projects',
-    'link_title' => 'Projects',
-    'options' => array(
-      'identifier' => 'main-menu_projects:modelling/projects',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_modelling:modelling',
-  );
   // Exported menu link: main-menu_theater:theater.
   $menu_links['main-menu_theater:theater'] = array(
     'menu_name' => 'main-menu',
@@ -351,82 +150,199 @@ function core_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: main-menu_timeline:gaming/listcrit/timeline.
-  $menu_links['main-menu_timeline:gaming/listcrit/timeline'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'gaming/listcrit/timeline',
-    'router_path' => 'gaming/listcrit/timeline',
-    'link_title' => 'Timeline',
+  // Exported menu link: user-menu_add-content:node/add.
+  $menu_links['user-menu_add-content:node/add'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'node/add',
+    'router_path' => 'node/add',
+    'link_title' => 'Add Content',
     'options' => array(
-      'identifier' => 'main-menu_timeline:gaming/listcrit/timeline',
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'user-menu_add-content:node/add',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'user-menu_my-account:user',
+  );
+  // Exported menu link: user-menu_dashboard:dashboard.
+  $menu_links['user-menu_dashboard:dashboard'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'dashboard',
+    'router_path' => 'dashboard',
+    'link_title' => 'Dashboard',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'user-menu_dashboard:dashboard',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'parent_identifier' => 'user-menu_my-account:user',
+  );
+  // Exported menu link: user-menu_log-out:user/logout.
+  $menu_links['user-menu_log-out:user/logout'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/logout',
+    'router_path' => 'user/logout',
+    'link_title' => 'Log out',
+    'options' => array(
+      'identifier' => 'user-menu_log-out:user/logout',
     ),
     'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => 10,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_army-lists:gaming/listcrit',
   );
-  // Exported menu link: main-menu_unacknowledged:gaming/battle-reports/unacknowledged-battles.
-  $menu_links['main-menu_unacknowledged:gaming/battle-reports/unacknowledged-battles'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'gaming/battle-reports/unacknowledged-battles',
-    'router_path' => 'gaming/battle-reports/unacknowledged-battles',
-    'link_title' => 'Unacknowledged',
+  // Exported menu link: user-menu_login:user/login.
+  $menu_links['user-menu_login:user/login'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/login',
+    'router_path' => 'user/login',
+    'link_title' => 'Login',
     'options' => array(
-      'identifier' => 'main-menu_unacknowledged:gaming/battle-reports/unacknowledged-battles',
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'user-menu_login:user/login',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: user-menu_messages:messages.
+  $menu_links['user-menu_messages:messages'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'messages',
+    'router_path' => 'messages',
+    'link_title' => 'Messages',
+    'options' => array(
+      'identifier' => 'user-menu_messages:messages',
     ),
     'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'main-menu_battle-reports:gaming/battle-reports',
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'user-menu_my-account:user',
   );
-  // Exported menu link: navigation_blogs:user/%/community/blogs.
-  $menu_links['navigation_blogs:user/%/community/blogs'] = array(
-    'menu_name' => 'navigation',
-    'link_path' => 'user/%/community/blogs',
-    'router_path' => 'user/%/community/blogs',
-    'link_title' => 'Blogs',
+  // Exported menu link: user-menu_register:user/register.
+  $menu_links['user-menu_register:user/register'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/register',
+    'router_path' => 'user/register',
+    'link_title' => 'Register',
     'options' => array(
-      'identifier' => 'navigation_blogs:user/%/community/blogs',
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'user-menu_register:user/register',
     ),
-    'module' => 'system',
-    'hidden' => -1,
+    'module' => 'menu',
+    'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'navigation_community:user/%/community',
+    'customized' => 1,
+  );
+  // Exported menu link: user-menu_view-profile:user.
+  $menu_links['user-menu_view-profile:user'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user',
+    'router_path' => 'user',
+    'link_title' => 'View Profile',
+    'options' => array(
+      'icon' => array(
+        'icon' => '',
+        'position' => 'title_before',
+        'title_wrapper_element' => 'span',
+        'title_wrapper_class' => 'title',
+        'breadcrumb' => 0,
+        'title_wrapper' => 0,
+      ),
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'user-menu_view-profile:user',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'user-menu_my-account:user',
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('All Clubs');
-  t('Army Lists');
-  t('Army Profiles');
-  t('Battle Reports');
-  t('Battlefields');
-  t('Blogs');
-  t('Campaigns');
+  t('Add Content');
   t('Community');
-  t('Events');
-  t('Galleries');
+  t('Dashboard');
   t('Gaming');
-  t('Gaming Clubs');
-  t('Leaderboards');
+  t('Log out');
+  t('Login');
+  t('Messages');
   t('Modelling');
   t('Narrative');
-  t('Projects');
+  t('Register');
   t('Theater');
-  t('Timeline');
-  t('Unacknowledged');
+  t('View Profile');
 
   return $menu_links;
 }
