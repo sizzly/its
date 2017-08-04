@@ -258,7 +258,6 @@ features[menu_links][] = main-menu_narrative:narrative
 features[menu_links][] = main-menu_theater:theater
 features[menu_links][] = user-menu_add-content:node/add
 features[menu_links][] = user-menu_dashboard:dashboard
-features[menu_links][] = user-menu_log-out:user/logout
 features[menu_links][] = user-menu_login:user/login
 features[menu_links][] = user-menu_messages:messages
 features[menu_links][] = user-menu_register:user/register

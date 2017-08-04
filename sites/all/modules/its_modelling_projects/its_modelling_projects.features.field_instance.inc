@@ -875,7 +875,11 @@ function its_modelling_projects_field_default_field_instances() {
   // Exported field_instance: 'node-models-field_model_count'.
   $field_instances['node-models-field_model_count'] = array(
     'bundle' => 'models',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -904,7 +908,7 @@ function its_modelling_projects_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'max' => '',
-      'min' => '',
+      'min' => 1,
       'prefix' => '',
       'suffix' => '',
       'user_register_form' => FALSE,
