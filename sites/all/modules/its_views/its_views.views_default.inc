@@ -6297,6 +6297,18 @@ Salute  Comment  Share
     'rules_link_parameters' => '',
     'rules_link_rewrite' => '',
   );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseImageForm" aria-controls="collapseImageForm">
+  Add Image
+</a>';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Add Image';
   /* Field: Content: Radioactivity */
   $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
   $handler->display->display_options['fields']['field_radioactivity']['table'] = 'field_data_field_radioactivity';

@@ -10,20 +10,20 @@
 function core_filter_default_formats() {
   $formats = array();
 
-  // Exported format: Filtered Block.
-  $formats['filtered_block'] = array(
-    'format' => 'filtered_block',
-    'name' => 'Filtered Block',
+  // Exported format: Filter.
+  $formats['filter'] = array(
+    'format' => 'filter',
+    'name' => 'Filter',
     'cache' => 1,
     'status' => 1,
-    'weight' => -3,
+    'weight' => -8,
     'filters' => array(
       'filter_html' => array(
         'weight' => -10,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
-          'filter_html_help' => 0,
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <img> <h3> <h4> <div> <p>',
+          'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
       ),
@@ -36,7 +36,7 @@ function core_filter_default_formats() {
         'weight' => 0,
         'status' => 1,
         'settings' => array(
-          'filter_url_length' => 72,
+          'filter_url_length' => 50,
         ),
       ),
       'filter_htmlcorrector' => array(
@@ -71,6 +71,13 @@ function core_filter_default_formats() {
           'filter_html_nofollow' => 1,
         ),
       ),
+      'media_filter_paragraph_fix' => array(
+        'weight' => 1,
+        'status' => 1,
+        'settings' => array(
+          'replace' => 1,
+        ),
+      ),
       'filter_autop' => array(
         'weight' => 2,
         'status' => 1,
@@ -98,33 +105,40 @@ function core_filter_default_formats() {
     'weight' => -9,
     'filters' => array(
       'filter_html' => array(
-        'weight' => -10,
+        'weight' => -50,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <img> <h3> <h4> <div> <p>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <img> <h3> <h4> <h5> <h6> <hr> <div> <p>',
           'filter_html_help' => 0,
           'filter_html_nofollow' => 1,
         ),
       ),
       'filter_url' => array(
-        'weight' => 0,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
-      'filter_autop' => array(
-        'weight' => 1,
+      'media_filter_paragraph_fix' => array(
+        'weight' => -45,
+        'status' => 1,
+        'settings' => array(
+          'replace' => 1,
+        ),
+      ),
+      'media_filter' => array(
+        'weight' => -44,
         'status' => 1,
         'settings' => array(),
       ),
-      'media_filter' => array(
-        'weight' => 2,
+      'filter_autop' => array(
+        'weight' => -43,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => 10,
+        'weight' => -42,
         'status' => 1,
         'settings' => array(),
       ),
@@ -181,7 +195,7 @@ function core_filter_default_formats() {
     'name' => 'Pure HTML',
     'cache' => 1,
     'status' => 1,
-    'weight' => -8,
+    'weight' => -7,
     'filters' => array(
       'filter_htmlcorrector' => array(
         'weight' => 10,

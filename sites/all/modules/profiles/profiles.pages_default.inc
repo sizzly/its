@@ -228,7 +228,20 @@ function profiles_default_page_manager_handlers() {
   $pane->type = 'views_panes';
   $pane->subtype = 'profiles_all_page_layout-panel_pane_1';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
@@ -244,6 +257,38 @@ function profiles_default_page_manager_handlers() {
   $pane->uuid = '9d1639a5-674a-425e-833a-9ed7b50c3116';
   $display->content['new-9d1639a5-674a-425e-833a-9ed7b50c3116'] = $pane;
   $display->panels['header'][0] = 'new-9d1639a5-674a-425e-833a-9ed7b50c3116';
+  $pane = new stdClass();
+  $pane->pid = 'new-13f5264b-67ed-4ccf-8718-776bbb189800';
+  $pane->panel = 'header';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'profiles_all_page_layout-panel_pane_22';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '13f5264b-67ed-4ccf-8718-776bbb189800';
+  $display->content['new-13f5264b-67ed-4ccf-8718-776bbb189800'] = $pane;
+  $display->panels['header'][1] = 'new-13f5264b-67ed-4ccf-8718-776bbb189800';
   $pane = new stdClass();
   $pane->pid = 'new-7b6d2e8c-1f5c-49a2-b868-796bf519d73d';
   $pane->panel = 'sidebar';

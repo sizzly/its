@@ -59,10 +59,10 @@ function its_messaging_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'file_entity',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'file_view_mode' => 'wysiwyg',
         ),
         'type' => 'file_rendered',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'entityform',
@@ -163,13 +163,23 @@ function its_messaging_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'entityform',
+    'entityconnect' => array(
+      'button' => array(
+        'unload_add_button' => 1,
+        'unload_edit_button' => 1,
+      ),
+      'icon' => array(
+        'show_add_icon' => 1,
+        'show_edit_icon' => 1,
+      ),
+    ),
     'field_name' => 'field_status_content_reference',
     'label' => 'Status Content Reference',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 1,
           'fallback' => 'form_error',
           'providers' => array(
@@ -1089,11 +1099,8 @@ function its_messaging_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'message_notify_email_body' => array(
@@ -1148,11 +1155,8 @@ function its_messaging_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'message_notify_email_body' => array(
@@ -1206,9 +1210,8 @@ function its_messaging_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'message_notify_email_body' => array(
@@ -2220,6 +2223,40 @@ function its_messaging_field_default_field_instances() {
     'label' => 'Write something...',
     'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'pure_html' => 'pure_html',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'pure_html' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'mee_enabled' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -2227,7 +2264,7 @@ function its_messaging_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 2,
+        'rows' => 5,
       ),
       'type' => 'text_textarea',
       'weight' => 2,

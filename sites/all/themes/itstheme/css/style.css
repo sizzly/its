@@ -3,6 +3,11 @@
  */
 @import url("./font-awesome.min.css");
 img {max-width: 100%; height: auto;}
+/* Fix Auto Zoom on Phones */
+.form-control {
+    font-size: 16px;
+}
+/* End Fix Auto Zoom */
 .flush {
     margin-bottom: 0px;
 }

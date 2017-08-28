@@ -1908,6 +1908,41 @@ Displaying @start - @end of @total
   $handler->display->display_options['fields']['edit_node_1']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['edit_node_1']['element_wrapper_class'] = 'btn btn-default';
   $handler->display->display_options['fields']['edit_node_1']['text'] = 'Edit Battle';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node_2']['id'] = 'edit_node_2';
+  $handler->display->display_options['fields']['edit_node_2']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node_2']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node_2']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_2']['alter']['text'] = '<a href="/eform/submit/status-all-upload-image?field_status_content_reference=!1">Add Image</a>';
+  $handler->display->display_options['fields']['edit_node_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_2']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['edit_node_2']['element_wrapper_class'] = 'btn btn-default';
+  $handler->display->display_options['fields']['edit_node_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_2']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_2']['text'] = 'Add Image';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_game_reference_node';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node_3']['id'] = 'edit_node_3';
+  $handler->display->display_options['fields']['edit_node_3']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node_3']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node_3']['relationship'] = 'reverse_field_game_reference_node';
+  $handler->display->display_options['fields']['edit_node_3']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_3']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_3']['alter']['text'] = '<a href="/eform/submit/status-all-upload-image?field_status_content_reference=[nid]">Add Image</a>';
+  $handler->display->display_options['fields']['edit_node_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_3']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['edit_node_3']['element_wrapper_class'] = 'btn btn-default';
+  $handler->display->display_options['fields']['edit_node_3']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_3']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_3']['text'] = 'Add Image';
   /* Field: Content: Radioactivity */
   $handler->display->display_options['fields']['field_radioactivity']['id'] = 'field_radioactivity';
   $handler->display->display_options['fields']['field_radioactivity']['table'] = 'field_data_field_radioactivity';

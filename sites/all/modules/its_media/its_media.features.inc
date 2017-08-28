@@ -24,6 +24,31 @@ function its_media_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function its_media_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: inline.
+  $styles['inline'] = array(
+    'label' => 'Inline',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 838,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_default_message_type().
  */
 function its_media_default_message_type() {

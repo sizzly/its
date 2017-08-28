@@ -2765,6 +2765,29 @@ function profiles_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'models' => 'models',
+  );
+  /* Filter criterion: Content: Model Count (field_model_count) */
+  $handler->display->display_options['filters']['field_model_count_value']['id'] = 'field_model_count_value';
+  $handler->display->display_options['filters']['field_model_count_value']['table'] = 'field_data_field_model_count';
+  $handler->display->display_options['filters']['field_model_count_value']['field'] = 'field_model_count_value';
+  $handler->display->display_options['filters']['field_model_count_value']['group_type'] = 'sum';
+  $handler->display->display_options['filters']['field_model_count_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_model_count_value']['value']['value'] = '0';
   $handler->display->display_options['path'] = 'user/%/modelling/collection';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Collection';
@@ -9586,6 +9609,151 @@ jQuery(document).ready(function($) {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'caption';
+  $handler->display->display_options['pane_category']['name'] = 'Profiles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Page Header: Anonymous */
+  $handler = $view->new_display('panel_pane', 'Page Header: Anonymous', 'panel_pane_22');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
+    'main' => 'main',
+  );
+  /* Relationship: Profile: Location (field_profile_location) */
+  $handler->display->display_options['relationships']['field_profile_location_lid']['id'] = 'field_profile_location_lid';
+  $handler->display->display_options['relationships']['field_profile_location_lid']['table'] = 'field_data_field_profile_location';
+  $handler->display->display_options['relationships']['field_profile_location_lid']['field'] = 'field_profile_location_lid';
+  $handler->display->display_options['relationships']['field_profile_location_lid']['relationship'] = 'profile';
+  /* Relationship: Flags: follow */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'users';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'follow';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['ops']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['ops']['alter']['text'] = '<span class="btn btn-default">[ops]</span>';
+  $handler->display->display_options['fields']['ops']['element_type'] = 'span';
+  $handler->display->display_options['fields']['ops']['element_class'] = 'btn btn-default';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['ops']['element_default_classes'] = FALSE;
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'user_avatar';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'uc_store';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'privatemsg_current_day';
+  $handler->display->display_options['fields']['created']['format_date_sql'] = 0;
+  /* Field: Location: City */
+  $handler->display->display_options['fields']['city']['id'] = 'city';
+  $handler->display->display_options['fields']['city']['table'] = 'location';
+  $handler->display->display_options['fields']['city']['field'] = 'city';
+  $handler->display->display_options['fields']['city']['relationship'] = 'field_profile_location_lid';
+  $handler->display->display_options['fields']['city']['label'] = '';
+  $handler->display->display_options['fields']['city']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['city']['hide_empty'] = TRUE;
+  /* Field: Location: Province */
+  $handler->display->display_options['fields']['province']['id'] = 'province';
+  $handler->display->display_options['fields']['province']['table'] = 'location';
+  $handler->display->display_options['fields']['province']['field'] = 'province';
+  $handler->display->display_options['fields']['province']['relationship'] = 'field_profile_location_lid';
+  $handler->display->display_options['fields']['province']['label'] = '';
+  $handler->display->display_options['fields']['province']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['province']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['province']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['province']['style'] = 'code';
+  /* Field: Location: Country */
+  $handler->display->display_options['fields']['country']['id'] = 'country';
+  $handler->display->display_options['fields']['country']['table'] = 'location';
+  $handler->display->display_options['fields']['country']['field'] = 'country';
+  $handler->display->display_options['fields']['country']['relationship'] = 'field_profile_location_lid';
+  $handler->display->display_options['fields']['country']['label'] = '';
+  $handler->display->display_options['fields']['country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['country']['alter']['text'] = '<img src="/sites/default/files/default/iso/[country].png">';
+  $handler->display->display_options['fields']['country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['country']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['country']['style'] = 'code';
+  /* Field: Profile: Games Played */
+  $handler->display->display_options['fields']['field_games_played_profile']['id'] = 'field_games_played_profile';
+  $handler->display->display_options['fields']['field_games_played_profile']['table'] = 'field_data_field_games_played_profile';
+  $handler->display->display_options['fields']['field_games_played_profile']['field'] = 'field_games_played_profile';
+  $handler->display->display_options['fields']['field_games_played_profile']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_games_played_profile']['label'] = '';
+  $handler->display->display_options['fields']['field_games_played_profile']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_games_played_profile']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_games_played_profile']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_games_played_profile']['separator'] = ' / ';
+  /* Field: User: Signature */
+  $handler->display->display_options['fields']['signature']['id'] = 'signature';
+  $handler->display->display_options['fields']['signature']['table'] = 'users';
+  $handler->display->display_options['fields']['signature']['field'] = 'signature';
+  $handler->display->display_options['fields']['signature']['label'] = '';
+  $handler->display->display_options['fields']['signature']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['signature']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['signature']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-sm-3 text-center">
+  <span class="thumbnail">[picture]</span>
+</div>
+<div class="col-sm-9">
+  <span class="lead">[field_games_played_profile]</span><div>
+  <strong>[city] [province]</strong> <span>[country]</span>
+  <div><small class="block text-muted">Member Since: [created]</small></div></div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Profiles';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['profiles_all_page_layout'] = $view;

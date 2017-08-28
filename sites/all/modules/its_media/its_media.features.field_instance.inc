@@ -44,10 +44,18 @@ function its_media_field_default_field_instances() {
         'weight' => 3,
       ),
       'wysiwyg' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'jquery_expander',
+        'settings' => array(
+          'collapseTimer' => FALSE,
+          'expandPrefix' => '...',
+          'expandText' => 'Expand »',
+          'slicePoint' => 50,
+          'userCollapsePrefix' => '',
+          'userCollapseText' => 'Collapse',
+        ),
+        'type' => 'jquery_expander',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'file',
@@ -55,15 +63,52 @@ function its_media_field_default_field_instances() {
     'label' => 'Description',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filter' => 'filter',
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'pure_html' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filter' => array(
+              'weight' => -8,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'pure_html' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'mee_enabled' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 0,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 2,
+        'rows' => 3,
       ),
       'type' => 'text_textarea',
       'weight' => 2,
@@ -105,7 +150,7 @@ function its_media_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'file',

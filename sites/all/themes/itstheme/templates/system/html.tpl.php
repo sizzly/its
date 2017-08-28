@@ -76,15 +76,15 @@
         <script>
             googletag.cmd.push(function () {
                 var sidebar1 = googletag.sizeMapping().
-                        addSize([1200, 0], [[180, 150], [200, 200], [250, 250], [1, 1]]).//full desktop
-                        addSize([992, 0], [[180, 150], [200, 200], [1, 1]]).//desktop
+                        addSize([1200, 0], [[250, 250], [200, 200], [180, 150], [1, 1]]).//full desktop
+                        addSize([992, 0], [[200, 200], [180, 150], [1, 1]]).//desktop
                         addSize([768, 0], [[728, 90], [468, 60], [6, 1]]).//tablet
                         addSize([320, 0], [[320, 50], [320, 100], [300, 250], [1, 1]]).//mobile
                         addSize([0, 0], [[320, 50], [1, 1]]).//other
                         build();
                 var sidebar2 = googletag.sizeMapping().
-                        addSize([1200, 0], [[160, 600], [200, 200], [250, 250], [1, 1]]).//full desktop
-                        addSize([992, 0], [[160, 600], [180, 150], [200, 200], [1, 1]]).//desktop
+                        addSize([1200, 0], [[250, 250], [200, 200], [160, 600], [1, 1]]).//full desktop
+                        addSize([992, 0], [[200, 200], [160, 600], [180, 150], [1, 1]]).//desktop
                         addSize([768, 0], [[728, 90], [468, 60], [6, 1]]).//tablet
                         addSize([320, 0], [[320, 50], [320, 100], [300, 250], [1, 1]]).//mobile
                         addSize([0, 0], [[320, 50], [1, 1]]).//other

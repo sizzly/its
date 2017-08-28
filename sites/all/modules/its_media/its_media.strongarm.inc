@@ -96,7 +96,7 @@ function its_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_dialog_theme';
-  $strongarm->value = 'bootstrap';
+  $strongarm->value = 'seven';
   $export['media_dialog_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -159,7 +159,7 @@ function its_media_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'media_width';
-  $strongarm->value = '480';
+  $strongarm->value = '350';
   $export['media_width'] = $strongarm;
 
   $strongarm = new stdClass();

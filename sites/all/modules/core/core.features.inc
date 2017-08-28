@@ -11,6 +11,9 @@ function core_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ctools_custom_content" && $api == "ctools_content") {
     return array("version" => "1");
   }
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "file_entity" && $api == "file_default_displays") {
     return array("version" => "1");
   }

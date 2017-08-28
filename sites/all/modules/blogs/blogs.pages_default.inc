@@ -303,31 +303,28 @@ blog/%node:author:uid
   $display->content['new-2b283703-1f43-4894-a0ea-de56b27183fa'] = $pane;
   $display->panels['contentmain'][2] = 'new-2b283703-1f43-4894-a0ea-de56b27183fa';
   $pane = new stdClass();
-  $pane->pid = 'new-a0295247-693b-46a9-88a4-e7c9e6d6b7e1';
+  $pane->pid = 'new-b53ed605-c08d-4e31-af03-abb2584036de';
   $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_4';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'author_block';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => array(
-      'use_title' => 1,
-      'use_footer' => 0,
-      'panel_body' => 1,
-      'footer_content' => '',
-      'context_class' => 'panel-default',
-    ),
-    'style' => 'bootstrap_panel',
+    'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'a0295247-693b-46a9-88a4-e7c9e6d6b7e1';
-  $display->content['new-a0295247-693b-46a9-88a4-e7c9e6d6b7e1'] = $pane;
-  $display->panels['footer'][0] = 'new-a0295247-693b-46a9-88a4-e7c9e6d6b7e1';
+  $pane->uuid = 'b53ed605-c08d-4e31-af03-abb2584036de';
+  $display->content['new-b53ed605-c08d-4e31-af03-abb2584036de'] = $pane;
+  $display->panels['footer'][0] = 'new-b53ed605-c08d-4e31-af03-abb2584036de';
   $pane = new stdClass();
   $pane->pid = 'new-e00b6621-5b6e-4be1-b849-69a6f0f9e1cf';
   $pane->panel = 'footer';
@@ -770,7 +767,14 @@ function blogs_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -808,54 +812,6 @@ function blogs_default_page_manager_pages() {
   $display->content['new-5d263c0c-4a14-48d3-8eec-21a509d619f9'] = $pane;
   $display->panels['header'][0] = 'new-5d263c0c-4a14-48d3-8eec-21a509d619f9';
   $pane = new stdClass();
-  $pane->pid = 'new-f7440895-104b-4c5a-b15c-9f116864418b';
-  $pane->panel = 'header';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Nav Bar',
-    'title' => '',
-    'body' => '<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Community</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/blog">Blogs</a></li>
-        <li><a href="/galleries">Galleries</a></li>
-        <li><a href="/forum">Discussions</a></li>
-        <li><a href="/wargaming-decorations/leaderboards">Leaderboards</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>',
-    'format' => 'pure_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'f7440895-104b-4c5a-b15c-9f116864418b';
-  $display->content['new-f7440895-104b-4c5a-b15c-9f116864418b'] = $pane;
-  $display->panels['header'][1] = 'new-f7440895-104b-4c5a-b15c-9f116864418b';
-  $pane = new stdClass();
   $pane->pid = 'new-c24a6d90-0c0a-47bf-9c70-edb19aa564ea';
   $pane->panel = 'sidebar';
   $pane->type = 'views_panes';
@@ -865,7 +821,14 @@ function blogs_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -884,7 +847,14 @@ function blogs_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -903,7 +873,14 @@ function blogs_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();

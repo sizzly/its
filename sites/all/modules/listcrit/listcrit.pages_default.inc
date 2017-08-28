@@ -339,62 +339,28 @@ gaming/listcrit',
   $display->content['new-8c78aed6-c271-4dc8-b0f7-9336ec884d12'] = $pane;
   $display->panels['contentmain'][2] = 'new-8c78aed6-c271-4dc8-b0f7-9336ec884d12';
   $pane = new stdClass();
-  $pane->pid = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
+  $pane->pid = 'new-5cddb24f-def4-4ce0-bc21-349d91644a16';
   $pane->panel = 'footer';
-  $pane->type = 'node_body';
-  $pane->subtype = 'node_body';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'author_block';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => 'List and Tactics',
+    'override_title' => 0,
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => array(
-      'use_title' => 1,
-      'use_footer' => 0,
-      'panel_body' => 1,
-      'footer_content' => '',
-      'context_class' => 'panel-default',
-    ),
-    'style' => 'bootstrap_panel',
+    'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '760550aa-4af8-4acc-8f45-b3f05a0e4828';
-  $display->content['new-760550aa-4af8-4acc-8f45-b3f05a0e4828'] = $pane;
-  $display->panels['footer'][0] = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
-  $pane = new stdClass();
-  $pane->pid = 'new-7a41320a-488f-4905-98ef-eadc9f8f9641';
-  $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'use_title' => 1,
-      'use_footer' => 0,
-      'panel_body' => 1,
-      'footer_content' => '',
-      'context_class' => 'panel-default',
-    ),
-    'style' => 'bootstrap_panel',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '7a41320a-488f-4905-98ef-eadc9f8f9641';
-  $display->content['new-7a41320a-488f-4905-98ef-eadc9f8f9641'] = $pane;
-  $display->panels['footer'][1] = 'new-7a41320a-488f-4905-98ef-eadc9f8f9641';
+  $pane->uuid = '5cddb24f-def4-4ce0-bc21-349d91644a16';
+  $display->content['new-5cddb24f-def4-4ce0-bc21-349d91644a16'] = $pane;
+  $display->panels['footer'][0] = 'new-5cddb24f-def4-4ce0-bc21-349d91644a16';
   $pane = new stdClass();
   $pane->pid = 'new-75f89721-038f-428e-ace3-e3801f87cdc5';
   $pane->panel = 'footer';
@@ -422,11 +388,11 @@ gaming/listcrit',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '75f89721-038f-428e-ace3-e3801f87cdc5';
   $display->content['new-75f89721-038f-428e-ace3-e3801f87cdc5'] = $pane;
-  $display->panels['footer'][2] = 'new-75f89721-038f-428e-ace3-e3801f87cdc5';
+  $display->panels['footer'][1] = 'new-75f89721-038f-428e-ace3-e3801f87cdc5';
   $pane = new stdClass();
   $pane->pid = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
   $pane->panel = 'footer';
@@ -448,11 +414,11 @@ gaming/listcrit',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
   $display->content['new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4'] = $pane;
-  $display->panels['footer'][3] = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
+  $display->panels['footer'][2] = 'new-5e81a2df-045a-40e7-b5b3-eeb78a4eb5d4';
   $pane = new stdClass();
   $pane->pid = 'new-58da19c2-93cc-4f03-a688-b09c28b12f43';
   $pane->panel = 'header';
@@ -534,6 +500,37 @@ gaming/listcrit',
   $pane->uuid = 'db26f124-e580-4ac1-82b8-d0db64392945';
   $display->content['new-db26f124-e580-4ac1-82b8-d0db64392945'] = $pane;
   $display->panels['sidebar'][0] = 'new-db26f124-e580-4ac1-82b8-d0db64392945';
+  $pane = new stdClass();
+  $pane->pid = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
+  $pane->panel = 'sidebar';
+  $pane->type = 'node_body';
+  $pane->subtype = 'node_body';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'List and Tactics',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '760550aa-4af8-4acc-8f45-b3f05a0e4828';
+  $display->content['new-760550aa-4af8-4acc-8f45-b3f05a0e4828'] = $pane;
+  $display->panels['sidebar'][1] = 'new-760550aa-4af8-4acc-8f45-b3f05a0e4828';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
