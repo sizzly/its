@@ -740,6 +740,9 @@ function events_default_page_manager_handlers() {
           'settings' => array(
             'type' => array(
               'event' => 'event',
+              'special_event' => 'special_event',
+              'war_zone_league' => 'war_zone_league',
+              'war_zone_tournament' => 'war_zone_tournament',
             ),
           ),
           'context' => 'argument_entity_id:node_1',

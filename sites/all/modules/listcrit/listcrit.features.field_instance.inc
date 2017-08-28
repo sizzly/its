@@ -48,6 +48,40 @@ function listcrit_field_default_field_instances() {
     'label' => 'List and Commentary',
     'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filter' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 0,
+          'plain_text' => 0,
+          'pure_html' => 'pure_html',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filter' => array(
+              'weight' => -8,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'pure_html' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -571,46 +605,6 @@ function listcrit_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listcrit-field_short_description'.
-  $field_instances['node-listcrit-field_short_description'] = array(
-    'bundle' => 'listcrit',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'A brief description of this army list.  255 character limit.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_short_description',
-    'label' => 'Short Description',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-listcrit-field_tactical_focus'.
   $field_instances['node-listcrit-field_tactical_focus'] = array(
     'bundle' => 'listcrit',
@@ -798,7 +792,6 @@ function listcrit_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('A brief description of this army list.  255 character limit.');
   t('Allied Detatchments');
   t('Army');
   t('Auxillary');
@@ -815,7 +808,6 @@ function listcrit_field_default_field_instances() {
   t('Primary Role');
   t('Radioactivity');
   t('Rate List');
-  t('Short Description');
   t('Tactical Focus');
   t('Teaser Image');
   t('The primary faction for this list.');

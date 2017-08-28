@@ -5,6 +5,7 @@
 function media_bootstrap_element_info_alter(&$type) {
   $type['media']['#process'][] = 'media_bootstrap_media_buttons_add_classes';
 }
+
 /**
  * Extra #process callback which adds extra classes the media element buttons.
  */
@@ -19,4 +20,6 @@ function media_bootstrap_media_buttons_add_classes($element, $edit, &$form_state
   $element['browse_button']['#attributes']['class'][] = 'btn-default';
   return $element;
 }
+
+
 ?>

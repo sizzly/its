@@ -65,6 +65,40 @@ function battlefields_field_default_field_instances() {
     'label' => 'Description',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filter' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 0,
+          'plain_text' => 0,
+          'pure_html' => 'pure_html',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filter' => array(
+              'weight' => -8,
+            ),
+            'filtered_html' => array(
+              'weight' => -10,
+            ),
+            'full_html' => array(
+              'weight' => -9,
+            ),
+            'php_code' => array(
+              'weight' => -5,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'pure_html' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,

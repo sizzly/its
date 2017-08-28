@@ -179,6 +179,23 @@ function core_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'user-menu_my-account:user',
   );
+  // Exported menu link: user-menu_comments:dashboard/comments.
+  $menu_links['user-menu_comments:dashboard/comments'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'dashboard/comments',
+    'router_path' => 'dashboard/comments',
+    'link_title' => 'Comments',
+    'options' => array(
+      'identifier' => 'user-menu_comments:dashboard/comments',
+    ),
+    'module' => 'system',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: user-menu_dashboard:dashboard.
   $menu_links['user-menu_dashboard:dashboard'] = array(
     'menu_name' => 'user-menu',
@@ -208,6 +225,23 @@ function core_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'user-menu_my-account:user',
   );
+  // Exported menu link: user-menu_log-out:user/logout.
+  $menu_links['user-menu_log-out:user/logout'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'user/logout',
+    'router_path' => 'user/logout',
+    'link_title' => 'Log out',
+    'options' => array(
+      'identifier' => 'user-menu_log-out:user/logout',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 10,
+    'customized' => 0,
+  );
   // Exported menu link: user-menu_login:user/login.
   $menu_links['user-menu_login:user/login'] = array(
     'menu_name' => 'user-menu',
@@ -236,6 +270,23 @@ function core_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
+  // Exported menu link: user-menu_manage-war-zones:dashboard/manage-war-zones.
+  $menu_links['user-menu_manage-war-zones:dashboard/manage-war-zones'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'dashboard/manage-war-zones',
+    'router_path' => 'dashboard/manage-war-zones',
+    'link_title' => 'Manage War Zones',
+    'options' => array(
+      'identifier' => 'user-menu_manage-war-zones:dashboard/manage-war-zones',
+    ),
+    'module' => 'system',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: user-menu_messages:messages.
   $menu_links['user-menu_messages:messages'] = array(
     'menu_name' => 'user-menu',
@@ -253,6 +304,23 @@ function core_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
     'parent_identifier' => 'user-menu_my-account:user',
+  );
+  // Exported menu link: user-menu_my-points:myuserpoints.
+  $menu_links['user-menu_my-points:myuserpoints'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'myuserpoints',
+    'router_path' => 'myuserpoints',
+    'link_title' => 'My !points',
+    'options' => array(
+      'identifier' => 'user-menu_my-points:myuserpoints',
+    ),
+    'module' => 'system',
+    'hidden' => 1,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
   );
   // Exported menu link: user-menu_register:user/register.
   $menu_links['user-menu_register:user/register'] = array(
@@ -276,6 +344,23 @@ function core_menu_default_menu_links() {
     ),
     'module' => 'menu',
     'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: user-menu_replies:dashboard/replies.
+  $menu_links['user-menu_replies:dashboard/replies'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'dashboard/replies',
+    'router_path' => 'dashboard/replies',
+    'link_title' => 'Replies',
+    'options' => array(
+      'identifier' => 'user-menu_replies:dashboard/replies',
+    ),
+    'module' => 'system',
+    'hidden' => 1,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
@@ -315,14 +400,19 @@ function core_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add Content');
+  t('Comments');
   t('Community');
   t('Dashboard');
   t('Gaming');
+  t('Log out');
   t('Login');
+  t('Manage War Zones');
   t('Messages');
   t('Modelling');
+  t('My !points');
   t('Narrative');
   t('Register');
+  t('Replies');
   t('Theater');
   t('View Profile');
 

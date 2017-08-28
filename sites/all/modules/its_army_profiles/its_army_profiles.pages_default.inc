@@ -133,31 +133,28 @@ order-of-battle/player-armies',
   $display->content['new-e42467f1-9ac0-459b-bea2-6da2ff228d71'] = $pane;
   $display->panels['contentmain'][1] = 'new-e42467f1-9ac0-459b-bea2-6da2ff228d71';
   $pane = new stdClass();
-  $pane->pid = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $pane->pid = 'new-0701a266-fc9f-4128-abba-4e68084a2b60';
   $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_4';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'author_block';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => array(
-      'use_title' => 1,
-      'use_footer' => 0,
-      'panel_body' => 1,
-      'footer_content' => '',
-      'context_class' => 'panel-default',
-    ),
-    'style' => 'bootstrap_panel',
+    'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'e9ad6263-7ee4-49cf-9281-748c95ce4416';
-  $display->content['new-e9ad6263-7ee4-49cf-9281-748c95ce4416'] = $pane;
-  $display->panels['footer'][0] = 'new-e9ad6263-7ee4-49cf-9281-748c95ce4416';
+  $pane->uuid = '0701a266-fc9f-4128-abba-4e68084a2b60';
+  $display->content['new-0701a266-fc9f-4128-abba-4e68084a2b60'] = $pane;
+  $display->panels['footer'][0] = 'new-0701a266-fc9f-4128-abba-4e68084a2b60';
   $pane = new stdClass();
   $pane->pid = 'new-fc65d787-5e0a-42fc-b7a2-22d48e3750bc';
   $pane->panel = 'footer';

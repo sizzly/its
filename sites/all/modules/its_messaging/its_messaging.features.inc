@@ -194,9 +194,9 @@ function its_messaging_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "\\u003Cspan\\u003E[message:user] has submitted recon photos.\\u003C\\/span\\u003E",
+          "value" : "\\u003Ca href=\\u0022[message:user:url:relative]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E has submitted recon photos.",
           "format" : "pure_html",
-          "safe_value" : "\\u003Cspan\\u003E[message:user] has submitted recon photos.\\u003C\\/span\\u003E"
+          "safe_value" : "\\u003Ca href=\\u0022[message:user:url:relative]\\u0022\\u003E[message:user:name]\\u003C\\/a\\u003E has submitted recon photos."
         }
       ]
     }

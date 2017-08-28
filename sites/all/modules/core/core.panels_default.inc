@@ -141,6 +141,115 @@ function core_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
+  $mini->name = 'author_block';
+  $mini->category = 'Node';
+  $mini->admin_title = 'Author Block';
+  $mini->admin_description = 'Displays the author block for nodes with either the authenticated user version or the Anonymous user version.';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'bootopoly_boxton';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Player Info';
+  $display->uuid = '94f664b1-58bf-44d3-b4c6-eb1a59327f6b';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'author_block';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-c5a0a36f-f231-417c-8c59-684139309013';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_layout-panel_pane_4';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c5a0a36f-f231-417c-8c59-684139309013';
+  $display->content['new-c5a0a36f-f231-417c-8c59-684139309013'] = $pane;
+  $display->panels['contentmain'][0] = 'new-c5a0a36f-f231-417c-8c59-684139309013';
+  $pane = new stdClass();
+  $pane->pid = 'new-86bade5b-09bb-47e8-964d-57e0dd731edb';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'core_all_node_layout-panel_pane_7';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '86bade5b-09bb-47e8-964d-57e0dd731edb';
+  $display->content['new-86bade5b-09bb-47e8-964d-57e0dd731edb'] = $pane;
+  $display->panels['contentmain'][1] = 'new-86bade5b-09bb-47e8-964d-57e0dd731edb';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-c5a0a36f-f231-417c-8c59-684139309013';
+  $mini->display = $display;
+  $export['author_block'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
   $mini->name = 'login_and_new_user_block';
   $mini->category = '';
   $mini->admin_title = 'Login and New User Block';

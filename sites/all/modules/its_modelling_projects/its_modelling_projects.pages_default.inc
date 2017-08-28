@@ -185,31 +185,28 @@ modelling/projects',
   $display->content['new-acd44e58-bc01-44ba-af66-93c0a8bf1390'] = $pane;
   $display->panels['footer'][0] = 'new-acd44e58-bc01-44ba-af66-93c0a8bf1390';
   $pane = new stdClass();
-  $pane->pid = 'new-3862ea0f-3273-45db-8a8b-4e9eeab80ccb';
+  $pane->pid = 'new-ff5f2e29-f7d1-4c09-935e-c659ce997354';
   $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'core_all_node_layout-panel_pane_4';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'author_block';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => array(
-      'use_title' => 1,
-      'use_footer' => 0,
-      'panel_body' => 1,
-      'footer_content' => '',
-      'context_class' => 'panel-default',
-    ),
-    'style' => 'bootstrap_panel',
+    'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '3862ea0f-3273-45db-8a8b-4e9eeab80ccb';
-  $display->content['new-3862ea0f-3273-45db-8a8b-4e9eeab80ccb'] = $pane;
-  $display->panels['footer'][1] = 'new-3862ea0f-3273-45db-8a8b-4e9eeab80ccb';
+  $pane->uuid = 'ff5f2e29-f7d1-4c09-935e-c659ce997354';
+  $display->content['new-ff5f2e29-f7d1-4c09-935e-c659ce997354'] = $pane;
+  $display->panels['footer'][1] = 'new-ff5f2e29-f7d1-4c09-935e-c659ce997354';
   $pane = new stdClass();
   $pane->pid = 'new-6af79bba-7d4c-4f84-a782-db2585525703';
   $pane->panel = 'footer';
@@ -324,6 +321,42 @@ modelling/projects',
   $pane->uuid = '9f7093e8-9f54-4ee0-8179-1c5dce8b72fd';
   $display->content['new-9f7093e8-9f54-4ee0-8179-1c5dce8b72fd'] = $pane;
   $display->panels['header'][1] = 'new-9f7093e8-9f54-4ee0-8179-1c5dce8b72fd';
+  $pane = new stdClass();
+  $pane->pid = 'new-f2426bab-8cfd-457f-be64-e1e82edead32';
+  $pane->panel = 'header';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Add Image Block',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<div class="collapse" id="collapseImageForm">
+  <div class="well">
+<?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'status_all_upload_image\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>
+  </div>
+</div>',
+    'format' => 'php_code',
+    'substitute' => 1,
+    'name' => 'add_image_block',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'f2426bab-8cfd-457f-be64-e1e82edead32';
+  $display->content['new-f2426bab-8cfd-457f-be64-e1e82edead32'] = $pane;
+  $display->panels['header'][2] = 'new-f2426bab-8cfd-457f-be64-e1e82edead32';
   $pane = new stdClass();
   $pane->pid = 'new-cf18e827-23f0-45b6-9f89-c941663a85be';
   $pane->panel = 'sidebar';

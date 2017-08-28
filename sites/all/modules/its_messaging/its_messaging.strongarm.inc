@@ -161,7 +161,23 @@ function its_messaging_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_message__stream_player_acknowledges_a_battle';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'message_notify_email_subject' => array(
+        'custom_settings' => TRUE,
+      ),
+      'message_notify_email_body' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(
@@ -173,6 +189,10 @@ function its_messaging_strongarm() {
           'message_notify_email_body' => array(
             'visible' => FALSE,
             'weight' => 0,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
           ),
         ),
         'message__message_text__1' => array(

@@ -64,6 +64,7 @@ Drupal.media.popups.mediaBrowser = function (onSelect, globalOptions, pluginOpti
   // Attach an onLoad event.
   mediaIframe.bind('load', options, options.widget.onLoad);
 
+
   // Create an array of Dialog options.
   var dialogOptions = options.dialog;
 
@@ -111,7 +112,7 @@ Drupal.media.popups.mediaBrowser.getDefaults = function () {
   return {
     global: {
       types: [], // Types to allow, defaults to all.
-      activePlugins: [] // If provided, a list of plugins which should be enabled.
+      enabledPlugins: [] // If provided, a list of plugins which should be enabled.
     },
     widget: { // Settings for the actual iFrame which is launched.
       src: Drupal.settings.media.browserUrl, // Src of the media browser (if you want to totally override it)
@@ -213,6 +214,7 @@ Drupal.media.popups.mediaStyleSelector = function (mediaFile, onSelect, options)
   dialogOptions.buttons[ok] = function () {
     // Find the current file selection.
     var formattedMedia = this.contentWindow.Drupal.media.formatForm.getFormattedMedia();
+    formattedMedia.options = $.extend({}, mediaFile.attributes, formattedMedia.options);
 
     // Alert the user if a selection has yet to be made.
     if (!formattedMedia) {
@@ -341,8 +343,8 @@ Drupal.media.popups.getDialogOptions = function () {
     modal: Drupal.settings.media.dialogOptions.modal,
     draggable: Drupal.settings.media.dialogOptions.draggable,
     resizable: Drupal.settings.media.dialogOptions.resizable,
-    minWidth: Drupal.settings.media.dialogOptions.minwidth,
-    width: Drupal.settings.media.dialogOptions.width,
+    minWidth: 350,
+    width: 350,
     height: Drupal.settings.media.dialogOptions.height,
     position: Drupal.settings.media.dialogOptions.position,
     overlay: {
@@ -401,7 +403,7 @@ Drupal.media.popups.sizeDialog = function (dialogElement) {
   }
 
   var windowWidth = $(window).width();
-  var dialogWidth = windowWidth * 0.8;
+  var dialogWidth = 350;
   var windowHeight = $(window).height();
   var dialogHeight = windowHeight * 0.8;
 
