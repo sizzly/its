@@ -188,20 +188,6 @@ function core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_migrate_backup';
-  $strongarm->value = 1;
-  $export['s3fs_migrate_backup'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_migrate_cron_limit';
-  $strongarm->value = '5';
-  $export['s3fs_migrate_cron_limit'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 's3fs_migrate_fields';
   $strongarm->value = array();
   $export['s3fs_migrate_fields'] = $strongarm;
@@ -212,27 +198,6 @@ function core_strongarm() {
   $strongarm->name = 's3fs_migrate_newer_first';
   $strongarm->value = 1;
   $export['s3fs_migrate_newer_first'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_migrate_newer_first_orig';
-  $strongarm->value = 1;
-  $export['s3fs_migrate_newer_first_orig'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_migrate_next_fid';
-  $strongarm->value = 21529;
-  $export['s3fs_migrate_next_fid'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_migrate_scope';
-  $strongarm->value = 'public';
-  $export['s3fs_migrate_scope'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -254,27 +219,6 @@ function core_strongarm() {
   $strongarm->name = 's3fs_region';
   $strongarm->value = '';
   $export['s3fs_region'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_root_folder';
-  $strongarm->value = '';
-  $export['s3fs_root_folder'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_saveas';
-  $strongarm->value = '';
-  $export['s3fs_saveas'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 's3fs_torrents';
-  $strongarm->value = '';
-  $export['s3fs_torrents'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
