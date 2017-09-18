@@ -1,0 +1,57 @@
+<?php
+/**
+ * @file
+ * Install and uninstall functions.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function vtiger_crm_webform_schema() {
+  $schema = array();
+  $schema['vtiger_crm_webform_mapping'] = array(
+    'description' => 'Table for storing Drupal and Vtiger entity fields mapping information.',
+    'fields' => array(
+      'wmid' => array(
+        'description' => 'The primary identifier for a webform mapping.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'enabled' => array(
+        'description' => 'Indicates whether transfer for current webform is enabled.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'nid' => array(
+        'description' => 'Node if of the webform used for mapping.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'vtiger_module' => array(
+        'description' => 'The machine name of a Vtiger module.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'assigned_user_id' => array(
+        'description' => 'The ID of a Vtiger user the entity is assigned to.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'mappings' => array(
+        'description' => 'A serialized array containing field sources and destinations.',
+        'type' => 'blob',
+        'size' => 'normal',
+        'not null' => TRUE,
+      ),
+    ),
+    'foreign keys' => array('nid'),
+    'primary key' => array('wmid'),
+  );
+  return $schema;
+};

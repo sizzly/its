@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * Provides a class to interact with Vtiger CRM.
+ */
+
+module_load_include('inc', 'vtiger_crm', 'includes/vtiger_crm');
+
+/**
+ * Implements hook_menu().
+ */
+function vtiger_crm_menu() {
+  $items = array();
+  $items['admin/config/services/vtiger'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'Vtiger CRM',
+    'description' => 'Configure server URL, username and other settings related to Vtiger integration',
+    'access arguments' => array('administer vtiger configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('vtiger_crm_settings'),
+    'file' => 'includes/vtiger_crm.admin.inc',
+    'weight' => 0,
+  );
+  $items['admin/config/services/vtiger/default'] = array(
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'title' => 'Vtiger CRM primary settings',
+    'weight' => 1,
+  );
+  $items['admin/config/services/vtiger/sync'] = array(
+    'type' => MENU_LOCAL_TASK,
+    'title' => 'Vtiger CRM data synchronization',
+    'description' => 'Synchronize information about Vtiger users, modules and their fields between your Website and Vtiger installation.',
+    'access arguments' => array('administer vtiger configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('vtiger_crm_synchronization'),
+    'file' => 'includes/vtiger_crm.admin.inc',
+    'weight' => 2,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function vtiger_crm_permission() {
+  return array(
+    'administer vtiger configuration' => array(
+      'title' => t('Administer Vtiger configuration.'),
+      'description' => t('Allows to change Vtiger integration settings.'),
+    ),
+  );
+}

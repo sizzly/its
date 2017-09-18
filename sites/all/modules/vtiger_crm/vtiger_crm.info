@@ -1,0 +1,14 @@
+name = Vtiger CRM Integration
+description = Provides a class to inegrate with Vtiger via a RESTful API
+core = 7.x
+package = Vtiger CRM
+configure = admin/config/services/vtiger
+
+files[] = includes/VtigerCrmApi.php
+
+; Information added by Drupal.org packaging script on 2016-06-16
+version = "7.x-1.0"
+core = "7.x"
+project = "vtiger_crm"
+datestamp = "1466098965"
+

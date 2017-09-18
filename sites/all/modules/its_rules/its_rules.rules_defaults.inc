@@ -168,7 +168,7 @@ function its_rules_default_rules_configuration() {
               "DO" : [
                 { "data_set" : { "data" : [ "nid:field-registration-deadline" ], "value" : "now -1 day" } },
                 { "data_set" : { "data" : [ "nid:field-status" ], "value" : "0" } },
-                { "component_rules_core_all_generate_message_for_new_content" : { "nid" : [ "nid" ], "icon" : "calendar" } },
+                { "component_rules_core_all_generate_message_for_new_content" : { "nid" : [ "nid" ], "icon" : "fa-calendar" } },
                 { "CONDITIONAL" : [
                     {
                       "IF" : { "data_is" : { "data" : [ "nid:field-event-organizer" ], "value" : "1" } },
@@ -1147,7 +1147,13 @@ function its_rules_default_rules_configuration() {
               "IF" : { "entity_is_of_bundle" : {
                   "entity" : [ "entityform:field-status-content-reference" ],
                   "type" : "node",
-                  "bundle" : { "value" : { "models" : "models" } }
+                  "bundle" : { "value" : {
+                      "game_results" : "game_results",
+                      "gallery" : "gallery",
+                      "game_result_system_" : "game_result_system_",
+                      "models" : "models"
+                    }
+                  }
                 }
               },
               "DO" : [
@@ -1168,6 +1174,24 @@ function its_rules_default_rules_configuration() {
                     ]
                   }
                 }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_is_of_bundle" : {
+                  "entity" : [ "entityform:field-status-content-reference" ],
+                  "type" : "node",
+                  "bundle" : { "value" : {
+                      "game_results" : "game_results",
+                      "game_result_system_" : "game_result_system_"
+                    }
+                  }
+                }
+              },
+              "DO" : [
+                { "redirect" : { "url" : [ "entityform:field-status-content-reference:url" ] } }
               ]
             }
           ]

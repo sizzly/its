@@ -1,0 +1,54 @@
+<?php
+/**
+ * @file
+ * Allows to map and sync fields between Drupal and Vtiger entities.
+ */
+
+module_load_include('inc', 'vtiger_entity', 'includes/vtiger_crm_entity');
+
+/**
+ *  Implements hook_menu().
+ */
+function vtiger_crm_entity_menu() {
+  $items = array();
+  $items['admin/config/services/vtiger/entity-mapping'] = array(
+    'type' => MENU_LOCAL_TASK,
+    'title' => 'Drupal-Vtiger fields mapping',
+    'description' => 'Set up mapping between the Drupal user entity and Vtiger entities.',
+    'access arguments' => array('administer vtiger configuration'),
+    'page callback' => 'vtiger_crm_entity_settings',
+    'file' => 'includes/vtiger_crm_entity.admin.inc',
+    'weight' => 3,
+  );
+  $items['admin/config/services/vtiger/entity-mapping/%/edit'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'Edit existing Drupal-Vtiger mapping',
+    'access arguments' => array('administer vtiger configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('vtiger_crm_entity_mapping_form', 5),
+    'file' => 'includes/vtiger_crm_entity.admin.inc',
+    'weight' => 3,
+  );
+  $items['admin/config/services/vtiger/entity-mapping/%/delete'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'Delete existing Drupal-Vtiger mapping',
+    'access arguments' => array('administer vtiger configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('vtiger_crm_entity_confirm_mid_delete', 5),
+    'file' => 'includes/vtiger_crm_entity.admin.inc',
+    'weight' => 3,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function vtiger_crm_entity_theme() {
+  return array(
+    'vtiger_crm_entity_mapping_form' => array(
+      'render element' => 'form',
+      'file' => 'includes/vtiger_crm_entity.theme.inc',
+    ),
+  );
+}
