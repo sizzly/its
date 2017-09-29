@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function vtiger_crm_schema() {
+  $schema = array();
+  $schema['vtiger_crm_modules'] = array(
+    'description' => 'Table for storing Vtiger modules information.',
+    'fields' => array(
+      'label' => array(
+        'description' => 'The label of the entity.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'The name of the entity.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'createable' => array(
+        'description' => 'Boolean value for whether this entity can be created.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'updateable' => array(
+        'description' => 'Boolean value for whether this entity can be updated.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'deleteable' => array(
+        'description' => 'Boolean value for whether this entity can be deleted.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'retrieveable' => array(
+        'description' => 'Boolean value for whether this entity can be retrieved.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'fields' => array(
+        'description' => 'A serialized multi dimensional array that contains the information of the entity fields.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'idPrefix' => array(
+        'description' => 'The prefix that goes at the beginning of each entity\'s ID.',
+        'type' => 'int',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'isEntity' => array(
+        'description' => 'Indicates whether this module is an entity.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'labelFields' => array(
+        'description' => 'Fields that form the label of the entity.',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+    ),
+    'primary key' => array('name'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function vtiger_crm_uninstall() {
+  db_delete('variable')
+    ->condition('name', 'vtiger_crm_%', 'LIKE')
+    ->execute();
+}

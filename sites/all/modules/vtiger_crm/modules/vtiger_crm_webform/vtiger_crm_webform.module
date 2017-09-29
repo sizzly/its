@@ -1,0 +1,103 @@
+<?php
+/**
+ * @file
+ * Sends values submitted by Webformm to Vtiger CRM.
+ */
+
+// Load include with custom functions and page callbacks.
+module_load_include('inc', 'vtiger_crm_webform', 'includes/vtiger_crm_webform');
+
+/**
+ * Implements hook_menu().
+ */
+function vtiger_crm_webform_menu() {
+  $items = array();
+  $items['node/%webform_menu/webform/vtiger-mapping'] = array(
+    'title' => 'Vtiger module mappings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('vtiger_crm_webform_mapping_form', 1),
+    'access callback' => 'webform_node_update_access',
+    'access arguments' => array(1),
+    'file' => 'includes/vtiger_crm_webform.inc',
+    'weight' => 1,
+    'type' => MENU_LOCAL_TASK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function vtiger_crm_webform_theme() {
+  return array(
+    'vtiger_crm_webform_mapping_form' => array(
+      'render element' => 'form',
+      'file' => 'includes/vtiger_crm_webform.theme.inc',
+    ),
+  );
+}
+
+/**
+ * Implements hook_webform_submission_insert().
+ *
+ * Send submission data to Vtiger CRM if mapping is set up and enabled.
+ */
+function vtiger_crm_webform_webform_submission_insert($node, $submission) {
+  $mapping = db_query('SELECT vwm.enabled, vwm.assigned_user_id, vwm.vtiger_module, vwm.mappings
+    FROM {vtiger_crm_webform_mapping} vwm
+    WHERE vwm.nid = :nid', array(':nid' => $node->nid))->fetchAssoc();
+  if ($mapping && $mapping['enabled']) {
+    $vtiger_module = $mapping['vtiger_module'];
+    $mapping_fields = unserialize($mapping['mappings']);
+    $element = array();
+    $element['assigned_user_id'] = $mapping['assigned_user_id'];
+    foreach ($mapping_fields as $cid => $field) {
+      $type = $node->webform['components'][$cid]['type'];
+      // For file type, we'll take a human-readable file name instead of fid.
+      if ($type === 'file') {
+        $file = file_load($submission->data[$cid][0]);
+        $element[$field] = $file->filename;
+      }
+      else {
+        $element[$field] = $submission->data[$cid][0];
+      }
+    }
+    $vtiger_api = new VtigerCrmApi();
+    $vtiger_api->create($element, $vtiger_module);
+  }
+}
+
+/**
+ * Implements hook_webform_component_delete().
+ *
+ * Deletes mapping of a component when it gets deleted.
+ */
+function vtiger_crm_webform_webform_component_delete($component) {
+  $map_obj = vtiger_crm_webform_get_mapping($component['nid']);
+  if ($map_obj) {
+    $mapping = unserialize($map_obj['mappings']);
+    unset($mapping[$component['cid']]);
+    // Check if we've just deleted a field required for Vtiger.
+    $required_fields = vtiger_crm_module_get_fields($map_obj['vtiger_module'], TRUE);
+    $required_fields = array_keys($required_fields);
+    $unfilled_required = array_diff($required_fields, array_values($mapping));
+    if (count($unfilled_required)) {
+      drupal_set_message(t('The webform component you just delete was mapped
+        to a required Vtiger fields. You need to reconfigure Vtiger mapping settings for this
+        webform. Other Vtiger requests will fail.'), 'warning');
+    }
+    vtiger_crm_webform_save_mapping($mapping, $map_obj['assigned_user_id'],
+      $component['nid'], $map_obj['vtiger_module'], $map_obj['enabled']);
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ *
+ * Delete mapping when a node gets deleted.
+ */
+function vtiger_crm_webform_node_delete($node) {
+  if ($node->type === 'webform') {
+    vtiger_crm_webform_delete_mapping($node->nid);
+  }
+}

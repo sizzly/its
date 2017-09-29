@@ -13,6 +13,32 @@ function core_default_ctools_custom_content() {
   $content = new stdClass();
   $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
   $content->api_version = 1;
+  $content->name = 'add_image_block';
+  $content->admin_title = 'Add Image Block';
+  $content->admin_description = 'Generates the collapsible panel for adding images to nodes.';
+  $content->category = 'Node';
+  $content->settings = array(
+    'admin_title' => 'Add Image Block',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<div class="collapse" id="collapseImageForm">
+  <div class="well">
+<?php
+  module_load_include(\'inc\', \'entityform\', \'entityform.admin\');
+  $entity_form_name = \'status_all_upload_image\';
+  $render_estimate_form = entityform_form_wrapper(entityform_empty_load($entity_form_name), \'submit\', \'embedded\');
+  echo drupal_render($render_estimate_form);
+?>
+  </div>
+</div>',
+    'format' => 'php_code',
+    'substitute' => 1,
+  );
+  $export['add_image_block'] = $content;
+
+  $content = new stdClass();
+  $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
+  $content->api_version = 1;
   $content->name = 'coming_soon';
   $content->admin_title = 'Coming Soon';
   $content->admin_description = '';

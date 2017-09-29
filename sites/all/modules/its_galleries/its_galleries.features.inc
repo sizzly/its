@@ -36,7 +36,7 @@ function its_galleries_default_entityform_type() {
   $items = array();
   $items['status_all_upload_image'] = entity_import('entityform_type', '{
     "type" : "status_all_upload_image",
-    "label" : "Status: All: Upload Image",
+    "label" : "Upload Image",
     "data" : {
       "draftable" : 0,
       "draft_redirect_path" : "",

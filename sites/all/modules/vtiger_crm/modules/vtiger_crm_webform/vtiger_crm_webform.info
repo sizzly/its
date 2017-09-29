@@ -1,0 +1,14 @@
+name = Vtiger CRM Webform
+description = Sends values submitted by Webformm to Vtiger CRM.
+package = Vtiger CRM
+core = 7.x
+
+dependencies[] = vtiger_crm
+dependencies[] = webform
+
+; Information added by Drupal.org packaging script on 2016-06-16
+version = "7.x-1.0"
+core = "7.x"
+project = "vtiger_crm"
+datestamp = "1466098965"
+

@@ -51,6 +51,7 @@ function war_zones_field_default_field_bases() {
       ),
       'display_format' => '$display_output = $entity_field_item[\'value\'];',
       'profile2_private' => FALSE,
+      'recalculate' => FALSE,
       'store' => 1,
     ),
     'translatable' => 0,

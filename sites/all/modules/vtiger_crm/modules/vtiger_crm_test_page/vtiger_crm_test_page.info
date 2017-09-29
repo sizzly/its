@@ -1,0 +1,13 @@
+name = Vtiger CRM test page
+description = Provides a page for testing queries. You may be using it when doing custom development.
+core = 7.x
+package = Vtiger CRM
+
+dependencies[] = vtiger_crm
+
+; Information added by Drupal.org packaging script on 2016-06-16
+version = "7.x-1.0"
+core = "7.x"
+project = "vtiger_crm"
+datestamp = "1466098965"
+

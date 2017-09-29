@@ -522,6 +522,108 @@ function home_page_default_page_manager_pages() {
   $pane->uuid = 'd815b9d5-7818-44a4-ad9f-a503284f6fe7';
   $display->content['new-d815b9d5-7818-44a4-ad9f-a503284f6fe7'] = $pane;
   $display->panels['contentmain'][0] = 'new-d815b9d5-7818-44a4-ad9f-a503284f6fe7';
+  $pane = new stdClass();
+  $pane->pid = 'new-293f9449-a5ff-4aeb-bece-e8291fff0e58';
+  $pane->panel = 'contentmain';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Lead Form',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<style type="text/css"><!--
+form#WebToLeadForm, form#WebToLeadForm * {margin: 0; padding: 0; border: none; color: #333; font-size: 12px; line-height: 1.6em; font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;}
+form#WebToLeadForm {float: left; border: 1px solid #ccc; margin: 10px;}
+form#WebToLeadForm h1 {font-size: 32px; font-weight: bold; background-color: rgb(60, 141, 188); color: rgb(247, 247, 247); padding: 10px 20px;}
+form#WebToLeadForm h2 {font-size: 24px; font-weight: bold; background-color: rgb(60, 141, 188); color: rgb(247, 247, 247); padding: 10px 20px;}
+form#WebToLeadForm h3 {font-size: 12px; font-weight: bold; padding: 10px 20px;}
+form#WebToLeadForm h4 {font-size: 10px; font-weight: bold; padding: 10px 20px;}
+form#WebToLeadForm h5 {font-size: 8px; font-weight: bold; padding: 10px 20px;}
+form#WebToLeadForm h6 {font-size: 6px; font-weight: bold; padding: 10px 20px;}
+form#WebToLeadForm p {padding: 10px 20px;}
+form#WebToLeadForm input,
+form#WebToLeadForm select,
+form#WebToLeadForm textarea {border: 1px solid #ccc; display: block; float: left; min-width: 170px; padding: 5px;}
+form#WebToLeadForm select {background-color: white;}
+form#WebToLeadForm input[type="button"],
+form#WebToLeadForm input[type="submit"] {display: inline; float: none; padding: 5px 10px; width: auto; min-width: auto;}
+form#WebToLeadForm input[type="checkbox"],
+form#WebToLeadForm input[type="radio"] {width: 18px; min-width: auto;}
+form#WebToLeadForm div.col {display: block; float: left; width: 330px; padding: 10px 20px;}
+form#WebToLeadForm div.clear {display: block; float: none; clear: both; height: 0px; overflow: hidden;}
+form#WebToLeadForm div.center {text-align: center;}
+form#WebToLeadForm div.buttons {padding: 10px 0; border-top: 1px solid #ccc; background-color: #f7f7f7}
+form#WebToLeadForm label {display: block; float: left; width: 160px; font-weight: bold;}
+form#WebToLeadForm span.required {color: #FF0000;}
+--></style>
+<!-- TODO ???
+<script type="text/javascript" src=\'http://service.itoysoldiers.com/cache/include/javascript/sugar_grp1.js?v=RdmZXYMtTEN3G3_xX5jXgw\'></script>
+--><form id="WebToLeadForm" action="http://service.itoysoldiers.com/index.php?entryPoint=WebToPersonCapture" method="POST" name="WebToLeadForm">
+<h2>Rates and Availability</h2>
+<p>Yes, I want to advertise on iToysoldiers! Send me rates and availability.</p>
+<div class="row">
+<div class="col"><label>First Name: </label><input name="first_name" id="first_name" type="text" /></div>
+<div class="col">� </div>
+<div class="clear">� </div>
+</div>
+<div class="row">
+<div class="col"><label>Last Name: <span class="required">*</span></label><input name="last_name" id="last_name" type="text" required="" /></div>
+<div class="col">� </div>
+<div class="clear">� </div>
+</div>
+<div class="row">
+<div class="col"><label>Email Address: </label><input name="email1" id="email1" type="email" /></div>
+<div class="col">� </div>
+<div class="clear">� </div>
+</div>
+<div class="row center buttons"><input class="button" name="Submit" type="submit" value="Submit" onclick="submit_form();" />
+<div class="clear">� </div>
+</div>
+<input name="campaign_id" id="campaign_id" type="hidden" value="92a5ee43-0c74-d5a4-df52-59b2abdab4e6" /> <input name="assigned_user_id" id="assigned_user_id" type="hidden" value="1" /> <input name="moduleDir" id="moduleDir" type="hidden" value="Leads" /></form>
+<p>
+<script type="text/javascript">// <![CDATA[
+    function submit_form() {
+        if (typeof(validateCaptchaAndSubmit) != \'undefined\') {
+            validateCaptchaAndSubmit();
+        } else {
+            check_webtolead_fields();
+            //document.WebToLeadForm.submit();
+        }
+    }
+
+    function check_webtolead_fields() {
+        if (document.getElementById(\'bool_id\') != null) {
+            var reqs = document.getElementById(\'bool_id\').value;
+            bools = reqs.substring(0, reqs.lastIndexOf(\';\'));
+            var bool_fields = new Array();
+            var bool_fields = bools.split(\';\');
+            nbr_fields = bool_fields.length;
+            for (var i = 0; i < nbr_fields; i++) {
+                if (document.getElementById(bool_fields[i]).value == \'on\') {
+                    document.getElementById(bool_fields[i]).value = 1;
+                } else {
+                    document.getElementById(bool_fields[i]).value = 0;
+                }
+            }
+        }
+    }
+// ]]></script>',
+    'format' => 'php_code',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '293f9449-a5ff-4aeb-bece-e8291fff0e58';
+  $display->content['new-293f9449-a5ff-4aeb-bece-e8291fff0e58'] = $pane;
+  $display->panels['contentmain'][1] = 'new-293f9449-a5ff-4aeb-bece-e8291fff0e58';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1679,32 +1781,6 @@ Rob</p>
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
-  $pane->panel = 'contentmain';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Announcement Banner',
-    'title' => '',
-    'body' => '<ins data-revive-zoneid="27" data-revive-id="4f7dfffe8e8e5dcd2cbcc3bb4563f765"></ins>
-<script async src="//ads.itoysoldiers.com/www/delivery/asyncjs.php"></script>',
-    'format' => 'php_code',
-    'substitute' => 1,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'fe8099c2-5f90-4026-8d25-5e9754ec8f73';
-  $display->content['new-fe8099c2-5f90-4026-8d25-5e9754ec8f73'] = $pane;
-  $display->panels['contentmain'][0] = 'new-fe8099c2-5f90-4026-8d25-5e9754ec8f73';
-  $pane = new stdClass();
   $pane->pid = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
   $pane->panel = 'contentmain';
   $pane->type = 'views_panes';
@@ -1721,11 +1797,11 @@ Rob</p>
     'css_class' => 'hidden-xs',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = 'ff19d553-d9bc-4b62-8c62-6fae301b609f';
   $display->content['new-ff19d553-d9bc-4b62-8c62-6fae301b609f'] = $pane;
-  $display->panels['contentmain'][1] = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
+  $display->panels['contentmain'][0] = 'new-ff19d553-d9bc-4b62-8c62-6fae301b609f';
   $pane = new stdClass();
   $pane->pid = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
   $pane->panel = 'contentmain';
@@ -1779,11 +1855,11 @@ Rob</p>
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '7a8d6a70-688f-4376-a556-704f146e3143';
   $display->content['new-7a8d6a70-688f-4376-a556-704f146e3143'] = $pane;
-  $display->panels['contentmain'][2] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
+  $display->panels['contentmain'][1] = 'new-7a8d6a70-688f-4376-a556-704f146e3143';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2970,33 +3046,8 @@ Rob<br />
   $pane->uuid = '3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
   $display->content['new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310'] = $pane;
   $display->panels['contentmain'][1] = 'new-3f9ee3d1-3935-46d4-be2e-0bcc58ea7310';
-  $pane = new stdClass();
-  $pane->pid = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
-  $pane->panel = 'contentmain';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'landing page frame',
-    'title' => '',
-    'body' => '<iframe src="http://l.itoysoldiers.com/index.php/legendary-battles" width="0" height="0" frameBorder="0"></iframe>',
-    'format' => 'php_code',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '9a860902-217e-4bac-a3ca-4b094e44f539';
-  $display->content['new-9a860902-217e-4bac-a3ca-4b094e44f539'] = $pane;
-  $display->panels['contentmain'][2] = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-9a860902-217e-4bac-a3ca-4b094e44f539';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['legendary_battles'] = $page;

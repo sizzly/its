@@ -560,9 +560,98 @@ function profiles_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_battle_ranking_user'.
+  $field_instances['user-user-field_battle_ranking_user'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 1200,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_battle_ranking_user',
+    'label' => 'Battle Rating',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_hidden',
+      'settings' => array(),
+      'type' => 'field_hidden',
+      'weight' => 52,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_provisional_flag'.
+  $field_instances['user-user-field_provisional_flag'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_provisional_flag',
+    'label' => 'Provisional Flag',
+    'required' => 0,
+    'settings' => array(
+      'max' => 1,
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_hidden',
+      'settings' => array(),
+      'type' => 'field_hidden',
+      'weight' => 53,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Banner');
+  t('Battle Rating');
   t('Bio');
   t('Facebook');
   t('Games Played');
@@ -571,6 +660,7 @@ function profiles_field_default_field_instances() {
   t('Location');
   t('Organization Website');
   t('Pinterest');
+  t('Provisional Flag');
   t('Twitter');
   t('Website');
 

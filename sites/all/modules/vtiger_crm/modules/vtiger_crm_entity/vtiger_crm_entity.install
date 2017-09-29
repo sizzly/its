@@ -1,0 +1,61 @@
+<?php
+/**
+ * @file
+ * Install and uninstall functions.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function vtiger_crm_entity_schema() {
+  $schema = array();
+  $schema['vtiger_crm_entity_mapping'] = array(
+    'description' => 'Table for storing Drupal and Vtiger entity fields mapping information.',
+    'fields' => array(
+      'mid' => array(
+        'description' => 'The primary identifier for a mapping.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'mname' => array(
+        'description' => 'Machine name for a mapping.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'drupal_entity' => array(
+        'description' => 'The machine name of a Drupal entity.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'drupal_entity_bundle' => array(
+        'description' => 'The machine name of a Drupal entity bundle.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'vtiger_entity' => array(
+        'description' => 'The machine name of a Vtiger entity.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'assigned_user_id' => array(
+        'description' => 'The ID of a Vtiger user the entity is assigned to.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'mappings' => array(
+        'description' => 'A serialized array containing field sources and destinations.',
+        'type' => 'blob',
+        'size' => 'normal',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('mid'),
+  );
+  return $schema;
+}

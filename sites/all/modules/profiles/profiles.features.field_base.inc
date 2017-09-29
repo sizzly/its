@@ -10,6 +10,23 @@
 function profiles_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_battle_ranking_user'.
+  $field_bases['field_battle_ranking_user'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_battle_ranking_user',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_hidden',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'field_hidden_integer',
+  );
+
   // Exported field_base: 'field_facebook'.
   $field_bases['field_facebook'] = array(
     'active' => 1,
@@ -127,6 +144,23 @@ function profiles_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_provisional_flag'.
+  $field_bases['field_provisional_flag'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_provisional_flag',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_hidden',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'field_hidden_integer',
   );
 
   // Exported field_base: 'field_twitter'.
