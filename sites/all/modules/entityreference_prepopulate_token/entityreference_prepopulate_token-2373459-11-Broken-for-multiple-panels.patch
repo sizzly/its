@@ -1,0 +1,70 @@
+From 1150751bb119e1c52346160c3f9be2f605c48a6b Mon Sep 17 00:00:00 2001
+From: Axel Rutz <axel.rutz@clever-systems.net>
+Date: Fri, 2 Jan 2015 17:14:40 +0100
+Subject: [PATCH] Issue #2373459: Broken for multiple panels (like with
+ panels_everywhere)
+
+---
+ entityreference_prepopulate_token.module | 31 ++++++++++++++++++++-----------
+ 1 file changed, 20 insertions(+), 11 deletions(-)
+
+diff --git a/entityreference_prepopulate_token.module b/entityreference_prepopulate_token.module
+index 86f4621..54e8c7f 100644
+--- a/entityreference_prepopulate_token.module
++++ b/entityreference_prepopulate_token.module
+@@ -44,19 +44,22 @@ function entityreference_prepopulate_token_entityreference_prepopulate_providers
+  * Implements hook_panels_panes_prepared_alter().
+  */
+ function entityreference_prepopulate_token_panels_panes_prepared_alter($panes, $renderer) {
+-  entityreference_prepopulate_token_current_display($renderer->display);
++  entityreference_prepopulate_token_current_displays($renderer->display);
+ }
+ 
+ /**
+  * Remembers the current display for context retrieving.
++ *
++ * Even if we later only need the contexts, we save the whole display here,
++ * for the benefit of future alter hooks.
+  */
+-function entityreference_prepopulate_token_current_display($display = NULL) {
+-  static $current_display = NULL;
+-  if (!is_null($display)) {
+-    $current_display = $display;
++function entityreference_prepopulate_token_current_displays($display = NULL) {
++  $current_displays = &drupal_static(__FUNCTION__, array());
++  if (isset($display)) {
++    $current_displays[] = $display;
+   }
+ 
+-  return $current_display;
++  return $current_displays;
+ }
+ 
+ /**
+@@ -111,12 +114,18 @@ function entityreference_prepopulate_token_substitute_pattern($pattern) {
+     return token_replace($pattern, array(), array('clear' => TRUE));
+   }
+ 
+-  if ($first === '%') {
+-    $display = entityreference_prepopulate_token_current_display();
+-    if ((empty($display)) || (empty($display->context)) || (!function_exists('ctools_context_keyword_substitute'))) {
+-      return NULL;
++  if (($first === '%') && module_exists('ctools')) {
++    ctools_include('context');
++    $contexts = array();
++    foreach (entityreference_prepopulate_token_current_displays() as $display) {
++      if (!empty($display->context)) {
++        // Panels are delivered to us from inner to outer, so contexts from
++        // inner panels will win, which is intended behavior here.
++        // @todo Maybe we need a more complex merging logic.
++        $contexts += $display->context;
++      }
+     }
+-    $value = ctools_context_keyword_substitute($pattern, array(), $display->context);
++    $value = ctools_context_keyword_substitute($pattern, array(), $contexts);
+     return (substr($value, 0, 1) !== '%') ? $value : NULL;
+   }
+ 
+-- 
+2.1.0
+

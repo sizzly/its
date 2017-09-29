@@ -2912,7 +2912,7 @@ function its_views_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_update_reference_message']['field'] = 'reverse_field_update_reference_message';
   $handler->display->display_options['relationships']['reverse_field_update_reference_message']['relationship'] = 'reverse_field_status_upload_images_entityform';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Associated Nodes (field_associated_nodes_stream) */
+  /* Contextual filter: Message: Associated Nodes (field_associated_nodes_stream) */
   $handler->display->display_options['arguments']['field_associated_nodes_stream_target_id']['id'] = 'field_associated_nodes_stream_target_id';
   $handler->display->display_options['arguments']['field_associated_nodes_stream_target_id']['table'] = 'field_data_field_associated_nodes_stream';
   $handler->display->display_options['arguments']['field_associated_nodes_stream_target_id']['field'] = 'field_associated_nodes_stream_target_id';
@@ -3512,7 +3512,7 @@ Salute  Comment  Share
   $handler->display->display_options['relationships']['reverse_field_update_reference_message']['field'] = 'reverse_field_update_reference_message';
   $handler->display->display_options['relationships']['reverse_field_update_reference_message']['relationship'] = 'reverse_field_status_upload_images_entityform';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Associated Nodes (field_associated_nodes_stream) */
+  /* Contextual filter: Message: Associated Nodes (field_associated_nodes_stream) */
   $handler->display->display_options['arguments']['field_associated_nodes_stream_target_id']['id'] = 'field_associated_nodes_stream_target_id';
   $handler->display->display_options['arguments']['field_associated_nodes_stream_target_id']['table'] = 'field_data_field_associated_nodes_stream';
   $handler->display->display_options['arguments']['field_associated_nodes_stream_target_id']['field'] = 'field_associated_nodes_stream_target_id';

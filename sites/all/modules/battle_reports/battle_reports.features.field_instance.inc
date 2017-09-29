@@ -248,7 +248,7 @@ function battle_reports_field_default_field_instances() {
           'full_html' => 'full_html',
           'php_code' => 0,
           'plain_text' => 0,
-          'pure_html' => 'pure_html',
+          'pure_html' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -640,6 +640,53 @@ function battle_reports_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-game_result_system_-field_battle_rating_change'.
+  $field_instances['node-game_result_system_-field_battle_rating_change'] = array(
+    'bundle' => 'game_result_system_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_battle_rating_change',
+    'label' => 'Battle Rating Change',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_hidden',
+      'settings' => array(),
+      'type' => 'field_hidden',
+      'weight' => 69,
     ),
   );
 
@@ -1671,7 +1718,7 @@ function battle_reports_field_default_field_instances() {
           'full_html' => 'full_html',
           'php_code' => 0,
           'plain_text' => 0,
-          'pure_html' => 'pure_html',
+          'pure_html' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -2057,6 +2104,52 @@ function battle_reports_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 47,
+    ),
+  );
+
+  // Exported field_instance: 'node-game_results-field_battle_rating_change'.
+  $field_instances['node-game_results-field_battle_rating_change'] = array(
+    'bundle' => 'game_results',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_battle_rating_change',
+    'label' => 'Battle Rating Change',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_hidden',
+      'settings' => array(),
+      'type' => 'field_hidden',
+      'weight' => 54,
     ),
   );
 
@@ -3159,7 +3252,7 @@ function battle_reports_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 0,
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
@@ -3521,6 +3614,7 @@ function battle_reports_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A single image to "define" the battle.  Don\'t worry.  We\'ll put one in if you don\'t have one.  If you have a series of images make sure to put them in as well.');
   t('Army Composition');
+  t('Battle Rating Change');
   t('Battlefield');
   t('Body');
   t('Chart Color');

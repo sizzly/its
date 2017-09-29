@@ -3675,9 +3675,8 @@ function war_zones_default_rules_configuration() {
             "entity" : [ "nid:field-event-link" ],
             "type" : "node",
             "bundle" : { "value" : {
-                "war_zone_league" : "war_zone_league",
+                "event" : "event",
                 "narrative_campaign_instance" : "narrative_campaign_instance",
-                "special_event" : "special_event",
                 "war_zone_tournament" : "war_zone_tournament"
               }
             }

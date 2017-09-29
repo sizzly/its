@@ -46,6 +46,23 @@ function battle_reports_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_battle_rating_change'.
+  $field_bases['field_battle_rating_change'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_battle_rating_change',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_hidden',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'field_hidden_integer',
+  );
+
   // Exported field_base: 'field_chart_color'.
   $field_bases['field_chart_color'] = array(
     'active' => 1,
@@ -95,8 +112,8 @@ if (in_array(substr($p1->name, 0, 1), $vowels)) {
 }  
 
 //Get Results
-$status = $entity->field_your_results[\'und\'][0][\'value\'];
-$status_display = field_view_value($entity_type, $entity, \'field_your_results\', $status, array());
+$status = field_get_items($entity_type, $entity, "field_your_results");
+$status_display = field_view_value($entity_type, $entity, \'field_your_results\', $status[0], array());
 
 //Get Date
 $gamedate = $entity->field_game_date[\'und\'][0][\'value\'];
@@ -111,9 +128,7 @@ if (isset($entity->field_location[\'und\'][0][\'nid\'])) {
   $bffield = " on the fields of " . $battlefield . " ";
 }
 
-$entity_field[0][\'value\'] = $start . " " .$p1->name . " battle report. " . render($status_display) . " against " . $p2->name . "" .$bffield ." on " . $date_formatted . ".";
-
-',
+$entity_field[0][\'value\'] = $start . " " .$p1->name . " battle report. " . render($status_display) . " against " . $p2->name . "" .$bffield ." on " . $date_formatted . ".";',
       'database' => array(
         'data_default' => '',
         'data_index' => 1,
@@ -126,6 +141,7 @@ $entity_field[0][\'value\'] = $start . " " .$p1->name . " battle report. " . ren
       ),
       'display_format' => '$display_output = $entity_field_item[\'value\'];',
       'profile2_private' => FALSE,
+      'recalculate' => 0,
       'store' => 1,
     ),
     'translatable' => 0,

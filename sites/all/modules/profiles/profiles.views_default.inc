@@ -477,7 +477,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'infinite_scroll';
+  $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
@@ -510,7 +510,17 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['field_your_results']['relationship'] = 'uid';
   $handler->display->display_options['fields']['field_your_results']['group_type'] = 'avg';
   $handler->display->display_options['fields']['field_your_results']['label'] = 'Average Battle Score';
+  /* Field: User: Battle Rating */
+  $handler->display->display_options['fields']['field_battle_ranking_user']['id'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['table'] = 'field_data_field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['field'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['type'] = 'field_hidden_integer';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: User: Battle Rating (field_battle_ranking_user) */
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['id'] = 'field_battle_ranking_user_value';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['table'] = 'field_data_field_battle_ranking_user';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['field'] = 'field_battle_ranking_user_value';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['order'] = 'DESC';
   /* Sort criterion: AVG(Field: Your Results (field_your_results)) */
   $handler->display->display_options['sorts']['field_your_results_value']['id'] = 'field_your_results_value';
   $handler->display->display_options['sorts']['field_your_results_value']['table'] = 'field_data_field_your_results';
@@ -536,16 +546,7 @@ function profiles_views_default_views() {
     'game_results' => 'game_results',
     'game_result_system_' => 'game_result_system_',
   );
-  /* Filter criterion: COUNT(DISTINCT Content: Nid) */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'node';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['nid']['group_type'] = 'count_distinct';
-  $handler->display->display_options['filters']['nid']['operator'] = '>=';
-  $handler->display->display_options['filters']['nid']['value']['value'] = '5';
   $handler->display->display_options['path'] = 'community/leaderboards/average-battle-score';
-  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Average Battle Score';
   $handler->display->display_options['menu']['description'] = 'All players ranked by average battle score';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -826,6 +827,275 @@ function profiles_views_default_views() {
     1261 => '1261',
   );
   $handler->display->display_options['pane_category']['name'] = 'Community';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Battle Rating Page */
+  $handler = $view->new_display('page', 'Battle Rating Page', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Battle Rating Leaderboard';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'counter' => 'counter',
+    'name' => 'name',
+    'field_battle_ranking_user' => 'field_battle_ranking_user',
+    'field_provisional_flag' => 'field_battle_ranking_user',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'counter' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_battle_ranking_user' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => ' ',
+      'empty_column' => 0,
+    ),
+    'field_provisional_flag' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['bootstrap_styles'] = array(
+    'striped' => 'striped',
+    'bordered' => 0,
+    'hover' => 0,
+    'condensed' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Content authored */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'users';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = 'Ranking';
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  $handler->display->display_options['fields']['counter']['reverse'] = 0;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Player';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Battle Rating */
+  $handler->display->display_options['fields']['field_battle_ranking_user']['id'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['table'] = 'field_data_field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['field'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['type'] = 'field_hidden_integer';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 1,
+  );
+  /* Field: User: Provisional Flag */
+  $handler->display->display_options['fields']['field_provisional_flag']['id'] = 'field_provisional_flag';
+  $handler->display->display_options['fields']['field_provisional_flag']['table'] = 'field_data_field_provisional_flag';
+  $handler->display->display_options['fields']['field_provisional_flag']['field'] = 'field_provisional_flag';
+  $handler->display->display_options['fields']['field_provisional_flag']['label'] = '';
+  $handler->display->display_options['fields']['field_provisional_flag']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_provisional_flag']['alter']['text'] = '<span class="label label-success">provisional</span>';
+  $handler->display->display_options['fields']['field_provisional_flag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_provisional_flag']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_provisional_flag']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_provisional_flag']['type'] = 'field_hidden_integer';
+  $handler->display->display_options['fields']['field_provisional_flag']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: User: Battle Rating (field_battle_ranking_user) */
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['id'] = 'field_battle_ranking_user_value';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['table'] = 'field_data_field_battle_ranking_user';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['field'] = 'field_battle_ranking_user_value';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+    'game_result_system_' => 'game_result_system_',
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['operator'] = 'not';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    8 => '8',
+  );
+  $handler->display->display_options['path'] = 'community/leaderboards/battle-rating';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Battle Rating';
+  $handler->display->display_options['menu']['description'] = 'All players ranked by average battle score';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Battle Rating Panel */
+  $handler = $view->new_display('panel_pane', 'Battle Rating Panel', 'panel_pane_8');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Average Battle Score';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_4';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'counter' => 'counter',
+    'name' => 'name',
+    'field_battle_ranking_user' => 'field_battle_ranking_user',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'counter' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_battle_ranking_user' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['bootstrap_styles'] = array(
+    'striped' => 'striped',
+    'bordered' => 0,
+    'hover' => 0,
+    'condensed' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<p>Note: Provisional Rated Players not included in this panel</p>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['footer']['area']['roles_fieldset'] = array(
+    'roles' => array(
+      'anonymous user' => 0,
+      'authenticated user' => 0,
+      'administrator' => 0,
+      'verified' => 0,
+      'Ironmonger' => 0,
+      'System' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Content authored */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'users';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = 'Ranking';
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  $handler->display->display_options['fields']['counter']['reverse'] = 0;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Player';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Battle Rating */
+  $handler->display->display_options['fields']['field_battle_ranking_user']['id'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['table'] = 'field_data_field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['field'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['type'] = 'field_hidden_integer';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: User: Battle Rating (field_battle_ranking_user) */
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['id'] = 'field_battle_ranking_user_value';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['table'] = 'field_data_field_battle_ranking_user';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['field'] = 'field_battle_ranking_user_value';
+  $handler->display->display_options['sorts']['field_battle_ranking_user_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'game_results' => 'game_results',
+    'game_result_system_' => 'game_result_system_',
+  );
+  /* Filter criterion: User: Provisional Flag (field_provisional_flag) */
+  $handler->display->display_options['filters']['field_provisional_flag_value']['id'] = 'field_provisional_flag_value';
+  $handler->display->display_options['filters']['field_provisional_flag_value']['table'] = 'field_data_field_provisional_flag';
+  $handler->display->display_options['filters']['field_provisional_flag_value']['field'] = 'field_provisional_flag_value';
+  $handler->display->display_options['filters']['field_provisional_flag_value']['value']['value'] = '0';
+  $handler->display->display_options['pane_category']['name'] = 'Leaderboards';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['leaderboards_all_tables'] = $view;
 
@@ -8763,8 +9033,8 @@ jQuery(document).ready(function($) {
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'text-center';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_thumbnail_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -8777,9 +9047,12 @@ jQuery(document).ready(function($) {
   $handler->display->display_options['fields']['badge']['field'] = 'badge';
   $handler->display->display_options['fields']['badge']['label'] = '';
   $handler->display->display_options['fields']['badge']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['badge']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['badge']['element_wrapper_class'] = 'text-center';
-  $handler->display->display_options['fields']['badge']['element_default_classes'] = FALSE;
+  /* Field: User Badges: Badge Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'user_badges_badges';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -8789,12 +9062,6 @@ jQuery(document).ready(function($) {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User Badges: Badge Name */
-  $handler->display->display_options['filters']['name']['id'] = 'name';
-  $handler->display->display_options['filters']['name']['table'] = 'user_badges_badges';
-  $handler->display->display_options['filters']['name']['field'] = 'name';
-  $handler->display->display_options['filters']['name']['operator'] = 'contains';
-  $handler->display->display_options['filters']['name']['value'] = 'level';
   $handler->display->display_options['pane_category']['name'] = 'Profiles';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -9754,6 +10021,49 @@ jQuery(document).ready(function($) {
   <div><small class="block text-muted">Member Since: [created]</small></div></div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'Profiles';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Battle Rating */
+  $handler = $view->new_display('panel_pane', 'Battle Rating', 'panel_pane_23');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Battle Rating';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Battle Rating */
+  $handler->display->display_options['fields']['field_battle_ranking_user']['id'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['table'] = 'field_data_field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['field'] = 'field_battle_ranking_user';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['label'] = '';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['element_class'] = 'lead';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_battle_ranking_user']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['element_wrapper_class'] = 'text-center';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['type'] = 'field_hidden_integer';
+  $handler->display->display_options['fields']['field_battle_ranking_user']['settings'] = array(
+    'thousand_separator' => ',',
+    'prefix_suffix' => 1,
+  );
+  /* Field: User: Provisional Flag */
+  $handler->display->display_options['fields']['field_provisional_flag']['id'] = 'field_provisional_flag';
+  $handler->display->display_options['fields']['field_provisional_flag']['table'] = 'field_data_field_provisional_flag';
+  $handler->display->display_options['fields']['field_provisional_flag']['field'] = 'field_provisional_flag';
+  $handler->display->display_options['fields']['field_provisional_flag']['label'] = '';
+  $handler->display->display_options['fields']['field_provisional_flag']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_provisional_flag']['alter']['text'] = 'provisional';
+  $handler->display->display_options['fields']['field_provisional_flag']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_provisional_flag']['element_class'] = 'label label-success';
+  $handler->display->display_options['fields']['field_provisional_flag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_provisional_flag']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_provisional_flag']['element_wrapper_class'] = 'text-center';
+  $handler->display->display_options['fields']['field_provisional_flag']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_provisional_flag']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_provisional_flag']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_provisional_flag']['type'] = 'field_hidden_integer';
+  $handler->display->display_options['fields']['field_provisional_flag']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
   $handler->display->display_options['pane_category']['name'] = 'Profiles';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['profiles_all_page_layout'] = $view;

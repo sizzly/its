@@ -998,25 +998,21 @@ theater/events',
   $display->content['new-a5c09156-6476-46fc-99d5-dabe670e459a'] = $pane;
   $display->panels['contentmain'][5] = 'new-a5c09156-6476-46fc-99d5-dabe670e459a';
   $pane = new stdClass();
-  $pane->pid = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
+  $pane->pid = 'new-74d1e56e-ae9d-4276-82c3-dcbeb0507421';
   $pane->panel = 'footer';
-  $pane->type = 'node_body';
-  $pane->subtype = 'node_body';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'war_zone_all_player_final_scores-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => 'Details',
-  );
+  $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
     'settings' => array(
       'use_title' => 1,
       'use_footer' => 0,
-      'panel_body' => 1,
+      'panel_body' => 0,
       'footer_content' => '',
-      'context_class' => 'panel-default',
+      'context_class' => 'panel-primary',
     ),
     'style' => 'bootstrap_panel',
   );
@@ -1024,9 +1020,9 @@ theater/events',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '7369f905-2ee7-46b1-84de-d3bde7bb58d2';
-  $display->content['new-7369f905-2ee7-46b1-84de-d3bde7bb58d2'] = $pane;
-  $display->panels['footer'][0] = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
+  $pane->uuid = '74d1e56e-ae9d-4276-82c3-dcbeb0507421';
+  $display->content['new-74d1e56e-ae9d-4276-82c3-dcbeb0507421'] = $pane;
+  $display->panels['footer'][0] = 'new-74d1e56e-ae9d-4276-82c3-dcbeb0507421';
   $pane = new stdClass();
   $pane->pid = 'new-fdbc0602-61bd-426b-bd94-66548d5b9361';
   $pane->panel = 'footer';
@@ -1229,34 +1225,8 @@ theater/events',
   $display->content['new-d18f2aa9-6476-45b3-bd6e-0b988c0eae34'] = $pane;
   $display->panels['header'][2] = 'new-d18f2aa9-6476-45b3-bd6e-0b988c0eae34';
   $pane = new stdClass();
-  $pane->pid = 'new-74d1e56e-ae9d-4276-82c3-dcbeb0507421';
-  $pane->panel = 'header';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'war_zone_all_player_final_scores-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'use_title' => 1,
-      'use_footer' => 0,
-      'panel_body' => 0,
-      'footer_content' => '',
-      'context_class' => 'panel-primary',
-    ),
-    'style' => 'bootstrap_panel',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '74d1e56e-ae9d-4276-82c3-dcbeb0507421';
-  $display->content['new-74d1e56e-ae9d-4276-82c3-dcbeb0507421'] = $pane;
-  $display->panels['header'][3] = 'new-74d1e56e-ae9d-4276-82c3-dcbeb0507421';
-  $pane = new stdClass();
   $pane->pid = 'new-aec39a15-8025-4261-b2fc-bda3703878a8';
-  $pane->panel = 'sidebar';
+  $pane->panel = 'header';
   $pane->type = 'views_panes';
   $pane->subtype = 'war_zone_all_achievements-panel_pane_1';
   $pane->shown = TRUE;
@@ -1275,11 +1245,11 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'aec39a15-8025-4261-b2fc-bda3703878a8';
   $display->content['new-aec39a15-8025-4261-b2fc-bda3703878a8'] = $pane;
-  $display->panels['sidebar'][0] = 'new-aec39a15-8025-4261-b2fc-bda3703878a8';
+  $display->panels['header'][3] = 'new-aec39a15-8025-4261-b2fc-bda3703878a8';
   $pane = new stdClass();
   $pane->pid = 'new-ed8eec22-7f2b-4727-a113-175617df527f';
   $pane->panel = 'sidebar';
@@ -1301,11 +1271,11 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = 'ed8eec22-7f2b-4727-a113-175617df527f';
   $display->content['new-ed8eec22-7f2b-4727-a113-175617df527f'] = $pane;
-  $display->panels['sidebar'][1] = 'new-ed8eec22-7f2b-4727-a113-175617df527f';
+  $display->panels['sidebar'][0] = 'new-ed8eec22-7f2b-4727-a113-175617df527f';
   $pane = new stdClass();
   $pane->pid = 'new-65aa9c4a-ed2e-4f58-bcf7-243dabc199d4';
   $pane->panel = 'sidebar';
@@ -1320,11 +1290,11 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '65aa9c4a-ed2e-4f58-bcf7-243dabc199d4';
   $display->content['new-65aa9c4a-ed2e-4f58-bcf7-243dabc199d4'] = $pane;
-  $display->panels['sidebar'][2] = 'new-65aa9c4a-ed2e-4f58-bcf7-243dabc199d4';
+  $display->panels['sidebar'][1] = 'new-65aa9c4a-ed2e-4f58-bcf7-243dabc199d4';
   $pane = new stdClass();
   $pane->pid = 'new-64cc4a0a-8732-40cd-9d4c-417fa65094b8';
   $pane->panel = 'sidebar';
@@ -1339,11 +1309,11 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '64cc4a0a-8732-40cd-9d4c-417fa65094b8';
   $display->content['new-64cc4a0a-8732-40cd-9d4c-417fa65094b8'] = $pane;
-  $display->panels['sidebar'][3] = 'new-64cc4a0a-8732-40cd-9d4c-417fa65094b8';
+  $display->panels['sidebar'][2] = 'new-64cc4a0a-8732-40cd-9d4c-417fa65094b8';
   $pane = new stdClass();
   $pane->pid = 'new-b96cb641-a4cf-4c0b-bd3a-1df54a3230d2';
   $pane->panel = 'sidebar';
@@ -1358,11 +1328,11 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'b96cb641-a4cf-4c0b-bd3a-1df54a3230d2';
   $display->content['new-b96cb641-a4cf-4c0b-bd3a-1df54a3230d2'] = $pane;
-  $display->panels['sidebar'][4] = 'new-b96cb641-a4cf-4c0b-bd3a-1df54a3230d2';
+  $display->panels['sidebar'][3] = 'new-b96cb641-a4cf-4c0b-bd3a-1df54a3230d2';
   $pane = new stdClass();
   $pane->pid = 'new-55d7f860-2f4e-4e1d-b913-97dea5afbcf8';
   $pane->panel = 'sidebar';
@@ -1377,11 +1347,11 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '55d7f860-2f4e-4e1d-b913-97dea5afbcf8';
   $display->content['new-55d7f860-2f4e-4e1d-b913-97dea5afbcf8'] = $pane;
-  $display->panels['sidebar'][5] = 'new-55d7f860-2f4e-4e1d-b913-97dea5afbcf8';
+  $display->panels['sidebar'][4] = 'new-55d7f860-2f4e-4e1d-b913-97dea5afbcf8';
   $pane = new stdClass();
   $pane->pid = 'new-58772607-eb9f-4aed-b594-9927105c5f99';
   $pane->panel = 'sidebar';
@@ -1396,11 +1366,41 @@ theater/events',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '58772607-eb9f-4aed-b594-9927105c5f99';
   $display->content['new-58772607-eb9f-4aed-b594-9927105c5f99'] = $pane;
-  $display->panels['sidebar'][6] = 'new-58772607-eb9f-4aed-b594-9927105c5f99';
+  $display->panels['sidebar'][5] = 'new-58772607-eb9f-4aed-b594-9927105c5f99';
+  $pane = new stdClass();
+  $pane->pid = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
+  $pane->panel = 'sidebar';
+  $pane->type = 'node_body';
+  $pane->subtype = 'node_body';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
+    'override_title_text' => 'Details',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = '7369f905-2ee7-46b1-84de-d3bde7bb58d2';
+  $display->content['new-7369f905-2ee7-46b1-84de-d3bde7bb58d2'] = $pane;
+  $display->panels['sidebar'][6] = 'new-7369f905-2ee7-46b1-84de-d3bde7bb58d2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
