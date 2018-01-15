@@ -28,15 +28,6 @@ function core_user_default_permissions() {
     'module' => 'hide_submit',
   );
 
-  // Exported permission: 'administer s3fs'.
-  $permissions['administer s3fs'] = array(
-    'name' => 'administer s3fs',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 's3fs',
-  );
-
   // Exported permission: 'bypass hide submit'.
   $permissions['bypass hide submit'] = array(
     'name' => 'bypass hide submit',
