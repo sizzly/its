@@ -808,52 +808,6 @@ function core_default_page_manager_pages() {
   $display->content['new-1f0bd727-3e39-4b3f-aab3-e5deeae21edf'] = $pane;
   $display->panels['header'][0] = 'new-1f0bd727-3e39-4b3f-aab3-e5deeae21edf';
   $pane = new stdClass();
-  $pane->pid = 'new-5e85e64c-ce24-4280-98b9-2b2a4327a347';
-  $pane->panel = 'header';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Nav Bar',
-    'title' => '',
-    'body' => '<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Narrative</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/order-of-battle/player-armies">Army Profiles</a></li>
-        <li><a href="/theater/narrative-campaigns">Narrative Campaigns</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>',
-    'format' => 'pure_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '5e85e64c-ce24-4280-98b9-2b2a4327a347';
-  $display->content['new-5e85e64c-ce24-4280-98b9-2b2a4327a347'] = $pane;
-  $display->panels['header'][1] = 'new-5e85e64c-ce24-4280-98b9-2b2a4327a347';
-  $pane = new stdClass();
   $pane->pid = 'new-a6575a56-315a-4bdf-83ab-e3c7453704f2';
   $pane->panel = 'sidebar';
   $pane->type = 'views_panes';
@@ -863,7 +817,14 @@ function core_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -882,7 +843,14 @@ function core_default_page_manager_pages() {
   $pane->configuration = array();
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'use_title' => 1,
+      'use_footer' => 0,
+      'panel_body' => 1,
+      'footer_content' => '',
+      'context_class' => 'panel-default',
+    ),
+    'style' => 'bootstrap_panel',
   );
   $pane->css = array();
   $pane->extras = array();

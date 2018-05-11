@@ -64,7 +64,6 @@ Drupal.media.popups.mediaBrowser = function (onSelect, globalOptions, pluginOpti
   // Attach an onLoad event.
   mediaIframe.bind('load', options, options.widget.onLoad);
 
-
   // Create an array of Dialog options.
   var dialogOptions = options.dialog;
 
@@ -129,7 +128,8 @@ Drupal.media.popups.mediaBrowser.mediaBrowserOnLoad = function (e) {
   var options = e.data;
 
   // Ensure that the iFrame is defined.
-  if (this.contentWindow.Drupal.media == undefined) {
+  if (typeof this.contentWindow.Drupal.media === 'undefined' || typeof
+  this.contentWindow.Drupal.media.browser === 'undefined') {
     return;
   }
 
@@ -343,8 +343,8 @@ Drupal.media.popups.getDialogOptions = function () {
     modal: Drupal.settings.media.dialogOptions.modal,
     draggable: Drupal.settings.media.dialogOptions.draggable,
     resizable: Drupal.settings.media.dialogOptions.resizable,
-    minWidth: 350,
-    width: 350,
+    minWidth: Drupal.settings.media.dialogOptions.minwidth,
+    width: Drupal.settings.media.dialogOptions.width,
     height: Drupal.settings.media.dialogOptions.height,
     position: Drupal.settings.media.dialogOptions.position,
     overlay: {
@@ -374,7 +374,7 @@ Drupal.media.popups.getPopupIframe = function (src, id, options) {
   var defaults = {width: '100%', scrolling: 'auto'};
   var options = $.extend({}, defaults, options);
 
-  return $('<iframe class="media-modal-frame"/>')
+  return $('<iframe class="media-modal-frame" tabindex="0"/>')
   .attr('src', src)
   .attr('width', options.width)
   .attr('id', id)
@@ -403,7 +403,7 @@ Drupal.media.popups.sizeDialog = function (dialogElement) {
   }
 
   var windowWidth = $(window).width();
-  var dialogWidth = 350;
+  var dialogWidth = windowWidth * 0.8;
   var windowHeight = $(window).height();
   var dialogHeight = windowHeight * 0.8;
 
